@@ -27,14 +27,14 @@
     <div class="TITLE">Enlisted weapon comparison tool</div>
 
     <script>
-        var colors = ["greenbtn", "redbtn", "bluebtn", "magbtn"]
+        var btncolors = ["greenbtn", "redbtn", "bluebtn", "magbtn"]
         for (var i = 0; i < 4; i++) (function (i) {
             var dropdown = document.createElement('div');
             dropdown.className = "dropdown";
             document.getElementsByTagName('BODY')[0].appendChild(dropdown);
 
             var button = document.createElement('button');
-            button.className = "dropbtn " + colors[i];
+            button.className = "dropbtn " + btncolors[i];
             button.textContent = "Weapon " + (i + 1);
             dropdown.append(button);
 
@@ -49,52 +49,122 @@
                 wepbutton.onclick = function () {
                     button.textContent = wepbutton.textContent == "(Remove)" ? "Weapon " + (i + 1) : wepbutton.textContent;
 
+                    // update labels
+                    var chartColors = ['rgba(0, 175, 0)', 'rgba(175, 0, 0)', 'rgba(0, 0, 175)', 'rgba(175, 175, 0)']
+                    if (wepbutton.textContent == "(Remove)") {
+                        // reset
+                        window.ttk_dpm_chart.data.datasets[i] = {
+                            label: 'Weapon ' + (i + 1),
+                            backgroundColor: [chartColors[i]],
+                            borderColor: [chartColors[i]],
+                            borderWidth: 5
+                        }
+                    }
+                    else {
+                        // set legend to label
+                        window.ttk_dpm_chart.data.datasets[i].label = wepbutton.textContent
+                    }
+
+                    // find max range of all selected guns
+                    var range = 0;
+                    for (var k = 0; k < 4; k++) (function (k) {
+                        var wepData = weaponByName(window.ttk_dpm_chart.data.datasets[k].label)
+                        if (wepData != null && wepData.Range > range) {
+                            range = wepData.Range
+                        }
+                    })(k);
+                    // set x axis to range, in 1/15th increments
+                    var ranges = [];
+                    for (var k = 0; k <= 15; k++) (function (k) {
+                        ranges.push(range * k / 15);
+                    })(k);
+                    window.ttk_dpm_chart.data.labels = ranges;
+
+                    // update data
+                    var chartColors = ['rgba(0, 175, 0)', 'rgba(175, 0, 0)', 'rgba(0, 0, 175)', 'rgba(175, 175, 0)']
+                    if (wepbutton.textContent == "(Remove)") {
+                    }
+                    else {
+                        if (document.getElementById('ttk_dpm_dropdown').value == "Damage over Distance") {
+                            var result = weaponByName(wepbutton.textContent).Damage;
+                        }
+                        var data = []
+                        var wepData = weaponByName(wepbutton.textContent);
+                        for (var k = 0; k <= 15; k++) (function (k) {
+                            data.push(wepData.Damage.a + (wepData.Damage.b * (2.71828 ** (-wepData.Damage.c * ranges[k]))));
+                        })(k);
+                        window.ttk_dpm_chart.data.datasets[i].data = data;
+                    }
+
+                    // refresh
+                    window.ttk_dpm_chart.update();
                 };
                 content.append(wepbutton);
             })(j);
         })(i)
+
+        function ttk_dpm_dropdown() {
+        }
+
+        function weaponByName(name) {
+            return WEAPONS.filter(function (WEAPONS) { return (WEAPONS['Name'] == name); })[0];
+        }
     </script>
 
-    <br><br><br><br><br>
+    <br><br><br>
+    <b> Display the following: </b>
+    <select id="ttk_dpm_dropdown" onchange="ttk_dpm_dropdown()">
+        <option> Damage over Distance </option>
+        <option> Time to Kill over Distance </option>
+        <option> Damage per Minute over Distance </option>
+    </select>
+    <br><br><br>
     <canvas id="myChart"></canvas>
     <img src="resources/gray.jpg" style="position:absolute; top:200px; left:10px; width:800px; height:400px;">
     <div style="position:absolute; top:200px; left:10px; width:800px; height:800px;">
-        <canvas id="cv_values"></canvas>
+        <canvas id="ttk-dpm-chart"></canvas>
 
         <script type="text/javascript">
             Chart.defaults.color = "#cccccc";
             Chart.defaults.borderColor = "#888888";
             var indicatedValueData = {
                 type: 'line',
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: [],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(0, 175, 0)'
-                    ],
-                    borderColor: [
-                        'rgba(0, 175, 0)'
-                    ],
+                    label: 'Weapon 1',
+                    backgroundColor: ['rgba(0, 175, 0)'],
+                    borderColor: ['rgba(0, 175, 0)'],
+                    borderWidth: 5,
+                },
+                {
+                    label: 'Weapon 2',
+                    backgroundColor: ['rgba(175, 0, 0)'],
+                    borderColor: ['rgba(175, 0, 0)'],
                     borderWidth: 5
                 },
                 {
-                    label: '# of Votes',
-                    data: [1, 9, 13, 15, 12, 13],
-                    backgroundColor: [
-                        'rgba(175, 0, 0)'
-                    ],
-                    borderColor: [
-                        'rgba(175, 0, 0)'
-                    ],
-                    borderWidth: 5
+                    label: 'Weapon 3',
+                    backgroundColor: ['rgba(0, 0, 175)'],
+                    borderColor: ['rgba(0, 0, 175)'],
+                    borderWidth: 5,
+                },
+                {
+                    label: 'Weapon 4',
+                    backgroundColor: ['rgba(175, 0, 175)'],
+                    borderColor: ['rgba(175, 0, 175)'],
+                    borderWidth: 5,
                 }]
             }
             var opts = {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
             }
 
-            var cv_values = document.getElementById("cv_values").getContext("2d");
-            var myChart = new Chart(cv_values, { type: "line", data: indicatedValueData, options: opts });
+            var chart = document.getElementById("ttk-dpm-chart").getContext("2d");
+            window.ttk_dpm_chart = new Chart(chart, { type: "line", data: indicatedValueData, options: opts });
         </script>
     </div>
 
