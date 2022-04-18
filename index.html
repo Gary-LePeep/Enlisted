@@ -1,52 +1,105 @@
 <!DOCTYPE html>
 <html>
-  
+
 <head>
-    <title>
-        Enlisted weapon comparison
-    </title>
 
-    <script type="text/javascript" src="weapon-data.js"></script>
-  
-    <script>
-      
-        // Create new css link Element
-        var css = document.createElement('link'); 
-        css.rel = 'stylesheet'; 
-        css.type = 'text/css';
-        css.href = 'style.css'; 
-        document.getElementsByTagName('HEAD')[0].appendChild(css); 
-  
-    </script> 
+<body style="background-color:rgb(107, 133, 133);"></body>
+<title>
+    Enlisted weapon comparison tool
+</title>
+
+<script type="text/javascript" src="weapon-data.js"></script>
+<script src="jquery-3.6.0.min.js"></script>
+<script src="./dist/chart.min.js"></script>
+
+
+<script>
+    // Create new css link Element
+    var css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.type = 'text/css';
+    css.href = 'style.css';
+    document.getElementsByTagName('HEAD')[0].appendChild(css);
+</script>
 </head>
-  
+
 <body>
-    <div class="TITLE">10art1's Enlisted weapon comparison tool</div>
+    <div class="TITLE">Enlisted weapon comparison tool</div>
 
     <script>
-        var dropdown = document.createElement('div');
-        dropdown.className = "dropdown";
-        document.getElementsByTagName('BODY')[0].appendChild(dropdown);
+        var colors = ["greenbtn", "redbtn", "bluebtn", "magbtn"]
+        for (var i = 0; i < 4; i++) (function (i) {
+            var dropdown = document.createElement('div');
+            dropdown.className = "dropdown";
+            document.getElementsByTagName('BODY')[0].appendChild(dropdown);
 
-        var button = document.createElement('button');
-        button.className = "dropbtn";
-        button.textContent = "Weapon 2";
-        dropdown.append(button);
+            var button = document.createElement('button');
+            button.className = "dropbtn " + colors[i];
+            button.textContent = "Weapon " + (i + 1);
+            dropdown.append(button);
 
-        var content = document.createElement('div');
-        content.className = "dropdown-content";
-        dropdown.append(content);
+            var content = document.createElement('div');
+            content.className = "dropdown-content";
+            dropdown.append(content);
 
-        for (var i = 0; i < WEAPONS.length; i++) {
-            var a = document.createElement('a');
-            a.href = "#";
-            a.text = WEAPONS[i].Name;
-            content.append(a);
-        }
+            for (var j = 0; j < WEAPONS.length; j++) (function (j) {
+                var wepbutton = document.createElement('button');
+                wepbutton.className = "wepbtn";
+                wepbutton.textContent = WEAPONS[j].Name == null ? "(Remove)" : WEAPONS[j].Name;
+                wepbutton.onclick = function () {
+                    button.textContent = wepbutton.textContent == "(Remove)" ? "Weapon " + (i + 1) : wepbutton.textContent;
 
-        console.log(WEAPONS)
+                };
+                content.append(wepbutton);
+            })(j);
+        })(i)
     </script>
-      
+
+    <br><br><br><br><br>
+    <canvas id="myChart"></canvas>
+    <img src="resources/gray.jpg" style="position:absolute; top:200px; left:10px; width:800px; height:400px;">
+    <div style="position:absolute; top:200px; left:10px; width:800px; height:800px;">
+        <canvas id="cv_values"></canvas>
+
+        <script type="text/javascript">
+            Chart.defaults.color = "#cccccc";
+            Chart.defaults.borderColor = "#888888";
+            var indicatedValueData = {
+                type: 'line',
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(0, 175, 0)'
+                    ],
+                    borderColor: [
+                        'rgba(0, 175, 0)'
+                    ],
+                    borderWidth: 5
+                },
+                {
+                    label: '# of Votes',
+                    data: [1, 9, 13, 15, 12, 13],
+                    backgroundColor: [
+                        'rgba(175, 0, 0)'
+                    ],
+                    borderColor: [
+                        'rgba(175, 0, 0)'
+                    ],
+                    borderWidth: 5
+                }]
+            }
+            var opts = {
+            }
+
+            var cv_values = document.getElementById("cv_values").getContext("2d");
+            var myChart = new Chart(cv_values, { type: "line", data: indicatedValueData, options: opts });
+        </script>
+    </div>
+
+
+
 </body>
-  
+
 </html>
