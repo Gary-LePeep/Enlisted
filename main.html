@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>
+        Enlisted weapon comparison
+    </title>
+
+    <script type="text/javascript" src="weapon-data.js"></script>
+  
+    <script>
+      
+        // Create new css link Element
+        var css = document.createElement('link'); 
+        css.rel = 'stylesheet'; 
+        css.type = 'text/css';
+        css.href = 'style.css'; 
+        document.getElementsByTagName('HEAD')[0].appendChild(css); 
+  
+    </script> 
+</head>
+  
+<body>
+    <div class="TITLE">10art1's Enlisted weapon comparison tool</div>
+
+    <script>
+        var dropdown = document.createElement('div');
+        dropdown.className = "dropdown";
+        document.getElementsByTagName('BODY')[0].appendChild(dropdown);
+
+        var button = document.createElement('button');
+        button.className = "dropbtn";
+        button.textContent = "Weapon 2";
+        dropdown.append(button);
+
+        var content = document.createElement('div');
+        content.className = "dropdown-content";
+        dropdown.append(content);
+
+        for (var i = 0; i < WEAPONS.length; i++) {
+            var a = document.createElement('a');
+            a.href = "#";
+            a.text = WEAPONS[i].Name;
+            content.append(a);
+        }
+
+        console.log(WEAPONS)
+    </script>
+      
+</body>
+  
+</html>
