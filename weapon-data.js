@@ -10,7 +10,7 @@ var WEAPONS = [
             "c" : 0.02023261
         },
         "Range" : 150,
-        "RPM" : "955"
+        "RPM" : 955
     },
     {
         "Name": "MP 28",
@@ -20,7 +20,7 @@ var WEAPONS = [
             "c" : 0.01539544
         },
         "Range" : 150,
-        "RPM" : "460"
+        "RPM" : 460
     },
     {
         "Name": "AVS-36",
@@ -30,7 +30,7 @@ var WEAPONS = [
             "c" : 0.002105417
         },
         "Range" : 750,
-        "RPM" : "575"
+        "RPM" : 575
     },
     {
         "Name": "MP 43/1",
@@ -40,7 +40,7 @@ var WEAPONS = [
             "c" : 0.002413182
         },
         "Range" : 750,
-        "RPM" : "575"
+        "RPM" : 575
     },
     {
         "Name": "Kiraly 39M",
@@ -50,6 +50,6 @@ var WEAPONS = [
             "c" : 0.01539154
         },
         "Range" : 150,
-        "RPM" : "725"
+        "RPM" : 725
     }
 ];

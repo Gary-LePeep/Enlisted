@@ -50,7 +50,7 @@
                     button.textContent = wepbutton.textContent == "(Remove)" ? "Weapon " + (i + 1) : wepbutton.textContent;
 
                     // update labels
-                    var chartColors = ['rgba(0, 175, 0)', 'rgba(175, 0, 0)', 'rgba(0, 0, 175)', 'rgba(175, 175, 0)']
+                    var chartColors = ['rgba(0, 175, 0)', 'rgba(175, 0, 0)', 'rgba(0, 0, 175)', 'rgba(175, 0, 175)']
                     if (wepbutton.textContent == "(Remove)") {
                         // reset
                         window.ttk_dpm_chart.data.datasets[i] = {
@@ -78,7 +78,11 @@
                     for (var k = 0; k <= 15; k++) (function (k) {
                         ranges.push(range * k / 15);
                     })(k);
-                    window.ttk_dpm_chart.data.labels = ranges;
+                    // if range changed, reload all data just to be sure
+                    if (window.ttk_dpm_chart.data.labels[15] != ranges[15]) {
+                        window.ttk_dpm_chart.data.labels = ranges;
+                        ttk_dpm_reload()
+                    }
 
                     // update data
                     var chartColors = ['rgba(0, 175, 0)', 'rgba(175, 0, 0)', 'rgba(0, 0, 175)', 'rgba(175, 175, 0)']
@@ -86,14 +90,43 @@
                     }
                     else {
                         if (document.getElementById('ttk_dpm_dropdown').value == "Damage over Distance") {
-                            var result = weaponByName(wepbutton.textContent).Damage;
+                            var data = []
+                            var wepData = weaponByName(wepbutton.textContent).Damage;
+                            for (var k = 0; k <= 15; k++) (function (k) {
+                                data.push(wepData.a + (wepData.b * (2.71828 ** (-wepData.c * ranges[k]))));
+                            })(k);
+                            window.ttk_dpm_chart.data.datasets[i].data = data;
                         }
-                        var data = []
-                        var wepData = weaponByName(wepbutton.textContent);
-                        for (var k = 0; k <= 15; k++) (function (k) {
-                            data.push(wepData.Damage.a + (wepData.Damage.b * (2.71828 ** (-wepData.Damage.c * ranges[k]))));
-                        })(k);
-                        window.ttk_dpm_chart.data.datasets[i].data = data;
+                        if (document.getElementById('ttk_dpm_dropdown').value == "Shots to Kill over Distance") {
+                            var data = []
+                            var wepData = weaponByName(wepbutton.textContent).Damage;
+                            for (var k = 0; k <= 15; k++) (function (k) {
+                                var damage_at_dist = (wepData.a + (wepData.b * (2.71828 ** (-wepData.c * ranges[k]))));
+                                var shots_to_kill = Math.ceil(10 / damage_at_dist);
+                                data.push(shots_to_kill)
+                            })(k);
+                            window.ttk_dpm_chart.data.datasets[i].data = data;
+                        }
+                        if (document.getElementById('ttk_dpm_dropdown').value == "Time to Kill over Distance") {
+                            var data = []
+                            var wepData = weaponByName(wepbutton.textContent);
+                            for (var k = 0; k <= 15; k++) (function (k) {
+                                var damage_at_dist = (wepData.Damage.a + (wepData.Damage.b * (2.71828 ** (-wepData.Damage.c * ranges[k]))));
+                                var shots_to_kill = Math.ceil(10 / damage_at_dist);
+                                var time_to_kill = (shots_to_kill - 1) * (60 / wepData.RPM)
+                                console.log(time_to_kill)
+                                data.push(time_to_kill)
+                            })(k);
+                            window.ttk_dpm_chart.data.datasets[i].data = data;
+                        }
+                        if (document.getElementById('ttk_dpm_dropdown').value == "Damage per Minute over Distance") {
+                            var data = []
+                            var wepData = weaponByName(wepbutton.textContent);
+                            for (var k = 0; k <= 15; k++) (function (k) {
+                                data.push(wepData.RPM * (wepData.Damage.a + (wepData.Damage.b * (2.71828 ** (-wepData.Damage.c * ranges[k])))));
+                            })(k);
+                            window.ttk_dpm_chart.data.datasets[i].data = data;
+                        }
                     }
 
                     // refresh
@@ -103,7 +136,17 @@
             })(j);
         })(i)
 
-        function ttk_dpm_dropdown() {
+        function ttk_dpm_reload() {
+            var buttons = document.getElementsByClassName("dropbtn");
+            for (var i = 0; i < buttons.length; i++) {
+                var text = buttons[i].textContent;
+                var wepbtns = buttons[i].parentElement.getElementsByClassName("wepbtn");
+                for (var j = 0; j < wepbtns.length; j++) {
+                    if (wepbtns[j].textContent == buttons[i].textContent) {
+                        wepbtns[j].onclick();
+                    }
+                }
+            }
         }
 
         function weaponByName(name) {
@@ -113,10 +156,11 @@
 
     <br><br><br>
     <b> Display the following: </b>
-    <select id="ttk_dpm_dropdown" onchange="ttk_dpm_dropdown()">
+    <select id="ttk_dpm_dropdown" onchange="ttk_dpm_reload()">
         <option> Damage over Distance </option>
-        <option> Time to Kill over Distance </option>
         <option> Damage per Minute over Distance </option>
+        <option> Shots to Kill over Distance </option>
+        <option> Time to Kill over Distance </option>
     </select>
     <br><br><br>
     <canvas id="myChart"></canvas>
