@@ -11,6 +11,7 @@
 <script type="text/javascript" src="weapon-data.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
 <script src="./dist/chart.min.js"></script>
+<script src="./dist/chartjs-plugin-annotation.min.js"></script>
 
 
 <script>
@@ -26,7 +27,17 @@
 <body>
     <div class="TITLE">Enlisted weapon comparison tool</div>
 
+    <!-- Vitality switch -->
+    <input type="checkbox" id="vitalityCheck" onclick="vitality()" style="position:absolute; top:200px; left:820px;">
+    <b style="position:absolute; top:201px; left:845px;"> Has vitality perk </b>
+
+    <!-- Body armor switch -->
+    <input type="checkbox" id="armorCheck" onclick="bodyArmor()" style="position:absolute; top:225px; left:820px;">
+    <b style="position:absolute; top:226px; left:845px;"> Wearing body armor </b>
+
     <script>
+        var MAX_DMG = document.getElementById("vitalityCheck").checked ? 13.5 : 10
+        var ARMOR_MULT = document.getElementById("armorCheck").checked ? 0.9 : 1
         var btncolors = ["greenbtn", "redbtn", "bluebtn", "magbtn"]
         for (var i = 0; i < 4; i++) (function (i) {
             var dropdown = document.createElement('div');
@@ -85,49 +96,36 @@
                     }
 
                     // update data
-                    var chartColors = ['rgba(0, 175, 0)', 'rgba(175, 0, 0)', 'rgba(0, 0, 175)', 'rgba(175, 175, 0)']
+                    show_death_threshold = false;
                     if (wepbutton.textContent == "(Remove)") {
                     }
                     else {
-                        if (document.getElementById('ttk_dpm_dropdown').value == "Damage over Distance") {
-                            var data = []
-                            var wepData = weaponByName(wepbutton.textContent).Damage;
-                            for (var k = 0; k <= 15; k++) (function (k) {
-                                data.push(wepData.a + (wepData.b * (2.71828 ** (-wepData.c * ranges[k]))));
-                            })(k);
-                            window.ttk_dpm_chart.data.datasets[i].data = data;
-                        }
-                        if (document.getElementById('ttk_dpm_dropdown').value == "Shots to Kill over Distance") {
-                            var data = []
-                            var wepData = weaponByName(wepbutton.textContent).Damage;
-                            for (var k = 0; k <= 15; k++) (function (k) {
-                                var damage_at_dist = (wepData.a + (wepData.b * (2.71828 ** (-wepData.c * ranges[k]))));
-                                var shots_to_kill = Math.ceil(10 / damage_at_dist);
+                        var data = [];
+                        var wepData = weaponByName(wepbutton.textContent);
+                        for (var k = 0; k <= 15; k++) (function (k) {
+                            var damage_at_dist = (wepData.Damage.a + (wepData.Damage.b * (2.71828 ** (-wepData.Damage.c * Math.max(ranges[k], 10)))) * ARMOR_MULT);
+                            damage_at_dist = Math.max(damage_at_dist, 0.1);
+                            var shots_to_kill = Math.ceil(MAX_DMG / damage_at_dist);
+                            if (document.getElementById('ttk_dpm_dropdown').value == "Damage over Distance") {
+                                show_death_threshold = true;
+                                data.push(damage_at_dist);
+                            }
+                            if (document.getElementById('ttk_dpm_dropdown').value == "Shots to Kill over Distance") {
                                 data.push(shots_to_kill)
-                            })(k);
-                            window.ttk_dpm_chart.data.datasets[i].data = data;
-                        }
-                        if (document.getElementById('ttk_dpm_dropdown').value == "Time to Kill over Distance") {
-                            var data = []
-                            var wepData = weaponByName(wepbutton.textContent);
-                            for (var k = 0; k <= 15; k++) (function (k) {
-                                var damage_at_dist = (wepData.Damage.a + (wepData.Damage.b * (2.71828 ** (-wepData.Damage.c * ranges[k]))));
-                                var shots_to_kill = Math.ceil(10 / damage_at_dist);
+                            }
+                            if (document.getElementById('ttk_dpm_dropdown').value == "Time to Kill over Distance") {
                                 var time_to_kill = (shots_to_kill - 1) * (60 / wepData.RPM)
-                                console.log(time_to_kill)
                                 data.push(time_to_kill)
-                            })(k);
-                            window.ttk_dpm_chart.data.datasets[i].data = data;
-                        }
-                        if (document.getElementById('ttk_dpm_dropdown').value == "Damage per Minute over Distance") {
-                            var data = []
-                            var wepData = weaponByName(wepbutton.textContent);
-                            for (var k = 0; k <= 15; k++) (function (k) {
-                                data.push(wepData.RPM * (wepData.Damage.a + (wepData.Damage.b * (2.71828 ** (-wepData.Damage.c * ranges[k])))));
-                            })(k);
-                            window.ttk_dpm_chart.data.datasets[i].data = data;
-                        }
+                            }
+                            if (document.getElementById('ttk_dpm_dropdown').value == "Damage per Minute over Distance") {
+                                data.push(wepData.RPM * damage_at_dist);
+                            }
+                        })(k);
+                        window.ttk_dpm_chart.data.datasets[i].data = data;
                     }
+                    window.ttk_dpm_chart.options.plugins.annotation.annotations.line1.borderWidth = show_death_threshold ? 2 : 0;
+                    window.ttk_dpm_chart.options.plugins.annotation.annotations.line1.yMax = show_death_threshold ? MAX_DMG : 0;
+                    window.ttk_dpm_chart.options.plugins.annotation.annotations.line1.yMin = show_death_threshold ? MAX_DMG : 0;
 
                     // refresh
                     window.ttk_dpm_chart.update();
@@ -151,6 +149,16 @@
 
         function weaponByName(name) {
             return WEAPONS.filter(function (WEAPONS) { return (WEAPONS['Name'] == name); })[0];
+        }
+
+        function vitality() {
+            MAX_DMG = document.getElementById("vitalityCheck").checked ? 13.5 : 10
+            ttk_dpm_reload()
+        }
+
+        function bodyArmor() {
+            ARMOR_MULT = document.getElementById("armorCheck").checked ? 0.9 : 1
+            ttk_dpm_reload()
         }
     </script>
 
@@ -200,6 +208,20 @@
                 }]
             }
             var opts = {
+                plugins: {
+                    autocolors: false,
+                    annotation: {
+                        annotations: {
+                            line1: {
+                                type: 'line',
+                                yMin: 10,
+                                yMax: 10,
+                                borderColor: 'rgb(255, 0, 0)',
+                                borderWidth: 0,
+                            }
+                        }
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true
@@ -212,7 +234,16 @@
         </script>
     </div>
 
-
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <b> IMPORTANT NOTES: </b>
+    <p> Damage at less than 10m is the same as damage at 10m. <br>
+        This data accounts for base damage, which is done on body/arm shots. <br>
+        Hits to the head and neck to 210% damage, legs do 80% damage. <br>
+        Knife hits to the head are counted as hits to the body. <br>
+        Berlin allied body armor reduces ALL damage to the body by 10%. <br>
+        Helmets do not reduce damage, even with pistol shots. <br>
+        Any pistol that does 4.8 damage or more is OHK headshot. <br>
+        Recoil reduction "while standing" reduces recoil in all positions. </p>
 
 </body>
 
