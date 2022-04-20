@@ -7,6 +7,38 @@
     text-align:center;
 }
 
+/* Define some colors for the menu */
+.greenbtn:hover {
+    background-color: #4cca50;
+}
+.redbtn:hover {
+    background-color: #ca4c50;
+}
+.bluebtn:hover {
+    background-color: #4c50ca;
+}
+.magbtn:hover {
+    background-color: #ca4cca;
+}
+
+.topbtn{
+    min-width: 200px;
+    min-height: 50px;
+    max-width: 200px;
+    max-height: 50px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size-adjust: 0.7;
+}
+
+.submenu{
+    min-width: 200px;
+    min-height: 40px;
+    text-align: left;
+    font-family: "";
+    font-size-adjust: 0.5;
+}
+
 .greenbtn {
     background-color: #1cb021;
 }
@@ -20,62 +52,59 @@
     background-color: #b01cb0;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .greenbtn {
-    background-color: #4cca50;
+nav li {
+    background-color: #FFFFFF;
 }
-.dropdown:hover .redbtn {
-    background-color: #ca4c50;
-}
-.dropdown:hover .bluebtn {
-    background-color: #4c50ca;
-}
-.dropdown:hover .magbtn {
-    background-color: #ca4cca;
+nav li:hover{
+    background-color: #CCCCCC;
 }
 
-.dropbtn {
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    min-width: 120px;
+/* Basic menu declarations */
+
+nav {
+    font-size: 0; /* Remove annoying whitespace between Nav Elements (white-space-collapse got moved to CSS4) */
 }
-  
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-  
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-  
-/* Links inside the dropdown */
-.wepbtn {
-    border: none;
-    color: black;
-    padding: 12px 16px;
+
+nav a {
+    font-size: 1rem; /* Restore Font Size */
+    padding: 0.5em;
+    display: block; /* So we can have padding */
+    white-space: nowrap; /* No linebreaks in the menu */
     text-decoration: none;
-    display: block;
-    min-width: 160px;
-    text-align:left;
+    color: black;
 }
-  
-/* Change color of dropdown links on hover */
-.wepbtn:hover .wepbtn {background-color: #f1f1f1}
-  
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+
+nav ul {
+    list-style: none; /* Remove Bullets from Lists */
+    padding: 0; /* remove default browser padding */
+    top: 50px;
+}
+
+/* Any list item in the menu */
+nav li {
+    position: relative; /* positioned so this is the reference. Required to be able to have the sub menu show up at the same level */
+    display: inline-block;
+    z-index: 99;
+}
+
+/* All Sub menues */
+nav ul ul {
+    display: none; /* Hide sub menu by default */
+    position: absolute; /* Absolute position to push the sub menu out of the box instead of making the box larger and having the top level menu pushed down */
+}
+
+/* Show sub menu on hover */
+nav li:hover > ul {
     display: block;
 }
 
+/* Any sub menu below the second level (Flyout menues in the dropdown) */
+nav ul ul ul {
+    left: 100%; /* Pushes the menu to the right of it's parent */
+    top: 0; /* Make it appear at the same level as it's parent */
+}
 
+/* Make the dropdown menu (first level) at least as wide as it's parent */
+nav > ul > li > ul > li {
+    min-width: 100%;
+}

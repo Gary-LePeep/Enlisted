@@ -39,69 +39,103 @@
         var MAX_DMG = document.getElementById("vitalityCheck").checked ? 13.5 : 10
         var ARMOR_MULT = document.getElementById("armorCheck").checked ? 0.9 : 1
         var btncolors = ["greenbtn", "redbtn", "bluebtn", "magbtn"]
-        for (var i = 0; i < 4; i++) (function (i) {
-            var dropdown = document.createElement('div');
-            dropdown.className = "dropdown";
-            document.getElementsByTagName('BODY')[0].appendChild(dropdown);
 
-            var button = document.createElement('button');
-            button.className = "dropbtn " + btncolors[i];
-            button.textContent = "Weapon " + (i + 1);
-            dropdown.append(button);
+        var headerbox = document.createElement('header');
+        headerbox.id = "header-box";
+        document.getElementsByTagName('BODY')[0].appendChild(headerbox);
 
-            var content = document.createElement('div');
-            content.className = "dropdown-content";
-            dropdown.append(content);
+        var header = document.createElement('div');
+        header.className = "header";
+        headerbox.append(header);
 
-            for (var j = 0; j < WEAPONS.length; j++) (function (j) {
-                var wepbutton = document.createElement('button');
-                wepbutton.className = "wepbtn";
-                wepbutton.textContent = WEAPONS[j].Name == null ? "(Remove)" : WEAPONS[j].Name;
-                wepbutton.onclick = function () {
-                    button.textContent = wepbutton.textContent == "(Remove)" ? "Weapon " + (i + 1) : wepbutton.textContent;
+        var primary = document.createElement("nav");
+        //primary.className("primary");
+        header.append(primary);
 
-                    // update labels
-                    var chartColors = ['rgba(0, 175, 0)', 'rgba(175, 0, 0)', 'rgba(0, 0, 175)', 'rgba(175, 0, 175)']
-                    if (wepbutton.textContent == "(Remove)") {
-                        // reset
-                        window.ttk_dpm_chart.data.datasets[i] = {
-                            label: 'Weapon ' + (i + 1),
-                            backgroundColor: [chartColors[i]],
-                            borderColor: [chartColors[i]],
+        var primarylist = document.createElement("ul");
+        primary.append(primarylist)
+        for (var h = 0; h < 4; h++) (function (h) {
+            var colorButton = document.createElement("li");
+            colorButton.className = "link topbtn " + btncolors[h];
+            primarylist.append(colorButton);
+
+            var colorButtonText = document.createElement("a");
+            colorButtonText.style = "color: white";
+            colorButtonText.text = "Weapon " + (h + 1);
+            colorButton.append(colorButtonText);
+
+            var categorylist = document.createElement("ul");
+            colorButton.append(categorylist)
+
+            for (var i = -1; i < WEAPONS.length; i++) (function (i) {
+                var categoryButton = document.createElement("li");
+                categoryButton.className = "Link submenu";
+                categorylist.append(categoryButton);
+
+                var categoryButtonText = document.createElement("a");
+                categoryButtonText.text = i < 0 ? "(Remove)" : WEAPONS[i].Category;
+                categoryButton.append(categoryButtonText);
+
+                categoryButton.onclick = function () {
+                    if (categoryButtonText.text == "(Remove)") {
+                        // reset color button
+                        colorButtonText.text = "Weapon " + (h + 1);
+
+                        // remove data point
+                        var chartColors = ['rgba(0, 175, 0)', 'rgba(175, 0, 0)', 'rgba(0, 0, 175)', 'rgba(175, 0, 175)']
+                        window.ttk_dpm_chart.data.datasets[h] = {
+                            label: 'Weapon ' + (h + 1),
+                            backgroundColor: [chartColors[h]],
+                            borderColor: [chartColors[h]],
                             borderWidth: 5
                         }
+                        window.ttk_dpm_chart.update();
                     }
-                    else {
+                }
+
+                var weaponlist = document.createElement("ul");
+                categoryButton.append(weaponlist)
+
+                for (var j = 0; i >= 0 && j < WEAPONS[i].Weapons.length; j++) (function (j) {
+                    var weaponButton = document.createElement("li");
+                    weaponButton.className = "link submenu";
+                    weaponlist.append(weaponButton);
+
+                    var weaponButtonText = document.createElement("a");
+                    weaponButtonText.text = WEAPONS[i].Weapons[j].Name;
+                    weaponButton.append(weaponButtonText);
+                    weaponButton.tagName = weaponButtonText.text;
+
+                    weaponButton.onclick = function () {
+                        // set color button name to selected weapon
+                        colorButtonText.text = weaponButtonText.text
+
                         // set legend to label
-                        window.ttk_dpm_chart.data.datasets[i].label = wepbutton.textContent
-                    }
+                        window.ttk_dpm_chart.data.datasets[h].label = weaponButtonText.text
 
-                    // find max range of all selected guns
-                    var range = 0;
-                    for (var k = 0; k < 4; k++) (function (k) {
-                        var wepData = weaponByName(window.ttk_dpm_chart.data.datasets[k].label)
-                        if (wepData != null && wepData.Range > range) {
-                            range = wepData.Range
+                        // find max range of all selected guns
+                        var range = 0;
+                        for (var k = 0; k < 4; k++) (function (k) {
+                            var wepData = weaponByName(window.ttk_dpm_chart.data.datasets[k].label)
+                            if (wepData != null && wepData.Range > range) {
+                                range = wepData.Range
+                            }
+                        })(k);
+                        // set x axis to range, in 1/15th increments
+                        var ranges = [];
+                        for (var k = 0; k <= 15; k++) (function (k) {
+                            ranges.push(range * k / 15);
+                        })(k);
+                        // if range changed, reload all data just to be sure
+                        if (window.ttk_dpm_chart.data.labels[15] != ranges[15]) {
+                            window.ttk_dpm_chart.data.labels = ranges;
+                            ttk_dpm_reload()
                         }
-                    })(k);
-                    // set x axis to range, in 1/15th increments
-                    var ranges = [];
-                    for (var k = 0; k <= 15; k++) (function (k) {
-                        ranges.push(range * k / 15);
-                    })(k);
-                    // if range changed, reload all data just to be sure
-                    if (window.ttk_dpm_chart.data.labels[15] != ranges[15]) {
-                        window.ttk_dpm_chart.data.labels = ranges;
-                        ttk_dpm_reload()
-                    }
 
-                    // update data
-                    show_death_threshold = false;
-                    if (wepbutton.textContent == "(Remove)") {
-                    }
-                    else {
+                        // update data
+                        show_death_threshold = false;
                         var data = [];
-                        var wepData = weaponByName(wepbutton.textContent);
+                        var wepData = weaponByName(weaponButtonText.text);
                         for (var k = 0; k <= 15; k++) (function (k) {
                             var damage_at_dist = (wepData.Damage.a + (wepData.Damage.b * (2.71828 ** (-wepData.Damage.c * Math.max(ranges[k], 10)))) * ARMOR_MULT);
                             damage_at_dist = Math.max(damage_at_dist, 0.1);
@@ -121,26 +155,28 @@
                                 data.push(wepData.RPM * damage_at_dist);
                             }
                         })(k);
-                        window.ttk_dpm_chart.data.datasets[i].data = data;
-                    }
-                    window.ttk_dpm_chart.options.plugins.annotation.annotations.line1.borderWidth = show_death_threshold ? 2 : 0;
-                    window.ttk_dpm_chart.options.plugins.annotation.annotations.line1.yMax = show_death_threshold ? MAX_DMG : 0;
-                    window.ttk_dpm_chart.options.plugins.annotation.annotations.line1.yMin = show_death_threshold ? MAX_DMG : 0;
 
-                    // refresh
-                    window.ttk_dpm_chart.update();
-                };
-                content.append(wepbutton);
-            })(j);
-        })(i)
+                        // set data
+                        window.ttk_dpm_chart.data.datasets[h].data = data;
+                        window.ttk_dpm_chart.options.plugins.annotation.annotations.line1.borderWidth = show_death_threshold ? 2 : 0;
+                        window.ttk_dpm_chart.options.plugins.annotation.annotations.line1.yMax = show_death_threshold ? MAX_DMG : 0;
+                        window.ttk_dpm_chart.options.plugins.annotation.annotations.line1.yMin = show_death_threshold ? MAX_DMG : 0;
+
+                        // refresh
+                        window.ttk_dpm_chart.update();
+                    }
+                })(j)
+            })(i)
+        })(h)
 
         function ttk_dpm_reload() {
-            var buttons = document.getElementsByClassName("dropbtn");
+            var buttons = document.getElementsByClassName("topbtn");
             for (var i = 0; i < buttons.length; i++) {
-                var text = buttons[i].textContent;
-                var wepbtns = buttons[i].parentElement.getElementsByClassName("wepbtn");
+                var text = buttons[i].childNodes[0].textContent
+                var wepbtns = buttons[i].getElementsByTagName("LI");
                 for (var j = 0; j < wepbtns.length; j++) {
-                    if (wepbtns[j].textContent == buttons[i].textContent) {
+                    if (wepbtns[j].textContent == text) {
+                        console.log(wepbtns[j])
                         wepbtns[j].onclick();
                     }
                 }
@@ -148,7 +184,13 @@
         }
 
         function weaponByName(name) {
-            return WEAPONS.filter(function (WEAPONS) { return (WEAPONS['Name'] == name); })[0];
+            for (var i = 0; i < WEAPONS.length; i++) {
+                for (var j = 0; j < WEAPONS[i].Weapons.length; j++) {
+                    if (WEAPONS[i].Weapons[j].Name == name) {
+                        return WEAPONS[i].Weapons[j];
+                    }
+                }
+            }
         }
 
         function vitality() {
@@ -161,6 +203,7 @@
             ttk_dpm_reload()
         }
     </script>
+
 
     <br><br><br>
     <b> Display the following: </b>
@@ -238,11 +281,10 @@
     <b> IMPORTANT NOTES: </b>
     <p> Damage at less than 10m is the same as damage at 10m. <br>
         This data accounts for base damage, which is done on body/arm shots. <br>
-        Hits to the head and neck to 210% damage, legs do 80% damage. <br>
+        Hits to the head and neck do 210% damage, legs do 80% damage. <br>
         Knife hits to the head are counted as hits to the body. <br>
         Berlin allied body armor reduces ALL damage to the body by 10%. <br>
-        Helmets do not reduce damage, even with pistol shots. <br>
-        Any pistol that does 4.8 damage or more is OHK headshot. <br>
+        Helmets do not reduce damage, even with pistol shots. (4.8 damage pistol or more is OHK headshot.) <br>
         Recoil reduction "while standing" reduces recoil in all positions. </p>
 
 </body>
