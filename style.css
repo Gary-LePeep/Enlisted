@@ -2,23 +2,23 @@
     font-size:24px;
     font-weight:bold;
     color:white;
-    background-color:green;
+    background-color:#395353;
     padding:10px;
     text-align:center;
 }
 
 /* Define some colors for the menu */
 .greenbtn:hover {
-    background-color: #4cca50;
+    background-color: #25ac88;
 }
 .redbtn:hover {
-    background-color: #ca4c50;
+    background-color: #d65153;
 }
 .bluebtn:hover {
-    background-color: #4c50ca;
+    background-color: #6265c1;
 }
 .magbtn:hover {
-    background-color: #ca4cca;
+    background-color: #db7329;
 }
 
 .topbtn{
@@ -40,16 +40,16 @@
 }
 
 .greenbtn {
-    background-color: #1cb021;
+    background-color: #009e73;
 }
 .redbtn {
-    background-color: #b01c21;
+    background-color: #cf3437;
 }
 .bluebtn {
-    background-color: #1c21b0;
+    background-color: #474bb6;
 }
 .magbtn {
-    background-color: #b01cb0;
+    background-color: #d55c05;
 }
 
 nav li {
