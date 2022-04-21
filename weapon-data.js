@@ -1,9 +1,11 @@
 var WEAPONS = [
     {
-        "Category" : "Allied Assault Weapons",
+        "Category EN" : "Allied Assault Weapons",
+        "Category RU" : "Штурм. Оружие Союз.",
         "Weapons" : [
             {
-                "Name": "Degtyarev PDM-42",
+                "Name EN": "Degtyarev PDM-42",
+                "Name RU" : "ПП Дегтярёва ПДМ-42",
                 "Damage" : {
                     "a" : 2.844851,
                     "b" : 4.694863,
@@ -13,7 +15,8 @@ var WEAPONS = [
                 "RPM" : 655
             },
             {
-                "Name": "Federov Avtomat",
+                "Name EN": "Federov Avtomat",
+                "Name RU" : "Автомат Федорова",
                 "Damage" : {
                     "a" : 0.06747286,
                     "b" : 10.59073,
@@ -23,7 +26,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "Kiraly 39M",
+                "Name EN": "Kiraly 39M",
+                "Name RU" : "Kiraly 39M",
                 "Damage" : {
                     "a" : 2.873372,
                     "b" : 4.345745,
@@ -33,7 +37,8 @@ var WEAPONS = [
                 "RPM" : 725
             },
             {
-                "Name": "Lanchester",
+                "Name EN": "Lanchester",
+                "Name RU" : "Lanchester",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -43,7 +48,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "M1 Thompson",
+                "Name EN": "M1 Thompson",
+                "Name RU" : "M1 Thompson",
                 "Damage" : {
                     "a" : -3.539908,
                     "b" : 10.61844,
@@ -53,7 +59,8 @@ var WEAPONS = [
                 "RPM" : 750
             },
             {
-                "Name": "M1A1 Thompson",
+                "Name EN": "M1A1 Thompson",
+                "Name RU" : "M1A1 Thompson",
                 "Damage" : {
                     "a" : -3.539908,
                     "b" : 10.61844,
@@ -63,7 +70,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "M3 SMG",
+                "Name EN": "M3 SMG",
+                "Name RU" : "ПП M3",
                 "Damage" : {
                     "a" : -3.539908,
                     "b" : 10.61844,
@@ -73,7 +81,8 @@ var WEAPONS = [
                 "RPM" : 365
             },
             {
-                "Name": "M3A1 SMG",
+                "Name EN": "M3A1 SMG",
+                "Name RU" : "ПП M3A1",
                 "Damage" : {
                     "a" : -3.539908,
                     "b" : 10.61844,
@@ -83,7 +92,8 @@ var WEAPONS = [
                 "RPM" : 390
             },
             {
-                "Name": "PPD 1929",
+                "Name EN": "PPD 1929",
+                "Name RU" : "ППД обр. 1929 г.",
                 "Damage" : {
                     "a" : 2.844851,
                     "b" : 4.694863,
@@ -93,7 +103,8 @@ var WEAPONS = [
                 "RPM" : 1050
             },
             {
-                "Name": "PPD-34/38",
+                "Name EN": "PPD-34/38",
+                "Name RU" : "ППД 34/38",
                 "Damage" : {
                     "a" : 2.331725,
                     "b" : 3.87577,
@@ -103,7 +114,8 @@ var WEAPONS = [
                 "RPM" : 765
             },
             {
-                "Name": "PPD-34/38 (box)",
+                "Name EN": "PPD-34/38 (box)",
+                "Name RU" : "ППД-34/38 (секторный)",
                 "Damage" : {
                     "a" : 2.331725,
                     "b" : 3.87577,
@@ -113,7 +125,8 @@ var WEAPONS = [
                 "RPM" : 765
             },
             {
-                "Name": "PPD-40",
+                "Name EN": "PPD-40",
+                "Name RU" : "ППД 40",
                 "Damage" : {
                     "a" : 2.331725,
                     "b" : 3.87577,
@@ -123,7 +136,8 @@ var WEAPONS = [
                 "RPM" : 860
             },
             {
-                "Name": "PPS-42",
+                "Name EN": "PPS-42",
+                "Name RU" : "ППС-42",
                 "Damage" : {
                     "a" : 2.331725,
                     "b" : 3.87577,
@@ -133,7 +147,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "PPS-43",
+                "Name EN": "PPS-43",
+                "Name RU" : "ППС-43",
                 "Damage" : {
                     "a" : 2.331725,
                     "b" : 3.87577,
@@ -143,7 +158,8 @@ var WEAPONS = [
                 "RPM" : 670
             },
             {
-                "Name": "PPSh-41",
+                "Name EN": "PPSh-41",
+                "Name RU" : "ППШ-41",
                 "Damage" : {
                     "a" : 2.331725,
                     "b" : 3.87577,
@@ -153,7 +169,8 @@ var WEAPONS = [
                 "RPM" : 955
             },
             {
-                "Name": "PPSh-41 (box)",
+                "Name EN": "PPSh-41 (box)",
+                "Name RU" : "ППШ-41 (секторный)",
                 "Damage" : {
                     "a" : 2.331725,
                     "b" : 3.87577,
@@ -163,7 +180,8 @@ var WEAPONS = [
                 "RPM" : 955
             },
             {
-                "Name": "Sten Mk II",
+                "Name EN": "Sten Mk II",
+                "Name RU" : "Sten Mk II",
                 "Damage" : {
                     "a" : 1.553725,
                     "b" : 4.485456,
@@ -173,7 +191,8 @@ var WEAPONS = [
                 "RPM" : 525
             },
             {
-                "Name": "Thompson M21/28",
+                "Name EN": "Thompson M21/28",
+                "Name RU" : "Thompson M21/28",
                 "Damage" : {
                     "a" : -3.539908,
                     "b" : 10.61844,
@@ -183,7 +202,8 @@ var WEAPONS = [
                 "RPM" : 670
             },
             {
-                "Name": "TOZ-B",
+                "Name EN": "TOZ-B",
+                "Name RU" : "ТОЗ-Б",
                 "Damage" : {
                     "a" : -7.745715,
                     "b" : 925.1337,
@@ -193,7 +213,8 @@ var WEAPONS = [
                 "RPM" : 230
             },
             {
-                "Name": "Winchester M1912",
+                "Name EN": "Winchester Model 1912",
+                "Name RU" : "Winchester Model 1912",
                 "Damage" : {
                     "a" : -7.745715,
                     "b" : 925.1337,
@@ -205,10 +226,12 @@ var WEAPONS = [
         ]
     },
     {
-        "Category" : "Axis Assault Weapons",
+        "Category EN" : "Axis Assault Weapons",
+        "Category RU" : "Штурм. Оружие Оси",
         "Weapons" : [
             {
-                "Name": "Beretta M1",
+                "Name EN": "Beretta M1",
+                "Name RU" : "Beretta M1",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -218,7 +241,8 @@ var WEAPONS = [
                 "RPM" : 475
             },
             {
-                "Name": "Beretta M1918",
+                "Name EN": "Beretta M1918",
+                "Name RU" : "Beretta M1918",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -228,7 +252,8 @@ var WEAPONS = [
                 "RPM" : 860
             },
             {
-                "Name": "Beretta M38",
+                "Name EN": "Beretta M38",
+                "Name RU" : "Beretta M38",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -238,7 +263,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "Beretta M38 (40)",
+                "Name EN": "Beretta M38 (40)",
+                "Name RU" : "Beretta M38 (40)",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -248,7 +274,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "Beretta M38/42",
+                "Name EN": "Beretta M38/42",
+                "Name RU" : "Beretta M38/42",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -258,7 +285,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "FNAB-43",
+                "Name EN": "FNAB-43",
+                "Name RU" : "FNAB-43",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -268,7 +296,8 @@ var WEAPONS = [
                 "RPM" : 380
             },
             {
-                "Name": "M30 Drilling",
+                "Name EN": "M30 Drilling",
+                "Name RU" : "M30 Luftwaffe Drilling",
                 "Damage" : {
                     "a" : -7.745715,
                     "b" : 925.1337,
@@ -278,7 +307,8 @@ var WEAPONS = [
                 "RPM" : 230
             },
             {
-                "Name": "MP 28",
+                "Name EN": "MP 28",
+                "Name RU" : "MP 28",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -288,7 +318,8 @@ var WEAPONS = [
                 "RPM" : 460
             },
             {
-                "Name": "MP 3008",
+                "Name EN": "MP 3008",
+                "Name RU" : "MP 3008",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -298,7 +329,8 @@ var WEAPONS = [
                 "RPM" : 430
             },
             {
-                "Name": "MP 34(o)",
+                "Name EN": "MP 34(o)",
+                "Name RU" : "MP 34(o)",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -308,7 +340,8 @@ var WEAPONS = [
                 "RPM" : 430
             },
             {
-                "Name": "MP 35/I",
+                "Name EN": "MP 35/I",
+                "Name RU" : "MP 35/I",
                 "Damage" : {
                     "a" : 2.55585,
                     "b" : 3.977516,
@@ -318,7 +351,8 @@ var WEAPONS = [
                 "RPM" : 515
             },
             {
-                "Name": "MP 38",
+                "Name EN": "MP 38",
+                "Name RU" : "MP 38",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -328,7 +362,8 @@ var WEAPONS = [
                 "RPM" : 470
             },
             {
-                "Name": "MP 40",
+                "Name EN": "MP 40",
+                "Name RU" : "MP 40",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -338,7 +373,8 @@ var WEAPONS = [
                 "RPM" : 475
             },
             {
-                "Name": "MP 43/1",
+                "Name EN": "MP 43/1",
+                "Name RU" : "MP 43/1",
                 "Damage" : {
                     "a" : 0.05324072,
                     "b" : 8.041614,
@@ -348,7 +384,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "MP-717(r)",
+                "Name EN": "MP-717(r)",
+                "Name RU" : "MP-717(r)",
                 "Damage" : {
                     "a" : 2.331725,
                     "b" : 3.87577,
@@ -358,7 +395,8 @@ var WEAPONS = [
                 "RPM" : 925
             },
             {
-                "Name": "OVP M1918",
+                "Name EN": "OVP M1918",
+                "Name RU" : "OVP M1918",
                 "Damage" : {
                     "a" : 2.589537,
                     "b" : 3.854636,
@@ -368,7 +406,8 @@ var WEAPONS = [
                 "RPM" : 860
             },
             {
-                "Name": "VG 1-5",
+                "Name EN": "VG 1-5",
+                "Name RU" : "VG 1-5",
                 "Damage" : {
                     "a" : 0.05324072,
                     "b" : 8.041614,
@@ -378,7 +417,8 @@ var WEAPONS = [
                 "RPM" : 305
             },
             {
-                "Name": "ZK-383",
+                "Name EN": "ZK-383",
+                "Name RU" : "ZK-383",
                 "Damage" : {
                     "a" : 2.477354,
                     "b" : 3.759807,
@@ -390,10 +430,12 @@ var WEAPONS = [
         ]
     },
     {
-        "Category" : "Allied Heavy Weapons",
+        "Category EN" : "Allied Heavy Weapons",
+        "Category RU" : "Тяжелое Вооруж. Союз.",
         "Weapons" : [
             {
-                "Name": "Boys ATR",
+                "Name EN": "Boys ATR",
+                "Name RU" : "ПТР Бойса",
                 "Damage" : {
                     "a" : 81.9792,
                     "b" : 68.6717,
@@ -403,7 +445,8 @@ var WEAPONS = [
                 "RPM" : 31
             },
             {
-                "Name": "Breda Mod. 30",
+                "Name EN": "Breda Mod. 30",
+                "Name RU" : "Breda Mod. 30",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -413,7 +456,8 @@ var WEAPONS = [
                 "RPM" : 460
             },
             {
-                "Name": "Bren Mk I",
+                "Name EN": "Bren Mk I",
+                "Name RU" : "Bren Mk I",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -423,7 +467,8 @@ var WEAPONS = [
                 "RPM" : 460
             },
             {
-                "Name": "Bren Mk II",
+                "Name EN": "Bren Mk II",
+                "Name RU" : "Bren Mk II",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -433,7 +478,8 @@ var WEAPONS = [
                 "RPM" : 460
             },
             {
-                "Name": "Browning M1918A1",
+                "Name EN": "Browning M1918A1",
+                "Name RU" : "Browning M1918A1",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -443,7 +489,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "Browning M1918A2",
+                "Name EN": "Browning M1918A2",
+                "Name RU" : "Browning M1918A2",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -453,7 +500,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "Browning M1918A6",
+                "Name EN": "Browning M1918A6",
+                "Name RU" : "Browning M1918A6",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -463,7 +511,8 @@ var WEAPONS = [
                 "RPM" : 475
             },
             {
-                "Name": "DP-27",
+                "Name EN": "DP-27",
+                "Name RU" : "ДП-27",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -473,7 +522,8 @@ var WEAPONS = [
                 "RPM" : 515
             },
             {
-                "Name": "DPM",
+                "Name EN": "DPM",
+                "Name RU" : "ДПМ",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -483,7 +533,8 @@ var WEAPONS = [
                 "RPM" : 530
             },
             {
-                "Name": "DT-29",
+                "Name EN": "DT-29",
+                "Name RU" : "ДТ-29",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -493,7 +544,8 @@ var WEAPONS = [
                 "RPM" : 510
             },
             {
-                "Name": "Madsen",
+                "Name EN": "Madsen",
+                "Name RU" : "Мадсен",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -503,7 +555,8 @@ var WEAPONS = [
                 "RPM" : 430
             },
             {
-                "Name": "PTRD-41",
+                "Name EN": "PTRD-41",
+                "Name RU" : "ПТРД-41",
                 "Damage" : {
                     "a" : 81.9792,
                     "b" : 68.6717,
@@ -513,7 +566,8 @@ var WEAPONS = [
                 "RPM" : 14.5
             },
             {
-                "Name": "PTRS 41",
+                "Name EN": "PTRS 41",
+                "Name RU" : "ПТРС 41",
                 "Damage" : {
                     "a" : 81.9792,
                     "b" : 68.6717,
@@ -523,7 +577,8 @@ var WEAPONS = [
                 "RPM" : 71.5
             },
             {
-                "Name": "Vickers-Berthier",
+                "Name EN": "Vickers-Berthier",
+                "Name RU" : "Виккерс-Бертье",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -535,10 +590,12 @@ var WEAPONS = [
         ]
     },
     {
-        "Category" : "Axis Heavy Weapons",
+        "Category EN" : "Axis Heavy Weapons",
+        "Category RU" : "Тяжелые Вооруж. Оси",
         "Weapons" : [
             {
-                "Name": "Breda Mod. 30",
+                "Name EN": "Breda Mod. 30",
+                "Name RU" : "Breda Mod. 30",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -548,7 +605,8 @@ var WEAPONS = [
                 "RPM" : 460
             },
             {
-                "Name": "MG 13",
+                "Name EN": "MG 13",
+                "Name RU" : "MG 13",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -558,7 +616,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "MG 34",
+                "Name EN": "MG 34",
+                "Name RU" : "MG 34",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -568,7 +627,8 @@ var WEAPONS = [
                 "RPM" : 765
             },
             {
-                "Name": "MG 34 with PT 34",
+                "Name EN": "MG 34 with PT 34",
+                "Name RU" : "MG 34 с PT 34",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -578,7 +638,8 @@ var WEAPONS = [
                 "RPM" : 765
             },
             {
-                "Name": "MG 42",
+                "Name EN": "MG 42",
+                "Name RU" : "MG 42",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -588,7 +649,8 @@ var WEAPONS = [
                 "RPM" : 860
             },
             {
-                "Name": "PzB-38",
+                "Name EN": "PzB-38",
+                "Name RU" : "PzB-38",
                 "Damage" : {
                     "a" : 22.44789,
                     "b" : 77.92211,
@@ -598,7 +660,8 @@ var WEAPONS = [
                 "RPM" : 11.5
             },
             {
-                "Name": "PzB-39",
+                "Name EN": "PzB-39",
+                "Name RU" : "PzB-39",
                 "Damage" : {
                     "a" : 22.44789,
                     "b" : 77.92211,
@@ -608,7 +671,8 @@ var WEAPONS = [
                 "RPM" : 11.5
             },
             {
-                "Name": "ZB-26",
+                "Name EN": "ZB-26",
+                "Name RU" : "ZB-26",
                 "Damage" : {
                     "a" : 9.054037,
                     "b" : 3.122273,
@@ -620,10 +684,12 @@ var WEAPONS = [
         ]
     },
     {
-        "Category" : "Allied Pistols",
+        "Category EN" : "Allied Pistols",
+        "Category RU" : "Пистолеты Союзников",
         "Weapons" : [
             {
-                "Name": "Browning Hi-Power",
+                "Name EN": "Browning Hi-Power",
+                "Name RU" : "Browning Hi-Power",
                 "Damage" : {
                     "a" : 1.553725,
                     "b" : 4.485456,
@@ -633,7 +699,8 @@ var WEAPONS = [
                 "RPM" : 400
             },
             {
-                "Name": "Colt New Service",
+                "Name EN": "Colt New Service",
+                "Name RU" : "Colt New Service",
                 "Damage" : {
                     "a" : -3.115312,
                     "b" : 9.88221,
@@ -643,7 +710,8 @@ var WEAPONS = [
                 "RPM" : 230
             },
             {
-                "Name": "Enfield No.2 MkI",
+                "Name EN": "Enfield No.2 MkI",
+                "Name RU" : "Enfield No.2 MkI",
                 "Damage" : {
                     "a" : 1.590529,
                     "b" : 3.948694,
@@ -653,7 +721,8 @@ var WEAPONS = [
                 "RPM" : 160
             },
             {
-                "Name": "M1911A1 Colt",
+                "Name EN": "M1911A1 Colt",
+                "Name RU" : "M1911A1 Colt",
                 "Damage" : {
                     "a" : -3.115312,
                     "b" : 9.88221,
@@ -663,7 +732,8 @@ var WEAPONS = [
                 "RPM" : 345
             },
             {
-                "Name": "Mauser C96",
+                "Name EN": "Mauser C96",
+                "Name RU" : "Mauser C96",
                 "Damage" : {
                     "a" : 0.3474573,
                     "b" : 5.94809,
@@ -673,7 +743,8 @@ var WEAPONS = [
                 "RPM" : 345
             },
             {
-                "Name": "Nagant 1895",
+                "Name EN": "Nagant 1895",
+                "Name RU" : "Наган обр. 1895",
                 "Damage" : {
                     "a" : 0.3798544,
                     "b" : 5.598529,
@@ -683,7 +754,8 @@ var WEAPONS = [
                 "RPM" : 86
             },
             {
-                "Name": "TK 1926",
+                "Name EN": "TK 1926",
+                "Name RU" : "ТК обр. 1926",
                 "Damage" : {
                     "a" : 0.2559431,
                     "b" : 4.945492,
@@ -693,7 +765,8 @@ var WEAPONS = [
                 "RPM" : 345
             },
             {
-                "Name": "TT",
+                "Name EN": "TT",
+                "Name RU" : "ТТ",
                 "Damage" : {
                     "a" : 0.3474573,
                     "b" : 5.94809,
@@ -703,7 +776,8 @@ var WEAPONS = [
                 "RPM" : 345
             },
             {
-                "Name": "Webley Mk VI Rev.",
+                "Name EN": "Webley Mk VI Revolver",
+                "Name RU" : "Webley Mk VI Revolver",
                 "Damage" : {
                     "a" : -3.829761,
                     "b" : 9.654322,
@@ -715,10 +789,12 @@ var WEAPONS = [
         ]
     },
     {
-        "Category" : "Axis Pistols",
+        "Category EN" : "Axis Pistols",
+        "Category RU" : "Пистолеты Оси",
         "Weapons" : [
             {
-                "Name": "Beretta M1923",
+                "Name EN": "Beretta M1923",
+                "Name RU" : "Beretta M1923",
                 "Damage" : {
                     "a" : 1.626266,
                     "b" : 4.211769,
@@ -728,7 +804,8 @@ var WEAPONS = [
                 "RPM" : 285
             },
             {
-                "Name": "Beretta M1934",
+                "Name EN": "Beretta M1934",
+                "Name RU" : "Beretta M1934",
                 "Damage" : {
                     "a" : 1.590529,
                     "b" : 3.948694,
@@ -738,7 +815,8 @@ var WEAPONS = [
                 "RPM" : 345
             },
             {
-                "Name": "Mauser C96",
+                "Name EN": "Mauser C96",
+                "Name RU" : "Mauser C96",
                 "Damage" : {
                     "a" : 0.3474573,
                     "b" : 5.94809,
@@ -748,7 +826,8 @@ var WEAPONS = [
                 "RPM" : 345
             },
             {
-                "Name": "P08 Luger",
+                "Name EN": "P08 Luger",
+                "Name RU" : "P08 Luger",
                 "Damage" : {
                     "a" : 1.553725,
                     "b" : 4.485456,
@@ -758,7 +837,8 @@ var WEAPONS = [
                 "RPM" : 345
             },
             {
-                "Name": "Walther P38",
+                "Name EN": "Walther P38",
+                "Name RU" : "Walther P38",
                 "Damage" : {
                     "a" : 1.553725,
                     "b" : 4.485456,
@@ -768,7 +848,8 @@ var WEAPONS = [
                 "RPM" : 345
             },
             {
-                "Name": "Walther PP",
+                "Name EN": "Walther PP",
+                "Name RU" : "Walther PP",
                 "Damage" : {
                     "a" : 0.3798544,
                     "b" : 5.598529,
@@ -778,7 +859,8 @@ var WEAPONS = [
                 "RPM" : 345
             },
             {
-                "Name": "Walther PPK",
+                "Name EN": "Walther PPK",
+                "Name RU" : "Walther PPK",
                 "Damage" : {
                     "a" : 0.3798544,
                     "b" : 5.598529,
@@ -790,10 +872,12 @@ var WEAPONS = [
         ]
     },
     {
-        "Category" : "Allied Rifles",
+        "Category EN" : "Allied Rifles",
+        "Category RU" : "Винтовки Союзников",
         "Weapons" : [
             {
-                "Name": "AVS 36",
+                "Name EN": "AVS 36",
+                "Name RU" : "АВС 36",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -803,7 +887,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "AVT-40",
+                "Name EN": "AVT-40",
+                "Name RU" : "АВТ-40",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -813,7 +898,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "Berdan II",
+                "Name EN": "Berdan II",
+                "Name RU" : "В. Бердана № 2",
                 "Damage" : {
                     "a" : 9.028172,
                     "b" : 16.57912,
@@ -823,7 +909,8 @@ var WEAPONS = [
                 "RPM" : 52.5
             },
             {
-                "Name": "Johnson M1941",
+                "Name EN": "Johnson M1941",
+                "Name RU" : "Johnson M1941",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -833,7 +920,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "Lee-Enfield No.4 MKI",
+                "Name EN": "Lee-Enfield No.4 MKI",
+                "Name RU" : "Lee-Enfield No.4 MKI",
                 "Damage" : {
                     "a" : 2.03345,
                     "b" : 12.27049,
@@ -843,7 +931,8 @@ var WEAPONS = [
                 "RPM" : 68.5
             },
             {
-                "Name": "Lee-Enfield No.4 MKI (T)",
+                "Name EN": "Lee-Enfield No.4 MKI (T)",
+                "Name RU" : "Lee-Enfield No.4 MKI (T)",
                 "Damage" : {
                     "a" : 9.16114,
                     "b" : 4.953115,
@@ -853,7 +942,8 @@ var WEAPONS = [
                 "RPM" : 68.5
             },
             {
-                "Name": "M1 Carbine",
+                "Name EN": "M1 Carbine",
+                "Name RU" : "M1 Carbine",
                 "Damage" : {
                     "a" : 1.925265,
                     "b" : 5.567893,
@@ -863,7 +953,8 @@ var WEAPONS = [
                 "RPM" : 305
             },
             {
-                "Name": "M1 Carbine w. gren.",
+                "Name EN": "M1 Carbine w. gren.",
+                "Name RU" : "M1 Carbine с ГМ",
                 "Damage" : {
                     "a" : 1.925265,
                     "b" : 5.567893,
@@ -873,7 +964,8 @@ var WEAPONS = [
                 "RPM" : 305
             },
             {
-                "Name": "M1 Garand",
+                "Name EN": "M1 Garand",
+                "Name RU" : "M1 Garand",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -883,7 +975,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "M1 Garand w. gren.",
+                "Name EN": "M1 Garand w. gren.",
+                "Name RU" : "M1 Garand с ГМ",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -893,7 +986,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "M1917 Enfield",
+                "Name EN": "M1917 Enfield",
+                "Name RU" : "M1917 Enfield",
                 "Damage" : {
                     "a" : 2.03345,
                     "b" : 12.27049,
@@ -903,7 +997,8 @@ var WEAPONS = [
                 "RPM" : 60
             },
             {
-                "Name": "M2 Carbine",
+                "Name EN": "M2 Carbine",
+                "Name RU" : "M2 Carbine",
                 "Damage" : {
                     "a" : 1.925265,
                     "b" : 5.567893,
@@ -913,7 +1008,8 @@ var WEAPONS = [
                 "RPM" : 715
             },
             {
-                "Name": "Mosin w. Daikonov",
+                "Name EN": "Mosin w. Daikonov",
+                "Name RU" : "В. Мосина с ГМ Дьяконова",
                 "Damage" : {
                     "a" : 0.1384082,
                     "b" : 15.13656,
@@ -923,7 +1019,8 @@ var WEAPONS = [
                 "RPM" : 51.5
             },
             {
-                "Name": "Mosin M1938 carb.",
+                "Name EN": "Mosin M1938 carb.",
+                "Name RU" : "Карабин Мосина обр. 1938 г.",
                 "Damage" : {
                     "a" : 3.161892,
                     "b" : 10.16921,
@@ -933,7 +1030,8 @@ var WEAPONS = [
                 "RPM" : 54.5
             },
             {
-                "Name": "Mosin M44 carbine",
+                "Name EN": "Mosin M44 carbine",
+                "Name RU" : "Карабин Мосина обр. 1944 г.",
                 "Damage" : {
                     "a" : 3.161892,
                     "b" : 10.16921,
@@ -943,7 +1041,8 @@ var WEAPONS = [
                 "RPM" : 62
             },
             {
-                "Name": "Mosin M91 Dragoon",
+                "Name EN": "Mosin M91 Dragoon",
+                "Name RU" : "«Драгунская» Мосинка",
                 "Damage" : {
                     "a" : 0.1384082,
                     "b" : 15.13656,
@@ -953,7 +1052,8 @@ var WEAPONS = [
                 "RPM" : 54.5
             },
             {
-                "Name": "Mosin M91/30",
+                "Name EN": "Mosin M91/30",
+                "Name RU" : "В. Мосина обр. 1891/30 г.",
                 "Damage" : {
                     "a" : 0.1384082,
                     "b" : 15.13656,
@@ -963,7 +1063,8 @@ var WEAPONS = [
                 "RPM" : 51.5
             },
             {
-                "Name": "Mosin M91/30 sniper",
+                "Name EN": "Mosin M91/30 sniper",
+                "Name RU" : "Снайперская В. Мосина обр. 1891/30 г.",
                 "Damage" : {
                     "a" : 9.664591,
                     "b" : 5.447525,
@@ -973,7 +1074,8 @@ var WEAPONS = [
                 "RPM" : 57.5
             },
             {
-                "Name": "Mosin M91/30 supressed",
+                "Name EN": "Mosin M91/30 supressed",
+                "Name RU" : "В. Мосина с глушителем",
                 "Damage" : {
                     "a" : 8.96114,
                     "b" : 4.953115,
@@ -983,7 +1085,8 @@ var WEAPONS = [
                 "RPM" : 66
             },
             {
-                "Name": "Ross Mk. III",
+                "Name EN": "Ross Mk. III",
+                "Name RU" : "В. Росса Mk. III",
                 "Damage" : {
                     "a" : 2.03345,
                     "b" : 12.27049,
@@ -993,7 +1096,8 @@ var WEAPONS = [
                 "RPM" : 68.5
             },
             {
-                "Name": "SMLE Mk III",
+                "Name EN": "SMLE Mk III",
+                "Name RU" : "SMLE Mk III",
                 "Damage" : {
                     "a" : 2.03345,
                     "b" : 12.27049,
@@ -1003,7 +1107,8 @@ var WEAPONS = [
                 "RPM" : 53.5
             },
             {
-                "Name": "SMLE Mk III* w. gren.",
+                "Name EN": "SMLE Mk III* w. gren.",
+                "Name RU" : "SMLE Mk III* с ГМ",
                 "Damage" : {
                     "a" : 2.03345,
                     "b" : 12.27049,
@@ -1013,7 +1118,8 @@ var WEAPONS = [
                 "RPM" : 68.5
             },
             {
-                "Name": "Sniper AVS-36",
+                "Name EN": "Sniper AVS-36",
+                "Name RU" : "Снайперская АВС-36",
                 "Damage" : {
                     "a" : 0.08942289,
                     "b" : 12.11327,
@@ -1023,7 +1129,8 @@ var WEAPONS = [
                 "RPM" : 575
             },
             {
-                "Name": "Sniper M1 Garand",
+                "Name EN": "Sniper M1 Garand",
+                "Name RU" : "Снайперский M1 Garand",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -1033,7 +1140,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "Sniper SVT-38",
+                "Name EN": "Sniper SVT-38",
+                "Name RU" : "Снайперская СВТ-38",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -1043,7 +1151,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "Sniper SVT-40",
+                "Name EN": "Sniper SVT-40",
+                "Name RU" : "Снайперская СВТ-40",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -1053,7 +1162,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "Springfield M1903A1",
+                "Name EN": "Springfield M1903A1",
+                "Name RU" : "Springfield M1903A1",
                 "Damage" : {
                     "a" : 9.16114,
                     "b" : 4.953115,
@@ -1063,7 +1173,8 @@ var WEAPONS = [
                 "RPM" : 57.5
             },
             {
-                "Name": "Springfield M1903A4",
+                "Name EN": "Springfield M1903A4",
+                "Name RU" : "Springfield M1903A4",
                 "Damage" : {
                     "a" : 9.16114,
                     "b" : 4.953115,
@@ -1073,7 +1184,8 @@ var WEAPONS = [
                 "RPM" : 63
             },
             {
-                "Name": "SVT-38",
+                "Name EN": "SVT-38",
+                "Name RU" : "СВТ-38",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -1083,7 +1195,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "SVT 40",
+                "Name EN": "SVT 40",
+                "Name RU" : "СВТ 40",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -1093,7 +1206,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "Winchester M1895",
+                "Name EN": "Winchester M1895",
+                "Name RU" : "Винчестер М1895",
                 "Damage" : {
                     "a" : 0.1384082,
                     "b" : 15.13656,
@@ -1105,10 +1219,12 @@ var WEAPONS = [
         ]
     },
     {
-        "Category" : "Axis Rifles",
+        "Category EN" : "Axis Rifles",
+        "Category RU" : "Винтовки Оси",
         "Weapons" : [
             {
-                "Name": "Armaguerra Mod. 39",
+                "Name EN": "Armaguerra Mod. 39",
+                "Name RU" : "Armaguerra Mod. 39",
                 "Damage" : {
                     "a" : 1.207901,
                     "b" : 10.33268,
@@ -1118,7 +1234,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "Carcano M1891",
+                "Name EN": "Carcano M1891",
+                "Name RU" : "Carcano M1891",
                 "Damage" : {
                     "a" : 5.043621,
                     "b" : 9.464627,
@@ -1128,7 +1245,8 @@ var WEAPONS = [
                 "RPM" : 54.5
             },
             {
-                "Name": "Carcano M91 w. scope",
+                "Name EN": "Carcano M91 w. scope",
+                "Name RU" : "Снайперский Carcano M91",
                 "Damage" : {
                     "a" : 5.043621,
                     "b" : 9.464627,
@@ -1138,7 +1256,8 @@ var WEAPONS = [
                 "RPM" : 37
             },
             {
-                "Name": "Carcano Mod. 38",
+                "Name EN": "Carcano Mod. 38",
+                "Name RU" : "Carcano Mod. 38",
                 "Damage" : {
                     "a" : 2.777539,
                     "b" : 11.33889,
@@ -1148,7 +1267,8 @@ var WEAPONS = [
                 "RPM" : 63
             },
             {
-                "Name": "Carcano Mod. 38 w. scope",
+                "Name EN": "Carcano Mod. 38 w. scope",
+                "Name RU" : "Carcano Mod. 38 снайперский",
                 "Damage" : {
                     "a" : 8.96114,
                     "b" : 4.953115,
@@ -1158,7 +1278,8 @@ var WEAPONS = [
                 "RPM" : 63
             },
             {
-                "Name": "FG 42",
+                "Name EN": "FG 42",
+                "Name RU" : "FG 42",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -1168,7 +1289,8 @@ var WEAPONS = [
                 "RPM" : 715
             },
             {
-                "Name": "FG 42 II",
+                "Name EN": "FG 42 II",
+                "Name RU" : "FG 42 II",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -1178,7 +1300,8 @@ var WEAPONS = [
                 "RPM" : 715
             },
             {
-                "Name": "Gewehr 1888",
+                "Name EN": "Gewehr 1888",
+                "Name RU" : "Gewehr 1888",
                 "Damage" : {
                     "a" : 2.855389,
                     "b" : 14.71019,
@@ -1188,7 +1311,8 @@ var WEAPONS = [
                 "RPM" : 39
             },
             {
-                "Name": "Gewehr 41",
+                "Name EN": "Gewehr 41",
+                "Name RU" : "Gewehr 41",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -1198,7 +1322,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "Gewehr 43",
+                "Name EN": "Gewehr 43",
+                "Name RU" : "Gewehr 43",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -1208,7 +1333,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "Gewehr 98 w. scope",
+                "Name EN": "Gewehr 98 w. scope",
+                "Name RU" : "Gewehr 98 с оптикой",
                 "Damage" : {
                     "a" : 9.788447,
                     "b" : 6.34831,
@@ -1218,7 +1344,8 @@ var WEAPONS = [
                 "RPM" : 51.5
             },
             {
-                "Name": "Kar98k",
+                "Name EN": "Kar98k",
+                "Name RU" : "Kar98k",
                 "Damage" : {
                     "a" : 3.3663,
                     "b" : 10.99683,
@@ -1228,7 +1355,8 @@ var WEAPONS = [
                 "RPM" : 63
             },
             {
-                "Name": "Kar98k w. GPP/40",
+                "Name EN": "Kar98k w. GPP/40",
+                "Name RU" : "Kar98k с GPP/40",
                 "Damage" : {
                     "a" : 3.3663,
                     "b" : 10.99683,
@@ -1238,7 +1366,8 @@ var WEAPONS = [
                 "RPM" : 63
             },
             {
-                "Name": "Kar98k w. grenade",
+                "Name EN": "Kar98k w. Schiessbecher",
+                "Name RU" : "Kar98k с ГМ Schiessbecher",
                 "Damage" : {
                     "a" : 3.3663,
                     "b" : 10.99683,
@@ -1248,7 +1377,8 @@ var WEAPONS = [
                 "RPM" : 63
             },
             {
-                "Name": "Kar98k w. scope",
+                "Name EN": "Kar98k w. scope",
+                "Name RU" : "Kar98k с оптикой",
                 "Damage" : {
                     "a" : 9.16114,
                     "b" : 4.953115,
@@ -1258,7 +1388,8 @@ var WEAPONS = [
                 "RPM" : 63
             },
             {
-                "Name": "Mannlicher M1895",
+                "Name EN": "Mannlicher M1895",
+                "Name RU" : "Mannlicher M1895",
                 "Damage" : {
                     "a" : 3.062877,
                     "b" : 10.87694,
@@ -1268,7 +1399,8 @@ var WEAPONS = [
                 "RPM" : 74.5
             },
             {
-                "Name": "Mannlicher M93",
+                "Name EN": "Mannlicher M93",
+                "Name RU" : "Mannlicher M93",
                 "Damage" : {
                     "a" : 5.043621,
                     "b" : 9.464627,
@@ -1278,7 +1410,8 @@ var WEAPONS = [
                 "RPM" : 63
             },
             {
-                "Name": "MAS-36",
+                "Name EN": "MAS-36",
+                "Name RU" : "MAS-36",
                 "Damage" : {
                     "a" : 2.628857,
                     "b" : 10.38874,
@@ -1288,7 +1421,8 @@ var WEAPONS = [
                 "RPM" : 66
             },
             {
-                "Name": "MKb 42(H)",
+                "Name EN": "MKb 42(H)",
+                "Name RU" : "MKb 42(H)",
                 "Damage" : {
                     "a" : 2.134058,
                     "b" : 6.081512,
@@ -1298,7 +1432,8 @@ var WEAPONS = [
                 "RPM" : 475
             },
             {
-                "Name": "Pre-war Kar98k",
+                "Name EN": "Pre-war Kar98k",
+                "Name RU" : "Довоенный Kar98k",
                 "Damage" : {
                     "a" : 3.3663,
                     "b" : 10.99683,
@@ -1308,7 +1443,8 @@ var WEAPONS = [
                 "RPM" : 68.5
             },
             {
-                "Name": "Pre-war Kar98k w. scope",
+                "Name EN": "Pre-war Kar98k w. scope",
+                "Name RU" : "Довоенный Kar98k с оптикой",
                 "Damage" : {
                     "a" : 9.16114,
                     "b" : 4.953115,
@@ -1318,7 +1454,8 @@ var WEAPONS = [
                 "RPM" : 68.5
             },
             {
-                "Name": "Sniper Gewehr 41",
+                "Name EN": "Sniper Gewehr 41",
+                "Name RU" : "Снайперский Gewehr 41",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -1328,7 +1465,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "Sniper Gewehr 43",
+                "Name EN": "Sniper Gewehr 43",
+                "Name RU" : "Снайперский Gewehr 43",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,
@@ -1338,7 +1476,8 @@ var WEAPONS = [
                 "RPM" : 190
             },
             {
-                "Name": "Sniper MKb 42(H)",
+                "Name EN": "Sniper MKb 42(H)",
+                "Name RU" : "Снайперский MKb 42(H)",
                 "Damage" : {
                     "a" : 2.134058,
                     "b" : 6.081512,
@@ -1348,7 +1487,8 @@ var WEAPONS = [
                 "RPM" : 620
             },
             {
-                "Name": "VG.2",
+                "Name EN": "VG.2",
+                "Name RU" : "VG.2",
                 "Damage" : {
                     "a" : 3.3663,
                     "b" : 10.99683,
@@ -1358,7 +1498,8 @@ var WEAPONS = [
                 "RPM" : 50.5
             },
             {
-                "Name": "Vz. 24",
+                "Name EN": "Vz. 24",
+                "Name RU" : "Vz. 24",
                 "Damage" : {
                     "a" : 0.1384082,
                     "b" : 15.13656,
@@ -1368,7 +1509,8 @@ var WEAPONS = [
                 "RPM" : 57.5
             },
             {
-                "Name": "ZH-29",
+                "Name EN": "ZH-29",
+                "Name RU" : "ZH-29",
                 "Damage" : {
                     "a" : 2.544449,
                     "b" : 9.729522,

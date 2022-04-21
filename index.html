@@ -3,12 +3,42 @@
 
 <head>
 
+    <script>
+        function translate(text, type = "string", style = "") {
+            var LANG;
+            if (document.getElementById('language_dropdown').value == "English") {
+                LANG = EN;
+            }
+            if (document.getElementById('language_dropdown').value == "Русский") {
+                LANG = RU;
+            }
+            if (type == "string") {
+                return LANG[text];
+            }
+
+            var element = document.createElement(type)
+            element.style = style;
+
+            if (Array.isArray(LANG[text])) {
+                element.textContent = LANG[text].join("\r\n");
+                element.text = LANG[text].join("\r\n");
+                element.style += "; white-space: pre-line"
+            }
+            else {
+                element.textContent = LANG[text];
+                element.text = LANG[text];
+            }
+            return element;
+        }
+    </script>
+
 <body style="background-color:rgb(107, 133, 133);"></body>
 <title>
     Enlisted weapon comparison tool
 </title>
 
 <script type="text/javascript" src="weapon-data.js"></script>
+<script type="text/javascript" src="translations.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
 <script src="./dist/chart.min.js"></script>
 <script src="./dist/chartjs-plugin-annotation.min.js"></script>
@@ -25,15 +55,28 @@
 </head>
 
 <body>
-    <div class="TITLE">Enlisted weapon comparison tool</div>
 
-    <!-- Vitality switch -->
+    <select id="language_dropdown" onchange="window.location.reload();" style="position:absolute; top:20px; left:90%;">
+        <option> English </option>
+        <option> Русский </option>
+    </select>
+
+
+    <script>
+        var title = translate("title", "div");
+        title.className = "TITLE";
+        document.getElementsByTagName('BODY')[0].appendChild(title);
+
+        title.appendChild(translate("language", "b", "position:absolute; top:20px; left:85%; font-size:16px"));
+    </script>
+
+    <!-- Vitality & Body armor switches -->
     <input type="checkbox" id="vitalityCheck" onclick="vitality()" style="position:absolute; top:200px; left:820px;">
-    <b style="position:absolute; top:201px; left:845px;"> Has vitality perk </b>
-
-    <!-- Body armor switch -->
     <input type="checkbox" id="armorCheck" onclick="bodyArmor()" style="position:absolute; top:225px; left:820px;">
-    <b style="position:absolute; top:226px; left:845px;"> Wearing body armor </b>
+    <script>
+        document.getElementsByTagName('BODY')[0].appendChild(translate("vitality", "b", "position:absolute; top:200px; left:845px;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("armor", "b", "position:absolute; top:225px; left:845px;"));
+    </script>
 
     <script>
         var MAX_DMG = document.getElementById("vitalityCheck").checked ? 13.5 : 10
@@ -61,7 +104,7 @@
 
             var colorButtonText = document.createElement("a");
             colorButtonText.style = "color: white";
-            colorButtonText.text = "Weapon " + (h + 1);
+            colorButtonText.text = translate("Weapon") + (h + 1);
             colorButton.append(colorButtonText);
 
             var categorylist = document.createElement("ul");
@@ -73,13 +116,13 @@
                 categorylist.append(categoryButton);
 
                 var categoryButtonText = document.createElement("a");
-                categoryButtonText.text = i < 0 ? "(Remove)" : WEAPONS[i].Category;
+                categoryButtonText.text = i < 0 ? translate("Remove") : WEAPONS[i][translate("Category")];
                 categoryButton.append(categoryButtonText);
 
                 categoryButton.onclick = function () {
-                    if (categoryButtonText.text == "(Remove)") {
+                    if (categoryButtonText.text == translate("Remove")) {
                         // reset color button
-                        colorButtonText.text = "Weapon " + (h + 1);
+                        colorButtonText.text = translate("Weapon") + (h + 1);
 
                         // remove data point
                         var chartColors = ['rgba(0, 158, 115)', 'rgba(207, 52, 55)', 'rgba(71, 75, 182)', 'rgba(213, 92, 5)']
@@ -102,7 +145,7 @@
                     weaponlist.append(weaponButton);
 
                     var weaponButtonText = document.createElement("a");
-                    weaponButtonText.text = WEAPONS[i].Weapons[j].Name;
+                    weaponButtonText.text = WEAPONS[i].Weapons[j][translate("WepName")];
                     weaponButton.append(weaponButtonText);
                     weaponButton.tagName = weaponButtonText.text;
 
@@ -140,18 +183,18 @@
                             var damage_at_dist = (wepData.Damage.a + (wepData.Damage.b * (2.71828 ** (-wepData.Damage.c * Math.max(ranges[k], 10)))) * ARMOR_MULT);
                             damage_at_dist = Math.max(damage_at_dist, 0.1);
                             var shots_to_kill = Math.ceil(MAX_DMG / damage_at_dist);
-                            if (document.getElementById('ttk_dpm_dropdown').value == "Damage over Distance") {
+                            if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown1")) {
                                 show_death_threshold = true;
                                 data.push(damage_at_dist);
                             }
-                            if (document.getElementById('ttk_dpm_dropdown').value == "Shots to Kill over Distance") {
+                            if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown3")) {
                                 data.push(shots_to_kill)
                             }
-                            if (document.getElementById('ttk_dpm_dropdown').value == "Time to Kill over Distance") {
+                            if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown4")) {
                                 var time_to_kill = (shots_to_kill - 1) * (60 / wepData.RPM)
                                 data.push(time_to_kill)
                             }
-                            if (document.getElementById('ttk_dpm_dropdown').value == "Damage per Minute over Distance") {
+                            if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown2")) {
                                 data.push(wepData.RPM * damage_at_dist);
                             }
                         })(k);
@@ -186,7 +229,7 @@
         function weaponByName(name) {
             for (var i = 0; i < WEAPONS.length; i++) {
                 for (var j = 0; j < WEAPONS[i].Weapons.length; j++) {
-                    if (WEAPONS[i].Weapons[j].Name == name) {
+                    if (WEAPONS[i].Weapons[j][translate("WepName")] == name) {
                         return WEAPONS[i].Weapons[j];
                     }
                 }
@@ -206,13 +249,21 @@
 
 
     <br><br><br>
-    <b> Display the following: </b>
-    <select id="ttk_dpm_dropdown" onchange="ttk_dpm_reload()">
-        <option> Damage over Distance </option>
-        <option> Damage per Minute over Distance </option>
-        <option> Shots to Kill over Distance </option>
-        <option> Time to Kill over Distance </option>
-    </select>
+    
+    <script>
+        document.getElementsByTagName('BODY')[0].appendChild(translate("ttk_dpm_dropdown", "b"));
+
+        var ttk_dpm_dropdown = document.createElement("select");
+        ttk_dpm_dropdown.id = "ttk_dpm_dropdown";
+        ttk_dpm_dropdown.onchange = function() { ttk_dpm_reload(); };
+        document.getElementsByTagName('BODY')[0].appendChild(ttk_dpm_dropdown);
+
+        ttk_dpm_dropdown.append(translate("ttk_dpm_dropdown1", "option"));
+        ttk_dpm_dropdown.append(translate("ttk_dpm_dropdown2", "option"));
+        ttk_dpm_dropdown.append(translate("ttk_dpm_dropdown3", "option"));
+        ttk_dpm_dropdown.append(translate("ttk_dpm_dropdown4", "option"));
+    </script>
+
     <br><br><br>
     <canvas id="myChart"></canvas>
     <img src="resources/gray.jpg" style="position:absolute; top:200px; left:10px; width:800px; height:400px;">
@@ -226,25 +277,25 @@
                 type: 'line',
                 labels: [],
                 datasets: [{
-                    label: 'Weapon 1',
+                    label: translate("Weapon") + '1',
                     backgroundColor: ['rgba(0, 158, 115)'],
                     borderColor: ['rgba(0, 158, 115)'],
                     borderWidth: 5,
                 },
                 {
-                    label: 'Weapon 2',
+                    label: translate("Weapon") + '2',
                     backgroundColor: ['rgba(207, 52, 55)'],
                     borderColor: ['rgba(207, 52, 55)'],
                     borderWidth: 5
                 },
                 {
-                    label: 'Weapon 3',
+                    label: translate("Weapon") + '3',
                     backgroundColor: ['rgba(71, 75, 182)'],
                     borderColor: ['rgba(71, 75, 182)'],
                     borderWidth: 5,
                 },
                 {
-                    label: 'Weapon 4',
+                    label: translate("Weapon") + '4',
                     backgroundColor: ['rgba(213, 92, 5)'],
                     borderColor: ['rgba(213, 92, 5)'],
                     borderWidth: 5,
@@ -278,18 +329,15 @@
     </div>
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <b> IMPORTANT NOTES: </b>
-    <p> Damage at less than 10m is the same as damage at 10m. <br>
-        This data accounts for base damage, which is done on body/arm shots. <br>
-        Hits to the head and neck do 210% damage, legs do 80% damage. <br>
-        Knife hits to the head are counted as hits to the body. <br>
-        Berlin allied body armor reduces ALL damage to the body by 10%. <br>
-        Helmets do not reduce damage, even with pistol shots. (4.8 damage pistol or more is OHK headshot.) <br>
-        Recoil reduction "while standing" reduces recoil in all positions. </p>
+    <script>
+        document.getElementsByTagName('BODY')[0].appendChild(translate("footer_header", 'b'));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("footer_footer", 'p'));
+    </script>
 
     <br><br>
-    <p style="text-align: center; color: #002244"> For any issues, suggestions, etc. contact 10art1#8181 on discord </p>
-
+    <script>
+        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "text-align: center; color: #002244"));
+    </script>
 </body>
 
 </html>
