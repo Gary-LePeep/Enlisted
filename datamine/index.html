@@ -84,7 +84,8 @@
         var categorylist = document.createElement("ul");
         colorButton.append(categorylist)
 
-        // Data
+        /* Data */
+        // Name
         var dataDiv = document.createElement("div");
         dataDiv.style = "position: relative; left: 30%";
         document.getElementsByTagName('BODY')[0].appendChild(dataDiv)
@@ -92,18 +93,24 @@
         var gunName = translate("gunName", "div");
         dataDiv.append(gunName);
         var gunNameData = document.createElement("b");
-        gunNameData.textContent = "PPD-40";
+        gunNameData.textContent = "-";
         gunName.append(gunNameData);
 
         var gunIGN = translate("gunIGN", "div");
         dataDiv.append(gunIGN);
         var gunIGNData = document.createElement("b");
-        gunIGNData.textContent = "PPD-40";
+        gunIGNData.textContent = "-";
         gunIGN.append(gunIGNData);
 
-        loadJSON(function (json) {
-            console.log(json); // this will log out the json object
-        });
+        dataDiv.append(document.createElement("div"));
+
+        var rpm = translate("rpm", "div");
+        dataDiv.append(rpm);
+        var rpmData = document.createElement("b");
+        rpmData.textContent = "-";
+        rpm.append(rpmData);
+
+
 
         for (var i = -1; i < WEAPONS.length; i++) (function (i) {
             var categoryButton = document.createElement("li");
@@ -118,6 +125,9 @@
                 if (categoryButtonText.text == translate("Remove")) {
                     // reset color button
                     colorButtonText.text = translate("Weapon");
+                    gunNameData.textContent = "-";
+                    gunIGNData.textContent = "-";
+                    rpmData.textContent = "-";
                 }
             }
 
@@ -137,6 +147,20 @@
                 weaponButton.onclick = function () {
                     // set color button name to selected weapon
                     colorButtonText.text = weaponButtonText.text
+
+                    var allData;
+                    loadJSON(function (json) {
+                        allData = json;
+                    });
+                    console.log(allData);
+
+                    gunNameData.textContent = WEAPONS[i].Weapons[j][translate("WepName")];
+                    gunIGNData.textContent = WEAPONS[i].Weapons[j]["Name Game"];
+                    for (data in allData[gunIGNData.textContent]) {
+                        if (data.hasOwnProperty("gun__shotFreq")) {
+                            rpmData.textContent = Math.round(data["gun__shotFreq"] * 60);
+                        }
+                    }
                 }
             })(j)
         })(i)
