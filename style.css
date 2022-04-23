@@ -24,8 +24,6 @@
 .topbtn{
     min-width: 200px;
     min-height: 50px;
-    max-width: 200px;
-    max-height: 50px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size-adjust: 0.7;
@@ -69,9 +67,9 @@ nav a {
     font-size: 1rem; /* Restore Font Size */
     padding: 0.5em;
     display: block; /* So we can have padding */
-    white-space: nowrap; /* No linebreaks in the menu */
     text-decoration: none;
     color: black;
+    word-break: break-word;
 }
 
 nav ul {

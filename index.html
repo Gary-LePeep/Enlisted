@@ -98,9 +98,12 @@
         var primarylist = document.createElement("ul");
         primary.append(primarylist)
         for (var h = 0; h < 4; h++) (function (h) {
+            var colorButtonContainer = document.createElement("li");
+            primarylist.append(colorButtonContainer);
+
             var colorButton = document.createElement("li");
             colorButton.className = "link topbtn " + btncolors[h];
-            primarylist.append(colorButton);
+            colorButtonContainer.append(colorButton);
 
             var colorButtonText = document.createElement("a");
             colorButtonText.style = "color: white";
@@ -109,6 +112,16 @@
 
             var categorylist = document.createElement("ul");
             colorButton.append(categorylist)
+
+            var starsDropdownContainer = document.createElement("div");
+            starsDropdownContainer.style = "background-color: rgb(107, 133, 133); text-align: center; padding: 10px"
+            colorButtonContainer.append(starsDropdownContainer);
+            var starsDropdown = document.createElement("select");
+            starsDropdown.id = "starsDropdown";
+            starsDropdownContainer.append(starsDropdown);
+            var defaultOption = document.createElement("option");
+            defaultOption.textContent = "☆☆☆☆☆";
+            starsDropdown.append(defaultOption);
 
             for (var i = -1; i < WEAPONS.length; i++) (function (i) {
                 var categoryButton = document.createElement("li");
@@ -133,6 +146,12 @@
                             borderWidth: 5
                         }
                         window.ttk_dpm_chart.update();
+
+                        // clear stars
+                        starsDropdown.textContent = '';
+                        var defaultOption = document.createElement("option");
+                        defaultOption.textContent = "☆☆☆☆☆";
+                        starsDropdown.append(defaultOption);
                     }
                 }
 
@@ -181,6 +200,7 @@
                         var wepData = weaponByName(weaponButtonText.text);
                         for (var k = 0; k <= 15; k++) (function (k) {
                             var damage_at_dist = (wepData.Damage.a + (wepData.Damage.b * (2.71828 ** (-wepData.Damage.c * Math.max(ranges[k], 10)))) * ARMOR_MULT);
+                            //var damage_at_dist = ((wepData.Damage.d + ((wepData.Damage.a - wepData.Damage.d) / (1 + ((Math.max(ranges[k], 10) / wepData.Damage.c) ** wepData.Damage.b)))) * ARMOR_MULT);
                             damage_at_dist = Math.max(damage_at_dist, 0.1);
                             var shots_to_kill = Math.ceil(MAX_DMG / damage_at_dist);
                             if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown1")) {
@@ -207,6 +227,14 @@
 
                         // refresh
                         window.ttk_dpm_chart.update();
+
+                        // display stars
+                        starsDropdown.textContent = '';
+                        for (var k = 0; k < wepData.Stars.length; k++) (function (k) {
+                            var option = document.createElement("option")
+                            option.textContent = "★".repeat(Object.keys(wepData.Stars[k])[0])
+                            starsDropdown.append(option);
+                        })(k);
                     }
                 })(j)
             })(i)
@@ -219,7 +247,6 @@
                 var wepbtns = buttons[i].getElementsByTagName("LI");
                 for (var j = 0; j < wepbtns.length; j++) {
                     if (wepbtns[j].textContent == text) {
-                        console.log(wepbtns[j])
                         wepbtns[j].onclick();
                     }
                 }
@@ -247,15 +274,14 @@
         }
     </script>
 
+    <br>
 
-    <br><br><br>
-    
     <script>
         document.getElementsByTagName('BODY')[0].appendChild(translate("ttk_dpm_dropdown", "b"));
 
         var ttk_dpm_dropdown = document.createElement("select");
         ttk_dpm_dropdown.id = "ttk_dpm_dropdown";
-        ttk_dpm_dropdown.onchange = function() { ttk_dpm_reload(); };
+        ttk_dpm_dropdown.onchange = function () { ttk_dpm_reload(); };
         document.getElementsByTagName('BODY')[0].appendChild(ttk_dpm_dropdown);
 
         ttk_dpm_dropdown.append(translate("ttk_dpm_dropdown1", "option"));
