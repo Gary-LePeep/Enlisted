@@ -1,0 +1,36 @@
+{
+  "mass": 3.012,
+  "caliber": 0.15,
+  "speed": 865.0,
+  "maxDistance": 2000.0,
+  "bulletType": "ball",
+  "hitPowerMult": 6.0,
+  "effectiveDistance": 400.0,
+  "relativeVelHitShift": [300.0,1000.0],
+  "relativeVelArmorShift": [200.0,1000.0],
+  "hitpower": {
+    "HitPower10m": [1.45,10.0],
+    "HitPower100m": [1.43,100.0],
+    "HitPower200m": [1.37,300.0],
+    "HitPower400m": [0.7,400.0],
+    "HitPower600m": [0.3,600.0],
+    "HitPower1000m": [0.1,1000.0],
+    "HitPower1500m": [0.01,1500.0]
+  },
+  "armorpower": {
+    "ArmorPower0m": [1.0,300.0],
+    "ArmorPower1500m": [0.1,1500.0]
+  },
+  "visual": {
+    "range_percent_of_ammo": [100.0,0.0],
+    "traceFreq": 1,
+    "tracer": "7mmYellow",
+    "trail": "smallTrail"
+  },
+  "hitFx": {
+    "fxScale": [1.0,3.0],
+    "defaultFx": "ground_expl",
+    "jetFx": "ground_expl",
+    "preset": "bullet"
+  }
+}

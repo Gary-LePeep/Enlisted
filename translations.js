@@ -14,6 +14,8 @@ var EN =
         "Recoil reduction 'while standing' reduces recoil in all positions."
     ],
     "footer_header": "IMPORTANT NOTES:", 
+    "gunIGN" : "Data name: ",
+    "gunName" : "Name: ",
     "language": "Language:",
     "Remove" : "(Remove)",
     "title" : "Enlisted weapon comparison tool",
@@ -43,6 +45,8 @@ var RU =
         "(Пистолет с уроном 4,8 и выше — выстрел в голову убивает одним ударом.)",
     ],
     "footer_header": "ВАЖНЫЕ ЗАМЕЧАНИЯ:",
+    "gunIGN" : "Имя в данных: ",
+    "gunName" : "Имя: ",
     "language": "Язык:",
     "Remove" : "(Убрать)",
     "title" : "Enlisted инструмент сравнения оружии",

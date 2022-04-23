@@ -1,0 +1,268 @@
+[
+  {
+    "mass": 6.79
+  },
+  {
+    "explosiveType": "exp_d"
+  },
+  {
+    "explosiveMass": 0.065
+  },
+  {
+    "caliber": 0.075
+  },
+  {
+    "Cx": 0.5
+  },
+  {
+    "speed": 618.0
+  },
+  {
+    "maxDistance": 10000.0
+  },
+  {
+    "bulletType": "apds_fs_tungsten_small_core_tank"
+  },
+  {
+    "bulletName": "125mm_3bm15"
+  },
+  {
+    "onHitChanceMultExplFuel": 0.1
+  },
+  {
+    "relativeVelHitShift": [300.0,1000.0]
+  },
+  {
+    "relativeVelHitShift": [300.0,1000.0]
+  },
+  {
+    "relativeVelArmorShift": [200.0,1000.0]
+  },
+  {
+    "groundCollisionEffect": "big_ground_splash"
+  },
+  {
+    "groundFxScale": [0.8,1.0]
+  },
+  {
+    "ricochetEffect": "cannon_ricochet"
+  },
+  {
+    "waterCollisionEffect": "120-203_water_splash"
+  },
+  {
+    "waterFxScale": [0.8,1.0]
+  },
+  {
+    "explosionPatchRadius": 1.5
+  },
+  {
+    "stabilityThreshold": 0.0
+  },
+  {
+    "stabilityCaliberToArmorThreshold": 10.0
+  },
+  {
+    "stabilityReductionAfterRicochet": 0.15
+  },
+  {
+    "stabilityReductionAfterPenetration": 0.05
+  },
+  {
+    "normalizationPreset": "apcr"
+  },
+  {
+    "ricochetPreset": "apds_fs"
+  },
+  {
+    "slopeEffectPreset": "apds_fs_tungsten_small_core_tank"
+  },
+  {
+    "modelName": "tank_bullet_apdsfs"
+  },
+  {
+    "fresnel": [0.23,0.1,2.0]
+  },
+  {
+    "secondaryShattersPreset": "apds_fs"
+  },
+  {
+    "hitPowerMult": 40.0
+  },
+  {
+    "hitpower": {
+      "HitPower0m": [0.85,500.0],
+      "HitPower10000m": [0.8,10000.0]
+    }
+  },
+  {
+    "armorpower": {
+      "ArmorPower0m": [90.0,10.0],
+      "ArmorPower100m": [88.0,100.0],
+      "ArmorPower250m": [85.0,250.0],
+      "ArmorPower500m": [81.0,500.0],
+      "ArmorPower750m": [77.0,750.0],
+      "ArmorPower1000m": [73.0,1000.0],
+      "ArmorPower1250m": [69.0,1250.0],
+      "ArmorPower1500m": [65.0,1500.0],
+      "ArmorPower1750m": [62.0,1750.0],
+      "ArmorPower2000m": [59.0,2000.0],
+      "ArmorPower2500m": [53.0,2500.0],
+      "ArmorPower3000m": [47.0,3000.0],
+      "ArmorPower10000m": [0.0,10000.0]
+    }
+  },
+  {
+    "hitFx": {
+      "fxScale": [0.2,0.4],
+      "defaultFx": "100mm_ap_hit_ground",
+      "jetFx": "100mm_ap_hit_ground",
+      "preset": "100mm_shell"
+    }
+  },
+  {
+    "tracer": {
+      "luminosity": 10.0,
+      "burnTime": 10.0,
+      "smokeTime": 0.01
+    }
+  },
+  {
+    "stabilityRicochetModifier": [
+      {
+        "mod1": [0.0,0.25]
+      },
+      {
+        "mod2": [20.0,0.3]
+      },
+      {
+        "mod3": [30.0,0.45]
+      },
+      {
+        "mod3": [45.0,0.5]
+      },
+      {
+        "mod4": [50.0,0.7]
+      }
+    ]
+  },
+  {
+    "damage": {
+      "kinetic": {
+        "onHitChanceMultExplFuel": 0.1,
+        "correctionPenetrationByRelativeVelocity": [200.0,1000.0],
+        "correctionDamageByRelativeVelocity": [300.0,1000.0],
+        "damageType": "generic",
+        "energyToDamage": {
+          "p0": [3000.0,5.0],
+          "p1": [15000.0,10.0],
+          "p2": [30000.0,15.0],
+          "p3": [60000.0,25.0],
+          "p4": [80000.0,40.0],
+          "p5": [110000.0,60.0],
+          "p6": [300000.0,70.0],
+          "p7": [400000.0,75.0],
+          "p8": [500000.0,80.0],
+          "p9": [650000.0,110.0],
+          "p10": [1100000.0,150.0],
+          "p11": [1300000.0,200.0],
+          "p12": [1800000.0,230.0],
+          "p13": [2200000.0,240.0],
+          "p14": [3000000.0,300.0],
+          "p15": [4000000.0,320.0],
+          "p16": [5000000.0,350.0],
+          "p17": [8000000.0,370.0],
+          "p18": [12000000.0,900.0]
+        },
+        "penetrationTable": [
+          {
+            "p": [10.0,440.0]
+          },
+          {
+            "p": [100.0,430.0]
+          },
+          {
+            "p": [500.0,420.0]
+          },
+          {
+            "p": [1000.0,410.0]
+          },
+          {
+            "p": [2000.0,400.0]
+          },
+          {
+            "p": [3000.0,375.0]
+          },
+          {
+            "p": [4000.0,340.0]
+          },
+          {
+            "p": [10000.0,50.0]
+          },
+          {
+            "p": [20000.0,0.0]
+          }
+        ],
+        "damageTable": [
+          {
+            "p": [1000.0,1.0]
+          },
+          {
+            "p": [10000.0,0.8]
+          },
+          {
+            "p": [10010.0,0.0]
+          }
+        ]
+      },
+      "secondaryShatter": {
+        "residualArmorPenetrationToShatterCountMult": [30.0,150.0,0.9,1.0],
+        "residualArmorPenetrationToShatterPenetrationMult": [20.0,150.0,0.85,1.0],
+        "residualArmorPenetrationToShatterDamageMult": [20.0,150.0,0.85,1.0],
+        "caliberToArmorToShatterCountMult": [0.5,1.0,0.9,1.0],
+        "damageType": "secondaryShatter",
+        "section0": {
+          "angles": [0.0,2.5],
+          "shatter": {
+            "distance": 5.0,
+            "size": 0.03,
+            "count": 15,
+            "penetration": [17.0,10.0],
+            "damage": [30.0,25.0],
+            "onHitChanceMultFire": 3.2
+          }
+        },
+        "section1": {
+          "angles": [0.0,10.0],
+          "shatter": {
+            "distance": 3.5,
+            "size": 0.015,
+            "count": 40,
+            "penetration": [10.0,8.0],
+            "damage": [20.0,15.0],
+            "onHitChanceMultFire": 1.0
+          }
+        },
+        "section2": {
+          "angles": [0.0,50.0],
+          "shatter": {
+            "size": 0.01,
+            "distance": 1.5,
+            "count": 50,
+            "penetration": [4.0,3.0],
+            "damage": [14.0,12.0],
+            "onHitChanceMultFire": 1.0
+          }
+        }
+      }
+    }
+  },
+  {
+    "splashDamage": {
+      "radius": [1.0,10.0],
+      "penetration": [2.0,2.0],
+      "damage": 75.0,
+      "dmgOffset": [0.0,0.25,0.0]
+    }
+  }
+]

@@ -1,27 +1,34 @@
 .TITLE {
-    font-size:24px;
-    font-weight:bold;
-    color:white;
-    background-color:#395353;
-    padding:10px;
-    text-align:center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: #395353;
+    padding: 10px;
+    text-align: center;
+}
+
+html {
+    overflow-y: scroll;
 }
 
 /* Define some colors for the menu */
 .greenbtn:hover {
     background-color: #25ac88;
 }
+
 .redbtn:hover {
     background-color: #d65153;
 }
+
 .bluebtn:hover {
     background-color: #6265c1;
 }
+
 .magbtn:hover {
     background-color: #db7329;
 }
 
-.topbtn{
+.topbtn {
     min-width: 200px;
     min-height: 50px;
     text-align: center;
@@ -29,7 +36,7 @@
     font-size-adjust: 0.7;
 }
 
-.submenu{
+.submenu {
     min-width: 200px;
     min-height: 40px;
     text-align: left;
@@ -40,12 +47,15 @@
 .greenbtn {
     background-color: #009e73;
 }
+
 .redbtn {
     background-color: #cf3437;
 }
+
 .bluebtn {
     background-color: #474bb6;
 }
+
 .magbtn {
     background-color: #d55c05;
 }
@@ -53,56 +63,67 @@
 nav li {
     background-color: #FFFFFF;
 }
-nav li:hover{
+
+nav li:hover {
     background-color: #CCCCCC;
 }
 
 /* Basic menu declarations */
 
 nav {
-    font-size: 0; /* Remove annoying whitespace between Nav Elements (white-space-collapse got moved to CSS4) */
+    font-size: 0;
+    /* Remove annoying whitespace between Nav Elements (white-space-collapse got moved to CSS4) */
 }
 
 nav a {
-    font-size: 1rem; /* Restore Font Size */
+    font-size: 1rem;
+    /* Restore Font Size */
     padding: 0.5em;
-    display: block; /* So we can have padding */
+    display: block;
+    /* So we can have padding */
     text-decoration: none;
     color: black;
     word-break: break-word;
 }
 
 nav ul {
-    list-style: none; /* Remove Bullets from Lists */
-    padding: 0; /* remove default browser padding */
+    list-style: none;
+    /* Remove Bullets from Lists */
+    padding: 0;
+    /* remove default browser padding */
     top: 50px;
 }
 
 /* Any list item in the menu */
 nav li {
-    position: relative; /* positioned so this is the reference. Required to be able to have the sub menu show up at the same level */
+    position: relative;
+    /* positioned so this is the reference. Required to be able to have the sub menu show up at the same level */
     display: inline-block;
     z-index: 99;
 }
 
 /* All Sub menues */
 nav ul ul {
-    display: none; /* Hide sub menu by default */
-    position: absolute; /* Absolute position to push the sub menu out of the box instead of making the box larger and having the top level menu pushed down */
+    display: none;
+    /* Hide sub menu by default */
+    position: absolute;
+    /* Absolute position to push the sub menu out of the box instead of making the box larger and having the top level menu pushed down */
 }
 
 /* Show sub menu on hover */
-nav li:hover > ul {
+nav li:hover>ul {
     display: block;
 }
 
 /* Any sub menu below the second level (Flyout menues in the dropdown) */
 nav ul ul ul {
-    left: 100%; /* Pushes the menu to the right of it's parent */
-    top: 0; /* Make it appear at the same level as it's parent */
+    left: 100%;
+    /* Pushes the menu to the right of it's parent */
+    top: 0;
+    /* Make it appear at the same level as it's parent */
 }
 
 /* Make the dropdown menu (first level) at least as wide as it's parent */
-nav > ul > li > ul > li {
+nav>ul>li>ul>li {
     min-width: 100%;
 }
