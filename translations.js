@@ -1,6 +1,7 @@
 var EN =
 {
     "armor" : "Wearing body armor",
+    "datamine" : "Enlisted weapon datamine",
     "Category" : "Category EN",
     "contact" : "For any issues, suggestions, etc. contact 10art1#8181 on discord",
     "footer_footer": [
@@ -29,6 +30,7 @@ var EN =
 var RU =
 {
     "armor" : "Носит бронежилет",
+    "datamine" : "Датамайн оружии в Enlisted",
     "Category" : "Category RU",
     "contact" : "По любым вопросам, предложениям и т. д. обращайтесь к 10art1#8181 на дискорде.",
     "footer_footer": [
@@ -53,3 +55,30 @@ var RU =
     "Weapon" : "Оружие ",
     "WepName" : "Name RU"
 };
+
+function translate(text, type = "string", style = "") {
+    var LANG;
+    if (document.getElementById('language_dropdown').value == "English") {
+        LANG = EN;
+    }
+    if (document.getElementById('language_dropdown').value == "Русский") {
+        LANG = RU;
+    }
+    if (type == "string") {
+        return LANG[text];
+    }
+
+    var element = document.createElement(type)
+    element.style = style;
+
+    if (Array.isArray(LANG[text])) {
+        element.textContent = LANG[text].join("\r\n");
+        element.text = LANG[text].join("\r\n");
+        element.style += "; white-space: pre-line"
+    }
+    else {
+        element.textContent = LANG[text];
+        element.text = LANG[text];
+    }
+    return element;
+}

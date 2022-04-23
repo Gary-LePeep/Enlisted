@@ -3,35 +3,6 @@
 
 <head>
 
-    <script>
-        function translate(text, type = "string", style = "") {
-            var LANG;
-            if (document.getElementById('language_dropdown').value == "English") {
-                LANG = EN;
-            }
-            if (document.getElementById('language_dropdown').value == "Русский") {
-                LANG = RU;
-            }
-            if (type == "string") {
-                return LANG[text];
-            }
-
-            var element = document.createElement(type)
-            element.style = style;
-
-            if (Array.isArray(LANG[text])) {
-                element.textContent = LANG[text].join("\r\n");
-                element.text = LANG[text].join("\r\n");
-                element.style += "; white-space: pre-line"
-            }
-            else {
-                element.textContent = LANG[text];
-                element.text = LANG[text];
-            }
-            return element;
-        }
-    </script>
-
 <body style="background-color:rgb(107, 133, 133);"></body>
 <title>
     Enlisted weapon comparison tool
@@ -360,9 +331,8 @@
         document.getElementsByTagName('BODY')[0].appendChild(translate("footer_footer", 'p'));
     </script>
 
-    <br><br>
     <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "text-align: center; color: #002244"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "color: #002244; position: absolute; top: 95%; left: 40%"));
     </script>
 </body>
 
