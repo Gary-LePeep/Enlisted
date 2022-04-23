@@ -19,7 +19,7 @@
     function loadJSON(callback) {
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-        xobj.open('GET', '../ww2_guns.blkx', true);
+        xobj.open('GET', './ww2_guns.blkx', true);
         xobj.onreadystatechange = function () {
             if (xobj.readyState == 4 && xobj.status == "200") {
                 callback(JSON.parse(xobj.responseText));
