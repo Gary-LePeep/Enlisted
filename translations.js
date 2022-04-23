@@ -1,9 +1,12 @@
 var EN =
 {
+    "aka" : "aka ",
+    "ammo" : "Ammunition: ",
     "armor" : "Wearing body armor",
     "datamine" : "Enlisted weapon datamine",
     "Category" : "Category EN",
     "contact" : "For any issues, suggestions, etc. contact 10art1#8181 on discord",
+    "EMPTY": "",
     "footer_footer": [
         "Damage at less than 10m is the same as damage at 10m.",
         "This data accounts for base damage, which is done on body/arm shots.",
@@ -25,6 +28,7 @@ var EN =
     "ttk_dpm_dropdown2" : "Damage per Minute over Distance",
     "ttk_dpm_dropdown3" : "Shots to Kill over Distance",
     "ttk_dpm_dropdown4" : "Time to Kill over Distance",
+    "type" : "Type: ",
     "vitality": "Has vitality perk",
     "Weapon" : "Weapon ",
     "WepName" : "Name EN"
@@ -32,10 +36,13 @@ var EN =
 
 var RU =
 {
+    "aka" : "Также известен как: ",
+    "ammo" : "Патроны: ",
     "armor" : "Носит бронежилет",
     "datamine" : "Датамайн оружии в Enlisted",
     "Category" : "Category RU",
     "contact" : "По любым вопросам, предложениям и т. д. обращайтесь к 10art1#8181 на дискорде.",
+    "EMPTY": "",
     "footer_footer": [
         "Урон на расстоянии менее 10 м равен урону на 10 м.",
         "Эти данные учитывают базовый урон, наносимый выстрелами в тело/руки.",
@@ -57,6 +64,7 @@ var RU =
     "ttk_dpm_dropdown2" : "Урон в минуту по расстоянию",
     "ttk_dpm_dropdown3" : "Выстрелов на убийство по расстоянию",
     "ttk_dpm_dropdown4" : "Время на убийство по расстоянию",
+    "type" : "Тип: ",
     "vitality": "Имеет способность к живучести",
     "Weapon" : "Оружие ",
     "WepName" : "Name RU"

@@ -1,0 +1,49 @@
+{
+  "mass": 0.12,
+  "cartridgeMass": 0.4,
+  "caliber": 0.02,
+  "speed": 710.0,
+  "maxDistance": 3000.0,
+  "bulletType": "ap",
+  "hitPowerMult": 150.0,
+  "effectiveDistance": 400.0,
+  "relativeVelHitShift": [300.0,1000.0],
+  "relativeVelArmorShift": [200.0,1000.0],
+  "hitpower": {
+    "HitPower10m": [1.0,10.0],
+    "HitPower100m": [0.9,100.0],
+    "HitPower200m": [0.8,300.0],
+    "HitPower400m": [0.7,400.0],
+    "HitPower600m": [0.3,600.0],
+    "HitPower1000m": [0.1,1000.0],
+    "HitPower1500m": [0.01,1500.0]
+  },
+  "armorpower": {
+    "ArmorPower0m": [55.0,5.0],
+    "ArmorPower100m": [45.0,100.0],
+    "ArmorPower300m": [30.0,500.0],
+    "ArmorPower1000m": [15.0,1000.0],
+    "ArmorPower1500m": [5.0,1500.0]
+  },
+  "visual": {
+    "range_percent_of_ammo": [100.0,0.0],
+    "traceFreq": 1,
+    "tracer": "20mmRed",
+    "trail": "smallTrail"
+  },
+  "hitFx": {
+    "fxScale": [3.0,4.6],
+    "defaultFx": "ground_splash",
+    "jetFx": "ground_splash_direct",
+    "preset": "bullet"
+  },
+  "tracer": {
+    "ignitionTime": 0.002,
+    "smokeColor": "#ffe6b3cc",
+    "smokeTime": 0.01,
+    "smokeRadius": 0.01,
+    "headColor": "#ffaa55ff",
+    "luminosity": 10.0,
+    "burnTime": 1.8
+  }
+}

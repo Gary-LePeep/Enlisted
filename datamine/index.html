@@ -13,21 +13,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../dist/chart.min.js"></script>
 <script src="../dist/chartjs-plugin-annotation.min.js"></script>
+<script type="text/javascript" src="./ww2_guns.blkx"></script>
 
 
 <script>
-    function loadJSON(callback) {
-        var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-        xobj.open('GET', './ww2_guns.blkx', true);
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                callback(JSON.parse(xobj.responseText));
-            }
-        };
-        xobj.send(null);
-    }
-
     // Create new css link Element
     var css = document.createElement('link');
     css.rel = 'stylesheet';
@@ -102,7 +91,25 @@
         gunIGNData.textContent = "-";
         gunIGN.append(gunIGNData);
 
-        dataDiv.append(document.createElement("div"));
+        var aka = translate("aka", "div");
+        dataDiv.append(aka);
+        var akaData = document.createElement("b");
+        akaData.textContent = "-";
+        aka.append(akaData);
+
+        var type = translate("type", "div");
+        dataDiv.append(type);
+        var typeData = document.createElement("b");
+        typeData.textContent = "-";
+        type.append(typeData);
+
+        var ammo = translate("ammo", "div");
+        dataDiv.append(ammo);
+        var ammoData = document.createElement("b");
+        ammoData.textContent = "-";
+        ammo.append(ammoData);
+
+        dataDiv.append(translate("EMPTY", "p"));
 
         var rpm = translate("rpm", "div");
         dataDiv.append(rpm);
@@ -127,6 +134,9 @@
                     colorButtonText.text = translate("Weapon");
                     gunNameData.textContent = "-";
                     gunIGNData.textContent = "-";
+                    akaData.textContent = "-";
+                    typeData.textContent = "-";
+                    ammoData.textContent = "-";
                     rpmData.textContent = "-";
                 }
             }
@@ -148,17 +158,26 @@
                     // set color button name to selected weapon
                     colorButtonText.text = weaponButtonText.text
 
-                    var allData;
-                    loadJSON(function (json) {
-                        allData = json;
-                    });
-                    console.log(allData);
-
                     gunNameData.textContent = WEAPONS[i].Weapons[j][translate("WepName")];
                     gunIGNData.textContent = WEAPONS[i].Weapons[j]["Name Game"];
-                    for (data in allData[gunIGNData.textContent]) {
-                        if (data.hasOwnProperty("gun__shotFreq")) {
-                            rpmData.textContent = Math.round(data["gun__shotFreq"] * 60);
+
+                    ALLDATA = Object.assign({}, COMMONDATA, TUNISIADATA);
+                    console.log(ALLDATA)
+
+                    for (var k = 0; k < ALLDATA[gunIGNData.textContent].length; k++) {
+                        if (ALLDATA[gunIGNData.textContent][k].hasOwnProperty("gun__locName")) {
+                            akaData.textContent = ALLDATA[gunIGNData.textContent][k]["gun__locName"];
+                        }
+                        if (ALLDATA[gunIGNData.textContent][k].hasOwnProperty("item__weapType")) {
+                            typeData.textContent = ALLDATA[gunIGNData.textContent][k]["item__weapType"].replace(/_/g, " ");
+                        }
+                        if (ALLDATA[gunIGNData.textContent][k].hasOwnProperty("gun__shells:array")) {
+                            ammoFile = ALLDATA[gunIGNData.textContent][k]["gun__shells:array"]["shells"].split("/");
+                            ammoFile = ammoFile[ammoFile.length - 1];
+                            ammoData.textContent = ammoFile.split(".")[0];
+                        }
+                        if (ALLDATA[gunIGNData.textContent][k].hasOwnProperty("gun__shotFreq")) {
+                            rpmData.textContent = Math.round(ALLDATA[gunIGNData.textContent][k]["gun__shotFreq"] * 60);
                         }
                     }
                 }

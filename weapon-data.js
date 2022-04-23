@@ -4,224 +4,179 @@ var WEAPONS = [
         "Category RU" : "Штурмовые Оружие Союзников",
         "Weapons" : [
             {
-                "Name EN": "Degtyarev PDM-42",
-                "Name RU" : "Пистолет-Пулемёт Дегтярёва ПДМ-42",
-                "Damage" : {
-                    "a" : 2.844851,
-                    "b" : 4.694863,
-                    "c" : 0.02238947
-                },
-                "Range" : 75,
-                "RPM" : 655
+                "Name EN": "BSA Model 1929 Thompson",
+                "Name RU" : "",
+                "Name Game" : "thompson_bsa_1929"
             },
             {
-                "Name EN": "Federov Avtomat",
+                "Name EN": "Degtyarev PDM-42",
+                "Name RU" : "Пистолет-Пулемёт Дегтярёва ПДМ-42",
+                "Name Game" : "pdm_42"
+            },
+            {
+                "Name EN": "Fedorov Avtomat",
                 "Name RU" : "Автомат Федорова",
-                "Damage" : {
-                    "a" : 0.06747286,
-                    "b" : 10.59073,
-                    "c" : 0.002423104
-                },
-                "Range" : 300,
-                "RPM" : 575
+                "Name Game" : "fedorov_avtomat"
             },
             {
                 "Name EN": "Kiraly 39M",
                 "Name RU" : "Kiraly 39M",
-                "Damage" : {
-                    "a" : 2.873372,
-                    "b" : 4.345745,
-                    "c" : 0.01539154
-                },
-                "Range" : 75,
-                "RPM" : 725
+                "Name Game" : "danuvia_39"
+            },
+            {
+                "Name EN": "The Hyde Model 35",
+                "Name RU" : "",
+                "Name Game" : "hyde_model_35"
             },
             {
                 "Name EN": "Lanchester",
                 "Name RU" : "Lanchester",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 575
+                "Name Game" : "lanchester_32"
             },
             {
                 "Name EN": "M1 Thompson",
                 "Name RU" : "M1 Thompson",
-                "Damage" : {
-                    "a" : -3.539908,
-                    "b" : 10.61844,
-                    "c" : 0.002658134
-                },
-                "Range" : 75,
-                "RPM" : 750
+                "Name Game" : "m1_thompson"
+            },
+            {
+                "Name EN": "M1903 Springfield (Pedersen device)",
+                "Name RU" : "",
+                "Name Game" : "m1903_springfield_pedersen_device"
             },
             {
                 "Name EN": "M1A1 Thompson",
                 "Name RU" : "M1A1 Thompson",
-                "Damage" : {
-                    "a" : -3.539908,
-                    "b" : 10.61844,
-                    "c" : 0.002658134
-                },
-                "Range" : 75,
-                "RPM" : 575
+                "Name Game" : "m1a1_thompson"
             },
             {
-                "Name EN": "M3 SMG",
+                "Name EN": "M2 Hyde",
+                "Name RU" : "",
+                "Name Game" : "m2_hyde"
+            },
+            {
+                "Name EN": "M2A1 Carbine",
+                "Name RU" : "",
+                "Name Game" : "m2a1_carbine"
+            },
+            {
+                "Name EN": "M3 field modification",
+                "Name RU" : "",
+                "Name Game" : "m3a1_field_repair"
+            },
+            {
+                "Name EN": "M3 Submachine Gun",
                 "Name RU" : "Пистолет-Пулемёт M3",
-                "Damage" : {
-                    "a" : -3.539908,
-                    "b" : 10.61844,
-                    "c" : 0.002658134
-                },
-                "Range" : 75,
-                "RPM" : 365
+                "Name Game" : "m3_submachine_gun"
             },
             {
-                "Name EN": "M3A1 SMG",
+                "Name EN": "M3 Suppressed",
+                "Name RU" : "",
+                "Name Game" : "m3_greasegun_supressed_oss"
+            },
+            {
+                "Name EN": "M3A1 Submachine Gun",
                 "Name RU" : "Пистолет-Пулемёт M3A1",
-                "Damage" : {
-                    "a" : -3.539908,
-                    "b" : 10.61844,
-                    "c" : 0.002658134
-                },
-                "Range" : 75,
-                "RPM" : 390
+                "Name Game" : "m3a1_grease_gun"
+            },
+            {
+                "Name EN": "M50 Reising",
+                "Name RU" : "",
+                "Name Game" : "m50_reising"
             },
             {
                 "Name EN": "PPD 1929",
                 "Name RU" : "ППД обр. 1929 г.",
-                "Damage" : {
-                    "a" : 2.844851,
-                    "b" : 4.694863,
-                    "c" : 0.02238947
-                },
-                "Range" : 75,
-                "RPM" : 1050
+                "Name Game" : "ppd_1929"
+            },
+            {
+                "Name EN": "PPD 1944",
+                "Name RU" : "",
+                "Name Game" : "pp_dolganov"
             },
             {
                 "Name EN": "PPD-34/38",
                 "Name RU" : "ППД 34/38",
-                "Damage" : {
-                    "a" : 2.331725,
-                    "b" : 3.87577,
-                    "c" : 0.02023261
-                },
-                "Range" : 75,
-                "RPM" : 765
+                "Name Game" : "ppd_3438"
             },
             {
                 "Name EN": "PPD-34/38 (box)",
                 "Name RU" : "ППД-34/38 (секторный)",
-                "Damage" : {
-                    "a" : 2.331725,
-                    "b" : 3.87577,
-                    "c" : 0.02023261
-                },
-                "Range" : 75,
-                "RPM" : 765
+                "Name Game" : "ppd_3438_box"
             },
             {
                 "Name EN": "PPD-40",
                 "Name RU" : "ППД 40",
-                "Damage" : {
-                    "a" : 2.331725,
-                    "b" : 3.87577,
-                    "c" : 0.02023261
-                },
-                "Range" : 75,
-                "RPM" : 860
+                "Name Game" : "ppd_40"
+            },
+            {
+                "Name EN": "PPD-40 DSZ",
+                "Name RU" : "",
+                "Name Game" : "ppd_40_dv"
+            },
+            {
+                "Name EN": "PPD-BraMit",
+                "Name RU" : "",
+                "Name Game" : "ppd_bramit"
+            },
+            {
+                "Name EN": "PPK-41",
+                "Name RU" : "",
+                "Name Game" : "ppk_41"
+            },
+            {
+                "Name EN": "PPK-42",
+                "Name RU" : "",
+                "Name Game" : "ppk_42"
             },
             {
                 "Name EN": "PPS-42",
                 "Name RU" : "ППС-42",
-                "Damage" : {
-                    "a" : 2.331725,
-                    "b" : 3.87577,
-                    "c" : 0.02023261
-                },
-                "Range" : 75,
-                "RPM" : 575
+                "Name Game" : "pps_42"
             },
             {
                 "Name EN": "PPS-43",
                 "Name RU" : "ППС-43",
-                "Damage" : {
-                    "a" : 2.331725,
-                    "b" : 3.87577,
-                    "c" : 0.02023261
-                },
-                "Range" : 75,
-                "RPM" : 670
+                "Name Game" : "pps_43"
             },
             {
                 "Name EN": "PPSh-41",
                 "Name RU" : "ППШ-41",
-                "Damage" : {
-                    "a" : 2.331725,
-                    "b" : 3.87577,
-                    "c" : 0.02023261
-                },
-                "Range" : 75,
-                "RPM" : 955
+                "Name Game" : "ppsh_41"
             },
             {
                 "Name EN": "PPSh-41 (box)",
                 "Name RU" : "ППШ-41 (секторный)",
-                "Damage" : {
-                    "a" : 2.331725,
-                    "b" : 3.87577,
-                    "c" : 0.02023261
-                },
-                "Range" : 75,
-                "RPM" : 955
+                "Name Game" : "ppsh_41_box"
+            },
+            {
+                "Name EN": "PPT-27",
+                "Name RU" : "",
+                "Name Game" : "ppt_27"
             },
             {
                 "Name EN": "Sten Mk II",
                 "Name RU" : "Sten Mk II",
-                "Damage" : {
-                    "a" : 1.553725,
-                    "b" : 4.485456,
-                    "c" : 0.01280681
-                },
-                "Range" : 75,
-                "RPM" : 525
+                "Name Game" : "sten_mk2"
+            },
+            {
+                "Name EN": "Sten Mk III",
+                "Name RU" : "",
+                "Name Game" : "sten_mk3"
             },
             {
                 "Name EN": "Thompson M21/28",
                 "Name RU" : "Thompson M21/28",
-                "Damage" : {
-                    "a" : -3.539908,
-                    "b" : 10.61844,
-                    "c" : 0.002658134
-                },
-                "Range" : 75,
-                "RPM" : 670
+                "Name Game" : "thompson_m1921_28_box"
             },
             {
                 "Name EN": "TOZ-B",
                 "Name RU" : "ТОЗ-Б",
-                "Damage" : {
-                    "a" : -7.745715,
-                    "b" : 925.1337,
-                    "c" : 0.02275701
-                },
-                "Range" : 75,
-                "RPM" : 230
+                "Name Game" : "toz_b"
             },
             {
                 "Name EN": "Winchester Model 1912",
                 "Name RU" : "Winchester Model 1912",
-                "Damage" : {
-                    "a" : -7.745715,
-                    "b" : 925.1337,
-                    "c" : 0.02275701
-                },
-                "Range" : 75,
-                "RPM" : 135
+                "Name Game" : "winchester_model_1912"
             }
         ]
     },
@@ -232,200 +187,152 @@ var WEAPONS = [
             {
                 "Name EN": "Beretta M1",
                 "Name RU" : "Beretta M1",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 475
+                "Name Game" : ""
             },
             {
                 "Name EN": "Beretta M1918",
                 "Name RU" : "Beretta M1918",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 860
+                "Name Game" : "beretta_m1918"
             },
             {
                 "Name EN": "Beretta M38",
                 "Name RU" : "Beretta M38",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 575
+                "Name Game" : "beretta_m38"
             },
             {
-                "Name EN": "Beretta M38 (40)",
-                "Name RU" : "Beretta M38 (40)",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 575
+                "Name EN": "Beretta M38 40 Round",
+                "Name RU" : "Beretta M38 40 Round",
+                "Name Game" : "beretta_m38_40_round"
             },
             {
                 "Name EN": "Beretta M38/42",
                 "Name RU" : "Beretta M38/42",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 575
+                "Name Game" : "beretta_m38_42"
+            },
+            {
+                "Name EN": "Danuvia 43M",
+                "Name RU" : "",
+                "Name Game" : "danuvia_43m"
+            },
+            {
+                "Name EN": "Erma EMP",
+                "Name RU" : "",
+                "Name Game" : "erma_emp"
+            },
+            {
+                "Name EN": "Erma EMP 44",
+                "Name RU" : "",
+                "Name Game" : "erma_emp_44"
+            },
+            {
+                "Name EN": "Erma EMP with supressor",
+                "Name RU" : "",
+                "Name Game" : "silenced_erma_emp"
             },
             {
                 "Name EN": "FNAB-43",
                 "Name RU" : "FNAB-43",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 380
+                "Name Game" : "fnab_43"
             },
             {
-                "Name EN": "M30 Drilling",
+                "Name EN": "M30 Luftwaffe Drilling",
                 "Name RU" : "M30 Luftwaffe Drilling",
-                "Damage" : {
-                    "a" : -7.745715,
-                    "b" : 925.1337,
-                    "c" : 0.02275701
-                },
-                "Range" : 75,
-                "RPM" : 230
+                "Name Game" : "m30_luftwaffe_drilling"
+            },
+            {
+                "Name EN": "Mkb 35/III",
+                "Name RU" : "",
+                "Name Game" : "vollmer_m35"
+            },
+            {
+                "Name EN": "MP 18",
+                "Name RU" : "",
+                "Name Game" : "mp_18"
             },
             {
                 "Name EN": "MP 28",
                 "Name RU" : "MP 28",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 460
+                "Name Game" : "mp_28"
+            },
+            {
+                "Name EN": "MP 28 (32 rounds)",
+                "Name RU" : "",
+                "Name Game" : "mp_28_32_round"
             },
             {
                 "Name EN": "MP 3008",
                 "Name RU" : "MP 3008",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 430
+                "Name Game" : "mp_3008"
             },
             {
                 "Name EN": "MP 34(o)",
                 "Name RU" : "MP 34(o)",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 430
+                "Name Game" : "mp34o"
             },
             {
                 "Name EN": "MP 35/I",
                 "Name RU" : "MP 35/I",
-                "Damage" : {
-                    "a" : 2.55585,
-                    "b" : 3.977516,
-                    "c" : 0.01440232
-                },
-                "Range" : 75,
-                "RPM" : 515
+                "Name Game" : "mp_35_long_barrel"
             },
             {
                 "Name EN": "MP 38",
                 "Name RU" : "MP 38",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 470
+                "Name Game" : "mp_38"
             },
             {
                 "Name EN": "MP 40",
                 "Name RU" : "MP 40",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 475
+                "Name Game" : "mp40"
+            },
+            {
+                "Name EN": "MP 40/1",
+                "Name RU" : "",
+                "Name Game" : "mp_40_1"
+            },
+            {
+                "Name EN": "MP 41",
+                "Name RU" : "",
+                "Name Game" : "mp41"
             },
             {
                 "Name EN": "MP 43/1",
                 "Name RU" : "MP 43/1",
-                "Damage" : {
-                    "a" : 0.05324072,
-                    "b" : 8.041614,
-                    "c" : 0.002413182
-                },
-                "Range" : 300,
-                "RPM" : 575
+                "Name Game" : "mp43_1"
             },
             {
                 "Name EN": "MP-717(r)",
                 "Name RU" : "MP-717(r)",
-                "Damage" : {
-                    "a" : 2.331725,
-                    "b" : 3.87577,
-                    "c" : 0.02023261
-                },
-                "Range" : 75,
-                "RPM" : 925
+                "Name Game" : "ppsh_41_german"
             },
             {
                 "Name EN": "OVP M1918",
                 "Name RU" : "OVP M1918",
-                "Damage" : {
-                    "a" : 2.589537,
-                    "b" : 3.854636,
-                    "c" : 0.01529282
-                },
-                "Range" : 75,
-                "RPM" : 860
+                "Name Game" : "ovp_1918"
+            },
+            {
+                "Name EN": "Schmeisser MK36.III",
+                "Name RU" : "",
+                "Name Game" : "schmeisser_mk36_iii"
+            },
+            {
+                "Name EN": "Suomi KP-26",
+                "Name RU" : "",
+                "Name Game" : "suomi_kp_26"
             },
             {
                 "Name EN": "VG 1-5",
                 "Name RU" : "VG 1-5",
-                "Damage" : {
-                    "a" : 0.05324072,
-                    "b" : 8.041614,
-                    "c" : 0.002413182
-                },
-                "Range" : 300,
-                "RPM" : 305
+                "Name Game" : "vstg_1_5"
+            },
+            {
+                "Name EN": "VMP 1926",
+                "Name RU" : "",
+                "Name Game" : "vollmer_vpf_1926"
             },
             {
                 "Name EN": "ZK-383",
                 "Name RU" : "ZK-383",
-                "Damage" : {
-                    "a" : 2.477354,
-                    "b" : 3.759807,
-                    "c" : 0.01539544
-                },
-                "Range" : 75,
-                "RPM" : 630
+                "Name Game" : "zk_383"
             }
         ]
     },
@@ -434,191 +341,124 @@ var WEAPONS = [
         "Category RU" : "Ручные Винтовки Союзников",
         "Weapons" : [
             {
+                "Name EN": "Arisaka Type 38 carbine",
+                "Name RU" : "",
+                "Name Game" : "arisaka_type_38_carbine"
+            },
+            {
                 "Name EN": "Berdan II",
                 "Name RU" : "Винтовка Бердана № 2",
-                "Damage" : {
-                    "a" : 9.028172,
-                    "b" : 16.57912,
-                    "c" : 0.009421163
-                },
-                "Range" : 300,
-                "RPM" : 52.5
+                "Name Game" : "berdan_no_2"
+            },
+            {
+                "Name EN": "Berthier M16 Carbine",
+                "Name RU" : "",
+                "Name Game" : "berthier_1892_m16"
+            },
+            {
+                "Name EN": "De Lisle Commando carbine",
+                "Name RU" : "",
+                "Name Game" : "delisle_commando_carbine"
             },
             {
                 "Name EN": "Lee-Enfield No.4 MKI",
                 "Name RU" : "Lee-Enfield No.4 MKI",
-                "Damage" : {
-                    "a" : 2.03345,
-                    "b" : 12.27049,
-                    "c" : 0.002569347
-                },
-                "Range" : 300,
-                "RPM" : 68.5
+                "Name Game" : "lee_enfield_no4_mk1"
             },
             {
                 "Name EN": "Lee-Enfield No.4 MKI (T)",
                 "Name RU" : "Lee-Enfield No.4 MKI (T)",
-                "Damage" : {
-                    "a" : 9.16114,
-                    "b" : 4.953115,
-                    "c" : 0.002486645
-                },
-                "Range" : 300,
-                "RPM" : 68.5
+                "Name Game" : "lee_enfield_no4_mk1_with_scope"
             },
             {
                 "Name EN": "M1917 Enfield",
                 "Name RU" : "M1917 Enfield",
-                "Damage" : {
-                    "a" : 2.03345,
-                    "b" : 12.27049,
-                    "c" : 0.002569347
-                },
-                "Range" : 300,
-                "RPM" : 60
+                "Name Game" : "m1917_enfield"
             },
             {
-                "Name EN": "Mosin with Daikonov grenade launcher",
+                "Name EN": "Mosin with Diakonov grenade launcher",
                 "Name RU" : "Винтовка Мосина с ГМ Дьяконова",
-                "Damage" : {
-                    "a" : 0.1384082,
-                    "b" : 15.13656,
-                    "c" : 0.002100371
-                },
-                "Range" : 300,
-                "RPM" : 51.5
+                "Name Game" : "mosin_1928_grenade_launcher"
             },
             {
                 "Name EN": "Mosin M1938 carbine",
                 "Name RU" : "Карабин Мосина обр. 1938 г.",
-                "Damage" : {
-                    "a" : 3.161892,
-                    "b" : 10.16921,
-                    "c" : 0.003655122
-                },
-                "Range" : 300,
-                "RPM" : 54.5
+                "Name Game" : "mosin_m38"
             },
             {
                 "Name EN": "Mosin M44 carbine",
                 "Name RU" : "Карабин Мосина обр. 1944 г.",
-                "Damage" : {
-                    "a" : 3.161892,
-                    "b" : 10.16921,
-                    "c" : 0.003655122
-                },
-                "Range" : 300,
-                "RPM" : 62
+                "Name Game" : "mosin_m44"
+            },
+            {
+                "Name EN": "Mosin M44L rifle",
+                "Name RU" : "",
+                "Name Game" : "mosin_m44l"
             },
             {
                 "Name EN": "Mosin M91 Dragoon",
                 "Name RU" : "«Драгунская» Мосинка",
-                "Damage" : {
-                    "a" : 0.1384082,
-                    "b" : 15.13656,
-                    "c" : 0.002100371
-                },
-                "Range" : 300,
-                "RPM" : 54.5
+                "Name Game" : "mosin_dragoon"
+            },
+            {
+                "Name EN": "Mosin M91 rifle with suppressor",
+                "Name RU" : "",
+                "Name Game" : "mosin_m91_bramit"
             },
             {
                 "Name EN": "Mosin M91/30",
                 "Name RU" : "Винтовка Мосина обр. 1891/30 г.",
-                "Damage" : {
-                    "a" : 0.1384082,
-                    "b" : 15.13656,
-                    "c" : 0.002100371
-                },
-                "Range" : 300,
-                "RPM" : 51.5
+                "Name Game" : "mosin_m91_30"
             },
             {
                 "Name EN": "Mosin M91/30 sniper",
                 "Name RU" : "Снайперская Винтовка Мосина обр. 1891/30 г.",
-                "Damage" : {
-                    "a" : 9.664591,
-                    "b" : 5.447525,
-                    "c" : 0.002391968
-                },
-                "Range" : 300,
-                "RPM" : 57.5
+                "Name Game" : "mosin_m91"
             },
             {
                 "Name EN": "Mosin M91/30 supressed",
                 "Name RU" : "Винтовка Мосина с глушителем",
-                "Damage" : {
-                    "a" : 8.96114,
-                    "b" : 4.953115,
-                    "c" : 0.002486645
-                },
-                "Range" : 300,
-                "RPM" : 66
+                "Name Game" : "mosin_m91_bramit"
             },
             {
-                "Name EN": "Ross Mk. III",
+                "Name EN": "Mosina M91 'Infantry'",
+                "Name RU" : "",
+                "Name Game" : "mosin_infantry"
+            },
+            {
+                "Name EN": "Ross Rifle Mk. III",
                 "Name RU" : "Винтовка Росса Mk. III",
-                "Damage" : {
-                    "a" : 2.03345,
-                    "b" : 12.27049,
-                    "c" : 0.002569347
-                },
-                "Range" : 300,
-                "RPM" : 68.5
+                "Name Game" : "ross_rifle"
             },
             {
                 "Name EN": "SMLE Mk III",
                 "Name RU" : "SMLE Mk III",
-                "Damage" : {
-                    "a" : 2.03345,
-                    "b" : 12.27049,
-                    "c" : 0.002569347
-                },
-                "Range" : 300,
-                "RPM" : 53.5
+                "Name Game" : "smle_mk3"
             },
             {
                 "Name EN": "SMLE Mk III* with grenade launcher",
                 "Name RU" : "SMLE Mk III* с ГМ",
-                "Damage" : {
-                    "a" : 2.03345,
-                    "b" : 12.27049,
-                    "c" : 0.002569347
-                },
-                "Range" : 300,
-                "RPM" : 68.5
+                "Name Game" : "smle_mk3_grenade_launcher"
+            },
+            {
+                "Name EN": "Springfield Air Service",
+                "Name RU" : "",
+                "Name Game" : "m1903_springfield_air_service"
             },
             {
                 "Name EN": "Springfield M1903A1",
                 "Name RU" : "Springfield M1903A1",
-                "Damage" : {
-                    "a" : 9.16114,
-                    "b" : 4.953115,
-                    "c" : 0.002486645
-                },
-                "Range" : 300,
-                "RPM" : 57.5
+                "Name Game" : "m1903a1_springfield"
             },
             {
                 "Name EN": "Springfield M1903A4",
                 "Name RU" : "Springfield M1903A4",
-                "Damage" : {
-                    "a" : 9.16114,
-                    "b" : 4.953115,
-                    "c" : 0.002486645
-                },
-                "Range" : 300,
-                "RPM" : 63
+                "Name Game" : "m1903a4_springfield"
             },
             {
                 "Name EN": "Winchester M1895",
                 "Name RU" : "Винчестер М1895",
-                "Damage" : {
-                    "a" : 0.1384082,
-                    "b" : 15.13656,
-                    "c" : 0.002100371
-                },
-                "Range" : 300,
-                "RPM" : 74.5
+                "Name Game" : "winchester_1895"
             }
         ]
     },
@@ -627,159 +467,90 @@ var WEAPONS = [
         "Category RU" : "Самозарядные Винтовки Союзников",
         "Weapons" : [
             {
+                "Name EN": "AKT-40",
+                "Name RU" : "",
+                "Name Game" : "akt_40"
+            },
+            {
                 "Name EN": "AVS 36",
                 "Name RU" : "АВС 36",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 575
+                "Name Game" : "avs_36"
             },
             {
                 "Name EN": "AVT-40",
                 "Name RU" : "АВТ-40",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 575
+                "Name Game" : "avt_40"
             },
             {
                 "Name EN": "Johnson M1941",
                 "Name RU" : "Johnson M1941",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name Game" : "m1941_johnson"
             },
             {
                 "Name EN": "M1 Carbine",
                 "Name RU" : "M1 Carbine",
-                "Damage" : {
-                    "a" : 1.925265,
-                    "b" : 5.567893,
-                    "c" : 0.003768973
-                },
-                "Range" : 300,
-                "RPM" : 305
+                "Name Game" : "m1_carbine"
             },
             {
-                "Name EN": "M1 Carbine w. grenade launcher",
+                "Name EN": "M1 Carbine with grenade launcher",
                 "Name RU" : "M1 Carbine с ГМ",
-                "Damage" : {
-                    "a" : 1.925265,
-                    "b" : 5.567893,
-                    "c" : 0.003768973
-                },
-                "Range" : 300,
-                "RPM" : 305
+                "Name Game" : "m1_carbine_grenade_launcher"
             },
             {
                 "Name EN": "M1 Garand",
                 "Name RU" : "M1 Garand",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name Game" : "m1_garand"
             },
             {
-                "Name EN": "M1 Garand w. grenade launcher",
+                "Name EN": "M1 Garand with grenade launcher",
                 "Name RU" : "M1 Garand с ГМ",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name Game" : "m1_garand_grenade_launcher_m7"
             },
             {
                 "Name EN": "M2 Carbine",
                 "Name RU" : "M2 Carbine",
-                "Damage" : {
-                    "a" : 1.925265,
-                    "b" : 5.567893,
-                    "c" : 0.003768973
-                },
-                "Range" : 300,
-                "RPM" : 715
+                "Name Game" : "m2_carbine"
+            },
+            {
+                "Name EN": "Pedersen rifle",
+                "Name RU" : "",
+                "Name Game" : "pedersen_rifle"
             },
             {
                 "Name EN": "Sniper AVS-36",
                 "Name RU" : "Снайперская АВС-36",
-                "Damage" : {
-                    "a" : 0.08942289,
-                    "b" : 12.11327,
-                    "c" : 0.002105417
-                },
-                "Range" : 300,
-                "RPM" : 575
+                "Name Game" : "sniper_avs_36_gun"
             },
             {
                 "Name EN": "Sniper M1 Garand",
                 "Name RU" : "Снайперский M1 Garand",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name Game" : "sniper_m1_garand_gun"
             },
             {
                 "Name EN": "Sniper SVT-38",
                 "Name RU" : "Снайперская СВТ-38",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name Game" : "sniper_svt_38_gun"
             },
             {
                 "Name EN": "Sniper SVT-40",
                 "Name RU" : "Снайперская СВТ-40",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name Game" : "sniper_svt_38_gun"
             },
             {
                 "Name EN": "SVT-38",
                 "Name RU" : "СВТ-38",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name Game" : "svt_38"
             },
             {
                 "Name EN": "SVT 40",
                 "Name RU" : "СВТ 40",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
-            }
+                "Name Game" : "svt_40"
+            },
+            {
+                "Name EN": "Turner SMLE",
+                "Name RU" : "",
+                "Name Game" : "turner_automatic_rifle"
+            },
         ]
     },
     {
@@ -789,189 +560,102 @@ var WEAPONS = [
             {
                 "Name EN": "Carcano M1891",
                 "Name RU" : "Carcano M1891",
-                "Damage" : {
-                    "a" : 5.043621,
-                    "b" : 9.464627,
-                    "c" : 0.003351914
-                },
-                "Range" : 300,
-                "RPM" : 54.5
+                "Name Game" : "carcano_m91"
             },
             {
-                "Name EN": "Carcano M91 w. scope",
+                "Name EN": "Carcano M91 with scope",
                 "Name RU" : "Снайперский Carcano M91",
-                "Damage" : {
-                    "a" : 5.043621,
-                    "b" : 9.464627,
-                    "c" : 0.003351914
-                },
-                "Range" : 300,
-                "RPM" : 37
+                "Name Game" : "carcano_m91_with_scope_mount"
             },
             {
                 "Name EN": "Carcano Mod. 38",
                 "Name RU" : "Carcano Mod. 38",
-                "Damage" : {
-                    "a" : 2.777539,
-                    "b" : 11.33889,
-                    "c" : 0.002847868
-                },
-                "Range" : 300,
-                "RPM" : 63
+                "Name Game" : "carcano_m38"
             },
             {
-                "Name EN": "Carcano Mod. 38 w. scope",
+                "Name EN": "Carcano Mod. 38 with scope",
                 "Name RU" : "Carcano Mod. 38 снайперский",
-                "Damage" : {
-                    "a" : 8.96114,
-                    "b" : 4.953115,
-                    "c" : 0.002486645
-                },
-                "Range" : 300,
-                "RPM" : 63
+                "Name Game" : "carcano_m38_7_35_with_scope_mount"
             },
             {
                 "Name EN": "Gewehr 1888",
                 "Name RU" : "Gewehr 1888",
-                "Damage" : {
-                    "a" : 2.855389,
-                    "b" : 14.71019,
-                    "c" : 0.002636832
-                },
-                "Range" : 300,
-                "RPM" : 39
+                "Name Game" : "gewehr_88"
             },
             {
-                "Name EN": "Gewehr 98 w. scope",
+                "Name EN": "Gewehr 98 with scope",
                 "Name RU" : "Gewehr 98 с оптикой",
-                "Damage" : {
-                    "a" : 9.788447,
-                    "b" : 6.34831,
-                    "c" : 0.00216988
-                },
-                "Range" : 300,
-                "RPM" : 51.5
+                "Name Game" : "mauser_gewehr_98_with_scope_mount"
             },
             {
                 "Name EN": "Kar98k",
                 "Name RU" : "Kar98k",
-                "Damage" : {
-                    "a" : 3.3663,
-                    "b" : 10.99683,
-                    "c" : 0.003643476
-                },
-                "Range" : 300,
-                "RPM" : 63
+                "Name Game" : "mauser_98k"
             },
             {
-                "Name EN": "Kar98k w. GPP/40",
-                "Name RU" : "Kar98k с GPP/40",
-                "Damage" : {
-                    "a" : 3.3663,
-                    "b" : 10.99683,
-                    "c" : 0.003643476
-                },
-                "Range" : 300,
-                "RPM" : 63
+                "Name EN": "Kar98k with GGP/40 grenade launcher",
+                "Name RU" : "Kar98k с ГМ GGP/40",
+                "Name Game" : "kar98k_with_gg_p_40_grenade_launcher"
             },
             {
-                "Name EN": "Kar98k w. Schiessbecher",
+                "Name EN": "Kar98k with Schiessbecher grenade launcher",
                 "Name RU" : "Kar98k с ГМ Schiessbecher",
-                "Damage" : {
-                    "a" : 3.3663,
-                    "b" : 10.99683,
-                    "c" : 0.003643476
-                },
-                "Range" : 300,
-                "RPM" : 63
+                "Name Game" : "kar98k_with_schiessbecher_grenade_launcher"
             },
             {
-                "Name EN": "Kar98k w. scope",
+                "Name EN": "Kar98k with scope",
                 "Name RU" : "Kar98k с оптикой",
-                "Damage" : {
-                    "a" : 9.16114,
-                    "b" : 4.953115,
-                    "c" : 0.002486645
-                },
-                "Range" : 300,
-                "RPM" : 63
+                "Name Game" : "kar98k_with_scope_mount_gun"
+            },
+            {
+                "Name EN": "Kar98k Trench",
+                "Name RU" : "",
+                "Name Game" : "mauser_98k_trench"
+            },
+            {
+                "Name EN": "Lebel 1886 M93",
+                "Name RU" : "",
+                "Name Game" : "lebel_1886_m93"
+            },
+            {
+                "Name EN": "M/28 rifle",
+                "Name RU" : "",
+                "Name Game" : ""
             },
             {
                 "Name EN": "Mannlicher M1895",
                 "Name RU" : "Mannlicher M1895",
-                "Damage" : {
-                    "a" : 3.062877,
-                    "b" : 10.87694,
-                    "c" : 0.00350866
-                },
-                "Range" : 300,
-                "RPM" : 74.5
+                "Name Game" : "mannlicher_m1895"
             },
             {
                 "Name EN": "Mannlicher M93",
                 "Name RU" : "Mannlicher M93",
-                "Damage" : {
-                    "a" : 5.043621,
-                    "b" : 9.464627,
-                    "c" : 0.003351914
-                },
-                "Range" : 300,
-                "RPM" : 63
+                "Name Game" : "mannlicher_m93_roman"
             },
             {
                 "Name EN": "MAS-36",
                 "Name RU" : "MAS-36",
-                "Damage" : {
-                    "a" : 2.628857,
-                    "b" : 10.38874,
-                    "c" : 0.003420111
-                },
-                "Range" : 300,
-                "RPM" : 66
+                "Name Game" : "mas_36_with_bayonet"
             },
             {
                 "Name EN": "Pre-war Kar98k",
                 "Name RU" : "Довоенный Kar98k",
-                "Damage" : {
-                    "a" : 3.3663,
-                    "b" : 10.99683,
-                    "c" : 0.003643476
-                },
-                "Range" : 300,
-                "RPM" : 68.5
+                "Name Game" : "pre_war_kar98k"
             },
             {
                 "Name EN": "Pre-war Kar98k w. scope",
                 "Name RU" : "Довоенный Kar98k с оптикой",
-                "Damage" : {
-                    "a" : 9.16114,
-                    "b" : 4.953115,
-                    "c" : 0.002486645
-                },
-                "Range" : 300,
-                "RPM" : 68.5
+                "Name Game" : "pre_war_kar98k_with_scope_mount_gun"
             },
             {
                 "Name EN": "VG.2",
                 "Name RU" : "VG.2",
-                "Damage" : {
-                    "a" : 3.3663,
-                    "b" : 10.99683,
-                    "c" : 0.003643476
-                },
-                "Range" : 300,
-                "RPM" : 50.5
+                "Name Game" : "vg_2"
             },
             {
                 "Name EN": "Vz. 24",
                 "Name RU" : "Vz. 24",
-                "Damage" : {
-                    "a" : 0.1384082,
-                    "b" : 15.13656,
-                    "c" : 0.002100371
-                },
-                "Range" : 300,
-                "RPM" : 57.5
+                "Name Game" : "vz_24"
             }
         ]
     },
@@ -982,112 +666,214 @@ var WEAPONS = [
             {
                 "Name EN": "Armaguerra Mod. 39",
                 "Name RU" : "Armaguerra Mod. 39",
-                "Damage" : {
-                    "a" : 1.207901,
-                    "b" : 10.33268,
-                    "c" : 0.002419054
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name Game" : "armaguerra_mod_39"
+            },
+            {
+                "Name EN": "Beretta M31",
+                "Name RU" : "",
+                "Name Game" : "beretta_m31"
             },
             {
                 "Name EN": "FG 42",
                 "Name RU" : "FG 42",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 715
+                "Name Game" : "fg_42"
             },
             {
                 "Name EN": "FG 42 II",
                 "Name RU" : "FG 42 II",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 715
+                "Name Game" : "fg_42_model_2"
+            },
+            {
+                "Name EN": "Gerät 03",
+                "Name RU" : "",
+                "Name Game" : "gerat_03"
             },
             {
                 "Name EN": "Gewehr 41",
                 "Name RU" : "Gewehr 41",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name Game" : "gewehr_41"
+            },
+            {
+                "Name EN": "Gewehr 41 (M)",
+                "Name RU" : "",
+                "Name Game" : "gewehr_41_mauser"
             },
             {
                 "Name EN": "Gewehr 43",
                 "Name RU" : "Gewehr 43",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name Game" : "gewehr_43"
+            },
+            {
+                "Name EN": "Gewehr 43 Kurz",
+                "Name RU" : "",
+                "Name Game" : "gewehr_43_kurz"
             },
             {
                 "Name EN": "MKb 42(H)",
                 "Name RU" : "MKb 42(H)",
-                "Damage" : {
-                    "a" : 2.134058,
-                    "b" : 6.081512,
-                    "c" : 0.003886194
-                },
-                "Range" : 300,
-                "RPM" : 475
+                "Name Game" : "mkb_42_h"
             },
             {
-                "Name EN": "Sniper Gewehr 41",
-                "Name RU" : "Снайперский Gewehr 41",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name EN": "Moschetto M91",
+                "Name RU" : "",
+                "Name Game" : "carcano_moschetto_91"
+            },
+            {
+                "Name EN": "Pavesi M42",
+                "Name RU" : "",
+                "Name Game" : "pavesi_m42"
             },
             {
                 "Name EN": "Sniper Gewehr 43",
                 "Name RU" : "Снайперский Gewehr 43",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name Game" : "sniper_gewehr_43_gun"
             },
             {
                 "Name EN": "Sniper MKb 42(H)",
                 "Name RU" : "Снайперский MKb 42(H)",
-                "Damage" : {
-                    "a" : 2.134058,
-                    "b" : 6.081512,
-                    "c" : 0.003886194
-                },
-                "Range" : 300,
-                "RPM" : 620
+                "Name Game" : "mkb_42_h_with_scope"
             },
             {
                 "Name EN": "ZH-29",
                 "Name RU" : "ZH-29",
-                "Damage" : {
-                    "a" : 2.544449,
-                    "b" : 9.729522,
-                    "c" : 0.002910604
-                },
-                "Range" : 300,
-                "RPM" : 190
+                "Name Game" : "zh_29"
+            }
+        ]
+    },
+    {
+        "Category EN" : "Allied Machineguns",
+        "Category RU" : "Пулеметы Союзников",
+        "Weapons" : [
+            {
+                "Name EN": "Breda Mod. 30",
+                "Name RU" : "Breda Mod. 30",
+                "Name Game" : "breda_mod_30"
+            },
+            {
+                "Name EN": "Bren Mk I",
+                "Name RU" : "Bren Mk I",
+                "Name Game" : "bren_mk1"
+            },
+            {
+                "Name EN": "Bren Mk II",
+                "Name RU" : "Bren Mk II",
+                "Name Game" : "bren_mk2"
+            },
+            {
+                "Name EN": "Browning M1918",
+                "Name RU" : "",
+                "Name Game" : "browning_m1918"
+            },
+            {
+                "Name EN": "Browning M1918A1",
+                "Name RU" : "Browning M1918A1",
+                "Name Game" : "browning_m1918a1"
+            },
+            {
+                "Name EN": "Browning M1918A2",
+                "Name RU" : "Browning M1918A2",
+                "Name Game" : "browning_m1918a2"
+            },
+            {
+                "Name EN": "Browning M1918A6",
+                "Name RU" : "Browning M1918A6",
+                "Name Game" : ""
+            },
+            {
+                "Name EN": "Charlton Automatic Rifle",
+                "Name RU" : "",
+                "Name Game" : "charlton_automatic_rifle"
+            },
+            {
+                "Name EN": "Chauchat",
+                "Name RU" : "",
+                "Name Game" : "chauchat"
+            },
+            {
+                "Name EN": "Colt Monitor",
+                "Name RU" : "",
+                "Name Game" : "colt_monitor"
+            },
+            {
+                "Name EN": "DP-27",
+                "Name RU" : "ДП-27",
+                "Name Game" : "dp_27"
+            },
+            {
+                "Name EN": "DPM",
+                "Name RU" : "ДПМ",
+                "Name Game" : "dpm"
+            },
+            {
+                "Name EN": "DT-29",
+                "Name RU" : "ДТ-29",
+                "Name Game" : "dt_29"
+            },
+            {
+                "Name EN": "Lewis gun",
+                "Name RU" : "",
+                "Name Game" : "lewis_lmg"
+            },
+            {
+                "Name EN": "Madsen",
+                "Name RU" : "Мадсен",
+                "Name Game" : "madsen"
+            },
+            {
+                "Name EN": "Vickers-Berthier",
+                "Name RU" : "Виккерс-Бертье",
+                "Name Game" : "vickers_berthier"
+            }
+        ]
+    },
+    {
+        "Category EN" : "Axis Machineguns",
+        "Category RU" : "Пулеметы Оси",
+        "Weapons" : [
+            {
+                "Name EN": "Breda Mod. 30",
+                "Name RU" : "Breda Mod. 30",
+                "Name Game" : "breda_mod_30"
+            },
+            {
+                "Name EN": "Browning wz. 1928",
+                "Name RU" : "",
+                "Name Game" : "browning_wz_1928"
+            },
+            {
+                "Name EN": "MG 13",
+                "Name RU" : "MG 13",
+                "Name Game" : "mg_13"
+            },
+            {
+                "Name EN": "MG 13 with drum magazine",
+                "Name RU" : "",
+                "Name Game" : "mg_13_saddle_drum"
+            },
+            {
+                "Name EN": "MG 30",
+                "Name RU" : "",
+                "Name Game" : "mg_30"
+            },
+            {
+                "Name EN": "MG 34",
+                "Name RU" : "MG 34",
+                "Name Game" : "mg_34"
+            },
+            {
+                "Name EN": "MG 34 with Patronentrommel 34",
+                "Name RU" : "MG 34 с Patronentrommel 34",
+                "Name Game" : "mg_34_with_patronentrommel"
+            },
+            {
+                "Name EN": "MG 42",
+                "Name RU" : "MG 42",
+                "Name Game" : "mg_42_handheld"
+            },
+            {
+                "Name EN": "ZB-26",
+                "Name RU" : "ZB-26",
+                "Name Game" : "zb_26"
             }
         ]
     },
@@ -1098,157 +884,78 @@ var WEAPONS = [
             {
                 "Name EN": "Boys ATR",
                 "Name RU" : "ПТР Бойса",
-                "Damage" : {
-                    "a" : 81.9792,
-                    "b" : 68.6717,
-                    "c" : 0.0008560189
-                },
-                "Range" : 300,
-                "RPM" : 31
+                "Name Game" : "atr_boys"
             },
             {
-                "Name EN": "Breda Mod. 30",
-                "Name RU" : "Breda Mod. 30",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 460
+                "Name EN": "M1 Bazooka",
+                "Name RU" : "",
+                "Name Game" : "m1_bazooka"
             },
             {
-                "Name EN": "Bren Mk I",
-                "Name RU" : "Bren Mk I",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 460
+                "Name EN": "M1 Flamethrower",
+                "Name RU" : "",
+                "Name Game" : "m1_flamethrower"
             },
             {
-                "Name EN": "Bren Mk II",
-                "Name RU" : "Bren Mk II",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 460
+                "Name EN": "M2 Flamethrower",
+                "Name RU" : "",
+                "Name Game" : "m2_flamethrower"
             },
             {
-                "Name EN": "Browning M1918A1",
-                "Name RU" : "Browning M1918A1",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 575
+                "Name EN": "Panzerfaust 60",
+                "Name RU" : "",
+                "Name Game" : "panzerfaust_60"
             },
             {
-                "Name EN": "Browning M1918A2",
-                "Name RU" : "Browning M1918A2",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 575
+                "Name EN": "Panzerfaust 100",
+                "Name RU" : "",
+                "Name Game" : "panzerfaust_100"
             },
             {
-                "Name EN": "Browning M1918A6",
-                "Name RU" : "Browning M1918A6",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 475
-            },
-            {
-                "Name EN": "DP-27",
-                "Name RU" : "ДП-27",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 515
-            },
-            {
-                "Name EN": "DPM",
-                "Name RU" : "ДПМ",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 530
-            },
-            {
-                "Name EN": "DT-29",
-                "Name RU" : "ДТ-29",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 510
-            },
-            {
-                "Name EN": "Madsen",
-                "Name RU" : "Мадсен",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 430
+                "Name EN": "PIAT",
+                "Name RU" : "",
+                "Name Game" : "piat"
             },
             {
                 "Name EN": "PTRD-41",
                 "Name RU" : "ПТРД-41",
-                "Damage" : {
-                    "a" : 81.9792,
-                    "b" : 68.6717,
-                    "c" : 0.0008560189
-                },
-                "Range" : 300,
-                "RPM" : 14.5
+                "Name Game" : "ptrd_41"
             },
             {
                 "Name EN": "PTRS 41",
                 "Name RU" : "ПТРС 41",
-                "Damage" : {
-                    "a" : 81.9792,
-                    "b" : 68.6717,
-                    "c" : 0.0008560189
-                },
-                "Range" : 300,
-                "RPM" : 71.5
+                "Name Game" : "ptrs_41"
             },
             {
-                "Name EN": "Vickers-Berthier",
-                "Name RU" : "Виккерс-Бертье",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 420
-            }
+                "Name EN": "RM-38",
+                "Name RU" : "",
+                "Name Game" : "rm_38"
+            },
+            {
+                "Name EN": "RM-40",
+                "Name RU" : "",
+                "Name Game" : "mortar_rm_40"
+            },
+            {
+                "Name EN": "RMN-50",
+                "Name RU" : "",
+                "Name Game" : "neiman_minethrower"
+            },
+            {
+                "Name EN": "ROKS-2",
+                "Name RU" : "",
+                "Name Game" : "roks_2"
+            },
+            {
+                "Name EN": "ROKS-3",
+                "Name RU" : "",
+                "Name Game" : "roks_3"
+            },
+            {
+                "Name EN": "Two-inch Mortar",
+                "Name RU" : "",
+                "Name Game" : "two_inch_mortar"
+            },
         ]
     },
     {
@@ -1256,93 +963,50 @@ var WEAPONS = [
         "Category RU" : "Тяжелые Вооружение Оси",
         "Weapons" : [
             {
-                "Name EN": "Breda Mod. 30",
-                "Name RU" : "Breda Mod. 30",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 460
+                "Name EN": "Granatwerfer 36",
+                "Name RU" : "",
+                "Name Game" : "granatwerfer_36"
             },
             {
-                "Name EN": "MG 13",
-                "Name RU" : "MG 13",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 575
+                "Name EN": "GrB-39",
+                "Name RU" : "",
+                "Name Game" : "grb_39"
             },
             {
-                "Name EN": "MG 34",
-                "Name RU" : "MG 34",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 765
+                "Name EN": "Flammenwerfer 35",
+                "Name RU" : "",
+                "Name Game" : "flammenwerfer_35"
             },
             {
-                "Name EN": "MG 34 with Patronentrommel 34",
-                "Name RU" : "MG 34 с Patronentrommel 34",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 765
+                "Name EN": "Flammenwerfer 41",
+                "Name RU" : "",
+                "Name Game" : "flammenwerfer_41"
             },
             {
-                "Name EN": "MG 42",
-                "Name RU" : "MG 42",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 860
+                "Name EN": "Panzerfaust 60",
+                "Name RU" : "",
+                "Name Game" : "panzerfaust_60"
+            },
+            {
+                "Name EN": "Panzerfaust 100",
+                "Name RU" : "",
+                "Name Game" : "panzerfaust_100"
             },
             {
                 "Name EN": "PzB-38",
                 "Name RU" : "PzB-38",
-                "Damage" : {
-                    "a" : 22.44789,
-                    "b" : 77.92211,
-                    "c" : 0.000476039
-                },
-                "Range" : 300,
-                "RPM" : 11.5
+                "Name Game" : "pzb_38"
             },
             {
                 "Name EN": "PzB-39",
                 "Name RU" : "PzB-39",
-                "Damage" : {
-                    "a" : 22.44789,
-                    "b" : 77.92211,
-                    "c" : 0.000476039
-                },
-                "Range" : 300,
-                "RPM" : 11.5
+                "Name Game" : "pzb_39"
             },
             {
-                "Name EN": "ZB-26",
-                "Name RU" : "ZB-26",
-                "Damage" : {
-                    "a" : 9.054037,
-                    "b" : 3.122273,
-                    "c" : 0.005812549
-                },
-                "Range" : 300,
-                "RPM" : 715
-            }
+                "Name EN": "Sturmpistole",
+                "Name RU" : "",
+                "Name Game" : "sturmpistole"
+            },
         ]
     },
     {
@@ -1350,104 +1014,65 @@ var WEAPONS = [
         "Category RU" : "Пистолеты Союзников",
         "Weapons" : [
             {
+                "Name EN": "Astra 300 Lux",
+                "Name RU" : "",
+                "Name Game" : "astra_300"
+            },
+            {
                 "Name EN": "Browning Hi-Power",
                 "Name RU" : "Browning Hi-Power",
-                "Damage" : {
-                    "a" : 1.553725,
-                    "b" : 4.485456,
-                    "c" : 0.01280681
-                },
-                "Range" : 75,
-                "RPM" : 400
+                "Name Game" : "browning_hp"
             },
             {
                 "Name EN": "Colt New Service",
                 "Name RU" : "Colt New Service",
-                "Damage" : {
-                    "a" : -3.115312,
-                    "b" : 9.88221,
-                    "c" : 0.002737937
-                },
-                "Range" : 75,
-                "RPM" : 230
+                "Name Game" : "colt_new_service_m1909"
             },
             {
                 "Name EN": "Enfield No.2 MkI",
                 "Name RU" : "Enfield No.2 MkI",
-                "Damage" : {
-                    "a" : 1.590529,
-                    "b" : 3.948694,
-                    "c" : 0.01468277
-                },
-                "Range" : 75,
-                "RPM" : 160
+                "Name Game" : "enfield_no2_mk1"
             },
             {
                 "Name EN": "M1911A1 Colt",
                 "Name RU" : "M1911A1 Colt",
-                "Damage" : {
-                    "a" : -3.115312,
-                    "b" : 9.88221,
-                    "c" : 0.002737937
-                },
-                "Range" : 75,
-                "RPM" : 345
+                "Name Game" : "m1911_colt"
             },
             {
                 "Name EN": "Mauser C96",
                 "Name RU" : "Mauser C96",
-                "Damage" : {
-                    "a" : 0.3474573,
-                    "b" : 5.94809,
-                    "c" : 0.01831691
-                },
-                "Range" : 75,
-                "RPM" : 345
+                "Name Game" : "mauser_c96"
             },
             {
                 "Name EN": "Nagant 1895",
                 "Name RU" : "Наган обр. 1895",
-                "Damage" : {
-                    "a" : 0.3798544,
-                    "b" : 5.598529,
-                    "c" : 0.01920777
-                },
-                "Range" : 75,
-                "RPM" : 86
+                "Name Game" : "nagant_m1895"
+            },
+            {
+                "Name EN": "Nagant M1895 with supressor",
+                "Name RU" : "",
+                "Name Game" : "nagant_m1895_bramit"
             },
             {
                 "Name EN": "TK 1926",
                 "Name RU" : "ТК обр. 1926",
-                "Damage" : {
-                    "a" : 0.2559431,
-                    "b" : 4.945492,
-                    "c" : 0.01768012
-                },
-                "Range" : 75,
-                "RPM" : 345
+                "Name Game" : "tk_26"
             },
             {
                 "Name EN": "TT",
                 "Name RU" : "ТТ",
-                "Damage" : {
-                    "a" : 0.3474573,
-                    "b" : 5.94809,
-                    "c" : 0.01831691
-                },
-                "Range" : 75,
-                "RPM" : 345
+                "Name Game" : "tt_33"
             },
             {
                 "Name EN": "Webley Mk VI Revolver",
                 "Name RU" : "Webley Mk VI Revolver",
-                "Damage" : {
-                    "a" : -3.829761,
-                    "b" : 9.654322,
-                    "c" : 0.002353491
-                },
-                "Range" : 75,
-                "RPM" : 145
-            }
+                "Name Game" : "webley_mk6"
+            },
+            {
+                "Name EN": "Welrod mk.2",
+                "Name RU" : "",
+                "Name Game" : "welrod_mk2"
+            },
         ]
     },
     {
@@ -1457,79 +1082,42 @@ var WEAPONS = [
             {
                 "Name EN": "Beretta M1923",
                 "Name RU" : "Beretta M1923",
-                "Damage" : {
-                    "a" : 1.626266,
-                    "b" : 4.211769,
-                    "c" : 0.0136674
-                },
-                "Range" : 75,
-                "RPM" : 285
+                "Name Game" : "beretta_m1923"
             },
             {
                 "Name EN": "Beretta M1934",
                 "Name RU" : "Beretta M1934",
-                "Damage" : {
-                    "a" : 1.590529,
-                    "b" : 3.948694,
-                    "c" : 0.01468277
-                },
-                "Range" : 75,
-                "RPM" : 345
+                "Name Game" : "beretta_m1934"
+            },
+            {
+                "Name EN": "ČZ vz. 27",
+                "Name RU" : "",
+                "Name Game" : "cz_vz_27"
             },
             {
                 "Name EN": "Mauser C96",
                 "Name RU" : "Mauser C96",
-                "Damage" : {
-                    "a" : 0.3474573,
-                    "b" : 5.94809,
-                    "c" : 0.01831691
-                },
-                "Range" : 75,
-                "RPM" : 345
+                "Name Game" : "mauser_c96"
             },
             {
                 "Name EN": "P08 Luger",
                 "Name RU" : "P08 Luger",
-                "Damage" : {
-                    "a" : 1.553725,
-                    "b" : 4.485456,
-                    "c" : 0.01280681
-                },
-                "Range" : 75,
-                "RPM" : 345
+                "Name Game" : "p08_luger"
             },
             {
                 "Name EN": "Walther P38",
                 "Name RU" : "Walther P38",
-                "Damage" : {
-                    "a" : 1.553725,
-                    "b" : 4.485456,
-                    "c" : 0.01280681
-                },
-                "Range" : 75,
-                "RPM" : 345
+                "Name Game" : "p38_walther"
             },
             {
                 "Name EN": "Walther PP",
                 "Name RU" : "Walther PP",
-                "Damage" : {
-                    "a" : 0.3798544,
-                    "b" : 5.598529,
-                    "c" : 0.01920777
-                },
-                "Range" : 75,
-                "RPM" : 345
+                "Name Game" : "walther_pp"
             },
             {
                 "Name EN": "Walther PPK",
                 "Name RU" : "Walther PPK",
-                "Damage" : {
-                    "a" : 0.3798544,
-                    "b" : 5.598529,
-                    "c" : 0.01920777
-                },
-                "Range" : 75,
-                "RPM" : 345
+                "Name Game" : "walther_ppk"
             }
         ]
     }
