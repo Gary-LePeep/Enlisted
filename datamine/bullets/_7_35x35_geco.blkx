@@ -1,0 +1,42 @@
+var _7_35x35_geco = 
+{
+  "mass": 0.008,
+  "cartridgeMass": 0.0168,
+  "caliber": 0.0077,
+  "speed": 695.0,
+  "maxDistance": 2000.0,
+  "bulletType": "ball",
+  "hitPowerMult": 8.3,
+  "effectiveDistance": 300.0,
+  "relativeVelHitShift": [300.0,1000.0],
+  "relativeVelArmorShift": [200.0,1000.0],
+  "hitpower": {
+    "HitPower10m": [1.0,10.0],
+    "HitPower100m": [0.78,100.0],
+    "HitPower200m": [0.63,200.0],
+    "HitPower300m": [0.5,300.0],
+    "HitPower400m": [0.4,400.0],
+    "HitPower500m": [0.31,500.0],
+    "HitPower1000m": [0.09,1000.0],
+    "HitPower1500m": [0.04,1500.0]
+  },
+  "armorpower": {
+    "ArmorPower0m": [1.0,300.0],
+    "ArmorPower1500m": [0.1,1500.0]
+  },
+  "hitFx": {
+    "fxScale": [0.8,1.0],
+    "defaultFx": "ground_splash",
+    "jetFx": "ground_splash_direct",
+    "preset": "bullet"
+  },
+  "tracer": {
+    "ignitionTime": 0.002,
+    "smokeColor": "#ffe6b3cc",
+    "smokeTime": 0.01,
+    "smokeRadius": 0.01,
+    "headColor": "#ffaa55ff",
+    "luminosity": 10.0,
+    "burnTime": 1.8
+  }
+}

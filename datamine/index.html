@@ -14,6 +14,17 @@
 <script src="../dist/chart.min.js"></script>
 <script src="../dist/chartjs-plugin-annotation.min.js"></script>
 <script type="text/javascript" src="./ww2_guns.blkx"></script>
+<script type="text/javascript" src="./enlisted_guns.blkx"></script>
+<script type="text/javascript" src="./bullets.js"></script>
+<script>
+    // load all bullets
+    for (var i = 0; i < ALLBULLETS.length; i++) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "./bullets/" + ALLBULLETS[i];
+        document.head.appendChild(script);
+    }
+</script>
 
 
 <script>
@@ -76,47 +87,134 @@
         /* Data */
         // Name
         var dataDiv = document.createElement("div");
-        dataDiv.style = "position: relative; left: 30%";
+        dataDiv.style = "position: absolute; left: 30%; width: 30%";
         document.getElementsByTagName('BODY')[0].appendChild(dataDiv)
+
+        var dataDiv2 = document.createElement("div");
+        dataDiv2.style = "position: absolute; left: 60%; width: 40%";
+        document.getElementsByTagName('BODY')[0].appendChild(dataDiv2)
 
         var gunName = translate("gunName", "div");
         dataDiv.append(gunName);
-        var gunNameData = document.createElement("b");
-        gunNameData.textContent = "-";
+        var gunNameData = translate("-", "b");
         gunName.append(gunNameData);
 
         var gunIGN = translate("gunIGN", "div");
         dataDiv.append(gunIGN);
-        var gunIGNData = document.createElement("b");
-        gunIGNData.textContent = "-";
+        var gunIGNData = translate("-", "b");
         gunIGN.append(gunIGNData);
 
         var aka = translate("aka", "div");
         dataDiv.append(aka);
-        var akaData = document.createElement("b");
-        akaData.textContent = "-";
+        var akaData = translate("-", "b");
         aka.append(akaData);
 
         var type = translate("type", "div");
         dataDiv.append(type);
-        var typeData = document.createElement("b");
-        typeData.textContent = "-";
+        var typeData = translate("-", "b");
         type.append(typeData);
 
         var ammo = translate("ammo", "div");
         dataDiv.append(ammo);
-        var ammoData = document.createElement("b");
-        ammoData.textContent = "-";
+        var ammoData = translate("-", "b");
         ammo.append(ammoData);
 
         dataDiv.append(translate("EMPTY", "p"));
 
+        // Bullet data
         var rpm = translate("rpm", "div");
         dataDiv.append(rpm);
-        var rpmData = document.createElement("b");
-        rpmData.textContent = "-";
+        var rpmData = translate("-", "b");
         rpm.append(rpmData);
 
+        var effRange = translate("effectiveRange", "div");
+        dataDiv.append(effRange);
+        var effRangeData = translate("-", "b");
+        effRange.append(effRangeData);
+
+        var maxRange = translate("maxRange", "div");
+        dataDiv.append(maxRange);
+        var maxRangeData = translate("-", "b");
+        maxRange.append(maxRangeData);
+
+        var bulletSpeed = translate("bulletSpeed", "div");
+        dataDiv.append(bulletSpeed);
+        var bulletSpeedData = translate("-", "b");
+        bulletSpeed.append(bulletSpeedData);
+
+        var dispersion = translate("dispersion", "div");
+        dataDiv.append(dispersion);
+        var dispersionData = translate("-", "b");
+        dispersion.append(dispersionData);
+
+        var zeroDistance = translate("zeroDistance", "div");
+        dataDiv.append(zeroDistance);
+        var zeroDistanceData = translate("-", "b");
+        zeroDistance.append(zeroDistanceData);
+
+        dataDiv.append(translate("EMPTY", "p"));
+
+        // Reload data
+        var singleReloadPrepare = translate("singleReloadPrepare", "div");
+        dataDiv.append(singleReloadPrepare);
+        var singleReloadPrepareData = translate("-", "b");
+        singleReloadPrepare.append(singleReloadPrepareData);
+
+        var singleReloadLoop = translate("singleReloadLoop", "div");
+        dataDiv.append(singleReloadLoop);
+        var singleReloadLoopData = translate("-", "b");
+        singleReloadLoop.append(singleReloadLoopData);
+
+        var singleReloadPost = translate("singleReloadPost", "div");
+        dataDiv.append(singleReloadPost);
+        var singleReloadPostData = translate("-", "b");
+        singleReloadPost.append(singleReloadPostData);
+
+        var reload = translate("reload", "div");
+        dataDiv.append(reload);
+        var reloadData = translate("-", "b");
+        reload.append(reloadData);
+
+        var reloadAlt = translate("reloadAlt", "div");
+        dataDiv.append(reloadAlt);
+        var reloadAltData = translate("-", "b");
+        reloadAlt.append(reloadAltData);
+
+        dataDiv.append(translate("EMPTY", "p"));
+
+        // Recoil data
+        var recoilVert = translate("recoilVert", "div");
+        dataDiv.append(recoilVert);
+        var recoilVertData = translate("-", "b");
+        recoilVert.append(recoilVertData);
+
+        var recoilHoriz = translate("recoilHoriz", "div");
+        dataDiv.append(recoilHoriz);
+        var recoilHorizData = translate("-", "b");
+        recoilHoriz.append(recoilHorizData);
+
+        // Bullet table
+        var damageOverRange = translate("ttk_dpm_dropdown1", "div");
+        dataDiv2.append(damageOverRange);
+        var table = document.createElement("table");
+        dataDiv2.append(table);
+        var tableRow1 = document.createElement("tr");
+        table.append(tableRow1);
+        var tableRow2 = document.createElement("tr");
+        table.append(tableRow2);
+
+        dataDiv2.append(translate("EMPTY", "p"));
+
+        var penOverRange = translate("penOverRange", "div");
+        dataDiv2.append(penOverRange);
+        var table2 = document.createElement("table");
+        dataDiv2.append(table2);
+        var tableRow3 = document.createElement("tr");
+        table2.append(tableRow3);
+        var tableRow4 = document.createElement("tr");
+        table2.append(tableRow4);
+
+        dataDiv2.append(translate("EMPTY", "p"));
 
 
         for (var i = -1; i < WEAPONS.length; i++) (function (i) {
@@ -129,7 +227,7 @@
             categoryButton.append(categoryButtonText);
 
             categoryButton.onclick = function () {
-                if (categoryButtonText.text == translate("Remove")) {
+                if (window.refreshCategory == true || categoryButtonText.text == translate("Remove")) {
                     // reset color button
                     colorButtonText.text = translate("Weapon");
                     gunNameData.textContent = "-";
@@ -138,6 +236,24 @@
                     typeData.textContent = "-";
                     ammoData.textContent = "-";
                     rpmData.textContent = "-";
+                    effRangeData.textContent = "-";
+                    maxRangeData.textContent = "-";
+                    bulletSpeedData.textContent = "-";
+                    tableRow1.textContent = "";
+                    tableRow2.textContent = "";
+                    tableRow3.textContent = "";
+                    tableRow4.textContent = "";
+                    dispersionData.textContent = "-";
+                    singleReloadPrepareData.textContent = "-";
+                    singleReloadLoopData.textContent = "-";
+                    singleReloadPostData.textContent = "-";
+                    zeroDistanceData.textContent = "-";
+                    recoilVertData.textContent = "-";
+                    recoilHorizData.textContent = "-";
+                    reloadData.textContent = "-";
+                    reloadAltData.textContent = "-";
+
+                    window.refreshCategory = false;
                 }
             }
 
@@ -155,34 +271,107 @@
                 weaponButton.tagName = weaponButtonText.text;
 
                 weaponButton.onclick = function () {
+                    window.refreshCategory = true;
+                    categoryButton.onclick();
+
                     // set color button name to selected weapon
                     colorButtonText.text = weaponButtonText.text
 
                     gunNameData.textContent = WEAPONS[i].Weapons[j][translate("WepName")];
                     gunIGNData.textContent = WEAPONS[i].Weapons[j]["Name Game"];
+                    // Data for gun not entered yet
+                    if (gunIGNData.textContent == "") {
+                        gunIGNData.textContent = translate("NotFound");
+                        return;
+                    }
 
                     ALLDATA = Object.assign({}, COMMONDATA, TUNISIADATA);
-                    console.log(ALLDATA)
 
-                    for (var k = 0; k < ALLDATA[gunIGNData.textContent].length; k++) {
-                        if (ALLDATA[gunIGNData.textContent][k].hasOwnProperty("gun__locName")) {
-                            akaData.textContent = ALLDATA[gunIGNData.textContent][k]["gun__locName"];
-                        }
-                        if (ALLDATA[gunIGNData.textContent][k].hasOwnProperty("item__weapType")) {
-                            typeData.textContent = ALLDATA[gunIGNData.textContent][k]["item__weapType"].replace(/_/g, " ");
-                        }
-                        if (ALLDATA[gunIGNData.textContent][k].hasOwnProperty("gun__shells:array")) {
-                            ammoFile = ALLDATA[gunIGNData.textContent][k]["gun__shells:array"]["shells"].split("/");
-                            ammoFile = ammoFile[ammoFile.length - 1];
-                            ammoData.textContent = ammoFile.split(".")[0];
-                        }
-                        if (ALLDATA[gunIGNData.textContent][k].hasOwnProperty("gun__shotFreq")) {
-                            rpmData.textContent = Math.round(ALLDATA[gunIGNData.textContent][k]["gun__shotFreq"] * 60);
-                        }
+                    akaData.textContent = getDataProperty([gunIGNData.textContent], "gun__locName");
+                    typeData.textContent = getDataProperty([gunIGNData.textContent], "item__weapType").replace(/_/g, " ");
+                    ammoFile = getDataProperty([gunIGNData.textContent], "gun__shells:array")["shells"].split("/");
+                    ammoFile = ammoFile[ammoFile.length - 1];
+                    ammoData.textContent = ammoFile.split(".")[0];
+                    for (var k = 1; k < ammoFile.split(".").length - 1; k++) {
+                        ammoData.textContent += "." + ammoFile.split(".")[k];
                     }
+                    rpmData.textContent = Math.round(getDataProperty([gunIGNData.textContent], "gun__shotFreq") * 60);
+
+                    var ammoDataFile = window["_" + ammoData.textContent.replace(/\./g, "_")]
+
+                    effRangeData.textContent = ammoDataFile["effectiveDistance"];
+                    maxRangeData.textContent = ammoDataFile["maxDistance"];
+                    bulletSpeedData.textContent = ammoDataFile["speed"];
+
+                    var keys = Object.keys(ammoDataFile["hitpower"]);
+                    for (var k = 0; k < keys.length; k++) {
+                        var tableheader = document.createElement("th");
+                        tableheader.textContent = ammoDataFile["hitpower"][keys[k]][1] + translate("meters");
+                        tableRow1.append(tableheader);
+                        var tabledata = document.createElement("td");
+                        tabledata.textContent = (ammoDataFile["hitpower"][keys[k]][0] * ammoDataFile["hitPowerMult"]).toFixed(3);
+                        tableRow2.append(tabledata);
+                    }
+
+                    var keys = Object.keys(ammoDataFile["armorpower"]);
+                    for (var k = 0; k < keys.length; k++) {
+                        var tableheader = document.createElement("th");
+                        tableheader.textContent = ammoDataFile["armorpower"][keys[k]][1] + translate("meters");
+                        tableRow3.append(tableheader);
+                        var tabledata = document.createElement("td");
+                        tabledata.textContent = (ammoDataFile["armorpower"][keys[k]][0]) + translate("millimeters");
+                        tableRow4.append(tabledata);
+                    }
+
+                    dispersionData.textContent = getDataProperty([gunIGNData.textContent], "gun_spread__maxDeltaAngle");
+                    zeroDistanceData.textContent = getDataProperty([gunIGNData.textContent], "gun__zeroingDistance");
+                    singleReloadPrepareData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__prepareTime");
+                    singleReloadLoopData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__loopTime");
+                    singleReloadPostData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__postTime");
+                    reloadData.textContent = getDataProperty([gunIGNData.textContent], "gun__reloadTime");
+                    reloadAltData.textContent = getDataProperty([gunIGNData.textContent], "gun__altReloadTime");
+
+                    var recoilTotal = getDataProperty([gunIGNData.textContent], "gun__recoilAmount");
+                    var recoilDir = getDataProperty([gunIGNData.textContent], "gun__recoilDirAmount");
+                    recoilVertData.textContent = (recoilTotal * 1000 * recoilDir).toFixed(3);
+                    recoilHorizData.textContent = (recoilTotal * 1000 * (1 - recoilDir)).toFixed(3);
                 }
             })(j)
         })(i)
+
+        function getDataProperty(gun, property) {
+            // first check overrides
+            if (OVERRIDEDATA[gun[0]] != null) {
+                if (OVERRIDEDATA[gun[0]][property] != null) {
+                    return OVERRIDEDATA[gun[0]][property];
+                }
+            }
+
+            // then check base file
+            if (ALLDATA[gun[0]] != null) {
+                if (ALLDATA[gun[0]][property] != null) {
+                    return ALLDATA[gun[0]][property];
+                }
+                if (ALLDATA[gun[0]]["_extends"] != null) {
+                    gun.push(ALLDATA[gun[0]]["_extends"])
+                }
+                for (var k = 0; k < ALLDATA[gun[0]].length; k++) {
+                    if (ALLDATA[gun[0]][k].hasOwnProperty(property)) {
+                        return ALLDATA[gun[0]][k][property];
+                    }
+                    if (ALLDATA[gun[0]][k].hasOwnProperty("_extends")) {
+                        gun.push(ALLDATA[gun[0]][k]["_extends"])
+                    }
+                }
+            }
+            // not found here, recurse with extensions
+            if (gun.length > 0) {
+                gun.shift();
+                return getDataProperty(gun, property);
+            }
+            // not found at all
+            return "-";
+        }
 
         function weaponByName(name) {
             for (var i = 0; i < WEAPONS.length; i++) {

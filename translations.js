@@ -3,9 +3,12 @@ var EN =
     "aka" : "aka ",
     "ammo" : "Ammunition: ",
     "armor" : "Wearing body armor",
+    "bulletSpeed" : "Bullet speed: ",
     "datamine" : "Enlisted weapon datamine",
     "Category" : "Category EN",
     "contact" : "For any issues, suggestions, etc. contact 10art1#8181 on discord",
+    "dispersion" : "Shot dispersion: ",
+    "effectiveRange" : "Effective Range: ",
     "EMPTY": "",
     "footer_footer": [
         "Damage at less than 10m is the same as damage at 10m.",
@@ -20,18 +23,31 @@ var EN =
     "gunIGN" : "Data name: ",
     "gunName" : "Name: ",
     "language": "Language:",
+    "maxRange" : "Maximum Range: ",
+    "meters" : "m",
+    "millimeters" : "mm",
+    "NotFound" : "Data for this weapon is not yet available.",
+    "penOverRange" : "Armor penetration over distance",
+    "recoilHoriz" : "Horizontal recoil: ",
+    "recoilVert" : "Vertical recoil: ",
+    "reload" : "Time to reload with empty magazine: ",
+    "reloadAlt" : "Time to reload with nonempty magazine: ",
     "Remove" : "(Remove)",
     "rpm" : "Rounds/min: ",
+    "singleReloadPrepare" : "Single bullet reload, prepare time: ",
+    "singleReloadLoop" : "Single bullet reload, time per bullet: ",
+    "singleReloadPost" : "Single bullet reload, finishing time: ",
     "title" : "Enlisted weapon comparison tool",
     "ttk_dpm_dropdown" : "Display the following:",
-    "ttk_dpm_dropdown1" : "Damage over Distance",
-    "ttk_dpm_dropdown2" : "Damage per Minute over Distance",
-    "ttk_dpm_dropdown3" : "Shots to Kill over Distance",
-    "ttk_dpm_dropdown4" : "Time to Kill over Distance",
+    "ttk_dpm_dropdown1" : "Damage over distance",
+    "ttk_dpm_dropdown2" : "Damage per minute over distance",
+    "ttk_dpm_dropdown3" : "Shots to kill over distance",
+    "ttk_dpm_dropdown4" : "Time to kill over distance",
     "type" : "Type: ",
     "vitality": "Has vitality perk",
     "Weapon" : "Weapon ",
-    "WepName" : "Name EN"
+    "WepName" : "Name EN",
+    "zeroDistance" : "Sights zeroing distance: "
 };
 
 var RU =
@@ -39,9 +55,12 @@ var RU =
     "aka" : "Также известен как: ",
     "ammo" : "Патроны: ",
     "armor" : "Носит бронежилет",
+    "bulletSpeed" : "Скорость пули: ",
     "datamine" : "Датамайн оружии в Enlisted",
     "Category" : "Category RU",
     "contact" : "По любым вопросам, предложениям и т. д. обращайтесь к 10art1#8181 на дискорде.",
+    "dispersion" : "Рассеивание выстрелов: ",
+    "effectiveRange" : "Эффективное расстояние: ",
     "EMPTY": "",
     "footer_footer": [
         "Урон на расстоянии менее 10 м равен урону на 10 м.",
@@ -56,8 +75,20 @@ var RU =
     "gunIGN" : "Имя в данных: ",
     "gunName" : "Имя: ",
     "language": "Язык:",
+    "maxRange" : "Максимальное расстояние: ",
+    "meters" : " м",
+    "millimeters" : " мм",
+    "NotFound" : "Данные по этому оружию отсутствуют.",
+    "penOverRange" : "Бронепробиваемость по расстоянию",
+    "recoilHoriz" : "Горизонтальная отдача: ",
+    "recoilVert" : "Вертикальная отдача: ",
+    "reload" : "Время перезарядки с пустым магазином: ",
+    "reloadAlt" : "Время перезарядки с непустым магазином: ",
     "Remove" : "(Убрать)",
     "rpm" : "Скорострельность: ",
+    "singleReloadPrepare" : "Время подготовки к перезарядке отдельных патронов: ",
+    "singleReloadLoop" : "Время перезарядки отдельного патрона: ",
+    "singleReloadPost" : "Время завершения перезарядки отдельных патронов: ",
     "title" : "Enlisted инструмент сравнения оружии",
     "ttk_dpm_dropdown" : "Отображение диаграммы:",
     "ttk_dpm_dropdown1" : "Урон по расстоянию",
@@ -67,7 +98,8 @@ var RU =
     "type" : "Тип: ",
     "vitality": "Имеет способность к живучести",
     "Weapon" : "Оружие ",
-    "WepName" : "Name RU"
+    "WepName" : "Name RU",
+    "zeroDistance" : "Дистанция пристрелки: "
 };
 
 function translate(text, type = "string", style = "") {
@@ -79,7 +111,11 @@ function translate(text, type = "string", style = "") {
         LANG = RU;
     }
     if (type == "string") {
-        return LANG[text];
+        var ret = LANG[text];
+        if (ret == null) {
+            ret = text;
+        }
+        return ret;
     }
 
     var element = document.createElement(type)
@@ -91,8 +127,12 @@ function translate(text, type = "string", style = "") {
         element.style += "; white-space: pre-line"
     }
     else {
-        element.textContent = LANG[text];
-        element.text = LANG[text];
+        var ret = LANG[text];
+        if (ret == null) {
+            ret = text;
+        }
+        element.textContent = ret;
+        element.text = ret;
     }
     return element;
 }
