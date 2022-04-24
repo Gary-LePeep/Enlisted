@@ -297,8 +297,25 @@
                     }
                     rpmData.textContent = Math.round(getDataProperty([gunIGNData.textContent], "gun__shotFreq") * 60);
 
+                    dispersionData.textContent = getDataProperty([gunIGNData.textContent], "gun_spread__maxDeltaAngle");
+                    zeroDistanceData.textContent = getDataProperty([gunIGNData.textContent], "gun__zeroingDistance");
+                    singleReloadPrepareData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__prepareTime");
+                    singleReloadLoopData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__loopTime");
+                    singleReloadPostData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__postTime");
+                    reloadData.textContent = getDataProperty([gunIGNData.textContent], "gun__reloadTime");
+                    reloadAltData.textContent = getDataProperty([gunIGNData.textContent], "gun__altReloadTime");
+
+                    var recoilTotal = getDataProperty([gunIGNData.textContent], "gun__recoilAmount");
+                    var recoilDir = getDataProperty([gunIGNData.textContent], "gun__recoilDirAmount");
+                    recoilVertData.textContent = (recoilTotal * 1000 * recoilDir).toFixed(3);
+                    recoilHorizData.textContent = (recoilTotal * 1000 * (1 - recoilDir)).toFixed(3);
+
                     var ammoDataFile = window["_" + ammoData.textContent.replace(/\./g, "_")]
 
+                    // if ammo not found, return to prevent errors
+                    if (ammoDataFile == null) {
+                        return;
+                    }
                     effRangeData.textContent = ammoDataFile["effectiveDistance"];
                     maxRangeData.textContent = ammoDataFile["maxDistance"];
                     bulletSpeedData.textContent = ammoDataFile["speed"];
@@ -322,19 +339,6 @@
                         tabledata.textContent = (ammoDataFile["armorpower"][keys[k]][0]) + translate("millimeters");
                         tableRow4.append(tabledata);
                     }
-
-                    dispersionData.textContent = getDataProperty([gunIGNData.textContent], "gun_spread__maxDeltaAngle");
-                    zeroDistanceData.textContent = getDataProperty([gunIGNData.textContent], "gun__zeroingDistance");
-                    singleReloadPrepareData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__prepareTime");
-                    singleReloadLoopData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__loopTime");
-                    singleReloadPostData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__postTime");
-                    reloadData.textContent = getDataProperty([gunIGNData.textContent], "gun__reloadTime");
-                    reloadAltData.textContent = getDataProperty([gunIGNData.textContent], "gun__altReloadTime");
-
-                    var recoilTotal = getDataProperty([gunIGNData.textContent], "gun__recoilAmount");
-                    var recoilDir = getDataProperty([gunIGNData.textContent], "gun__recoilDirAmount");
-                    recoilVertData.textContent = (recoilTotal * 1000 * recoilDir).toFixed(3);
-                    recoilHorizData.textContent = (recoilTotal * 1000 * (1 - recoilDir)).toFixed(3);
                 }
             })(j)
         })(i)
