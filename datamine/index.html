@@ -114,14 +114,24 @@
         var typeData = translate("-", "b");
         type.append(typeData);
 
+        var weight = translate("weight", "div");
+        dataDiv.append(weight);
+        var weightData = translate("-", "b");
+        weight.append(weightData);
+
+        var firingMode = translate("firingMode", "div");
+        dataDiv.append(firingMode);
+        var firingModeData = translate("-", "b");
+        firingMode.append(firingModeData);
+
+        dataDiv.append(translate("EMPTY", "p"));
+
+        // Bullet data
         var ammo = translate("ammo", "div");
         dataDiv.append(ammo);
         var ammoData = translate("-", "b");
         ammo.append(ammoData);
 
-        dataDiv.append(translate("EMPTY", "p"));
-
-        // Bullet data
         var rpm = translate("rpm", "div");
         dataDiv.append(rpm);
         var rpmData = translate("-", "b");
@@ -151,6 +161,11 @@
         dataDiv.append(zeroDistance);
         var zeroDistanceData = translate("-", "b");
         zeroDistance.append(zeroDistanceData);
+
+        var sightsMag = translate("sightsMag", "div");
+        //dataDiv.append(sightsMag);
+        var sightsMagData = translate("-", "b");
+        sightsMag.append(sightsMagData);
 
         dataDiv.append(translate("EMPTY", "p"));
 
@@ -192,6 +207,11 @@
         dataDiv.append(recoilHoriz);
         var recoilHorizData = translate("-", "b");
         recoilHoriz.append(recoilHorizData);
+
+        var crawlRecoil = translate("crawlRecoil", "div");
+        dataDiv.append(crawlRecoil);
+        var crawlRecoilData = translate("-", "b");
+        crawlRecoil.append(crawlRecoilData);
 
         // Bullet table
         var damageOverRange = translate("ttk_dpm_dropdown1", "div");
@@ -252,6 +272,10 @@
                     recoilHorizData.textContent = "-";
                     reloadData.textContent = "-";
                     reloadAltData.textContent = "-";
+                    crawlRecoilData.textContent = "-";
+                    sightsMagData.textContent = "-";
+                    weightData.textContent = "-";
+                    firingModeData.textContent = "-";
 
                     window.refreshCategory = false;
                 }
@@ -289,13 +313,29 @@
 
                     akaData.textContent = getDataProperty([gunIGNData.textContent], "gun__locName");
                     typeData.textContent = getDataProperty([gunIGNData.textContent], "item__weapType").replace(/_/g, " ");
+                    weightData.textContent = getDataProperty([gunIGNData.textContent], "item__weight") + translate("kg");
+                    var firingModes = getDataProperty([gunIGNData.textContent], "gun__firingModeNames:array");
+                    if (Array.isArray(firingModes)) {
+                        for (var k = 0; k < firingModes.length; k++) {
+                            firingModeData.textContent += ", " + translate(firingModes[k]["mode"]);
+                        }
+                    }
+                    else {
+                        firingModeData.textContent = translate(firingModes["mode"]);
+                    }
                     ammoFile = getDataProperty([gunIGNData.textContent], "gun__shells:array")["shells"].split("/");
                     ammoFile = ammoFile[ammoFile.length - 1];
                     ammoData.textContent = ammoFile.split(".")[0];
                     for (var k = 1; k < ammoFile.split(".").length - 1; k++) {
                         ammoData.textContent += "." + ammoFile.split(".")[k];
                     }
-                    rpmData.textContent = Math.round(getDataProperty([gunIGNData.textContent], "gun__shotFreq") * 60);
+                    rpmData.textContent = getDataProperty([gunIGNData.textContent], "gun__shotFreq");
+                    if (rpmData.textContent != "-") {
+                        var lowRPM = getDataProperty([gunIGNData.textContent], "gun__shotFreqRndK");
+                        var highRPM = Math.round(rpmData.textContent * 60)
+                        lowRPM = highRPM / (1 + lowRPM)
+                        rpmData.textContent = lowRPM.toFixed(1) + " - " + highRPM.toFixed(1) + " (" + translate("average") + ((highRPM + lowRPM) / 2).toFixed(1) + ")";
+                    }
 
                     dispersionData.textContent = getDataProperty([gunIGNData.textContent], "gun_spread__maxDeltaAngle");
                     zeroDistanceData.textContent = getDataProperty([gunIGNData.textContent], "gun__zeroingDistance");
@@ -304,11 +344,16 @@
                     singleReloadPostData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__postTime");
                     reloadData.textContent = getDataProperty([gunIGNData.textContent], "gun__reloadTime");
                     reloadAltData.textContent = getDataProperty([gunIGNData.textContent], "gun__altReloadTime");
+                    sightsMagData.textContent = getDataProperty([gunIGNData.textContent], "gun__magnification");
+                    console.log(sightsMagData.textContent)
+                    sightsMagData.textContent += sightsMagData.textContent == "-" ? "" : "x";
 
                     var recoilTotal = getDataProperty([gunIGNData.textContent], "gun__recoilAmount");
                     var recoilDir = getDataProperty([gunIGNData.textContent], "gun__recoilDirAmount");
                     recoilVertData.textContent = (recoilTotal * 1000 * recoilDir).toFixed(3);
                     recoilHorizData.textContent = (recoilTotal * 1000 * (1 - recoilDir)).toFixed(3);
+                    crawlRecoilData.textContent = getDataProperty([gunIGNData.textContent], "gun__crawlRecoilMult");
+                    crawlRecoilData.textContent = crawlRecoilData.textContent == "-" ? "-" : crawlRecoilData.textContent * 100 + "%";
 
                     var ammoDataFile = window["_" + ammoData.textContent.replace(/\./g, "_")]
 
@@ -347,6 +392,8 @@
             // first check overrides
             if (OVERRIDEDATA[gun[0]] != null) {
                 if (OVERRIDEDATA[gun[0]][property] != null) {
+                    console.log(property)
+                    console.log(OVERRIDEDATA[gun[0]][property])
                     return OVERRIDEDATA[gun[0]][property];
                 }
             }
