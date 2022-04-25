@@ -14,6 +14,8 @@
 <script src="../dist/chart.min.js"></script>
 <script src="../dist/chartjs-plugin-annotation.min.js"></script>
 <script type="text/javascript" src="./ww2_guns.blkx"></script>
+<script type="text/javascript" src="./ww2_guns_mods.blkx"></script>
+<script type="text/javascript" src="./ww2_items.blkx"></script>
 <script type="text/javascript" src="./enlisted_guns.blkx"></script>
 <script type="text/javascript" src="./bullets.js"></script>
 <script>
@@ -123,6 +125,16 @@
         var firingModeData = translate("-", "b");
         firingMode.append(firingModeData);
 
+        var magazineName = translate("magazineName", "div");
+        dataDiv.append(magazineName);
+        var magazineNameData = translate("-", "b");
+        magazineName.append(magazineNameData);
+
+        var magazineSize = translate("magazineSize", "div");
+        dataDiv.append(magazineSize);
+        var magazineSizeData = translate("-", "b");
+        magazineSize.append(magazineSizeData);
+
         dataDiv.append(translate("EMPTY", "p"));
 
         // Bullet data
@@ -193,6 +205,11 @@
         dataDiv.append(reloadAlt);
         var reloadAltData = translate("-", "b");
         reloadAlt.append(reloadAltData);
+
+        var reloadDualMag = translate("reloadDualMag", "div");
+        dataDiv.append(reloadDualMag);
+        var reloadDualMagData = translate("-", "b");
+        reloadDualMag.append(reloadDualMagData);
 
         dataDiv.append(translate("EMPTY", "p"));
 
@@ -271,10 +288,13 @@
                     recoilHorizData.textContent = "-";
                     reloadData.textContent = "-";
                     reloadAltData.textContent = "-";
+                    reloadDualMagData.textContent = "-";
                     crawlRecoilData.textContent = "-";
                     sightsMagData.textContent = "-";
                     weightData.textContent = "-";
                     firingModeData.textContent = "-";
+                    magazineNameData.textContent = "-";
+                    magazineSizeData.textContent = "-";
 
                     window.refreshCategory = false;
                 }
@@ -341,9 +361,14 @@
                     singleReloadLoopData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__loopTime");
                     singleReloadPostData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__postTime");
                     reloadData.textContent = getDataProperty([gunIGNData.textContent], "gun__reloadTime");
+                    if (getDataProperty([gunIGNData.textContent], "reload__singleBullet:tag") != "-") {
+                        reloadData.textContent = "[" + reloadData.textContent + "]";
+                        reloadData.style.setProperty("text-decoration", "line-through");
+                    }
                     reloadAltData.textContent = getDataProperty([gunIGNData.textContent], "gun__altReloadTime");
+                    reloadDualMagData.textContent = getDataProperty([gunIGNData.textContent], "gun__dualMagReloadTime");
                     sightsMagData.textContent = getDataProperty([gunIGNData.textContent], "gun__magnification");
-                    sightsMagData.textContent += sightsMagData.textContent == "-" ? "" : "x";
+                    sightsMagData.textContent += sightsMagData.textContent == "-" ? "" : "×";
 
                     var recoilTotal = getDataProperty([gunIGNData.textContent], "gun__recoilAmount");
                     var recoilDir = getDataProperty([gunIGNData.textContent], "gun__recoilDirAmount");
@@ -361,6 +386,10 @@
 
                     var ammoDataFile = window["_" + ammoData.textContent.replace(/\./g, "_")]
 
+                    var magazineStat = getDataProperty([gunIGNData.textContent], "gun__ammoHolders:array")
+                    magazineNameData.textContent = Array.isArray(magazineStat) ? magazineStat[0]["ammoHolders"] : magazineStat["ammoHolders"];
+                    magazineSizeData.textContent = ITEMSDATA[magazineNameData.textContent]["ammo_holder__ammoCount"];
+
                     // if ammo not found, return to prevent errors
                     if (ammoDataFile == null) {
                         return;
@@ -369,13 +398,27 @@
                     maxRangeData.textContent = ammoDataFile["maxDistance"];
                     bulletSpeedData.textContent = ammoDataFile["speed"];
 
+                    // damage
+                    var numBullets = ammoDataFile["spawn"];
                     var keys = Object.keys(ammoDataFile["hitpower"]);
+                    var hitmult = getDataProperty([gunIGNData.textContent], "gun__kineticDamageMult");
+
                     for (var k = 0; k < keys.length; k++) {
                         var tableheader = document.createElement("th");
                         tableheader.textContent = ammoDataFile["hitpower"][keys[k]][1] + translate("meters");
                         tableRow1.append(tableheader);
                         var tabledata = document.createElement("td");
-                        tabledata.textContent = (ammoDataFile["hitpower"][keys[k]][0] * ammoDataFile["hitPowerMult"]).toFixed(3);
+                        tabledata.textContent = "";
+                        if (numBullets != null) {
+                            if (numBullets["minCount"] == numBullets["maxCount"]) {
+                                tabledata.textContent += numBullets["maxCount"] + " × ";
+                            }
+                            else {
+                                tabledata.textContent += "(" + numBullets["minCount"] + " - " + numBullets["maxCount"] + ") × ";
+                            }
+                            
+                        }
+                        tabledata.textContent += (ammoDataFile["hitpower"][keys[k]][0] * ammoDataFile["hitPowerMult"] * (hitmult == "-" ? 1 : hitmult)).toFixed(3);
                         tableRow2.append(tabledata);
                     }
 
@@ -448,7 +491,6 @@
                     }
                 }
             }
-            console.log(gun)
             // not found here, recurse with extensions
             if (gun.length > 0) {
                 gun.shift();

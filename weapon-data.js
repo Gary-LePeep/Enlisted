@@ -777,7 +777,7 @@ var WEAPONS = [
             {
                 "Name EN": "Browning M1918A6",
                 "Name RU" : "Browning M1918A6",
-                "Name Game" : ""
+                "Name Game" : "browning_m1919a6"
             },
             {
                 "Name EN": "Charlton Automatic Rifle",
