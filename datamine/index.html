@@ -53,7 +53,6 @@
         title.appendChild(translate("language", "b", "position:absolute; top:20px; left:85%; font-size:16px"));
     </script>
 
-
     <script>
         // Color Dropdown
         var headerbox = document.createElement('header');
@@ -308,26 +307,25 @@
                         gunIGNData.textContent = translate("NotFound");
                         return;
                     }
+                    if (window.stalingrad_mode) {
+                        gunIGNData.textContent = "stl_" + gunIGNData.textContent;
+                    }
 
-                    ALLDATA = Object.assign({}, COMMONDATA, TUNISIADATA);
+                    ALLDATA = Object.assign({}, COMMONDATA, TUNISIADATA, STALINGRADDATA);
 
                     akaData.textContent = getDataProperty([gunIGNData.textContent], "gun__locName");
                     typeData.textContent = getDataProperty([gunIGNData.textContent], "item__weapType").replace(/_/g, " ");
-                    weightData.textContent = getDataProperty([gunIGNData.textContent], "item__weight") + translate("kg");
+                    weightData.textContent = getDataProperty([gunIGNData.textContent], "item__weight");
+                    weightData.textContent += weightData.textContent == "-" ? "" : translate("kg");
                     var firingModes = getDataProperty([gunIGNData.textContent], "gun__firingModeNames:array");
                     if (Array.isArray(firingModes)) {
-                        for (var k = 0; k < firingModes.length; k++) {
+                        firingModeData.textContent = translate(firingModes[0]["mode"]);
+                        for (var k = 1; k < firingModes.length; k++) {
                             firingModeData.textContent += ", " + translate(firingModes[k]["mode"]);
                         }
                     }
                     else {
                         firingModeData.textContent = translate(firingModes["mode"]);
-                    }
-                    ammoFile = getDataProperty([gunIGNData.textContent], "gun__shells:array")["shells"].split("/");
-                    ammoFile = ammoFile[ammoFile.length - 1];
-                    ammoData.textContent = ammoFile.split(".")[0];
-                    for (var k = 1; k < ammoFile.split(".").length - 1; k++) {
-                        ammoData.textContent += "." + ammoFile.split(".")[k];
                     }
                     rpmData.textContent = getDataProperty([gunIGNData.textContent], "gun__shotFreq");
                     if (rpmData.textContent != "-") {
@@ -345,7 +343,6 @@
                     reloadData.textContent = getDataProperty([gunIGNData.textContent], "gun__reloadTime");
                     reloadAltData.textContent = getDataProperty([gunIGNData.textContent], "gun__altReloadTime");
                     sightsMagData.textContent = getDataProperty([gunIGNData.textContent], "gun__magnification");
-                    console.log(sightsMagData.textContent)
                     sightsMagData.textContent += sightsMagData.textContent == "-" ? "" : "x";
 
                     var recoilTotal = getDataProperty([gunIGNData.textContent], "gun__recoilAmount");
@@ -354,6 +351,13 @@
                     recoilHorizData.textContent = (recoilTotal * 1000 * (1 - recoilDir)).toFixed(3);
                     crawlRecoilData.textContent = getDataProperty([gunIGNData.textContent], "gun__crawlRecoilMult");
                     crawlRecoilData.textContent = crawlRecoilData.textContent == "-" ? "-" : crawlRecoilData.textContent * 100 + "%";
+
+                    ammoFile = getDataProperty([gunIGNData.textContent], "gun__shells:array")["shells"].split("/");
+                    ammoFile = ammoFile[ammoFile.length - 1];
+                    ammoData.textContent = ammoFile.split(".")[0];
+                    for (var k = 1; k < ammoFile.split(".").length - 1; k++) {
+                        ammoData.textContent += "." + ammoFile.split(".")[k];
+                    }
 
                     var ammoDataFile = window["_" + ammoData.textContent.replace(/\./g, "_")]
 
@@ -388,33 +392,63 @@
             })(j)
         })(i)
 
+        function reload_data() {
+            var buttons = document.getElementsByClassName("topbtn");
+            for (var i = 0; i < buttons.length; i++) {
+                var text = buttons[i].childNodes[0].textContent
+                var wepbtns = buttons[i].getElementsByTagName("LI");
+                for (var j = 0; j < wepbtns.length; j++) {
+                    if (wepbtns[j].textContent == text) {
+                        wepbtns[j].onclick();
+                    }
+                }
+            }
+        }
+
         function getDataProperty(gun, property) {
             // first check overrides
             if (OVERRIDEDATA[gun[0]] != null) {
                 if (OVERRIDEDATA[gun[0]][property] != null) {
-                    console.log(property)
-                    console.log(OVERRIDEDATA[gun[0]][property])
                     return OVERRIDEDATA[gun[0]][property];
                 }
+                if (OVERRIDEDATA[gun[0]]["_extends"] != null) {
+                    // prioritize searching stalingrad files, since this only happens if we're looking for them
+                    if (OVERRIDEDATA[gun[0]]["_extends"].startsWith("stl_")) {
+                        gun.unshift(OVERRIDEDATA[gun[0]]["_extends"]);
+                    }
+                    else {
+                        gun.push(OVERRIDEDATA[gun[0]]["_extends"]);
+                    }
+                }
             }
-
             // then check base file
             if (ALLDATA[gun[0]] != null) {
                 if (ALLDATA[gun[0]][property] != null) {
                     return ALLDATA[gun[0]][property];
                 }
                 if (ALLDATA[gun[0]]["_extends"] != null) {
-                    gun.push(ALLDATA[gun[0]]["_extends"])
+                    if (ALLDATA[gun[0]]["_extends"].startsWith("stl_")) {
+                        gun.splice(1, 0, ALLDATA[gun[0]]["_extends"]);
+                    }
+                    else {
+                        gun.push(ALLDATA[gun[0]]["_extends"]);
+                    }
                 }
                 for (var k = 0; k < ALLDATA[gun[0]].length; k++) {
                     if (ALLDATA[gun[0]][k].hasOwnProperty(property)) {
                         return ALLDATA[gun[0]][k][property];
                     }
                     if (ALLDATA[gun[0]][k].hasOwnProperty("_extends")) {
-                        gun.push(ALLDATA[gun[0]][k]["_extends"])
+                        if (ALLDATA[gun[0]][k]["_extends"].startsWith("stl_")) {
+                            gun.splice(1, 0, ALLDATA[gun[0]][k]["_extends"]);
+                        }
+                        else {
+                            gun.push(ALLDATA[gun[0]][k]["_extends"]);
+                        }
                     }
                 }
             }
+            console.log(gun)
             // not found here, recurse with extensions
             if (gun.length > 0) {
                 gun.shift();
@@ -433,6 +467,18 @@
                 }
             }
         }
+    </script>
+
+    <input type="checkbox" id="stalingradMode" onclick="stalingradMode()"
+        style="position:absolute; top:70px; left:820px;">
+    <script>
+        function stalingradMode() {
+            window.stalingrad_mode = document.getElementById("stalingradMode").checked;
+            reload_data();
+        }
+
+        document.getElementsByTagName('BODY')[0].appendChild(translate("stalingradMode", "b", "position:absolute; top:70px; left:845px;"));
+        stalingradMode();
     </script>
 
     <script>

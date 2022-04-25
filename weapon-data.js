@@ -187,7 +187,7 @@ var WEAPONS = [
             {
                 "Name EN": "Beretta M1",
                 "Name RU" : "Beretta M1",
-                "Name Game" : ""
+                "Name Game" : "beretta_m1"
             },
             {
                 "Name EN": "Beretta M1918",
