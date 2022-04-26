@@ -392,6 +392,17 @@
                     magazineNameData.textContent = Array.isArray(magazineStat) ? magazineStat[0]["ammoHolders"] : magazineStat["ammoHolders"];
                     magazineSizeData.textContent = ALLITEMSDATA[magazineNameData.textContent]["ammo_holder__ammoCount"];
 
+                    // damage just for flamethrowers done here
+                    var flameDamage = getDataProperty([gunIGNData.textContent], "flamethrower__streamDamagePerSecond");
+                    if (flameDamage != "-") {
+                        var tableheader = document.createElement("th");
+                        tableheader.textContent = translate("upTo") + getDataProperty([gunIGNData.textContent], "flamethrower__maxFlameLength") + translate("meters");
+                        tableRow1.append(tableheader);
+                        var tabledata = document.createElement("td");
+                        tabledata.textContent = flameDamage + translate("perSecond");
+                        tableRow2.append(tabledata);
+                    }
+
                     // if ammo not found, return to prevent errors
                     if (ammoDataFile == null) {
                         return;
@@ -425,40 +436,33 @@
                             tableRow2.append(tabledata);
                         })(k);
                     }
-                    var explodepower = null //getAmmoProperty(ammoDataFile, "explodeRadius");
-                    if (explodepower != null) {
+                    var cumDamage = getAmmoProperty(ammoDataFile, "cumulativeDamage");
+                    if (cumDamage != null) {
                         var tableheader = document.createElement("th");
-                        tableheader.textContent = explodepower[1] + translate("meters");
+                        tableheader.textContent = cumDamage["distance"] + translate("meters");
                         tableRow1.append(tableheader);
                         var tabledata = document.createElement("td");
-                        tabledata.textContent = explodepower[0] * getAmmoProperty(ammoDataFile, "explodeHitPower");
-                        tableRow2.append(tabledata);
-                    }
-                    var splashDamage = null //getAmmoProperty(ammoDataFile, "splashDamage");
-                    if (splashDamage != null) {
-                        var tableheader = document.createElement("th");
-                        tableheader.textContent = splashDamage["radius"][1] + translate("meters");
-                        tableRow1.append(tableheader);
-                        var tabledata = document.createElement("td");
-                        tabledata.textContent = splashDamage["radius"][0] * splashDamage["damage"];
+                        tabledata.textContent = cumDamage["damage"];
                         tableRow2.append(tabledata);
                         var tableheader = document.createElement("th");
-                        tableheader.textContent = splashDamage["penetration"][1] + translate("meters");
+                        tableheader.textContent = cumDamage["distance"] + translate("meters");
                         tableRow3.append(tableheader);
                         var tabledata = document.createElement("td");
-                        tabledata.textContent = splashDamage["penetration"][0] + translate("millimeters");
+                        tabledata.textContent = cumDamage["armorPower"] + translate("millimeters");
                         tableRow4.append(tabledata);
                     }
-                    var armorpower = getAmmoProperty(ammoDataFile, "armorpower");
-                    if (armorpower != null) {
-                        var keys = Object.keys(armorpower);
-                        for (var k = 0; k < keys.length; k++) {
-                            var tableheader = document.createElement("th");
-                            tableheader.textContent = getAmmoProperty(ammoDataFile, "armorpower")[keys[k]][1] + translate("meters");
-                            tableRow3.append(tableheader);
-                            var tabledata = document.createElement("td");
-                            tabledata.textContent = (getAmmoProperty(ammoDataFile, "armorpower")[keys[k]][0]) + translate("millimeters");
-                            tableRow4.append(tabledata);
+                    else {
+                        var armorpower = getAmmoProperty(ammoDataFile, "armorpower");
+                        if (armorpower != null) {
+                            var keys = Object.keys(armorpower);
+                            for (var k = 0; k < keys.length; k++) {
+                                var tableheader = document.createElement("th");
+                                tableheader.textContent = getAmmoProperty(ammoDataFile, "armorpower")[keys[k]][1] + translate("meters");
+                                tableRow3.append(tableheader);
+                                var tabledata = document.createElement("td");
+                                tabledata.textContent = (getAmmoProperty(ammoDataFile, "armorpower")[keys[k]][0]) + translate("millimeters");
+                                tableRow4.append(tabledata);
+                            }
                         }
                     }
                 }

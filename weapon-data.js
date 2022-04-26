@@ -295,6 +295,11 @@ var WEAPONS = [
                 "Name Game" : "mp41_gun"
             },
             {
+                "Name EN": "MP 41(r)",
+                "Name RU" : "MP 41(r)",
+                "Name Game" : "ppsh_41_german_gun"
+            },
+            {
                 "Name EN": "MP 43/1",
                 "Name RU" : "MP 43/1",
                 "Name Game" : "mp43_1_gun"
@@ -302,7 +307,7 @@ var WEAPONS = [
             {
                 "Name EN": "MP-717(r)",
                 "Name RU" : "MP-717(r)",
-                "Name Game" : "ppsh_41_german_gun"
+                "Name Game" : "mp_717r_gun"
             },
             {
                 "Name EN": "OVP M1918",
