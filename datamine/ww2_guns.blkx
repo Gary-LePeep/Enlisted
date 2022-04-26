@@ -1,4 +1,4 @@
-var COMMONDATA = 
+var COMMONGUNSDATA = 
 {
   "gun_hit_analyzer": {
     "gunCheckHitResult": -1,
@@ -47647,7 +47647,7 @@ var COMMONDATA =
     "_extends": "m24_smoke_grenade_phys",
     "phys_obj_net_phys__blk": "content/e_ww2_common/gamedata/weapons/grenades/m24_smoke_short_time.blk"
   }
-}; var TUNISIADATA =  
+}; var TUNISIAGUNSDATA =  
 {
   "carcano_m38": [
     {
@@ -54259,7 +54259,7 @@ var COMMONDATA =
       }
     }
   ]
-}; var STALINGRADDATA =  
+}; var STALINGRADGUNSDATA =  
 {
   "kar98k_wartime_production": [
     {

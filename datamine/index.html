@@ -331,7 +331,9 @@
                         gunIGNData.textContent = "stl_" + gunIGNData.textContent;
                     }
 
-                    ALLDATA = Object.assign({}, COMMONDATA, TUNISIADATA, STALINGRADDATA);
+                    ALLGUNSDATA = Object.assign({}, COMMONGUNSDATA, TUNISIAGUNSDATA, STALINGRADGUNSDATA);
+                    ALLGUNSMODSDATA = Object.assign({}, COMMONGUNSMODSDATA);
+                    ALLITEMSDATA = Object.assign({}, COMMONITEMSDATA, TUNISIAITEMSDATA, STALINGRADITEMSDATA);
 
                     akaData.textContent = getDataProperty([gunIGNData.textContent], "gun__locName");
                     typeData.textContent = getDataProperty([gunIGNData.textContent], "item__weapType").replace(/_/g, " ");
@@ -388,48 +390,76 @@
 
                     var magazineStat = getDataProperty([gunIGNData.textContent], "gun__ammoHolders:array")
                     magazineNameData.textContent = Array.isArray(magazineStat) ? magazineStat[0]["ammoHolders"] : magazineStat["ammoHolders"];
-                    magazineSizeData.textContent = ITEMSDATA[magazineNameData.textContent]["ammo_holder__ammoCount"];
+                    magazineSizeData.textContent = ALLITEMSDATA[magazineNameData.textContent]["ammo_holder__ammoCount"];
 
                     // if ammo not found, return to prevent errors
                     if (ammoDataFile == null) {
                         return;
                     }
-                    effRangeData.textContent = ammoDataFile["effectiveDistance"];
-                    maxRangeData.textContent = ammoDataFile["maxDistance"];
-                    bulletSpeedData.textContent = ammoDataFile["speed"];
+                    effRangeData.textContent = getAmmoProperty(ammoDataFile, "effectiveDistance");
+                    maxRangeData.textContent = getAmmoProperty(ammoDataFile, "maxDistance");
+                    bulletSpeedData.textContent = getAmmoProperty(ammoDataFile, "speed");
 
                     // damage
-                    var numBullets = ammoDataFile["spawn"];
-                    var keys = Object.keys(ammoDataFile["hitpower"]);
-                    var hitmult = getDataProperty([gunIGNData.textContent], "gun__kineticDamageMult");
+                    var numBullets = getAmmoProperty(ammoDataFile, "spawn");
+                    var hitpower = getAmmoProperty(ammoDataFile, "hitpower");
+                    if (hitpower != null) {
+                        var keys = Object.keys(hitpower);
+                        var hitmult = getDataProperty([gunIGNData.textContent], "gun__kineticDamageMult");
 
-                    for (var k = 0; k < keys.length; k++) {
+                        for (var k = 0; k < keys.length; k++) (function (k) {
+                            var tableheader = document.createElement("th");
+                            tableheader.textContent = hitpower[keys[k]][1] + translate("meters");
+                            tableRow1.append(tableheader);
+                            var tabledata = document.createElement("td");
+                            tabledata.textContent = "";
+                            if (numBullets != null) {
+                                if (numBullets["minCount"] == numBullets["maxCount"]) {
+                                    tabledata.textContent += numBullets["maxCount"] + " × ";
+                                }
+                                else {
+                                    tabledata.textContent += "(" + numBullets["minCount"] + " - " + numBullets["maxCount"] + ") × ";
+                                }
+                            }
+                            tabledata.textContent += (hitpower[keys[k]][0] * getAmmoProperty(ammoDataFile, "hitPowerMult") * (hitmult == "-" ? 1 : hitmult)).toFixed(3);
+                            tableRow2.append(tabledata);
+                        })(k);
+                    }
+                    var explodepower = null //getAmmoProperty(ammoDataFile, "explodeRadius");
+                    if (explodepower != null) {
                         var tableheader = document.createElement("th");
-                        tableheader.textContent = ammoDataFile["hitpower"][keys[k]][1] + translate("meters");
+                        tableheader.textContent = explodepower[1] + translate("meters");
                         tableRow1.append(tableheader);
                         var tabledata = document.createElement("td");
-                        tabledata.textContent = "";
-                        if (numBullets != null) {
-                            if (numBullets["minCount"] == numBullets["maxCount"]) {
-                                tabledata.textContent += numBullets["maxCount"] + " × ";
-                            }
-                            else {
-                                tabledata.textContent += "(" + numBullets["minCount"] + " - " + numBullets["maxCount"] + ") × ";
-                            }
-                            
-                        }
-                        tabledata.textContent += (ammoDataFile["hitpower"][keys[k]][0] * ammoDataFile["hitPowerMult"] * (hitmult == "-" ? 1 : hitmult)).toFixed(3);
+                        tabledata.textContent = explodepower[0] * getAmmoProperty(ammoDataFile, "explodeHitPower");
                         tableRow2.append(tabledata);
                     }
-
-                    var keys = Object.keys(ammoDataFile["armorpower"]);
-                    for (var k = 0; k < keys.length; k++) {
+                    var splashDamage = null //getAmmoProperty(ammoDataFile, "splashDamage");
+                    if (splashDamage != null) {
                         var tableheader = document.createElement("th");
-                        tableheader.textContent = ammoDataFile["armorpower"][keys[k]][1] + translate("meters");
+                        tableheader.textContent = splashDamage["radius"][1] + translate("meters");
+                        tableRow1.append(tableheader);
+                        var tabledata = document.createElement("td");
+                        tabledata.textContent = splashDamage["radius"][0] * splashDamage["damage"];
+                        tableRow2.append(tabledata);
+                        var tableheader = document.createElement("th");
+                        tableheader.textContent = splashDamage["penetration"][1] + translate("meters");
                         tableRow3.append(tableheader);
                         var tabledata = document.createElement("td");
-                        tabledata.textContent = (ammoDataFile["armorpower"][keys[k]][0]) + translate("millimeters");
+                        tabledata.textContent = splashDamage["penetration"][0] + translate("millimeters");
                         tableRow4.append(tabledata);
+                    }
+                    var armorpower = getAmmoProperty(ammoDataFile, "armorpower");
+                    if (armorpower != null) {
+                        var keys = Object.keys(armorpower);
+                        for (var k = 0; k < keys.length; k++) {
+                            var tableheader = document.createElement("th");
+                            tableheader.textContent = getAmmoProperty(ammoDataFile, "armorpower")[keys[k]][1] + translate("meters");
+                            tableRow3.append(tableheader);
+                            var tabledata = document.createElement("td");
+                            tabledata.textContent = (getAmmoProperty(ammoDataFile, "armorpower")[keys[k]][0]) + translate("millimeters");
+                            tableRow4.append(tabledata);
+                        }
                     }
                 }
             })(j)
@@ -448,45 +478,58 @@
             }
         }
 
+        function getAmmoProperty(ammo, property) {
+            if (Array.isArray(ammo)) {
+                for (var i = 0; i < ammo.length; i++) {
+                    if (Object.keys(ammo[i])[0] == property) {
+                        return ammo[i][property];
+                    }
+                }
+            }
+            else {
+                return ammo[property];
+            }
+        }
+
         function getDataProperty(gun, property) {
             // first check overrides
-            if (OVERRIDEDATA[gun[0]] != null) {
-                if (OVERRIDEDATA[gun[0]][property] != null) {
-                    return OVERRIDEDATA[gun[0]][property];
+            if (OVERRIDEGUNSDATA[gun[0]] != null) {
+                if (OVERRIDEGUNSDATA[gun[0]][property] != null) {
+                    return OVERRIDEGUNSDATA[gun[0]][property];
                 }
-                if (OVERRIDEDATA[gun[0]]["_extends"] != null) {
+                if (OVERRIDEGUNSDATA[gun[0]]["_extends"] != null) {
                     // prioritize searching stalingrad files, since this only happens if we're looking for them
-                    if (OVERRIDEDATA[gun[0]]["_extends"].startsWith("stl_")) {
-                        gun.unshift(OVERRIDEDATA[gun[0]]["_extends"]);
+                    if (OVERRIDEGUNSDATA[gun[0]]["_extends"].startsWith("stl_")) {
+                        gun.unshift(OVERRIDEGUNSDATA[gun[0]]["_extends"]);
                     }
                     else {
-                        gun.push(OVERRIDEDATA[gun[0]]["_extends"]);
+                        gun.push(OVERRIDEGUNSDATA[gun[0]]["_extends"]);
                     }
                 }
             }
             // then check base file
-            if (ALLDATA[gun[0]] != null) {
-                if (ALLDATA[gun[0]][property] != null) {
-                    return ALLDATA[gun[0]][property];
+            if (ALLGUNSDATA[gun[0]] != null) {
+                if (ALLGUNSDATA[gun[0]][property] != null) {
+                    return ALLGUNSDATA[gun[0]][property];
                 }
-                if (ALLDATA[gun[0]]["_extends"] != null) {
-                    if (ALLDATA[gun[0]]["_extends"].startsWith("stl_")) {
-                        gun.splice(1, 0, ALLDATA[gun[0]]["_extends"]);
+                if (ALLGUNSDATA[gun[0]]["_extends"] != null) {
+                    if (ALLGUNSDATA[gun[0]]["_extends"].startsWith("stl_")) {
+                        gun.splice(1, 0, ALLGUNSDATA[gun[0]]["_extends"]);
                     }
                     else {
-                        gun.push(ALLDATA[gun[0]]["_extends"]);
+                        gun.push(ALLGUNSDATA[gun[0]]["_extends"]);
                     }
                 }
-                for (var k = 0; k < ALLDATA[gun[0]].length; k++) {
-                    if (ALLDATA[gun[0]][k].hasOwnProperty(property)) {
-                        return ALLDATA[gun[0]][k][property];
+                for (var k = 0; k < ALLGUNSDATA[gun[0]].length; k++) {
+                    if (ALLGUNSDATA[gun[0]][k].hasOwnProperty(property)) {
+                        return ALLGUNSDATA[gun[0]][k][property];
                     }
-                    if (ALLDATA[gun[0]][k].hasOwnProperty("_extends")) {
-                        if (ALLDATA[gun[0]][k]["_extends"].startsWith("stl_")) {
-                            gun.splice(1, 0, ALLDATA[gun[0]][k]["_extends"]);
+                    if (ALLGUNSDATA[gun[0]][k].hasOwnProperty("_extends")) {
+                        if (ALLGUNSDATA[gun[0]][k]["_extends"].startsWith("stl_")) {
+                            gun.splice(1, 0, ALLGUNSDATA[gun[0]][k]["_extends"]);
                         }
                         else {
-                            gun.push(ALLDATA[gun[0]][k]["_extends"]);
+                            gun.push(ALLGUNSDATA[gun[0]][k]["_extends"]);
                         }
                     }
                 }

@@ -1,4 +1,4 @@
-var ITEMSDATA = 
+var COMMONITEMSDATA = 
 {
   "akm_47_gun_item": [
     {
@@ -9495,6 +9495,3724 @@ var ITEMSDATA =
         [-1.0,-0.0,0.0],
         [0.0,0.0,0.0]
       ]
+    }
+  ]
+}; var TUNISIAITEMSDATA =  
+{
+  "carcano_m38_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "carcano_m38_gun"
+    },
+    {
+      "collres__res": "carcano_m38_collision"
+    }
+  ],
+  "carcano_m38_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "carcano_m38_ammo_char",
+    "item__template": "carcano_m38_magazine",
+    "item__proto": "carcano_m38_magazine",
+    "item__locDetails": "6.5x52 Carcano",
+    "ammo_holder__templateName": "carcano_m38_magazine",
+    "ammo_holder__ammoCount": 6,
+    "item__weight": 0.2,
+    "item__volume": 0.1,
+    "item__name": "items/carcano_m38_magazine",
+    "collres__res": "carcano_m38_ammo_collision"
+  },
+  "carcano_m38_7_35_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "carcano_m38_7_35"
+    },
+    {
+      "collres__res": "carcano_m38_7_35_collision"
+    }
+  ],
+  "carcano_m38_7_35_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "carcano_m38_7_35_ammo_char",
+    "item__template": "carcano_m38_7_35_magazine",
+    "item__proto": "carcano_m38_7_35_magazine",
+    "item__locDetails": "7.35x51 Carcano",
+    "ammo_holder__templateName": "carcano_m38_7_35_magazine",
+    "ammo_holder__ammoCount": 6,
+    "item__weight": 0.2,
+    "item__volume": 0.1,
+    "item__name": "items/carcano_m38_7_35_magazine",
+    "collres__res": "carcano_m38_7_35_ammo_collision"
+  },
+  "carcano_m38_7_35_with_scope_mount_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "carcano_m38_7_35_with_scope_mount"
+    },
+    {
+      "collres__res": "carcano_m38_7_35_collision"
+    }
+  ],
+  "scope_carcano_m38_item": {
+    "_extends": "item_scope",
+    "animchar__res": "scope_zf_41_char",
+    "collres__res": "scope_zf_41_collision",
+    "item__template": "scope_carcano_m38_item",
+    "item__proto": "content/e_tunisia/gamedata/items/scope_carcano_m38.blk",
+    "item__locDetails": "",
+    "item__weight": 0.6,
+    "item__volume": 0.5,
+    "item__name": "items/scope_carcano_m38",
+    "gunAttachable__slotName": "scope",
+    "gunAttachable__gunSlotName": "scope",
+    "gunAttachable__slotTag": "scope_carcano_m38",
+    "item__iconYaw": 80.0,
+    "gunAttachable:tag": []
+  },
+  "scope_carcano_m91_item": {
+    "_extends": "item_scope",
+    "animchar__res": "scope_carcano_m91_char",
+    "collres__res": "scope_carcano_m91_collision",
+    "item__template": "scope_carcano_m91_item",
+    "item__proto": "content/e_tunisia/gamedata/items/scope_carcano_m91.blk",
+    "item__locDetails": "",
+    "item__weight": 0.6,
+    "item__volume": 0.5,
+    "item__name": "items/scope_carcano_m91",
+    "gunAttachable__slotName": "scope",
+    "gunAttachable__gunSlotName": "scope",
+    "gunAttachable__slotTag": "scope_carcano_m91",
+    "item__iconYaw": 80.0,
+    "gunAttachable:tag": []
+  },
+  "carcano_m41_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "carcano_m41"
+    },
+    {
+      "collres__res": "carcano_m41_collision"
+    }
+  ],
+  "carcano_m91_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "carcano_m91"
+    },
+    {
+      "collres__res": "carcano_m91_collision"
+    }
+  ],
+  "carcano_m91_with_scope_mount_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "carcano_m91_with_scope_mount"
+    },
+    {
+      "collres__res": "carcano_m91_collision"
+    }
+  ],
+  "carcano_moschetto_91_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "carcano_moschetto_91"
+    },
+    {
+      "collres__res": "carcano_moschetto_91_collision"
+    }
+  ],
+  "carcano_m91_bayonet_item": {
+    "_extends": "item_scope",
+    "animchar__res": "carcano_m91_bayonet_char",
+    "collres__res": "carcano_m91_bayonet_collision",
+    "item__template": "carcano_m91_bayonet_item",
+    "item__proto": "content/e_tunisia/gamedata/items/carcano_m91_bayonet.blk",
+    "item__locDetails": "",
+    "item__weight": 0.7,
+    "item__volume": 0.5,
+    "item__name": "items/carcano_m91_bayonet",
+    "gunAttachable__slotName": "bayonet",
+    "gunAttachable__gunSlotName": "bayonet",
+    "gunAttachable__slotTag": "carcano_m91_bayonet",
+    "gunAttachable:tag": [],
+    "gunAttachable__isBayonet:tag": []
+  },
+  "carcano_m38_bayonet_item": {
+    "_extends": "item_scope",
+    "animchar__res": "carcano_m38_bayonet_char",
+    "collres__res": "carcano_m38_bayonet_collision",
+    "item__template": "carcano_m38_bayonet_item",
+    "item__proto": "content/e_tunisia/gamedata/items/carcano_m38_bayonet.blk",
+    "item__locDetails": "",
+    "item__weight": 0.7,
+    "item__volume": 0.5,
+    "item__name": "items/carcano_m38_bayonet",
+    "gunAttachable__slotName": "bayonet",
+    "gunAttachable__gunSlotName": "bayonet",
+    "gunAttachable__slotTag": "carcano_m38_bayonet",
+    "gunAttachable:tag": [],
+    "gunAttachable__isBayonet:tag": []
+  },
+  "smle_mk3_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "smle_mk3"
+    },
+    {
+      "collres__res": "smle_mk_3_collision"
+    }
+  ],
+  "smle_mk3_bayonet_item": {
+    "_extends": "item_scope",
+    "animchar__res": "smle_mk3_bayonet_char",
+    "collres__res": "smle_mk3_bayonet_collision",
+    "item__template": "smle_mk3_bayonet_item",
+    "item__proto": "content/e_tunisia/gamedata/items/smle_mk3_bayonet.blk",
+    "item__locDetails": "",
+    "item__weight": 0.7,
+    "item__volume": 0.5,
+    "item__name": "items/smle_mk3_bayonet",
+    "gunAttachable__slotName": "bayonet",
+    "gunAttachable__gunSlotName": "bayonet",
+    "gunAttachable__slotTag": "smle_mk3_bayonet",
+    "gunAttachable:tag": [],
+    "gunAttachable__isBayonet:tag": []
+  },
+  "armaguerra_mod_39_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "armaguerra_mod_39"
+    },
+    {
+      "collres__res": "armaguerra_mod_39_collision"
+    }
+  ],
+  "beretta_m31_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "beretta_m31"
+    },
+    {
+      "collres__res": "beretta_m31_collision"
+    }
+  ],
+  "pavesi_m42_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "pavesi_m42"
+    },
+    {
+      "collres__res": "pavesi_prototype_1942_collision"
+    }
+  ],
+  "pavesi_m42_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "carcano_m38_7_35_ammo_char",
+    "item__template": "pavesi_m42_magazine",
+    "item__proto": "pavesi_m42_magazine",
+    "item__locDetails": "8x59 Breda",
+    "ammo_holder__templateName": "pavesi_m42_magazine",
+    "ammo_holder__ammoCount": 6,
+    "item__weight": 0.2,
+    "item__volume": 0.1,
+    "item__name": "items/pavesi_m42_magazine",
+    "collres__res": "carcano_m38_7_35_ammo_collision"
+  },
+  "pavesi_prototype_svt_copy_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "pavesi_prototype_svt_copy"
+    },
+    {
+      "collres__res": "pavesi_prototype_svt_copy_collision"
+    }
+  ],
+  "pavesi_prototype_svt_copy_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "carcano_m38_7_35_ammo_char",
+    "item__template": "pavesi_prototype_svt_copy_magazine",
+    "item__proto": "pavesi_prototype_svt_copy_magazine",
+    "item__locDetails": "8x59 Breda",
+    "ammo_holder__templateName": "pavesi_prototype_svt_copy_magazine",
+    "ammo_holder__ammoCount": 10,
+    "item__weight": 0.2,
+    "item__volume": 0.1,
+    "item__name": "items/pavesi_prototype_svt_copy_magazine",
+    "collres__res": "carcano_m38_7_35_ammo_collision"
+  },
+  "beretta_m1918_30_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "beretta_m1918_30"
+    },
+    {
+      "collres__res": "beretta_m1918_30_collision"
+    }
+  ],
+  "sw_light_rifle_mk_1_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "sw_light_rifle_mk_1"
+    },
+    {
+      "collres__res": "sw_1940_mk_1_collision"
+    }
+  ],
+  "sw_light_rifle_mk_2_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "sw_light_rifle_mk_2"
+    },
+    {
+      "collres__res": "sw_1940_mk_2_collision"
+    }
+  ],
+  "sw_light_rifle_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "mp_28_20_round_ammo_char",
+    "item__template": "sw_light_rifle_magazine",
+    "item__proto": "sw_light_rifle_magazine",
+    "item__locDetails": "",
+    "ammo_holder__templateName": "sw_light_rifle_magazine",
+    "ammo_holder__ammoCount": 20,
+    "item__weight": 0.8,
+    "item__volume": 0.5,
+    "item__name": "items/sw_light_rifle_magazine",
+    "collres__res": "mp_28_20_round_ammo_collision"
+  },
+  "turner_automatic_rifle_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "turner_automatic_rifle"
+    },
+    {
+      "collres__res": "turner_semiauto_smle_conversion_collision"
+    }
+  ],
+  "beretta_m38_42_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "beretta_m38_42"
+    },
+    {
+      "collres__res": "beretta_m38_42_collision"
+    }
+  ],
+  "beretta_m1_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "beretta_m1"
+    },
+    {
+      "collres__res": "beretta_m1_collision"
+    }
+  ],
+  "ovp_1918_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "ovp_1918"
+    },
+    {
+      "collres__res": "ovp_1918_collision"
+    }
+  ],
+  "ovp_1918_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "mp_28_20_round_ammo_char",
+    "item__template": "ovp_1918_magazine",
+    "item__proto": "ovp_1918_magazine",
+    "item__locDetails": "",
+    "ammo_holder__templateName": "ovp_1918_magazine",
+    "ammo_holder__ammoCount": 25,
+    "item__weight": 1.0,
+    "item__volume": 0.5,
+    "item__name": "items/ovp_1918_magazine",
+    "collres__res": "mp_28_20_round_ammo_collision"
+  },
+  "tz_45_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "tz_45"
+    },
+    {
+      "collres__res": "tz_45_collision"
+    }
+  ],
+  "thompson_m1921_28_box_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "thompson_m1921_28_box"
+    },
+    {
+      "collres__res": "thompson_m1921_28_box_collision"
+    }
+  ],
+  "sten_mk3_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "sten_mk3"
+    },
+    {
+      "collres__res": "sten_mk3_collision"
+    }
+  ],
+  "owen_mk1_42_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "owen_mk1_42"
+    },
+    {
+      "collres__res": "owen_mk1_42_collision"
+    }
+  ],
+  "beretta_m1923_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "beretta_m1923"
+    },
+    {
+      "collres__res": "beretta_m1923_collision"
+    }
+  ],
+  "beretta_m1923_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "walther_pp_ammo_char",
+    "item__template": "beretta_m1923_magazine",
+    "item__proto": "beretta_m1923_magazine",
+    "item__locDetails": "",
+    "ammo_holder__templateName": "beretta_m1923_magazine",
+    "ammo_holder__ammoCount": 7,
+    "item__weight": 0.2,
+    "item__volume": 0.1,
+    "item__name": "items/beretta_m1923_magazine",
+    "collres__res": "walther_pp_ammo_collision"
+  },
+  "beretta_m1934_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "beretta_m1934"
+    },
+    {
+      "collres__res": "beretta_m1934_collision"
+    }
+  ],
+  "beretta_m1934_gold_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "beretta_m1934_gold"
+    },
+    {
+      "collres__res": "beretta_m1934_collision"
+    }
+  ],
+  "beretta_m1934_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "walther_pp_ammo_char",
+    "item__template": "beretta_m1934_magazine",
+    "item__proto": "beretta_m1934_magazine",
+    "item__locDetails": "",
+    "ammo_holder__templateName": "beretta_m1934_magazine",
+    "ammo_holder__ammoCount": 7,
+    "item__weight": 0.2,
+    "item__volume": 0.1,
+    "item__name": "items/beretta_m1934_magazine",
+    "collres__res": "walther_pp_ammo_collision"
+  },
+  "webley_mk6_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "webley_mk6"
+    },
+    {
+      "collres__res": "webley_mk6_collision"
+    }
+  ],
+  "webley_mk6_nickel_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "webley_mk6_nickel"
+    },
+    {
+      "collres__res": "webley_mk6_collision"
+    }
+  ],
+  "webley_mk6_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "colt_walker_ammo_char",
+    "item__template": "webley_mk6_magazine",
+    "item__proto": "webley_mk6_magazine",
+    "item__locDetails": "",
+    "ammo_holder__templateName": "webley_mk6_magazine",
+    "ammo_holder__ammoCount": 6,
+    "item__weight": 0.2,
+    "item__volume": 0.1,
+    "item__name": "items/webley_mk6_magazine",
+    "collres__res": "colt_walker_ammo_collision"
+  },
+  "enfield_no2_mk1_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "enfield_no2_mk1"
+    },
+    {
+      "collres__res": "enfield_no2_collision"
+    }
+  ],
+  "enfield_no2_mk1_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "colt_walker_ammo_char",
+    "item__template": "enfield_no2_mk1_magazine",
+    "item__proto": "enfield_no2_mk1_magazine",
+    "item__locDetails": "",
+    "ammo_holder__templateName": "enfield_no2_mk1_magazine",
+    "ammo_holder__ammoCount": 6,
+    "item__weight": 0.2,
+    "item__volume": 0.1,
+    "item__name": "items/enfield_no2_mk1_magazine",
+    "collres__res": "colt_walker_ammo_collision"
+  },
+  "bren_mk1_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "bren_mk1"
+    },
+    {
+      "collres__res": "bren_lmg_mk_1_collision"
+    }
+  ],
+  "besal_lmg_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "besal_lmg"
+    },
+    {
+      "collres__res": "besal_lmg_collision"
+    }
+  ],
+  "charlton_automatic_rifle_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "charlton_automatic_rifle"
+    },
+    {
+      "collres__res": "charlton_automatic_rifle_collision"
+    }
+  ],
+  "charlton_automatic_rifle_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "bren_lmg_mk_2_ammo_char",
+    "item__template": "charlton_automatic_rifle_magazine",
+    "item__proto": "charlton_automatic_rifle_magazine",
+    "item__locDetails": "",
+    "ammo_holder__templateName": "charlton_automatic_rifle_magazine",
+    "ammo_holder__ammoCount": 30,
+    "item__weight": 1.6,
+    "item__volume": 1.3,
+    "item__name": "items/charlton_automatic_rifle_magazine",
+    "collres__res": "bren_lmg_mk_2_ammo_collision"
+  },
+  "solothurn_s_18_100_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "solothurn_s_18_100"
+    },
+    {
+      "collres__res": "ptrs_41_collision"
+    }
+  ],
+  "solothurn_s_18_100_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "ptrs_41_ammo_char",
+    "item__template": "solothurn_s_18_100_magazine",
+    "item__proto": "solothurn_s_18_100_magazine",
+    "item__locDetails": "",
+    "ammo_holder__templateName": "solothurn_s_18_100_magazine",
+    "ammo_holder__ammoCount": 10,
+    "item__weight": 4.0,
+    "item__volume": 0.8,
+    "item__name": "items/solothurn_s_18_100_magazine",
+    "collres__res": "ptrs_41_ammo_collision"
+  },
+  "atr_boys_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "atr_boys"
+    },
+    {
+      "collres__res": "atr_boys_collision"
+    }
+  ],
+  "atr_boys_magazine": {
+    "_extends": "item_bullets",
+    "animchar__res": "wz_35_ammo_char",
+    "item__template": "atr_boys_magazine",
+    "item__proto": "atr_boys_magazine",
+    "item__locDetails": "",
+    "ammo_holder__templateName": "atr_boys_magazine",
+    "ammo_holder__ammoCount": 5,
+    "item__weight": 1.2,
+    "item__volume": 0.6,
+    "item__name": "items/atr_boys_magazine",
+    "collres__res": "wz_35_ammo_collision"
+  },
+  "vickers_berthier_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "vickers_berthier"
+    },
+    {
+      "collres__res": "mg_vickers_berthier_collision"
+    }
+  ],
+  "vickers_berthier_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "bren_lmg_mk_2_ammo_char",
+    "item__template": "vickers_berthier_magazine",
+    "item__proto": "vickers_berthier_magazine",
+    "item__locDetails": "",
+    "ammo_holder__templateName": "vickers_berthier_magazine",
+    "ammo_holder__ammoCount": 30,
+    "item__weight": 1.6,
+    "item__volume": 1.3,
+    "item__name": "items/vickers_berthier_magazine",
+    "collres__res": "bren_lmg_mk_2_ammo_collision"
+  },
+  "smle_mk3_grenade_launcher_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "smle_mk3_grenade_launcher"
+    },
+    {
+      "collres__res": "smle_mk3_grenade_launcher_collision"
+    }
+  ],
+  "smle_2_5_inch_grenade_launcher_cup_item": {
+    "_extends": "item_scope",
+    "animchar__res": "smle_2_5_inch_grenade_launcher_cup_char",
+    "collres__res": "smle_2_5_inch_grenade_launcher_cup_collision",
+    "item__template": "smle_2_5_inch_grenade_launcher_cup_item",
+    "item__proto": "content/e_tunisia/gamedata/weapons/smle_2_5_inch_grenade_launcher_cup.blk",
+    "item__locDetails": "",
+    "item__weight": 0.7,
+    "item__volume": 0.5,
+    "item__name": "items/smle_2_5_inch_grenade_launcher_cup",
+    "item__iconYaw": 175.0,
+    "gunAttachable__slotName": "grenade_launcher",
+    "gunAttachable__gunSlotName": "grenade_launcher",
+    "gunAttachable__slotTag": "smle_2_5_inch_grenade_launcher_cup",
+    "gunAttachable:tag": []
+  },
+  "smle_2_5_inch_rifle_grenade_item": [
+    {
+      "_extends": "item_grenade"
+    },
+    {
+      "_extends": "smle_2_5_inch_rifle_grenade_shell"
+    },
+    {
+      "item__template": "smle_2_5_inch_rifle_grenade_item"
+    },
+    {
+      "item__proto": "content/e_tunisia/gamedata/weapons/grenades/smle_2_5_inch_rifle_grenade.blk"
+    },
+    {
+      "item__locDetails": ""
+    },
+    {
+      "item__shell": "content/e_tunisia/gamedata/weapons/grenades/smle_2_5_inch_rifle_grenade.blk"
+    },
+    {
+      "item__ammoPropsId": -1
+    },
+    {
+      "item__weight": 3.3
+    },
+    {
+      "item__volume": 0.6
+    },
+    {
+      "item__name": "items/smle_2_5_inch_rifle_grenade"
+    },
+    {
+      "item__grenadeType": "shell"
+    },
+    {
+      "ammo_holder__id": -1
+    },
+    {
+      "ammo_holder__templateName": "smle_2_5_inch_rifle_grenade_item"
+    },
+    {
+      "ammo_holder__ammoCount": 1
+    }
+  ]
+}; var STALINGRADITEMSDATA =  
+{
+  "kar98k_wartime_production": [
+    {
+      "_extends": "main_weap_slots"
+    },
+    {
+      "_extends": "reload_not_empty_single_bullet"
+    },
+    {
+      "_extends": "ironsights_open_rifle"
+    },
+    {
+      "reload__singleReloadMaxAmmo": 4
+    },
+    {
+      "single_reload__prepareTime": 1.2
+    },
+    {
+      "single_reload__loopTime": 0.63
+    },
+    {
+      "single_reload__postTime": 1.3
+    },
+    {
+      "animchar__res": "kar98k_wartime_production_char"
+    },
+    {
+      "gun__blk": "content/e_stalingrad/gamedata/weapons/kar98k_wartime_production.blk"
+    },
+    {
+      "item__template": "kar98k_wartime_production_gun_item"
+    },
+    {
+      "item__proto": "content/e_stalingrad/gamedata/weapons/kar98k_wartime_production.blk"
+    },
+    {
+      "item__locDetails": "7.92x57mm;"
+    },
+    {
+      "item__id": 0
+    },
+    {
+      "item__weapTemplate": "kar98k_wartime_production_gun"
+    },
+    {
+      "item__name": "items/mauser_98k"
+    },
+    {
+      "item__weapType": "rifle"
+    },
+    {
+      "item__weight": 3.9
+    },
+    {
+      "gun__locName": "Kar98k"
+    },
+    {
+      "gun__statName": "rifle"
+    },
+    {
+      "gun__shotFreq": 1.1
+    },
+    {
+      "gun__shotFreqRndK": 0.1
+    },
+    {
+      "gun__automaticReload": false
+    },
+    {
+      "gun_spread__maxDeltaAngle": 0.13
+    },
+    {
+      "gun_deviation__omegaRange": [30.0,90.0]
+    },
+    {
+      "gun_deviation__omegaDevInc": [0.1,0.5]
+    },
+    {
+      "gun_deviation__movementRange": [2.1,4.0]
+    },
+    {
+      "gun_deviation__movementDevInc": [0.0,8.0]
+    },
+    {
+      "gun_deviation__onShotDeviationChange": 0.0
+    },
+    {
+      "gun_deviation__shotTau": 0.1
+    },
+    {
+      "gun_deviation__extraDeviationTau": 0.15
+    },
+    {
+      "gun_deviation__maxDeviation": 15.0
+    },
+    {
+      "gun__reloadTime": 3.4
+    },
+    {
+      "gun_shell_ejection__onShootRelease:tag": []
+    },
+    {
+      "gun__ammoHolders:array": {
+        "ammoHolders": "mauser98k_magazine"
+      }
+    },
+    {
+      "gun__shells:array": {
+        "shells": "content/enlisted/gamedata/weapons_enlisted/bullets/7.92x57_mauser_carbine.blk"
+      }
+    },
+    {
+      "gun__firingModes:array": {
+        "mode:object": {
+          "modeType": "manual"
+        }
+      }
+    },
+    {
+      "gun__firingModeNames:array": {
+        "mode": "bolt_action"
+      }
+    }
+  ],
+  "kar98k_wartime_production_gun": [
+    {
+      "_extends": "base_equipable_gun"
+    },
+    {
+      "_extends": "carbine_ww2_preset"
+    },
+    {
+      "_extends": "kar98k_wartime_production"
+    },
+    {
+      "_extends": "rifle_muzzle_preset"
+    },
+    {
+      "gun_shell_ejection__timeMult": 0.35
+    },
+    {
+      "gun__standOffset": [0.2,0.05,0.15]
+    },
+    {
+      "gun__crouchOffset": [0.2,-0.07,0.25]
+    },
+    {
+      "gun__length": 0.4
+    },
+    {
+      "gun__recoilAmount": 0.12
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.0
+    },
+    {
+      "gun__visualRecoilMult": 1.0
+    },
+    {
+      "gun__recoilControlMult": 0.0
+    },
+    {
+      "gun__recoilOffsMult": 1.0
+    },
+    {
+      "gun_attach__slot": "weapon"
+    },
+    {
+      "gun__adsSpeedMult": 0.95
+    },
+    {
+      "meleeSoundType": "rifle"
+    },
+    {
+      "gun_mods__slots:object": {
+        "scope:object": {
+          "scope_pulsar_n870": "scope_pulsar_n870",
+          "scope_3_5x": "scope_zf_39_mauser_98k_3_5x",
+          "scope_4x": "scope_zf_39_mauser_98k_4x",
+          "scope_6x": "scope_zf_39_mauser_98k_6x"
+        },
+        "bayonet:object": {
+          "sg_8498_III_bayonet": "sg_8498_III_bayonet"
+        }
+      }
+    },
+    {
+      "sound_paths:shared:object": {
+        "_tags": "sound",
+        "reload:object": {
+          "hero": "player/weapon/rifle/mauser98k",
+          "enemy": "enemy/weapon/rifle/mauser98k"
+        },
+        "boltAction:object": {
+          "hero": "player/weapon/rifle/mosin",
+          "enemy": "enemy/weapon/rifle/mosin"
+        },
+        "aim:object": {
+          "hero": "player/walker/ww2_soldier/foley_mov/common/riffle"
+        },
+        "shot:object": {
+          "hero": "player/weapon/rifle/mauser98k",
+          "enemy": "enemy/weapon/rifle/mauser98k"
+        }
+      }
+    }
+  ],
+  "stl_kar98k_wartime_production": {
+    "_extends": "kar98k_wartime_production",
+    "item__weapTemplate": "stl_kar98k_wartime_production_gun",
+    "item__template": "stl_kar98k_wartime_production_gun_item",
+    "gun__shotFreq": 0.9,
+    "gun__kineticDamageMult": 1.5
+  },
+  "stl_kar98k_wartime_production_gun": [
+    {
+      "_extends": "kar98k_wartime_production_gun"
+    },
+    {
+      "_extends": "stl_kar98k_wartime_production"
+    },
+    {
+      "gun__recoilAmount": 0.16
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.1
+    }
+  ],
+  "stl_kar98k_with_schiessbecher_grenade_launcher": {
+    "_extends": "kar98k_with_schiessbecher_grenade_launcher",
+    "item__weapTemplate": "stl_kar98k_with_schiessbecher_grenade_launcher_gun",
+    "item__template": "stl_kar98k_with_schiessbecher_grenade_launcher_gun_item",
+    "gun__shotFreq": 0.93,
+    "gun__kineticDamageMult": 1.5
+  },
+  "stl_kar98k_with_schiessbecher_grenade_launcher_gun": [
+    {
+      "_extends": "kar98k_with_schiessbecher_grenade_launcher_gun"
+    },
+    {
+      "_extends": "stl_kar98k_with_schiessbecher_grenade_launcher"
+    },
+    {
+      "gun__recoilAmount": 0.15
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.1
+    }
+  ],
+  "stl_kar98k_with_scope_mount_gun": {
+    "_extends": "kar98k_with_scope_mount_gun",
+    "animchar__res": "kar98k_wartime_production_char",
+    "item__weapTemplate": "stl_kar98k_with_scope_mount_gun",
+    "item__template": "stl_kar98k_with_scope_mount_gun_item",
+    "gun__shotFreq": 0.97,
+    "gun__kineticDamageMult": 1.5,
+    "gun__recoilAmount": 0.16,
+    "gun__recoilDirAmount": 0.8,
+    "gun__recoilDir": 0.13
+  },
+  "stl_pre_war_kar98k_with_scope_mount_gun": {
+    "_extends": "pre_war_kar98k_with_scope_mount_gun",
+    "item__weapTemplate": "stl_pre_war_kar98k_with_scope_mount_gun",
+    "item__template": "stl_pre_war_kar98k_with_scope_mount_gun_item",
+    "gun__shotFreq": 1.05,
+    "gun__kineticDamageMult": 1.55,
+    "gun__recoilAmount": 0.16,
+    "gun__recoilDirAmount": 0.8,
+    "gun__recoilDir": 0.15
+  },
+  "mannlicher_m93_roman": [
+    {
+      "_extends": "main_weap_slots"
+    },
+    {
+      "_extends": "ironsights_open_rifle"
+    },
+    {
+      "animchar__res": "romanian_mannlicher_m93_char"
+    },
+    {
+      "gun__blk": "content/e_stalingrad/gamedata/weapons/mannlicher_m93_roman.blk"
+    },
+    {
+      "item__template": "mannlicher_m93_roman_gun_item"
+    },
+    {
+      "item__proto": "content/e_stalingrad/gamedata/weapons/mannlicher_m93_roman.blk"
+    },
+    {
+      "item__locDetails": "6.5x52 Carcano;"
+    },
+    {
+      "item__id": 0
+    },
+    {
+      "item__weapTemplate": "mannlicher_m93_roman_gun"
+    },
+    {
+      "item__name": "items/mannlicher_m93_roman"
+    },
+    {
+      "item__weapType": "rifle"
+    },
+    {
+      "item__weight": 3.8
+    },
+    {
+      "gun__locName": "Carcano Mod. 91"
+    },
+    {
+      "gun__statName": "rifle"
+    },
+    {
+      "gun__shotFreq": 0.95
+    },
+    {
+      "gun__shotFreqRndK": 0.1
+    },
+    {
+      "gun__automaticReload": false
+    },
+    {
+      "gun_spread__maxDeltaAngle": 0.13
+    },
+    {
+      "gun_deviation__omegaRange": [30.0,90.0]
+    },
+    {
+      "gun_deviation__omegaDevInc": [0.1,0.5]
+    },
+    {
+      "gun_deviation__movementRange": [2.1,4.0]
+    },
+    {
+      "gun_deviation__movementDevInc": [0.0,8.0]
+    },
+    {
+      "gun_deviation__onShotDeviationChange": 0.0
+    },
+    {
+      "gun_deviation__shotTau": 0.1
+    },
+    {
+      "gun_deviation__extraDeviationTau": 0.15
+    },
+    {
+      "gun_deviation__maxDeviation": 15.0
+    },
+    {
+      "gun__reloadTime": 3.5
+    },
+    {
+      "gun__altReloadTime": 3.8
+    },
+    {
+      "gun_shell_ejection__onShootRelease:tag": []
+    },
+    {
+      "gun__ammoHolders:array": {
+        "ammoHolders": "mannlicher_m93_magazine"
+      }
+    },
+    {
+      "gun__shells:array": {
+        "shells": "content/e_tunisia/gamedata/weapons/bullets/6.5x52_carcano_long.blk"
+      }
+    },
+    {
+      "gun__firingModes:array": {
+        "mode:object": {
+          "modeType": "manual"
+        }
+      }
+    },
+    {
+      "gun__firingModeNames:array": {
+        "mode": "bolt_action"
+      }
+    }
+  ],
+  "mannlicher_m93_roman_gun": [
+    {
+      "_extends": "base_equipable_gun"
+    },
+    {
+      "_extends": "rifle_ww2_preset"
+    },
+    {
+      "_extends": "mannlicher_m93_roman"
+    },
+    {
+      "_extends": "rifle_muzzle_preset"
+    },
+    {
+      "gun_shell_ejection__timeMult": 0.35
+    },
+    {
+      "gun__standOffset": [0.2,0.05,0.15]
+    },
+    {
+      "gun__crouchOffset": [0.2,-0.07,0.25]
+    },
+    {
+      "gun__length": 0.4
+    },
+    {
+      "gun__recoilAmount": 0.081
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.0
+    },
+    {
+      "gun__visualRecoilMult": 1.0
+    },
+    {
+      "gun__recoilControlMult": 0.0
+    },
+    {
+      "gun__recoilOffsMult": 1.0
+    },
+    {
+      "gun_attach__slot": "weapon"
+    },
+    {
+      "gun__adsSpeedMult": 0.85
+    },
+    {
+      "meleeSoundType": "rifle"
+    },
+    {
+      "gun_mods__slots:object": {
+        "bayonet:object": {
+          "mannlicher_m93_roman_bayonet": "mannlicher_m93_roman_bayonet"
+        }
+      }
+    },
+    {
+      "sound_paths:shared:object": {
+        "_tags": "sound",
+        "reload:object": {
+          "hero": "player/weapon/rifle/carcano_m41",
+          "enemy": "enemy/weapon/rifle/carcano_m41"
+        },
+        "boltAction:object": {
+          "hero": "player/weapon/rifle/carcano_m41",
+          "enemy": "enemy/weapon/rifle/carcano_m41"
+        },
+        "aim:object": {
+          "hero": "player/walker/ww2_soldier/foley_mov/common/riffle"
+        },
+        "shot:object": {
+          "hero": "player/weapon/rifle/mannlicher_m93_roman",
+          "enemy": "enemy/weapon/rifle/mannlicher_m93_roman"
+        }
+      }
+    }
+  ],
+  "stl_mannlicher_m93_roman": {
+    "_extends": "mannlicher_m93_roman",
+    "item__weapTemplate": "stl_mannlicher_m93_roman_gun",
+    "item__template": "stl_mannlicher_m93_roman_item",
+    "gun__shotFreq": 0.95,
+    "gun__kineticDamageMult": 1.5
+  },
+  "stl_mannlicher_m93_roman_gun": [
+    {
+      "_extends": "mannlicher_m93_roman_gun"
+    },
+    {
+      "_extends": "stl_mannlicher_m93_roman"
+    },
+    {
+      "gun__recoilAmount": 0.13
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.1
+    }
+  ],
+  "mannlicher_m93_roman_bayonet": {
+    "_extends": "bayonet_gunmod",
+    "animchar__res": "romanian_mannlicher_m93_bayonet_char",
+    "item__template": "mannlicher_m93_roman_bayonet_item",
+    "item__proto": "content/e_stalingrad/gamedata/items/mannlicher_m93_roman_bayonet.blk",
+    "gunAttachable__slot": -1,
+    "gunAttachable__slotName": "bayonet",
+    "gunAttachable__gunSlotName": "bayonet",
+    "gunAttachable__slotTag": "mannlicher_m93_roman_bayonet",
+    "item__weight": 0.3,
+    "item__volume": 0.5,
+    "item__name": "items/mannlicher_m93_roman_bayonet",
+    "melee_weapon__blk": "content/e_ww2_common/gamedata/weapons/mosin_m1930_bayonet.blk",
+    "gunAttachable:tag": []
+  },
+  "stl_mannlicher_m1895": {
+    "_extends": "mannlicher_m1895",
+    "item__weapTemplate": "stl_mannlicher_m1895_gun",
+    "item__template": "stl_mannlicher_m1895_gun_item",
+    "gun__shotFreq": 1.1,
+    "gun__kineticDamageMult": 1.62,
+    "gun__reloadTime": 3.4
+  },
+  "stl_mannlicher_m1895_gun": [
+    {
+      "_extends": "mannlicher_m1895_gun"
+    },
+    {
+      "_extends": "stl_mannlicher_m1895"
+    },
+    {
+      "gun__recoilAmount": 0.16
+    },
+    {
+      "gun__recoilDirAmount": 0.75
+    },
+    {
+      "gun__recoilDir": 0.25
+    }
+  ],
+  "stl_mosin_m38": {
+    "_extends": "mosin_m38",
+    "animchar__res": "stl_mosin_m38_char",
+    "item__weapTemplate": "stl_mosin_m38_gun",
+    "item__template": "stl_mosin_m38_gun_item",
+    "gun__shotFreq": 0.9,
+    "gun__kineticDamageMult": 1.58
+  },
+  "stl_mosin_m38_gun": [
+    {
+      "_extends": "mosin_m38_gun"
+    },
+    {
+      "_extends": "stl_mosin_m38"
+    },
+    {
+      "gun__recoilAmount": 0.14
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.1
+    }
+  ],
+  "stl_mosin_m91": {
+    "_extends": "mosin_m91",
+    "animchar__res": "mosin_m91_char",
+    "item__weapTemplate": "stl_mosin_m91_gun",
+    "item__template": "stl_mosin_m91_gun_item",
+    "gun__shotFreq": 0.85,
+    "gun__kineticDamageMult": 1.58
+  },
+  "stl_mosin_m91_gun": [
+    {
+      "_extends": "mosin_m91_gun"
+    },
+    {
+      "_extends": "stl_mosin_m91"
+    },
+    {
+      "gun__recoilAmount": 0.13
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.1
+    }
+  ],
+  "stl_mosin_m91_30": {
+    "_extends": "mosin_m91_30",
+    "animchar__res": "stl_mosin_m91_30_char",
+    "item__weapTemplate": "stl_mosin_m91_30_gun",
+    "item__template": "stl_mosin_m91_30_gun_item",
+    "gun__shotFreq": 0.82,
+    "gun__kineticDamageMult": 1.58
+  },
+  "stl_mosin_m91_30_gun": [
+    {
+      "_extends": "mosin_m91_30_gun"
+    },
+    {
+      "_extends": "stl_mosin_m91_30"
+    },
+    {
+      "gun__recoilAmount": 0.13
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.1
+    }
+  ],
+  "stl_mosin_1928_grenade_launcher": {
+    "_extends": "mosin_1928_grenade_launcher",
+    "item__weapTemplate": "stl_mosin_1928_grenade_launcher_gun",
+    "item__template": "stl_mosin_1928_grenade_launcher_gun_item",
+    "gun__shotFreq": 0.86,
+    "gun__kineticDamageMult": 1.58
+  },
+  "stl_mosin_1928_grenade_launcher_gun": [
+    {
+      "_extends": "mosin_1928_grenade_launcher_gun"
+    },
+    {
+      "_extends": "stl_mosin_1928_grenade_launcher"
+    },
+    {
+      "gun__recoilAmount": 0.112
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.13
+    }
+  ],
+  "stl_winchester_1895": {
+    "_extends": "winchester_1895",
+    "animchar__res": "stl_winchester_1895_char",
+    "item__weapTemplate": "stl_winchester_1895_gun",
+    "item__template": "stl_winchester_1895_gun_item",
+    "gun__shotFreq": 0.95,
+    "gun__kineticDamageMult": 1.62,
+    "gun__reloadTime": 3.2
+  },
+  "stl_winchester_1895_gun": [
+    {
+      "_extends": "winchester_1895_gun"
+    },
+    {
+      "_extends": "stl_winchester_1895"
+    },
+    {
+      "gun__recoilAmount": 0.135
+    },
+    {
+      "gun__recoilDirAmount": 0.75
+    },
+    {
+      "gun__recoilDir": 0.15
+    }
+  ],
+  "stl_gewehr_41": {
+    "_extends": "gewehr_41",
+    "item__weapTemplate": "stl_gewehr_41_gun",
+    "item__template": "stl_gewehr_41_gun_item"
+  },
+  "stl_gewehr_41_gun": [
+    {
+      "_extends": "gewehr_41_gun"
+    },
+    {
+      "_extends": "stl_gewehr_41"
+    },
+    {
+      "gun__recoilAmount": 0.135
+    },
+    {
+      "gun__recoilDirAmount": 0.74
+    },
+    {
+      "gun__recoilDir": 0.35
+    },
+    {
+      "gun__visualRecoilMult": 1.3
+    }
+  ],
+  "stl_zh_29": {
+    "_extends": "zh_29",
+    "item__weapTemplate": "stl_zh_29_gun",
+    "item__template": "stl_zh_29_gun_item",
+    "gun__kineticDamageMult": 1.1
+  },
+  "stl_zh_29_gun": [
+    {
+      "_extends": "zh_29_gun"
+    },
+    {
+      "_extends": "stl_zh_29"
+    },
+    {
+      "gun__recoilAmount": 0.14
+    },
+    {
+      "gun__recoilDirAmount": 0.77
+    },
+    {
+      "gun__recoilDir": -0.15
+    },
+    {
+      "gun__visualRecoilMult": 1.3
+    }
+  ],
+  "stl_svt_38": {
+    "_extends": "svt_38",
+    "item__weapTemplate": "stl_svt_38_gun",
+    "item__template": "stl_svt_38_gun_item"
+  },
+  "stl_svt_38_gun": [
+    {
+      "_extends": "svt_38_gun"
+    },
+    {
+      "_extends": "stl_svt_38"
+    },
+    {
+      "gun__recoilAmount": 0.13
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.3
+    },
+    {
+      "gun__visualRecoilMult": 1.3
+    }
+  ],
+  "stl_sniper_svt_38_gun": {
+    "_extends": "sniper_svt_38_gun",
+    "item__weapTemplate": "stl_sniper_svt_38_gun",
+    "item__template": "stl_sniper_svt_38_gun_item",
+    "gun__recoilAmount": 0.13,
+    "gun__recoilDirAmount": 0.8,
+    "gun__recoilDir": 0.3,
+    "gun__visualRecoilMult": 1.3
+  },
+  "stl_svt_40": {
+    "_extends": "svt_40",
+    "item__weapTemplate": "stl_svt_40_gun",
+    "item__template": "stl_svt_40_gun_item",
+    "gun__kineticDamageMult": 1.1
+  },
+  "stl_svt_40_gun": [
+    {
+      "_extends": "svt_40_gun"
+    },
+    {
+      "_extends": "stl_svt_40"
+    },
+    {
+      "gun__recoilAmount": 0.14
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.2
+    },
+    {
+      "gun__visualRecoilMult": 1.3
+    }
+  ],
+  "stl_avt_40": {
+    "_extends": "avt_40",
+    "item__weapTemplate": "stl_avt_40_gun",
+    "item__template": "stl_avt_40_gun_item",
+    "gun__kineticDamageMult": 1.1
+  },
+  "stl_avt_40_gun": [
+    {
+      "_extends": "avt_40_gun"
+    },
+    {
+      "_extends": "stl_avt_40"
+    },
+    {
+      "gun__recoilAmount": 0.14
+    },
+    {
+      "gun__recoilDirAmount": 0.63
+    },
+    {
+      "gun__recoilDir": 0.2
+    },
+    {
+      "gun__visualRecoilMult": 1.3
+    },
+    {
+      "gun__recoilControlMult": 0.6
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    }
+  ],
+  "stl_sniper_avs_36_gun": {
+    "_extends": "sniper_avs_36_gun",
+    "item__weapTemplate": "stl_sniper_avs_36_gun",
+    "item__template": "stl_sniper_avs_36_gun_item",
+    "gun__kineticDamageMult": 1.1,
+    "gun__recoilAmount": 0.155,
+    "gun__recoilDirAmount": 0.75,
+    "gun__recoilDir": 0.25,
+    "gun__visualRecoilMult": 1.3,
+    "gun__recoilControlMult": 0.7,
+    "gun__recoilOffsMult": 0.3
+  },
+  "orita_m1941": [
+    {
+      "_extends": "main_weap_slots"
+    },
+    {
+      "_extends": "ironsights_open_smg"
+    },
+    {
+      "animchar__res": "orita_m1941_char"
+    },
+    {
+      "gun__blk": "content/e_stalingrad/gamedata/weapons/orita_m1941.blk"
+    },
+    {
+      "item__template": "orita_m1941_gun_item"
+    },
+    {
+      "item__proto": "content/e_stalingrad/gamedata/weapons/orita_m1941.blk"
+    },
+    {
+      "item__locDetails": "RoF: 500; 9x19mm;"
+    },
+    {
+      "item__id": 0
+    },
+    {
+      "item__weapTemplate": "orita_m1941_gun"
+    },
+    {
+      "item__name": "items/orita_m1941"
+    },
+    {
+      "item__weapType": "submachine_gun"
+    },
+    {
+      "item__weight": 4.0
+    },
+    {
+      "gun__locName": "Orita M1941"
+    },
+    {
+      "gun__statName": "submachine_gun"
+    },
+    {
+      "gun__sightsDistance": 0.25
+    },
+    {
+      "gun__shotFreq": 7.5
+    },
+    {
+      "gun__shotFreqRndK": 0.1
+    },
+    {
+      "gun_spread__maxDeltaAngle": 0.25
+    },
+    {
+      "gun_deviation__omegaRange": [30.0,90.0]
+    },
+    {
+      "gun_deviation__omegaDevInc": [0.07,0.5]
+    },
+    {
+      "gun_deviation__movementRange": [2.1,4.0]
+    },
+    {
+      "gun_deviation__movementDevInc": [0.0,15.0]
+    },
+    {
+      "gun_deviation__onShotDeviationChange": 0.0
+    },
+    {
+      "gun_deviation__shotTau": 0.1
+    },
+    {
+      "gun_deviation__extraDeviationTau": 0.2
+    },
+    {
+      "gun_deviation__maxDeviation": 20.0
+    },
+    {
+      "gun__reloadTime": 2.6
+    },
+    {
+      "gun__altReloadTime": 2.1
+    },
+    {
+      "gun__ammoHolders:array": {
+        "ammoHolders": "mp40_magazine"
+      }
+    },
+    {
+      "gun__shells:array": {
+        "shells": "content/enlisted/gamedata/weapons_enlisted/bullets/9x19_parabellum_smg.blk"
+      }
+    },
+    {
+      "gun__firingModes:array": [
+        {
+          "mode:object": {
+            "modeType": "automatic"
+          }
+        },
+        {
+          "mode:object": {
+            "modeType": "burst",
+            "burstSize": 1
+          }
+        }
+      ]
+    },
+    {
+      "gun__firingModeNames:array": [
+        {
+          "mode": "full_auto"
+        },
+        {
+          "mode": "semi_auto"
+        }
+      ]
+    }
+  ],
+  "orita_m1941_gun": [
+    {
+      "_extends": "base_equipable_gun"
+    },
+    {
+      "_extends": "mp_ww2_preset"
+    },
+    {
+      "_extends": "orita_m1941"
+    },
+    {
+      "_extends": "smg_muzzle_preset"
+    },
+    {
+      "_extends": "gun_switch_firing_mode_sound"
+    },
+    {
+      "gun__standOffset": [0.2,0.05,0.15]
+    },
+    {
+      "gun__crouchOffset": [0.2,-0.07,0.25]
+    },
+    {
+      "gun__length": 0.4
+    },
+    {
+      "gun__recoilAmount": 0.02
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.0
+    },
+    {
+      "gun__visualRecoilMult": 1.0
+    },
+    {
+      "meleeSoundType": "mgun"
+    },
+    {
+      "_group": {
+        "_tags": "sound",
+        "gun_sound__forceOneshot": true
+      }
+    },
+    {
+      "sound_paths:shared:object": {
+        "_tags": "sound",
+        "reload:object": {
+          "hero": "player/weapon/mgun/mp40",
+          "enemy": "enemy/weapon/mgun/mp40"
+        },
+        "boltAction:object": [],
+        "aim:object": {
+          "hero": "player/walker/ww2_soldier/foley_mov/common/mgun"
+        },
+        "shot:object": {
+          "hero": "player/weapon/mgun/mp40",
+          "enemy": "enemy/weapon/mgun/mp40"
+        }
+      }
+    }
+  ],
+  "stl_orita_m1941": {
+    "_extends": "orita_m1941",
+    "item__weapTemplate": "stl_orita_m1941_gun",
+    "item__template": "stl_orita_m1941_gun_item"
+  },
+  "stl_orita_m1941_gun": [
+    {
+      "_extends": "orita_m1941_gun"
+    },
+    {
+      "_extends": "stl_orita_m1941"
+    },
+    {
+      "gun__recoilAmount": 0.037
+    },
+    {
+      "gun__recoilDir": 0.32
+    },
+    {
+      "gun__recoilDirAmount": 0.78
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__recoilControlMult": 0.33
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    }
+  ],
+  "stl_mp_40": {
+    "_extends": "mp40",
+    "item__weapTemplate": "stl_mp_40_gun",
+    "item__template": "stl_mp_40_gun_item",
+    "gun__shotFreq": 7.3333,
+    "gun__kineticDamageMult": 1.05
+  },
+  "stl_mp_40_gun": [
+    {
+      "_extends": "mp40_gun"
+    },
+    {
+      "_extends": "stl_mp_40"
+    },
+    {
+      "gun__recoilAmount": 0.04
+    },
+    {
+      "gun__recoilDir": 0.35
+    },
+    {
+      "gun__recoilDirAmount": 0.74
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__recoilControlMult": 0.3
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.65,0.9,0.9]
+    }
+  ],
+  "stl_mp_28": {
+    "_extends": "mp_28",
+    "item__weapTemplate": "stl_mp_28_gun",
+    "item__template": "stl_mp_28_gun_item",
+    "gun__kineticDamageMult": 1.0
+  },
+  "stl_mp_28_gun": [
+    {
+      "_extends": "mp_28_gun"
+    },
+    {
+      "_extends": "stl_mp_28"
+    },
+    {
+      "gun__recoilAmount": 0.044
+    },
+    {
+      "gun__recoilDirAmount": 0.68
+    },
+    {
+      "gun__recoilDir": 0.6
+    },
+    {
+      "gun__recoilControlMult": 0.3
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.65,0.9,0.9]
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    }
+  ],
+  "stl_danuvia_39": {
+    "_extends": "danuvia_39",
+    "item__weapTemplate": "stl_danuvia_39_gun",
+    "item__template": "stl_danuvia_39_gun_item",
+    "gun__kineticDamageMult": 1.0
+  },
+  "stl_danuvia_39_gun": [
+    {
+      "_extends": "danuvia_39_gun"
+    },
+    {
+      "_extends": "stl_danuvia_39"
+    },
+    {
+      "gun__recoilAmount": 0.048
+    },
+    {
+      "gun__recoilDirAmount": 0.73
+    },
+    {
+      "gun__recoilDir": 0.5
+    },
+    {
+      "gun__recoilControlMult": 0.5
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.65,0.9,0.9]
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    }
+  ],
+  "stl_ppsh_41_german": {
+    "_extends": "ppsh_41_german",
+    "item__weapTemplate": "stl_ppsh_41_german_gun",
+    "item__template": "stl_ppsh_41_german_gun_item",
+    "gun__kineticDamageMult": 1.0
+  },
+  "stl_ppsh_41_german_gun": [
+    {
+      "_extends": "ppsh_41_german_gun"
+    },
+    {
+      "_extends": "stl_ppsh_41_german"
+    },
+    {
+      "gun__recoilAmount": 0.038
+    },
+    {
+      "gun__recoilDirAmount": 0.7
+    },
+    {
+      "gun__recoilDir": 0.45
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__recoilControlMult": 0.3
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.65,0.9,0.9]
+    }
+  ],
+  "stl_mp_717r": {
+    "_extends": "stl_ppsh_41",
+    "animchar__res": "ppsh_41_early_char",
+    "gun__blk": "content/e_ww2_common/gamedata/weapons/mp_717r.blk",
+    "item__proto": "content/e_ww2_common/gamedata/weapons/mp_717r.blk",
+    "gun__shotFreq": 14.167,
+    "gun__shotFreqRndK": 0.13,
+    "item__weapTemplate": "stl_mp_717r_gun",
+    "item__template": "stl_mp_717r_gun_item",
+    "item__name": "items/mp_717r",
+    "gun__shells:array": {
+      "shells": "content/enlisted/gamedata/weapons_enlisted/bullets/7.63x25_mauser_smg.blk"
+    }
+  },
+  "stl_mp_717r_gun": [
+    {
+      "_extends": "stl_ppsh_41_gun"
+    },
+    {
+      "_extends": "stl_mp_717r"
+    }
+  ],
+  "stl_silenced_erma_emp": {
+    "_extends": "silenced_erma_emp",
+    "item__weapTemplate": "stl_silenced_erma_emp_gun",
+    "item__template": "stl_silenced_erma_emp_gun_item",
+    "gun__shotFreq": 9.2,
+    "gun__shotFreqRndK": 0.1
+  },
+  "stl_silenced_erma_emp_gun": [
+    {
+      "_extends": "silenced_erma_emp_gun"
+    },
+    {
+      "_extends": "stl_silenced_erma_emp"
+    },
+    {
+      "gun__recoilAmount": 0.035
+    },
+    {
+      "gun__recoilDir": 0.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__recoilControlMult": 0.3
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.65,0.9,0.9]
+    }
+  ],
+  "stl_mkb_42_h": {
+    "_extends": "mkb_42_h",
+    "item__weapTemplate": "stl_mkb_42_h_gun",
+    "item__template": "stl_mkb_42_h_gun_item"
+  },
+  "stl_mkb_42_h_gun": [
+    {
+      "_extends": "mkb_42_h_gun"
+    },
+    {
+      "_extends": "stl_mkb_42_h"
+    },
+    {
+      "gun__recoilAmount": 0.056
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.31
+    },
+    {
+      "gun__recoilControlMult": 0.3
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.65,0.9,0.9]
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    }
+  ],
+  "stl_mkb_42_h_with_scope_gun": {
+    "_extends": "mkb_42_h_with_scope_gun",
+    "item__weapTemplate": "stl_mkb_42_h_with_scope_gun",
+    "item__template": "stl_mkb_42_h_with_scope_gun_item",
+    "gun__recoilAmount": 0.056,
+    "gun__recoilDirAmount": 0.8,
+    "gun__recoilDir": 0.31,
+    "gun__recoilControlMult": 0.3,
+    "gun__recoilOffsMult": 0.3,
+    "gun__rotationSpringMult": [0.65,0.9,0.9],
+    "gun__visualRecoilMult": 1.6,
+    "gun__crawlRecoilMult": 0.8
+  },
+  "ppsh_2": [
+    {
+      "_extends": "main_weap_slots"
+    },
+    {
+      "_extends": "ironsights_open_smg"
+    },
+    {
+      "animchar__res": "ppsh_2_char"
+    },
+    {
+      "gun__blk": "content/e_stalingrad/gamedata/weapons/ppsh_2.blk"
+    },
+    {
+      "item__template": "ppsh_2_gun_item"
+    },
+    {
+      "item__proto": "content/e_stalingrad/gamedata/weapons/ppsh_2.blk"
+    },
+    {
+      "item__locDetails": "RoF: 500; 7.62x25mm;"
+    },
+    {
+      "item__id": 0
+    },
+    {
+      "item__weapTemplate": "ppsh_2_gun"
+    },
+    {
+      "item__name": "items/ppsh_2"
+    },
+    {
+      "item__weapType": "submachine_gun"
+    },
+    {
+      "item__weight": 3.115
+    },
+    {
+      "gun__locName": "PPSh-2"
+    },
+    {
+      "gun__statName": "submachine_gun"
+    },
+    {
+      "gun__sightsDistance": 0.15
+    },
+    {
+      "gun__shotFreq": 8.75
+    },
+    {
+      "gun__shotFreqRndK": 0.1
+    },
+    {
+      "gun_spread__maxDeltaAngle": 0.25
+    },
+    {
+      "gun_deviation__omegaRange": [30.0,90.0]
+    },
+    {
+      "gun_deviation__omegaDevInc": [0.07,0.5]
+    },
+    {
+      "gun_deviation__movementRange": [2.1,4.0]
+    },
+    {
+      "gun_deviation__movementDevInc": [0.0,15.0]
+    },
+    {
+      "gun_deviation__onShotDeviationChange": 0.0
+    },
+    {
+      "gun_deviation__shotTau": 0.1
+    },
+    {
+      "gun_deviation__extraDeviationTau": 0.2
+    },
+    {
+      "gun_deviation__maxDeviation": 20.0
+    },
+    {
+      "gun__reloadTime": 2.7
+    },
+    {
+      "gun__altReloadTime": 2.1
+    },
+    {
+      "gun__ammoHolders:array": {
+        "ammoHolders": "pps_magazine"
+      }
+    },
+    {
+      "gun__shells:array": {
+        "shells": "content/enlisted/gamedata/weapons_enlisted/bullets/7.62x25_tokarev_smg.blk"
+      }
+    },
+    {
+      "gun__firingModes:array": {
+        "mode:object": {
+          "modeType": "automatic"
+        }
+      }
+    },
+    {
+      "gun__firingModeNames:array": {
+        "mode": "full_auto"
+      }
+    }
+  ],
+  "ppsh_2_gun": [
+    {
+      "_extends": "base_equipable_gun"
+    },
+    {
+      "_extends": "mp_ww2_preset"
+    },
+    {
+      "_extends": "ppsh_2"
+    },
+    {
+      "_extends": "smg_muzzle_break_preset"
+    },
+    {
+      "_extends": "gun_switch_firing_mode_sound"
+    },
+    {
+      "gun__standOffset": [0.2,0.05,0.15]
+    },
+    {
+      "gun__crouchOffset": [0.2,-0.07,0.25]
+    },
+    {
+      "gun__length": 0.4
+    },
+    {
+      "gun__recoilAmount": 0.03
+    },
+    {
+      "gun__recoilDirAmount": 0.75
+    },
+    {
+      "gun__recoilDir": 0.0
+    },
+    {
+      "gun__visualRecoilMult": 1.0
+    },
+    {
+      "meleeSoundType": "mgun"
+    },
+    {
+      "_group": {
+        "_tags": "sound",
+        "gun_sound__forceOneshot": true
+      }
+    },
+    {
+      "sound_paths:shared:object": {
+        "_tags": "sound",
+        "reload:object": {
+          "hero": "player/weapon/mgun/pps_42",
+          "enemy": "enemy/weapon/mgun/pps_42"
+        },
+        "boltAction:object": [],
+        "aim:object": {
+          "hero": "player/walker/ww2_soldier/foley_mov/common/mgun"
+        },
+        "shot:object": {
+          "hero": "player/weapon/mgun/pps_42",
+          "enemy": "enemy/weapon/mgun/pps_42"
+        }
+      }
+    }
+  ],
+  "stl_ppsh_2": {
+    "_extends": "ppsh_2",
+    "item__weapTemplate": "stl_ppsh_2_gun",
+    "item__template": "stl_ppsh_2_gun_item",
+    "gun__kineticDamageMult": 1.0
+  },
+  "stl_ppsh_2_gun": [
+    {
+      "_extends": "ppsh_2_gun"
+    },
+    {
+      "_extends": "stl_ppsh_2"
+    },
+    {
+      "gun__recoilAmount": 0.032
+    },
+    {
+      "gun__recoilDirAmount": 0.66
+    },
+    {
+      "gun__recoilDir": 0.41
+    },
+    {
+      "gun__recoilControlMult": 0.4
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.65,0.9,0.9]
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    }
+  ],
+  "stl_pps_42": {
+    "_extends": "pps_42",
+    "item__weapTemplate": "stl_pps_42_gun",
+    "item__template": "stl_pps_42_gun_item",
+    "gun__kineticDamageMult": 1.05
+  },
+  "stl_pps_42_gun": [
+    {
+      "_extends": "pps_42_gun"
+    },
+    {
+      "_extends": "stl_pps_42"
+    },
+    {
+      "gun__recoilAmount": 0.035
+    },
+    {
+      "gun__recoilDirAmount": 0.78
+    },
+    {
+      "gun__recoilDir": 0.33
+    },
+    {
+      "gun__recoilControlMult": 0.3
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.65,0.9,0.9]
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    }
+  ],
+  "stl_ppsh_41": [
+    {
+      "_extends": "main_weap_slots"
+    },
+    {
+      "_extends": "ironsights_open_smg"
+    },
+    {
+      "animchar__res": "ppsh_41_late_char"
+    },
+    {
+      "gun__blk": "content/e_ww2_common/gamedata/weapons/ppsh_41.blk"
+    },
+    {
+      "item__template": "stl_ppsh_41_gun_item"
+    },
+    {
+      "item__proto": "content/e_ww2_common/gamedata/weapons/ppsh_41.blk"
+    },
+    {
+      "item__locDetails": "RoF: 1000; 7.62x25mm;"
+    },
+    {
+      "item__id": 0
+    },
+    {
+      "item__weapTemplate": "stl_ppsh_41_gun"
+    },
+    {
+      "item__name": "items/ppsh_41"
+    },
+    {
+      "item__weapType": "submachine_gun"
+    },
+    {
+      "item__weight": 5.3
+    },
+    {
+      "gun__locName": "PPSH"
+    },
+    {
+      "gun__statName": "submachine_gun"
+    },
+    {
+      "gun__sightsDistance": 0.15
+    },
+    {
+      "gun__shotFreq": 16.6
+    },
+    {
+      "gun__shotFreqRndK": 0.1
+    },
+    {
+      "gun_spread__maxDeltaAngle": 0.82
+    },
+    {
+      "gun_deviation__omegaRange": [30.0,90.0]
+    },
+    {
+      "gun_deviation__omegaDevInc": [0.07,0.5]
+    },
+    {
+      "gun_deviation__movementRange": [2.1,4.0]
+    },
+    {
+      "gun_deviation__movementDevInc": [0.0,15.0]
+    },
+    {
+      "gun_deviation__onShotDeviationChange": 0.0
+    },
+    {
+      "gun_deviation__shotTau": 0.1
+    },
+    {
+      "gun_deviation__extraDeviationTau": 0.2
+    },
+    {
+      "gun_deviation__maxDeviation": 20.0
+    },
+    {
+      "gun__reloadTime": 3.8
+    },
+    {
+      "gun__altReloadTime": 3.4
+    },
+    {
+      "gun__kineticDamageMult": 1.0
+    },
+    {
+      "gun__ammoHolders:array": {
+        "ammoHolders": "ppsh_drum"
+      }
+    },
+    {
+      "gun__shells:array": {
+        "shells": "content/enlisted/gamedata/weapons_enlisted/bullets/7.62x25_tokarev_smg.blk"
+      }
+    },
+    {
+      "gun__firingModes:array": [
+        {
+          "mode:object": {
+            "modeType": "automatic"
+          }
+        },
+        {
+          "mode:object": {
+            "modeType": "burst",
+            "burstSize": 1
+          }
+        }
+      ]
+    },
+    {
+      "gun__firingModeNames:array": [
+        {
+          "mode": "full_auto"
+        },
+        {
+          "mode": "semi_auto"
+        }
+      ]
+    }
+  ],
+  "stl_ppsh_41_gun": [
+    {
+      "_extends": "base_equipable_gun"
+    },
+    {
+      "_extends": "mp_ww2_preset"
+    },
+    {
+      "_extends": "stl_ppsh_41"
+    },
+    {
+      "_extends": "smg_muzzle_break_3_preset"
+    },
+    {
+      "_extends": "gun_switch_firing_mode_sound"
+    },
+    {
+      "gun__standOffset": [0.2,0.05,0.15]
+    },
+    {
+      "gun__crouchOffset": [0.2,-0.07,0.25]
+    },
+    {
+      "gun__length": 0.4
+    },
+    {
+      "gun__recoilAmount": 0.032
+    },
+    {
+      "gun__recoilDirAmount": 0.7
+    },
+    {
+      "gun__recoilDir": 0.45
+    },
+    {
+      "gun__recoilControlMult": 0.4
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.65,0.9,0.9]
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__adsSpeedMult": 0.72
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    },
+    {
+      "meleeSoundType": "mgun"
+    },
+    {
+      "_group": {
+        "_tags": "sound",
+        "gun_sound__startLoopWithNOneshots": 3
+      }
+    },
+    {
+      "sound_paths:shared:object": {
+        "_tags": "sound",
+        "reload:object": {
+          "hero": "player/weapon/mgun/ppsh",
+          "enemy": "enemy/weapon/mgun/ppsh"
+        },
+        "boltAction:object": [],
+        "aim:object": {
+          "hero": "player/walker/ww2_soldier/foley_mov/common/mgun"
+        },
+        "shot:object": {
+          "hero": "player/weapon/mgun/ppsh",
+          "enemy": "enemy/weapon/mgun/ppsh"
+        }
+      }
+    }
+  ],
+  "stl_ppd_3438_box": {
+    "_extends": "ppd_3438_box",
+    "item__weapTemplate": "stl_ppd_3438_box_gun",
+    "item__template": "stl_ppd_3438_box_gun_item",
+    "gun__kineticDamageMult": 0.95
+  },
+  "stl_ppd_3438_box_gun": [
+    {
+      "_extends": "ppd_3438_box_gun"
+    },
+    {
+      "_extends": "stl_ppd_3438_box"
+    },
+    {
+      "gun__recoilAmount": 0.036
+    },
+    {
+      "gun__recoilDirAmount": 0.63
+    },
+    {
+      "gun__recoilDir": 0.41
+    },
+    {
+      "gun__recoilControlMult": 0.4
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.65,0.9,0.9]
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    }
+  ],
+  "stl_thompson_m1921_28_box": {
+    "_extends": "thompson_m1921_28_box",
+    "item__weapTemplate": "stl_thompson_m1921_28_box_gun",
+    "item__template": "stl_thompson_m1921_28_box_gun_item",
+    "gun__kineticDamageMult": 1.0
+  },
+  "stl_thompson_m1921_28_box_gun": [
+    {
+      "_extends": "thompson_m1921_28_box_gun"
+    },
+    {
+      "_extends": "stl_thompson_m1921_28_box"
+    },
+    {
+      "gun__recoilAmount": 0.054
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.31
+    },
+    {
+      "gun__recoilControlMult": 0.3
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.65,0.9,0.9]
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    }
+  ],
+  "stl_ppd_bramit": {
+    "_extends": "ppd_bramit",
+    "item__weapTemplate": "stl_ppd_bramit_gun",
+    "item__template": "stl_ppd_bramit_gun_item",
+    "gun__kineticDamageMult": 0.93
+  },
+  "stl_ppd_bramit_gun": [
+    {
+      "_extends": "ppd_bramit_gun"
+    },
+    {
+      "_extends": "stl_ppd_bramit"
+    },
+    {
+      "gun__recoilAmount": 0.035
+    },
+    {
+      "gun__recoilDirAmount": 0.64
+    },
+    {
+      "gun__recoilDir": 0.4
+    },
+    {
+      "gun__recoilControlMult": 0.45
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.65,0.9,0.9]
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    }
+  ],
+  "stl_walther_ppk": {
+    "_extends": "walther_ppk",
+    "item__weapTemplate": "stl_walther_ppk_gun",
+    "item__template": "stl_walther_ppk_gun_item"
+  },
+  "stl_walther_ppk_gun": [
+    {
+      "_extends": "walther_ppk_gun"
+    },
+    {
+      "_extends": "stl_walther_ppk"
+    },
+    {
+      "gun__visualRecoilMult": 1.4
+    }
+  ],
+  "stl_p38_walther": {
+    "_extends": "p38_walther",
+    "item__weapTemplate": "stl_p38_walther_gun",
+    "item__template": "stl_p38_walther_gun_item"
+  },
+  "stl_p38_walther_gun": [
+    {
+      "_extends": "p38_walther_gun"
+    },
+    {
+      "_extends": "stl_p38_walther"
+    },
+    {
+      "gun__visualRecoilMult": 1.4
+    }
+  ],
+  "stl_p08_luger": {
+    "_extends": "p08_luger",
+    "item__weapTemplate": "stl_p08_luger_gun",
+    "item__template": "stl_p08_luger_gun_item"
+  },
+  "stl_p08_luger_gun": [
+    {
+      "_extends": "p08_luger_gun"
+    },
+    {
+      "_extends": "stl_p08_luger"
+    },
+    {
+      "gun__visualRecoilMult": 1.4
+    }
+  ],
+  "stl_mauser_c96": {
+    "_extends": "mauser_c96",
+    "item__weapTemplate": "stl_mauser_c96_gun",
+    "item__template": "stl_mauser_c96_gun_item"
+  },
+  "stl_mauser_c96_gun": [
+    {
+      "_extends": "mauser_c96_gun"
+    },
+    {
+      "_extends": "stl_mauser_c96"
+    },
+    {
+      "gun__visualRecoilMult": 1.4
+    }
+  ],
+  "stl_nagant_m1895": {
+    "_extends": "nagant_m1895",
+    "item__weapTemplate": "stl_nagant_m1895_gun",
+    "item__template": "stl_nagant_m1895_gun_item"
+  },
+  "stl_nagant_m1895_gun": [
+    {
+      "_extends": "nagant_m1895_gun"
+    },
+    {
+      "_extends": "stl_nagant_m1895"
+    },
+    {
+      "gun__visualRecoilMult": 1.4
+    }
+  ],
+  "stl_tk_26": {
+    "_extends": "tk_26",
+    "item__weapTemplate": "stl_tk_26_gun",
+    "item__template": "stl_tk_26_gun_item"
+  },
+  "stl_tk_26_gun": [
+    {
+      "_extends": "tk_26_gun"
+    },
+    {
+      "_extends": "stl_tk_26"
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    }
+  ],
+  "stl_tt_33": {
+    "_extends": "tt_33",
+    "item__weapTemplate": "stl_tt_33_gun",
+    "item__template": "stl_tt_33_gun_item"
+  },
+  "stl_tt_33_gun": [
+    {
+      "_extends": "tt_33_gun"
+    },
+    {
+      "_extends": "stl_tt_33"
+    },
+    {
+      "gun__visualRecoilMult": 1.4
+    }
+  ],
+  "stl_ptrs_41": {
+    "_extends": "ptrs_41",
+    "item__weapTemplate": "stl_ptrs_41_gun",
+    "item__template": "stl_ptrs_41_gun_item"
+  },
+  "stl_ptrs_41_gun": [
+    {
+      "_extends": "ptrs_41_gun"
+    },
+    {
+      "_extends": "stl_ptrs_41"
+    },
+    {
+      "gun__recoilAmount": 0.4
+    },
+    {
+      "gun__recoilDir": 0.8
+    },
+    {
+      "gun__drainStaminaOnAim": 9.0
+    },
+    {
+      "gun__staminaToStartAim": 0.0
+    },
+    {
+      "gun__reduceToWalkWhenShot:tag": []
+    },
+    {
+      "gun__drainStaminaDelay:r": {
+        "value": 1.0,
+        "_tags": "server"
+      }
+    }
+  ],
+  "stl_grb_39": {
+    "_extends": "grb_39",
+    "item__weapTemplate": "stl_grb_39_gun",
+    "item__template": "stl_grb_39_gun_item"
+  },
+  "stl_grb_39_gun": [
+    {
+      "_extends": "grb_39_gun"
+    },
+    {
+      "_extends": "stl_grb_39"
+    },
+    {
+      "gun__recoilAmount": 0.3
+    },
+    {
+      "gun__recoilDir": 0.75
+    },
+    {
+      "gun__drainStaminaOnAim": 9.0
+    },
+    {
+      "gun__staminaToStartAim": 0.0
+    },
+    {
+      "gun__reduceToWalkWhenShot:tag": []
+    },
+    {
+      "gun__drainStaminaDelay:r": {
+        "value": 1.0,
+        "_tags": "server"
+      }
+    }
+  ],
+  "stl_mg_13": {
+    "_extends": "mg_13",
+    "item__weapTemplate": "stl_mg_13_gun",
+    "item__template": "stl_mg_13_gun_item",
+    "gun__recoilAmount": 0.05,
+    "gun__recoilDirAmount": 0.45
+  },
+  "stl_mg_13_gun": [
+    {
+      "_extends": "mg_13_gun"
+    },
+    {
+      "_extends": "stl_mg_13"
+    },
+    {
+      "gun__recoilDir": 1.7
+    },
+    {
+      "gun__drainStaminaOnAim": 8.5
+    },
+    {
+      "gun__staminaToStartAim": 0.0
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    },
+    {
+      "gun__reduceToWalkWhenShot:tag": []
+    },
+    {
+      "gun__drainStaminaDelay:r": {
+        "value": 1.0,
+        "_tags": "server"
+      }
+    }
+  ],
+  "stl_mg_34": {
+    "_extends": "mg_34",
+    "item__weapTemplate": "stl_mg_34_gun",
+    "item__template": "stl_mg_34_gun_item",
+    "gun__recoilAmount": 0.045,
+    "gun__recoilDirAmount": 0.55
+  },
+  "stl_mg_34_gun": [
+    {
+      "_extends": "mg_34_gun"
+    },
+    {
+      "_extends": "stl_mg_34"
+    },
+    {
+      "gun__recoilDir": 1.8
+    },
+    {
+      "gun__drainStaminaOnAim": 8.0
+    },
+    {
+      "gun__staminaToStartAim": 0.0
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    },
+    {
+      "gun__reduceToWalkWhenShot:tag": []
+    },
+    {
+      "gun__drainStaminaDelay:r": {
+        "value": 1.0,
+        "_tags": "server"
+      }
+    }
+  ],
+  "stl_mg_42_handheld": {
+    "_extends": "mg_42_handheld",
+    "item__weapTemplate": "stl_mg_42_handheld_gun",
+    "item__template": "stl_mg_42_handheld_gun_item",
+    "animchar__res": "mg_42_late_char",
+    "gun__blk": "content/e_ww2_common/gamedata/weapons/mg_42_late.blk",
+    "item__proto": "content/e_ww2_common/gamedata/weapons/mg_42_late.blk",
+    "gun__recoilAmount": 0.042,
+    "gun__recoilDirAmount": 0.55
+  },
+  "stl_mg_42_handheld_gun": [
+    {
+      "_extends": "mg_42_handheld_gun"
+    },
+    {
+      "_extends": "stl_mg_42_handheld"
+    },
+    {
+      "gun__recoilDir": 1.8
+    },
+    {
+      "gun__drainStaminaOnAim": 7.8
+    },
+    {
+      "gun__staminaToStartAim": 0.0
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    },
+    {
+      "gun__reduceToWalkWhenShot:tag": []
+    },
+    {
+      "gun__drainStaminaDelay:r": {
+        "value": 1.0,
+        "_tags": "server"
+      }
+    }
+  ],
+  "stl_breda_mod_30": {
+    "_extends": "breda_mod_30",
+    "item__weapTemplate": "stl_breda_mod_30_gun",
+    "item__template": "stl_breda_mod_30_gun_item",
+    "gun__shotFreq": 8.33,
+    "gun__recoilAmount": 0.052,
+    "gun__recoilDirAmount": 0.64,
+    "gun_deviation__movementDevInc": [10.0,28.0],
+    "gun_deviation__movementRange": [0.1,4.0],
+    "gun_spread__maxDeltaAngle": 0.46,
+    "gun__reloadTime": 2.8,
+    "gun__altReloadTime": 2.1,
+    "gun__reduceToWalkWhenShot:tag": []
+  },
+  "stl_breda_mod_30_gun": [
+    {
+      "_extends": "breda_mod_30_gun"
+    },
+    {
+      "_extends": "stl_breda_mod_30"
+    },
+    {
+      "gun__recoilDir": 1.0
+    },
+    {
+      "gun__recoilControlMult": 0.6
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__visualRecoilMult": 1.4
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    },
+    {
+      "gun__drainStaminaOnAim": 8.0
+    },
+    {
+      "gun__staminaToStartAim": 0.0
+    },
+    {
+      "gun__drainStaminaDelay:r": {
+        "value": 1.0,
+        "_tags": "server"
+      }
+    }
+  ],
+  "stl_dp_27": {
+    "_extends": "dp_27",
+    "item__weapTemplate": "stl_dp_27_gun",
+    "item__template": "stl_dp_27_gun_item",
+    "gun__recoilAmount": 0.055,
+    "gun__recoilDirAmount": 0.65
+  },
+  "stl_dp_27_gun": [
+    {
+      "_extends": "dp_27_gun"
+    },
+    {
+      "_extends": "stl_dp_27"
+    },
+    {
+      "gun__recoilDir": 0.4
+    },
+    {
+      "gun__drainStaminaOnAim": 7.4
+    },
+    {
+      "gun__staminaToStartAim": 0.0
+    },
+    {
+      "gun__visualRecoilMult": 1.2
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    },
+    {
+      "gun__reduceToWalkWhenShot:tag": []
+    },
+    {
+      "gun__drainStaminaDelay:r": {
+        "value": 1.0,
+        "_tags": "server"
+      }
+    }
+  ],
+  "stl_dt_29": {
+    "_extends": "dt_29",
+    "item__weapTemplate": "stl_dt_29_gun",
+    "item__template": "stl_dt_29_gun_item",
+    "gun__recoilAmount": 0.048,
+    "gun__recoilDirAmount": 0.58
+  },
+  "stl_dt_29_gun": [
+    {
+      "_extends": "dt_29_gun"
+    },
+    {
+      "_extends": "stl_dt_29"
+    },
+    {
+      "gun__recoilDir": 0.3
+    },
+    {
+      "gun__drainStaminaOnAim": 8.0
+    },
+    {
+      "gun__staminaToStartAim": 0.0
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    },
+    {
+      "gun__reduceToWalkWhenShot:tag": []
+    },
+    {
+      "gun__drainStaminaDelay:r": {
+        "value": 1.0,
+        "_tags": "server"
+      }
+    }
+  ],
+  "stationary_ampulomet_without_shell_ejection": {
+    "_extends": "stationary_mg42_without_shell_ejection",
+    "animchar__res": "ampulomet_1941_char",
+    "collres__res": "ampulomet_1941_collision",
+    "gun__blk": "content/e_stalingrad/gamedata/weapons/ampulomet_mounted.blk",
+    "item__proto": "content/e_stalingrad/gamedata/weapons/ampulomet_mounted.blk",
+    "item__name": "items/stationary_ampulomet",
+    "item__weapType": "launcher",
+    "gun__statName": "grenade",
+    "gun__recoilAmount": 0.011,
+    "gun__recoilDirAmount": 0.63,
+    "gun__recoilDir": 0.0,
+    "gun__visualRecoilMult": 1.0,
+    "gun__isOverheat": false,
+    "gun__overheat": 0.0,
+    "gun__overheatReduce": 0.06,
+    "gun__overheatReduceOnOverheat": 0.03,
+    "gun__overheatPerShot": 0.0,
+    "gun__shotFreq": 0.25,
+    "gun__shotFreqRndK": 0.1,
+    "gun_spread__maxDeltaAngle": 0.15,
+    "gun_deviation__omegaRange": [5.0,90.0],
+    "gun_deviation__omegaDevInc": [0.1,0.4],
+    "gun_deviation__onShotDeviationChange": 0.7,
+    "gun_deviation__shotTau": 0.1,
+    "gun_deviation__extraDeviationTau": 0.08,
+    "gun_deviation__maxDeviation": 2.0,
+    "mounted_gun__horz_limits": [-35.0,50.0],
+    "mounted_gun__vert_limits": [-15.0,20.0],
+    "dm_parts__parts:object": {
+      "volumeBox_1:object": {
+        "dmgMult": 1.0,
+        "armor": 0.0
+      },
+      "volumeBox_2:object": {
+        "dmgMult": 1.0,
+        "armor": 0.0
+      }
+    },
+    "gun__ammoHolders:array": {
+      "ammoHolders": "ampula_item"
+    },
+    "gun__shells:array": {
+      "shells": "content/e_stalingrad/gamedata/weapons/shells/ampula_shell.blk"
+    },
+    "sound_paths:shared:object": {
+      "_tags": "sound",
+      "shot:object": {
+        "hero": "player/weapon/pistol/sturmpistole",
+        "enemy": "enemy/weapon/pistol/sturmpistole"
+      }
+    },
+    "_group": {
+      "_tags": "sound",
+      "gun_sound__forceOneshot": true,
+      "gun_sound__forceOneshotEnemy": true
+    }
+  },
+  "stationary_ampulomet": [
+    {
+      "_extends": "stationary_ampulomet_without_shell_ejection"
+    },
+    {
+      "_extends": "ww2_rifle_shell_ejection"
+    },
+    {
+      "_extends": "camera_shake_on_shooting"
+    },
+    {
+      "_extends": "gun_visual_recoil"
+    },
+    {
+      "gun__cameraShakeTrauma": 0.1
+    },
+    {
+      "gun__cameraShakeMaxTrauma": 0.1
+    },
+    {
+      "gun__cameraTemplate": "gun_cam_perlin"
+    },
+    {
+      "buildingRadius": 0.6
+    },
+    {
+      "building_menu__image": "building_mg_nest"
+    },
+    {
+      "gun__timeBetweenShotsIsReload:tag": []
+    }
+  ],
+  "stationary_ampulomet_with_autodetach": [
+    {
+      "_extends": "stationary_ampulomet"
+    },
+    {
+      "_extends": "gun_autodetach"
+    }
+  ],
+  "ampula_shell": {
+    "animchar__res": "ampulomet_1941_ammo_char",
+    "collres__res": "ampulomet_1941_ammo_collision"
+  },
+  "ampula_shell_explode_sound": {
+    "_extends": "on_appear_sound",
+    "_group": {
+      "_tags": "sound",
+      "on_appear_sound__path": "impact/ampula_shell"
+    }
+  },
+  "ampula_shell_phys": [
+    {
+      "_extends": "ampula_shell"
+    },
+    {
+      "_extends": "ampula_fire_spread"
+    },
+    {
+      "_extends": "projectile_phys"
+    },
+    {
+      "_extends": "impact_shell"
+    },
+    {
+      "_extends": "hud_grenade_marker"
+    },
+    {
+      "_extends": "fire_splash_shell"
+    },
+    {
+      "start_omega": [3.0,0.0,-15.0]
+    },
+    {
+      "active": false
+    },
+    {
+      "phys_obj_net_phys__blk": "content/e_stalingrad/gamedata/weapons/shells/ampula_shell.blk"
+    },
+    {
+      "_tracked": "active"
+    },
+    {
+      "effect__scale": 1.3
+    },
+    {
+      "on_exploded__create": "ampula_fire+ampula_shell_explode_sound"
+    },
+    {
+      "molotov_fire__minDistanceBetween": 1.0
+    },
+    {
+      "gridcoll__enabled": true
+    },
+    {
+      "gridcoll__type": "shells"
+    },
+    {
+      "ai_target_node__node": "weaponRoot"
+    },
+    {
+      "shell__concussionMaxRadius:r": {
+        "value": 0.0,
+        "_tags": "server"
+      }
+    },
+    {
+      "shell__explodeOnContact:tag": []
+    },
+    {
+      "gridcoll": []
+    },
+    {
+      "ai_target_node": {
+        "_tags": "server"
+      }
+    },
+    {
+      "effect": {
+        "_tags": "render"
+      }
+    },
+    {
+      "_group": {
+        "_tags": "render",
+        "effect__name": "trail_ampule_cmps_fx"
+      }
+    }
+  ],
+  "ampula_fire": {
+    "_extends": "fire_source",
+    "fire_source__spreadTime": 0.5,
+    "fire_source__fullForceTime": 2.0,
+    "fire_source__maxFullForceTime": 4.0,
+    "fire_source__fadeTime": 10.0,
+    "_group": {
+      "_tags": "render",
+      "effect__name": "fire_spot_2m_cmps_fx"
+    }
+  },
+  "ampula_fire_spread": {
+    "molotov_spread__stepBack": 0.4,
+    "molotov_spread__minHeight": 0.4,
+    "molotov_spread__dropMaxHeight": 20.0,
+    "molotov_spread__localRays:list<p3>": {
+      "v": [0.0,0.0,0.0]
+    },
+    "molotov_spread__globalRays:list<p3>": [
+      {
+        "v": [-24.0,-8.3,7.0]
+      },
+      {
+        "v": [24.0,-8.6,7.0]
+      },
+      {
+        "v": [-24.0,-4.4,9.0]
+      },
+      {
+        "v": [24.0,-4.6,9.0]
+      },
+      {
+        "v": [0.0,-5.0,9.0]
+      },
+      {
+        "v": [-45.0,-4.3,9.0]
+      },
+      {
+        "v": [45.0,-4.5,9.0]
+      },
+      {
+        "v": [-45.0,-8.3,7.0]
+      },
+      {
+        "v": [45.0,-8.6,7.0]
+      },
+      {
+        "v": [0.0,-8.5,7.0]
+      },
+      {
+        "v": [-120.0,-8.2,7.0]
+      },
+      {
+        "v": [120.0,-8.5,7.0]
+      },
+      {
+        "v": [-80.0,-8.3,9.0]
+      },
+      {
+        "v": [80.0,-8.7,9.0]
+      },
+      {
+        "v": [180.0,-8.5,6.0]
+      },
+      {
+        "v": [-24.0,8.5,4.0]
+      },
+      {
+        "v": [24.0,8.5,4.0]
+      },
+      {
+        "v": [-24.0,4.5,5.0]
+      },
+      {
+        "v": [24.0,4.5,5.0]
+      },
+      {
+        "v": [0.0,5.0,5.0]
+      },
+      {
+        "v": [-45.0,4.5,5.0]
+      },
+      {
+        "v": [45.0,4.5,5.0]
+      },
+      {
+        "v": [-45.0,8.5,4.0]
+      },
+      {
+        "v": [45.0,8.5,4.0]
+      },
+      {
+        "v": [0.0,8.5,4.0]
+      },
+      {
+        "v": [-120.0,8.5,4.0]
+      },
+      {
+        "v": [120.0,8.5,4.0]
+      },
+      {
+        "v": [-80.0,8.5,5.0]
+      },
+      {
+        "v": [80.0,8.5,5.0]
+      },
+      {
+        "v": [180.0,8.5,4.0]
+      }
+    ]
+  },
+  "stationary_ampulomet_building_additive_preview": [
+    {
+      "_extends": "base_animchar_builder_preview"
+    },
+    {
+      "_extends": "stationary_mg42_building_attachable"
+    },
+    {
+      "additiveUp": [0.0,1.0,0.0]
+    },
+    {
+      "additiveTm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [0.0,0.0,0.0]
+      ]
+    },
+    {
+      "animchar__res": "ampulomet_1941_char"
+    },
+    {
+      "collres__res": "ampulomet_1941_collision"
+    },
+    {
+      "dependsOnBuildingEid:eid": []
+    },
+    {
+      "builder_additive_preview:tag": []
+    },
+    {
+      "phys_vars": []
+    },
+    {
+      "anim_phys": []
+    },
+    {
+      "previewAnimVarParams:list<t>": {
+        "param": "isAlive"
+      }
+    },
+    {
+      "previewAnimVarParamsValue:list<r>": {
+        "value": 1.0
+      }
+    }
+  ],
+  "sandbags_wall_ampulomet_preview": {
+    "_extends": "base_rendinst_builder_preview",
+    "instantiateTemplate": "sandbags_wall_ampulomet",
+    "ri_preview__name": "sandbags_wall_medium_rounded_a_mission_object",
+    "avaliableAngles": [-15.0,15.0],
+    "buildingSoundTag": "fortification",
+    "building_builder__maxTimeToBuild": 25.0,
+    "buildingCost": 12.0,
+    "building__requireUnlockId": 4,
+    "building_menu__text": "building_tool/sandbags_wall_ampulomet",
+    "building_menu__image": "building_ampulomet",
+    "additiveBuildings:array": {
+      "item:object": {
+        "template": "stationary_ampulomet_building_additive_preview",
+        "tm": [
+          [0.0,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,0.0],
+          [0.15,1.07,-0.2]
+        ],
+        "additiveUp": [0.0,1.0,0.0]
+      }
+    }
+  },
+  "sandbags_wall_ampulomet": {
+    "_extends": "base_ri_building",
+    "ri_extra__name": "sandbags_wall_medium_rounded_a_mission_object",
+    "additiveBuildNeedRepair": false,
+    "fortification_repair__costPercent": 0.5,
+    "fortification_repair__text": "hud/repair_sandbags_wall_ampulomet",
+    "team": -1,
+    "building_destroy__maxTimeToDestroy": 15.0,
+    "building_menu__text": "building_tool/sandbags_wall_ampulomet",
+    "building_menu__image": "building_ampulomet",
+    "additiveBuildings:array": {
+      "item:object": {
+        "template": "builded_stationary_ampulomet_with_autodetach",
+        "tm": [
+          [0.0,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,0.0],
+          [0.15,1.07,-0.2]
+        ],
+        "additiveUp": [0.0,1.0,0.0]
+      }
+    }
+  },
+  "builded_stationary_ampulomet_with_autodetach": [
+    {
+      "_extends": "stationary_ampulomet_with_autodetach"
+    },
+    {
+      "_extends": "fortification_builder_info"
+    },
+    {
+      "building__destructionAwardStat:t": {
+        "_tags": "server",
+        "value": "enemyBuiltGunDestructions"
+      }
+    },
+    {
+      "building__isBroken:b": {
+        "value": false,
+        "_tags": "server"
+      }
+    },
+    {
+      "building__breakOffender:eid": {
+        "_tags": "server"
+      }
+    },
+    {
+      "disableDestroyWithRi:tag": []
+    },
+    {
+      "dependsOnBuildingEid:eid": []
+    },
+    {
+      "refundForDependsBuilding:tag": []
+    }
+  ],
+  "stationary_maxim_building_additive_preview": [
+    {
+      "_extends": "base_animchar_builder_preview"
+    },
+    {
+      "_extends": "stationary_mg42_building_attachable"
+    },
+    {
+      "additiveUp": [0.0,1.0,0.0]
+    },
+    {
+      "additiveTm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [0.0,0.0,0.0]
+      ]
+    },
+    {
+      "animchar__res": "maxim_gun_char"
+    },
+    {
+      "collres__res": "maxim_gun_collision"
+    },
+    {
+      "dependsOnBuildingEid:eid": []
+    },
+    {
+      "builder_additive_preview:tag": []
+    },
+    {
+      "phys_vars": []
+    },
+    {
+      "anim_phys": []
+    },
+    {
+      "previewAnimVarParams:list<t>": {
+        "param": "isAlive"
+      }
+    },
+    {
+      "previewAnimVarParamsValue:list<r>": {
+        "value": 1.0
+      }
+    }
+  ],
+  "sandbags_wall_maxim_preview": {
+    "_extends": "base_rendinst_builder_preview",
+    "instantiateTemplate": "sandbags_wall_maxim",
+    "ri_preview__name": "sandbags_wall_medium_rounded_a_mission_object",
+    "avaliableAngles": [-15.0,15.0],
+    "buildingSoundTag": "fortification",
+    "building_builder__maxTimeToBuild": 45.0,
+    "buildingCost": 12.0,
+    "building__requireUnlockId": 3,
+    "building_menu__text": "building_tool/sandbags_with_mg42",
+    "building_menu__image": "building_mg_nest",
+    "additiveBuildings:array": {
+      "item:object": {
+        "template": "stationary_maxim_building_additive_preview",
+        "tm": [
+          [0.0,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,0.0],
+          [0.25,1.07,-0.24]
+        ],
+        "additiveUp": [0.0,1.0,0.0]
+      }
+    }
+  },
+  "sandbags_wall_maxim": {
+    "_extends": "base_ri_building",
+    "ri_extra__name": "sandbags_wall_medium_rounded_a_mission_object",
+    "additiveBuildNeedRepair": false,
+    "fortification_repair__costPercent": 0.5,
+    "fortification_repair__text": "hud/repair_sandbags_wall_mg",
+    "team": -1,
+    "building_destroy__maxTimeToDestroy": 20.0,
+    "building_menu__text": "building_tool/sandbags_with_mg42",
+    "building_menu__image": "building_mg_nest",
+    "additiveBuildings:array": {
+      "item:object": {
+        "template": "builded_stationary_maxim_with_autodetach",
+        "tm": [
+          [0.0,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,0.0],
+          [0.25,1.07,-0.24]
+        ],
+        "additiveUp": [0.0,1.0,0.0]
+      }
+    }
+  },
+  "builded_stationary_maxim_with_autodetach": [
+    {
+      "_extends": "stationary_maxim_with_autodetach"
+    },
+    {
+      "_extends": "fortification_builder_info"
+    },
+    {
+      "mounted_gun__horz_limits": [-30.0,50.0]
+    },
+    {
+      "building__destructionAwardStat:t": {
+        "_tags": "server",
+        "value": "enemyBuiltGunDestructions"
+      }
+    },
+    {
+      "building__isBroken:b": {
+        "value": false,
+        "_tags": "server"
+      }
+    },
+    {
+      "building__breakOffender:eid": {
+        "_tags": "server"
+      }
+    },
+    {
+      "disableDestroyWithRi:tag": []
+    },
+    {
+      "dependsOnBuildingEid:eid": []
+    },
+    {
+      "refundForDependsBuilding:tag": []
+    }
+  ],
+  "stl_ussr_building_tool_gun": {
+    "_extends": "building_tool_gun",
+    "item__weapTemplate": "stl_ussr_building_tool_gun",
+    "item__template": "stl_ussr_building_tools_item",
+    "previewTemplate:list<t>": [
+      {
+        "template": "sandbags_wall_2_preview"
+      },
+      {
+        "template": "sandbags_wall_maxim_preview"
+      },
+      {
+        "template": "sandbags_wall_ampulomet_preview"
+      },
+      {
+        "template": "cannon_germ_20mm_flak38_flakvierling_preview"
+      },
+      {
+        "template": "cannon_ussr_towed_at_53k_movable_preview"
+      },
+      {
+        "template": "czech_hedgehog_a_preview"
+      },
+      {
+        "template": "ussr_rallypoint_preview"
+      },
+      {
+        "template": "barbedwire_engineer_a_preview"
+      },
+      {
+        "template": "ammunition_box_a_preview"
+      }
+    ],
+    "buildingLimits:list<i>": [
+      {
+        "limit": 10
+      },
+      {
+        "limit": 1
+      },
+      {
+        "limit": 1
+      },
+      {
+        "limit": 2
+      },
+      {
+        "limit": 1
+      },
+      {
+        "limit": 6
+      },
+      {
+        "limit": 1
+      },
+      {
+        "limit": 10
+      },
+      {
+        "limit": 3
+      }
+    ]
+  },
+  "stl_ussr_building_tools_item": [
+    {
+      "_extends": "item_melee"
+    },
+    {
+      "_extends": "stl_ussr_building_tool_gun"
+    },
+    {
+      "collres__res": "construction_hammer_collision"
+    },
+    {
+      "item__userstats__pickupName": "pickup_building_tool"
+    }
+  ],
+  "stl_ger_building_tool_gun": {
+    "_extends": "building_tool_gun",
+    "item__weapTemplate": "stl_ger_building_tool_gun",
+    "item__template": "stl_ger_building_tools_item",
+    "previewTemplate:list<t>": [
+      {
+        "template": "sandbags_wall_2_preview"
+      },
+      {
+        "template": "sandbags_wall_mg_preview"
+      },
+      {
+        "template": "sandbags_wall_ampulomet_preview"
+      },
+      {
+        "template": "cannon_germ_20mm_flak38_flakvierling_preview"
+      },
+      {
+        "template": "cannon_germ_towed_at_pak38_movable_preview"
+      },
+      {
+        "template": "czech_hedgehog_a_preview"
+      },
+      {
+        "template": "ger_rallypoint_preview"
+      },
+      {
+        "template": "barbedwire_engineer_a_preview"
+      },
+      {
+        "template": "ammunition_box_a_preview"
+      }
+    ],
+    "buildingLimits:list<i>": [
+      {
+        "limit": 10
+      },
+      {
+        "limit": 1
+      },
+      {
+        "limit": 1
+      },
+      {
+        "limit": 2
+      },
+      {
+        "limit": 1
+      },
+      {
+        "limit": 6
+      },
+      {
+        "limit": 1
+      },
+      {
+        "limit": 10
+      },
+      {
+        "limit": 3
+      }
+    ]
+  },
+  "stl_ger_building_tools_item": [
+    {
+      "_extends": "item_melee"
+    },
+    {
+      "_extends": "ger_building_tool_gun"
+    },
+    {
+      "collres__res": "construction_hammer_collision"
+    },
+    {
+      "item__userstats__pickupName": "pickup_building_tool"
     }
   ]
 }

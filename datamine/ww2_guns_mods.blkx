@@ -1,4 +1,4 @@
-var GUNMODSDATA = 
+var COMMONGUNSMODSDATA = 
 {
   "sg_8498_III_bayonet": {
     "_extends": "bayonet_gunmod",
