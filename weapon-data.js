@@ -1127,3 +1127,60 @@ var WEAPONS = [
         ]
     }
 ];
+
+var STARUPGRADES = {
+    "assault_rifle" : [
+        {},
+        {"dev" : 0.85},
+        {"recoilVert" : 0.85, "recoilHoriz" : 0.85},
+        {"damage" : 1.10, "dev" : 0.85}
+    ],
+    "flamethrower" : [
+        {}
+    ],
+    "launcher" : [
+        {},
+        {"recoilVert" : 0.8, "recoilHoriz" : 0.8},
+        {"rpm" : 1.15, "reload" : 0.85},
+        {"damage" : 1.15, "dev" : 0.85}
+    ],
+    "machine_gun" : [
+        {},
+        {"reload" : 0.85},
+        {"rpm" : 1.10},
+        {"damage" : 1.10, "dev" : 0.85}
+    ],
+    "melee" : [
+        {}
+    ],
+    "mortar" : [
+        {}
+    ],
+    "pistol" : [
+        {}
+    ],
+    "rifle" : [
+        {},
+        {"dev" : 0.85},
+        {"rpm" : 1.15},
+        {"damage" : 1.15, "dev" : 0.8}
+    ],
+    "semiauto" : [
+        {},
+        {"dev" : 0.85},
+        {"rpm" : 1.10, "recoilVert" : 0.85, "recoilHoriz" : 0.85},
+        {"damage" : 1.20, "dev" : 0.85}
+    ],
+    "shotgun" : [
+        {},
+        {"reload" : 0.90},
+        {"dev" : 0.85},
+        {"damage" : 1.10}
+    ],
+    "submachine_gun" : [
+        {},
+        {"reload" : 0.90},
+        {"rpm" : 1.15, "recoilVert" : 0.9, "recoilHoriz" : 0.9},
+        {"damage" : 1.20, "dev" : 0.85}
+    ]
+}

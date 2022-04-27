@@ -85,6 +85,19 @@
         var categorylist = document.createElement("ul");
         colorButton.append(categorylist)
 
+        // Stars Dropdown
+        var starsDropdownContainer = document.createElement("div");
+        starsDropdownContainer.style = "background-color: rgb(107, 133, 133); text-align: center; padding: 15px"
+        colorButtonContainer.append(starsDropdownContainer);
+        var starsDropdown = document.createElement("select");
+        starsDropdown.id = "starsDropdown";
+        starsDropdownContainer.append(starsDropdown);
+        var defaultOption = document.createElement("option");
+        defaultOption.textContent = "☆☆☆☆☆";
+        starsDropdown.append(defaultOption);
+        starsDropdown.onchange = function () { window.refreshStars = false; reload_data(); };
+        window.refreshStars = true;
+
         /* Data */
         // Name
         var dataDiv = document.createElement("div");
@@ -287,6 +300,7 @@
                     recoilVertData.textContent = "-";
                     recoilHorizData.textContent = "-";
                     reloadData.textContent = "-";
+                    reloadData.style.removeProperty('text-decoration');
                     reloadAltData.textContent = "-";
                     reloadDualMagData.textContent = "-";
                     crawlRecoilData.textContent = "-";
@@ -295,6 +309,13 @@
                     firingModeData.textContent = "-";
                     magazineNameData.textContent = "-";
                     magazineSizeData.textContent = "-";
+
+                    if (window.refreshStars) {
+                        starsDropdown.textContent = '';
+                        var defaultOption = document.createElement("option");
+                        defaultOption.textContent = "☆☆☆☆☆";
+                        starsDropdown.append(defaultOption);
+                    }
 
                     window.refreshCategory = false;
                 }
@@ -336,7 +357,59 @@
                     ALLITEMSDATA = Object.assign({}, COMMONITEMSDATA, TUNISIAITEMSDATA, STALINGRADITEMSDATA);
 
                     akaData.textContent = getDataProperty([gunIGNData.textContent], "gun__locName");
-                    typeData.textContent = getDataProperty([gunIGNData.textContent], "item__weapType").replace(/_/g, " ");
+                    var wepType = getDataProperty([gunIGNData.textContent], "item__weapType");
+                    typeData.textContent = wepType.replace(/_/g, " ");
+
+                    // this gun simply does not exist. Return.
+                    if (wepType == "-") {
+                        return;
+                    }
+
+                    // create stars only on weapon change
+                    if (window.refreshStars) {
+                        starsDropdown.textContent = '';
+                        for (var k = 0; k < STARUPGRADES[wepType].length; k++) (function (k) {
+                            starsDropdown.append(translate("★".repeat(k + 1), "option"));
+                        })(k);
+                    }
+
+                    // Apply star modifiers
+                    var damageStar = 1;
+                    var dispersionStar = 1;
+                    var rpmStar = 1;
+                    var recoilVertStar = 1;
+                    var recoilHorizStar = 1;
+                    var reloadStar = 1;
+
+                    var stars = document.getElementById('starsDropdown').value.split("★").length - 2;
+                    for (var k = stars; k >= 0; k--) {
+                        var effects = Object.keys(STARUPGRADES[wepType][k]);
+                        for (var l = 0; l < effects.length; l++) {
+                            if (effects[l] == "damage") {
+                                damageStar *= STARUPGRADES[wepType][k][effects[l]]
+                            }
+                            else if (effects[l] == "dev") {
+                                dispersionStar *= STARUPGRADES[wepType][k][effects[l]]
+                            }
+                            else if (effects[l] == "rpm") {
+                                rpmStar *= STARUPGRADES[wepType][k][effects[l]]
+                            }
+                            else if (effects[l] == "recoilVert") {
+                                recoilVertStar *= STARUPGRADES[wepType][k][effects[l]]
+                            }
+                            else if (effects[l] == "recoilHoriz") {
+                                recoilHorizStar *= STARUPGRADES[wepType][k][effects[l]]
+                            }
+                            else if (effects[l] == "reload") {
+                                reloadStar *= STARUPGRADES[wepType][k][effects[l]]
+                            }
+                            else {
+                                console.log(effects[l])
+                                console.log(STARUPGRADES[wepType][k][effects[l]])
+                            }
+                        }
+                    }
+
                     weightData.textContent = getDataProperty([gunIGNData.textContent], "item__weight");
                     weightData.textContent += weightData.textContent == "-" ? "" : translate("kg");
                     var firingModes = getDataProperty([gunIGNData.textContent], "gun__firingModeNames:array");
@@ -352,30 +425,36 @@
                     rpmData.textContent = getDataProperty([gunIGNData.textContent], "gun__shotFreq");
                     if (rpmData.textContent != "-") {
                         var lowRPM = getDataProperty([gunIGNData.textContent], "gun__shotFreqRndK");
-                        var highRPM = Math.round(rpmData.textContent * 60)
+                        var highRPM = (rpmData.textContent * 60 * rpmStar)
                         lowRPM = highRPM / (1 + lowRPM)
-                        rpmData.textContent = lowRPM.toFixed(1) + " - " + highRPM.toFixed(1) + " (" + translate("average") + ((highRPM + lowRPM) / 2).toFixed(1) + ")";
+                        rpmData.textContent = toPlace(lowRPM, 2) + " - " + toPlace(highRPM, 2) + " (" + translate("average") + toPlace((highRPM + lowRPM) / 2, 2) + ")";
                     }
 
-                    dispersionData.textContent = getDataProperty([gunIGNData.textContent], "gun_spread__maxDeltaAngle");
+                    dispersionData.textContent = toPlace(getDataProperty([gunIGNData.textContent], "gun_spread__maxDeltaAngle") * dispersionStar, 2);
                     zeroDistanceData.textContent = getDataProperty([gunIGNData.textContent], "gun__zeroingDistance");
                     singleReloadPrepareData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__prepareTime");
+                    singleReloadPrepareData.textContent = singleReloadPrepareData.textContent == "-" ? "-" : toPlace(singleReloadPrepareData.textContent * reloadStar, 2);
                     singleReloadLoopData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__loopTime");
+                    singleReloadLoopData.textContent = singleReloadLoopData.textContent == "-" ? "-" : toPlace(singleReloadLoopData.textContent * reloadStar, 2);
                     singleReloadPostData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__postTime");
+                    singleReloadPostData.textContent = singleReloadPostData.textContent == "-" ? "-" : toPlace(singleReloadPostData.textContent * reloadStar, 2);
                     reloadData.textContent = getDataProperty([gunIGNData.textContent], "gun__reloadTime");
+                    reloadData.textContent = reloadData.textContent == "-" ? "-" : toPlace(reloadData.textContent * reloadStar, 2);
                     if (getDataProperty([gunIGNData.textContent], "reload__singleBullet:tag") != "-") {
                         reloadData.textContent = "[" + reloadData.textContent + "]";
                         reloadData.style.setProperty("text-decoration", "line-through");
                     }
                     reloadAltData.textContent = getDataProperty([gunIGNData.textContent], "gun__altReloadTime");
+                    reloadAltData.textContent = reloadAltData.textContent == "-" ? "-" : toPlace(reloadAltData.textContent * reloadStar, 2);
                     reloadDualMagData.textContent = getDataProperty([gunIGNData.textContent], "gun__dualMagReloadTime");
+                    reloadDualMagData.textContent = reloadDualMagData.textContent == "-" ? "-" : toPlace(reloadDualMagData.textContent * reloadStar, 2);
                     sightsMagData.textContent = getDataProperty([gunIGNData.textContent], "gun__magnification");
                     sightsMagData.textContent += sightsMagData.textContent == "-" ? "" : "×";
 
                     var recoilTotal = getDataProperty([gunIGNData.textContent], "gun__recoilAmount");
                     var recoilDir = getDataProperty([gunIGNData.textContent], "gun__recoilDirAmount");
-                    recoilVertData.textContent = (recoilTotal * 1000 * recoilDir).toFixed(3);
-                    recoilHorizData.textContent = (recoilTotal * 1000 * (1 - recoilDir)).toFixed(3);
+                    recoilVertData.textContent = toPlace(recoilTotal * 1000 * recoilDir * recoilVertStar, 2);
+                    recoilHorizData.textContent = toPlace(recoilTotal * 1000 * (1 - recoilDir) * recoilHorizStar, 2);
                     crawlRecoilData.textContent = getDataProperty([gunIGNData.textContent], "gun__crawlRecoilMult");
                     crawlRecoilData.textContent = crawlRecoilData.textContent == "-" ? "-" : crawlRecoilData.textContent * 100 + "%";
 
@@ -432,7 +511,7 @@
                                     tabledata.textContent += "(" + numBullets["minCount"] + " - " + numBullets["maxCount"] + ") × ";
                                 }
                             }
-                            tabledata.textContent += (hitpower[keys[k]][0] * getAmmoProperty(ammoDataFile, "hitPowerMult") * (hitmult == "-" ? 1 : hitmult)).toFixed(3);
+                            tabledata.textContent += toPlace(hitpower[keys[k]][0] * getAmmoProperty(ammoDataFile, "hitPowerMult") * damageStar * (hitmult == "-" ? 1 : hitmult), 3);
                             tableRow2.append(tabledata);
                         })(k);
                     }
@@ -465,6 +544,7 @@
                             }
                         }
                     }
+                    window.refreshStars = true;
                 }
             })(j)
         })(i)
@@ -555,6 +635,11 @@
                     }
                 }
             }
+        }
+
+        function toPlace(number, place) {
+            var ret = Math.round(number * (10 ** place));
+            return (ret / (10 ** place));
         }
     </script>
 
