@@ -265,6 +265,17 @@
 
         dataDiv2.append(translate("EMPTY", "p"));
 
+        var damageFromHeat = translate("damageFromHeat", "div");
+        dataDiv2.append(damageFromHeat);
+        var table3 = document.createElement("table");
+        dataDiv2.append(table3);
+        var tableRow5 = document.createElement("tr");
+        table3.append(tableRow5);
+        var tableRow6 = document.createElement("tr");
+        table3.append(tableRow6);
+
+        dataDiv2.append(translate("EMPTY", "p"));
+
 
         for (var i = -1; i < WEAPONS.length; i++) (function (i) {
             var categoryButton = document.createElement("li");
@@ -292,6 +303,8 @@
                     tableRow2.textContent = "";
                     tableRow3.textContent = "";
                     tableRow4.textContent = "";
+                    tableRow5.textContent = "";
+                    tableRow6.textContent = "";
                     dispersionData.textContent = "-";
                     singleReloadPrepareData.textContent = "-";
                     singleReloadLoopData.textContent = "-";
@@ -517,14 +530,32 @@
                     }
                     var cumDamage = getAmmoProperty(ammoDataFile, "cumulativeDamage");
                     if (cumDamage != null) {
+                        // damage on contact to vehicles
                         var tableheader = document.createElement("th");
-                        tableheader.textContent = cumDamage["distance"] + translate("meters");
-                        tableRow1.append(tableheader);
+                        tableheader.textContent = translate("contactVehicle");
+                        tableRow5.append(tableheader);
                         var tabledata = document.createElement("td");
                         tabledata.textContent = cumDamage["damage"];
-                        tableRow2.append(tabledata);
+                        tableRow6.append(tabledata);
+
+                        // damage at distance to people
                         var tableheader = document.createElement("th");
+                        tableheader.textContent = "0" + translate("meters");
+                        tableRow1.append(tableheader);
+                        var tabledata = document.createElement("td");
+                        tabledata.textContent = getAmmoProperty(ammoDataFile, "explodeHitPower");
+                        tableRow2.append(tabledata);
+
+                        tableheader = document.createElement("th");
                         tableheader.textContent = cumDamage["distance"] + translate("meters");
+                        tableRow1.append(tableheader);
+                        tabledata = document.createElement("td");
+                        tabledata.textContent = 0;
+                        tableRow2.append(tabledata);
+
+                        // armor
+                        var tableheader = document.createElement("th");
+                        tableheader.textContent = translate("contactVehicle");
                         tableRow3.append(tableheader);
                         var tabledata = document.createElement("td");
                         tabledata.textContent = cumDamage["armorPower"] + translate("millimeters");
