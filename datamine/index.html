@@ -8,16 +8,16 @@
     Enlisted weapon comparison tool
 </title>
 
-<script type="text/javascript" src="../weapon-data.js"></script>
-<script type="text/javascript" src="../translations.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../dist/chart.min.js"></script>
-<script src="../dist/chartjs-plugin-annotation.min.js"></script>
 <script type="text/javascript" src="./ww2_guns.blkx"></script>
 <script type="text/javascript" src="./ww2_guns_mods.blkx"></script>
 <script type="text/javascript" src="./ww2_items.blkx"></script>
 <script type="text/javascript" src="./enlisted_guns.blkx"></script>
 <script type="text/javascript" src="./bullets.js"></script>
+<script type="text/javascript" src="../weapon-data.js"></script>
+<script type="text/javascript" src="../translations.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/chart.min.js"></script>
+<script src="../dist/chartjs-plugin-annotation.min.js"></script>
 <script>
     // load all bullets
     for (var i = 0; i < ALLBULLETS.length; i++) {
@@ -365,10 +365,6 @@
                         gunIGNData.textContent = "stl_" + gunIGNData.textContent;
                     }
 
-                    ALLGUNSDATA = Object.assign({}, COMMONGUNSDATA, TUNISIAGUNSDATA, STALINGRADGUNSDATA);
-                    ALLGUNSMODSDATA = Object.assign({}, COMMONGUNSMODSDATA);
-                    ALLITEMSDATA = Object.assign({}, COMMONITEMSDATA, TUNISIAITEMSDATA, STALINGRADITEMSDATA);
-
                     akaData.textContent = getDataProperty([gunIGNData.textContent], "gun__locName");
                     var wepType = getDataProperty([gunIGNData.textContent], "item__weapType");
                     typeData.textContent = wepType.replace(/_/g, " ");
@@ -591,86 +587,6 @@
                     }
                 }
             }
-        }
-
-        function getAmmoProperty(ammo, property) {
-            if (Array.isArray(ammo)) {
-                for (var i = 0; i < ammo.length; i++) {
-                    if (Object.keys(ammo[i])[0] == property) {
-                        return ammo[i][property];
-                    }
-                }
-            }
-            else {
-                return ammo[property];
-            }
-        }
-
-        function getDataProperty(gun, property) {
-            // first check overrides
-            if (OVERRIDEGUNSDATA[gun[0]] != null) {
-                if (OVERRIDEGUNSDATA[gun[0]][property] != null) {
-                    return OVERRIDEGUNSDATA[gun[0]][property];
-                }
-                if (OVERRIDEGUNSDATA[gun[0]]["_extends"] != null) {
-                    // prioritize searching stalingrad files, since this only happens if we're looking for them
-                    if (OVERRIDEGUNSDATA[gun[0]]["_extends"].startsWith("stl_")) {
-                        gun.unshift(OVERRIDEGUNSDATA[gun[0]]["_extends"]);
-                    }
-                    else {
-                        gun.push(OVERRIDEGUNSDATA[gun[0]]["_extends"]);
-                    }
-                }
-            }
-            // then check base file
-            if (ALLGUNSDATA[gun[0]] != null) {
-                if (ALLGUNSDATA[gun[0]][property] != null) {
-                    return ALLGUNSDATA[gun[0]][property];
-                }
-                if (ALLGUNSDATA[gun[0]]["_extends"] != null) {
-                    if (ALLGUNSDATA[gun[0]]["_extends"].startsWith("stl_")) {
-                        gun.splice(1, 0, ALLGUNSDATA[gun[0]]["_extends"]);
-                    }
-                    else {
-                        gun.push(ALLGUNSDATA[gun[0]]["_extends"]);
-                    }
-                }
-                for (var k = 0; k < ALLGUNSDATA[gun[0]].length; k++) {
-                    if (ALLGUNSDATA[gun[0]][k].hasOwnProperty(property)) {
-                        return ALLGUNSDATA[gun[0]][k][property];
-                    }
-                    if (ALLGUNSDATA[gun[0]][k].hasOwnProperty("_extends")) {
-                        if (ALLGUNSDATA[gun[0]][k]["_extends"].startsWith("stl_")) {
-                            gun.splice(1, 0, ALLGUNSDATA[gun[0]][k]["_extends"]);
-                        }
-                        else {
-                            gun.push(ALLGUNSDATA[gun[0]][k]["_extends"]);
-                        }
-                    }
-                }
-            }
-            // not found here, recurse with extensions
-            if (gun.length > 0) {
-                gun.shift();
-                return getDataProperty(gun, property);
-            }
-            // not found at all
-            return "-";
-        }
-
-        function weaponByName(name) {
-            for (var i = 0; i < WEAPONS.length; i++) {
-                for (var j = 0; j < WEAPONS[i].Weapons.length; j++) {
-                    if (WEAPONS[i].Weapons[j][translate("WepName")] == name) {
-                        return WEAPONS[i].Weapons[j];
-                    }
-                }
-            }
-        }
-
-        function toPlace(number, place) {
-            var ret = Math.round(number * (10 ** place));
-            return (ret / (10 ** place));
         }
     </script>
 

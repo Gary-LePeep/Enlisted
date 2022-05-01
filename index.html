@@ -8,11 +8,25 @@
     Enlisted weapon comparison tool
 </title>
 
-<script type="text/javascript" src="weapon-data.js"></script>
-<script type="text/javascript" src="translations.js"></script>
-<script src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="./datamine/ww2_guns.blkx"></script>
+<script type="text/javascript" src="./datamine/ww2_guns_mods.blkx"></script>
+<script type="text/javascript" src="./datamine/ww2_items.blkx"></script>
+<script type="text/javascript" src="./datamine/enlisted_guns.blkx"></script>
+<script type="text/javascript" src="./datamine/bullets.js"></script>
+<script type="text/javascript" src="./weapon-data.js"></script>
+<script type="text/javascript" src="./translations.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./dist/chart.min.js"></script>
 <script src="./dist/chartjs-plugin-annotation.min.js"></script>
+<script>
+    // load all bullets
+    for (var i = 0; i < ALLBULLETS.length; i++) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "./datamine/bullets/" + ALLBULLETS[i];
+        document.body.appendChild(script);
+    }
+</script>
 
 
 <script>
@@ -143,15 +157,28 @@
                         // set color button name to selected weapon
                         colorButtonText.text = weaponButtonText.text
 
+                        // get data name
+                        var dataName = WEAPONS[i].Weapons[j]["Name Game"];
+                        if (getDataProperty([dataName], "gun__shells:array") == "-") {
+                            return;
+                        }
+                        ammoFile = getDataProperty([dataName], "gun__shells:array")["shells"].split("/");
+                        ammoFile = ammoFile[ammoFile.length - 1];
+                        var ammoData = ammoFile.split(".")[0];
+                        for (var k = 1; k < ammoFile.split(".").length - 1; k++) {
+                            ammoData += "." + ammoFile.split(".")[k];
+                        }
+                        var ammoDataFile = window["_" + ammoData.replace(/\./g, "_")]
+
                         // set legend to label
                         window.ttk_dpm_chart.data.datasets[h].label = weaponButtonText.text
 
                         // find max range of all selected guns
                         var range = 0;
                         for (var k = 0; k < 4; k++) (function (k) {
-                            var wepData = weaponByName(window.ttk_dpm_chart.data.datasets[k].label)
-                            if (wepData != null && wepData.Range > range) {
-                                range = wepData.Range
+                            var wepType = getDataProperty([dataName], "item__weapType");
+                            if (RANGES[wepType] != null && RANGES[wepType] > range) {
+                                range = RANGES[wepType]
                             }
                         })(k);
                         // set x axis to range, in 1/15th increments
@@ -168,10 +195,32 @@
                         // update data
                         show_death_threshold = false;
                         var data = [];
-                        var wepData = weaponByName(weaponButtonText.text);
+                        if (ammoDataFile == null) {
+                            return;
+                        }
+                        var hitPower = getAmmoProperty(ammoDataFile, "hitpower")
+                        if (hitPower == null) {
+                            return;
+                        }
+                        var hitPowerString = "";
+                        for (var k = 0; k < Object.keys(hitPower).length; k++) {
+                            hitPowerString += Object.keys(hitPower)[k].replace("HitPower", " ");
+                            hitPowerString += hitPower[Object.keys(hitPower)[k]][0];
+                        }
+                        console.log(hitPowerString)
+                        var damageCurve = DAMAGES[hitPowerString];
+
+                        var rpm = getDataProperty([dataName], "gun__shotFreq");
+                        if (rpm != "-") {
+                            var lowRPM = getDataProperty([dataName], "gun__shotFreqRndK");
+                            var highRPM = (rpm * 60)
+                            lowRPM = highRPM / (1 + lowRPM)
+                            rpm = toPlace((highRPM + lowRPM) / 2, 2);
+                        }
+
                         for (var k = 0; k <= 15; k++) (function (k) {
-                            var damage_at_dist = (wepData.Damage.a + (wepData.Damage.b * (2.71828 ** (-wepData.Damage.c * Math.max(ranges[k], 10)))) * ARMOR_MULT);
-                            //var damage_at_dist = ((wepData.Damage.d + ((wepData.Damage.a - wepData.Damage.d) / (1 + ((Math.max(ranges[k], 10) / wepData.Damage.c) ** wepData.Damage.b)))) * ARMOR_MULT);
+                            var damage_at_dist = ((damageCurve.d + ((damageCurve.a - damageCurve.d) / (1 + ((Math.max(ranges[k], 10) / damageCurve.c) ** damageCurve.b)))) * ARMOR_MULT * getAmmoProperty(ammoDataFile, "hitPowerMult"));
+                            damage_at_dist = toPlace(damage_at_dist / 10, 2);
                             damage_at_dist = Math.max(damage_at_dist, 0.1);
                             var shots_to_kill = Math.ceil(MAX_DMG / damage_at_dist);
                             if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown1")) {
@@ -182,11 +231,11 @@
                                 data.push(shots_to_kill)
                             }
                             if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown4")) {
-                                var time_to_kill = (shots_to_kill - 1) * (60 / wepData.RPM)
+                                var time_to_kill = (shots_to_kill - 1) * (60 / rpm)
                                 data.push(time_to_kill)
                             }
                             if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown2")) {
-                                data.push(wepData.RPM * damage_at_dist);
+                                data.push(rpm * damage_at_dist);
                             }
                         })(k);
 
@@ -198,14 +247,6 @@
 
                         // refresh
                         window.ttk_dpm_chart.update();
-
-                        // display stars
-                        starsDropdown.textContent = '';
-                        for (var k = 0; k < wepData.Stars.length; k++) (function (k) {
-                            var option = document.createElement("option")
-                            option.textContent = "★".repeat(Object.keys(wepData.Stars[k])[0])
-                            starsDropdown.append(option);
-                        })(k);
                     }
                 })(j)
             })(i)
