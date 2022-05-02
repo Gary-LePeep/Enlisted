@@ -55,6 +55,17 @@
         title.appendChild(translate("language", "b", "position:absolute; top:20px; left:85%; font-size:16px"));
     </script>
 
+    <!-- Href to weapon comparison -->
+    <script>
+        var hrefText = translate("goToWepComparisonText", "div", "position:absolute; top:65px; left:75%; text-align:center");
+        document.getElementsByTagName('BODY')[0].appendChild(hrefText);
+        hrefText.append(translate("EMPTY", "p"));
+        var hrefBtn = translate("goToWepComparison", "button", "width:200px; height:60px; color:white; font-size: 20px");
+        hrefBtn.style.background = "url(../resources/link.png)";
+        hrefBtn.onclick = function() { window.location = "https://gary-lepeep.github.io/Enlisted/"};
+        hrefText.appendChild(hrefBtn);
+    </script>
+
     <script>
         // Color Dropdown
         var headerbox = document.createElement('header');
@@ -591,19 +602,19 @@
     </script>
 
     <input type="checkbox" id="stalingradMode" onclick="stalingradMode()"
-        style="position:absolute; top:70px; left:820px;">
+        style="position:absolute; top:70px; left:30%;">
     <script>
         function stalingradMode() {
             window.stalingrad_mode = document.getElementById("stalingradMode").checked;
             reload_data();
         }
 
-        document.getElementsByTagName('BODY')[0].appendChild(translate("stalingradMode", "b", "position:absolute; top:70px; left:845px;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("stalingradMode", "b", "position:absolute; top:70px; left:31.5%;"));
         stalingradMode();
     </script>
 
     <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "color: #002244; position: absolute; top: 95%; left: 40%"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "color: #002244; position: absolute; top: 95%; left: 35%"));
     </script>
 </body>
 

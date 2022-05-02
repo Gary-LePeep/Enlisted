@@ -55,6 +55,17 @@
         title.appendChild(translate("language", "b", "position:absolute; top:20px; left:85%; font-size:16px"));
     </script>
 
+    <!-- Href to datamine -->
+    <script>
+        var hrefText = translate("goToDatamineText", "div", "position:absolute; top:65px; left:75%; text-align:center");
+        document.getElementsByTagName('BODY')[0].appendChild(hrefText);
+        hrefText.append(translate("EMPTY", "p"));
+        var hrefBtn = translate("goToDatamine", "button", "width:200px; height:60px; color:white; font-size: 20px");
+        hrefBtn.style.background = "url(resources/link.png)";
+        hrefBtn.onclick = function() { window.location = "https://gary-lepeep.github.io/Enlisted/datamine"};
+        hrefText.appendChild(hrefBtn);
+    </script>
+
     <!-- Vitality & Body armor switches -->
     <input type="checkbox" id="vitalityCheck" onclick="vitality()" style="position:absolute; top:200px; left:820px;">
     <input type="checkbox" id="armorCheck" onclick="bodyArmor()" style="position:absolute; top:225px; left:820px;">
@@ -429,7 +440,7 @@
     </script>
 
     <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "color: #002244; position: absolute; top: 95%; left: 40%"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "color: #002244; position: absolute; top: 95%; left: 35%"));
     </script>
 </body>
 
