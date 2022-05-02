@@ -67,6 +67,7 @@
         var MAX_DMG = document.getElementById("vitalityCheck").checked ? 13.5 : 10
         var ARMOR_MULT = document.getElementById("armorCheck").checked ? 0.9 : 1
         var btncolors = ["greenbtn", "redbtn", "bluebtn", "magbtn"]
+        window.refreshStars = [true, true, true, true];
 
         var headerbox = document.createElement('header');
         headerbox.id = "header-box";
@@ -102,10 +103,14 @@
             starsDropdownContainer.style = "background-color: rgb(107, 133, 133); text-align: center; padding: 10px"
             colorButtonContainer.append(starsDropdownContainer);
             var starsDropdown = document.createElement("select");
-            starsDropdown.id = "starsDropdown";
+            starsDropdown.className = "starsDropdown";
             starsDropdownContainer.append(starsDropdown);
             var defaultOption = document.createElement("option");
             defaultOption.textContent = "☆☆☆☆☆";
+            starsDropdown.onchange = function () {
+                window.refreshStars = [false, false, false, false];
+                ttk_dpm_reload();
+            };
             starsDropdown.append(defaultOption);
 
             for (var i = -1; i < WEAPONS.length; i++) (function (i) {
@@ -133,10 +138,12 @@
                         window.ttk_dpm_chart.update();
 
                         // clear stars
-                        starsDropdown.textContent = '';
-                        var defaultOption = document.createElement("option");
-                        defaultOption.textContent = "☆☆☆☆☆";
-                        starsDropdown.append(defaultOption);
+                        if (window.refreshStars[h]) {
+                            starsDropdown.textContent = '';
+                            var defaultOption = document.createElement("option");
+                            defaultOption.textContent = "☆☆☆☆☆";
+                            starsDropdown.append(defaultOption);
+                        }
                     }
                 }
 
@@ -175,12 +182,13 @@
 
                         // find max range of all selected guns
                         var range = 0;
+                        var wepType = getDataProperty([dataName], "item__weapType");
                         for (var k = 0; k < 4; k++) (function (k) {
-                            var wepType = getDataProperty([dataName], "item__weapType");
                             if (RANGES[wepType] != null && RANGES[wepType] > range) {
                                 range = RANGES[wepType]
                             }
                         })(k);
+
                         // set x axis to range, in 1/15th increments
                         var ranges = [];
                         for (var k = 0; k <= 15; k++) (function (k) {
@@ -190,6 +198,53 @@
                         if (window.ttk_dpm_chart.data.labels[15] != ranges[15]) {
                             window.ttk_dpm_chart.data.labels = ranges;
                             ttk_dpm_reload()
+                        }
+
+                        // create stars only on weapon change
+                        if (window.refreshStars[h]) {
+                            starsDropdown.textContent = '';
+                            for (var k = 0; k < STARUPGRADES[wepType].length; k++) (function (k) {
+                                starsDropdown.append(translate("★".repeat(k + 1), "option"));
+                            })(k);
+                        }
+                        else {
+                        }
+
+                        // Apply star modifiers
+                        var damageStar = 1;
+                        var dispersionStar = 1;
+                        var rpmStar = 1;
+                        var recoilVertStar = 1;
+                        var recoilHorizStar = 1;
+                        var reloadStar = 1;
+
+                        var stars = starsDropdown.value.split("★").length - 2;
+                        for (var k = stars; k >= 0; k--) {
+                            var effects = Object.keys(STARUPGRADES[wepType][k]);
+                            for (var l = 0; l < effects.length; l++) {
+                                if (effects[l] == "damage") {
+                                    damageStar *= STARUPGRADES[wepType][k][effects[l]]
+                                }
+                                else if (effects[l] == "dev") {
+                                    dispersionStar *= STARUPGRADES[wepType][k][effects[l]]
+                                }
+                                else if (effects[l] == "rpm") {
+                                    rpmStar *= STARUPGRADES[wepType][k][effects[l]]
+                                }
+                                else if (effects[l] == "recoilVert") {
+                                    recoilVertStar *= STARUPGRADES[wepType][k][effects[l]]
+                                }
+                                else if (effects[l] == "recoilHoriz") {
+                                    recoilHorizStar *= STARUPGRADES[wepType][k][effects[l]]
+                                }
+                                else if (effects[l] == "reload") {
+                                    reloadStar *= STARUPGRADES[wepType][k][effects[l]]
+                                }
+                                else {
+                                    console.log(effects[l])
+                                    console.log(STARUPGRADES[wepType][k][effects[l]])
+                                }
+                            }
                         }
 
                         // update data
@@ -207,19 +262,18 @@
                             hitPowerString += Object.keys(hitPower)[k].replace("HitPower", " ");
                             hitPowerString += hitPower[Object.keys(hitPower)[k]][0];
                         }
-                        console.log(hitPowerString)
                         var damageCurve = DAMAGES[hitPowerString];
 
                         var rpm = getDataProperty([dataName], "gun__shotFreq");
                         if (rpm != "-") {
                             var lowRPM = getDataProperty([dataName], "gun__shotFreqRndK");
-                            var highRPM = (rpm * 60)
+                            var highRPM = (rpm * 60 * rpmStar)
                             lowRPM = highRPM / (1 + lowRPM)
                             rpm = toPlace((highRPM + lowRPM) / 2, 2);
                         }
 
                         for (var k = 0; k <= 15; k++) (function (k) {
-                            var damage_at_dist = ((damageCurve.d + ((damageCurve.a - damageCurve.d) / (1 + ((Math.max(ranges[k], 10) / damageCurve.c) ** damageCurve.b)))) * ARMOR_MULT * getAmmoProperty(ammoDataFile, "hitPowerMult"));
+                            var damage_at_dist = ((damageCurve.d + ((damageCurve.a - damageCurve.d) / (1 + ((Math.max(ranges[k], 10) / damageCurve.c) ** damageCurve.b)))) * ARMOR_MULT * getAmmoProperty(ammoDataFile, "hitPowerMult") * damageStar);
                             damage_at_dist = toPlace(damage_at_dist / 10, 2);
                             damage_at_dist = Math.max(damage_at_dist, 0.1);
                             var shots_to_kill = Math.ceil(MAX_DMG / damage_at_dist);
@@ -247,6 +301,8 @@
 
                         // refresh
                         window.ttk_dpm_chart.update();
+
+                        window.refreshStars[h] = true;
                     }
                 })(j)
             })(i)
