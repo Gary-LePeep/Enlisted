@@ -41,7 +41,8 @@
 
 <body>
 
-    <select id="language_dropdown" onchange="window.location.reload();" style="position:absolute; top:20px; left:90%;">
+    <select id="language_dropdown" onchange="window.location.reload();"
+        style="position:absolute; top:20px; left:1780px;">
         <option> English </option>
         <option> Русский </option>
     </select>
@@ -52,12 +53,12 @@
         title.className = "TITLE";
         document.getElementsByTagName('BODY')[0].appendChild(title);
 
-        title.appendChild(translate("language", "b", "position:absolute; top:20px; left:85%; font-size:16px"));
+        title.appendChild(translate("language", "b", "position:absolute; top:20px; left:1700px; font-size:16px"));
     </script>
 
     <!-- Href to weapon comparison -->
     <script>
-        var hrefText = translate("goToWepComparisonText", "div", "position:absolute; top:65px; left:75%; text-align:center");
+        var hrefText = translate("goToDatamineText", "div", "position:absolute; top:65px; left:1440px; text-align:center");
         document.getElementsByTagName('BODY')[0].appendChild(hrefText);
         hrefText.append(translate("EMPTY", "p"));
         var hrefBtn = translate("goToWepComparison", "button", "width:200px; height:60px; color:white; font-size: 20px");
@@ -112,11 +113,11 @@
         /* Data */
         // Name
         var dataDiv = document.createElement("div");
-        dataDiv.style = "position: absolute; left: 30%; width: 30%";
+        dataDiv.style = "position: absolute; left: 560px; width: 560px";
         document.getElementsByTagName('BODY')[0].appendChild(dataDiv)
 
         var dataDiv2 = document.createElement("div");
-        dataDiv2.style = "position: absolute; left: 60%; width: 40%";
+        dataDiv2.style = "position: absolute; left: 1120px; width: 750px";
         document.getElementsByTagName('BODY')[0].appendChild(dataDiv2)
 
         var gunName = translate("gunName", "div");
@@ -602,19 +603,19 @@
     </script>
 
     <input type="checkbox" id="stalingradMode" onclick="stalingradMode()"
-        style="position:absolute; top:70px; left:30%;">
+        style="position:absolute; top:70px; left:560px;">
     <script>
         function stalingradMode() {
             window.stalingrad_mode = document.getElementById("stalingradMode").checked;
             reload_data();
         }
 
-        document.getElementsByTagName('BODY')[0].appendChild(translate("stalingradMode", "b", "position:absolute; top:70px; left:31.5%;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("stalingradMode", "b", "position:absolute; top:70px; left:585px;"));
         stalingradMode();
     </script>
 
     <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "color: #002244; position: absolute; top: 95%; left: 35%"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "color: #002244; position: absolute; top: 870px; width: 100%; text-align: center"));
     </script>
 </body>
 

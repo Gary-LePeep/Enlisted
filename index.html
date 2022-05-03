@@ -42,7 +42,8 @@
 
 <body>
 
-    <select id="language_dropdown" onchange="window.location.reload();" style="position:absolute; top:20px; left:90%;">
+    <select id="language_dropdown" onchange="window.location.reload();"
+        style="position:absolute; top:20px; left:1780px;">
         <option> English </option>
         <option> Русский </option>
     </select>
@@ -53,12 +54,12 @@
         title.className = "TITLE";
         document.getElementsByTagName('BODY')[0].appendChild(title);
 
-        title.appendChild(translate("language", "b", "position:absolute; top:20px; left:85%; font-size:16px"));
+        title.appendChild(translate("language", "b", "position:absolute; top:20px; left:1700px; font-size:16px"));
     </script>
 
     <!-- Href to datamine -->
     <script>
-        var hrefText = translate("goToDatamineText", "div", "position:absolute; top:65px; left:75%; text-align:center");
+        var hrefText = translate("goToDatamineText", "div", "position:absolute; top:65px; left:1440px; text-align:center");
         document.getElementsByTagName('BODY')[0].appendChild(hrefText);
         hrefText.append(translate("EMPTY", "p"));
         var hrefBtn = translate("goToDatamine", "button", "width:200px; height:60px; color:white; font-size: 20px");
@@ -86,7 +87,7 @@
         roundsSlider.step = -1;
         roundsSlider.id = "roundsSlideScatter";
         roundsSlider.style = "position:absolute; top:240px; left:1225px; width:450px";
-        roundsSlider.onchange = function() {ttk_dpm_reload();};
+        roundsSlider.onchange = function () { ttk_dpm_reload(); };
         document.getElementsByTagName('BODY')[0].appendChild(roundsSlider);
 
         var distanceLabel = translate("distanceSlideScatter", "div", "position:absolute; top:265px; left:1225px; width:450px; text-align:center");
@@ -99,7 +100,7 @@
         rangeSlider.step = 10;
         rangeSlider.id = "distanceSlideScatter";
         rangeSlider.style = "position:absolute; top:280px; left:1225px; width:450px";
-        rangeSlider.onchange = function() {ttk_dpm_reload();};
+        rangeSlider.onchange = function () { ttk_dpm_reload(); };
         document.getElementsByTagName('BODY')[0].appendChild(rangeSlider);
 
         var distanceData = translate("dispersionLabel", "b");
@@ -252,8 +253,6 @@
                             ranges.push(range * k / 15);
                         })(k);
                         // if range changed, reload all data just to be sure
-                        console.log(window.ttk_dpm_chart.data.labels);
-                        console.log(ranges);
                         if (window.ttk_dpm_chart.data.labels[15] < ranges[15]) {
                             window.ttk_dpm_chart.data.labels = ranges;
                             ttk_dpm_reload()
@@ -567,7 +566,7 @@
     </script>
 
     <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "color: #002244; position: absolute; top: 95%; left: 35%"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "color: #002244; position: absolute; top: 870px; width: 100%; text-align: center"));
     </script>
 </body>
 
