@@ -139,7 +139,7 @@
             colorButtonContainer.append(colorButton);
 
             var colorButtonText = document.createElement("a");
-            colorButtonText.style = "color: white; font-size:24px";
+            colorButtonText.style = "color: white; font-size:22px";
             colorButtonText.text = translate("Weapon") + (h + 1);
             colorButton.append(colorButtonText);
 
@@ -147,7 +147,7 @@
             colorButton.append(categorylist)
 
             var starsDropdownContainer = document.createElement("div");
-            starsDropdownContainer.style = "background-color: rgb(107, 133, 133); text-align: center; padding: 10px"
+            starsDropdownContainer.style = "background-color: rgb(107, 133, 133); text-align: center; padding: 8px"
             colorButtonContainer.append(starsDropdownContainer);
             var starsDropdown = document.createElement("select");
             starsDropdown.className = "starsDropdown";
@@ -247,19 +247,8 @@
                             }
                         })(k);
 
-                        // set x axis to range, in 1/15th increments
-                        var ranges = [];
-                        for (var k = 0; k <= 15; k++) (function (k) {
-                            ranges.push(range * k / 15);
-                        })(k);
-                        // if range changed, reload all data just to be sure
-                        if (window.ttk_dpm_chart.data.labels[15] != ranges[15]) {
-                            window.ttk_dpm_chart.data.labels = ranges;
-                            ttk_dpm_reload()
-                            return;
-                        }
-
                         // create stars only on weapon change
+                        console.log(window.refreshStars)
                         if (window.refreshStars[h]) {
                             starsDropdown.textContent = '';
                             for (var k = 0; k < STARUPGRADES[wepType].length; k++) (function (k) {
@@ -267,6 +256,19 @@
                             })(k);
                         }
                         else {
+                        }
+
+                        // set x axis to range, in 1/15th increments
+                        var ranges = [];
+                        for (var k = 0; k <= 15; k++) (function (k) {
+                            ranges.push(range * k / 15);
+                        })(k);
+
+                        // if range changed, reload all data just to be sure
+                        if (window.ttk_dpm_chart.data.labels[15] != ranges[15]) {
+                            window.ttk_dpm_chart.data.labels = ranges;
+                            ttk_dpm_reload()
+                            return;
                         }
 
                         // Apply star modifiers
