@@ -253,7 +253,7 @@
                             ranges.push(range * k / 15);
                         })(k);
                         // if range changed, reload all data just to be sure
-                        if (window.ttk_dpm_chart.data.labels[15] < ranges[15]) {
+                        if (window.ttk_dpm_chart.data.labels[15] != ranges[15]) {
                             window.ttk_dpm_chart.data.labels = ranges;
                             ttk_dpm_reload()
                             return;
