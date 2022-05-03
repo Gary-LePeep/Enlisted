@@ -36,6 +36,7 @@
     css.type = 'text/css';
     css.href = 'style.css';
     document.getElementsByTagName('HEAD')[0].appendChild(css);
+
 </script>
 </head>
 
@@ -62,7 +63,7 @@
         hrefText.append(translate("EMPTY", "p"));
         var hrefBtn = translate("goToDatamine", "button", "width:200px; height:60px; color:white; font-size: 20px");
         hrefBtn.style.background = "url(resources/link.png)";
-        hrefBtn.onclick = function() { window.location = "https://gary-lepeep.github.io/Enlisted/datamine"};
+        hrefBtn.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/datamine" };
         hrefText.appendChild(hrefBtn);
     </script>
 
@@ -75,6 +76,40 @@
     </script>
 
     <script>
+        var roundsLabel = translate("roundsSlideScatter", "div", "position:absolute; top:225px; left:1225px; width:450px; text-align:center");
+        document.getElementsByTagName('BODY')[0].appendChild(roundsLabel);
+        var roundsSlider = document.createElement("input");
+        roundsSlider.type = "range";
+        roundsSlider.min = 1;
+        roundsSlider.max = 62500;
+        roundsSlider.value = 40000;
+        roundsSlider.step = -1;
+        roundsSlider.id = "roundsSlideScatter";
+        roundsSlider.style = "position:absolute; top:240px; left:1225px; width:450px";
+        roundsSlider.onchange = function() {ttk_dpm_reload();};
+        document.getElementsByTagName('BODY')[0].appendChild(roundsSlider);
+
+        var distanceLabel = translate("distanceSlideScatter", "div", "position:absolute; top:265px; left:1225px; width:450px; text-align:center");
+        document.getElementsByTagName('BODY')[0].appendChild(distanceLabel);
+        var rangeSlider = document.createElement("input");
+        rangeSlider.type = "range";
+        rangeSlider.min = 10;
+        rangeSlider.max = 300;
+        rangeSlider.value = 30;
+        rangeSlider.step = 10;
+        rangeSlider.id = "distanceSlideScatter";
+        rangeSlider.style = "position:absolute; top:280px; left:1225px; width:450px";
+        rangeSlider.onchange = function() {ttk_dpm_reload();};
+        document.getElementsByTagName('BODY')[0].appendChild(rangeSlider);
+
+        var distanceData = translate("dispersionLabel", "b");
+        distanceData.textContent = rangeSlider.value + translate("meters");
+        distanceLabel.appendChild(distanceData);
+
+        var roundsData = translate("dispersionLabel", "b");
+        roundsData.textContent = 250 - Math.round(Math.sqrt(62500 - roundsSlider.value));
+        roundsLabel.appendChild(roundsData);
+
         var MAX_DMG = document.getElementById("vitalityCheck").checked ? 13.5 : 10
         var ARMOR_MULT = document.getElementById("armorCheck").checked ? 0.9 : 1
         var btncolors = ["greenbtn", "redbtn", "bluebtn", "magbtn"]
@@ -140,12 +175,19 @@
                         // remove data point
                         var chartColors = ['rgba(0, 158, 115)', 'rgba(207, 52, 55)', 'rgba(71, 75, 182)', 'rgba(213, 92, 5)']
                         window.ttk_dpm_chart.data.datasets[h] = {
-                            label: 'Weapon ' + (h + 1),
+                            label: translate("Weapon") + (h + 1),
                             backgroundColor: [chartColors[h]],
                             borderColor: [chartColors[h]],
                             borderWidth: 5
                         }
                         window.ttk_dpm_chart.update();
+                        window.scatter_chart.data.datasets[h] = {
+                            label: translate("Weapon") + (h + 1),
+                            backgroundColor: [chartColors[h]],
+                            borderColor: ['rgba(0, 0, 0, 0)'],
+                            pointRadius: 7
+                        }
+                        window.scatter_chart.update();
 
                         // clear stars
                         if (window.refreshStars[h]) {
@@ -171,6 +213,10 @@
                     weaponButton.tagName = weaponButtonText.text;
 
                     weaponButton.onclick = function () {
+                        // Scatter chart sliders
+                        distanceData.textContent = rangeSlider.value + translate("meters");
+                        roundsData.textContent = 250 - Math.round(Math.sqrt(62500 - roundsSlider.value));
+
                         // set color button name to selected weapon
                         colorButtonText.text = weaponButtonText.text
 
@@ -189,6 +235,7 @@
 
                         // set legend to label
                         window.ttk_dpm_chart.data.datasets[h].label = weaponButtonText.text
+                        window.scatter_chart.data.datasets[h].label = weaponButtonText.text
 
                         // find max range of all selected guns
                         var range = 0;
@@ -205,9 +252,12 @@
                             ranges.push(range * k / 15);
                         })(k);
                         // if range changed, reload all data just to be sure
-                        if (window.ttk_dpm_chart.data.labels[15] != ranges[15]) {
+                        console.log(window.ttk_dpm_chart.data.labels);
+                        console.log(ranges);
+                        if (window.ttk_dpm_chart.data.labels[15] < ranges[15]) {
                             window.ttk_dpm_chart.data.labels = ranges;
                             ttk_dpm_reload()
+                            return;
                         }
 
                         // create stars only on weapon change
@@ -282,6 +332,7 @@
                             rpm = toPlace((highRPM + lowRPM) / 2, 2);
                         }
 
+                        // ttk chart
                         for (var k = 0; k <= 15; k++) (function (k) {
                             var damage_at_dist = ((damageCurve.d + ((damageCurve.a - damageCurve.d) / (1 + ((Math.max(ranges[k], 10) / damageCurve.c) ** damageCurve.b)))) * ARMOR_MULT * getAmmoProperty(ammoDataFile, "hitPowerMult") * damageStar);
                             damage_at_dist = toPlace(damage_at_dist / 10, 2);
@@ -303,14 +354,29 @@
                             }
                         })(k);
 
+                        // scatter damage
+                        var scatterData = [];
+                        var dispersion = getDataProperty([dataName], "gun_spread__maxDeltaAngle") * dispersionStar;
+                        var distance = rangeSlider.value;
+                        var avg = 0;
+                        for (var k = 1; k <= 250 - Math.round(Math.sqrt(62500 - roundsSlider.value)); k++) (function (k) {
+                            var radius = (Math.cbrt(1000 * (dispersion ** 2.5)) - Math.cbrt(Math.random() * 1000 * (dispersion ** 2.5))) * distance / 28;
+                            avg += radius;
+                            var theta = Math.random() * 6.28318530718;
+                            scatterData.push([radius * Math.cos(theta), radius * Math.sin(theta)]);
+                        })(k);
+
                         // set data
                         window.ttk_dpm_chart.data.datasets[h].data = data;
                         window.ttk_dpm_chart.options.plugins.annotation.annotations.line1.borderWidth = show_death_threshold ? 2 : 0;
                         window.ttk_dpm_chart.options.plugins.annotation.annotations.line1.yMax = show_death_threshold ? MAX_DMG : 0;
                         window.ttk_dpm_chart.options.plugins.annotation.annotations.line1.yMin = show_death_threshold ? MAX_DMG : 0;
 
+                        window.scatter_chart.data.datasets[h].data = scatterData;
+
                         // refresh
                         window.ttk_dpm_chart.update();
+                        window.scatter_chart.update();
 
                         window.refreshStars[h] = true;
                     }
@@ -430,6 +496,67 @@
 
             var chart = document.getElementById("ttk-dpm-chart").getContext("2d");
             window.ttk_dpm_chart = new Chart(chart, { type: "line", data: indicatedValueData, options: opts });
+        </script>
+    </div>
+
+    <canvas id="scatterChart"></canvas>
+    <img src="resources/target.png" style="position:absolute; top:308px; left:1183px; width:537px; height:532px;">
+    <div style="position:absolute; top:300px; left:1200px; width:500px; height:523px;">
+        <canvas id="scatter-chart"></canvas>
+
+        <script type="text/javascript">
+            Chart.defaults.color = "#ffffff";
+            Chart.defaults.borderColor = "#888888";
+            var indicatedValueData = {
+                type: 'scatter',
+                labels: [],
+                datasets: [{
+                    label: translate("Weapon") + '1',
+                    backgroundColor: ['rgba(0, 158, 115)'],
+                    borderColor: ['rgba(0, 0, 0, 0)'],
+                    pointRadius: 7
+                },
+                {
+                    label: translate("Weapon") + '2',
+                    backgroundColor: ['rgba(207, 52, 55)'],
+                    borderColor: ['rgba(0, 0, 0, 0)'],
+                    pointRadius: 7,
+                },
+                {
+                    label: translate("Weapon") + '3',
+                    backgroundColor: ['rgba(71, 75, 182)'],
+                    borderColor: ['rgba(0, 0, 0, 0)'],
+                    pointRadius: 7,
+                },
+                {
+                    label: translate("Weapon") + '4',
+                    backgroundColor: ['rgba(213, 92, 5)'],
+                    borderColor: ['rgba(0, 0, 0, 0)'],
+                    pointRadius: 7,
+                }]
+            }
+            var opts = {
+                maintainAspectRatio: false,
+                events: [],
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                        min: -9.5,
+                        max: 9.5,
+                        display: false
+                    },
+                    y: {
+                        type: 'linear',
+                        min: -9.5,
+                        max: 9.5,
+                        display: false
+                    }
+                }
+            }
+
+            var chart = document.getElementById("scatter-chart").getContext("2d");
+            window.scatter_chart = new Chart(chart, { type: "scatter", data: indicatedValueData, options: opts });
         </script>
     </div>
 
