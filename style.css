@@ -46,7 +46,6 @@ html {
     max-width: 499px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size-adjust: 0.7;
 }
 
 .submenu {
@@ -55,7 +54,6 @@ html {
     max-width: 250px;
     text-align: left;
     font-family: "";
-    font-size-adjust: 0.5;
 }
 
 .greenbtn {
