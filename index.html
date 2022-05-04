@@ -402,8 +402,15 @@
                             for (var k = 1; k <= 250 - Math.round(Math.sqrt(62500 - roundsSlider.value)); k++) (function (k) {
                                 var radius = recoilHorizData * ((Math.random() / 2.5) + 0.8) * distance / 100;
                                 var offset = recoilVertData * distance / 100;
+                                var horizOffset = 0;
+                                // some guns seemingly just have horizontal offset instead, haven't figured out why yet
+                                console.log(dataName);
+                                if (["charlton_automatic_rifle_gun", "mg_13_gun", "mg_34_gun", "mg_42_handheld_gun"].includes(dataName)) {
+                                    horizOffset = offset;
+                                    offset = 0;
+                                }
                                 var theta = Math.random() * 6.28318530718;
-                                scatterData.push([(radius * Math.cos(theta)), (radius * Math.sin(theta)) + offset]);
+                                scatterData.push([(radius * Math.cos(theta)) + horizOffset, (radius * Math.sin(theta)) + offset]);
                             })(k);
                         }
 

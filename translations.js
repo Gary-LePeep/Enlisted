@@ -24,7 +24,9 @@ var EN =
         "Knife hits to the head are counted as hits to the body.",
         "Berlin allied body armor reduces ALL damage to the body by 10%.",
         "Helmets do not reduce damage, even with pistol shots. (4.8 damage pistol or more is OHK headshot.)",
-        "Recoil reduction 'while standing' reduces recoil in all positions."
+        "Recoil reduction 'while standing' reduces recoil in all positions.",
+        "Guns recoil in a ring formation, with vertical recoil being vertical offset, and horizontal being radius;",
+        "Except some guns such as MG42 and MG13, which recoil to the right, rather than upwards."
     ],
     "footer_header": "IMPORTANT NOTES:", 
     "full_auto" : "Automatic",
@@ -102,6 +104,8 @@ var RU =
         "Бронежилет союзников в Берлине снижает ВСЕ повреждения тела на 10%",
         "Каски не уменьшают урон, даже от выстрелов из пистолета.",
         "(Пистолет с уроном 4,8 и выше — выстрел в голову убивает одним ударом.)",
+        "Отдача выстрела кольцевая, при этом вертикальная отдача проявляется в подъеме дула, а горизонтальная определяет радиус-",
+        "За исключением некоторых орудий, таких как MG42 и MG13, у которых отдача вправо, а не вверх."
     ],
     "footer_header": "ВАЖНЫЕ ЗАМЕЧАНИЯ:",
     "full_auto" : "Автоматический",
