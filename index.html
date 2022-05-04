@@ -77,6 +77,7 @@
     </script>
 
     <script>
+        // scatter chart elements
         var roundsLabel = translate("roundsSlideScatter", "div", "position:absolute; top:225px; left:1225px; width:450px; text-align:center");
         document.getElementsByTagName('BODY')[0].appendChild(roundsLabel);
         var roundsSlider = document.createElement("input");
@@ -111,6 +112,18 @@
         roundsData.textContent = 250 - Math.round(Math.sqrt(62500 - roundsSlider.value));
         roundsLabel.appendChild(roundsData);
 
+        var scatter_dropdown_label = translate("ttk_dpm_dropdown", "b", "position:absolute; top:180px; left:1225px; width:450px");
+        document.getElementsByTagName('BODY')[0].appendChild(scatter_dropdown_label);
+
+        var scatter_dropdown = document.createElement("select");
+        scatter_dropdown.id = "scatter_dropdown";
+        scatter_dropdown.onchange = function () { ttk_dpm_reload(); };
+        scatter_dropdown_label.appendChild(scatter_dropdown);
+
+        scatter_dropdown.append(translate("scatter_dropdown1", "option"));
+        scatter_dropdown.append(translate("scatter_dropdown2", "option"));
+
+        // start main elements
         var MAX_DMG = document.getElementById("vitalityCheck").checked ? 13.5 : 10
         var ARMOR_MULT = document.getElementById("armorCheck").checked ? 0.9 : 1
         var btncolors = ["greenbtn", "redbtn", "bluebtn", "magbtn"]
@@ -374,13 +387,25 @@
                         var scatterData = [];
                         var dispersion = getDataProperty([dataName], "gun_spread__maxDeltaAngle") * dispersionStar;
                         var distance = rangeSlider.value;
-                        var avg = 0;
-                        for (var k = 1; k <= 250 - Math.round(Math.sqrt(62500 - roundsSlider.value)); k++) (function (k) {
-                            var radius = (Math.cbrt(1000 * (dispersion ** 2.5)) - Math.cbrt(Math.random() * 1000 * (dispersion ** 2.5))) * distance / 28;
-                            avg += radius;
-                            var theta = Math.random() * 6.28318530718;
-                            scatterData.push([radius * Math.cos(theta), radius * Math.sin(theta)]);
-                        })(k);
+                        var recoilTotal = getDataProperty([dataName], "gun__recoilAmount");
+                        var recoilDir = getDataProperty([dataName], "gun__recoilDirAmount");
+                        var recoilVertData = recoilTotal * 1000 * recoilDir * recoilVertStar;
+                        var recoilHorizData = recoilTotal * 1000 * (1 - recoilDir) * recoilHorizStar;
+                        if (document.getElementById('scatter_dropdown').value == translate("scatter_dropdown1")) {
+                            for (var k = 1; k <= 250 - Math.round(Math.sqrt(62500 - roundsSlider.value)); k++) (function (k) {
+                                var radius = (Math.cbrt(1000 * (dispersion ** 2.5)) - Math.cbrt(Math.random() * 1000 * (dispersion ** 2.5))) * distance / 28;
+                                var theta = Math.random() * 6.28318530718;
+                                scatterData.push([radius * Math.cos(theta), radius * Math.sin(theta)]);
+                            })(k);
+                        }
+                        if (document.getElementById('scatter_dropdown').value == translate("scatter_dropdown2")) {
+                            for (var k = 1; k <= 250 - Math.round(Math.sqrt(62500 - roundsSlider.value)); k++) (function (k) {
+                                var radius = recoilHorizData * ((Math.random() / 2.5) + 0.8) * distance / 100;
+                                var offset = recoilVertData * distance / 100;
+                                var theta = Math.random() * 6.28318530718;
+                                scatterData.push([(radius * Math.cos(theta)), (radius * Math.sin(theta)) + offset]);
+                            })(k);
+                        }
 
                         // set data
                         window.ttk_dpm_chart.data.datasets[h].data = data;
