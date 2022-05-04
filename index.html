@@ -238,6 +238,22 @@
                         window.ttk_dpm_chart.data.datasets[h].label = weaponButtonText.text
                         window.scatter_chart.data.datasets[h].label = weaponButtonText.text
 
+                        // truncate if too long
+                        ttkStrLen = 0;
+                        scatStrLen = 0;
+                        for (var k = 0; k < 4; k++) (function (k) {
+                            ttkStrLen += window.ttk_dpm_chart.data.datasets[k].label.length;
+                            scatStrLen += window.scatter_chart.data.datasets[h].label.length;
+                        })(k);
+                        for (var k = 0; k < 4; k++) (function (k) {
+                            if (ttkStrLen > 80) {
+                                window.ttk_dpm_chart.data.datasets[k].label = window.ttk_dpm_chart.data.datasets[k].label.substring(0, 20);
+                            }
+                            if (scatStrLen > 40) {
+                                window.scatter_chart.data.datasets[h].label = window.scatter_chart.data.datasets[h].label.substring(0, 10);
+                            }
+                        })(k);
+
                         // find max range of all selected guns
                         var range = 0;
                         var wepType = getDataProperty([dataName], "item__weapType");
@@ -248,7 +264,6 @@
                         })(k);
 
                         // create stars only on weapon change
-                        console.log(window.refreshStars)
                         if (window.refreshStars[h]) {
                             starsDropdown.textContent = '';
                             for (var k = 0; k < STARUPGRADES[wepType].length; k++) (function (k) {
@@ -265,7 +280,7 @@
                         })(k);
 
                         // if range changed, reload all data just to be sure
-                        if (window.ttk_dpm_chart.data.labels[15] != ranges[15]) {
+                        if (window.ttk_dpm_chart.data.labels[15] == null || window.ttk_dpm_chart.data.labels[15] < ranges[15]) {
                             window.ttk_dpm_chart.data.labels = ranges;
                             ttk_dpm_reload()
                             return;
