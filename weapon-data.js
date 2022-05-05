@@ -176,7 +176,7 @@ var WEAPONS = [
             {
                 "Name EN": "Winchester Model 1912",
                 "Name RU": "Winchester Model 1912",
-                "Name Game": "winchester_model_1912"
+                "Name Game": "winchester_model_1912_gun"
             }
         ]
     },
@@ -337,7 +337,7 @@ var WEAPONS = [
             {
                 "Name EN": "ZK-383",
                 "Name RU": "ZK-383",
-                "Name Game": "zk_383"
+                "Name Game": "zk_383_gun"
             }
         ]
     },
@@ -463,7 +463,7 @@ var WEAPONS = [
             {
                 "Name EN": "Winchester M1895",
                 "Name RU": "Винчестер М1895",
-                "Name Game": "winchester_1895"
+                "Name Game": "winchester_1895_gun"
             }
         ]
     },
@@ -660,7 +660,7 @@ var WEAPONS = [
             {
                 "Name EN": "Vz. 24",
                 "Name RU": "Vz. 24",
-                "Name Game": "vz_24"
+                "Name Game": "vz_24_gun"
             }
         ]
     },
@@ -741,7 +741,7 @@ var WEAPONS = [
             {
                 "Name EN": "ZH-29",
                 "Name RU": "ZH-29",
-                "Name Game": "zh_29"
+                "Name Game": "zh_29_gun"
             }
         ]
     },
@@ -780,9 +780,9 @@ var WEAPONS = [
                 "Name Game": "browning_m1918a2_gun"
             },
             {
-                "Name EN": "Browning M1918A6",
-                "Name RU": "Browning M1918A6",
-                "Name Game": "browning_m1919a6"
+                "Name EN": "Browning M1919A6",
+                "Name RU": "Browning M1919A6",
+                "Name Game": "browning_m1919a6_gun"
             },
             {
                 "Name EN": "Charlton Automatic Rifle",
@@ -827,7 +827,7 @@ var WEAPONS = [
             {
                 "Name EN": "Vickers-Berthier",
                 "Name RU": "Виккерс-Бертье",
-                "Name Game": "vickers_berthier"
+                "Name Game": "vickers_berthier_gun"
             }
         ]
     },
@@ -878,7 +878,7 @@ var WEAPONS = [
             {
                 "Name EN": "ZB-26",
                 "Name RU": "ZB-26",
-                "Name Game": "zb_26"
+                "Name Game": "zb_26_gun"
             }
         ]
     },
@@ -1122,7 +1122,7 @@ var WEAPONS = [
             {
                 "Name EN": "Walther PPK",
                 "Name RU": "Walther PPK",
-                "Name Game": "walther_ppk"
+                "Name Game": "walther_ppk_gun"
             }
         ]
     }
