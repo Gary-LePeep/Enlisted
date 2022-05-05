@@ -209,7 +209,6 @@
                         var range = 0;
                         for (var k = 0; k < 4; k++) (function (k) {
                             var wepType = getDataProperty([window.dataNames[k]], "item__weapType");
-                            console.log(wepType)
                             if (RANGES[wepType] != null && RANGES[wepType] > range) {
                                 range = RANGES[wepType]
                             }
@@ -225,7 +224,6 @@
                         if (window.ttk_dpm_chart.data.labels[15] == null || window.ttk_dpm_chart.data.labels[15] != ranges[15]) {
                             window.ttk_dpm_chart.data.labels = ranges;
                             ttk_dpm_reload()
-                            return;
                         }
 
                         window.ttk_dpm_chart.update();
@@ -239,6 +237,7 @@
                         window.scatter_chart.update();
 
                         // clear stars
+                        console.log(window.refreshStars[h])
                         if (window.refreshStars[h]) {
                             starsDropdown.textContent = '';
                             var defaultOption = document.createElement("option");
@@ -308,7 +307,6 @@
                         var range = 0;
                         for (var k = 0; k < 4; k++) (function (k) {
                             var wepType = getDataProperty([window.dataNames[k]], "item__weapType");
-                            console.log(wepType)
                             if (RANGES[wepType] != null && RANGES[wepType] > range) {
                                 range = RANGES[wepType]
                             }
