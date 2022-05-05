@@ -69,11 +69,15 @@
     </script>
 
     <!-- Vitality & Body armor switches -->
-    <input type="checkbox" id="vitalityCheck" onclick="vitality()" style="position:absolute; top:200px; left:820px;">
-    <input type="checkbox" id="armorCheck" onclick="bodyArmor()" style="position:absolute; top:225px; left:820px;">
+    <input type="checkbox" id="vitalityCheck" onclick="vitality()" style="position:absolute; top:200px; left:860px;">
+    <input type="checkbox" id="armorCheck" onclick="bodyArmor()" style="position:absolute; top:225px; left:860px;">
+    <input type="checkbox" id="HorizRecoilCheck" onclick="horizRecoil()" style="position:absolute; top:250px; left:860px;">
+    <input type="checkbox" id="VertRecoilCheck" onclick="vertRecoil()" style="position:absolute; top:275px; left:860px;">
     <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("vitality", "b", "position:absolute; top:200px; left:845px;"));
-        document.getElementsByTagName('BODY')[0].appendChild(translate("armor", "b", "position:absolute; top:225px; left:845px;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("vitality", "b", "position:absolute; top:200px; left:885px;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("armor", "b", "position:absolute; top:225px; left:885px;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("horizRecoil", "b", "position:absolute; top:250px; left:885px;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("vertRecoil", "b", "position:absolute; top:275px; left:885px;"));
     </script>
 
     <script>
@@ -126,6 +130,8 @@
         // start main elements
         var MAX_DMG = document.getElementById("vitalityCheck").checked ? 13.5 : 10
         var ARMOR_MULT = document.getElementById("armorCheck").checked ? 0.9 : 1
+        var HORIZ_PERK = document.getElementById("HorizRecoilCheck").checked ? 0.7 : 1
+        var VERT_PERK = document.getElementById("VertRecoilCheck").checked ? 0.6 : 1
         var btncolors = ["greenbtn", "redbtn", "bluebtn", "magbtn"]
         window.refreshStars = [true, true, true, true];
 
@@ -404,13 +410,12 @@
                                 var offset = recoilVertData * distance / 100;
                                 var horizOffset = 0;
                                 // some guns seemingly just have horizontal offset instead, haven't figured out why yet
-                                console.log(dataName);
                                 if (["charlton_automatic_rifle_gun", "mg_13_gun", "mg_34_gun", "mg_42_handheld_gun"].includes(dataName)) {
                                     horizOffset = offset;
                                     offset = 0;
                                 }
                                 var theta = Math.random() * 6.28318530718;
-                                scatterData.push([(radius * Math.cos(theta)) + horizOffset, (radius * Math.sin(theta)) + offset]);
+                                scatterData.push([((radius * Math.cos(theta)) + horizOffset) * HORIZ_PERK, ((radius * Math.sin(theta)) + offset) * VERT_PERK]);
                             })(k);
                         }
 
@@ -463,6 +468,16 @@
 
         function bodyArmor() {
             ARMOR_MULT = document.getElementById("armorCheck").checked ? 0.9 : 1
+            ttk_dpm_reload()
+        }
+
+        function horizRecoil() {
+            HORIZ_PERK = document.getElementById("HorizRecoilCheck").checked ? 0.7 : 1
+            ttk_dpm_reload()
+        }
+
+        function vertRecoil() {
+            VERT_PERK = document.getElementById("VertRecoilCheck").checked ? 0.6 : 1
             ttk_dpm_reload()
         }
     </script>
