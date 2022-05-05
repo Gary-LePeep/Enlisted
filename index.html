@@ -134,6 +134,7 @@
         var VERT_PERK = document.getElementById("VertRecoilCheck").checked ? 0.6 : 1
         var btncolors = ["greenbtn", "redbtn", "bluebtn", "magbtn"]
         window.refreshStars = [true, true, true, true];
+        window.dataNames = ["", "", "", ""]
 
         var headerbox = document.createElement('header');
         headerbox.id = "header-box";
@@ -192,6 +193,9 @@
                         // reset color button
                         colorButtonText.text = translate("Weapon") + (h + 1);
 
+                        // remove stored name data
+                        window.dataNames[h] = "";
+
                         // remove data point
                         var chartColors = ['rgba(0, 158, 115)', 'rgba(207, 52, 55)', 'rgba(71, 75, 182)', 'rgba(213, 92, 5)']
                         window.ttk_dpm_chart.data.datasets[h] = {
@@ -200,7 +204,32 @@
                             borderColor: [chartColors[h]],
                             borderWidth: 5
                         }
+
+                        // adjust range
+                        var range = 0;
+                        for (var k = 0; k < 4; k++) (function (k) {
+                            var wepType = getDataProperty([window.dataNames[k]], "item__weapType");
+                            console.log(wepType)
+                            if (RANGES[wepType] != null && RANGES[wepType] > range) {
+                                range = RANGES[wepType]
+                            }
+                        })(k);
+
+                        // set x axis to range, in 1/15th increments
+                        var ranges = [];
+                        for (var k = 0; k <= 15; k++) (function (k) {
+                            ranges.push(range * k / 15);
+                        })(k);
+
+                        // if range changed, reload all data just to be sure
+                        if (window.ttk_dpm_chart.data.labels[15] == null || window.ttk_dpm_chart.data.labels[15] != ranges[15]) {
+                            window.ttk_dpm_chart.data.labels = ranges;
+                            ttk_dpm_reload()
+                            return;
+                        }
+
                         window.ttk_dpm_chart.update();
+
                         window.scatter_chart.data.datasets[h] = {
                             label: translate("Weapon") + (h + 1),
                             backgroundColor: [chartColors[h]],
@@ -242,6 +271,8 @@
 
                         // get data name
                         var dataName = WEAPONS[i].Weapons[j]["Name Game"];
+                        window.dataNames[h] = dataName;
+
                         if (getDataProperty([dataName], "gun__shells:array") == "-") {
                             return;
                         }
@@ -262,25 +293,28 @@
                         scatStrLen = 0;
                         for (var k = 0; k < 4; k++) (function (k) {
                             ttkStrLen += window.ttk_dpm_chart.data.datasets[k].label.length;
-                            scatStrLen += window.scatter_chart.data.datasets[h].label.length;
+                            scatStrLen += window.scatter_chart.data.datasets[k].label.length;
                         })(k);
                         for (var k = 0; k < 4; k++) (function (k) {
                             if (ttkStrLen > 80) {
                                 window.ttk_dpm_chart.data.datasets[k].label = window.ttk_dpm_chart.data.datasets[k].label.substring(0, 20);
                             }
                             if (scatStrLen > 40) {
-                                window.scatter_chart.data.datasets[h].label = window.scatter_chart.data.datasets[h].label.substring(0, 10);
+                                window.scatter_chart.data.datasets[k].label = window.scatter_chart.data.datasets[k].label.substring(0, 10);
                             }
                         })(k);
 
                         // find max range of all selected guns
                         var range = 0;
-                        var wepType = getDataProperty([dataName], "item__weapType");
                         for (var k = 0; k < 4; k++) (function (k) {
+                            var wepType = getDataProperty([window.dataNames[k]], "item__weapType");
+                            console.log(wepType)
                             if (RANGES[wepType] != null && RANGES[wepType] > range) {
                                 range = RANGES[wepType]
                             }
                         })(k);
+
+                        var wepType = getDataProperty([dataName], "item__weapType");
 
                         // create stars only on weapon change
                         if (window.refreshStars[h]) {
@@ -299,7 +333,7 @@
                         })(k);
 
                         // if range changed, reload all data just to be sure
-                        if (window.ttk_dpm_chart.data.labels[15] == null || window.ttk_dpm_chart.data.labels[15] < ranges[15]) {
+                        if (window.ttk_dpm_chart.data.labels[15] == null || window.ttk_dpm_chart.data.labels[15] != ranges[15]) {
                             window.ttk_dpm_chart.data.labels = ranges;
                             ttk_dpm_reload()
                             return;
