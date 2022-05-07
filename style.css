@@ -3,14 +3,68 @@ html, body {
     min-height: 600px;
 }
 
+.blink-bg{
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    animation: blinkingBackground 0.8s 3;
+}
+@keyframes blinkingBackground{
+    0%		{ background-color: #395353}
+    50%		{ background-color: #ef0a1a;}
+    100%	{ background-color: #395353}
+}
+
+ /* Add a black background color to the top navigation */
+ .topnav {
+    background-color: #395353;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav button {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    background-color: #395353;
+    text-align: center;
+    padding: 14px 10px;
+    text-decoration: none;
+    font-size: 17px;
+    border-color: #324343;
+    min-width: 110px;
+    border-radius: 5px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav button:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav button.active {
+    background-color: #6265c1;
+    border-color: #5255a1;
+    color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+  } 
+
 .TITLE {
     font-size: 24px;
     font-weight: bold;
     color: white;
-    background-color: #395353;
     padding: 10px;
     text-align: center;
-    min-width: 1860px;
+    position: absolute;
+    top: 2px;
+    width: 50%;
+    left: 25%;
+    text-align: center;
 }
 
 table, th, td {

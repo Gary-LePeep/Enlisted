@@ -4,9 +4,6 @@
 <head>
 
 <body style="background-color:rgb(107, 133, 133);"></body>
-<title>
-    Enlisted weapon comparison tool
-</title>
 
 <script type="text/javascript" src="./datamine/ww2_guns.blkx"></script>
 <script type="text/javascript" src="./datamine/ww2_guns_mods.blkx"></script>
@@ -15,6 +12,7 @@
 <script type="text/javascript" src="./datamine/bullets.js"></script>
 <script type="text/javascript" src="./weapon-data.js"></script>
 <script type="text/javascript" src="./translations.js"></script>
+<script type="text/javascript" src="./updates/updates.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./dist/chart.min.js"></script>
 <script src="./dist/chartjs-plugin-annotation.min.js"></script>
@@ -28,6 +26,8 @@
     }
 </script>
 
+<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script>
     // Create new css link Element
@@ -48,36 +48,50 @@
         <option> Русский </option>
     </select>
 
-
     <script>
+        var topnav = document.createElement("div");
+        topnav.className = "topnav";
+        document.getElementsByTagName('BODY')[0].appendChild(topnav);
+        var compareButton = document.createElement("button");
+        compareButton.className = "active";
+        compareButton.textContent = translate("linkWeaponCompare");
+        compareButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted" };
+        topnav.appendChild(compareButton);
+        var datamineButton = document.createElement("button");
+        datamineButton.textContent = translate("linkDatamine");
+        datamineButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/datamine" };
+        topnav.appendChild(datamineButton);
+        var updateButton = document.createElement("button");
+        updateButton.textContent = translate("linkUpdate");
+        updateButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/updates" };
+        topnav.appendChild(updateButton);
+        // warning if update was recent
+        if (wasRecent(Object.keys(UPDATES)[Object.keys(UPDATES).length - 1])) {
+            updateButton.className = "blink-bg";
+            updateButton.textContent += "⚠️";
+        }
+        topnav.appendChild(translate("language", "b", "position:absolute; top:20px; left:1700px; font-size:16px; text-align:center; color: white"));
+
         var title = translate("title", "div");
         title.className = "TITLE";
         document.getElementsByTagName('BODY')[0].appendChild(title);
-
-        title.appendChild(translate("language", "b", "position:absolute; top:20px; left:1700px; font-size:16px"));
-    </script>
-
-    <!-- Href to datamine -->
-    <script>
-        var hrefText = translate("goToDatamineText", "div", "position:absolute; top:65px; left:1440px; text-align:center");
-        document.getElementsByTagName('BODY')[0].appendChild(hrefText);
-        hrefText.append(translate("EMPTY", "p"));
-        var hrefBtn = translate("goToDatamine", "button", "width:200px; height:60px; color:white; font-size: 20px");
-        hrefBtn.style.background = "url(resources/link.png)";
-        hrefBtn.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/datamine" };
-        hrefText.appendChild(hrefBtn);
     </script>
 
     <!-- Vitality & Body armor switches -->
-    <input type="checkbox" id="vitalityCheck" onclick="vitality()" style="position:absolute; top:200px; left:860px;">
-    <input type="checkbox" id="armorCheck" onclick="bodyArmor()" style="position:absolute; top:225px; left:860px;">
-    <input type="checkbox" id="HorizRecoilCheck" onclick="horizRecoil()" style="position:absolute; top:250px; left:860px;">
-    <input type="checkbox" id="VertRecoilCheck" onclick="vertRecoil()" style="position:absolute; top:275px; left:860px;">
+    <input type="checkbox" id="stalingradMode" onclick="stalingradMode()"
+        style="position:absolute; top:165px; left:860px;">
+    <input type="checkbox" id="vitalityCheck" onclick="vitality()" style="position:absolute; top:190px; left:860px;">
+    <input type="checkbox" id="armorCheck" onclick="bodyArmor()" style="position:absolute; top:215px; left:860px;">
+    <input type="checkbox" id="HorizRecoilCheck" onclick="horizRecoil()"
+        style="position:absolute; top:240px; left:860px;">
+    <input type="checkbox" id="VertRecoilCheck" onclick="vertRecoil()"
+        style="position:absolute; top:265px; left:860px;">
     <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("vitality", "b", "position:absolute; top:200px; left:885px;"));
-        document.getElementsByTagName('BODY')[0].appendChild(translate("armor", "b", "position:absolute; top:225px; left:885px;"));
-        document.getElementsByTagName('BODY')[0].appendChild(translate("horizRecoil", "b", "position:absolute; top:250px; left:885px;"));
-        document.getElementsByTagName('BODY')[0].appendChild(translate("vertRecoil", "b", "position:absolute; top:275px; left:885px;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("stalingradMode", "b", "position:absolute; top:165px; left:885px;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("vitality", "b", "position:absolute; top:190px; left:885px;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("armor", "b", "position:absolute; top:215px; left:885px;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("horizRecoil", "b", "position:absolute; top:240px; left:885px;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("vertRecoil", "b", "position:absolute; top:265px; left:885px;"));
     </script>
 
     <script>
@@ -116,7 +130,7 @@
         roundsData.textContent = 250 - Math.round(Math.sqrt(62500 - roundsSlider.value));
         roundsLabel.appendChild(roundsData);
 
-        var scatter_dropdown_label = translate("ttk_dpm_dropdown", "b", "position:absolute; top:180px; left:1225px; width:450px");
+        var scatter_dropdown_label = translate("ttk_dpm_dropdown", "b", "position:absolute; top:200px; left:1225px; width:450px");
         document.getElementsByTagName('BODY')[0].appendChild(scatter_dropdown_label);
 
         var scatter_dropdown = document.createElement("select");
@@ -167,7 +181,7 @@
             colorButton.append(categorylist)
 
             var starsDropdownContainer = document.createElement("div");
-            starsDropdownContainer.style = "background-color: rgb(107, 133, 133); text-align: center; padding: 8px"
+            starsDropdownContainer.style = "background-color: rgb(107, 133, 133); text-align: center; position: absolute; top: 70px; left: 75px"
             colorButtonContainer.append(starsDropdownContainer);
             var starsDropdown = document.createElement("select");
             starsDropdown.className = "starsDropdown";
@@ -269,6 +283,9 @@
 
                         // get data name
                         var dataName = WEAPONS[i].Weapons[j]["Name Game"];
+                        if (window.stalingrad_mode) {
+                            dataName = "stl_" + dataName;
+                        }
                         window.dataNames[h] = dataName;
 
                         if (getDataProperty([dataName], "gun__shells:array") == "-") {
@@ -511,17 +528,23 @@
             VERT_PERK = document.getElementById("VertRecoilCheck").checked ? 0.6 : 1
             ttk_dpm_reload()
         }
+
+        function stalingradMode() {
+            window.stalingrad_mode = document.getElementById("stalingradMode").checked;
+            ttk_dpm_reload();
+        }
     </script>
 
     <br>
 
     <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("ttk_dpm_dropdown", "b"));
+        var ttk_dpm_dropdown_label = translate("ttk_dpm_dropdown", "b", "position:absolute; top:175px;");
+        document.getElementsByTagName('BODY')[0].appendChild(ttk_dpm_dropdown_label);
 
         var ttk_dpm_dropdown = document.createElement("select");
         ttk_dpm_dropdown.id = "ttk_dpm_dropdown";
         ttk_dpm_dropdown.onchange = function () { ttk_dpm_reload(); };
-        document.getElementsByTagName('BODY')[0].appendChild(ttk_dpm_dropdown);
+        ttk_dpm_dropdown_label.appendChild(ttk_dpm_dropdown);
 
         ttk_dpm_dropdown.append(translate("ttk_dpm_dropdown1", "option"));
         ttk_dpm_dropdown.append(translate("ttk_dpm_dropdown2", "option"));
@@ -531,8 +554,8 @@
 
     <br><br><br>
     <canvas id="myChart"></canvas>
-    <img src="resources/gray.jpg" style="position:absolute; top:200px; left:10px; width:800px; height:400px;">
-    <div style="position:absolute; top:200px; left:10px; width:800px; height:800px;">
+    <img src="resources/gray.jpg" style="position:absolute; top:225px; left:10px; width:800px; height:400px;">
+    <div style="position:absolute; top:225px; left:10px; width:800px; height:800px;">
         <canvas id="ttk-dpm-chart"></canvas>
 
         <script type="text/javascript">
@@ -656,8 +679,11 @@
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("footer_header", 'b'));
-        document.getElementsByTagName('BODY')[0].appendChild(translate("footer_footer", 'p'));
+        var footer = document.createElement("div");
+        footer.style = "position:absolute; top:650px; left:10px";
+        document.getElementsByTagName('BODY')[0].appendChild(footer);
+        footer.appendChild(translate("footer_header", 'b'));
+        footer.appendChild(translate("footer_footer", 'p'));
     </script>
 
     <script>

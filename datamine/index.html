@@ -4,9 +4,6 @@
 <head>
 
 <body style="background-color:rgb(107, 133, 133);"></body>
-<title>
-    Enlisted weapon comparison tool
-</title>
 
 <script type="text/javascript" src="./ww2_guns.blkx"></script>
 <script type="text/javascript" src="./ww2_guns_mods.blkx"></script>
@@ -15,6 +12,7 @@
 <script type="text/javascript" src="./bullets.js"></script>
 <script type="text/javascript" src="../weapon-data.js"></script>
 <script type="text/javascript" src="../translations.js"></script>
+<script type="text/javascript" src="../updates/updates.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../dist/chart.min.js"></script>
 <script src="../dist/chartjs-plugin-annotation.min.js"></script>
@@ -49,22 +47,33 @@
 
 
     <script>
+        console.log(document.cookie)
+        var topnav = document.createElement("div");
+        topnav.className = "topnav";
+        document.getElementsByTagName('BODY')[0].appendChild(topnav);
+        var compareButton = document.createElement("button");
+        compareButton.textContent = translate("linkWeaponCompare");
+        compareButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted" };
+        topnav.appendChild(compareButton);
+        var datamineButton = document.createElement("button");
+        datamineButton.textContent = translate("linkDatamine");
+        datamineButton.className = "active";
+        datamineButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/datamine" };
+        topnav.appendChild(datamineButton);
+        var updateButton = document.createElement("button");
+        updateButton.textContent = translate("linkUpdate");
+        updateButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/updates" };
+        topnav.appendChild(updateButton);
+        // warning if update was recent
+        if (wasRecent(Object.keys(UPDATES)[Object.keys(UPDATES).length - 1])) {
+            updateButton.className = "blink-bg";
+            updateButton.textContent += "⚠️";
+        }
+        topnav.appendChild(translate("language", "b", "position:absolute; top:20px; left:1700px; font-size:16px; text-align:center; color: white"));
+
         var title = translate("datamine", "div");
         title.className = "TITLE";
         document.getElementsByTagName('BODY')[0].appendChild(title);
-
-        title.appendChild(translate("language", "b", "position:absolute; top:20px; left:1700px; font-size:16px"));
-    </script>
-
-    <!-- Href to weapon comparison -->
-    <script>
-        var hrefText = translate("goToWepComparison", "div", "position:absolute; top:65px; left:1440px; text-align:center");
-        document.getElementsByTagName('BODY')[0].appendChild(hrefText);
-        hrefText.append(translate("EMPTY", "p"));
-        var hrefBtn = translate("goToWepComparison", "button", "width:200px; height:60px; color:white; font-size: 20px");
-        hrefBtn.style.background = "url(../resources/link.png)";
-        hrefBtn.onclick = function() { window.location = "https://gary-lepeep.github.io/Enlisted/"};
-        hrefText.appendChild(hrefBtn);
     </script>
 
     <script>
