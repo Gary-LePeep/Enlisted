@@ -7,5 +7,5 @@ function numToDate(num) {
 }
 
 function wasRecent(num) {
-    return num + 604800000 > Date.now();
+    return num < Object.keys(UPDATES)[Object.keys(UPDATES).length - 1];
 }

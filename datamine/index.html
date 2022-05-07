@@ -65,7 +65,7 @@
         updateButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/updates" };
         topnav.appendChild(updateButton);
         // warning if update was recent
-        if (wasRecent(Object.keys(UPDATES)[Object.keys(UPDATES).length - 1])) {
+        if (wasRecent(parseInt(document.cookie))) {
             updateButton.className = "blink-bg";
             updateButton.textContent += "⚠️";
         }
