@@ -99,36 +99,22 @@
         var roundsLabel = translate("roundsSlideScatter", "div", "position:absolute; top:225px; left:1225px; width:450px; text-align:center");
         document.getElementsByTagName('BODY')[0].appendChild(roundsLabel);
         var roundsSlider = document.createElement("input");
-        roundsSlider.type = "range";
-        roundsSlider.min = 1;
-        roundsSlider.max = 62500;
-        roundsSlider.value = 40000;
-        roundsSlider.step = -1;
+        roundsSlider.type = "text";
+        roundsSlider.value = 100;
         roundsSlider.id = "roundsSlideScatter";
-        roundsSlider.style = "position:absolute; top:240px; left:1225px; width:450px";
+        roundsSlider.style = "width:50px";
         roundsSlider.onchange = function () { ttk_dpm_reload(); };
-        document.getElementsByTagName('BODY')[0].appendChild(roundsSlider);
+        roundsLabel.appendChild(roundsSlider);
 
         var distanceLabel = translate("distanceSlideScatter", "div", "position:absolute; top:265px; left:1225px; width:450px; text-align:center");
         document.getElementsByTagName('BODY')[0].appendChild(distanceLabel);
         var rangeSlider = document.createElement("input");
-        rangeSlider.type = "range";
-        rangeSlider.min = 10;
-        rangeSlider.max = 300;
+        rangeSlider.type = "text";
         rangeSlider.value = 30;
-        rangeSlider.step = 10;
         rangeSlider.id = "distanceSlideScatter";
-        rangeSlider.style = "position:absolute; top:280px; left:1225px; width:450px";
+        rangeSlider.style = "width:50px";
         rangeSlider.onchange = function () { ttk_dpm_reload(); };
-        document.getElementsByTagName('BODY')[0].appendChild(rangeSlider);
-
-        var distanceData = translate("dispersionLabel", "b");
-        distanceData.textContent = rangeSlider.value + translate("meters");
-        distanceLabel.appendChild(distanceData);
-
-        var roundsData = translate("dispersionLabel", "b");
-        roundsData.textContent = 250 - Math.round(Math.sqrt(62500 - roundsSlider.value));
-        roundsLabel.appendChild(roundsData);
+        distanceLabel.appendChild(rangeSlider);
 
         var scatter_dropdown_label = translate("ttk_dpm_dropdown", "b", "position:absolute; top:200px; left:1225px; width:450px");
         document.getElementsByTagName('BODY')[0].appendChild(scatter_dropdown_label);
@@ -181,7 +167,7 @@
             colorButton.append(categorylist)
 
             var starsDropdownContainer = document.createElement("div");
-            starsDropdownContainer.style = "background-color: rgb(107, 133, 133); text-align: center; position: absolute; top: 70px; left: 75px"
+            starsDropdownContainer.style = "background-color: rgb(107, 133, 133); text-align: center; position: absolute; top: 65px; left: 75px"
             colorButtonContainer.append(starsDropdownContainer);
             var starsDropdown = document.createElement("select");
             starsDropdown.className = "starsDropdown";
@@ -274,10 +260,6 @@
                     weaponButton.tagName = weaponButtonText.text;
 
                     weaponButton.onclick = function () {
-                        // Scatter chart sliders
-                        distanceData.textContent = rangeSlider.value + translate("meters");
-                        roundsData.textContent = 250 - Math.round(Math.sqrt(62500 - roundsSlider.value));
-
                         // set color button name to selected weapon
                         colorButtonText.text = weaponButtonText.text
 
@@ -393,78 +375,91 @@
                         // update data
                         show_death_threshold = false;
                         var data = [];
-                        if (ammoDataFile == null) {
-                            return;
-                        }
-                        var hitPower = getAmmoProperty(ammoDataFile, "hitpower")
-                        if (hitPower == null) {
-                            return;
-                        }
-                        var hitPowerString = "";
-                        for (var k = 0; k < Object.keys(hitPower).length; k++) {
-                            hitPowerString += Object.keys(hitPower)[k].replace("HitPower", " ");
-                            hitPowerString += hitPower[Object.keys(hitPower)[k]][0];
-                        }
-                        var damageCurve = DAMAGES[hitPowerString];
 
-                        var rpm = getDataProperty([dataName], "gun__shotFreq");
-                        if (rpm != "-") {
-                            var lowRPM = getDataProperty([dataName], "gun__shotFreqRndK");
-                            var highRPM = (rpm * 60 * rpmStar)
-                            lowRPM = highRPM / (1 + lowRPM)
-                            rpm = toPlace((highRPM + lowRPM) / 2, 2);
-                        }
-
-                        // ttk chart
-                        for (var k = 0; k <= 15; k++) (function (k) {
-                            var damage_at_dist = ((damageCurve.d + ((damageCurve.a - damageCurve.d) / (1 + ((Math.max(ranges[k], 10) / damageCurve.c) ** damageCurve.b)))) * ARMOR_MULT * getAmmoProperty(ammoDataFile, "hitPowerMult") * damageStar);
-                            damage_at_dist = toPlace(damage_at_dist / 10, 2);
-                            damage_at_dist = Math.max(damage_at_dist, 0.1);
-                            var shots_to_kill = Math.ceil(MAX_DMG / damage_at_dist);
-                            if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown1")) {
-                                show_death_threshold = true;
-                                data.push(damage_at_dist);
-                            }
-                            if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown3")) {
-                                data.push(shots_to_kill)
-                            }
-                            if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown4")) {
-                                var time_to_kill = (shots_to_kill - 1) * (60 / rpm)
-                                data.push(time_to_kill)
-                            }
-                            if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown2")) {
-                                data.push(rpm * damage_at_dist);
-                            }
-                        })(k);
-
-                        // scatter damage
-                        var scatterData = [];
-                        var dispersion = getDataProperty([dataName], "gun_spread__maxDeltaAngle") * dispersionStar;
-                        var distance = rangeSlider.value;
-                        var recoilTotal = getDataProperty([dataName], "gun__recoilAmount");
-                        var recoilDir = getDataProperty([dataName], "gun__recoilDirAmount");
-                        var recoilVertData = recoilTotal * 1000 * recoilDir * recoilVertStar;
-                        var recoilHorizData = recoilTotal * 1000 * (1 - recoilDir) * recoilHorizStar;
-                        if (document.getElementById('scatter_dropdown').value == translate("scatter_dropdown1")) {
-                            for (var k = 1; k <= 250 - Math.round(Math.sqrt(62500 - roundsSlider.value)); k++) (function (k) {
-                                var radius = (Math.cbrt(1000 * (dispersion ** 2.5)) - Math.cbrt(Math.random() * 1000 * (dispersion ** 2.5))) * distance / 28;
-                                var theta = Math.random() * 6.28318530718;
-                                scatterData.push([radius * Math.cos(theta), radius * Math.sin(theta)]);
-                            })(k);
-                        }
-                        if (document.getElementById('scatter_dropdown').value == translate("scatter_dropdown2")) {
-                            for (var k = 1; k <= 250 - Math.round(Math.sqrt(62500 - roundsSlider.value)); k++) (function (k) {
-                                var radius = recoilHorizData * ((Math.random() / 2.5) + 0.8) * distance / 100;
-                                var offset = recoilVertData * distance / 100;
-                                var horizOffset = 0;
-                                // some guns seemingly just have horizontal offset instead, haven't figured out why yet
-                                if (["charlton_automatic_rifle_gun", "mg_13_gun", "mg_34_gun", "mg_42_handheld_gun"].includes(dataName)) {
-                                    horizOffset = offset;
-                                    offset = 0;
+                        // if flamethrower, skip everything else and just do this
+                        if (getDataProperty([dataName], "flamethrower__streamDamagePerSecond") != "-") {
+                            for (var k = 0; k <= 15; k++) (function (k) {
+                                var damage_at_dist = ranges[k] > getDataProperty([dataName], "flamethrower__maxFlameLength") ? 0 : getDataProperty([dataName], "flamethrower__streamDamagePerSecond");
+                                if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown1")) {
+                                    show_death_threshold = true;
+                                    data.push(damage_at_dist);
                                 }
-                                var theta = Math.random() * 6.28318530718;
-                                scatterData.push([((radius * Math.cos(theta)) + horizOffset) * HORIZ_PERK, ((radius * Math.sin(theta)) + offset) * VERT_PERK]);
                             })(k);
+                        }
+                        else {
+                            if (ammoDataFile == null) {
+                                return;
+                            }
+                            var hitPower = getAmmoProperty(ammoDataFile, "hitpower")
+                            if (hitPower == null) {
+                                return;
+                            }
+                            var hitPowerString = "";
+                            for (var k = 0; k < Object.keys(hitPower).length; k++) {
+                                hitPowerString += Object.keys(hitPower)[k].replace("HitPower", " ");
+                                hitPowerString += hitPower[Object.keys(hitPower)[k]][0];
+                            }
+                            var damageCurve = DAMAGES[hitPowerString];
+
+                            var rpm = getDataProperty([dataName], "gun__shotFreq");
+                            if (rpm != "-") {
+                                var lowRPM = getDataProperty([dataName], "gun__shotFreqRndK");
+                                var highRPM = (rpm * 60 * rpmStar)
+                                lowRPM = highRPM / (1 + lowRPM)
+                                rpm = toPlace((highRPM + lowRPM) / 2, 2);
+                            }
+
+                            // ttk chart
+                            for (var k = 0; k <= 15; k++) (function (k) {
+                                var damage_at_dist = ((damageCurve.d + ((damageCurve.a - damageCurve.d) / (1 + ((Math.max(ranges[k], 10) / damageCurve.c) ** damageCurve.b)))) * ARMOR_MULT * getAmmoProperty(ammoDataFile, "hitPowerMult") * damageStar);
+                                damage_at_dist = toPlace(damage_at_dist / 10, 2);
+                                damage_at_dist = Math.max(damage_at_dist, 0.1);
+                                var shots_to_kill = Math.ceil(MAX_DMG / damage_at_dist);
+                                if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown1")) {
+                                    show_death_threshold = true;
+                                    data.push(damage_at_dist);
+                                }
+                                if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown3")) {
+                                    data.push(shots_to_kill)
+                                }
+                                if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown4")) {
+                                    var time_to_kill = (shots_to_kill - 1) * (60 / rpm)
+                                    data.push(time_to_kill)
+                                }
+                                if (document.getElementById('ttk_dpm_dropdown').value == translate("ttk_dpm_dropdown2")) {
+                                    data.push(rpm * damage_at_dist);
+                                }
+                            })(k);
+
+                            // scatter damage
+                            var scatterData = [];
+                            var dispersion = getDataProperty([dataName], "gun_spread__maxDeltaAngle") * dispersionStar;
+                            var distance = rangeSlider.value;
+                            var recoilTotal = getDataProperty([dataName], "gun__recoilAmount");
+                            var recoilDir = getDataProperty([dataName], "gun__recoilDirAmount");
+                            var recoilVertData = recoilTotal * 1000 * recoilDir * recoilVertStar;
+                            var recoilHorizData = recoilTotal * 1000 * (1 - recoilDir) * recoilHorizStar;
+                            if (document.getElementById('scatter_dropdown').value == translate("scatter_dropdown1")) {
+                                for (var k = 1; k <= roundsSlider.value; k++) (function (k) {
+                                    var radius = (Math.cbrt(1000 * (dispersion ** 2.5)) - Math.cbrt(Math.random() * 1000 * (dispersion ** 2.5))) * distance / 28;
+                                    var theta = Math.random() * 6.28318530718;
+                                    scatterData.push([radius * Math.cos(theta), radius * Math.sin(theta)]);
+                                })(k);
+                            }
+                            if (document.getElementById('scatter_dropdown').value == translate("scatter_dropdown2")) {
+                                for (var k = 1; k <= 250 - Math.round(Math.sqrt(62500 - roundsSlider.value)); k++) (function (k) {
+                                    var radius = recoilHorizData * ((Math.random() / 2.5) + 0.8) * distance / 100;
+                                    var offset = recoilVertData * distance / 100;
+                                    var horizOffset = 0;
+                                    // some guns seemingly just have horizontal offset instead, haven't figured out why yet
+                                    if (["charlton_automatic_rifle_gun", "mg_13_gun", "mg_34_gun", "mg_42_handheld_gun"].includes(dataName)) {
+                                        horizOffset = offset;
+                                        offset = 0;
+                                    }
+                                    var theta = Math.random() * 6.28318530718;
+                                    scatterData.push([((radius * Math.cos(theta)) + horizOffset) * HORIZ_PERK, ((radius * Math.sin(theta)) + offset) * VERT_PERK]);
+                                })(k);
+                            }
                         }
 
                         // set data

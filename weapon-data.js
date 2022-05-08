@@ -19,11 +19,6 @@ var WEAPONS = [
                 "Name Game": "fedorov_avtomat_gun"
             },
             {
-                "Name EN": "Kiraly 39M",
-                "Name RU": "Kiraly 39M",
-                "Name Game": "danuvia_39_gun"
-            },
-            {
                 "Name EN": "The Hyde Model 35",
                 "Name RU": "The Hyde Model 35",
                 "Name Game": "hyde_model_35_gun"
@@ -233,6 +228,11 @@ var WEAPONS = [
                 "Name EN": "FNAB-43",
                 "Name RU": "FNAB-43",
                 "Name Game": "fnab_43_gun"
+            },
+            {
+                "Name EN": "Kiraly 39M",
+                "Name RU": "Kiraly 39M",
+                "Name Game": "danuvia_39_gun"
             },
             {
                 "Name EN": "M30 Luftwaffe Drilling",
@@ -1187,7 +1187,7 @@ var STARUPGRADES = {
 
 var RANGES = {
     "assault_rifle": 300,
-    "flamethrower": 75,
+    "flamethrower": 37.5,
     "launcher": 75,
     "machine_gun": 300,
     "melee": 15,
