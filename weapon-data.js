@@ -1298,6 +1298,51 @@ ALLGUNSMODSDATA = Object.assign({}, COMMONGUNSMODSDATA);
 ALLITEMSDATA = Object.assign({}, COMMONITEMSDATA, TUNISIAITEMSDATA, STALINGRADITEMSDATA);
 
 function getDataProperty(gun, property) {
+    // only use overrides if base gun is in overrides
+    if (OVERRIDEGUNSDATA[gun[0]] != null) {
+        return getDataPropertyWithOverrides(gun, property);
+    }
+    return getDataPropertyWithoutOverrides(gun, property);
+}
+
+function getDataPropertyWithoutOverrides(gun, property) {
+    // then check base file
+    if (ALLGUNSDATA[gun[0]] != null) {
+        if (ALLGUNSDATA[gun[0]][property] != null) {
+            return ALLGUNSDATA[gun[0]][property];
+        }
+        if (ALLGUNSDATA[gun[0]]["_extends"] != null) {
+            if (ALLGUNSDATA[gun[0]]["_extends"].startsWith("stl_")) {
+                gun.splice(1, 0, ALLGUNSDATA[gun[0]]["_extends"]);
+            }
+            else {
+                gun.push(ALLGUNSDATA[gun[0]]["_extends"]);
+            }
+        }
+        for (var k = 0; k < ALLGUNSDATA[gun[0]].length; k++) {
+            if (ALLGUNSDATA[gun[0]][k].hasOwnProperty(property)) {
+                return ALLGUNSDATA[gun[0]][k][property];
+            }
+            if (ALLGUNSDATA[gun[0]][k].hasOwnProperty("_extends")) {
+                if (ALLGUNSDATA[gun[0]][k]["_extends"].startsWith("stl_")) {
+                    gun.splice(1, 0, ALLGUNSDATA[gun[0]][k]["_extends"]);
+                }
+                else {
+                    gun.push(ALLGUNSDATA[gun[0]][k]["_extends"]);
+                }
+            }
+        }
+    }
+    // not found here, recurse with extensions
+    if (gun.length > 0) {
+        gun.shift();
+        return getDataPropertyWithoutOverrides(gun, property);
+    }
+    // not found at all
+    return "-";
+}
+
+function getDataPropertyWithOverrides(gun, property) {
     // first check overrides
     if (OVERRIDEGUNSDATA[gun[0]] != null) {
         if (OVERRIDEGUNSDATA[gun[0]][property] != null) {
@@ -1343,7 +1388,7 @@ function getDataProperty(gun, property) {
     // not found here, recurse with extensions
     if (gun.length > 0) {
         gun.shift();
-        return getDataProperty(gun, property);
+        return getDataPropertyWithOverrides(gun, property);
     }
     // not found at all
     return "-";
