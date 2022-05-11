@@ -595,7 +595,7 @@ var WEAPONS = [
             {
                 "Name EN": "Kar98k",
                 "Name RU": "Kar98k",
-                "Name Game": "mauser_98k_gun"
+                "Name Game": "kar98k_wartime_production_gun"
             },
             {
                 "Name EN": "Kar98k with GGP/40 grenade launcher",
@@ -1298,11 +1298,26 @@ ALLGUNSMODSDATA = Object.assign({}, COMMONGUNSMODSDATA);
 ALLITEMSDATA = Object.assign({}, COMMONITEMSDATA, TUNISIAITEMSDATA, STALINGRADITEMSDATA);
 
 function getDataProperty(gun, property) {
-    // only use overrides if base gun is in overrides
-    if (OVERRIDEGUNSDATA[gun[0]] != null) {
-        return getDataPropertyWithOverrides(gun, property);
+    // Stalingrad does weird things to guns
+    if (gun[0].startsWith("stl_")) {
+        // for rpm return post-nerf rpm
+        if (property == "gun__shotFreq") {
+            // except for zh-29, which has pre-nerf
+            if (gun[0] == "stl_zh_29_gun") {
+                return getDataPropertyWithoutOverrides(gun, property);
+            }
+            // except for kar98k, which uses its parent gun's fire rate
+            if (gun[0] == "stl_kar98k_wartime_production_gun") {
+                gun[0] = gun[0].substring(4);
+            }
+            return getDataPropertyWithOverrides(gun, property);
+        }
+        // for dispersion, return pre-nerf dispersion
+        if (property == "gun_spread__maxDeltaAngle") {
+            return getDataPropertyWithoutOverrides(gun, property);
+        }
     }
-    return getDataPropertyWithoutOverrides(gun, property);
+    return getDataPropertyWithOverrides(gun, property);
 }
 
 function getDataPropertyWithoutOverrides(gun, property) {
