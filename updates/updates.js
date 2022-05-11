@@ -5,7 +5,7 @@ var UPDATES = {
         "Smoke grenades start after 2s instead of 3, and fade 6x slower",
         "Grenade launchers reload and put on/take off 0.5-1s slower across the board",
         "Grenade launcher grenade damage reduced from 50 to 20"
-    ]
+    ],
 }
 
 function numToDate(num) {
