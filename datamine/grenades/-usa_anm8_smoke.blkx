@@ -1,0 +1,30 @@
+var _usa_anm8_smoke = 
+{
+  "mass": 0.6,
+  "momentOfInertia": [0.04,0.008,0.04],
+  "caliber": 0.04,
+  "speed": 18.5,
+  "speedPitch": 5.0,
+  "maxDistance": 6.0,
+  "physMat": "walkRay",
+  "useFutureContacts": true,
+  "logCCD": false,
+  "noSleepAtTheSlopeCos": 0.766,
+  "entityTemplate": "anm8_smoke_grenade",
+  "entityPhysTemplate": "anm8_smoke_grenade_phys",
+  "collisionResource": {
+    "props": {
+      "volumeBox_1": true
+    }
+  },
+  "ccdSpheres": {
+    "ccd": [0.0,0.02,0.0,0.03]
+  },
+  "visual": {
+    "template": "anm8_smoke_grenade_item+item_in_world"
+  },
+  "detonation": {
+    "onHit": false,
+    "timer": 32.0
+  }
+}

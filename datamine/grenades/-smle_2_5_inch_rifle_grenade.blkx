@@ -1,0 +1,59 @@
+var _smle_2_5_inch_rifle_grenade = 
+{
+  "mass": 0.37,
+  "momentOfInertia": [0.04,0.008,0.04],
+  "caliber": 0.04,
+  "speed": 54.0,
+  "speedPitch": 3.0,
+  "maxDistance": 6.0,
+  "physMat": "grenadeRay",
+  "useFutureContacts": true,
+  "frictionGround": 0.5,
+  "bullets": 1,
+  "logCCD": false,
+  "entityTemplate": "smle_2_5_inch_rifle_grenade_phys",
+  "entityPhysTemplate": "smle_2_5_inch_rifle_grenade_phys",
+  "explosiveType": "tnt",
+  "explosiveMass": 0.05,
+  "visual": {
+    "template": "smle_2_5_inch_rifle_grenade_item+item_in_world"
+  },
+  "collisionResource": {
+    "props": {
+      "volumeBox_3": "box"
+    }
+  },
+  "ccdSpheres": [
+    {
+      "ccd": [0.05,0.0,0.0,0.015]
+    },
+    {
+      "ccd": [0.2,0.0,0.0,0.015]
+    },
+    {
+      "ccd": [-0.05,0.0,0.0,0.015]
+    }
+  ],
+  "splashDamage": {
+    "radius": [1.0,10.0],
+    "penetration": [15.0,2.0],
+    "damage": 20.0,
+    "dmgOffset": [0.0,0.25,0.0]
+  },
+  "explFx": {
+    "fxScale": [0.8,0.9],
+    "effectTemplName": "explosion_effect_small+disable_effect_sfx"
+  },
+  "explSound": {
+    "explSoundPath": "impact/grenade"
+  },
+  "damage": {
+    "explosive": {
+      "strengthEquivalent": 1.0,
+      "brisanceEquivalent": 1.0
+    }
+  },
+  "solver": {
+    "energyConservation": 0.85
+  }
+}

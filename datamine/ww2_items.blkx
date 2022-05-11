@@ -1687,6 +1687,17 @@ var COMMONITEMSDATA =
       "collres__res": "pps_42_collision"
     }
   ],
+  "pps_42_red_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "pps_42_red"
+    },
+    {
+      "collres__res": "pps_42_collision"
+    }
+  ],
   "pps_43_gun_item": [
     {
       "_extends": "item_gun"
@@ -11758,6 +11769,26 @@ var COMMONITEMSDATA =
     },
     {
       "gun__crawlRecoilMult": 0.8
+    }
+  ],
+  "stl_pps_42_red": {
+    "_extends": "stl_pps_42",
+    "item__name": "items/pps_42_red",
+    "gun__blk": "content/e_ww2_common/gamedata/weapons/pps_42_red.blk",
+    "item__proto": "content/e_ww2_common/gamedata/weapons/pps_42_red.blk",
+    "item__weapTemplate": "stl_pps_42_red_gun",
+    "item__template": "stl_pps_42_red_gun_item",
+    "animchar__objTexReplace:object": {
+      "pps_42_main_tex_d*": "pps_42_main_red_tex_d*",
+      "pps_42_main_tex_n* ": "pps_42_main_red_tex_n*"
+    }
+  },
+  "stl_pps_42_red_gun": [
+    {
+      "_extends": "stl_pps_42_gun"
+    },
+    {
+      "_extends": "stl_pps_42_red"
     }
   ],
   "stl_ppsh_41": [

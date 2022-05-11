@@ -1,0 +1,78 @@
+var _20x110mm_ball_mk1_bullet = 
+{
+  "mass": 0.125,
+  "caliber": 0.02,
+  "speed": 868.0,
+  "maxDistance": 2000.0,
+  "normalizationPreset": "default",
+  "modelName": "tank_bullet_ball",
+  "ricochetPreset": "default",
+  "stabilityThreshold": 0.05,
+  "hitPowerMult": 7.0,
+  "stabilityCaliberToArmorThreshold": 5.0,
+  "recoilMultiplier": 0.3,
+  "stabilityReductionAfterPenetration": 0.3,
+  "effectiveDistance": 700.0,
+  "slopeEffectPreset": "ap",
+  "relativeVelArmorShift": [200.0,1000.0],
+  "explosionEffect": "hit_19_27mm_metal_ap",
+  "groundCollisionEffect": "hit_19_27mm_dirt_ap",
+  "ricochetEffect": "hit_19_27mm_metal_ap",
+  "waterCollisionEffect": "hit_19_27mm_water",
+  "stabilityRicochetModifier": [
+    {
+      "mod1": [0.0,0.05]
+    },
+    {
+      "mod2": [20.0,0.1]
+    },
+    {
+      "mod3": [30.0,0.2]
+    },
+    {
+      "mod3": [45.0,0.3]
+    }
+  ],
+  "hitpower": {
+    "HitPower10m": [1.0,10.0],
+    "HitPower1000m": [0.85,1000.0],
+    "HitPower1500m": [0.75,1500.0],
+    "HitPower2000m": [0.3,2000.0]
+  },
+  "armorpower": {
+    "ArmorPower0m": [17.0,10.0],
+    "ArmorPower100m": [15.0,100.0],
+    "ArmorPower500m": [11.0,500.0],
+    "ArmorPower1000m": [7.0,1000.0],
+    "ArmorPower1500m": [5.0,1500.0],
+    "ArmorPower1950m": [1.0,1950.0],
+    "ArmorPower2000m": [0.0,2000.0]
+  },
+  "visual": {
+    "range_percent_of_ammo": [100.0,0.0],
+    "traceFreq": 1,
+    "tracer": "noColor"
+  },
+  "hitFx": {
+    "steel": {
+      "fx": "hit_19_27mm_metal_ap",
+      "fxScale": [1.0,1.0]
+    },
+    "wood": {
+      "fx": "hit_19_27mm_wood_ap",
+      "fxScale": [1.0,1.0]
+    },
+    "glass": {
+      "fx": "hit_19_27mm_metal_ap",
+      "fxScale": [1.0,1.0]
+    },
+    "stone": {
+      "fx": "hit_19_27mm_stone_ap",
+      "fxScale": [1.0,1.0]
+    }
+  },
+  "tracer": {
+    "headColor": "#00000000",
+    "smokeColor": "#00000000"
+  }
+}

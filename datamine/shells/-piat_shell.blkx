@@ -1,0 +1,121 @@
+var _piat_shell = 
+{
+  "mass": 3.3,
+  "cartridgeMass": 3.3,
+  "momentOfInertia": [0.04,0.008,0.04],
+  "caliber": 0.088,
+  "speed": 52.5,
+  "physMat": "bulletRay",
+  "useFutureContacts": true,
+  "logCCD": false,
+  "explodeRadius": [1.0,1.3],
+  "explodeHitPower": 18.0,
+  "entityTemplate": "piat_shell_phys",
+  "entityPhysTemplate": "piat_shell_phys",
+  "bullets": 1,
+  "normalizationPreset": "heat",
+  "ricochetPreset": "he",
+  "slopeEffectPreset": "ap",
+  "secondaryShattersPreset": "ap",
+  "cumulativeSecondaryShattersPreset": "heat_fs",
+  "fresnel": [0.23,0.1,2.0],
+  "stabilityThreshold": 0.4,
+  "stabilityCaliberToArmorThreshold": 10.0,
+  "stabilityReductionAfterRicochet": 0.45,
+  "stabilityReductionAfterPenetration": 1.0,
+  "explodeOnRendinst": true,
+  "collisionResource": {
+    "props": {
+      "volumeBox_1": true
+    }
+  },
+  "ccdSpheres": {
+    "ccd": [0.0,0.0,0.0,0.044]
+  },
+  "visual": {
+    "template": "panzerfaust_100_shell_item+item_in_world"
+  },
+  "splashDamage": {
+    "radius": [1.0,4.5],
+    "penetration": [10.0,10.0],
+    "damage": 10.0,
+    "dmgOffset": [0.0,0.25,0.0]
+  },
+  "explFx": {
+    "fxScale": [2.0,2.1],
+    "effectTemplName": "explosion_effect_large+disable_effect_sfx"
+  },
+  "explSound": {
+    "explSoundPath": "impact/grenade"
+  },
+  "armorpower": {
+    "ArmorPower0m": [2.0,10.0],
+    "ArmorPower7000m": [1.0,7000.0]
+  },
+  "cumulativeDamage": {
+    "armorPower": 80.0,
+    "distance": 3.0,
+    "damage": 100.0,
+    "onHitChanceMultFire": 15.0
+  },
+  "damage": {
+    "cumulative": {
+      "penetration": 220.0,
+      "damage": 150.0,
+      "distance": 2.2,
+      "onHitChanceMultFire": 15.0,
+      "damageType": "cumulative"
+    },
+    "splash": {
+      "radius": [1.0,7.0],
+      "penetration": [10.0,10.0],
+      "damage": 360.0,
+      "damageType": "explosion"
+    },
+    "secondaryShatter": {
+      "residualArmorPenetrationToShatterCountMult": [20.0,100.0,0.5,1.0],
+      "residualArmorPenetrationToShatterPenetrationMult": [20.0,100.0,0.5,1.0],
+      "residualArmorPenetrationToShatterDamageMult": [20.0,100.0,0.4,1.0],
+      "caliberToArmorToShatterCountMult": [0.5,1.0,0.5,1.0],
+      "damageType": "secondaryShatter",
+      "section0": {
+        "angles": [0.0,10.0],
+        "shatter": {
+          "distance": 5.0,
+          "size": 0.05,
+          "count": 8,
+          "penetration": [11.0,8.0],
+          "damage": [20.0,15.0],
+          "onHitChanceMultFire": 1.3
+        }
+      },
+      "section1": {
+        "angles": [0.0,25.0],
+        "shatter": {
+          "distance": 2.5,
+          "size": 0.025,
+          "count": 20,
+          "penetration": [7.0,5.0],
+          "damage": [15.0,12.0],
+          "onHitChanceMultFire": 1.0
+        }
+      },
+      "section2": {
+        "angles": [0.0,40.0],
+        "shatter": {
+          "size": 0.01,
+          "distance": 1.5,
+          "count": 40,
+          "penetration": [4.0,3.0],
+          "damage": [8.0,6.0],
+          "onHitChanceMultFire": 1.0
+        }
+      }
+    }
+  },
+  "stabilityRicochetModifier": {
+    "mod1": [0.0,0.5],
+    "mod2": [20.0,0.6],
+    "mod3": [30.0,1.0]
+  }
+}

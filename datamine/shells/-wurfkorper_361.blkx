@@ -1,0 +1,101 @@
+var _wurfkorper_361 = 
+[
+  {
+    "mass": 2.3
+  },
+  {
+    "momentOfInertia": [0.04,0.008,0.04]
+  },
+  {
+    "caliber": 0.06
+  },
+  {
+    "speed": 20.0
+  },
+  {
+    "physMat": "bulletRay"
+  },
+  {
+    "useFutureContacts": true
+  },
+  {
+    "logCCD": false
+  },
+  {
+    "logCCD": false
+  },
+  {
+    "bullets": 1
+  },
+  {
+    "frictionGround": 2.0
+  },
+  {
+    "entityTemplate": "wurfkorper_361_phys"
+  },
+  {
+    "entityPhysTemplate": "wurfkorper_361_phys"
+  },
+  {
+    "explosiveType": "tnt"
+  },
+  {
+    "explosiveMass": 0.112
+  },
+  {
+    "visual": {
+      "template": "wurfkorper_361_item+item_in_world"
+    }
+  },
+  {
+    "collisionResource": {
+      "props": {
+        "volumeBox_1": true,
+        "volumeBox_2": true
+      }
+    }
+  },
+  {
+    "ccdSpheres": {
+      "ccd": [0.0,0.02,0.0,0.03]
+    }
+  },
+  {
+    "detonation": {
+      "onHit": false,
+      "timer": 4.5
+    }
+  },
+  {
+    "splashDamage": {
+      "radius": [1.0,7.0],
+      "penetration": [15.0,2.0],
+      "damage": 50.0,
+      "dmgOffset": [0.0,0.25,0.0]
+    }
+  },
+  {
+    "explFx": {
+      "fxScale": [0.8,0.9],
+      "effectTemplName": "explosion_effect_small+disable_effect_sfx"
+    }
+  },
+  {
+    "explSound": {
+      "explSoundPath": "impact/grenade"
+    }
+  },
+  {
+    "damage": {
+      "explosive": {
+        "strengthEquivalent": 1.0,
+        "brisanceEquivalent": 1.0
+      }
+    }
+  },
+  {
+    "solver": {
+      "energyConservation": 0.85
+    }
+  }
+]

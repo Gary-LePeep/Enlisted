@@ -1,0 +1,97 @@
+var _wurfgranate_326 = 
+[
+  {
+    "mass": 0.1
+  },
+  {
+    "momentOfInertia": [0.04,0.008,0.04]
+  },
+  {
+    "caliber": 0.026
+  },
+  {
+    "speed": 20.0
+  },
+  {
+    "physMat": "bulletRay"
+  },
+  {
+    "useFutureContacts": true
+  },
+  {
+    "logCCD": false
+  },
+  {
+    "logCCD": false
+  },
+  {
+    "bullets": 1
+  },
+  {
+    "entityTemplate": "wurfgranate_326_phys"
+  },
+  {
+    "entityPhysTemplate": "wurfgranate_326_phys"
+  },
+  {
+    "explosiveType": "tnt"
+  },
+  {
+    "explosiveMass": 0.007
+  },
+  {
+    "visual": {
+      "template": "wurfgranate_326_item+item_in_world"
+    }
+  },
+  {
+    "collisionResource": {
+      "props": {
+        "volumeBox_1": true
+      }
+    }
+  },
+  {
+    "ccdSpheres": {
+      "ccd": [0.0,0.02,0.0,0.03]
+    }
+  },
+  {
+    "detonation": {
+      "onHit": false,
+      "timer": 4.5
+    }
+  },
+  {
+    "splashDamage": {
+      "radius": [1.0,3.0],
+      "penetration": [15.0,2.0],
+      "damage": 25.0,
+      "dmgOffset": [0.0,0.25,0.0]
+    }
+  },
+  {
+    "explFx": {
+      "fxScale": [0.8,0.9],
+      "effectTemplName": "explosion_effect_small+disable_effect_sfx"
+    }
+  },
+  {
+    "explSound": {
+      "explSoundPath": "impact/grenade"
+    }
+  },
+  {
+    "damage": {
+      "explosive": {
+        "strengthEquivalent": 1.0,
+        "brisanceEquivalent": 1.0
+      }
+    }
+  },
+  {
+    "solver": {
+      "energyConservation": 0.85
+    }
+  }
+]

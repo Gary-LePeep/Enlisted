@@ -1,0 +1,37 @@
+var _signal_flare = 
+{
+  "mass": 0.6,
+  "momentOfInertia": [0.04,0.008,0.04],
+  "caliber": 0.04,
+  "speed": 18.5,
+  "speedPitch": 5.0,
+  "maxDistance": 5.0,
+  "physMat": "walkRay",
+  "useFutureContacts": true,
+  "logCCD": false,
+  "entityTemplate": "signal_flare",
+  "entityPhysTemplate": "signal_flare_phys",
+  "collisionResource": {
+    "props": {
+      "flare_col": true
+    }
+  },
+  "ccdSpheres": [
+    {
+      "ccd": [0.0,0.05,0.0,0.015]
+    },
+    {
+      "ccd": [0.0,0.2,0.0,0.015]
+    },
+    {
+      "ccd": [0.0,-0.05,0.0,0.015]
+    }
+  ],
+  "visual": {
+    "template": "signal_flare_item+item_in_world"
+  },
+  "detonation": {
+    "onHit": false,
+    "timer": 180.0
+  }
+}

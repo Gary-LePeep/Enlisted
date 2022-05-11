@@ -10620,6 +10620,26 @@ var COMMONGUNSDATA =
       }
     }
   ],
+  "pps_42_red": {
+    "_extends": "pps_42",
+    "item__name": "items/pps_42_red",
+    "gun__blk": "content/e_ww2_common/gamedata/weapons/pps_42_red.blk",
+    "item__proto": "content/e_ww2_common/gamedata/weapons/pps_42_red.blk",
+    "item__weapTemplate": "pps_42_red_gun",
+    "item__template": "pps_42_red_gun_item",
+    "animchar__objTexReplace:object": {
+      "pps_42_main_tex_d*": "pps_42_main_red_tex_d*",
+      "pps_42_main_tex_n* ": "pps_42_main_red_tex_n*"
+    }
+  },
+  "pps_42_red_gun": [
+    {
+      "_extends": "pps_42_gun"
+    },
+    {
+      "_extends": "pps_42_red"
+    }
+  ],
   "pps_43": [
     {
       "_extends": "main_weap_slots"
@@ -14025,13 +14045,13 @@ var COMMONGUNSDATA =
       "effect__scale": 0.1
     },
     {
-      "smokeFadeTime": 6.0
+      "smokeFadeTime": 1.0
     },
     {
-      "smokeStartTime": 3.0
+      "smokeStartTime": 2.0
     },
     {
-      "smokeFadeScale": 0.1
+      "smokeFadeScale": 0.9
     },
     {
       "shell__rethrowTime": 180.0
@@ -27149,13 +27169,13 @@ var COMMONGUNSDATA =
       "effect__scale": 1.0
     },
     {
-      "smokeFadeTime": 6.0
+      "smokeFadeTime": 1.0
     },
     {
-      "smokeStartTime": 3.0
+      "smokeStartTime": 2.0
     },
     {
-      "smokeFadeScale": 1.0
+      "smokeFadeScale": 0.9
     },
     {
       "shell__rethrowTime": 180.0
@@ -46326,13 +46346,13 @@ var COMMONGUNSDATA =
       "effect__scale": 0.1
     },
     {
-      "smokeFadeTime": 6.0
+      "smokeFadeTime": 1.0
     },
     {
-      "smokeStartTime": 3.0
+      "smokeStartTime": 2.0
     },
     {
-      "smokeFadeScale": 0.1
+      "smokeFadeScale": 0.9
     },
     {
       "shell__rethrowTime": 180.0
@@ -46496,13 +46516,13 @@ var COMMONGUNSDATA =
       "effect__scale": 1.0
     },
     {
-      "smokeFadeTime": 6.0
+      "smokeFadeTime": 1.0
     },
     {
-      "smokeStartTime": 3.0
+      "smokeStartTime": 2.0
     },
     {
-      "smokeFadeScale": 1.0
+      "smokeFadeScale": 0.9
     },
     {
       "shell__rethrowTime": 180.0
@@ -54170,14 +54190,14 @@ var COMMONGUNSDATA =
     "gun_deviation__extraDeviationTau": 0.15,
     "gun_deviation__maxDeviation": 15.0,
     "gun__length": 0.4,
-    "gun__reloadTime": 2.0,
+    "gun__reloadTime": 2.7,
     "gun_shell_ejection__timeMult": 0.35,
     "gun__recoilAmount": 0.2,
     "gun__recoilDirAmount": 0.9,
     "gun__recoilDir": 0.0,
     "gun__visualRecoilMult": 1.0,
-    "weapon_mod__activateTime": 1.9,
-    "weapon_mod__deactivateTime": 1.9,
+    "weapon_mod__activateTime": 2.6,
+    "weapon_mod__deactivateTime": 2.6,
     "gunAttachable:tag": [],
     "gun__ammoHolders:array": {
       "ammo_holder__templateName": "smle_2_5_inch_rifle_grenade_item",
@@ -55800,6 +55820,26 @@ var COMMONGUNSDATA =
     },
     {
       "gun__crawlRecoilMult": 0.8
+    }
+  ],
+  "stl_pps_42_red": {
+    "_extends": "stl_pps_42",
+    "item__name": "items/pps_42_red",
+    "gun__blk": "content/e_ww2_common/gamedata/weapons/pps_42_red.blk",
+    "item__proto": "content/e_ww2_common/gamedata/weapons/pps_42_red.blk",
+    "item__weapTemplate": "stl_pps_42_red_gun",
+    "item__template": "stl_pps_42_red_gun_item",
+    "animchar__objTexReplace:object": {
+      "pps_42_main_tex_d*": "pps_42_main_red_tex_d*",
+      "pps_42_main_tex_n* ": "pps_42_main_red_tex_n*"
+    }
+  },
+  "stl_pps_42_red_gun": [
+    {
+      "_extends": "stl_pps_42_gun"
+    },
+    {
+      "_extends": "stl_pps_42_red"
     }
   ],
   "stl_ppsh_41": [
