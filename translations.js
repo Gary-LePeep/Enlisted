@@ -86,7 +86,10 @@ var EN =
     "singleReloadPost" : "Single bullet reload, finishing time: ",
     "stalingradMode" : "View this weapon's stats as they appear in the Stalingrad campaign",
     "statistics" : "Soldier Statistics",
-    "statsFooter" : "Numbers in parentheses mean the net return in bronze orders if soldier is first upgraded to 5 stars, then sold",
+    "statsFooter" : [
+        "Percentages mean the chance to get a soldier of this rank from a silver order",
+        "Numbers in parentheses mean the net return in bronze orders if soldier is first upgraded to 5 stars, then sold"
+    ],
     "statsHeader" : [
         "This page contains the data of the optimal rolls for soldiers based on class and rank.",
         "Actual soldiers may have between 0 and 2 points less in each category by random chance."
@@ -197,7 +200,10 @@ var RU =
     "singleReloadPost" : "Время завершения перезарядки отдельных патронов: ",
     "stalingradMode" : "Отображать характеристики этого оружия, как в Сталинградской кампании.",
     "statistics" : "Статистика Солдат",
-    "statsFooter" : "Цифры в скобках означают прибыль в бронзовых заявок, если солдат сначала будет повышен до 5 звезд, а затем продан.",
+    "statsFooter" : [
+        "Проценты означают шанс получить солдата этого звания из серебряной заявки",
+        "Цифры в скобках означают прибыль в бронзовых заявок, если солдат сначала будет повышен до 5 звезд, а затем продан."
+    ],
     "statsHeader" : [
         "Эта страница содержит данные оптимальной статистики для солдат в зависимости от класса и звания.",
         "Настоящие солдаты могут случайно иметь от 0 до 2 очков меньше в каждой категории."

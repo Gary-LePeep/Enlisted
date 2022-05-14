@@ -129,11 +129,11 @@
         var sellTableHeaderRow = document.createElement("tr");
         sellTableHeader.appendChild(sellTableHeaderRow);
         sellTableHeaderRow.appendChild(translate("bronze_sale", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-        sellTableHeaderRow.appendChild(translate("★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-        sellTableHeaderRow.appendChild(translate("★★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-        sellTableHeaderRow.appendChild(translate("★★★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-        sellTableHeaderRow.appendChild(translate("★★★★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-        sellTableHeaderRow.appendChild(translate("★★★★★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★ (0%)", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★★ (" + Math.round(49/102) + "%)", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★★★ (" + Math.round(39/102) + "%)", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★★★★ (" + Math.round(14/102) + "%)", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★★★★★ (1%)", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
 
         var sellTableBody = document.createElement("tbody");
         sellTableBody.style = "border: 0px";
