@@ -70,6 +70,10 @@
             updateButton.className = "blink-bg";
             updateButton.textContent += "⚠️";
         }
+        var statsButton = document.createElement("button");
+        statsButton.textContent = translate("linkStats");
+        statsButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/soldier_stats" };
+        topnav.appendChild(statsButton);
         topnav.appendChild(translate("language", "b", "position:absolute; top:20px; left:1700px; font-size:16px; text-align:center; color: white"));
 
         var title = translate("title", "div");

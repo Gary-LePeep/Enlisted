@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<body style="background-color:rgb(107, 133, 133);"></body>
+
+<script type="text/javascript" src="../translations.js"></script>
+<script type="text/javascript" src="./stats.js"></script>
+<script type="text/javascript" src="../updates/updates.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+    // Create new css link Element
+    var css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.type = 'text/css';
+    css.href = '../style.css';
+    document.getElementsByTagName('HEAD')[0].appendChild(css);
+</script>
+</head>
+
+<body>
+
+    <select id="language_dropdown" onchange="window.location.reload();"
+        style="position:absolute; top:25px; left:1780px;">
+        <option> English </option>
+        <option> Русский </option>
+    </select>
+
+
+    <script>
+        var topnav = document.createElement("div");
+        topnav.className = "topnav";
+        document.getElementsByTagName('BODY')[0].appendChild(topnav);
+        var compareButton = document.createElement("button");
+        compareButton.textContent = translate("linkWeaponCompare");
+        compareButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted" };
+        topnav.appendChild(compareButton);
+        var datamineButton = document.createElement("button");
+        datamineButton.textContent = translate("linkDatamine");
+        datamineButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/datamine" };
+        topnav.appendChild(datamineButton);
+        var updateButton = document.createElement("button");
+        updateButton.textContent = translate("linkUpdate");
+        updateButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/updates" };
+        topnav.appendChild(updateButton);
+        // warning if update was recent
+        if (wasRecent(parseInt(document.cookie))) {
+            updateButton.className = "blink-bg";
+            updateButton.textContent += "⚠️";
+        }
+        var statsButton = document.createElement("button");
+        statsButton.className = "active";
+        statsButton.textContent = translate("linkStats");
+        statsButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/soldier_stats" };
+        topnav.appendChild(statsButton);
+        topnav.appendChild(translate("language", "b", "position:absolute; top:20px; left:1700px; font-size:16px; text-align:center; color: white"));
+
+        var title = translate("statistics", "div", "top:10px;");
+        title.className = "TITLE";
+        document.getElementsByTagName('BODY')[0].appendChild(title);
+    </script>
+
+<!-- <table>
+    <thead>
+        <tr>
+            <th> ID
+            <th> Measurement
+            <th> Average
+            <th> Maximum
+    <tbody>
+        <tr> <td> <th **scope**=rowgroup> Cats <td> <td>
+        <tr> <td> 93 <th **scope**=row> Legs <td> 3.5 <td> 4
+        <tr> <td> 10 <th **scope**=row> Tails <td> 1 <td> 1
+    </tbody>
+    <tbody>
+        <tr> <td> <th **scope**=rowgroup> English speakers <td> <td>
+        <tr> <td> 32 <th **scope**=row> Legs <td> 2.67 <td> 4
+        <tr> <td> 35 <th **scope**=row> Tails <td> 0.33 <td> 1
+    </tbody>
+</table> -->
+
+
+    <script>
+        var statsHeader = document.createElement("div");
+        statsHeader.style = "position: relative; top: 20px; height: 25px; width: 99%; text-align: center";
+        document.getElementsByTagName('BODY')[0].appendChild(statsHeader)
+        statsHeader.appendChild(translate("statsHeader", 'b'));
+
+        var table = document.createElement("table");
+        table.style = "position: relative; top: 50px; left: 10%; width: 80%";
+        document.getElementsByTagName('BODY')[0].appendChild(table);
+        var tableHeader = document.createElement("thead");
+        table.appendChild(tableHeader);
+        var tableHeaderRow = document.createElement("tr");
+        tableHeader.appendChild(tableHeaderRow);
+        tableHeaderRow.appendChild(translate("EMPTY", "th"));
+        tableHeaderRow.appendChild(translate("★", "th"));
+        tableHeaderRow.appendChild(translate("★★", "th"));
+        tableHeaderRow.appendChild(translate("★★★", "th"));
+        tableHeaderRow.appendChild(translate("★★★★", "th"));
+        tableHeaderRow.appendChild(translate("★★★★★", "th"));
+        tableHeaderRow.appendChild(translate("defaultPerk", "th"));
+
+        for (var i = 0; i < SOLDIER_STATS.length; i++) {
+            var tableBody = document.createElement("tbody");
+            table.appendChild(tableBody);
+            for (var j = 0; j < SOLDIER_STATS[i].length; j++) {
+                var tableRow = document.createElement("tr");
+                tableBody.appendChild(tableRow);
+                tableRow.appendChild(formatName(SOLDIER_STATS[i][j]["Name"]));
+                var STARS = [0, 2, 4, 6, 12]
+                for (var k = 0; k < STARS.length; k++) {
+                    var star = document.createElement("td");
+                    formatStats(star, SOLDIER_STATS[i][j]["Stats"], STARS[k])
+                    tableRow.appendChild(star);
+                }
+                tableRow.appendChild(translate(" " + SOLDIER_STATS[i][j]["Talent"], "td", "text-align: left; padding: 0px 0px 0px 30px"));
+            }
+        }
+
+        var sellTable = document.createElement("table");
+        sellTable.style = "position: relative; top: 55px; left: 10.2%; width: 79.6%";
+        document.getElementsByTagName('BODY')[0].appendChild(sellTable);
+        var sellTableHeader = document.createElement("thead");
+        sellTableHeader.style = "border: 0px";
+        sellTable.appendChild(sellTableHeader);
+        var sellTableHeaderRow = document.createElement("tr");
+        sellTableHeader.appendChild(sellTableHeaderRow);
+        sellTableHeaderRow.appendChild(translate("bronze_sale", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★★★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★★★★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★★★★★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+
+        var sellTableBody = document.createElement("tbody");
+        sellTableBody.style = "border: 0px";
+        sellTable.appendChild(sellTableBody);
+        for (var i = 0; i < SELL_STATS.length; i++) {
+            var sellTableRow = document.createElement("tr");
+            sellTableBody.appendChild(sellTableRow);
+            sellTableRow.appendChild(formatName(SELL_STATS[i]["Name"], true));
+            for (var j = 0; j < SELL_STATS[i]["Sell"].length; j++) {
+                sellTableRow.appendChild(translate(SELL_STATS[i]["Sell"][j], "td", "background-color: rgb(51, 31, 22); border: 2px solid rgb(80, 55, 45)"));
+            }
+        }
+
+        document.getElementsByTagName('BODY')[0].appendChild(translate("statsFooter", 'div', "position: relative; top: 55px; width: 99%; text-align: center"));
+
+        function formatName(name, brown = false) {
+            var halves = name.split("#");
+            name = halves[1] != null ? translate(halves[0]) + " " + halves[1] : translate(halves[0]);
+            if (brown) {
+                return translate(name, "td", "background-color: rgb(51, 31, 22); border: 2px solid rgb(80, 55, 45)");
+            }
+            return translate(name, "td")
+        }
+
+        function formatStats(element, array, offset) {
+            element.append(translate(array[0] + offset + " ", "b", "color: rgb(155, 255, 155)"));
+            element.append(translate("- ", "b", "color: #FFFFFF"));
+            element.append(translate(array[1] + offset + " ", "b", "color: rgb(255, 155, 155)"));
+            element.append(translate("- ", "b", "color: #FFFFFF"));
+            element.append(translate(array[2] + offset, "b", "color: rgb(255, 255, 155)"));
+        }
+
+    </script>
+</body>
+
+</html>
