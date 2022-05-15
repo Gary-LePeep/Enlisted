@@ -62,27 +62,12 @@
         document.getElementsByTagName('BODY')[0].appendChild(title);
     </script>
 
-<!-- <table>
-    <thead>
-        <tr>
-            <th> ID
-            <th> Measurement
-            <th> Average
-            <th> Maximum
-    <tbody>
-        <tr> <td> <th **scope**=rowgroup> Cats <td> <td>
-        <tr> <td> 93 <th **scope**=row> Legs <td> 3.5 <td> 4
-        <tr> <td> 10 <th **scope**=row> Tails <td> 1 <td> 1
-    </tbody>
-    <tbody>
-        <tr> <td> <th **scope**=rowgroup> English speakers <td> <td>
-        <tr> <td> 32 <th **scope**=row> Legs <td> 2.67 <td> 4
-        <tr> <td> 35 <th **scope**=row> Tails <td> 0.33 <td> 1
-    </tbody>
-</table> -->
-
-
+    <input type="checkbox" id="ColorblindMode" onclick="ColorblindMode()" onchange="window.location.reload();" style="position:absolute; top:70px; left:1675px;">
     <script>
+        document.getElementsByTagName('BODY')[0].appendChild(translate("ColorblindMode", "b", "position:absolute; top:70px; left:1700px;"));
+        function ColorblindMode() {window.Colorblind = document.getElementById("ColorblindMode").checked}
+        ColorblindMode();
+
         var statsHeader = document.createElement("div");
         statsHeader.style = "position: relative; top: 20px; height: 25px; width: 99%; text-align: center";
         document.getElementsByTagName('BODY')[0].appendChild(statsHeader)
@@ -96,7 +81,7 @@
         var tableHeaderRow = document.createElement("tr");
         tableHeader.appendChild(tableHeaderRow);
         var perksImage = document.createElement("img");
-        perksImage.src = "../resources/perks.png";
+        perksImage.src = window.Colorblind ? "../resources/perks_cb.png" : "../resources/perks.png";
         perksImage.style = "width: 150px";
         tableHeaderRow.appendChild(perksImage);
         tableHeaderRow.appendChild(translate("★", "th"));
@@ -141,9 +126,9 @@
         topLeft.appendChild(translate("bronze_sale", "div"));
         sellTableHeaderRow.appendChild(topLeft);
         sellTableHeaderRow.appendChild(translate("★ - 0%", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-        sellTableHeaderRow.appendChild(translate("★★ - " + Math.round(100 * 49/102) + "%", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-        sellTableHeaderRow.appendChild(translate("★★★ - " + Math.round(100 * 39/102) + "%", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-        sellTableHeaderRow.appendChild(translate("★★★★ - " + Math.round(100 * 14/102) + "%", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★★ - " + Math.round(100 * 49 / 102) + "%", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★★★ - " + Math.round(100 * 39 / 102) + "%", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
+        sellTableHeaderRow.appendChild(translate("★★★★ - " + Math.round(100 * 14 / 102) + "%", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
         sellTableHeaderRow.appendChild(translate("★★★★★ - 1%", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
 
         var sellTableBody = document.createElement("tbody");
@@ -173,19 +158,24 @@
         }
 
         function formatStats(element, array, offset) {
-            if (array[0] + offset < 10) {
-                element.append(translate("+", "b", "color: #262626"));
-            }
-            element.append(translate(array[0] + offset + " ", "b", "color: rgb(155, 255, 155)"));
-            element.append(translate("- ", "b", "color: #FFFFFF"));
-            element.append(translate(array[1] + offset + " ", "b", "color: rgb(255, 155, 155)"));
-            element.append(translate("- ", "b", "color: #FFFFFF"));
-            element.append(translate(array[2] + offset, "b", "color: rgb(255, 255, 155)"));
-            if (array[2] + offset < 10) {
-                element.append(translate("+", "b", "color: #262626"));
+            COLORBLIND_COLORS = ["color: #25ac88", "color: #d65153", "color: #db7329"]
+            COLORS = ["color: rgb(155, 255, 155)", "color: rgb(255, 155, 155)", "color: rgb(255, 255, 155)"]
+
+            for (var i = 0; i < 3; i++) {
+                element.append(translate("_", "b", "color: #262626"));
+                if (array[i] + offset < 10) {
+                    element.append(translate(" ", "b", "color: #262626"));
+                }
+                element.append(translate(array[i] + offset + " ", "b", window.Colorblind ? COLORBLIND_COLORS[i] : COLORS[i]));
+                if (array[i] + offset < 10) {
+                    element.append(translate(" ", "b", "color: #262626"));
+                }
+                element.append(translate("_", "b", "color: #262626"));
+                if (i < 2) {
+                    element.append(translate("- ", "b", "color: #FFFFFF"));
+                }
             }
         }
-
     </script>
 </body>
 
