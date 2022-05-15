@@ -173,11 +173,17 @@
         }
 
         function formatStats(element, array, offset) {
+            if (array[0] + offset < 10) {
+                element.append(translate("+", "b", "color: #262626"));
+            }
             element.append(translate(array[0] + offset + " ", "b", "color: rgb(155, 255, 155)"));
             element.append(translate("- ", "b", "color: #FFFFFF"));
             element.append(translate(array[1] + offset + " ", "b", "color: rgb(255, 155, 155)"));
             element.append(translate("- ", "b", "color: #FFFFFF"));
             element.append(translate(array[2] + offset, "b", "color: rgb(255, 255, 155)"));
+            if (array[2] + offset < 10) {
+                element.append(translate("+", "b", "color: #262626"));
+            }
         }
 
     </script>
