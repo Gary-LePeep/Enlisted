@@ -26,6 +26,7 @@ var EN =
     "class_Rider" : "Rider",
     "class_rank" : "Rank",
     "ColorblindMode" : "Colorblind Mode",
+    "comparison" : "Enlisted weapon comparison tool",
     "contact" : "For any issues, suggestions, etc. contact 10art1#8181 on discord",
     "contactVehicle" : "On contact with vehicle",
     "crawlRecoil" : "Recoil multiplier while crawling: ",
@@ -93,7 +94,6 @@ var EN =
         "This page contains the data of the optimal rolls for soldiers based on class and rank.",
         "Actual soldiers may have between 0 and 2 points less in each category by random chance."
     ],
-    "title" : "Enlisted weapon comparison tool",
     "ttk_dpm_dropdown" : "Display the following: ",
     "ttk_dpm_dropdown1" : "Damage over distance",
     "ttk_dpm_dropdown2" : "Damage per minute over distance",
@@ -139,6 +139,7 @@ var RU =
     "class_Rider" : "Мотоциклист",
     "class_rank" : "Звание",
     "ColorblindMode" : "Режим для дальтоников",
+    "comparison" : "Enlisted инструмент сравнения оружия",
     "contact" : "По любым вопросам, предложениям и т. д. обращайтесь к 10art1#8181 на дискорде.",
     "contactVehicle" : "При контакте с техникой",
     "crawlRecoil" : "Множитель отдачи в лежачем положении: ",
@@ -206,7 +207,6 @@ var RU =
         "Эта страница содержит данные оптимальной статистики для солдат в зависимости от класса и звания.",
         "Настоящие солдаты могут случайно иметь от 0 до 2 очков меньше в каждой категории."
     ],
-    "title" : "Enlisted инструмент сравнения оружия",
     "ttk_dpm_dropdown" : "Отображение диаграммы: ",
     "ttk_dpm_dropdown1" : "Урон по расстоянию",
     "ttk_dpm_dropdown2" : "Урон в минуту по расстоянию",

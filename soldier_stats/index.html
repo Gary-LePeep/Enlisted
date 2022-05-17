@@ -9,16 +9,9 @@
 <script type="text/javascript" src="../common.js"></script>
 <script type="text/javascript" src="./stats.js"></script>
 <script type="text/javascript" src="../updates/updates.js"></script>
-<script type="text/javascript" src="../topbar.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <script>
-    // Create new css link Element
-    var css = document.createElement('link');
-    css.rel = 'stylesheet';
-    css.type = 'text/css';
-    css.href = '../style.css';
-    document.getElementsByTagName('HEAD')[0].appendChild(css);
+    initCSS();
 </script>
 </head>
 
@@ -30,36 +23,7 @@
         <option> Русский </option>
     </select>
     <script>
-        var topnav = document.createElement("div");
-        topnav.className = "topnav";
-        topnav.style = "position: absolute; top: 0px; left: 0px; width: 1700px; height: 53px";
-        document.getElementsByTagName('BODY')[0].appendChild(topnav);
-        var compareButton = document.createElement("button");
-        compareButton.textContent = translate("linkWeaponCompare");
-        compareButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted" };
-        topnav.appendChild(compareButton);
-        var datamineButton = document.createElement("button");
-        datamineButton.textContent = translate("linkDatamine");
-        datamineButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/datamine" };
-        topnav.appendChild(datamineButton);
-        var updateButton = document.createElement("button");
-        updateButton.textContent = translate("linkUpdate");
-        updateButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/updates" };
-        topnav.appendChild(updateButton);
-        // warning if update was recent
-        if (wasRecent(parseInt(document.cookie))) {
-            updateButton.className = "blink-bg";
-            updateButton.textContent += "⚠️";
-        }
-        var statsButton = document.createElement("button");
-        statsButton.className = "active";
-        statsButton.textContent = translate("linkStats");
-        statsButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/soldier_stats" };
-        topnav.appendChild(statsButton);
-        topnav.appendChild(translate("language", "b", "position:absolute; top:20px; left:1700px; font-size:16px; text-align:center; color: white"));
-        var title = translate("statistics", "div");
-        title.className = "TITLE";
-        document.getElementsByTagName('BODY')[0].appendChild(title);
+        titleBar("statistics");
     </script>
 
     <input type="checkbox" id="ColorblindMode" onclick="ColorblindMode()" onchange="window.location.reload();"

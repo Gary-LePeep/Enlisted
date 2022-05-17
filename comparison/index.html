@@ -5,82 +5,40 @@
 
 <body style="background-color:rgb(107, 133, 133);"></body>
 
-<script type="text/javascript" src="./datamine/ww2_guns.blkx"></script>
-<script type="text/javascript" src="./datamine/ww2_guns_mods.blkx"></script>
-<script type="text/javascript" src="./datamine/ww2_items.blkx"></script>
-<script type="text/javascript" src="./datamine/enlisted_guns.blkx"></script>
-<script type="text/javascript" src="./datamine/bullets.js"></script>
-<script type="text/javascript" src="./weapon-data.js"></script>
-<script type="text/javascript" src="./translations.js"></script>
-<script type="text/javascript" src="./common.js"></script>
-<script type="text/javascript" src="./updates/updates.js"></script>
-<script type="text/javascript" src="../topbar.js"></script>
+<script type="text/javascript" src="../datamine/ww2_guns.blkx"></script>
+<script type="text/javascript" src="../datamine/ww2_guns_mods.blkx"></script>
+<script type="text/javascript" src="../datamine/ww2_items.blkx"></script>
+<script type="text/javascript" src="../datamine/enlisted_guns.blkx"></script>
+<script type="text/javascript" src="../datamine/bullets.js"></script>
+<script type="text/javascript" src="../weapon-data.js"></script>
+<script type="text/javascript" src="../translations.js"></script>
+<script type="text/javascript" src="../common.js"></script>
+<script type="text/javascript" src="../updates/updates.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="./dist/chart.min.js"></script>
-<script src="./dist/chartjs-plugin-annotation.min.js"></script>
+<script src="../dist/chart.min.js"></script>
+<script src="../dist/chartjs-plugin-annotation.min.js"></script>
 <script>
     // load all bullets
     for (var i = 0; i < ALLBULLETS.length; i++) {
         var script = document.createElement("script");
         script.type = "text/javascript";
-        script.src = "./datamine/bullets/" + ALLBULLETS[i];
+        script.src = "../datamine/bullets/" + ALLBULLETS[i];
         document.body.appendChild(script);
     }
-</script>
 
-<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<script>
-    // Create new css link Element
-    var css = document.createElement('link');
-    css.rel = 'stylesheet';
-    css.type = 'text/css';
-    css.href = 'style.css';
-    document.getElementsByTagName('HEAD')[0].appendChild(css);
-
+    initCSS();
 </script>
 </head>
 
 <body>
-    <img src="./resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1700px; height: 53px"> 
+    <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1890px; height: 53px"> 
     <select id="language_dropdown" onchange="window.location.reload();"
         style="position:absolute; top:20px; left:1780px;">
         <option> English </option>
         <option> Русский </option>
     </select>
     <script>
-        var topnav = document.createElement("div");
-        topnav.className = "topnav";
-        topnav.style = "position: absolute; top: 0px; left: 0px; width: 1890px; height: 53px";
-        document.getElementsByTagName('BODY')[0].appendChild(topnav);
-        var compareButton = document.createElement("button");
-        compareButton.className = "active";
-        compareButton.textContent = translate("linkWeaponCompare");
-        compareButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted" };
-        topnav.appendChild(compareButton);
-        var datamineButton = document.createElement("button");
-        datamineButton.textContent = translate("linkDatamine");
-        datamineButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/datamine" };
-        topnav.appendChild(datamineButton);
-        var updateButton = document.createElement("button");
-        updateButton.textContent = translate("linkUpdate");
-        updateButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/updates" };
-        topnav.appendChild(updateButton);
-        // warning if update was recent
-        if (wasRecent(parseInt(document.cookie))) {
-            updateButton.className = "blink-bg";
-            updateButton.textContent += "⚠️";
-        }
-        var statsButton = document.createElement("button");
-        statsButton.textContent = translate("linkStats");
-        statsButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/soldier_stats" };
-        topnav.appendChild(statsButton);
-        topnav.appendChild(translate("language", "b", "position:absolute; top:20px; left:1700px; font-size:16px; text-align:center; color: white"));
-
-        var title = translate("title", "div");
-        title.className = "TITLE";
-        document.getElementsByTagName('BODY')[0].appendChild(title);
+        titleBar("comparison");
     </script>
 
     <!-- Vitality & Body armor switches -->
@@ -552,7 +510,7 @@
 
     <br><br><br>
     <canvas id="myChart"></canvas>
-    <img src="resources/gray.jpg" style="position:absolute; top:225px; left:10px; width:800px; height:400px;">
+    <img src="../resources/gray.jpg" style="position:absolute; top:225px; left:10px; width:800px; height:400px;">
     <div style="position:absolute; top:225px; left:10px; width:800px; height:800px;">
         <canvas id="ttk-dpm-chart"></canvas>
 
@@ -615,7 +573,7 @@
     </div>
 
     <canvas id="scatterChart"></canvas>
-    <img src="resources/target.png" style="position:absolute; top:308px; left:1183px; width:537px; height:532px;">
+    <img src="../resources/target.png" style="position:absolute; top:308px; left:1183px; width:537px; height:532px;">
     <div style="position:absolute; top:300px; left:1200px; width:500px; height:523px;">
         <canvas id="scatter-chart"></canvas>
 
@@ -685,7 +643,7 @@
     </script>
 
     <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'div', "color: #002244; position: absolute; top: 870px; width: 100%; text-align: center"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "color: #002244; position: absolute; top: 870px; width: 100%; text-align: center"));
     </script>
 </body>
 
