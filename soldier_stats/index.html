@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1890px; height: 53px"> 
+    <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1890px; height: 53px">
     <select id="language_dropdown" onchange="window.location.reload();"
         style="position:absolute; top:20px; left:1780px;">
         <option> English </option>
@@ -122,7 +122,7 @@
         var buyTableHeaderRow = document.createElement("tr");
         buyTableHeader.appendChild(buyTableHeaderRow);
         var topLeft = document.createElement("th");
-        topLeft.style = "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44); height: 25px";
+        topLeft.style = "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44); height: 25px;"
         var silverImage = document.createElement("img");
         silverImage.src = "../resources/silver.png";
         silverImage.style = "position: absolute; top: 0px; width: 30px; left: 15px";
@@ -160,7 +160,7 @@
             COLORS = ["color: rgb(155, 255, 155)", "color: rgb(255, 155, 155)", "color: rgb(255, 255, 155)"]
 
             for (var i = 0; i < 3; i++) {
-                element.append(translate("_", "b", "color: #262626"));
+                element.append(translate(" ", "b", "color: #262626"));
                 if (array[i] + offset < 10) {
                     element.append(translate(" ", "b", "color: #262626"));
                 }
@@ -168,9 +168,30 @@
                 if (array[i] + offset < 10) {
                     element.append(translate(" ", "b", "color: #262626"));
                 }
-                element.append(translate("_", "b", "color: #262626"));
+                element.append(translate(" ", "b", "color: #262626"));
                 if (i < 2) {
                     element.append(translate("- ", "b", "color: #FFFFFF"));
+                }
+            }
+        }
+
+        recalibrateFont();
+        window.addEventListener('resize', recalibrateFont);
+
+        function recalibrateFont() {
+            for (var i = 0; i < table.childNodes.length; i++) {
+                for (var j = 0; j < table.childNodes[i].childNodes.length; j++) {
+                    table.childNodes[i].childNodes[j].style.fontSize = (16 * window.innerWidth / 1920) + "px";
+                }
+            }
+            for (var i = 0; i < sellTable.childNodes.length; i++) {
+                for (var j = 0; j < sellTable.childNodes[i].childNodes.length; j++) {
+                    sellTable.childNodes[i].childNodes[j].style.fontSize = (16 * window.innerWidth / 1920) + "px";
+                }
+            }
+            for (var i = 0; i < buyTable.childNodes.length; i++) {
+                for (var j = 0; j < buyTable.childNodes[i].childNodes.length; j++) {
+                    buyTable.childNodes[i].childNodes[j].style.fontSize = (16 * window.innerWidth / 1920) + "px";
                 }
             }
         }
