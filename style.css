@@ -25,12 +25,6 @@ body {
     }
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
-    background-color: #395353;
-    overflow: hidden;
-}
-
 /* Style the links inside the navigation bar */
 .topnav button {
     float: left;

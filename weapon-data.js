@@ -1413,11 +1413,3 @@ function toPlace(number, place) {
     var ret = Math.round(number * (10 ** place));
     return (ret / (10 ** place));
 }
-
-recalibrateSize();
-window.addEventListener('resize', recalibrateSize);
-
-function recalibrateSize() {
-    document.getElementsByTagName('BODY')[0].style.transform = "scale(" + window.innerWidth / 1920 + "," + window.innerHeight / 927 + ")";
-    document.getElementsByTagName('BODY')[0].style.transformOrigin = "0 0"
-}

@@ -12,7 +12,9 @@
 <script type="text/javascript" src="./bullets.js"></script>
 <script type="text/javascript" src="../weapon-data.js"></script>
 <script type="text/javascript" src="../translations.js"></script>
+<script type="text/javascript" src="../common.js"></script>
 <script type="text/javascript" src="../updates/updates.js"></script>
+<script type="text/javascript" src="../topbar.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../dist/chart.min.js"></script>
 <script src="../dist/chartjs-plugin-annotation.min.js"></script>
@@ -38,17 +40,17 @@
 </head>
 
 <body>
-
+    <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1890px; height: 53px"> 
     <select id="language_dropdown" onchange="window.location.reload();"
         style="position:absolute; top:20px; left:1780px;">
         <option> English </option>
         <option> Русский </option>
     </select>
-
-
     <script>
         var topnav = document.createElement("div");
         topnav.className = "topnav";
+        topnav.style = "position: absolute; top: 0px; left: 0px; width: 1700px; height: 53px";
+        document.getElementsByTagName('BODY')[0].appendChild(topnav);
         document.getElementsByTagName('BODY')[0].appendChild(topnav);
         var compareButton = document.createElement("button");
         compareButton.textContent = translate("linkWeaponCompare");

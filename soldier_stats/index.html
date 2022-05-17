@@ -6,8 +6,10 @@
 <body style="background-color:rgb(107, 133, 133);"></body>
 
 <script type="text/javascript" src="../translations.js"></script>
+<script type="text/javascript" src="../common.js"></script>
 <script type="text/javascript" src="./stats.js"></script>
 <script type="text/javascript" src="../updates/updates.js"></script>
+<script type="text/javascript" src="../topbar.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
@@ -21,17 +23,16 @@
 </head>
 
 <body>
-
+    <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1890px; height: 53px"> 
     <select id="language_dropdown" onchange="window.location.reload();"
-        style="position:absolute; top:25px; left:1780px;">
+        style="position:absolute; top:20px; left:1780px;">
         <option> English </option>
         <option> Русский </option>
     </select>
-
-
     <script>
         var topnav = document.createElement("div");
         topnav.className = "topnav";
+        topnav.style = "position: absolute; top: 0px; left: 0px; width: 1700px; height: 53px";
         document.getElementsByTagName('BODY')[0].appendChild(topnav);
         var compareButton = document.createElement("button");
         compareButton.textContent = translate("linkWeaponCompare");
@@ -56,16 +57,16 @@
         statsButton.onclick = function () { window.location = "https://gary-lepeep.github.io/Enlisted/soldier_stats" };
         topnav.appendChild(statsButton);
         topnav.appendChild(translate("language", "b", "position:absolute; top:20px; left:1700px; font-size:16px; text-align:center; color: white"));
-
-        var title = translate("statistics", "div", "top:10px;");
+        var title = translate("statistics", "div");
         title.className = "TITLE";
         document.getElementsByTagName('BODY')[0].appendChild(title);
     </script>
 
-    <input type="checkbox" id="ColorblindMode" onclick="ColorblindMode()" onchange="window.location.reload();" style="position:absolute; top:70px; left:1675px;">
+    <input type="checkbox" id="ColorblindMode" onclick="ColorblindMode()" onchange="window.location.reload();"
+        style="position:absolute; top:70px; left:1675px;">
     <script>
         document.getElementsByTagName('BODY')[0].appendChild(translate("ColorblindMode", "b", "position:absolute; top:70px; left:1700px;"));
-        function ColorblindMode() {window.Colorblind = document.getElementById("ColorblindMode").checked}
+        function ColorblindMode() { window.Colorblind = document.getElementById("ColorblindMode").checked }
         ColorblindMode();
 
         var statsHeader = document.createElement("div");
@@ -176,9 +177,9 @@
         buyTable.appendChild(buyTableBody);
         buyTableBody.appendChild(translate("EMPTY", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80)"));
         buyTableBody.appendChild(translate("0%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
-        buyTableBody.appendChild(translate(Math.round(100 * 49 / 102) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
-        buyTableBody.appendChild(translate(Math.round(100 * 39 / 102) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
-        buyTableBody.appendChild(translate(Math.round(100 * 14 / 102) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
+        buyTableBody.appendChild(translate(Math.round(100 * 60 / 119) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
+        buyTableBody.appendChild(translate(Math.round(100 * 43 / 119) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
+        buyTableBody.appendChild(translate(Math.round(100 * 16 / 119) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
         buyTableBody.appendChild(translate("1%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
 
         function formatName(name, brown = false) {

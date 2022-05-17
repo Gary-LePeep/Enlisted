@@ -12,7 +12,9 @@
 <script type="text/javascript" src="./datamine/bullets.js"></script>
 <script type="text/javascript" src="./weapon-data.js"></script>
 <script type="text/javascript" src="./translations.js"></script>
+<script type="text/javascript" src="./common.js"></script>
 <script type="text/javascript" src="./updates/updates.js"></script>
+<script type="text/javascript" src="../topbar.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./dist/chart.min.js"></script>
 <script src="./dist/chartjs-plugin-annotation.min.js"></script>
@@ -41,16 +43,16 @@
 </head>
 
 <body>
-
+    <img src="./resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1700px; height: 53px"> 
     <select id="language_dropdown" onchange="window.location.reload();"
         style="position:absolute; top:20px; left:1780px;">
         <option> English </option>
         <option> Русский </option>
     </select>
-
     <script>
         var topnav = document.createElement("div");
         topnav.className = "topnav";
+        topnav.style = "position: absolute; top: 0px; left: 0px; width: 1890px; height: 53px";
         document.getElementsByTagName('BODY')[0].appendChild(topnav);
         var compareButton = document.createElement("button");
         compareButton.className = "active";
@@ -88,11 +90,11 @@
     <input type="checkbox" id="HorizRecoilCheck" onclick="horizRecoil()" style="position:absolute; top:335px; left:860px;">
     <input type="checkbox" id="VertRecoilCheck" onclick="vertRecoil()" style="position:absolute; top:360px; left:860px;">
     <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("stalingradMode", "b", "position:absolute; top:260px; left:885px;"));
-        document.getElementsByTagName('BODY')[0].appendChild(translate("vitality", "b", "position:absolute; top:285px; left:885px;"));
-        document.getElementsByTagName('BODY')[0].appendChild(translate("armor", "b", "position:absolute; top:310px; left:885px;"));
-        document.getElementsByTagName('BODY')[0].appendChild(translate("horizRecoil", "b", "position:absolute; top:335px; left:885px;"));
-        document.getElementsByTagName('BODY')[0].appendChild(translate("vertRecoil", "b", "position:absolute; top:360px; left:885px;"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("stalingradMode", "b", "position:absolute; top:260px; left:885px; width:800px"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("vitality", "b", "position:absolute; top:285px; left:885px; width:800px"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("armor", "b", "position:absolute; top:310px; left:885px; width:800px"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("horizRecoil", "b", "position:absolute; top:335px; left:885px; width:800px"));
+        document.getElementsByTagName('BODY')[0].appendChild(translate("vertRecoil", "b", "position:absolute; top:360px; left:885px; width:800px"));
     </script>
 
     <script>
