@@ -10,6 +10,8 @@
 <script type="text/javascript" src="../datamine/ww2_items.blkx"></script>
 <script type="text/javascript" src="../datamine/enlisted_guns.blkx"></script>
 <script type="text/javascript" src="../datamine/bullets.js"></script>
+<script type="text/javascript" src="../datamine/grenades.js"></script>
+<script type="text/javascript" src="../datamine/shells.js"></script>
 <script type="text/javascript" src="../weapon-data.js"></script>
 <script type="text/javascript" src="../translations.js"></script>
 <script type="text/javascript" src="../common.js"></script>
@@ -23,6 +25,20 @@
         var script = document.createElement("script");
         script.type = "text/javascript";
         script.src = "../datamine/bullets/" + ALLBULLETS[i];
+        document.body.appendChild(script);
+    }
+    // load all grenades
+    for (var i = 0; i < ALLGRENADES.length; i++) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "../datamine/grenades/" + ALLGRENADES[i];
+        document.body.appendChild(script);
+    }
+    // load all shells
+    for (var i = 0; i < ALLSHELLS.length; i++) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "../datamine/shells/" + ALLSHELLS[i];
         document.body.appendChild(script);
     }
 
