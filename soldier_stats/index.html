@@ -114,7 +114,7 @@
         statsFooter.appendChild(translate("statsFooter", 'b'));
 
         var buyTable = document.createElement("table");
-        buyTable.style = "position: relative; top: 55px; left: 10.2%; width: 79.6%";
+        buyTable.style = "position: relative; top: 70px; left: 10.2%; width: 79.6%";
         document.getElementsByTagName('BODY')[0].appendChild(buyTable);
         var buyTableHeader = document.createElement("thead");
         buyTableHeader.style = "border: 0px";
@@ -139,12 +139,43 @@
         var buyTableBody = document.createElement("tbody");
         buyTableBody.style = "border: 0px";
         buyTable.appendChild(buyTableBody);
-        buyTableBody.appendChild(translate("EMPTY", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80)"));
+        buyTableBody.appendChild(translate("EMPTY", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 450px"));
         buyTableBody.appendChild(translate("0%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
         buyTableBody.appendChild(translate(Math.round(100 * 60 / 119) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
         buyTableBody.appendChild(translate(Math.round(100 * 43 / 119) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
         buyTableBody.appendChild(translate(Math.round(100 * 16 / 119) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
         buyTableBody.appendChild(translate("1%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
+
+        var wepTable = document.createElement("table");
+        wepTable.style = "position: relative; top: 80px; left: 10.2%; width: 68.6%";
+        document.getElementsByTagName('BODY')[0].appendChild(wepTable);
+        var wepTableHeader = document.createElement("thead");
+        wepTableHeader.style = "border: 0px";
+        wepTable.appendChild(wepTableHeader);
+        var wepTableHeaderRow = document.createElement("tr");
+        wepTableHeader.appendChild(wepTableHeaderRow);
+        var topLeftWep = document.createElement("th");
+        topLeftWep.style = "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44); height: 25px;"
+        var silverImage = document.createElement("img");
+        silverImage.src = "../resources/silver_wep.png";
+        silverImage.style = "position: absolute; top: 0px; width: 30px; left: 15px";
+        silverImage.textContent = "silver_wep";
+        topLeftWep.appendChild(silverImage);
+        topLeftWep.appendChild(translate("silver_wep", "div"));
+        wepTableHeaderRow.appendChild(topLeftWep);
+        wepTableHeaderRow.appendChild(translate("★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
+        wepTableHeaderRow.appendChild(translate("★★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
+        wepTableHeaderRow.appendChild(translate("★★★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
+        wepTableHeaderRow.appendChild(translate("★★★★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
+
+        var wepTableBody = document.createElement("tbody");
+        wepTableBody.style = "border: 0px";
+        wepTable.appendChild(wepTableBody);
+        wepTableBody.appendChild(translate("EMPTY", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 450px"));
+        wepTableBody.appendChild(translate(Math.round(100 * 23 / 40) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
+        wepTableBody.appendChild(translate(Math.round(100 * 12 / 40) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
+        wepTableBody.appendChild(translate(Math.round(100 * 2 / 40) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
+        wepTableBody.appendChild(translate(Math.round(100 * 3 / 40) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
 
         function formatName(name, brown = false) {
             var halves = name.split("#");
@@ -192,6 +223,11 @@
             for (var i = 0; i < buyTable.childNodes.length; i++) {
                 for (var j = 0; j < buyTable.childNodes[i].childNodes.length; j++) {
                     buyTable.childNodes[i].childNodes[j].style.fontSize = (16 * window.innerWidth / 1920) + "px";
+                }
+            }
+            for (var i = 0; i < wepTable.childNodes.length; i++) {
+                for (var j = 0; j < wepTable.childNodes[i].childNodes.length; j++) {
+                    wepTable.childNodes[i].childNodes[j].style.fontSize = (16 * window.innerWidth / 1920) + "px";
                 }
             }
         }

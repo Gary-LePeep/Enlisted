@@ -84,12 +84,16 @@ var EN =
     "semi_auto" : "Semi-auto",
     "sightsMag" : "Magnification aiming down sights: ",
     "silver_buy" : "Chance per silver order",
+    "silver_wep" : "Chance per silver order(s)",
     "singleReloadPrepare" : "Single bullet reload, prepare time: ",
     "singleReloadLoop" : "Single bullet reload, time per bullet: ",
     "singleReloadPost" : "Single bullet reload, finishing time: ",
     "stalingradMode" : "View this weapon's stats as they appear in the Stalingrad campaign",
     "statistics" : "Soldier Statistics",
-    "statsFooter" : "Numbers in parentheses mean the net return in bronze orders if soldier is first upgraded to 5 stars, then sold",
+    "statsFooter" : [
+        "Numbers in parentheses mean the net return in bronze orders if soldier is first upgraded to 5 stars, then sold",
+        "Values for stars of a silver order's result are experimental and may not be completely accurate"
+    ],
     "statsHeader" : [
         "This page contains the data of the optimal rolls for soldiers based on class and rank.",
         "Actual soldiers may have between 0 and 2 points less in each category by random chance."
@@ -197,6 +201,7 @@ var RU =
     "semi_auto" : "Полуавтоматический",
     "sightsMag" : "Увеличение при прицеливании: ",
     "silver_buy" : "Шанс за серебряную заявку",
+    "silver_wep" : "Шанс за серебряную(ые) заявку(и)",
     "singleReloadPrepare" : "Время подготовки к перезарядке отдельных патронов: ",
     "singleReloadLoop" : "Время перезарядки отдельного патрона: ",
     "singleReloadPost" : "Время завершения перезарядки отдельных патронов: ",
