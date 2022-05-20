@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1890px; height: 53px">
+    <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1880px; height: 53px">
     <select id="language_dropdown" onchange="window.location.reload();"
         style="position:absolute; top:20px; left:1780px;">
         <option> English </option>
@@ -33,14 +33,17 @@
         function ColorblindMode() { window.Colorblind = document.getElementById("ColorblindMode").checked }
         ColorblindMode();
 
+        var allTablesDiv = document.createElement("div");
+        document.getElementsByTagName('BODY')[0].appendChild(allTablesDiv);
+
         var statsHeader = document.createElement("div");
-        statsHeader.style = "position: relative; top: 20px; height: 25px; width: 99%; text-align: center";
-        document.getElementsByTagName('BODY')[0].appendChild(statsHeader)
+        statsHeader.style = "position: relative; top: 20px; height: 25px; width: 1880px; text-align: center";
+        allTablesDiv.appendChild(statsHeader)
         statsHeader.appendChild(translate("statsHeader", 'b'));
 
         var table = document.createElement("table");
-        table.style = "position: relative; top: 50px; left: 10%; width: 80%";
-        document.getElementsByTagName('BODY')[0].appendChild(table);
+        table.style = "position: relative; top: 50px; left: 190px; width: 1500px";
+        allTablesDiv.appendChild(table);
         var tableHeader = document.createElement("thead");
         table.appendChild(tableHeader);
         var tableHeaderRow = document.createElement("tr");
@@ -74,8 +77,8 @@
         }
 
         var sellTable = document.createElement("table");
-        sellTable.style = "position: relative; top: 55px; left: 10.2%; width: 79.6%";
-        document.getElementsByTagName('BODY')[0].appendChild(sellTable);
+        sellTable.style = "position: relative; top: 55px; left: 193px; width: 1493px";
+        allTablesDiv.appendChild(sellTable);
         var sellTableHeader = document.createElement("thead");
         sellTableHeader.style = "border: 0px";
         sellTable.appendChild(sellTableHeader);
@@ -109,13 +112,13 @@
         }
 
         var statsFooter = document.createElement("div");
-        statsFooter.style = "position: relative; top: 55px; height: 25px; width: 99%; text-align: center";
-        document.getElementsByTagName('BODY')[0].appendChild(statsFooter)
+        statsFooter.style = "position: relative; top: 55px; height: 25px; width: 1880px; text-align: center";
+        allTablesDiv.appendChild(statsFooter)
         statsFooter.appendChild(translate("statsFooter", 'b'));
 
         var buyTable = document.createElement("table");
-        buyTable.style = "position: relative; top: 70px; left: 10.2%; width: 79.6%";
-        document.getElementsByTagName('BODY')[0].appendChild(buyTable);
+        buyTable.style = "position: relative; top: 70px; left: 193px; width: 1493px";
+        allTablesDiv.appendChild(buyTable);
         var buyTableHeader = document.createElement("thead");
         buyTableHeader.style = "border: 0px";
         buyTable.appendChild(buyTableHeader);
@@ -147,8 +150,8 @@
         buyTableBody.appendChild(translate("1%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
 
         var wepTable = document.createElement("table");
-        wepTable.style = "position: relative; top: 80px; left: 10.2%; width: 68.6%";
-        document.getElementsByTagName('BODY')[0].appendChild(wepTable);
+        wepTable.style = "position: relative; top: 80px; left: 193px; width: 1286px";
+        allTablesDiv.appendChild(wepTable);
         var wepTableHeader = document.createElement("thead");
         wepTableHeader.style = "border: 0px";
         wepTable.appendChild(wepTableHeader);
@@ -230,6 +233,9 @@
                     wepTable.childNodes[i].childNodes[j].style.fontSize = (16 * window.innerWidth / 1920) + "px";
                 }
             }
+
+            statsHeader.style.fontSize = (16 * window.innerWidth / 1920) + "px";
+            statsFooter.style.fontSize = (16 * window.innerWidth / 1920) + "px";
         }
     </script>
 </body>
