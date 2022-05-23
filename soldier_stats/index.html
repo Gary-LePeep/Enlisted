@@ -208,35 +208,6 @@
                 }
             }
         }
-
-        recalibrateFont();
-        window.addEventListener('resize', recalibrateFont);
-
-        function recalibrateFont() {
-            for (var i = 0; i < table.childNodes.length; i++) {
-                for (var j = 0; j < table.childNodes[i].childNodes.length; j++) {
-                    table.childNodes[i].childNodes[j].style.fontSize = (16 * window.innerWidth / 1920) + "px";
-                }
-            }
-            for (var i = 0; i < sellTable.childNodes.length; i++) {
-                for (var j = 0; j < sellTable.childNodes[i].childNodes.length; j++) {
-                    sellTable.childNodes[i].childNodes[j].style.fontSize = (16 * window.innerWidth / 1920) + "px";
-                }
-            }
-            for (var i = 0; i < buyTable.childNodes.length; i++) {
-                for (var j = 0; j < buyTable.childNodes[i].childNodes.length; j++) {
-                    buyTable.childNodes[i].childNodes[j].style.fontSize = (16 * window.innerWidth / 1920) + "px";
-                }
-            }
-            for (var i = 0; i < wepTable.childNodes.length; i++) {
-                for (var j = 0; j < wepTable.childNodes[i].childNodes.length; j++) {
-                    wepTable.childNodes[i].childNodes[j].style.fontSize = (16 * window.innerWidth / 1920) + "px";
-                }
-            }
-
-            statsHeader.style.fontSize = (16 * window.innerWidth / 1920) + "px";
-            statsFooter.style.fontSize = (16 * window.innerWidth / 1920) + "px";
-        }
     </script>
 </body>
 
