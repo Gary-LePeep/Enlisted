@@ -34,7 +34,7 @@ function getCookie(cname) {
 }
 
 function setCookie(cname, cvalue, expiresDays = -1) {
-  document.cookie = `${cname}=${cvalue};path=/Enlisted/;domain=gary-lepeep.github.io`;
+  document.cookie = `${cname}=${cvalue};secure;path=/Enlisted/;domain=gary-lepeep.github.io`;
   if (expiresDays !== -1) {
     const d = new Date();
     d.setTime(d.getTime() + (expiresDays * 24 * 60 * 60 * 1000));
@@ -43,7 +43,53 @@ function setCookie(cname, cvalue, expiresDays = -1) {
   }
 }
 
+const script = document.createElement('script');
+script.src = '../translations.js';
+document.body.appendChild(script);
+
 function titleBar(active) {
+  // add top color bar
+  const feldgrau = document.createElement('img');
+  feldgrau.src = '../resources/feldgrau.png';
+  feldgrau.style = 'position: relative; top: 0px; left: 0px; width: 1880px; height: 53px';
+  BODY.append(feldgrau);
+
+  // declare language dropdown
+  const languageDropdown = document.createElement('select');
+
+  // create the function for when the language is changed
+  function changeLanguage() {
+    setCookie('language', languageDropdown.value);
+    window.location.reload();
+  }
+
+  // add attributes, such as languages supported
+  const englishOption = document.createElement('option');
+  englishOption.textContent = 'English';
+  if (getCookie('language') === 'English') {
+    englishOption.selected = 'selected';
+  }
+  const russionOption = document.createElement('option');
+  russionOption.textContent = 'Русский';
+  if (getCookie('language') === 'Русский') {
+    russionOption.selected = 'selected';
+  }
+  languageDropdown.append(englishOption);
+  languageDropdown.append(russionOption);
+  languageDropdown.id = 'language_dropdown';
+  languageDropdown.style = 'position:absolute; top:20px; left:1780px;';
+  languageDropdown.onchange = () => { changeLanguage(); };
+  BODY.appendChild(languageDropdown);
+
+  // add the language label and title bar's title
+  BODY.appendChild(translate(''
+    + 'language', 'b', 'position:absolute; top:20px; left:1700px;font-size:16px; text-align:center; color: white'));
+
+  const title = translate(active, 'div');
+  title.className = 'TITLE';
+  BODY.appendChild(title);
+
+  // add the title bar's navigation buttons, highlighting the active one
   const topnav = document.createElement('div');
   topnav.className = 'topnav';
   topnav.style = 'position: absolute; top: 0px; left: 0px; width: 1700px; height: 53px';
@@ -81,10 +127,4 @@ function titleBar(active) {
   statsButton.textContent = translate('linkStats');
   statsButton.onclick = () => { window.location = 'https://gary-lepeep.github.io/Enlisted/soldier_stats'; };
   topnav.appendChild(statsButton);
-
-  topnav.appendChild(translate(''
-    + 'language', 'b', 'position:absolute; top:20px; left:1700px;font-size:16px; text-align:center; color: white'));
-  const title = translate(active, 'div');
-  title.className = 'TITLE';
-  BODY.appendChild(title);
 }

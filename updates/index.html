@@ -14,37 +14,10 @@
 </head>
 
 <body>
-  <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1880px; height: 53px">
-
+  
   <script>
-    const languageDropdown = document.createElement('select');
-
-    function changeLanguage() {
-      setCookie('language', languageDropdown.value);
-      window.location.reload();
-    }
-
-    const englishOption = document.createElement('option');
-    englishOption.textContent = 'English';
-    if (getCookie('language') === 'English') {
-      englishOption.selected = 'selected';
-    }
-    const russionOption = document.createElement('option');
-    russionOption.textContent = 'Русский';
-    if (getCookie('language') === 'Русский') {
-      russionOption.selected = 'selected';
-    }
-    languageDropdown.append(englishOption);
-    languageDropdown.append(russionOption);
-    languageDropdown.id = 'language_dropdown';
-    languageDropdown.style = 'position:absolute; top:120px; left:1780px;';
-    languageDropdown.onchange = () => { changeLanguage(); };
-    BODY.append(languageDropdown);
-  </script>
-  <script type="text/javascript" src="../translations.js"></script>
-  <script>
-    titleBar('updates');
-    setCookie('updatesLastSeen', Date.now());
+titleBar('updates');
+setCookie('updatesLastSeen', Date.now());
   </script>
 
   <script>
