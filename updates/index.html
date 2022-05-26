@@ -5,7 +5,6 @@
 
 <body style="background-color:rgb(107, 133, 133);"></body>
 
-<script type="text/javascript" src="../translations.js"></script>
 <script type="text/javascript" src="../common.js"></script>
 <script type="text/javascript" src="./updates.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,11 +15,33 @@
 
 <body>
   <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1880px; height: 53px">
-  <select id="language_dropdown" onchange="window.location.reload();"
-    style="position:absolute; top:20px; left:1780px;">
-    <option> English </option>
-    <option> Русский </option>
-  </select>
+
+  <script>
+    const languageDropdown = document.createElement('select');
+
+    function changeLanguage() {
+      setCookie('language', languageDropdown.value);
+      window.location.reload();
+    }
+
+    const englishOption = document.createElement('option');
+    englishOption.textContent = 'English';
+    if (getCookie('language') === 'English') {
+      englishOption.selected = 'selected';
+    }
+    const russionOption = document.createElement('option');
+    russionOption.textContent = 'Русский';
+    if (getCookie('language') === 'Русский') {
+      russionOption.selected = 'selected';
+    }
+    languageDropdown.append(englishOption);
+    languageDropdown.append(russionOption);
+    languageDropdown.id = 'language_dropdown';
+    languageDropdown.style = 'position:absolute; top:120px; left:1780px;';
+    languageDropdown.onchange = () => { changeLanguage(); };
+    BODY.append(languageDropdown);
+  </script>
+  <script type="text/javascript" src="../translations.js"></script>
   <script>
     titleBar('updates');
     setCookie('updatesLastSeen', Date.now());
@@ -30,9 +51,8 @@
     // log date to console for easier updating in the future
     // eslint-disable-next-line no-console
     console.log(Date.now());
-    console.log(getCookie('updatesLastSeen'));
 
-BODY.appendChild(translate('updatesHeader', 'b', ''
+    BODY.appendChild(translate('updatesHeader', 'b', ''
       + 'position: absolute; left: 0px; top: 100px; width: 1880px; text-align: center'));
     const column1 = document.createElement('div');
     column1.style = 'position: absolute; top: 150px; left: 95px; width: 565px; white-space: pre-line';

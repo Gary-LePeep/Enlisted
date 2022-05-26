@@ -177,7 +177,7 @@ const RU = {
   language: 'Язык:',
   linkDatamine: 'Датамайн',
   linkStats: 'Стат. Солдат',
-  linkUpdate: 'Обновлог',
+  linkUpdate: 'ОбновЛог',
   linkWeaponCompare: 'Сравнения',
   magazineName: 'Название магазина: ',
   magazineSize: 'Размер магазина: ',
