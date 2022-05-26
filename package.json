@@ -1,0 +1,27 @@
+{
+  "name": "Enlisted",
+  "version": "1.0.0",
+  "description": "☑ Move all guns to categories\r     ☑ Make colors more colorblind-friendly\r     ☑ Add all base guns in the game\r     ☑ Add Russian translation\r     ☑ Separate bolt action from semi/full auto rifles\r     ☑ Add datamining page\r     ☑ Add star dropdown to gun selection\r     ☑ Add all special/premium guns in game\r     ☐ Damage done every second, accounting for reload and end of magazines.\r     ☑ Penetration values for different AT weapons\r     ☐ Add recoil/dispersion charting",
+  "main": "common.js",
+  "scripts": {
+    "lint": "eslint --fix --ext .html ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gary-LePeep/Enlisted.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gary-LePeep/Enlisted/issues"
+  },
+  "homepage": "https://github.com/Gary-LePeep/Enlisted#readme",
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-html-parser": "^6.8.2",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}

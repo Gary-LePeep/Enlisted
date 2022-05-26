@@ -20,593 +20,592 @@
 <script src="../dist/chart.min.js"></script>
 <script src="../dist/chartjs-plugin-annotation.min.js"></script>
 <script>
-    // load all bullets
-    for (var i = 0; i < ALLBULLETS.length; i++) {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "./bullets/" + ALLBULLETS[i];
-        document.body.appendChild(script);
-    }
-    // load all grenades
-    for (var i = 0; i < ALLGRENADES.length; i++) {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "./grenades/" + ALLGRENADES[i];
-        document.body.appendChild(script);
-    }
-    // load all shells
-    for (var i = 0; i < ALLSHELLS.length; i++) {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "./shells/" + ALLSHELLS[i];
-        document.body.appendChild(script);
-    }
+  // load all bullets
+  for (let i = 0; i < ALLBULLETS.length; i++) {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = `./bullets/${ALLBULLETS[i]}`;
+    document.body.appendChild(script);
+  }
+  // load all grenades
+  for (let i = 0; i < ALLGRENADES.length; i++) {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = `./grenades/${ALLGRENADES[i]}`;
+    document.body.appendChild(script);
+  }
+  // load all shells
+  for (let i = 0; i < ALLSHELLS.length; i++) {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = `./shells/${ALLSHELLS[i]}`;
+    document.body.appendChild(script);
+  }
 
-    initCSS();
+  initCSS();
 </script>
 </head>
 
 <body>
-    <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1880px; height: 53px"> 
-    <select id="language_dropdown" onchange="window.location.reload();"
-        style="position:absolute; top:20px; left:1780px;">
-        <option> English </option>
-        <option> Русский </option>
-    </select>
-    <script>
-        titleBar("datamine");
-    </script>
-
-    <script>
-        // Color Dropdown
-        var headerbox = document.createElement('header');
-        headerbox.id = "header-box";
-        document.getElementsByTagName('BODY')[0].appendChild(headerbox);
-
-        var header = document.createElement('div');
-        header.className = "header";
-        headerbox.append(header);
-
-        var primary = document.createElement("nav");
-        header.append(primary);
-
-        var primarylist = document.createElement("ul");
-        primary.append(primarylist)
-        var colorButtonContainer = document.createElement("li");
-        primarylist.append(colorButtonContainer);
-
-        var colorButton = document.createElement("li");
-        colorButton.className = "link topbtn greenbtn";
-        colorButtonContainer.append(colorButton);
-
-        var colorButtonText = document.createElement("a");
-        colorButtonText.style = "color: white; font-size:22px";
-        colorButtonText.text = translate("Weapon");
-        colorButton.append(colorButtonText);
-
-        var categorylist = document.createElement("ul");
-        colorButton.append(categorylist)
-
-        // Stars Dropdown
-        var starsDropdownContainer = document.createElement("div");
-        starsDropdownContainer.style = "background-color: rgb(107, 133, 133); text-align: center; padding: 15px"
-        colorButtonContainer.append(starsDropdownContainer);
-        var starsDropdown = document.createElement("select");
-        starsDropdown.id = "starsDropdown";
-        starsDropdownContainer.append(starsDropdown);
-        var defaultOption = document.createElement("option");
-        defaultOption.textContent = "☆☆☆☆☆";
-        starsDropdown.append(defaultOption);
-        starsDropdown.onchange = function () { window.refreshStars = false; reload_data(); };
-        window.refreshStars = true;
-
-        /* Data */
-        // Name
-        var dataDiv = document.createElement("div");
-        dataDiv.style = "position: absolute; left: 560px; width: 560px";
-        document.getElementsByTagName('BODY')[0].appendChild(dataDiv)
-
-        var dataDiv2 = document.createElement("div");
-        dataDiv2.style = "position: absolute; left: 1120px; width: 750px";
-        document.getElementsByTagName('BODY')[0].appendChild(dataDiv2)
-
-        var gunName = translate("gunName", "div");
-        dataDiv.append(gunName);
-        var gunNameData = translate("-", "b");
-        gunName.append(gunNameData);
-
-        var gunIGN = translate("gunIGN", "div");
-        dataDiv.append(gunIGN);
-        var gunIGNData = translate("-", "b");
-        gunIGN.append(gunIGNData);
-
-        var aka = translate("aka", "div");
-        dataDiv.append(aka);
-        var akaData = translate("-", "b");
-        aka.append(akaData);
-
-        var type = translate("type", "div");
-        dataDiv.append(type);
-        var typeData = translate("-", "b");
-        type.append(typeData);
-
-        var weight = translate("weight", "div");
-        dataDiv.append(weight);
-        var weightData = translate("-", "b");
-        weight.append(weightData);
-
-        var firingMode = translate("firingMode", "div");
-        dataDiv.append(firingMode);
-        var firingModeData = translate("-", "b");
-        firingMode.append(firingModeData);
-
-        var magazineName = translate("magazineName", "div");
-        dataDiv.append(magazineName);
-        var magazineNameData = translate("-", "b");
-        magazineName.append(magazineNameData);
-
-        var magazineSize = translate("magazineSize", "div");
-        dataDiv.append(magazineSize);
-        var magazineSizeData = translate("-", "b");
-        magazineSize.append(magazineSizeData);
-
-        dataDiv.append(translate("EMPTY", "p"));
-
-        // Bullet data
-        var ammo = translate("ammo", "div");
-        dataDiv.append(ammo);
-        var ammoData = translate("-", "b");
-        ammo.append(ammoData);
-
-        var rpm = translate("rpm", "div");
-        dataDiv.append(rpm);
-        var rpmData = translate("-", "b");
-        rpm.append(rpmData);
-
-        var effRange = translate("effectiveRange", "div");
-        dataDiv.append(effRange);
-        var effRangeData = translate("-", "b");
-        effRange.append(effRangeData);
-
-        var maxRange = translate("maxRange", "div");
-        dataDiv.append(maxRange);
-        var maxRangeData = translate("-", "b");
-        maxRange.append(maxRangeData);
-
-        var bulletSpeed = translate("bulletSpeed", "div");
-        dataDiv.append(bulletSpeed);
-        var bulletSpeedData = translate("-", "b");
-        bulletSpeed.append(bulletSpeedData);
-
-        var dispersion = translate("dispersion", "div");
-        dataDiv.append(dispersion);
-        var dispersionData = translate("-", "b");
-        dispersion.append(dispersionData);
-
-        var zeroDistance = translate("zeroDistance", "div");
-        dataDiv.append(zeroDistance);
-        var zeroDistanceData = translate("-", "b");
-        zeroDistance.append(zeroDistanceData);
-
-        var sightsMag = translate("sightsMag", "div");
-        //dataDiv.append(sightsMag);
-        var sightsMagData = translate("-", "b");
-        sightsMag.append(sightsMagData);
-
-        dataDiv.append(translate("EMPTY", "p"));
-
-        // Reload data
-        var singleReloadPrepare = translate("singleReloadPrepare", "div");
-        dataDiv.append(singleReloadPrepare);
-        var singleReloadPrepareData = translate("-", "b");
-        singleReloadPrepare.append(singleReloadPrepareData);
-
-        var singleReloadLoop = translate("singleReloadLoop", "div");
-        dataDiv.append(singleReloadLoop);
-        var singleReloadLoopData = translate("-", "b");
-        singleReloadLoop.append(singleReloadLoopData);
-
-        var singleReloadPost = translate("singleReloadPost", "div");
-        dataDiv.append(singleReloadPost);
-        var singleReloadPostData = translate("-", "b");
-        singleReloadPost.append(singleReloadPostData);
-
-        var reload = translate("reload", "div");
-        dataDiv.append(reload);
-        var reloadData = translate("-", "b");
-        reload.append(reloadData);
-
-        var reloadAlt = translate("reloadAlt", "div");
-        dataDiv.append(reloadAlt);
-        var reloadAltData = translate("-", "b");
-        reloadAlt.append(reloadAltData);
-
-        var reloadDualMag = translate("reloadDualMag", "div");
-        dataDiv.append(reloadDualMag);
-        var reloadDualMagData = translate("-", "b");
-        reloadDualMag.append(reloadDualMagData);
-
-        dataDiv.append(translate("EMPTY", "p"));
-
-        // Recoil data
-        var recoilVert = translate("recoilVert", "div");
-        dataDiv.append(recoilVert);
-        var recoilVertData = translate("-", "b");
-        recoilVert.append(recoilVertData);
-
-        var recoilHoriz = translate("recoilHoriz", "div");
-        dataDiv.append(recoilHoriz);
-        var recoilHorizData = translate("-", "b");
-        recoilHoriz.append(recoilHorizData);
-
-        var crawlRecoil = translate("crawlRecoil", "div");
-        dataDiv.append(crawlRecoil);
-        var crawlRecoilData = translate("-", "b");
-        crawlRecoil.append(crawlRecoilData);
-
-        // Bullet table
-        var damageOverRange = translate("ttk_dpm_dropdown1", "div");
-        dataDiv2.append(damageOverRange);
-        var table = document.createElement("table");
-        dataDiv2.append(table);
-        var tableRow1 = document.createElement("tr");
-        table.append(tableRow1);
-        var tableRow2 = document.createElement("tr");
-        table.append(tableRow2);
-
-        dataDiv2.append(translate("EMPTY", "p"));
-
-        var penOverRange = translate("penOverRange", "div");
-        dataDiv2.append(penOverRange);
-        var table2 = document.createElement("table");
-        dataDiv2.append(table2);
-        var tableRow3 = document.createElement("tr");
-        table2.append(tableRow3);
-        var tableRow4 = document.createElement("tr");
-        table2.append(tableRow4);
-
-        dataDiv2.append(translate("EMPTY", "p"));
-
-        var damageFromHeat = translate("damageFromHeat", "div");
-        dataDiv2.append(damageFromHeat);
-        var table3 = document.createElement("table");
-        dataDiv2.append(table3);
-        var tableRow5 = document.createElement("tr");
-        table3.append(tableRow5);
-        var tableRow6 = document.createElement("tr");
-        table3.append(tableRow6);
-
-        dataDiv2.append(translate("EMPTY", "p"));
-
-
-        for (var i = -1; i < WEAPONS.length; i++) (function (i) {
-            var categoryButton = document.createElement("li");
-            categoryButton.className = "Link submenu";
-            categorylist.append(categoryButton);
-
-            var categoryButtonText = document.createElement("a");
-            categoryButtonText.text = i < 0 ? translate("Remove") : WEAPONS[i][translate("Category")];
-            categoryButton.append(categoryButtonText);
-
-            categoryButton.onclick = function () {
-                if (window.refreshCategory == true || categoryButtonText.text == translate("Remove")) {
-                    // reset color button
-                    colorButtonText.text = translate("Weapon");
-                    gunNameData.textContent = "-";
-                    gunIGNData.textContent = "-";
-                    akaData.textContent = "-";
-                    typeData.textContent = "-";
-                    ammoData.textContent = "-";
-                    rpmData.textContent = "-";
-                    effRangeData.textContent = "-";
-                    maxRangeData.textContent = "-";
-                    bulletSpeedData.textContent = "-";
-                    tableRow1.textContent = "";
-                    tableRow2.textContent = "";
-                    tableRow3.textContent = "";
-                    tableRow4.textContent = "";
-                    tableRow5.textContent = "";
-                    tableRow6.textContent = "";
-                    dispersionData.textContent = "-";
-                    singleReloadPrepareData.textContent = "-";
-                    singleReloadLoopData.textContent = "-";
-                    singleReloadPostData.textContent = "-";
-                    zeroDistanceData.textContent = "-";
-                    recoilVertData.textContent = "-";
-                    recoilHorizData.textContent = "-";
-                    reloadData.textContent = "-";
-                    reloadData.style.removeProperty('text-decoration');
-                    reloadAltData.textContent = "-";
-                    reloadDualMagData.textContent = "-";
-                    crawlRecoilData.textContent = "-";
-                    sightsMagData.textContent = "-";
-                    weightData.textContent = "-";
-                    firingModeData.textContent = "-";
-                    magazineNameData.textContent = "-";
-                    magazineSizeData.textContent = "-";
-
-                    if (window.refreshStars) {
-                        starsDropdown.textContent = '';
-                        var defaultOption = document.createElement("option");
-                        defaultOption.textContent = "☆☆☆☆☆";
-                        starsDropdown.append(defaultOption);
-                    }
-
-                    window.refreshCategory = false;
-                }
-            }
-
-            var weaponlist = document.createElement("ul");
-            categoryButton.append(weaponlist)
-
-            for (var j = 0; i >= 0 && j < WEAPONS[i].Weapons.length; j++) (function (j) {
-                var weaponButton = document.createElement("li");
-                weaponButton.className = "link submenu";
-                weaponlist.append(weaponButton);
-
-                var weaponButtonText = document.createElement("a");
-                weaponButtonText.text = WEAPONS[i].Weapons[j][translate("WepName")];
-                weaponButton.append(weaponButtonText);
-                weaponButton.tagName = weaponButtonText.text;
-
-                weaponButton.onclick = function () {
-                    window.refreshCategory = true;
-                    categoryButton.onclick();
-
-                    // set color button name to selected weapon
-                    colorButtonText.text = weaponButtonText.text
-
-                    gunNameData.textContent = WEAPONS[i].Weapons[j][translate("WepName")];
-                    gunIGNData.textContent = WEAPONS[i].Weapons[j]["Name Game"];
-                    // Data for gun not entered yet
-                    if (gunIGNData.textContent == "") {
-                        gunIGNData.textContent = translate("NotFound");
-                        return;
-                    }
-                    if (window.stalingrad_mode) {
-                        gunIGNData.textContent = "stl_" + gunIGNData.textContent;
-                    }
-
-                    akaData.textContent = getDataProperty([gunIGNData.textContent], "gun__locName");
-                    var wepType = getDataProperty([gunIGNData.textContent], "item__weapType");
-                    typeData.textContent = wepType.replace(/_/g, " ");
-
-                    // this gun simply does not exist. Return.
-                    if (wepType == "-") {
-                        return;
-                    }
-
-                    // create stars only on weapon change
-                    if (window.refreshStars) {
-                        starsDropdown.textContent = '';
-                        for (var k = 0; k < STARUPGRADES[wepType].length; k++) (function (k) {
-                            starsDropdown.append(translate("★".repeat(k + 1), "option"));
-                        })(k);
-                    }
-
-                    // Apply star modifiers
-                    var damageStar = 1;
-                    var dispersionStar = 1;
-                    var rpmStar = 1;
-                    var recoilVertStar = 1;
-                    var recoilHorizStar = 1;
-                    var reloadStar = 1;
-
-                    var stars = document.getElementById('starsDropdown').value.split("★").length - 2;
-                    for (var k = stars; k >= 0; k--) {
-                        var effects = Object.keys(STARUPGRADES[wepType][k]);
-                        for (var l = 0; l < effects.length; l++) {
-                            if (effects[l] == "damage") {
-                                damageStar *= STARUPGRADES[wepType][k][effects[l]]
-                            }
-                            else if (effects[l] == "dev") {
-                                dispersionStar *= STARUPGRADES[wepType][k][effects[l]]
-                            }
-                            else if (effects[l] == "rpm") {
-                                rpmStar *= STARUPGRADES[wepType][k][effects[l]]
-                            }
-                            else if (effects[l] == "recoilVert") {
-                                recoilVertStar *= STARUPGRADES[wepType][k][effects[l]]
-                            }
-                            else if (effects[l] == "recoilHoriz") {
-                                recoilHorizStar *= STARUPGRADES[wepType][k][effects[l]]
-                            }
-                            else if (effects[l] == "reload") {
-                                reloadStar *= STARUPGRADES[wepType][k][effects[l]]
-                            }
-                            else {
-                                console.log(effects[l])
-                                console.log(STARUPGRADES[wepType][k][effects[l]])
-                            }
-                        }
-                    }
-
-                    weightData.textContent = getDataProperty([gunIGNData.textContent], "item__weight");
-                    weightData.textContent += weightData.textContent == "-" ? "" : translate("kg");
-                    var firingModes = getDataProperty([gunIGNData.textContent], "gun__firingModeNames:array");
-                    if (Array.isArray(firingModes)) {
-                        firingModeData.textContent = translate(firingModes[0]["mode"]);
-                        for (var k = 1; k < firingModes.length; k++) {
-                            firingModeData.textContent += ", " + translate(firingModes[k]["mode"]);
-                        }
-                    }
-                    else {
-                        firingModeData.textContent = translate(firingModes["mode"]);
-                    }
-                    rpmData.textContent = getDataProperty([gunIGNData.textContent], "gun__shotFreq");
-                    if (rpmData.textContent != "-") {
-                        var lowRPM = getDataProperty([gunIGNData.textContent], "gun__shotFreqRndK");
-                        var highRPM = (rpmData.textContent * 60 * rpmStar)
-                        lowRPM = highRPM / (1 + lowRPM)
-                        rpmData.textContent = toPlace(lowRPM, 2) + " - " + toPlace(highRPM, 2) + " (" + translate("average") + toPlace((highRPM + lowRPM) / 2, 2) + ")";
-                    }
-
-                    dispersionData.textContent = toPlace(getDataProperty([gunIGNData.textContent], "gun_spread__maxDeltaAngle") * dispersionStar, 2);
-                    zeroDistanceData.textContent = getDataProperty([gunIGNData.textContent], "gun__zeroingDistance");
-                    singleReloadPrepareData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__prepareTime");
-                    singleReloadPrepareData.textContent = singleReloadPrepareData.textContent == "-" ? "-" : toPlace(singleReloadPrepareData.textContent * reloadStar, 2);
-                    singleReloadLoopData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__loopTime");
-                    singleReloadLoopData.textContent = singleReloadLoopData.textContent == "-" ? "-" : toPlace(singleReloadLoopData.textContent * reloadStar, 2);
-                    singleReloadPostData.textContent = getDataProperty([gunIGNData.textContent], "single_reload__postTime");
-                    singleReloadPostData.textContent = singleReloadPostData.textContent == "-" ? "-" : toPlace(singleReloadPostData.textContent * reloadStar, 2);
-                    reloadData.textContent = getDataProperty([gunIGNData.textContent], "gun__reloadTime");
-                    reloadData.textContent = reloadData.textContent == "-" ? "-" : toPlace(reloadData.textContent * reloadStar, 2);
-                    if (getDataProperty([gunIGNData.textContent], "reload__singleBullet:tag") != "-") {
-                        reloadData.textContent = "[" + reloadData.textContent + "]";
-                        reloadData.style.setProperty("text-decoration", "line-through");
-                    }
-                    reloadAltData.textContent = getDataProperty([gunIGNData.textContent], "gun__altReloadTime");
-                    reloadAltData.textContent = reloadAltData.textContent == "-" ? "-" : toPlace(reloadAltData.textContent * reloadStar, 2);
-                    reloadDualMagData.textContent = getDataProperty([gunIGNData.textContent], "gun__dualMagReloadTime");
-                    reloadDualMagData.textContent = reloadDualMagData.textContent == "-" ? "-" : toPlace(reloadDualMagData.textContent * reloadStar, 2);
-                    sightsMagData.textContent = getDataProperty([gunIGNData.textContent], "gun__magnification");
-                    sightsMagData.textContent += sightsMagData.textContent == "-" ? "" : "×";
-
-                    var recoilTotal = getDataProperty([gunIGNData.textContent], "gun__recoilAmount");
-                    var recoilDir = getDataProperty([gunIGNData.textContent], "gun__recoilDirAmount");
-                    recoilVertData.textContent = toPlace(recoilTotal * 1000 * recoilDir * recoilVertStar, 2);
-                    recoilHorizData.textContent = toPlace(recoilTotal * 1000 * (1 - recoilDir) * recoilHorizStar, 2);
-                    crawlRecoilData.textContent = getDataProperty([gunIGNData.textContent], "gun__crawlRecoilMult");
-                    crawlRecoilData.textContent = crawlRecoilData.textContent == "-" ? "-" : crawlRecoilData.textContent * 100 + "%";
-
-                    ammoFile = getDataProperty([gunIGNData.textContent], "gun__shells:array")["shells"].split("/");
-                    ammoFile = ammoFile[ammoFile.length - 1];
-                    ammoData.textContent = ammoFile.split(".")[0];
-                    for (var k = 1; k < ammoFile.split(".").length - 1; k++) {
-                        ammoData.textContent += "." + ammoFile.split(".")[k];
-                    }
-
-                    var ammoDataFile = window["_" + ammoData.textContent.replace(/\./g, "_")]
-
-                    var magazineStat = getDataProperty([gunIGNData.textContent], "gun__ammoHolders:array")
-                    magazineNameData.textContent = Array.isArray(magazineStat) ? magazineStat[0]["ammoHolders"] : magazineStat["ammoHolders"];
-                    magazineSizeData.textContent = ALLITEMSDATA[magazineNameData.textContent]["ammo_holder__ammoCount"];
-
-                    // damage just for flamethrowers done here
-                    var flameDamage = getDataProperty([gunIGNData.textContent], "flamethrower__streamDamagePerSecond");
-                    if (flameDamage != "-") {
-                        var tableheader = document.createElement("th");
-                        tableheader.textContent = translate("upTo") + getDataProperty([gunIGNData.textContent], "flamethrower__maxFlameLength") + translate("meters");
-                        tableRow1.append(tableheader);
-                        var tabledata = document.createElement("td");
-                        tabledata.textContent = flameDamage + translate("perSecond");
-                        tableRow2.append(tabledata);
-                    }
-
-                    // if ammo not found, return to prevent errors
-                    if (ammoDataFile == null) {
-                        return;
-                    }
-                    effRangeData.textContent = getAmmoProperty(ammoDataFile, "effectiveDistance");
-                    maxRangeData.textContent = getAmmoProperty(ammoDataFile, "maxDistance");
-                    bulletSpeedData.textContent = getAmmoProperty(ammoDataFile, "speed");
-
-                    // damage
-                    var numBullets = getAmmoProperty(ammoDataFile, "spawn");
-                    var hitpower = getAmmoProperty(ammoDataFile, "hitpower");
-                    if (hitpower != null) {
-                        var keys = Object.keys(hitpower);
-                        var hitmult = getDataProperty([gunIGNData.textContent], "gun__kineticDamageMult");
-
-                        for (var k = 0; k < keys.length; k++) (function (k) {
-                            var tableheader = document.createElement("th");
-                            tableheader.textContent = hitpower[keys[k]][1] + translate("meters");
-                            tableRow1.append(tableheader);
-                            var tabledata = document.createElement("td");
-                            tabledata.textContent = "";
-                            if (numBullets != null) {
-                                if (numBullets["minCount"] == numBullets["maxCount"]) {
-                                    tabledata.textContent += numBullets["maxCount"] + " × ";
-                                }
-                                else {
-                                    tabledata.textContent += "(" + numBullets["minCount"] + " - " + numBullets["maxCount"] + ") × ";
-                                }
-                            }
-                            tabledata.textContent += toPlace(hitpower[keys[k]][0] * getAmmoProperty(ammoDataFile, "hitPowerMult") * damageStar * (hitmult == "-" ? 1 : hitmult), 3);
-                            tableRow2.append(tabledata);
-                        })(k);
-                    }
-                    var cumDamage = getAmmoProperty(ammoDataFile, "cumulativeDamage");
-                    if (cumDamage != null) {
-                        // damage on contact to vehicles
-                        var tableheader = document.createElement("th");
-                        tableheader.textContent = translate("contactVehicle");
-                        tableRow5.append(tableheader);
-                        var tabledata = document.createElement("td");
-                        tabledata.textContent = cumDamage["damage"];
-                        tableRow6.append(tabledata);
-
-                        // damage at distance to people
-                        var tableheader = document.createElement("th");
-                        tableheader.textContent = "0" + translate("meters");
-                        tableRow1.append(tableheader);
-                        var tabledata = document.createElement("td");
-                        tabledata.textContent = getAmmoProperty(ammoDataFile, "explodeHitPower");
-                        tableRow2.append(tabledata);
-
-                        tableheader = document.createElement("th");
-                        tableheader.textContent = cumDamage["distance"] + translate("meters");
-                        tableRow1.append(tableheader);
-                        tabledata = document.createElement("td");
-                        tabledata.textContent = 0;
-                        tableRow2.append(tabledata);
-
-                        // armor
-                        var tableheader = document.createElement("th");
-                        tableheader.textContent = translate("contactVehicle");
-                        tableRow3.append(tableheader);
-                        var tabledata = document.createElement("td");
-                        tabledata.textContent = cumDamage["armorPower"] + translate("millimeters");
-                        tableRow4.append(tabledata);
-                    }
-                    else {
-                        var armorpower = getAmmoProperty(ammoDataFile, "armorpower");
-                        if (armorpower != null) {
-                            var keys = Object.keys(armorpower);
-                            for (var k = 0; k < keys.length; k++) {
-                                var tableheader = document.createElement("th");
-                                tableheader.textContent = getAmmoProperty(ammoDataFile, "armorpower")[keys[k]][1] + translate("meters");
-                                tableRow3.append(tableheader);
-                                var tabledata = document.createElement("td");
-                                tabledata.textContent = (getAmmoProperty(ammoDataFile, "armorpower")[keys[k]][0]) + translate("millimeters");
-                                tableRow4.append(tabledata);
-                            }
-                        }
-                    }
-                    window.refreshStars = true;
-                }
-            })(j)
-        })(i)
-
-        function reload_data() {
-            var buttons = document.getElementsByClassName("topbtn");
-            for (var i = 0; i < buttons.length; i++) {
-                var text = buttons[i].childNodes[0].textContent
-                var wepbtns = buttons[i].getElementsByTagName("LI");
-                for (var j = 0; j < wepbtns.length; j++) {
-                    if (wepbtns[j].textContent == text) {
-                        wepbtns[j].onclick();
-                    }
-                }
-            }
+  <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1880px; height: 53px">
+  <select id="language_dropdown" onchange="window.location.reload();" style="position:absolute; top:20px; left:1780px;">
+    <option> English </option>
+    <option> Русский </option>
+  </select>
+  <script>
+    titleBar('datamine');
+  </script>
+
+  <script>
+    function reloadDisplayedData() {
+      const buttons = document.getElementsByClassName('topbtn');
+      for (let i = 0; i < buttons.length; i++) {
+        const text = buttons[i].childNodes[0].textContent;
+        const wepbtns = buttons[i].getElementsByTagName('LI');
+        for (let j = 0; j < wepbtns.length; j++) {
+          if (wepbtns[j].textContent === text) {
+            wepbtns[j].onclick();
+          }
         }
-    </script>
+      }
+    }
 
-    <input type="checkbox" id="stalingradMode" onclick="stalingradMode()"
-        style="position:absolute; top:70px; left:560px;">
-    <script>
-        function stalingradMode() {
-            window.stalingrad_mode = document.getElementById("stalingradMode").checked;
-            reload_data();
+    // Color Dropdown
+    const headerbox = document.createElement('header');
+    headerbox.id = 'header-box';
+    BODY.appendChild(headerbox);
+
+    const header = document.createElement('div');
+    header.className = 'header';
+    headerbox.append(header);
+
+    const primary = document.createElement('nav');
+    header.append(primary);
+
+    const primarylist = document.createElement('ul');
+    primary.append(primarylist);
+    const colorButtonContainer = document.createElement('li');
+    primarylist.append(colorButtonContainer);
+
+    const colorButton = document.createElement('li');
+    colorButton.className = 'link topbtn greenbtn';
+    colorButtonContainer.append(colorButton);
+
+    const colorButtonText = document.createElement('a');
+    colorButtonText.style = 'color: white; font-size:22px';
+    colorButtonText.text = translate('Weapon');
+    colorButton.append(colorButtonText);
+
+    const categorylist = document.createElement('ul');
+    colorButton.append(categorylist);
+
+    // Stars Dropdown
+    const starsDropdownContainer = document.createElement('div');
+    starsDropdownContainer.style = 'background-color: rgb(107, 133, 133); text-align: center; padding: 15px';
+    colorButtonContainer.append(starsDropdownContainer);
+    const starsDropdown = document.createElement('select');
+    starsDropdown.id = 'starsDropdown';
+    starsDropdownContainer.append(starsDropdown);
+    const defaultOption = document.createElement('option');
+    defaultOption.textContent = '☆☆☆☆☆';
+    starsDropdown.append(defaultOption);
+    starsDropdown.onchange = () => { window.refreshStars = false; reloadDisplayedData(); };
+    window.refreshStars = true;
+
+    /* Data */
+    // Name
+    const dataDiv = document.createElement('div');
+    dataDiv.style = 'position: absolute; left: 560px; width: 560px';
+    BODY.appendChild(dataDiv);
+
+    const dataDiv2 = document.createElement('div');
+    dataDiv2.style = 'position: absolute; left: 1120px; width: 750px';
+    BODY.appendChild(dataDiv2);
+
+    const gunName = translate('gunName', 'div');
+    dataDiv.append(gunName);
+    const gunNameData = translate('-', 'b');
+    gunName.append(gunNameData);
+
+    const gunIGN = translate('gunIGN', 'div');
+    dataDiv.append(gunIGN);
+    const gunIGNData = translate('-', 'b');
+    gunIGN.append(gunIGNData);
+
+    const aka = translate('aka', 'div');
+    dataDiv.append(aka);
+    const akaData = translate('-', 'b');
+    aka.append(akaData);
+
+    const type = translate('type', 'div');
+    dataDiv.append(type);
+    const typeData = translate('-', 'b');
+    type.append(typeData);
+
+    const weight = translate('weight', 'div');
+    dataDiv.append(weight);
+    const weightData = translate('-', 'b');
+    weight.append(weightData);
+
+    const firingMode = translate('firingMode', 'div');
+    dataDiv.append(firingMode);
+    const firingModeData = translate('-', 'b');
+    firingMode.append(firingModeData);
+
+    const magazineName = translate('magazineName', 'div');
+    dataDiv.append(magazineName);
+    const magazineNameData = translate('-', 'b');
+    magazineName.append(magazineNameData);
+
+    const magazineSize = translate('magazineSize', 'div');
+    dataDiv.append(magazineSize);
+    const magazineSizeData = translate('-', 'b');
+    magazineSize.append(magazineSizeData);
+
+    dataDiv.append(translate('EMPTY', 'p'));
+
+    // Bullet data
+    const ammo = translate('ammo', 'div');
+    dataDiv.append(ammo);
+    const ammoData = translate('-', 'b');
+    ammo.append(ammoData);
+
+    const rpm = translate('rpm', 'div');
+    dataDiv.append(rpm);
+    const rpmData = translate('-', 'b');
+    rpm.append(rpmData);
+
+    const effRange = translate('effectiveRange', 'div');
+    dataDiv.append(effRange);
+    const effRangeData = translate('-', 'b');
+    effRange.append(effRangeData);
+
+    const maxRange = translate('maxRange', 'div');
+    dataDiv.append(maxRange);
+    const maxRangeData = translate('-', 'b');
+    maxRange.append(maxRangeData);
+
+    const bulletSpeed = translate('bulletSpeed', 'div');
+    dataDiv.append(bulletSpeed);
+    const bulletSpeedData = translate('-', 'b');
+    bulletSpeed.append(bulletSpeedData);
+
+    const dispersion = translate('dispersion', 'div');
+    dataDiv.append(dispersion);
+    const dispersionData = translate('-', 'b');
+    dispersion.append(dispersionData);
+
+    const zeroDistance = translate('zeroDistance', 'div');
+    dataDiv.append(zeroDistance);
+    const zeroDistanceData = translate('-', 'b');
+    zeroDistance.append(zeroDistanceData);
+
+    const sightsMag = translate('sightsMag', 'div');
+    // dataDiv.append(sightsMag);
+    const sightsMagData = translate('-', 'b');
+    sightsMag.append(sightsMagData);
+
+    dataDiv.append(translate('EMPTY', 'p'));
+
+    // Reload data
+    const singleReloadPrepare = translate('singleReloadPrepare', 'div');
+    dataDiv.append(singleReloadPrepare);
+    const singleReloadPrepareData = translate('-', 'b');
+    singleReloadPrepare.append(singleReloadPrepareData);
+
+    const singleReloadLoop = translate('singleReloadLoop', 'div');
+    dataDiv.append(singleReloadLoop);
+    const singleReloadLoopData = translate('-', 'b');
+    singleReloadLoop.append(singleReloadLoopData);
+
+    const singleReloadPost = translate('singleReloadPost', 'div');
+    dataDiv.append(singleReloadPost);
+    const singleReloadPostData = translate('-', 'b');
+    singleReloadPost.append(singleReloadPostData);
+
+    const reload = translate('reload', 'div');
+    dataDiv.append(reload);
+    const reloadData = translate('-', 'b');
+    reload.append(reloadData);
+
+    const reloadAlt = translate('reloadAlt', 'div');
+    dataDiv.append(reloadAlt);
+    const reloadAltData = translate('-', 'b');
+    reloadAlt.append(reloadAltData);
+
+    const reloadDualMag = translate('reloadDualMag', 'div');
+    dataDiv.append(reloadDualMag);
+    const reloadDualMagData = translate('-', 'b');
+    reloadDualMag.append(reloadDualMagData);
+
+    dataDiv.append(translate('EMPTY', 'p'));
+
+    // Recoil data
+    const recoilVert = translate('recoilVert', 'div');
+    dataDiv.append(recoilVert);
+    const recoilVertData = translate('-', 'b');
+    recoilVert.append(recoilVertData);
+
+    const recoilHoriz = translate('recoilHoriz', 'div');
+    dataDiv.append(recoilHoriz);
+    const recoilHorizData = translate('-', 'b');
+    recoilHoriz.append(recoilHorizData);
+
+    const crawlRecoil = translate('crawlRecoil', 'div');
+    dataDiv.append(crawlRecoil);
+    const crawlRecoilData = translate('-', 'b');
+    crawlRecoil.append(crawlRecoilData);
+
+    // Bullet table
+    const damageOverRange = translate('ttkDpmDropdown1', 'div');
+    dataDiv2.append(damageOverRange);
+    const table = document.createElement('table');
+    dataDiv2.append(table);
+    const tableRow1 = document.createElement('tr');
+    table.append(tableRow1);
+    const tableRow2 = document.createElement('tr');
+    table.append(tableRow2);
+
+    dataDiv2.append(translate('EMPTY', 'p'));
+
+    const penOverRange = translate('penOverRange', 'div');
+    dataDiv2.append(penOverRange);
+    const table2 = document.createElement('table');
+    dataDiv2.append(table2);
+    const tableRow3 = document.createElement('tr');
+    table2.append(tableRow3);
+    const tableRow4 = document.createElement('tr');
+    table2.append(tableRow4);
+
+    dataDiv2.append(translate('EMPTY', 'p'));
+
+    const damageFromHeat = translate('damageFromHeat', 'div');
+    dataDiv2.append(damageFromHeat);
+    const table3 = document.createElement('table');
+    dataDiv2.append(table3);
+    const tableRow5 = document.createElement('tr');
+    table3.append(tableRow5);
+    const tableRow6 = document.createElement('tr');
+    table3.append(tableRow6);
+
+    dataDiv2.append(translate('EMPTY', 'p'));
+
+    for (let i = -1; i < WEAPONS.length; i++) {
+      const categoryButton = document.createElement('li');
+      categoryButton.className = 'Link submenu';
+      categorylist.append(categoryButton);
+
+      const categoryButtonText = document.createElement('a');
+      categoryButtonText.text = i < 0 ? translate('Remove') : WEAPONS[i][translate('Category')];
+      categoryButton.append(categoryButtonText);
+
+      categoryButton.onclick = () => {
+        if (window.refreshCategory === true || categoryButtonText.text === translate('Remove')) {
+          // reset color button
+          colorButtonText.text = translate('Weapon');
+          gunNameData.textContent = '-';
+          gunIGNData.textContent = '-';
+          akaData.textContent = '-';
+          typeData.textContent = '-';
+          ammoData.textContent = '-';
+          rpmData.textContent = '-';
+          effRangeData.textContent = '-';
+          maxRangeData.textContent = '-';
+          bulletSpeedData.textContent = '-';
+          tableRow1.textContent = '';
+          tableRow2.textContent = '';
+          tableRow3.textContent = '';
+          tableRow4.textContent = '';
+          tableRow5.textContent = '';
+          tableRow6.textContent = '';
+          dispersionData.textContent = '-';
+          singleReloadPrepareData.textContent = '-';
+          singleReloadLoopData.textContent = '-';
+          singleReloadPostData.textContent = '-';
+          zeroDistanceData.textContent = '-';
+          recoilVertData.textContent = '-';
+          recoilHorizData.textContent = '-';
+          reloadData.textContent = '-';
+          reloadData.style.removeProperty('text-decoration');
+          reloadAltData.textContent = '-';
+          reloadDualMagData.textContent = '-';
+          crawlRecoilData.textContent = '-';
+          sightsMagData.textContent = '-';
+          weightData.textContent = '-';
+          firingModeData.textContent = '-';
+          magazineNameData.textContent = '-';
+          magazineSizeData.textContent = '-';
+
+          if (window.refreshStars) {
+            starsDropdown.textContent = '';
+            starsDropdown.append(defaultOption);
+          }
+
+          window.refreshCategory = false;
         }
+      };
 
-        document.getElementsByTagName('BODY')[0].appendChild(translate("stalingradMode", "b", "position:absolute; top:70px; left:585px;"));
-        stalingradMode();
-    </script>
+      const weaponlist = document.createElement('ul');
+      categoryButton.append(weaponlist);
 
-    <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "color: #002244; position: absolute; top: 870px; width: 1880px; text-align: center"));
-    </script>
+      for (let j = 0; i >= 0 && j < WEAPONS[i].Weapons.length; j++) {
+        const weaponButton = document.createElement('li');
+        weaponButton.className = 'link submenu';
+        weaponlist.append(weaponButton);
+
+        const weaponButtonText = document.createElement('a');
+        weaponButtonText.text = WEAPONS[i].Weapons[j][translate('WepName')];
+        weaponButton.append(weaponButtonText);
+        weaponButton.tagName = weaponButtonText.text;
+
+        weaponButton.onclick = () => {
+          window.refreshCategory = true;
+          categoryButton.onclick();
+
+          // set color button name to selected weapon
+          colorButtonText.text = weaponButtonText.text;
+
+          gunNameData.textContent = WEAPONS[i].Weapons[j][translate('WepName')];
+          gunIGNData.textContent = WEAPONS[i].Weapons[j]['Name Game'];
+          // Data for gun not entered yet
+          if (gunIGNData.textContent === '') {
+            gunIGNData.textContent = translate('NotFound');
+            return;
+          }
+          if (window.stalingrad_mode) {
+            gunIGNData.textContent = `stl_${gunIGNData.textContent}`;
+          }
+
+          akaData.textContent = getDataProperty([gunIGNData.textContent], 'gun__locName');
+          const wepType = getDataProperty([gunIGNData.textContent], 'item__weapType');
+          typeData.textContent = wepType.replace(/_/g, ' ');
+
+          // this gun simply does not exist. Return.
+          if (wepType === '-') {
+            return;
+          }
+
+          // create stars only on weapon change
+          if (window.refreshStars) {
+            starsDropdown.textContent = '';
+            for (let k = 0; k < STARUPGRADES[wepType].length; k++) {
+              starsDropdown.append(translate('★'.repeat(k + 1), 'option'));
+            }
+          }
+
+          // Apply star modifiers
+          let damageStar = 1;
+          let dispersionStar = 1;
+          let rpmStar = 1;
+          let recoilVertStar = 1;
+          let recoilHorizStar = 1;
+          let reloadStar = 1;
+
+          const stars = document.getElementById('starsDropdown').value.split('★').length - 2;
+          for (let k = stars; k >= 0; k--) {
+            const effects = Object.keys(STARUPGRADES[wepType][k]);
+            for (let l = 0; l < effects.length; l++) {
+              if (effects[l] === 'damage') {
+                damageStar *= STARUPGRADES[wepType][k][effects[l]];
+              } else if (effects[l] === 'dev') {
+                dispersionStar *= STARUPGRADES[wepType][k][effects[l]];
+              } else if (effects[l] === 'rpm') {
+                rpmStar *= STARUPGRADES[wepType][k][effects[l]];
+              } else if (effects[l] === 'recoilVert') {
+                recoilVertStar *= STARUPGRADES[wepType][k][effects[l]];
+              } else if (effects[l] === 'recoilHoriz') {
+                recoilHorizStar *= STARUPGRADES[wepType][k][effects[l]];
+              } else if (effects[l] === 'reload') {
+                reloadStar *= STARUPGRADES[wepType][k][effects[l]];
+              } else {
+                console.log(effects[l]);
+                console.log(STARUPGRADES[wepType][k][effects[l]]);
+              }
+            }
+          }
+
+          weightData.textContent = getDataProperty([gunIGNData.textContent], 'item__weight');
+          weightData.textContent += weightData.textContent === '-' ? '' : translate('kg');
+          const firingModes = getDataProperty([gunIGNData.textContent], 'gun__firingModeNames:array');
+          if (Array.isArray(firingModes)) {
+            firingModeData.textContent = translate(firingModes[0].mode);
+            for (let k = 1; k < firingModes.length; k++) {
+              firingModeData.textContent += `, ${translate(firingModes[k].mode)}`;
+            }
+          } else {
+            firingModeData.textContent = translate(firingModes.mode);
+          }
+          rpmData.textContent = getDataProperty([gunIGNData.textContent], 'gun__shotFreq');
+          if (rpmData.textContent !== '-') {
+            let lowRPM = getDataProperty([gunIGNData.textContent], 'gun__shotFreqRndK');
+            const highRPM = (rpmData.textContent * 60 * rpmStar);
+            lowRPM = highRPM / (1 + lowRPM);
+            rpmData.textContent = `${toPlace(lowRPM, 2)} - ${toPlace(highRPM, 2)}`
+              + `(${translate('average')}${toPlace((highRPM + lowRPM) / 2, 2)})`;
+          }
+
+          dispersionData.textContent = toPlace(getDataProperty([gunIGNData.textContent], 'gun_spread__maxDeltaAngle')
+            * dispersionStar, 2);
+          zeroDistanceData.textContent = getDataProperty([gunIGNData.textContent], 'gun__zeroingDistance');
+          singleReloadPrepareData.textContent = getDataProperty([gunIGNData.textContent], 'single_reload__prepareTime');
+          singleReloadPrepareData.textContent = singleReloadPrepareData.textContent === '-'
+            ? '-' : toPlace(singleReloadPrepareData.textContent * reloadStar, 2);
+          singleReloadLoopData.textContent = getDataProperty([gunIGNData.textContent], 'single_reload__loopTime');
+          singleReloadLoopData.textContent = singleReloadLoopData.textContent === '-'
+            ? '-' : toPlace(singleReloadLoopData.textContent * reloadStar, 2);
+          singleReloadPostData.textContent = getDataProperty([gunIGNData.textContent], 'single_reload__postTime');
+          singleReloadPostData.textContent = singleReloadPostData.textContent === '-'
+            ? '-' : toPlace(singleReloadPostData.textContent * reloadStar, 2);
+          reloadData.textContent = getDataProperty([gunIGNData.textContent], 'gun__reloadTime');
+          reloadData.textContent = reloadData.textContent === '-' ? '-' : toPlace(reloadData.textContent * reloadStar, 2);
+          if (getDataProperty([gunIGNData.textContent], 'reload__singleBullet:tag') !== '-') {
+            reloadData.textContent = `[${reloadData.textContent}]`;
+            reloadData.style.setProperty('text-decoration', 'line-through');
+          }
+          reloadAltData.textContent = getDataProperty([gunIGNData.textContent], 'gun__altReloadTime');
+          reloadAltData.textContent = reloadAltData.textContent === '-'
+            ? '-' : toPlace(reloadAltData.textContent * reloadStar, 2);
+          reloadDualMagData.textContent = getDataProperty([gunIGNData.textContent], 'gun__dualMagReloadTime');
+          reloadDualMagData.textContent = reloadDualMagData.textContent === '-'
+            ? '-' : toPlace(reloadDualMagData.textContent * reloadStar, 2);
+          sightsMagData.textContent = getDataProperty([gunIGNData.textContent], 'gun__magnification');
+          sightsMagData.textContent += sightsMagData.textContent === '-' ? '' : '×';
+
+          const recoilTotal = getDataProperty([gunIGNData.textContent], 'gun__recoilAmount');
+          const recoilDir = getDataProperty([gunIGNData.textContent], 'gun__recoilDirAmount');
+          recoilVertData.textContent = toPlace(recoilTotal * 1000 * recoilDir * recoilVertStar, 2);
+          recoilHorizData.textContent = toPlace(recoilTotal * 1000 * (1 - recoilDir) * recoilHorizStar, 2);
+          crawlRecoilData.textContent = getDataProperty([gunIGNData.textContent], 'gun__crawlRecoilMult');
+          crawlRecoilData.textContent = crawlRecoilData.textContent === '-' ? '-' : `${crawlRecoilData.textContent * 100}%`;
+
+          ammoFile = getDataProperty([gunIGNData.textContent], 'gun__shells:array').shells.split('/');
+          ammoFile = ammoFile[ammoFile.length - 1];
+          [ammoData.textContent] = ammoFile.split('.');
+          for (let k = 1; k < ammoFile.split('.').length - 1; k++) {
+            ammoData.textContent += `.${ammoFile.split('.')[k]}`;
+          }
+
+          const ammoDataFile = window[`_${ammoData.textContent.replace(/\./g, '_')}`];
+
+          const magazineStat = getDataProperty([gunIGNData.textContent], 'gun__ammoHolders:array');
+          magazineNameData.textContent = Array.isArray(magazineStat)
+            ? magazineStat[0].ammoHolders : magazineStat.ammoHolders;
+          magazineSizeData.textContent = ALLITEMSDATA[magazineNameData.textContent].ammo_holder__ammoCount;
+
+          // damage just for flamethrowers done here
+          const flameDamage = getDataProperty([gunIGNData.textContent], 'flamethrower__streamDamagePerSecond');
+          if (flameDamage !== '-') {
+            const tableheader = document.createElement('th');
+            tableheader.textContent = translate('upTo')
+              + getDataProperty([gunIGNData.textContent], 'flamethrower__maxFlameLength') + translate('meters');
+            tableRow1.append(tableheader);
+            const tabledata = document.createElement('td');
+            tabledata.textContent = flameDamage + translate('perSecond');
+            tableRow2.append(tabledata);
+          }
+
+          // if ammo not found, return to prevent errors
+          if (ammoDataFile == null) {
+            return;
+          }
+          effRangeData.textContent = getAmmoProperty(ammoDataFile, 'effectiveDistance');
+          maxRangeData.textContent = getAmmoProperty(ammoDataFile, 'maxDistance');
+          bulletSpeedData.textContent = getAmmoProperty(ammoDataFile, 'speed');
+
+          // damage
+          const numBullets = getAmmoProperty(ammoDataFile, 'spawn');
+          const hitpower = getAmmoProperty(ammoDataFile, 'hitpower');
+          if (hitpower != null) {
+            const keys = Object.keys(hitpower);
+            const hitmult = getDataProperty([gunIGNData.textContent], 'gun__kineticDamageMult');
+
+            for (let k = 0; k < keys.length; k++) {
+              const tableheader = document.createElement('th');
+              tableheader.textContent = hitpower[keys[k]][1] + translate('meters');
+              tableRow1.append(tableheader);
+              const tabledata = document.createElement('td');
+              tabledata.textContent = '';
+              if (numBullets != null) {
+                if (numBullets.minCount === numBullets.maxCount) {
+                  tabledata.textContent += `${numBullets.maxCount} × `;
+                } else {
+                  tabledata.textContent += `(${numBullets.minCount} - ${numBullets.maxCount}) × `;
+                }
+              }
+              tabledata.textContent += toPlace(hitpower[keys[k]][0] * getAmmoProperty(ammoDataFile, 'hitPowerMult')
+                * damageStar * (hitmult === '-' ? 1 : hitmult), 3);
+              tableRow2.append(tabledata);
+            }
+          }
+          const cumDamage = getAmmoProperty(ammoDataFile, 'cumulativeDamage');
+          if (cumDamage != null) {
+            // damage on contact to vehicles
+            let tableheader = document.createElement('th');
+            tableheader.textContent = translate('contactVehicle');
+            tableRow5.append(tableheader);
+            let tabledata = document.createElement('td');
+            tabledata.textContent = cumDamage.damage;
+            tableRow6.append(tabledata);
+
+            // damage at distance to people
+            tableheader = document.createElement('th');
+            tableheader.textContent = `0${translate('meters')}`;
+            tableRow1.append(tableheader);
+            tabledata = document.createElement('td');
+            tabledata.textContent = getAmmoProperty(ammoDataFile, 'explodeHitPower');
+            tableRow2.append(tabledata);
+
+            tableheader = document.createElement('th');
+            tableheader.textContent = cumDamage.distance + translate('meters');
+            tableRow1.append(tableheader);
+            tabledata = document.createElement('td');
+            tabledata.textContent = 0;
+            tableRow2.append(tabledata);
+
+            // armor
+            tableheader = document.createElement('th');
+            tableheader.textContent = translate('contactVehicle');
+            tableRow3.append(tableheader);
+            tabledata = document.createElement('td');
+            tabledata.textContent = cumDamage.armorPower + translate('millimeters');
+            tableRow4.append(tabledata);
+          } else {
+            const armorpower = getAmmoProperty(ammoDataFile, 'armorpower');
+            if (armorpower != null) {
+              const keys = Object.keys(armorpower);
+              for (let k = 0; k < keys.length; k++) {
+                const tableheader = document.createElement('th');
+                tableheader.textContent = getAmmoProperty(ammoDataFile, 'armorpower')[keys[k]][1] + translate('meters');
+                tableRow3.append(tableheader);
+                const tabledata = document.createElement('td');
+                tabledata.textContent = (getAmmoProperty(ammoDataFile, 'armorpower')[keys[k]][0])
+                  + translate('millimeters');
+                tableRow4.append(tabledata);
+              }
+            }
+          }
+          window.refreshStars = true;
+        };
+      }
+    }
+  </script>
+
+  <input type="checkbox" id="stalingradMode" onclick="stalingradMode()"
+    style="position:absolute; top:70px; left:560px;">
+  <script>
+    function stalingradMode() {
+      window.stalingrad_mode = document.getElementById('stalingradMode').checked;
+      reloadDisplayedData();
+    }
+
+    BODY.appendChild(translate('stalingradMode', 'b', 'position:absolute; top:70px; left:585px;'));
+    stalingradMode();
+  </script>
+
+  <script>
+    BODY.appendChild(translate('contact', 'p', 'color: #002244; position: absolute; top: 870px; width: 1880px;'
+      + 'text-align: center'));
+  </script>
 </body>
 
 </html>

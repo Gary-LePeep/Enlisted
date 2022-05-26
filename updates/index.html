@@ -10,41 +10,44 @@
 <script type="text/javascript" src="./updates.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-    initCSS();
+  initCSS();
 </script>
 </head>
 
 <body>
-    <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1880px; height: 53px"> 
-    <select id="language_dropdown" onchange="window.location.reload();"
-        style="position:absolute; top:20px; left:1780px;">
-        <option> English </option>
-        <option> Русский </option>
-    </select>
-    <script>
-        titleBar("updates");
-    </script>
+  <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1880px; height: 53px">
+  <select id="language_dropdown" onchange="window.location.reload();"
+    style="position:absolute; top:20px; left:1780px;">
+    <option> English </option>
+    <option> Русский </option>
+  </select>
+  <script>
+    titleBar('updates');
+  </script>
 
-    <script>
-        console.log(Date.now());
-        document.getElementsByTagName('BODY')[0].appendChild(translate("updatesHeader", 'b', "position: absolute; left: 0px; top: 100px; width: 1880px; text-align: center"));
-        var column1 = document.createElement("div");
-        column1.style = "position: absolute; top: 150px; left: 95px; width: 565px; white-space: pre-line";
-        document.getElementsByTagName('BODY')[0].appendChild(column1);
-        for (var i = 0; i < Object.keys(UPDATES).length; i++) {
-            column1.appendChild(translate(numToDate(Object.keys(UPDATES)[i]), 'b'));
-            var updateText = UPDATES[Object.keys(UPDATES)[i]];
-            if (Array.isArray(updateText)) {
-                updateText = updateText.join("\r\n");
-            }
-            column1.appendChild(translate(updateText, 'div'));
-            column1.appendChild(translate("EMPTY", 'p'));
-        }
-    </script>
+  <script>
+    // eslint-disable-next-line no-console
+    console.log(Date.now());
+    BODY.appendChild(translate('updatesHeader', 'b', ''
+      + 'position: absolute; left: 0px; top: 100px; width: 1880px; text-align: center'));
+    const column1 = document.createElement('div');
+    column1.style = 'position: absolute; top: 150px; left: 95px; width: 565px; white-space: pre-line';
+    BODY.appendChild(column1);
+    for (let i = 0; i < Object.keys(UPDATES).length; i++) {
+      column1.appendChild(translate(numToDate(Object.keys(UPDATES)[i]), 'b'));
+      let updateText = UPDATES[Object.keys(UPDATES)[i]];
+      if (Array.isArray(updateText)) {
+        updateText = updateText.join('\r\n');
+      }
+      column1.appendChild(translate(updateText, 'div'));
+      column1.appendChild(translate('EMPTY', 'p'));
+    }
+  </script>
 
-    <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("contact", 'p', "color: #002244; position: absolute; top: 870px; width: 1880px; text-align: center"));
-    </script>
+  <script>
+    BODY.appendChild(translate('contact', 'p', ''
+      + 'color: #002244; position: absolute; top: 870px; width: 1880px; text-align: center'));
+  </script>
 </body>
 
 </html>

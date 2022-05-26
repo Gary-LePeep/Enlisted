@@ -11,204 +11,208 @@
 <script type="text/javascript" src="../updates/updates.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-    initCSS();
+  initCSS();
 </script>
 </head>
 
 <body>
-    <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1880px; height: 53px">
-    <select id="language_dropdown" onchange="window.location.reload();"
-        style="position:absolute; top:20px; left:1780px;">
-        <option> English </option>
-        <option> Русский </option>
-    </select>
-    <script>
-        titleBar("statistics");
-    </script>
+  <img src="../resources/feldgrau.png" style="position: relative; top: 0px; left: 0px; width: 1880px; height: 53px">
+  <select id="language_dropdown" onchange="window.location.reload();" style="position:absolute; top:20px; left:1780px;">
+    <option> English </option>
+    <option> Русский </option>
+  </select>
+  <script>
+    titleBar('statistics');
+  </script>
 
-    <input type="checkbox" id="ColorblindMode" onclick="ColorblindMode()" onchange="window.location.reload();"
-        style="position:absolute; top:70px; left:1675px;">
-    <script>
-        document.getElementsByTagName('BODY')[0].appendChild(translate("ColorblindMode", "b", "position:absolute; top:70px; left:1700px;"));
-        function ColorblindMode() { window.Colorblind = document.getElementById("ColorblindMode").checked }
-        ColorblindMode();
+  <input type="checkbox" id="ColorblindMode" onclick="ColorblindMode()" onchange="window.location.reload();"
+    style="position:absolute; top:70px; left:1675px;">
+  <script>
+    function formatName(name, brown = false) {
+      const halves = name.split('#');
+      name = halves[1] != null ? `${translate(halves[0])} ${halves[1]}` : translate(halves[0]);
+      if (brown) {
+        return translate(name, 'td', 'background-color: rgb(51, 31, 22); border: 2px solid rgb(80, 55, 45)');
+      }
+      return translate(name, 'td');
+    }
 
-        var allTablesDiv = document.createElement("div");
-        document.getElementsByTagName('BODY')[0].appendChild(allTablesDiv);
+    function formatStats(element, array, offset) {
+      COLORBLIND_COLORS = ['color: #25ac88', 'color: #d65153', 'color: #db7329'];
+      COLORS = ['color: rgb(155, 255, 155)', 'color: rgb(255, 155, 155)', 'color: rgb(255, 255, 155)'];
 
-        var statsHeader = document.createElement("div");
-        statsHeader.style = "position: relative; top: 20px; height: 25px; width: 1880px; text-align: center";
-        allTablesDiv.appendChild(statsHeader)
-        statsHeader.appendChild(translate("statsHeader", 'b'));
-
-        var table = document.createElement("table");
-        table.style = "position: relative; top: 50px; left: 190px; width: 1500px";
-        allTablesDiv.appendChild(table);
-        var tableHeader = document.createElement("thead");
-        table.appendChild(tableHeader);
-        var tableHeaderRow = document.createElement("tr");
-        tableHeader.appendChild(tableHeaderRow);
-        var perksImage = document.createElement("img");
-        perksImage.src = window.Colorblind ? "../resources/perks_cb.png" : "../resources/perks.png";
-        perksImage.style = "width: 150px";
-        tableHeaderRow.appendChild(perksImage);
-        tableHeaderRow.appendChild(translate("★", "th"));
-        tableHeaderRow.appendChild(translate("★★", "th"));
-        tableHeaderRow.appendChild(translate("★★★", "th"));
-        tableHeaderRow.appendChild(translate("★★★★", "th"));
-        tableHeaderRow.appendChild(translate("★★★★★", "th"));
-        tableHeaderRow.appendChild(translate("defaultPerk", "th"));
-
-        for (var i = 0; i < SOLDIER_STATS.length; i++) {
-            var tableBody = document.createElement("tbody");
-            table.appendChild(tableBody);
-            for (var j = 0; j < SOLDIER_STATS[i].length; j++) {
-                var tableRow = document.createElement("tr");
-                tableBody.appendChild(tableRow);
-                tableRow.appendChild(formatName(SOLDIER_STATS[i][j]["Name"]));
-                var STARS = [0, 2, 4, 6, 12]
-                for (var k = 0; k < STARS.length; k++) {
-                    var star = document.createElement("td");
-                    formatStats(star, SOLDIER_STATS[i][j]["Stats"], STARS[k])
-                    tableRow.appendChild(star);
-                }
-                tableRow.appendChild(translate(" " + SOLDIER_STATS[i][j]["Talent"], "td", "text-align: left; padding: 0px 0px 0px 30px"));
-            }
+      for (let i = 0; i < 3; i++) {
+        element.append(translate(' ', 'b', 'color: #262626'));
+        if (array[i] + offset < 10) {
+          element.append(translate(' ', 'b', 'color: #262626'));
         }
-
-        var sellTable = document.createElement("table");
-        sellTable.style = "position: relative; top: 55px; left: 193px; width: 1493px";
-        allTablesDiv.appendChild(sellTable);
-        var sellTableHeader = document.createElement("thead");
-        sellTableHeader.style = "border: 0px";
-        sellTable.appendChild(sellTableHeader);
-        var sellTableHeaderRow = document.createElement("tr");
-        sellTableHeader.appendChild(sellTableHeaderRow);
-        var topLeft = document.createElement("th");
-        topLeft.style = "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18); height: 25px";
-        var bronzeImage = document.createElement("img");
-        bronzeImage.src = "../resources/bronze.png";
-        bronzeImage.style = "position: absolute; top: 0px; width: 30px; left: 15px";
-        bronzeImage.textContent = "bronze_sale";
-        topLeft.appendChild(bronzeImage);
-        topLeft.appendChild(translate("bronze_sale", "div"));
-        sellTableHeaderRow.appendChild(topLeft);
-        sellTableHeaderRow.appendChild(translate("★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-        sellTableHeaderRow.appendChild(translate("★★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-        sellTableHeaderRow.appendChild(translate("★★★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-        sellTableHeaderRow.appendChild(translate("★★★★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-        sellTableHeaderRow.appendChild(translate("★★★★★", "th", "background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)"));
-
-        var sellTableBody = document.createElement("tbody");
-        sellTableBody.style = "border: 0px";
-        sellTable.appendChild(sellTableBody);
-        for (var i = 0; i < SELL_STATS.length; i++) {
-            var sellTableRow = document.createElement("tr");
-            sellTableBody.appendChild(sellTableRow);
-            sellTableRow.appendChild(formatName(SELL_STATS[i]["Name"], true));
-            for (var j = 0; j < SELL_STATS[i]["Sell"].length; j++) {
-                sellTableRow.appendChild(translate(SELL_STATS[i]["Sell"][j], "td", "background-color: rgb(51, 31, 22); border: 2px solid rgb(80, 55, 45); width: 200px"));
-            }
+        element.append(translate(`${array[i] + offset} `, 'b', window.Colorblind ? COLORBLIND_COLORS[i] : COLORS[i]));
+        if (array[i] + offset < 10) {
+          element.append(translate(' ', 'b', 'color: #262626'));
         }
-
-        var statsFooter = document.createElement("div");
-        statsFooter.style = "position: relative; top: 55px; height: 25px; width: 1880px; text-align: center";
-        allTablesDiv.appendChild(statsFooter)
-        statsFooter.appendChild(translate("statsFooter", 'b'));
-
-        var buyTable = document.createElement("table");
-        buyTable.style = "position: relative; top: 70px; left: 193px; width: 1493px";
-        allTablesDiv.appendChild(buyTable);
-        var buyTableHeader = document.createElement("thead");
-        buyTableHeader.style = "border: 0px";
-        buyTable.appendChild(buyTableHeader);
-        var buyTableHeaderRow = document.createElement("tr");
-        buyTableHeader.appendChild(buyTableHeaderRow);
-        var topLeft = document.createElement("th");
-        topLeft.style = "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44); height: 25px;"
-        var silverImage = document.createElement("img");
-        silverImage.src = "../resources/silver.png";
-        silverImage.style = "position: absolute; top: 0px; width: 30px; left: 15px";
-        silverImage.textContent = "silver_buy";
-        topLeft.appendChild(silverImage);
-        topLeft.appendChild(translate("silver_buy", "div"));
-        buyTableHeaderRow.appendChild(topLeft);
-        buyTableHeaderRow.appendChild(translate("★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
-        buyTableHeaderRow.appendChild(translate("★★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
-        buyTableHeaderRow.appendChild(translate("★★★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
-        buyTableHeaderRow.appendChild(translate("★★★★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
-        buyTableHeaderRow.appendChild(translate("★★★★★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
-
-        var buyTableBody = document.createElement("tbody");
-        buyTableBody.style = "border: 0px";
-        buyTable.appendChild(buyTableBody);
-        buyTableBody.appendChild(translate("EMPTY", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 450px"));
-        buyTableBody.appendChild(translate("0%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
-        buyTableBody.appendChild(translate(Math.round(100 * 60 / 119) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
-        buyTableBody.appendChild(translate(Math.round(100 * 43 / 119) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
-        buyTableBody.appendChild(translate(Math.round(100 * 16 / 119) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
-        buyTableBody.appendChild(translate("1%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
-
-        var wepTable = document.createElement("table");
-        wepTable.style = "position: relative; top: 80px; left: 193px; width: 1286px";
-        allTablesDiv.appendChild(wepTable);
-        var wepTableHeader = document.createElement("thead");
-        wepTableHeader.style = "border: 0px";
-        wepTable.appendChild(wepTableHeader);
-        var wepTableHeaderRow = document.createElement("tr");
-        wepTableHeader.appendChild(wepTableHeaderRow);
-        var topLeftWep = document.createElement("th");
-        topLeftWep.style = "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44); height: 25px;"
-        var silverImage = document.createElement("img");
-        silverImage.src = "../resources/silver_wep.png";
-        silverImage.style = "position: absolute; top: 0px; width: 30px; left: 15px";
-        silverImage.textContent = "silver_wep";
-        topLeftWep.appendChild(silverImage);
-        topLeftWep.appendChild(translate("silver_wep", "div"));
-        wepTableHeaderRow.appendChild(topLeftWep);
-        wepTableHeaderRow.appendChild(translate("★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
-        wepTableHeaderRow.appendChild(translate("★★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
-        wepTableHeaderRow.appendChild(translate("★★★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
-        wepTableHeaderRow.appendChild(translate("★★★★", "th", "background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)"));
-
-        var wepTableBody = document.createElement("tbody");
-        wepTableBody.style = "border: 0px";
-        wepTable.appendChild(wepTableBody);
-        wepTableBody.appendChild(translate("EMPTY", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 450px"));
-        wepTableBody.appendChild(translate(Math.round(100 * 23 / 40) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
-        wepTableBody.appendChild(translate(Math.round(100 * 12 / 40) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
-        wepTableBody.appendChild(translate(Math.round(100 * 2 / 40) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
-        wepTableBody.appendChild(translate(Math.round(100 * 3 / 40) + "%", "td", "background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80); width: 200px"));
-
-        function formatName(name, brown = false) {
-            var halves = name.split("#");
-            name = halves[1] != null ? translate(halves[0]) + " " + halves[1] : translate(halves[0]);
-            if (brown) {
-                return translate(name, "td", "background-color: rgb(51, 31, 22); border: 2px solid rgb(80, 55, 45)");
-            }
-            return translate(name, "td")
+        element.append(translate(' ', 'b', 'color: #262626'));
+        if (i < 2) {
+          element.append(translate('- ', 'b', 'color: #FFFFFF'));
         }
+      }
+    }
 
-        function formatStats(element, array, offset) {
-            COLORBLIND_COLORS = ["color: #25ac88", "color: #d65153", "color: #db7329"]
-            COLORS = ["color: rgb(155, 255, 155)", "color: rgb(255, 155, 155)", "color: rgb(255, 255, 155)"]
+    BODY.appendChild(translate('ColorblindMode', 'b', 'position:absolute; top:70px; left:1700px;'));
+    function ColorblindMode() { window.Colorblind = document.getElementById('ColorblindMode').checked; }
+    ColorblindMode();
 
-            for (var i = 0; i < 3; i++) {
-                element.append(translate(" ", "b", "color: #262626"));
-                if (array[i] + offset < 10) {
-                    element.append(translate(" ", "b", "color: #262626"));
-                }
-                element.append(translate(array[i] + offset + " ", "b", window.Colorblind ? COLORBLIND_COLORS[i] : COLORS[i]));
-                if (array[i] + offset < 10) {
-                    element.append(translate(" ", "b", "color: #262626"));
-                }
-                element.append(translate(" ", "b", "color: #262626"));
-                if (i < 2) {
-                    element.append(translate("- ", "b", "color: #FFFFFF"));
-                }
-            }
+    const allTablesDiv = document.createElement('div');
+    BODY.appendChild(allTablesDiv);
+
+    const statsHeader = document.createElement('div');
+    statsHeader.style = 'position: relative; top: 20px; height: 25px; width: 1880px; text-align: center';
+    allTablesDiv.appendChild(statsHeader);
+    statsHeader.appendChild(translate('statsHeader', 'b'));
+
+    const table = document.createElement('table');
+    table.style = 'position: relative; top: 50px; left: 190px; width: 1500px';
+    allTablesDiv.appendChild(table);
+    const tableHeader = document.createElement('thead');
+    table.appendChild(tableHeader);
+    const tableHeaderRow = document.createElement('tr');
+    tableHeader.appendChild(tableHeaderRow);
+    const perksImage = document.createElement('img');
+    perksImage.src = window.Colorblind ? '../resources/perks_cb.png' : '../resources/perks.png';
+    perksImage.style = 'width: 150px';
+    tableHeaderRow.appendChild(perksImage);
+    tableHeaderRow.appendChild(translate('★', 'th'));
+    tableHeaderRow.appendChild(translate('★★', 'th'));
+    tableHeaderRow.appendChild(translate('★★★', 'th'));
+    tableHeaderRow.appendChild(translate('★★★★', 'th'));
+    tableHeaderRow.appendChild(translate('★★★★★', 'th'));
+    tableHeaderRow.appendChild(translate('defaultPerk', 'th'));
+
+    for (let i = 0; i < SOLDIER_STATS.length; i++) {
+      const tableBody = document.createElement('tbody');
+      table.appendChild(tableBody);
+      for (let j = 0; j < SOLDIER_STATS[i].length; j++) {
+        const tableRow = document.createElement('tr');
+        tableBody.appendChild(tableRow);
+        tableRow.appendChild(formatName(SOLDIER_STATS[i][j].Name));
+        const STARS = [0, 2, 4, 6, 12];
+        for (let k = 0; k < STARS.length; k++) {
+          const star = document.createElement('td');
+          formatStats(star, SOLDIER_STATS[i][j].Stats, STARS[k]);
+          tableRow.appendChild(star);
         }
-    </script>
+        tableRow.appendChild(translate(` ${SOLDIER_STATS[i][j].Talent}`, 'td', 'text-align: left;'
+          + 'padding: 0px 0px 0px 30px'));
+      }
+    }
+
+    const sellTable = document.createElement('table');
+    sellTable.style = 'position: relative; top: 55px; left: 193px; width: 1493px';
+    allTablesDiv.appendChild(sellTable);
+    const sellTableHeader = document.createElement('thead');
+    sellTableHeader.style = 'border: 0px';
+    sellTable.appendChild(sellTableHeader);
+    const sellTableHeaderRow = document.createElement('tr');
+    sellTableHeader.appendChild(sellTableHeaderRow);
+    const topLeft = document.createElement('th');
+    topLeft.style = 'background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18); height: 25px';
+    const bronzeImage = document.createElement('img');
+    bronzeImage.src = '../resources/bronze.png';
+    bronzeImage.style = 'position: absolute; top: 0px; width: 30px; left: 15px';
+    bronzeImage.textContent = 'bronze_sale';
+    topLeft.appendChild(bronzeImage);
+    topLeft.appendChild(translate('bronze_sale', 'div'));
+    sellTableHeaderRow.appendChild(topLeft);
+    const sellTableHeaderRowStyle = 'background-color: rgb(68, 44, 32); border: 2px solid rgb(44, 27, 18)';
+    sellTableHeaderRow.appendChild(translate('★', 'th', sellTableHeaderRowStyle));
+    sellTableHeaderRow.appendChild(translate('★★', 'th', sellTableHeaderRowStyle));
+    sellTableHeaderRow.appendChild(translate('★★★', 'th', sellTableHeaderRowStyle));
+    sellTableHeaderRow.appendChild(translate('★★★★', 'th', sellTableHeaderRowStyle));
+    sellTableHeaderRow.appendChild(translate('★★★★★', 'th', sellTableHeaderRowStyle));
+
+    const sellTableBody = document.createElement('tbody');
+    sellTableBody.style = 'border: 0px';
+    sellTable.appendChild(sellTableBody);
+    for (let i = 0; i < SELL_STATS.length; i++) {
+      const sellTableRow = document.createElement('tr');
+      sellTableBody.appendChild(sellTableRow);
+      sellTableRow.appendChild(formatName(SELL_STATS[i].Name, true));
+      for (let j = 0; j < SELL_STATS[i].Sell.length; j++) {
+        sellTableRow.appendChild(translate(SELL_STATS[i].Sell[j], 'td', ''
+          + 'background-color: rgb(51, 31, 22); border: 2px solid rgb(80, 55, 45); width: 200px'));
+      }
+    }
+
+    const statsFooter = document.createElement('div');
+    statsFooter.style = 'position: relative; top: 55px; height: 25px; width: 1880px; text-align: center';
+    allTablesDiv.appendChild(statsFooter);
+    statsFooter.appendChild(translate('statsFooter', 'b'));
+
+    const buyTable = document.createElement('table');
+    buyTable.style = 'position: relative; top: 70px; left: 193px; width: 1493px';
+    allTablesDiv.appendChild(buyTable);
+    const buyTableHeader = document.createElement('thead');
+    buyTableHeader.style = 'border: 0px';
+    buyTable.appendChild(buyTableHeader);
+    const buyTableHeaderRow = document.createElement('tr');
+    buyTableHeader.appendChild(buyTableHeaderRow);
+    const buyTopLeft = document.createElement('th');
+    buyTopLeft.style = 'background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44); height: 25px;';
+    const silverImage = document.createElement('img');
+    silverImage.src = '../resources/silver.png';
+    silverImage.style = 'position: absolute; top: 0px; width: 30px; left: 15px';
+    silverImage.textContent = 'silver_buy';
+    buyTopLeft.appendChild(silverImage);
+    buyTopLeft.appendChild(translate('silver_buy', 'div'));
+    buyTableHeaderRow.appendChild(buyTopLeft);
+    const silverHeaderRowStyle = 'background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44)';
+    buyTableHeaderRow.appendChild(translate('★', 'th', silverHeaderRowStyle));
+    buyTableHeaderRow.appendChild(translate('★★', 'th', silverHeaderRowStyle));
+    buyTableHeaderRow.appendChild(translate('★★★', 'th', silverHeaderRowStyle));
+    buyTableHeaderRow.appendChild(translate('★★★★', 'th', silverHeaderRowStyle));
+    buyTableHeaderRow.appendChild(translate('★★★★★', 'th', silverHeaderRowStyle));
+
+    const buyTableBody = document.createElement('tbody');
+    buyTableBody.style = 'border: 0px';
+    buyTable.appendChild(buyTableBody);
+    const silverBodyStyle = 'background-color: rgb(51, 51, 51); border: 2px solid rgb(80, 80, 80);';
+    buyTableBody.appendChild(translate('EMPTY', 'td', `${silverBodyStyle} width: 450px`));
+    buyTableBody.appendChild(translate('0%', 'td', `${silverBodyStyle} width: 200px`));
+    buyTableBody.appendChild(translate(`${Math.round(100 * (60 / 119))}%`, 'td', `${silverBodyStyle} width: 200px`));
+    buyTableBody.appendChild(translate(`${Math.round(100 * (43 / 119))}%`, 'td', `${silverBodyStyle} width: 200px`));
+    buyTableBody.appendChild(translate(`${Math.round(100 * (16 / 119))}%`, 'td', `${silverBodyStyle} width: 200px`));
+    buyTableBody.appendChild(translate('1%', 'td', `${silverBodyStyle} width: 200px`));
+
+    const wepTable = document.createElement('table');
+    wepTable.style = 'position: relative; top: 80px; left: 193px; width: 1286px';
+    allTablesDiv.appendChild(wepTable);
+    const wepTableHeader = document.createElement('thead');
+    wepTableHeader.style = 'border: 0px';
+    wepTable.appendChild(wepTableHeader);
+    const wepTableHeaderRow = document.createElement('tr');
+    wepTableHeader.appendChild(wepTableHeaderRow);
+    const topLeftWep = document.createElement('th');
+    topLeftWep.style = 'background-color: rgb(68, 68, 68); border: 2px solid rgb(44, 44, 44); height: 25px;';
+    const wepSilverImage = document.createElement('img');
+    wepSilverImage.src = '../resources/silver_wep.png';
+    wepSilverImage.style = 'position: absolute; top: 0px; width: 30px; left: 15px';
+    wepSilverImage.textContent = 'silver_wep';
+    topLeftWep.appendChild(wepSilverImage);
+    topLeftWep.appendChild(translate('silver_wep', 'div'));
+    wepTableHeaderRow.appendChild(topLeftWep);
+    wepTableHeaderRow.appendChild(translate('★', 'th', silverHeaderRowStyle));
+    wepTableHeaderRow.appendChild(translate('★★', 'th', silverHeaderRowStyle));
+    wepTableHeaderRow.appendChild(translate('★★★', 'th', silverHeaderRowStyle));
+    wepTableHeaderRow.appendChild(translate('★★★★', 'th', silverHeaderRowStyle));
+
+    const wepTableBody = document.createElement('tbody');
+    wepTableBody.style = 'border: 0px';
+    wepTable.appendChild(wepTableBody);
+    wepTableBody.appendChild(translate('EMPTY', 'td', `${silverBodyStyle} width: 450px`));
+    wepTableBody.appendChild(translate(`${Math.round(100 * (23 / 40))}%`, 'td', `${silverBodyStyle} width: 200px`));
+    wepTableBody.appendChild(translate(`${Math.round(100 * (12 / 40))}%`, 'td', `${silverBodyStyle} width: 200px`));
+    wepTableBody.appendChild(translate(`${Math.round(100 * (2 / 40))}%`, 'td', `${silverBodyStyle} width: 200px`));
+    wepTableBody.appendChild(translate(`${Math.round(100 * (3 / 40))}%`, 'td', `${silverBodyStyle} width: 200px`));
+  </script>
 </body>
 
 </html>
