@@ -5,11 +5,11 @@
 
 <body style="background-color:rgb(107, 133, 133);"></body>
 
-<script type="text/javascript" src="../translations.js"></script>
+<!-- All of the most important scripts that need to be loaded first -->
 <script type="text/javascript" src="../common.js"></script>
-<script type="text/javascript" src="./stats.js"></script>
+<script type="text/javascript" src="../translations.js"></script>
 <script type="text/javascript" src="../updates/updates.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script>
   initCSS();
 </script>
@@ -81,7 +81,9 @@
     tableHeaderRow.appendChild(translate('★★★★', 'th'));
     tableHeaderRow.appendChild(translate('★★★★★', 'th'));
     tableHeaderRow.appendChild(translate('defaultPerk', 'th'));
-
+  </script>
+  <script type="text/javascript" src="./stats.js"></script>
+  <script>
     for (let i = 0; i < SOLDIER_STATS.length; i++) {
       const tableBody = document.createElement('tbody');
       table.appendChild(tableBody);

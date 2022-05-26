@@ -43,10 +43,6 @@ function setCookie(cname, cvalue, expiresDays = -1) {
   }
 }
 
-const script = document.createElement('script');
-script.src = '../translations.js';
-document.body.appendChild(script);
-
 function titleBar(active) {
   // add top color bar
   const feldgrau = document.createElement('img');
