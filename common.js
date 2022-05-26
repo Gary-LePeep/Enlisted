@@ -17,6 +17,32 @@ function initCSS() {
   document.getElementsByTagName('HEAD')[0].appendChild(css);
 }
 
+function getCookie(cname) {
+  const name = `${cname}=`;
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const cookieArray = decodedCookie.split(';');
+  for (let i = 0; i < cookieArray.length; i++) {
+    let c = cookieArray[i];
+    while (c.charAt(0) === ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) === 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return '';
+}
+
+function setCookie(cname, cvalue, expiresDays = -1) {
+  document.cookie = `${cname}=${cvalue};path=/Enlisted/;domain=gary-lepeep.github.io`;
+  if (expiresDays !== -1) {
+    const d = new Date();
+    d.setTime(d.getTime() + (expiresDays * 24 * 60 * 60 * 1000));
+    const expires = `;expires=${d.toUTCString()}`;
+    document.cookie += expires;
+  }
+}
+
 function titleBar(active) {
   const topnav = document.createElement('div');
   topnav.className = 'topnav';
@@ -44,7 +70,7 @@ function titleBar(active) {
   updateButton.onclick = () => { window.location = 'https://gary-lepeep.github.io/Enlisted/updates'; };
   topnav.appendChild(updateButton);
   // warning if update was recent
-  if (wasRecent(parseInt(document.cookie))) {
+  if (wasRecent(parseInt(getCookie('updatesLastSeen')))) {
     updateButton.className = 'blink-bg';
     updateButton.textContent += '⚠️';
   }
@@ -57,7 +83,7 @@ function titleBar(active) {
   topnav.appendChild(statsButton);
 
   topnav.appendChild(translate(''
-  + 'language', 'b', 'position:absolute; top:20px; left:1700px;font-size:16px; text-align:center; color: white'));
+    + 'language', 'b', 'position:absolute; top:20px; left:1700px;font-size:16px; text-align:center; color: white'));
   const title = translate(active, 'div');
   title.className = 'TITLE';
   BODY.appendChild(title);

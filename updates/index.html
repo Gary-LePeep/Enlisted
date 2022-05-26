@@ -23,16 +23,22 @@
   </select>
   <script>
     titleBar('updates');
+    setCookie('updatesLastSeen', Date.now());
   </script>
 
   <script>
+    // log date to console for easier updating in the future
     // eslint-disable-next-line no-console
     console.log(Date.now());
+    console.log(getCookie('updatesLastSeen'));
+
     BODY.appendChild(translate('updatesHeader', 'b', ''
       + 'position: absolute; left: 0px; top: 100px; width: 1880px; text-align: center'));
     const column1 = document.createElement('div');
     column1.style = 'position: absolute; top: 150px; left: 95px; width: 565px; white-space: pre-line';
     BODY.appendChild(column1);
+
+    // add all updates from updates.js to column
     for (let i = 0; i < Object.keys(UPDATES).length; i++) {
       column1.appendChild(translate(numToDate(Object.keys(UPDATES)[i]), 'b'));
       let updateText = UPDATES[Object.keys(UPDATES)[i]];
