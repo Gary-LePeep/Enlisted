@@ -6,49 +6,49 @@
 <body style="background-color:rgb(107, 133, 133);"></body>
 
 <!-- All of the most important scripts that need to be loaded first -->
-<script type="text/javascript" src="../common.js"></script>
-<script type="text/javascript" src="../translations.js"></script>
-<script type="text/javascript" src="../updates/updates.js"></script>
+<script src="../common.js"></script>
+<script src="../translations.js"></script>
+<script src="../updates/updates.js"></script>
 
 <script>
-  initCSS();
+    initCSS();
 </script>
 </head>
 
 <body>
-  
-  <script>
-titleBar('updates');
-setCookie('updatesLastSeen', Date.now());
-  </script>
 
-  <script>
-    // log date to console for easier updating in the future
-    // eslint-disable-next-line no-console
-    console.log(Date.now());
+    <script>
+        titleBar('updates');
+        setCookie('updatesLastSeen', Date.now());
+    </script>
 
-    BODY.appendChild(translate('updatesHeader', 'b', ''
-      + 'position: absolute; left: 0px; top: 100px; width: 1880px; text-align: center'));
-    const column1 = document.createElement('div');
-    column1.style = 'position: absolute; top: 150px; left: 95px; width: 565px; white-space: pre-line';
-    BODY.appendChild(column1);
+    <script>
+        // log date to console for easier updating in the future
+        // eslint-disable-next-line no-console
+        console.log(Date.now());
 
-    // add all updates from updates.js to column
-    for (let i = 0; i < Object.keys(UPDATES).length; i++) {
-      column1.appendChild(translate(numToDate(Object.keys(UPDATES)[i]), 'b'));
-      let updateText = UPDATES[Object.keys(UPDATES)[i]];
-      if (Array.isArray(updateText)) {
-        updateText = updateText.join('\r\n');
-      }
-      column1.appendChild(translate(updateText, 'div'));
-      column1.appendChild(translate('EMPTY', 'p'));
-    }
-  </script>
+        BODY.appendChild(translate('updatesHeader', 'b', ''
+            + 'position: absolute; left: 0px; top: 100px; width: 1880px; text-align: center'));
+        const column1 = document.createElement('div');
+        column1.style = 'position: absolute; top: 150px; left: 95px; width: 565px; white-space: pre-line';
+        BODY.appendChild(column1);
 
-  <script>
-    BODY.appendChild(translate('contact', 'p', ''
-      + 'color: #002244; position: absolute; top: 870px; width: 1880px; text-align: center'));
-  </script>
+        // add all updates from updates.js to column
+        for (let i = 0; i < Object.keys(UPDATES).length; i++) {
+          column1.appendChild(translate(numToDate(Object.keys(UPDATES)[i]), 'b'));
+          let updateText = UPDATES[Object.keys(UPDATES)[i]];
+          if (Array.isArray(updateText)) {
+            updateText = updateText.join('\r\n');
+          }
+          column1.appendChild(translate(updateText, 'div'));
+          column1.appendChild(translate('EMPTY', 'p'));
+        }
+    </script>
+
+    <script>
+        BODY.appendChild(translate('contact', 'p', ''
+            + 'color: #002244; position: absolute; top: 870px; width: 1880px; text-align: center'));
+    </script>
 </body>
 
 </html>

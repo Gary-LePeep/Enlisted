@@ -6,11 +6,11 @@
 <body style="background-color:rgb(107, 133, 133);"></body>
 
 <!-- All of the most important scripts that need to be loaded first -->
-<script type="text/javascript" src="../common.js"></script>
-<script type="text/javascript" src="../translations.js"></script>
-<script type="text/javascript" src="../updates/updates.js"></script>
+<script src="../common.js"></script>
+<script src="../translations.js"></script>
+<script src="../updates/updates.js"></script>
 
-<script type="text/javascript" src="../weapon-data.js"></script>
+<script src="../weapon-data.js"></script>
 
 <script src="../dist/chart.min.js"></script>
 <script src="../dist/chartjs-plugin-annotation.min.js"></script>
@@ -646,37 +646,34 @@
   </script>
 
   <!-- This is the heaviest data to load, so load it at the very end -->
-  <script type="text/javascript" src="../datamine/ww2_guns.blkx"></script>
-  <script type="text/javascript" src="../datamine/ww2_guns_mods.blkx"></script>
-  <script type="text/javascript" src="../datamine/ww2_items.blkx"></script>
-  <script type="text/javascript" src="../datamine/enlisted_guns.blkx"></script>
-  <script type="text/javascript" src="../datamine/bullets.js"></script>
-  <script type="text/javascript" src="../datamine/grenades.js"></script>
-  <script type="text/javascript" src="../datamine/shells.js"></script>
+  <script src="../datamine/ww2_guns.blkx"></script>
+  <script src="../datamine/ww2_guns_mods.blkx"></script>
+  <script src="../datamine/ww2_items.blkx"></script>
+  <script src="../datamine/enlisted_guns.blkx"></script>
+  <script src="../datamine/bullets.js"></script>
+  <script src="../datamine/grenades.js"></script>
+  <script src="../datamine/shells.js"></script>
 
   <script>
     // load all bullets
     for (let i = 0; i < ALLBULLETS.length; i++) {
       const script = document.createElement('script');
-      script.type = 'text/javascript';
       script.src = `../datamine/bullets/${ALLBULLETS[i]}`;
       document.body.appendChild(script);
     }
     // load all grenades
     for (let i = 0; i < ALLGRENADES.length; i++) {
       const script = document.createElement('script');
-      script.type = 'text/javascript';
       script.src = `../datamine/grenades/${ALLGRENADES[i]}`;
       document.body.appendChild(script);
     }
     // load all shells
     for (let i = 0; i < ALLSHELLS.length; i++) {
       const script = document.createElement('script');
-      script.type = 'text/javascript';
       script.src = `../datamine/shells/${ALLSHELLS[i]}`;
       document.body.appendChild(script);
     }
-    
+
     conglomerateAllData();
   </script>
 </body>
