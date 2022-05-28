@@ -1,0 +1,56 @@
+var _75mm_qqf_mkv = 
+{
+  "base_75mm_qqf_mkv": {
+    "item__name": "guns/75mm_qqf_mkv",
+    "gun__blk": "gamedata/gen/weapons/75mm_qqf_mkv.blk",
+    "gun__shotFreq": 0.2,
+    "gun__locName": "75mm_qqf_mkv",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_qqf_mkv_defaultset.blk",
+          "name": "75mm_m72",
+          "type": "ap_tank"
+        }
+      },
+      "75mm_britain_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_qqf_mkv_75mm_britain_he.blk",
+          "name": "75mm_m48",
+          "type": "he_frag_tank"
+        }
+      },
+      "75mm_us_M89_Smoke:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_qqf_mkv_75mm_us_m89_smoke.blk",
+          "name": "75mm_m89",
+          "type": "smoke_tank"
+        }
+      },
+      "75mm_britain_APCBC:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_qqf_mkv_75mm_britain_apcbc.blk",
+          "name": "75mm_m61",
+          "type": "apcbc_solid_medium_caliber_tank"
+        }
+      }
+    }
+  },
+  "tankgun_75mm_qqf_mkv": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_75mm_qqf_mkv"
+    },
+    {
+      "_extends": "gunsound_75mm_qqf_mkv"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

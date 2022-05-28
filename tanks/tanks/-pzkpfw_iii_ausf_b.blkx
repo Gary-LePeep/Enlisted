@@ -1,0 +1,316 @@
+var _pzkpfw_iii_ausf_b = 
+{
+  "base_pzkpfw_iii_ausf_b": [
+    {
+      "_extends": "base_tank"
+    },
+    {
+      "_extends": "pzkpfw_iii_ausf_b_ammo_stowages"
+    },
+    {
+      "killLogName": "germ_pzkpfw_iii_ausf_b"
+    },
+    {
+      "animchar__res": "pzkpfw_III_ausf_B_char"
+    },
+    {
+      "collres__res": "pzkpfw_III_ausf_B_collision"
+    },
+    {
+      "vehicle_net_phys__blk": "gamedata/gen/units/tanks/pzkpfw_iii_ausf_b.blk:VehiclePhys"
+    },
+    {
+      "particle_phys__blk": "gamedata/suspension/empty.blk"
+    },
+    {
+      "dmg_animchar__res": "pzkpfw_III_ausf_B_dmg_char"
+    },
+    {
+      "xray_resource__modelName": "pzkpfw_III_ausf_B"
+    },
+    {
+      "cockpit__zoomOutFov": 2.7475
+    },
+    {
+      "cockpit__zoomInFov": 5.3955
+    },
+    {
+      "cockpit__sightName": "sight_model/default_tank_spg"
+    },
+    {
+      "cockpit__sightFov": 20.0
+    },
+    {
+      "drowningHeight": 1.96
+    },
+    {
+      "damage_model__blk": "gamedata/gen/units/tanks/pzkpfw_iii_ausf_b.blk"
+    },
+    {
+      "item__name": "items/germ_pzkpfw_iii_ausf_b"
+    },
+    {
+      "skin__template": "pzkpfw_iii_ausf_b_skins"
+    },
+    {
+      "turret_gun_flash_fx__flashNodes:shared:array": [
+        {
+          "node": "emtr_gun_flame"
+        },
+        {
+          "node": "emtr_mg_flame_02"
+        },
+        {
+          "node": "emtr_mg_flame_01"
+        }
+      ]
+    },
+    {
+      "turret_gun_flash_fx__flashFx:shared:array": [
+        {
+          "fx": "muzzle_ground_40mm_slow"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
+        }
+      ]
+    },
+    {
+      "turret_gun_flash_fx__flashFxScale:shared:array": [
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "turret_control__emitterNodes:shared:array": [
+        {
+          "node": "bone_gun_barrel"
+        },
+        {
+          "node": "bone_mg_gun_twin_02"
+        },
+        {
+          "node": "bone_mg_gun_twin_01"
+        }
+      ]
+    },
+    {
+      "turret_control__animVars:shared:array": [
+        {
+          "vars:object": {
+            "curYawParamName": "turret_01_yaw",
+            "curPitchParamName": "gun_01_pitch",
+            "aimActiveParamName": "aim_01_active",
+            "paramYawSpeed": "turret_01_yaw_speed",
+            "paramYawSpeedMul": "turret_01_yaw_mul",
+            "paramYawAccel": "turret_01_yaw_accel",
+            "paramMinYawAngle": "turret_01_min_yaw_angle",
+            "paramMaxYawAngle": "turret_01_max_yaw_angle",
+            "paramMinPitchAngle": "turret_01_min_pitch_angle",
+            "paramMaxPitchAngle": "turret_01_max_pitch_angle",
+            "paramPitchSpeed": "gun_01_pitch_speed",
+            "paramPitchSpeedMul": "gun_01_pitch_mul",
+            "paramPitchAccel": "gun_01_pitch_accel",
+            "wishYawParamName": "gun_01_aim:targetYaw",
+            "wishPitchParamName": "gun_01_aim:targetPitch",
+            "gunRecoilParamName": "gun_01_recoil"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_02_yaw",
+            "curPitchParamName": "gun_02_pitch"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_03_yaw",
+            "curPitchParamName": "gun_03_pitch"
+          }
+        }
+      ]
+    },
+    {
+      "turret_control__turretInfo:shared:array": [
+        {
+          "turretInfo:object": {
+            "turretName": "turret_01",
+            "gun": "pzkpfw_iii_ausf_b_turret_01_37mm_kwk36+turret_with_several_types_of_shells+main_turret",
+            "barrelDm": "gun_barrel",
+            "breechDm": "cannon_breech",
+            "verDriveDm": "drive_turret_v",
+            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_02",
+            "gun": "pzkpfw_iii_ausf_b_turret_02_7_92mm_mg34",
+            "barrelDm": "gun_barrel_01",
+            "verDriveDm": "drive_turret_v",
+            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_03",
+            "gun": "pzkpfw_iii_ausf_b_turret_03_7_92mm_mg34",
+            "barrelDm": "gun_barrel_02",
+            "verDriveDm": "drive_turret_v",
+            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        }
+      ]
+    }
+  ],
+  "pzkpfw_iii_ausf_b_turret_01_37mm_kwk36": {
+    "_extends": "tankgun_37mm_kwk36",
+    "gun__shootNodeName": "bone_gun_barrel",
+    "turret__yawSpeed": 6.0,
+    "turret__pitchSpeed": 4.0,
+    "turret__aimNodeName": "bone_turret",
+    "turret__limit": [-180.0,180.0,-10.0,20.0],
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 41
+      },
+      {
+        "ammo": 40
+      },
+      {
+        "ammo": 40
+      }
+    ]
+  },
+  "pzkpfw_iii_ausf_b_turret_02_7_92mm_mg34": {
+    "_extends": "tankgun_7_92mm_mg34",
+    "gun__shootNodeName": "bone_mg_gun_twin_02",
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 900
+      },
+      {
+        "ammo": 900
+      }
+    ]
+  },
+  "pzkpfw_iii_ausf_b_turret_03_7_92mm_mg34": {
+    "_extends": "tankgun_7_92mm_mg34",
+    "gun__shootNodeName": "bone_mg_gun_twin_01",
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 900
+      },
+      {
+        "ammo": 900
+      }
+    ]
+  },
+  "pzkpfw_iii_ausf_b_ammo_stowages": {
+    "_tags": "server",
+    "_extends": "vehicle_ammo_stowages",
+    "ammo_stowage__stowageTemplates:shared:list<t>": {
+      "stowage": "pzkpfw_iii_ausf_b_primary_ammo_stowage"
+    }
+  },
+  "pzkpfw_iii_ausf_b_primary_ammo_stowage": {
+    "_extends": "ammo_stowage",
+    "ammo_stowage__clusterTemplates:shared:list<t>": {
+      "cluster": "pzkpfw_iii_ausf_b_primary_shells_ammo_cluster"
+    },
+    "ammo_stowage__turretNames:shared:list<t>": {
+      "gun": "turret_01"
+    }
+  },
+  "pzkpfw_iii_ausf_b_primary_shells_ammo_cluster": {
+    "_extends": "ammo_cluster",
+    "ammo_cluster__isShell": true,
+    "ammo_cluster__slotNames:shared:list<t>": [
+      {
+        "part": "ammo_body_07"
+      },
+      {
+        "part": "ammo_body_02"
+      },
+      {
+        "part": "ammo_body_04"
+      },
+      {
+        "part": "ammo_body_06"
+      },
+      {
+        "part": "ammo_body_05"
+      },
+      {
+        "part": "ammo_body_03"
+      },
+      {
+        "part": "ammo_body_01"
+      }
+    ],
+    "ammo_cluster__slotsMaxAmmo:list<i>": [
+      {
+        "count": 5
+      },
+      {
+        "count": 18
+      },
+      {
+        "count": 20
+      },
+      {
+        "count": 18
+      },
+      {
+        "count": 20
+      },
+      {
+        "count": 20
+      },
+      {
+        "count": 20
+      }
+    ]
+  },
+  "pzkpfw_iii_ausf_b_skins": {
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "pzkpfw_iii_ausf_b_winter",
+          "objTexReplace:object": {
+            "ger_camo_grey*": "ger_camo_winter_grey*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "pzkpfw_iii_ausf_b_ger_camo_dunkelgelb_africa",
+          "objTexReplace:object": {
+            "ger_camo_grey*": "ger_camo_dunkelgelb_africa*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "pzkpfw_iii_ausf_b_ger_camo_winter_lines",
+          "objTexReplace:object": {
+            "ger_camo_grey*": "ger_camo_winter_lines*"
+          }
+        }
+      }
+    ]
+  }
+}

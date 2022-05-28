@@ -1,0 +1,53 @@
+var _37mm_m5_user_cannon_for_m3_lee = 
+{
+  "base_37mm_m5_user_cannon_for_m3_lee": {
+    "item__name": "guns/37mm_m5_user_cannon_for_m3_lee",
+    "gun__blk": "gamedata/gen/weapons/37mm_m5_user_cannon_for_m3_lee.blk",
+    "gun__shotFreq": 0.35,
+    "gun__locName": "37mm_m5_user_cannon_for_m3_lee",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/37mm_m5_user_cannon_for_m3_lee_defaultset.blk",
+          "name": "37mm_m74b1",
+          "type": "ap_tank"
+        }
+      },
+      "37mm_usa_m3_AP:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/37mm_m5_user_cannon_for_m3_lee_37mm_usa_m3_ap.blk",
+          "name": "37mm_m74b1",
+          "type": "ap_tank"
+        }
+      },
+      "37mm_usa_m3_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/37mm_m5_user_cannon_for_m3_lee_37mm_usa_m3_he.blk",
+          "name": "37mm_m63",
+          "type": "he_frag_tank"
+        }
+      },
+      "37mm_usa_m3_APC:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/37mm_m5_user_cannon_for_m3_lee_37mm_usa_m3_apc.blk",
+          "name": "37mm_m51b1b2",
+          "type": "apcbc_solid_medium_caliber_tank"
+        }
+      }
+    }
+  },
+  "tankgun_37mm_m5_user_cannon_for_m3_lee": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_37mm_m5_user_cannon_for_m3_lee"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

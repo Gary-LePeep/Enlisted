@@ -1,0 +1,49 @@
+var _128mm_pak44 = 
+{
+  "base_128mm_pak44": {
+    "item__name": "guns/128mm_pak44",
+    "gun__blk": "gamedata/gen/weapons/128mm_pak44.blk",
+    "gun__shotFreq": 0.055,
+    "gun__locName": "128mm_pak44",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/128mm_pak44_defaultset.blk",
+          "name": "128mm_pzrg_39_43",
+          "type": "apc_tank"
+        }
+      },
+      "128mm_ger_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/128mm_pak44_128mm_ger_he.blk",
+          "name": "128mm_sprgr",
+          "type": "he_frag_tank"
+        }
+      },
+      "128mm_ger_APCBC:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/128mm_pak44_128mm_ger_apcbc.blk",
+          "name": "128mm_pzrg_40_43",
+          "type": "apcbc_tank"
+        }
+      }
+    }
+  },
+  "tankgun_128mm_pak44": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_128mm_pak44"
+    },
+    {
+      "_extends": "gunsound_128mm_pak44"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

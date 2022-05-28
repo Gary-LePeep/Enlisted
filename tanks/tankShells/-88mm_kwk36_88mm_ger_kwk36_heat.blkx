@@ -1,0 +1,182 @@
+var _88mm_kwk36_88mm_ger_kwk36_heat = 
+{
+  "bulletCount": 30,
+  "mass": 7.64,
+  "explosiveType": "h5",
+  "explosiveMass": 0.646,
+  "caliber": 0.088,
+  "speed": 600.0,
+  "maxDistance": 7000.0,
+  "normalizationPreset": "heat",
+  "bulletType": "heat_tank",
+  "cumulativeSecondaryShattersPreset": "heat_fs",
+  "explodeOnRendinst": true,
+  "fresnel": [0.23,0.1,2.0],
+  "shellAnimation": "video/shells_animations/heat.ivf",
+  "bulletName": "88mm_grhl39",
+  "explodeTreshold": 0.3,
+  "selfDestructionFx": "explosion_air_selfexplosion_med",
+  "explosionEffect": "hit_81_105mm_metal_he",
+  "groundCollisionEffect": "hit_81_105mm_dirt_he",
+  "ricochetEffect": "hit_81_105mm_metal_ap",
+  "waterCollisionEffect": "hit_81_105mm_water_he",
+  "explosionPatchRadius": 3.0,
+  "modelName": "tank_bullet_heat",
+  "secondaryShattersPreset": "ap",
+  "pressureDamage": {
+    "damageType": "pressure"
+  },
+  "hitpower": {
+    "HitPower0m": [1.0,500.0],
+    "HitPower1000m": [0.9,1000.0],
+    "HitPower1500m": [0.65,1500.0],
+    "HitPower2500m": [0.5,2500.0],
+    "HitPower7000m": [0.0,7000.0]
+  },
+  "cumulativeDamage": {
+    "armorPower": 110.0,
+    "distance": 2.5,
+    "damage": 150.0,
+    "onHitChanceMultFire": 15.0
+  },
+  "visual": {
+    "range_percent_of_ammo": [100.0,0.0],
+    "traceFreq": 1,
+    "tracer": "30mmWhite",
+    "trail": "black"
+  },
+  "damage": {
+    "kinetic": {
+      "onHitChanceMultExplFuel": 0.3,
+      "correctionPenetrationByRelativeVelocity": [200.0,1000.0],
+      "correctionDamageByRelativeVelocity": [300.0,1000.0],
+      "damageType": "generic",
+      "energyToDamage": {
+        "p0": [3000.0,5.0],
+        "p1": [15000.0,10.0],
+        "p2": [30000.0,15.0],
+        "p3": [60000.0,25.0],
+        "p4": [80000.0,40.0],
+        "p5": [110000.0,60.0],
+        "p6": [300000.0,70.0],
+        "p7": [400000.0,75.0],
+        "p8": [500000.0,80.0],
+        "p9": [650000.0,110.0],
+        "p10": [1100000.0,150.0],
+        "p11": [1300000.0,200.0],
+        "p12": [1800000.0,230.0],
+        "p13": [2200000.0,240.0],
+        "p14": [3000000.0,300.0],
+        "p15": [4000000.0,320.0],
+        "p16": [5000000.0,350.0],
+        "p17": [8000000.0,370.0],
+        "p18": [12000000.0,900.0]
+      }
+    },
+    "cumulative": {
+      "penetration": 110.0,
+      "damage": 150.0,
+      "distance": 2.5,
+      "onHitChanceMultFire": 15.0,
+      "damageType": "cumulative"
+    },
+    "secondaryShatter": {
+      "residualArmorPenetrationToShatterCountMult": [20.0,100.0,0.5,1.0],
+      "residualArmorPenetrationToShatterPenetrationMult": [20.0,100.0,0.5,1.0],
+      "residualArmorPenetrationToShatterDamageMult": [20.0,100.0,0.4,1.0],
+      "caliberToArmorToShatterCountMult": [0.5,1.0,0.5,1.0],
+      "damageType": "secondaryShatter",
+      "section0": {
+        "angles": [0.0,10.0],
+        "shatter": {
+          "distance": 5.0,
+          "size": 0.05,
+          "count": 8,
+          "penetration": [11.0,8.0],
+          "damage": [20.0,15.0],
+          "onHitChanceMultFire": 1.3
+        }
+      },
+      "section1": {
+        "angles": [0.0,25.0],
+        "shatter": {
+          "distance": 2.5,
+          "size": 0.025,
+          "count": 20,
+          "penetration": [7.0,5.0],
+          "damage": [15.0,12.0],
+          "onHitChanceMultFire": 1.0
+        }
+      },
+      "section2": {
+        "angles": [0.0,40.0],
+        "shatter": {
+          "size": 0.01,
+          "distance": 1.5,
+          "count": 40,
+          "penetration": [4.0,3.0],
+          "damage": [8.0,6.0],
+          "onHitChanceMultFire": 1.0
+        }
+      }
+    },
+    "explosive": {
+      "type": "h5",
+      "mass": 0.646,
+      "fuseArmorTreshold": 0.3,
+      "strengthEquivalent": 1.7,
+      "brisanceEquivalent": 1.4
+    }
+  },
+  "ballistics": {
+    "ricochet": {
+      "table": {
+        "t1": {
+          "caliberToArmor": 1.0,
+          "ricochetProbability0deg": [0.0,1.0],
+          "ricochetProbability09deg": [17.0,1.0],
+          "ricochetProbability18deg": [19.0,0.9],
+          "ricochetProbability20deg": [22.0,0.4],
+          "ricochetProbability25deg": [28.0,0.0],
+          "ricochetProbability90deg": [90.0,0.0]
+        }
+      }
+    },
+    "stability": {
+      "stabilityThreshold": 0.5,
+      "stabilityCaliberToArmorThreshold": 5.0,
+      "stabilityReductionAfterRicochet": 0.3,
+      "stabilityReductionAfterPenetration": 0.15,
+      "stabilityRicochetModifier": {
+        "mod1": [0.0,0.5],
+        "mod2": [15.0,0.7],
+        "mod3": [30.0,0.99]
+      }
+    }
+  },
+  "hitFx": {
+    "fxScale": [1.0,1.0],
+    "defaultFx": "hit_81_105mm_dirt_he",
+    "jetFx": "hit_81_105mm_dirt_he",
+    "steel": {
+      "fx": "hit_81_105mm_metal_he",
+      "fxScale": [1.0,1.0]
+    },
+    "wood": {
+      "fx": "hit_81_105mm_wood_he",
+      "fxScale": [1.0,1.0]
+    },
+    "glass": {
+      "fx": "hit_81_105mm_metal_he",
+      "fxScale": [1.0,1.0]
+    },
+    "stone": {
+      "fx": "hit_81_105mm_stone_he",
+      "fxScale": [1.0,1.0]
+    }
+  },
+  "tracer": {
+    "headColor": "#ffffff78",
+    "smokeColor": "#505050ba"
+  }
+}

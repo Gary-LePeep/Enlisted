@@ -1,0 +1,84 @@
+var _100mm_d10s = 
+{
+  "base_100mm_d10s": {
+    "item__name": "guns/100mm_d10s",
+    "gun__blk": "gamedata/gen/weapons/100mm_d10s.blk",
+    "gun__shotFreq": 0.095,
+    "gun__locName": "100mm_d10s",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/100mm_d10s_defaultset.blk",
+          "name": "100mm_br_412",
+          "type": "aphe_tank"
+        }
+      },
+      "100mm_ussr_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/100mm_d10s_100mm_ussr_he.blk",
+          "name": "100mm_of_412",
+          "type": "he_frag_tank"
+        }
+      },
+      "100mm_ussr_APHE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/100mm_d10s_100mm_ussr_aphe.blk",
+          "name": "100mm_br_412b",
+          "type": "aphebc_tank"
+        }
+      },
+      "100mm_ussr_APCBC:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/100mm_d10s_100mm_ussr_apcbc.blk",
+          "name": "100mm_br_412d",
+          "type": "apcbc_tank"
+        }
+      },
+      "100mm_ussr_APCR:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/100mm_d10s_100mm_ussr_apcr.blk",
+          "name": "100mm_br_412p",
+          "type": "apcr_tank"
+        }
+      },
+      "100mm_ussr_APDS:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/100mm_d10s_100mm_ussr_apds.blk",
+          "name": "100mm_zbm8",
+          "type": "apds_tank"
+        }
+      },
+      "100mm_ussr_HEAT:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/100mm_d10s_100mm_ussr_heat.blk",
+          "name": "100mm_zbk_5",
+          "type": "heat_fs_tank"
+        }
+      },
+      "100mm_ussr_Smoke:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/100mm_d10s_100mm_ussr_smoke.blk",
+          "name": "100mm_3d3",
+          "type": "smoke_tank"
+        }
+      }
+    }
+  },
+  "tankgun_100mm_d10s": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_100mm_d10s"
+    },
+    {
+      "_extends": "gunsound_100mm_d10s"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

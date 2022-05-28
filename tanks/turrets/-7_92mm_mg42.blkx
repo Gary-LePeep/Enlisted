@@ -1,0 +1,72 @@
+var _7_92mm_mg42 = 
+{
+  "base_7_92mm_mg42": {
+    "item__name": "guns/7_92mm_mg42",
+    "gun__blk": "gamedata/gen/weapons/7_92mm_mg42.blk",
+    "gun__shotFreq": 20.0,
+    "gun__reloadTime": 8.0,
+    "gun__maxAmmo": 150,
+    "gun__locName": "7_92mm_mg42",
+    "gun__firingModes:array": {
+      "mode:object": {
+        "modeType": "automatic"
+      }
+    },
+    "gun__firingModeNames:array": {
+      "mode": "automatic"
+    },
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": [
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/7_92mm_mg42_defaultset_bullet_1.blk",
+            "type": "ap_i_ball"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/7_92mm_mg42_defaultset_bullet_2.blk",
+            "type": "ap_i_ball"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/7_92mm_mg42_defaultset_bullet_3.blk",
+            "type": "ap_t_ball"
+          }
+        }
+      ],
+      "7_92mm_MG34_ap:array": [
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/7_92mm_mg42_7_92mm_mg34_ap_bullet_1.blk",
+            "type": "ap_i_ball"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/7_92mm_mg42_7_92mm_mg34_ap_bullet_2.blk",
+            "type": "ap_i_ball"
+          }
+        }
+      ]
+    }
+  },
+  "tankgun_7_92mm_mg42": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_machinegun"
+    },
+    {
+      "_extends": "base_7_92mm_mg42"
+    },
+    {
+      "_extends": "gunsound_7_92mm_mg42"
+    },
+    {
+      "turret__triggerGroup": 2
+    }
+  ]
+}

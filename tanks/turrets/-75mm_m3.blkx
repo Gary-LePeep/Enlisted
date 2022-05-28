@@ -1,0 +1,63 @@
+var _75mm_m3 = 
+{
+  "base_75mm_m3": {
+    "item__name": "guns/75mm_m3",
+    "gun__blk": "gamedata/gen/weapons/75mm_m3.blk",
+    "gun__shotFreq": 0.2,
+    "gun__locName": "75mm_m3",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_m3_defaultset.blk",
+          "name": "75mm_m72",
+          "type": "ap_tank"
+        }
+      },
+      "75mm_usa_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_m3_75mm_usa_he.blk",
+          "name": "75mm_m48",
+          "type": "he_frag_tank"
+        }
+      },
+      "75mm_usa_APCBC:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_m3_75mm_usa_apcbc.blk",
+          "name": "75mm_m61",
+          "type": "apcbc_tank"
+        }
+      },
+      "75mm_usa_APCR:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_m3_75mm_usa_apcr.blk",
+          "name": "75mm_t45",
+          "type": "apcr_tank"
+        }
+      },
+      "75mm_us_M89_Smoke:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_m3_75mm_us_m89_smoke.blk",
+          "name": "75mm_m89",
+          "type": "smoke_tank"
+        }
+      }
+    }
+  },
+  "tankgun_75mm_m3": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_75mm_m3"
+    },
+    {
+      "_extends": "gunsound_75mm_m3"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

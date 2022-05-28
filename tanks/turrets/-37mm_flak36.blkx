@@ -1,0 +1,72 @@
+var _37mm_flak36 = 
+{
+  "base_37mm_flak36": {
+    "item__name": "guns/37mm_flak36",
+    "gun__blk": "gamedata/gen/weapons/37mm_flak36.blk",
+    "gun__shotFreq": 2.66,
+    "gun__reloadTime": 0.375,
+    "gun__maxAmmo": 6,
+    "gun__locName": "37mm_flak36",
+    "gun__firingModes:array": {
+      "mode:object": {
+        "modeType": "automatic"
+      }
+    },
+    "gun__firingModeNames:array": {
+      "mode": "automatic"
+    },
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": [
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/37mm_flak36_defaultset_bullet_1.blk",
+            "name": "37mm_pzgr",
+            "type": "aphe"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/37mm_flak36_defaultset_bullet_2.blk",
+            "name": "37mm_sprgr_18",
+            "type": "frag_i_t"
+          }
+        }
+      ],
+      "37mm_ger_flak36_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/37mm_flak36_37mm_ger_flak36_he.blk",
+          "name": "37mm_sprgr_18",
+          "type": "frag_i_t"
+        }
+      },
+      "37mm_ger_flak36_AP:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/37mm_flak36_37mm_ger_flak36_ap.blk",
+          "name": "37mm_pzgr",
+          "type": "aphe"
+        }
+      },
+      "37mm_ger_mgr_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/37mm_flak36_37mm_ger_mgr_he.blk",
+          "name": "37mm_mgr_18",
+          "type": "frag_i_t"
+        }
+      }
+    }
+  },
+  "tankgun_37mm_flak36": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_autocannon"
+    },
+    {
+      "_extends": "base_37mm_flak36"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

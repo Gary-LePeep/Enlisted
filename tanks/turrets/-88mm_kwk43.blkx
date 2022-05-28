@@ -1,0 +1,56 @@
+var _88mm_kwk43 = 
+{
+  "base_88mm_kwk43": {
+    "item__name": "guns/88mm_kwk43",
+    "gun__blk": "gamedata/gen/weapons/88mm_kwk43.blk",
+    "gun__shotFreq": 0.117,
+    "gun__locName": "88mm_kwk43",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/88mm_kwk43_defaultset.blk",
+          "name": "88mm_pzrg_39_43",
+          "type": "apcbc_tank"
+        }
+      },
+      "88mm_ger_kwk43_default_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/88mm_kwk43_88mm_ger_kwk43_default_he.blk",
+          "name": "88mm_sprgr_43",
+          "type": "he_frag_tank"
+        }
+      },
+      "88mm_ger_kwk43_HEAT:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/88mm_kwk43_88mm_ger_kwk43_heat.blk",
+          "name": "88mm_grhl39",
+          "type": "heat_tank"
+        }
+      },
+      "88mm_ger_kwk43_APCR:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/88mm_kwk43_88mm_ger_kwk43_apcr.blk",
+          "name": "88mm_pzrg_40_43",
+          "type": "apcr_tank"
+        }
+      }
+    }
+  },
+  "tankgun_88mm_kwk43": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_88mm_kwk43"
+    },
+    {
+      "_extends": "gunsound_88mm_kwk43"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

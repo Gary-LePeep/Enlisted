@@ -1,0 +1,304 @@
+var _40mm_lva_kan_m36_40mm_sw_kan_apc_bullet_3 = 
+{
+  "bulletCount": 40,
+  "mass": 1.0,
+  "explosiveType": "tnt",
+  "explosiveMass": 0.043,
+  "caliber": 0.04,
+  "speed": 880.0,
+  "Cx": 0.6,
+  "maxDistance": 7000.0,
+  "normalizationPreset": "heat",
+  "bulletType": "sap_hei_tank",
+  "fresnel": [0.23,0.1,2.0],
+  "explodeOnRendinst": true,
+  "shellAnimation": "video/shells_animations/sap.ivf",
+  "guiCustomIcon": "ap_t",
+  "bulletName": "40mm_slhpgr_m43",
+  "fuseDelayDist": 1.2,
+  "explodeTreshold": 9.0,
+  "selfDestructionFx": "explosion_air_selfexplosion_small",
+  "explosionEffect": "hit_28_38mm_metal_ap",
+  "groundCollisionEffect": "hit_28_38mm_dirt_ap",
+  "ricochetEffect": "hit_28_38mm_metal_ap",
+  "waterCollisionEffect": "hit_28_38mm_water",
+  "explosionPatchRadius": 0.4,
+  "secondaryShattersPreset": "ap",
+  "hitpower": {
+    "HitPower0m": [1.0,0.0],
+    "HitPower1000m": [0.9,0.0],
+    "HitPower10000m": [0.8,10000.0]
+  },
+  "damage": {
+    "kinetic": {
+      "damageType": "generic",
+      "demarrePenetrationK": 1.0,
+      "demarreSpeedPow": 1.43,
+      "demarreMassPow": 0.71,
+      "demarreCaliberPow": 1.07,
+      "correctionPenetrationByRelativeVelocity": [200.0,1000.0],
+      "correctionDamageByRelativeVelocity": [300.0,1000.0],
+      "energyToDamage": {
+        "p0": [3000.0,5.0],
+        "p1": [15000.0,10.0],
+        "p2": [30000.0,15.0],
+        "p3": [60000.0,25.0],
+        "p4": [80000.0,40.0],
+        "p5": [110000.0,60.0],
+        "p6": [300000.0,70.0],
+        "p7": [400000.0,75.0],
+        "p8": [500000.0,80.0],
+        "p9": [650000.0,110.0],
+        "p10": [1100000.0,150.0],
+        "p11": [1300000.0,200.0],
+        "p12": [1800000.0,230.0],
+        "p13": [2200000.0,240.0],
+        "p14": [3000000.0,300.0],
+        "p15": [4000000.0,320.0],
+        "p16": [5000000.0,350.0],
+        "p17": [8000000.0,370.0],
+        "p18": [12000000.0,900.0]
+      }
+    },
+    "secondaryShatter": {
+      "residualArmorPenetrationToShatterCountMult": [20.0,100.0,0.5,1.0],
+      "residualArmorPenetrationToShatterPenetrationMult": [20.0,100.0,0.5,1.0],
+      "residualArmorPenetrationToShatterDamageMult": [20.0,100.0,0.4,1.0],
+      "caliberToArmorToShatterCountMult": [0.5,1.0,0.5,1.0],
+      "damageType": "secondaryShatter",
+      "section0": {
+        "angles": [0.0,10.0],
+        "shatter": {
+          "distance": 5.0,
+          "size": 0.05,
+          "count": 8,
+          "penetration": [11.0,8.0],
+          "damage": [20.0,15.0],
+          "onHitChanceMultFire": 1.3
+        }
+      },
+      "section1": {
+        "angles": [0.0,25.0],
+        "shatter": {
+          "distance": 2.5,
+          "size": 0.025,
+          "count": 20,
+          "penetration": [7.0,5.0],
+          "damage": [15.0,12.0],
+          "onHitChanceMultFire": 1.0
+        }
+      },
+      "section2": {
+        "angles": [0.0,40.0],
+        "shatter": {
+          "size": 0.01,
+          "distance": 1.5,
+          "count": 40,
+          "penetration": [4.0,3.0],
+          "damage": [8.0,6.0],
+          "onHitChanceMultFire": 1.0
+        }
+      }
+    },
+    "explosive": {
+      "type": "tnt",
+      "mass": 0.043,
+      "fuseDelayDist": 1.2,
+      "fuseArmorTreshold": 9.0,
+      "strengthEquivalent": 1.0,
+      "brisanceEquivalent": 1.0
+    }
+  },
+  "visual": {
+    "range_percent_of_ammo": [100.0,0.0],
+    "traceFreq": 1,
+    "tracer": "30mmWhite",
+    "trail": "black"
+  },
+  "ballistics": {
+    "slopeEffect": {
+      "table": {
+        "t_0_5": {
+          "caliberToArmor": 0.5,
+          "slopeEffect0deg": [0.0,84.0],
+          "slopeEffect5deg": [5.0,84.0],
+          "slopeEffect10deg": [10.0,49.54],
+          "slopeEffect15deg": [15.0,28.94],
+          "slopeEffect20deg": [20.0,17.36],
+          "slopeEffect25deg": [25.0,11.84],
+          "slopeEffect30deg": [30.0,7.17],
+          "slopeEffect35deg": [35.0,5.21],
+          "slopeEffect40deg": [40.0,3.93],
+          "slopeEffect45deg": [45.0,2.53],
+          "slopeEffect50deg": [50.0,1.95],
+          "slopeEffect55deg": [55.0,1.6],
+          "slopeEffect60deg": [60.0,1.39],
+          "slopeEffect65deg": [65.0,1.24],
+          "slopeEffect70deg": [70.0,1.13],
+          "slopeEffect75deg": [75.0,1.07],
+          "slopeEffect80deg": [80.0,1.02],
+          "slopeEffect85deg": [85.0,1.0],
+          "slopeEffect90deg": [90.0,1.0]
+        },
+        "t_1_0": {
+          "caliberToArmor": 1.0,
+          "slopeEffect0deg": [0.0,34.4],
+          "slopeEffect5deg": [5.0,34.4],
+          "slopeEffect10deg": [10.0,21.8],
+          "slopeEffect15deg": [15.0,13.75],
+          "slopeEffect20deg": [20.0,8.64],
+          "slopeEffect25deg": [25.0,6.26],
+          "slopeEffect30deg": [30.0,4.0],
+          "slopeEffect35deg": [35.0,3.23],
+          "slopeEffect40deg": [40.0,2.64],
+          "slopeEffect45deg": [45.0,2.0],
+          "slopeEffect50deg": [50.0,1.62],
+          "slopeEffect55deg": [55.0,1.37],
+          "slopeEffect60deg": [60.0,1.21],
+          "slopeEffect65deg": [65.0,1.11],
+          "slopeEffect70deg": [70.0,1.03],
+          "slopeEffect75deg": [75.0,1.0],
+          "slopeEffect80deg": [80.0,1.0],
+          "slopeEffect85deg": [85.0,1.0],
+          "slopeEffect90deg": [90.0,1.0]
+        },
+        "t_1_33": {
+          "caliberToArmor": 1.33,
+          "slopeEffect0deg": [0.0,23.8],
+          "slopeEffect5deg": [5.0,23.8],
+          "slopeEffect10deg": [10.0,15.57],
+          "slopeEffect15deg": [15.0,10.09],
+          "slopeEffect20deg": [20.0,6.47],
+          "slopeEffect25deg": [25.0,4.8],
+          "slopeEffect30deg": [30.0,3.21],
+          "slopeEffect35deg": [35.0,2.64],
+          "slopeEffect40deg": [40.0,2.24],
+          "slopeEffect45deg": [45.0,1.81],
+          "slopeEffect50deg": [50.0,1.5],
+          "slopeEffect55deg": [55.0,1.29],
+          "slopeEffect60deg": [60.0,1.15],
+          "slopeEffect65deg": [65.0,1.06],
+          "slopeEffect70deg": [70.0,1.0],
+          "slopeEffect75deg": [75.0,1.0],
+          "slopeEffect80deg": [80.0,1.0],
+          "slopeEffect85deg": [85.0,1.0],
+          "slopeEffect90deg": [90.0,1.0]
+        },
+        "t_1_5": {
+          "caliberToArmor": 1.5,
+          "slopeEffect0deg": [0.0,20.0],
+          "slopeEffect5deg": [5.0,20.6],
+          "slopeEffect10deg": [10.0,13.63],
+          "slopeEffect15deg": [15.0,8.94],
+          "slopeEffect20deg": [20.0,5.78],
+          "slopeEffect25deg": [25.0,4.33],
+          "slopeEffect30deg": [30.0,2.93],
+          "slopeEffect35deg": [35.0,2.45],
+          "slopeEffect40deg": [40.0,2.1],
+          "slopeEffect45deg": [45.0,1.74],
+          "slopeEffect50deg": [50.0,1.46],
+          "slopeEffect55deg": [55.0,1.25],
+          "slopeEffect60deg": [60.0,1.12],
+          "slopeEffect65deg": [65.0,1.04],
+          "slopeEffect70deg": [70.0,1.0],
+          "slopeEffect75deg": [75.0,1.0],
+          "slopeEffect80deg": [80.0,1.0],
+          "slopeEffect85deg": [85.0,1.0],
+          "slopeEffect90deg": [90.0,1.0]
+        },
+        "t_2": {
+          "caliberToArmor": 2.0,
+          "slopeEffect0deg": [0.0,20.0],
+          "slopeEffect5deg": [5.0,14.13],
+          "slopeEffect10deg": [10.0,9.65],
+          "slopeEffect15deg": [15.0,6.53],
+          "slopeEffect20deg": [20.0,4.3],
+          "slopeEffect25deg": [25.0,3.31],
+          "slopeEffect30deg": [30.0,2.3],
+          "slopeEffect35deg": [35.0,2.0],
+          "slopeEffect40deg": [40.0,1.77],
+          "slopeEffect45deg": [45.0,1.58],
+          "slopeEffect50deg": [50.0,1.35],
+          "slopeEffect55deg": [55.0,1.17],
+          "slopeEffect60deg": [60.0,1.06],
+          "slopeEffect65deg": [65.0,1.0],
+          "slopeEffect70deg": [70.0,1.0],
+          "slopeEffect75deg": [75.0,1.0],
+          "slopeEffect80deg": [80.0,1.0],
+          "slopeEffect85deg": [85.0,1.0],
+          "slopeEffect90deg": [90.0,1.0]
+        },
+        "t_2_5": {
+          "caliberToArmor": 2.5,
+          "slopeEffect0deg": [0.0,20.0],
+          "slopeEffect5deg": [5.0,10.6],
+          "slopeEffect10deg": [10.0,7.42],
+          "slopeEffect15deg": [15.0,5.13],
+          "slopeEffect20deg": [20.0,3.44],
+          "slopeEffect25deg": [25.0,2.69],
+          "slopeEffect30deg": [30.0,1.92],
+          "slopeEffect35deg": [35.0,1.71],
+          "slopeEffect40deg": [40.0,1.56],
+          "slopeEffect45deg": [45.0,1.46],
+          "slopeEffect50deg": [50.0,1.27],
+          "slopeEffect55deg": [55.0,1.12],
+          "slopeEffect60deg": [60.0,1.01],
+          "slopeEffect65deg": [65.0,1.0],
+          "slopeEffect70deg": [70.0,1.0],
+          "slopeEffect75deg": [75.0,1.0],
+          "slopeEffect80deg": [80.0,1.0],
+          "slopeEffect85deg": [85.0,1.0],
+          "slopeEffect90deg": [90.0,1.0]
+        }
+      }
+    },
+    "ricochet": {
+      "table": {
+        "t1": {
+          "caliberToArmor": 1.0,
+          "ricochetProbability0deg": [0.0,1.0],
+          "ricochetProbability09deg": [9.0,1.0],
+          "ricochetProbability10deg": [10.0,0.5],
+          "ricochetProbability11deg": [11.0,0.0],
+          "ricochetProbability90deg": [90.0,0.0]
+        }
+      }
+    },
+    "stability": {
+      "stabilityThreshold": 0.5,
+      "stabilityCaliberToArmorThreshold": 5.0,
+      "stabilityReductionAfterRicochet": 0.3,
+      "stabilityReductionAfterPenetration": 0.15,
+      "stabilityRicochetModifier": {
+        "mod1": [0.0,0.5],
+        "mod2": [15.0,0.7],
+        "mod3": [30.0,0.99]
+      }
+    }
+  },
+  "hitFx": {
+    "fxScale": [1.0,1.0],
+    "defaultFx": "hit_28_38mm_dirt_ap",
+    "jetFx": "hit_28_38mm_dirt_ap",
+    "steel": {
+      "fx": "hit_28_38mm_metal_ap",
+      "fxScale": [1.0,1.0]
+    },
+    "wood": {
+      "fx": "hit_28_38mm_wood_ap",
+      "fxScale": [1.0,1.0]
+    },
+    "glass": {
+      "fx": "hit_28_38mm_metal_ap",
+      "fxScale": [1.0,1.0]
+    },
+    "stone": {
+      "fx": "hit_28_38mm_stone_ap",
+      "fxScale": [1.0,1.0]
+    }
+  },
+  "tracer": {
+    "headColor": "#ffffff78",
+    "smokeColor": "#505050ba"
+  }
+}

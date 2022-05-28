@@ -64,7 +64,7 @@
     roundsSlider.value = 100;
     roundsSlider.id = 'roundsSlideScatter';
     roundsSlider.style = 'width:50px';
-    roundsSlider.onchange = function () { ttkDpmReload(); };
+    roundsSlider.onchange = () => { ttkDpmReload(); };
     roundsLabel.appendChild(roundsSlider);
 
     const distanceLabel = translate(''
@@ -75,7 +75,7 @@
     rangeSlider.value = 30;
     rangeSlider.id = 'distanceSlideScatter';
     rangeSlider.style = 'width:50px';
-    rangeSlider.onchange = function () { ttkDpmReload(); };
+    rangeSlider.onchange = () => { ttkDpmReload(); };
     distanceLabel.appendChild(rangeSlider);
 
     const scatterDropdownLabel = translate(''
@@ -84,7 +84,7 @@
 
     const scatterDropdown = document.createElement('select');
     scatterDropdown.id = 'scatter_dropdown';
-    scatterDropdown.onchange = function () { ttkDpmReload(); };
+    scatterDropdown.onchange = () => { ttkDpmReload(); };
     scatterDropdownLabel.appendChild(scatterDropdown);
 
     scatterDropdown.append(translate('scatter_dropdown1', 'option'));
@@ -324,8 +324,8 @@
                 } else if (effects[l] === 'reload') {
                   reloadStar *= STARUPGRADES[wepType][k][effects[l]];
                 } else {
-                  console.log(effects[l]);
-                  console.log(STARUPGRADES[wepType][k][effects[l]]);
+                  // eslint-disable-next-line no-alert
+                  alert(`${effects[l]} , ${STARUPGRADES[wepType][k][effects[l]]}`);
                 }
               }
             }
@@ -497,7 +497,7 @@
 
     const ttkDpmDropdown = document.createElement('select');
     ttkDpmDropdown.id = 'ttkDpmDropdown';
-    ttkDpmDropdown.onchange = function () { ttkDpmReload(); };
+    ttkDpmDropdown.onchange = () => { ttkDpmReload(); };
     ttkDpmDropdownLabel.appendChild(ttkDpmDropdown);
 
     ttkDpmDropdown.append(translate('ttkDpmDropdown1', 'option'));

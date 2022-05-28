@@ -1,0 +1,56 @@
+var _50mm_kwk38 = 
+{
+  "base_50mm_kwk38": {
+    "item__name": "guns/50mm_kwk38",
+    "gun__blk": "gamedata/gen/weapons/50mm_kwk38.blk",
+    "gun__shotFreq": 0.25,
+    "gun__locName": "50mm_kwk38",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/50mm_kwk38_defaultset.blk",
+          "name": "50mm_pzgr_39",
+          "type": "apc_tank"
+        }
+      },
+      "50mm_ger_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/50mm_kwk38_50mm_ger_he.blk",
+          "name": "50mm_sprgr_38",
+          "type": "he_frag_tank"
+        }
+      },
+      "50mm_ger_kwk38_APCR1:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/50mm_kwk38_50mm_ger_kwk38_apcr1.blk",
+          "name": "50mm_pzgr_40_1",
+          "type": "apcr_tank"
+        }
+      },
+      "50mm_ger_kwk38_APCR2:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/50mm_kwk38_50mm_ger_kwk38_apcr2.blk",
+          "name": "50mm_pzgr_40",
+          "type": "apcr_tank"
+        }
+      }
+    }
+  },
+  "tankgun_50mm_kwk38": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_50mm_kwk38"
+    },
+    {
+      "_extends": "gunsound_50mm_kwk38"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+var _ht_130 = 
+{
+  "base_ht_130": {
+    "_extends": "base_tank",
+    "killLogName": "ussr_ht_130",
+    "animchar__res": "xt_130_char",
+    "collres__res": "xt_130_collision",
+    "vehicle_net_phys__blk": "gamedata/gen/units/tanks/ht_130.blk:VehiclePhys",
+    "particle_phys__blk": "gamedata/suspension/empty.blk",
+    "dmg_animchar__res": "xt_130_dmg_char",
+    "xray_resource__modelName": "xt_130",
+    "cockpit__zoomOutFov": 1.2,
+    "cockpit__zoomInFov": 2.0,
+    "cockpit__sightName": "sight_model/default_tank_spg",
+    "cockpit__sightFov": 20.0,
+    "drowningHeight": 1.752,
+    "damage_model__blk": "gamedata/gen/units/tanks/ht_130.blk",
+    "item__name": "items/ussr_ht_130",
+    "skin__template": "ht_130_skins",
+    "turret_gun_flash_fx__flashNodes:shared:array": [
+      {
+        "node": "emtr_gun_flame"
+      },
+      {
+        "node": "emtr_mg_flame_01"
+      }
+    ],
+    "turret_gun_flash_fx__flashFx:shared:array": [
+      {
+        "fx": ""
+      },
+      {
+        "fx": "muzzle_ground_8mm"
+      }
+    ],
+    "turret_gun_flash_fx__flashFxScale:shared:array": [
+      {
+        "scale": 1.0
+      },
+      {
+        "scale": 1.0
+      }
+    ],
+    "turret_control__emitterNodes:shared:array": [
+      {
+        "node": "bone_gun_barrel"
+      },
+      {
+        "node": "bone_mg_gun_twin"
+      }
+    ],
+    "turret_control__animVars:shared:array": [
+      {
+        "vars:object": {
+          "curYawParamName": "turret_01_yaw",
+          "curPitchParamName": "gun_01_pitch",
+          "aimActiveParamName": "aim_01_active",
+          "paramYawSpeed": "turret_01_yaw_speed",
+          "paramYawSpeedMul": "turret_01_yaw_mul",
+          "paramYawAccel": "turret_01_yaw_accel",
+          "paramMinYawAngle": "turret_01_min_yaw_angle",
+          "paramMaxYawAngle": "turret_01_max_yaw_angle",
+          "paramMinPitchAngle": "turret_01_min_pitch_angle",
+          "paramMaxPitchAngle": "turret_01_max_pitch_angle",
+          "paramPitchSpeed": "gun_01_pitch_speed",
+          "paramPitchSpeedMul": "gun_01_pitch_mul",
+          "paramPitchAccel": "gun_01_pitch_accel",
+          "wishYawParamName": "gun_01_aim:targetYaw",
+          "wishPitchParamName": "gun_01_aim:targetPitch",
+          "gunRecoilParamName": "gun_01_recoil"
+        }
+      },
+      {
+        "vars:object": {
+          "curYawParamName": "turret_02_yaw",
+          "curPitchParamName": "gun_02_pitch"
+        }
+      }
+    ],
+    "turret_control__turretInfo:shared:array": [
+      {
+        "turretInfo:object": {
+          "turretName": "turret_01",
+          "gun": "ht_130_turret_01_ato_41+turret_with_several_types_of_shells+main_turret",
+          "barrelDm": "gun_barrel",
+          "breechDm": "cannon_breech",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      },
+      {
+        "turretInfo:object": {
+          "turretName": "turret_02",
+          "gun": "ht_130_turret_02_7_62mm_dt",
+          "barrelDm": "gun_barrel_01",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      }
+    ]
+  },
+  "ht_130_turret_01_ato_41": [
+    {
+      "_extends": "turret_base"
+    },
+    {
+      "_extends": "tank_gun_shell_change"
+    },
+    {
+      "_extends": "flamethrower_base"
+    },
+    {
+      "_extends": "flamethrower_gun_shot_dry_sound"
+    },
+    {
+      "_extends": "base_tankgun_machinegun_nooverheat"
+    },
+    {
+      "_extends": "gunsound_flamethrower"
+    },
+    {
+      "gun__overheatReduce": 0.0
+    },
+    {
+      "gun__overheatReduceOnOverheat": 1.0
+    },
+    {
+      "gun__overheatPerShot": 0.12
+    },
+    {
+      "turret__triggerGroup": 0
+    },
+    {
+      "item__name": "guns/ato_41_flamethrower"
+    },
+    {
+      "gun__blk": "content/tanks/gamedata/gen/weapons/20mm_tnsh.blk"
+    },
+    {
+      "gun__shotFreq": 5.0
+    },
+    {
+      "gun__reloadTime": -1.0
+    },
+    {
+      "gun__maxAmmo": 360
+    },
+    {
+      "gun__locName": "ato_41_flamethrower"
+    },
+    {
+      "gun__shootNodeName": "bone_gun_barrel"
+    },
+    {
+      "turret__yawSpeed": 16.0
+    },
+    {
+      "turret__pitchSpeed": 4.0
+    },
+    {
+      "turret__aimNodeName": "bone_turret"
+    },
+    {
+      "turret__limit": [-180.0,180.0,-6.0,22.0]
+    },
+    {
+      "combatFiringRange": [0.0,10.0]
+    },
+    {
+      "combatShootTime": [0.7,0.9]
+    },
+    {
+      "combatCooldownTime": [0.5,0.9]
+    },
+    {
+      "smoke_occluder__sphere": [0.0,0.0,0.0,1.0]
+    },
+    {
+      "_replicated": "flamethrower__active"
+    },
+    {
+      "_tracked": "flamethrower__active"
+    },
+    {
+      "flamethrower__fireTemplate": "flamethrower_fire"
+    },
+    {
+      "flamethrower__streamEffectTemplate": "flamethrower_flame_stream_long_effect"
+    },
+    {
+      "flamethrower__streamEffectLocalTm": [
+        [0.0,-1.0,0.0],
+        [1.0,0.0,0.0],
+        [0.0,0.0,1.0],
+        [0.0,0.0,0.0]
+      ]
+    },
+    {
+      "flamethrower__maxFlameLength": 43.0
+    },
+    {
+      "flamethrower__flameStreamRadius": 0.25
+    },
+    {
+      "flamethrower__flameCloudRadius": 3.0
+    },
+    {
+      "flamethrower__streamDamagePerSecond": 60.0
+    },
+    {
+      "flamethrower__cloudDamagePerSecond": 25.0
+    },
+    {
+      "flamethrower__streamEffectNodeName": "gunFx_main"
+    },
+    {
+      "flamethrower__friendlyStreamDamagePerSecond": 1.0
+    },
+    {
+      "flamethrower__friendlyCloudDamagePerSecond": 1.0
+    },
+    {
+      "flamethrower__minBetweenFireDist": 1.02
+    },
+    {
+      "flamethrower__maxFlameLengthTime": 0.5
+    },
+    {
+      "flamethrower__flameStartOffset": 0.0
+    },
+    {
+      "flamethrower__cloudStartOffset": 3.0
+    },
+    {
+      "flamethrower__shouldSetFriendlyOnFire": false
+    },
+    {
+      "flamethrower__dropletLength": 5.0
+    },
+    {
+      "flamethrower__dropletSpreadYaw": 0.3
+    },
+    {
+      "flamethrower__dropletSpreadPitchMin": -0.1
+    },
+    {
+      "flamethrower__dropletSpreadPitchMax": -2.0
+    },
+    {
+      "flamethrower__dropletNormalOffset": 0.3
+    },
+    {
+      "flamethrower__addFullForceTimePerSec": 2.0
+    },
+    {
+      "flamethrower__maxFiresToReignite": 3
+    },
+    {
+      "flamethrower__streamEffectNodeIdx": -1
+    },
+    {
+      "flamethrower__active": false
+    },
+    {
+      "flamethrower__flameSpeed": 0.0
+    },
+    {
+      "flamethrower__flameCurrentLength": 0.0
+    },
+    {
+      "flamethrower__underwater": false
+    },
+    {
+      "flamethrower__underwaterCheckTimer": 10.0
+    },
+    {
+      "flamethrower__underwaterCheckTime": -1.0
+    },
+    {
+      "gun__shellsAmmo:array": {
+        "ammo": 360
+      }
+    },
+    {
+      "gun__firingModes:array": {
+        "mode:object": {
+          "modeType": "automatic"
+        }
+      }
+    },
+    {
+      "gun__firingModeNames:array": {
+        "mode": "automatic"
+      }
+    },
+    {
+      "gun__ammoSetsInfo:shared:array": {
+        "defaultSet:array": {
+          "shell:object": {
+            "blk": "content/e_ww2_common/gamedata/weapons/bullets/flamethrower_dummy.blk",
+            "type": "flamethrower",
+            "name": "flamethrower"
+          }
+        }
+      }
+    },
+    {
+      "flamethrower__streamEffectEid:eid": []
+    }
+  ],
+  "ht_130_turret_02_7_62mm_dt": {
+    "_extends": "tankgun_7_62mm_dt",
+    "gun__shootNodeName": "bone_mg_gun_twin",
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 945
+      },
+      {
+        "ammo": 945
+      }
+    ]
+  },
+  "ht_130_skins": {
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "ht_130_winter",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ht_130_forest",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_forest_01*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ht_130_ussr_camo_brown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_brown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ht_130_ussr_camo_green_ltbrown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ht_130_ussr_camo_desert_yellow_brown",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_desert_yellow_brown*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ht_130_ussr_camo_winter_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter_lines*"
+          }
+        }
+      }
+    ]
+  }
+}

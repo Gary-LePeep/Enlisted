@@ -1,0 +1,68 @@
+var _12_7mm_dshk = 
+{
+  "base_12_7mm_dshk": {
+    "item__name": "guns/12_7mm_dshk",
+    "gun__blk": "gamedata/gen/weapons/12_7mm_dshk.blk",
+    "gun__shotFreq": 10.0,
+    "gun__reloadTime": 8.0,
+    "gun__maxAmmo": 50,
+    "gun__locName": "12_7mm_dshk",
+    "gun__firingModes:array": {
+      "mode:object": {
+        "modeType": "automatic"
+      }
+    },
+    "gun__firingModeNames:array": {
+      "mode": "automatic"
+    },
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": [
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/12_7mm_dshk_defaultset_bullet_1.blk",
+            "name": "ap_i_t_ball_bzt_44",
+            "type": "ap_i_t_ball"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/12_7mm_dshk_defaultset_bullet_2.blk",
+            "name": "i_ball_mdz",
+            "type": "he_i_ball"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/12_7mm_dshk_defaultset_bullet_3.blk",
+            "name": "ap_i_t_ball_bzt_44",
+            "type": "ap_i_t_ball"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/12_7mm_dshk_defaultset_bullet_4.blk",
+            "name": "apcr_i_ball_bs41",
+            "type": "apcr_i_ball"
+          }
+        }
+      ]
+    }
+  },
+  "tankgun_12_7mm_dshk": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_machinegun"
+    },
+    {
+      "_extends": "base_12_7mm_dshk"
+    },
+    {
+      "_extends": "gunsound_12_7mm_dshk"
+    },
+    {
+      "turret__triggerGroup": 2
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+var _152mm_m10t = 
+{
+  "base_152mm_m10t": {
+    "item__name": "guns/152mm_m10t",
+    "gun__blk": "gamedata/gen/weapons/152mm_m10t.blk",
+    "gun__shotFreq": 0.03,
+    "gun__locName": "152mm_m10t",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/152mm_m10t_defaultset.blk",
+          "name": "152mm_g_530",
+          "type": "ac_shell_tank"
+        }
+      },
+      "152mm_ussr_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/152mm_m10t_152mm_ussr_he.blk",
+          "name": "152mm_of_530",
+          "type": "he_frag_tank"
+        }
+      },
+      "152mm_ussr_APCBC:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/152mm_m10t_152mm_ussr_apcbc.blk",
+          "name": "152mm_pb_35",
+          "type": "apcbc_tank"
+        }
+      }
+    }
+  },
+  "tankgun_152mm_m10t": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_152mm_m10t"
+    },
+    {
+      "_extends": "gunsound_152mm_m10t"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

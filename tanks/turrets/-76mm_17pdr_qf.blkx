@@ -1,0 +1,70 @@
+var _76mm_17pdr_qf = 
+{
+  "base_76mm_17pdr_qf": {
+    "item__name": "guns/76mm_17pdr_qf",
+    "gun__blk": "gamedata/gen/weapons/76mm_17pdr_qf.blk",
+    "gun__shotFreq": 0.17,
+    "gun__locName": "76mm_17pdr_qf",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_17pdr_qf_defaultset.blk",
+          "name": "76mm_shot_mk6_ap",
+          "type": "ap_tank"
+        }
+      },
+      "76mm_britain_17pdr_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_17pdr_qf_76mm_britain_17pdr_he.blk",
+          "name": "76mm_shell_mk1_he",
+          "type": "he_frag_tank"
+        }
+      },
+      "76mm_britain_17pdr_APC:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_17pdr_qf_76mm_britain_17pdr_apc.blk",
+          "name": "76mm_shot_mk4_apc",
+          "type": "apc_solid_medium_caliber_tank"
+        }
+      },
+      "76mm_britain_17pdr_APCBC:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_17pdr_qf_76mm_britain_17pdr_apcbc.blk",
+          "name": "76mm_shot_mk8_apcbc",
+          "type": "apcbc_solid_medium_caliber_tank"
+        }
+      },
+      "76mm_britain_17pdr_APDS:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_17pdr_qf_76mm_britain_17pdr_apds.blk",
+          "name": "76mm_shot_sv_mk1_apds",
+          "type": "apds_tank"
+        }
+      },
+      "76mm_britain_Smoke:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_17pdr_qf_76mm_britain_smoke.blk",
+          "name": "76mm_shell_ss_mk1",
+          "type": "smoke_tank"
+        }
+      }
+    }
+  },
+  "tankgun_76mm_17pdr_qf": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_76mm_17pdr_qf"
+    },
+    {
+      "_extends": "gunsound_76mm_17pdr_qf"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+var _panzerjager_tiger = 
+{
+  "base_panzerjager_tiger": {
+    "_extends": "base_tank",
+    "killLogName": "germ_panzerjager_tiger",
+    "animchar__res": "panzerjager_tiger_char",
+    "collres__res": "panzerjager_tiger_collision",
+    "vehicle_net_phys__blk": "content/tanks/gamedata/gen/units/tanks/panzerjager_tiger.blk:VehiclePhys",
+    "particle_phys__blk": "content/e_ww2_common/gamedata/suspension/empty.blk",
+    "dmg_animchar__res": "panzerjager_tiger_dmg_char",
+    "xray_resource__modelName": "panzerjager_tiger",
+    "drowningHeight": 2.356,
+    "damage_model__blk": "content/tanks/gamedata/gen/units/tanks/panzerjager_tiger.blk",
+    "item__name": "items/germ_panzerjager_tiger",
+    "turret_gun_flash_fx__flashNodes:shared:array": [
+      {
+        "node": "emtr_gun_flame"
+      },
+      {
+        "node": "emtr_mg_flame_01"
+      }
+    ],
+    "turret_gun_flash_fx__flashFx:shared:array": [
+      {
+        "fx": "muzzle_ground_125mm"
+      },
+      {
+        "fx": "muzzle_ground_8mm"
+      }
+    ],
+    "turret_gun_flash_fx__flashFxScale:shared:array": [
+      {
+        "scale": 1.0
+      },
+      {
+        "scale": 1.0
+      }
+    ],
+    "turret_control__emitterNodes:shared:array": [
+      {
+        "node": "bone_gun_barrel"
+      },
+      {
+        "node": "bone_mg_body_h_01"
+      }
+    ],
+    "turret_control__animVars:shared:array": [
+      {
+        "vars:object": {
+          "curYawParamName": "turret_01_yaw",
+          "curPitchParamName": "gun_01_pitch",
+          "aimActiveParamName": "aim_01_active",
+          "paramYawSpeed": "turret_01_yaw_speed",
+          "paramYawSpeedMul": "turret_01_yaw_mul",
+          "paramYawAccel": "turret_01_yaw_accel",
+          "paramPitchSpeed": "gun_01_pitch_speed",
+          "paramPitchSpeedMul": "gun_01_pitch_mul",
+          "paramPitchAccel": "gun_01_pitch_accel",
+          "wishYawParamName": "gun_01_aim:targetYaw",
+          "wishPitchParamName": "gun_01_aim:targetPitch",
+          "gunRecoilParamName": "gun_01_recoil"
+        }
+      },
+      {
+        "vars:object": {
+          "curYawParamName": "turret_02_yaw",
+          "curPitchParamName": "gun_02_pitch",
+          "aimActiveParamName": "aim_02_active",
+          "paramYawSpeed": "turret_02_yaw_speed",
+          "paramYawSpeedMul": "turret_02_yaw_mul",
+          "paramYawAccel": "turret_02_yaw_accel",
+          "paramPitchSpeed": "gun_02_pitch_speed",
+          "paramPitchSpeedMul": "gun_02_pitch_mul",
+          "paramPitchAccel": "gun_02_pitch_accel",
+          "wishYawParamName": "gun_02_aim:targetYaw",
+          "wishPitchParamName": "gun_02_aim:targetPitch"
+        }
+      }
+    ],
+    "turret_control__turretInfo:shared:array": [
+      {
+        "turretInfo:object": {
+          "turretName": "turret_01",
+          "gun": "panzerjager_tiger_turret_01_128mm_PaK44+turret_with_several_types_of_shells+main_turret",
+          "barrelDm": "gun_barrel",
+          "breechDm": "cannon_breech",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      },
+      {
+        "turretInfo:object": {
+          "turretName": "turret_02",
+          "gun": "panzerjager_tiger_turret_02_7_92mm_mg34",
+          "barrelDm": "gun_barrel_01",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      }
+    ]
+  },
+  "panzerjager_tiger_turret_01_128mm_PaK44": {
+    "_extends": "tankgun_128mm_pak44",
+    "gun__shootNodeName": "bone_gun_barrel",
+    "turret__yawSpeed": 5.0,
+    "turret__pitchSpeed": 3.0,
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 14
+      },
+      {
+        "ammo": 13
+      },
+      {
+        "ammo": 13
+      }
+    ]
+  },
+  "panzerjager_tiger_turret_02_7_92mm_mg34": {
+    "_extends": "tankgun_7_92mm_mg34",
+    "gun__shootNodeName": "bone_mg_body_h_01",
+    "turret__yawSpeed": 5.5,
+    "turret__pitchSpeed": 4.0,
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 1500
+      },
+      {
+        "ammo": 1500
+      }
+    ]
+  }
+}

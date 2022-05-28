@@ -1,0 +1,77 @@
+var _85mm_zis_s_53 = 
+{
+  "base_85mm_zis_s_53": {
+    "item__name": "guns/85mm_zis_s_53",
+    "gun__blk": "gamedata/gen/weapons/85mm_zis_s_53.blk",
+    "gun__shotFreq": 0.135,
+    "gun__locName": "85mm_zis_s_53",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/85mm_zis_s_53_defaultset.blk",
+          "name": "85mm_br_365k",
+          "type": "aphe_tank"
+        }
+      },
+      "85mm_ussr_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/85mm_zis_s_53_85mm_ussr_he.blk",
+          "name": "85mm_o_365k",
+          "type": "he_frag_tank"
+        }
+      },
+      "85mm_ussr_APHE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/85mm_zis_s_53_85mm_ussr_aphe.blk",
+          "name": "85mm_br_365a",
+          "type": "aphebc_tank"
+        }
+      },
+      "85mm_ussr_APCBC:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/85mm_zis_s_53_85mm_ussr_apcbc.blk",
+          "name": "85mm_br_367",
+          "type": "apcbc_tank"
+        }
+      },
+      "85mm_ussr_APCR:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/85mm_zis_s_53_85mm_ussr_apcr.blk",
+          "name": "85mm_br_365p",
+          "type": "apcr_tank"
+        }
+      },
+      "85mm_ussr_HVAP:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/85mm_zis_s_53_85mm_ussr_hvap.blk",
+          "name": "85mm_br_367p",
+          "type": "apcr_tank"
+        }
+      },
+      "85mm_ussr_HEAT_FS:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/85mm_zis_s_53_85mm_ussr_heat_fs.blk",
+          "name": "85mm_3bk2",
+          "type": "heat_fs_tank"
+        }
+      }
+    }
+  },
+  "tankgun_85mm_zis_s_53": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_85mm_zis_s_53"
+    },
+    {
+      "_extends": "gunsound_85mm_zis_s_53"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

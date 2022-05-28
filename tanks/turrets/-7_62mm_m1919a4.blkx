@@ -1,0 +1,52 @@
+var _7_62mm_m1919a4 = 
+{
+  "base_7_62mm_m1919a4": {
+    "item__name": "guns/7_62mm_m1919a4",
+    "gun__blk": "gamedata/gen/weapons/7_62mm_m1919a4.blk",
+    "gun__shotFreq": 8.33,
+    "gun__reloadTime": 8.0,
+    "gun__maxAmmo": 250,
+    "gun__locName": "7_62mm_m1919a4",
+    "gun__firingModes:array": {
+      "mode:object": {
+        "modeType": "automatic"
+      }
+    },
+    "gun__firingModeNames:array": {
+      "mode": "automatic"
+    },
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": [
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/7_62mm_m1919a4_defaultset_bullet_1.blk",
+            "type": "ap_ball"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/7_62mm_m1919a4_defaultset_bullet_2.blk",
+            "type": "t_ball"
+          }
+        }
+      ]
+    }
+  },
+  "tankgun_7_62mm_m1919a4": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_machinegun"
+    },
+    {
+      "_extends": "base_7_62mm_m1919a4"
+    },
+    {
+      "_extends": "gunsound_7_62mm_m1919a4"
+    },
+    {
+      "turret__triggerGroup": 2
+    }
+  ]
+}

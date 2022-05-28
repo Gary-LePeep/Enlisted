@@ -1,0 +1,49 @@
+var _75mm_kwk42 = 
+{
+  "base_75mm_kwk42": {
+    "item__name": "guns/75mm_kwk42",
+    "gun__blk": "gamedata/gen/weapons/75mm_kwk42.blk",
+    "gun__shotFreq": 0.135,
+    "gun__locName": "75mm_kwk42",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_kwk42_defaultset.blk",
+          "name": "75mm_pzrg_39_42",
+          "type": "apcbc_tank"
+        }
+      },
+      "75mm_ger_kwk42_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_kwk42_75mm_ger_kwk42_he.blk",
+          "name": "75mm_sprgr_42",
+          "type": "he_frag_tank"
+        }
+      },
+      "75mm_ger_kwk42_APCR:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_kwk42_75mm_ger_kwk42_apcr.blk",
+          "name": "75mm_pzrg_40_42",
+          "type": "apcr_tank"
+        }
+      }
+    }
+  },
+  "tankgun_75mm_kwk42": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_75mm_kwk42"
+    },
+    {
+      "_extends": "gunsound_75mm_kwk42"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

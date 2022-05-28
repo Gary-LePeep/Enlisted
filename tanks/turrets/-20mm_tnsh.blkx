@@ -1,0 +1,84 @@
+var _20mm_tnsh = 
+{
+  "base_20mm_tnsh": {
+    "item__name": "guns/20mm_tnsh",
+    "gun__blk": "gamedata/gen/weapons/20mm_tnsh.blk",
+    "gun__shotFreq": 12.5,
+    "gun__reloadTime": 20.0,
+    "gun__maxAmmo": 58,
+    "gun__locName": "20mm_tnsh",
+    "gun__firingModes:array": {
+      "mode:object": {
+        "modeType": "automatic"
+      }
+    },
+    "gun__firingModeNames:array": {
+      "mode": "automatic"
+    },
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": [
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/20mm_tnsh_defaultset_bullet_1.blk",
+            "type": "ap_i"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/20mm_tnsh_defaultset_bullet_2.blk",
+            "type": "frag_i"
+          }
+        }
+      ],
+      "20mm_ussr_TNSh_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/20mm_tnsh_20mm_ussr_tnsh_he.blk",
+          "type": "frag_i"
+        }
+      },
+      "20mm_ussr_TNSh_AP:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/20mm_tnsh_20mm_ussr_tnsh_ap.blk",
+          "type": "ap_i"
+        }
+      },
+      "20mm_ussr_TNSh_APCR:array": [
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/20mm_tnsh_20mm_ussr_tnsh_apcr_bullet_1.blk",
+            "type": "ap_i"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/20mm_tnsh_20mm_ussr_tnsh_apcr_bullet_2.blk",
+            "type": "ap_i"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/20mm_tnsh_20mm_ussr_tnsh_apcr_bullet_3.blk",
+            "type": "frag_i"
+          }
+        }
+      ]
+    }
+  },
+  "tankgun_20mm_tnsh": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_autocannon"
+    },
+    {
+      "_extends": "base_20mm_tnsh"
+    },
+    {
+      "_extends": "gunsound_20mm_tnsh"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

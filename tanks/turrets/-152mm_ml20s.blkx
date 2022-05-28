@@ -1,0 +1,56 @@
+var _152mm_ml20s = 
+{
+  "base_152mm_ml20s": {
+    "item__name": "guns/152mm_ml20s",
+    "gun__blk": "gamedata/gen/weapons/152mm_ml20s.blk",
+    "gun__shotFreq": 0.047,
+    "gun__locName": "152mm_ml20s",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/152mm_ml20s_defaultset.blk",
+          "name": "152mm_br_540",
+          "type": "aphe_tank"
+        }
+      },
+      "152mm_ussr_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/152mm_ml20s_152mm_ussr_he.blk",
+          "name": "152mm_of_540",
+          "type": "he_frag_tank"
+        }
+      },
+      "152mm_ussr_APHEBC:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/152mm_ml20s_152mm_ussr_aphebc.blk",
+          "name": "152mm_br_540b",
+          "type": "aphebc_tank"
+        }
+      },
+      "152mm_ussr_HEAT:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/152mm_ml20s_152mm_ussr_heat.blk",
+          "name": "152mm_bp_540",
+          "type": "heat_tank"
+        }
+      }
+    }
+  },
+  "tankgun_152mm_ml20s": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_152mm_ml20s"
+    },
+    {
+      "_extends": "gunsound_152mm_ml20s"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}
