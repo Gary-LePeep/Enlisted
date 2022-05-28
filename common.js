@@ -123,4 +123,16 @@ function titleBar(active) {
   statsButton.textContent = translate('linkStats');
   statsButton.onclick = () => { window.location = 'https://gary-lepeep.github.io/Enlisted/soldier_stats'; };
   topnav.appendChild(statsButton);
+  const tanksButton = document.createElement('button');
+  if (active === 'tanks') {
+    tanksButton.className = 'active';
+  }
+  tanksButton.textContent = translate('linkTanks');
+  tanksButton.onclick = () => { window.location = 'https://gary-lepeep.github.io/Enlisted/tanks'; };
+  topnav.appendChild(tanksButton);
+}
+
+function toPlace(number, place) {
+  const ret = Math.round(number * (10 ** place));
+  return (ret / (10 ** place));
 }

@@ -1,0 +1,81 @@
+var _20mm_breda_m35_l6 = 
+{
+  "base_20mm_breda_m35_l6": {
+    "item__name": "guns/20mm_breda_m35_l6",
+    "gun__blk": "gamedata/gen/weapons/20mm_breda_m35_l6.blk",
+    "gun__shotFreq": 4.0,
+    "gun__reloadTime": 6.0,
+    "gun__maxAmmo": 8,
+    "gun__locName": "20mm_breda_m35_l6",
+    "gun__firingModes:array": {
+      "mode:object": {
+        "modeType": "automatic"
+      }
+    },
+    "gun__firingModeNames:array": {
+      "mode": "automatic"
+    },
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": [
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/20mm_breda_m35_l6_defaultset_bullet_1.blk",
+            "name": "20mm_perforante_m35",
+            "type": "ap_i_t"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/20mm_breda_m35_l6_defaultset_bullet_2.blk",
+            "name": "20mm_granata_m35",
+            "type": "he_frag_i_t"
+          }
+        }
+      ],
+      "20mm_Breda_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/20mm_breda_m35_l6_20mm_breda_he.blk",
+          "name": "20mm_granata_m35",
+          "type": "he_frag_i_t"
+        }
+      },
+      "20mm_Breda_APHE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/20mm_breda_m35_l6_20mm_breda_aphe.blk",
+          "name": "20mm_perforante_m35",
+          "type": "ap_i_t"
+        }
+      },
+      "20mm_ger_kwk30_APCR:array": [
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/20mm_breda_m35_l6_20mm_ger_kwk30_apcr_bullet_1.blk",
+            "name": "20mm_pzgr_40",
+            "type": "apcr_t"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/20mm_breda_m35_l6_20mm_ger_kwk30_apcr_bullet_2.blk",
+            "name": "20mm_perforante_m35",
+            "type": "ap_i_t"
+          }
+        }
+      ]
+    }
+  },
+  "tankgun_20mm_breda_m35_l6": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_autocannon"
+    },
+    {
+      "_extends": "base_20mm_breda_m35_l6"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

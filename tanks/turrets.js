@@ -67,4 +67,12 @@ var ALLTURRETS = [
 "-88mm_kwk36.blkx", 
 "-88mm_kwk43.blkx", 
 "-88mm_pak43.blkx", 
+"-20mm_breda_m35_l6.blkx", 
+"-37mm_m5_early.blkx", 
+"-47mm_ansaldo_47_32_m35.blkx", 
+"-57mm_6pdr_qqf_mk_5_l50.blkx", 
+"-75mm_ansaldo_75_18_m34.blkx", 
+"-75mm_ansaldo_75_32_m37.blkx", 
+"-7_7mm_vikkers.blkx", 
+"-8mm_breda_mod38.blkx", 
 ] 

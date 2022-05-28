@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<body style="background-color:rgb(107, 133, 133);"></body>
+
+<!-- All of the most important scripts that need to be loaded first -->
+<script src="../common.js"></script>
+<script src="../translations.js"></script>
+<script src="../updates/updates.js"></script>
+
+<script src="./tanks-dropdown.js"></script>
+<script>
+  initCSS();
+</script>
+</head>
+
+<body>
+  <script>
+    titleBar('tanks');
+  </script>
+
+  <script>
+    function reloadDisplayedData() {
+      const buttons = document.getElementsByClassName('topbtn');
+      for (let i = 0; i < buttons.length; i++) {
+        const text = buttons[i].childNodes[0].textContent;
+        const wepbtns = buttons[i].getElementsByTagName('LI');
+        for (let j = 0; j < wepbtns.length; j++) {
+          if (wepbtns[j].textContent === text) {
+            wepbtns[j].onclick();
+          }
+        }
+      }
+    }
+
+    // Color Dropdown
+    const btncolors = ['greenbtn', 'redbtn', 'bluebtn', 'magbtn'];
+    window.refreshStars = [true, true];
+    window.dataNames = ['', ''];
+
+    // set up common header
+    const headerbox = document.createElement('header');
+    headerbox.id = 'header-box';
+    BODY.appendChild(headerbox);
+
+    const header = document.createElement('div');
+    header.className = 'header';
+    headerbox.append(header);
+
+    // create left nav
+    const leftNav = document.createElement('nav');
+    leftNav.style = 'position: absolute';
+    header.append(leftNav);
+    const leftNavList = document.createElement('ul');
+    leftNav.append(leftNavList);
+
+    // create right nav
+    const rightNav = document.createElement('nav');
+    rightNav.className = 'rightnav';
+    rightNav.style = 'position: absolute; left: 1630px';
+    header.append(rightNav);
+    const rightNavList = document.createElement('ul');
+    rightNav.append(rightNavList);
+
+    for (let h = 0; h < 2; h++) {
+      // add color button dropdown to left and right nav
+      const colorButtonContainer = document.createElement('li');
+      if (h === 0) {
+        leftNavList.append(colorButtonContainer);
+      }
+      if (h === 1) {
+        rightNavList.append(colorButtonContainer);
+      }
+      const colorButton = document.createElement('li');
+      colorButton.className = `link topbtn ${btncolors[h + 1]}`;
+      colorButtonContainer.append(colorButton);
+      const colorButtonText = document.createElement('a');
+      colorButtonText.style = 'color: white; font-size:22px';
+      colorButtonText.text = translate('Tank') + (h + 1);
+      colorButton.append(colorButtonText);
+      const campaignList = document.createElement('ul');
+      colorButton.append(campaignList);
+      for (let i = -1; i < TANKS_JSON.length; i++) {
+        const campaignButton = document.createElement('li');
+        campaignButton.className = 'Link submenu';
+        campaignList.append(campaignButton);
+
+        const campaignButtonText = document.createElement('a');
+        campaignButtonText.text = i < 0 ? translate('Remove') : TANKS_JSON[i][translate('Category')];
+        campaignButton.append(campaignButtonText);
+        if (i < 0) {
+          campaignButton.onclick = () => {
+            // reset color button
+            colorButtonText.text = translate('Tank') + (h + 1);
+
+            // remove stored name data
+            window.dataNames[h] = '';
+          };
+          // don't access negative indices, just continue from the start
+          // eslint-disable-next-line no-continue
+          continue;
+        }
+        const sideList = document.createElement('ul');
+        campaignButton.append(sideList);
+        for (let j = 0; j < TANKS_JSON[i].Campaign.length; j++) {
+          const sideButton = document.createElement('li');
+          sideButton.className = 'Link submenu';
+          sideList.append(sideButton);
+          const sideButtonText = document.createElement('a');
+          sideButtonText.text = TANKS_JSON[i].Campaign[j][translate('Category')];
+          sideButton.append(sideButtonText);
+          const tanklist = document.createElement('ul');
+          sideButton.append(tanklist);
+          for (let k = 0; k < TANKS_JSON[i].Campaign[j].Side.length; k++) {
+            const tankButton = document.createElement('li');
+            tankButton.className = 'link submenu';
+            tanklist.append(tankButton);
+
+            const tankButtonText = document.createElement('a');
+            tankButtonText.text = TANKS_JSON[i].Campaign[j].Side[k][translate('WepName')];
+            tankButton.append(tankButtonText);
+            tankButton.onclick = () => {
+              // set color button name to selected tank
+              colorButtonText.text = tankButtonText.text;
+
+              // get data name
+              window.dataNames[h] = TANKS_JSON[i].Campaign[j].Side[k]['Name Game'];
+            };
+          }
+        }
+      }
+    }
+  </script>
+
+  <script>
+    BODY.appendChild(translate('contact', 'p', 'color: #002244; position: absolute; top: 870px; width: 1880px;'
+      + 'text-align: center'));
+  </script>
+
+  <script src="./armors.js"></script>
+  <script src="./tanks.js"></script>
+  <script src="./tankShells.js"></script>
+  <script src="./turrets.js"></script>
+
+  <script>
+    // load all armors
+    for (let i = 0; i < ALLARMORS.length; i++) {
+      const script = document.createElement('script');
+      script.src = `./armors/${ALLARMORS[i]}`;
+      document.body.appendChild(script);
+    }
+    // load all tanks
+    for (let i = 0; i < ALLTANKS.length; i++) {
+      const script = document.createElement('script');
+      script.src = `./tanks/${ALLTANKS[i]}`;
+      document.body.appendChild(script);
+    }
+    // load all tank shells
+    for (let i = 0; i < ALLTANKSHELLS.length; i++) {
+      const script = document.createElement('script');
+      script.src = `./tankShells/${ALLTANKSHELLS[i]}`;
+      document.body.appendChild(script);
+    }
+    // load all turrets
+    for (let i = 0; i < ALLTURRETS.length; i++) {
+      const script = document.createElement('script');
+      script.src = `./turrets/${ALLTURRETS[i]}`;
+      document.body.appendChild(script);
+    }
+  </script>
+</body>
+
+</html>

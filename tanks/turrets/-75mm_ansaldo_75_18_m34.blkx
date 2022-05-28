@@ -1,0 +1,60 @@
+var _75mm_ansaldo_75_18_m34 = 
+{
+  "base_75mm_ansaldo_75_18_m34": {
+    "item__name": "guns/75mm_ansaldo_75_18_m34",
+    "gun__blk": "content/tanks/gamedata/gen/weapons/75mm_ansaldo_75_18_m34.blk",
+    "gun__shotFreq": 0.167,
+    "gun__locName": "75mm_ansaldo_75_18_m34",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "content/tanks/gamedata/gen/weapons/shells/75mm_ansaldo_75_18_m34_defaultset.blk",
+          "name": "75mm_gr_perforante_75",
+          "type": "apcbc_tank"
+        }
+      },
+      "75mm_75_32_HE:array": {
+        "shell:object": {
+          "blk": "content/tanks/gamedata/gen/weapons/shells/75mm_ansaldo_75_18_m34_75mm_75_32_he.blk",
+          "name": "75mm_m32",
+          "type": "he_frag_tank"
+        }
+      },
+      "75mm_it_Smoke:array": {
+        "shell:object": {
+          "blk": "content/tanks/gamedata/gen/weapons/shells/75mm_ansaldo_75_18_m34_75mm_it_smoke.blk",
+          "name": "75mm_gr_fumogena",
+          "type": "smoke_tank"
+        }
+      },
+      "75mm_Gr_Perforante_APCBC:array": {
+        "shell:object": {
+          "blk": "content/tanks/gamedata/gen/weapons/shells/75mm_ansaldo_75_18_m34_75mm_gr_perforante_apcbc.blk",
+          "name": "75mm_gr_perforante_75_32",
+          "type": "apcbc_tank"
+        }
+      },
+      "75mm_M42_EPS_HEAT:array": {
+        "shell:object": {
+          "blk": "content/tanks/gamedata/gen/weapons/shells/75mm_ansaldo_75_18_m34_75mm_m42_eps_heat.blk",
+          "name": "75mm_eps_m42",
+          "type": "heat_tank"
+        }
+      }
+    }
+  },
+  "tankgun_75mm_ansaldo_75_18_m34": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_75mm_ansaldo_75_18_m34"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+var _ab_41 = 
+{
+  "base_ab_41": [
+    {
+      "_extends": "base_tank"
+    },
+    {
+      "_extends": "ab_41_ammo_stowages"
+    },
+    {
+      "killLogName": "it_ab_41"
+    },
+    {
+      "animchar__res": "ab_41_char"
+    },
+    {
+      "collres__res": "ab_41_collision"
+    },
+    {
+      "vehicle_net_phys__blk": "gamedata/gen/units/tanks/ab_41.blk:VehiclePhys"
+    },
+    {
+      "particle_phys__blk": "gamedata/suspension/empty.blk"
+    },
+    {
+      "dmg_animchar__res": "ab_41_dmg_char"
+    },
+    {
+      "xray_resource__modelName": "ab_41"
+    },
+    {
+      "cockpit__zoomOutFov": 2.7475
+    },
+    {
+      "cockpit__zoomInFov": 5.3955
+    },
+    {
+      "cockpit__sightName": "sight_model/default_tank_spg"
+    },
+    {
+      "cockpit__sightFov": 20.0
+    },
+    {
+      "drowningHeight": 1.848
+    },
+    {
+      "damage_model__blk": "gamedata/gen/units/tanks/ab_41.blk"
+    },
+    {
+      "item__name": "items/it_ab_41"
+    },
+    {
+      "skin__template": "ab_41_skins"
+    },
+    {
+      "turret_gun_flash_fx__flashNodes:shared:array": [
+        {
+          "node": "emtr_gun_flame_01"
+        },
+        {
+          "node": "emtr_mg_flame_01"
+        }
+      ]
+    },
+    {
+      "turret_gun_flash_fx__flashFx:shared:array": [
+        {
+          "fx": "muzzle_ground_20mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
+        }
+      ]
+    },
+    {
+      "turret_gun_flash_fx__flashFxScale:shared:array": [
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "turret_control__emitterNodes:shared:array": [
+        {
+          "node": "bone_gun_barrel"
+        },
+        {
+          "node": "bone_mg_gun_twin"
+        }
+      ]
+    },
+    {
+      "turret_control__animVars:shared:array": [
+        {
+          "vars:object": {
+            "curYawParamName": "turret_01_yaw",
+            "curPitchParamName": "gun_01_pitch",
+            "aimActiveParamName": "aim_01_active",
+            "paramYawSpeed": "turret_01_yaw_speed",
+            "paramYawSpeedMul": "turret_01_yaw_mul",
+            "paramYawAccel": "turret_01_yaw_accel",
+            "paramMinYawAngle": "turret_01_min_yaw_angle",
+            "paramMaxYawAngle": "turret_01_max_yaw_angle",
+            "paramMinPitchAngle": "turret_01_min_pitch_angle",
+            "paramMaxPitchAngle": "turret_01_max_pitch_angle",
+            "paramPitchSpeed": "gun_01_pitch_speed",
+            "paramPitchSpeedMul": "gun_01_pitch_mul",
+            "paramPitchAccel": "gun_01_pitch_accel",
+            "wishYawParamName": "gun_01_aim:targetYaw",
+            "wishPitchParamName": "gun_01_aim:targetPitch",
+            "gunRecoilParamName": "gun_01_recoil"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_02_yaw",
+            "curPitchParamName": "gun_02_pitch"
+          }
+        }
+      ]
+    },
+    {
+      "turret_control__turretInfo:shared:array": [
+        {
+          "turretInfo:object": {
+            "turretName": "turret_01",
+            "gun": "ab_41_turret_01_20mm_breda_m35_l6+turret_with_several_types_of_shells+main_turret",
+            "barrelDm": "gun_barrel",
+            "breechDm": "cannon_breech",
+            "verDriveDm": "drive_turret_v",
+            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_02",
+            "gun": "ab_41_turret_02_8mm_breda_mod38",
+            "barrelDm": "gun_barrel_01",
+            "verDriveDm": "drive_turret_v",
+            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        }
+      ]
+    }
+  ],
+  "ab_41_turret_01_20mm_breda_m35_l6": {
+    "_extends": "tankgun_20mm_breda_m35_l6",
+    "gun__shootNodeName": "bone_gun_barrel",
+    "turret__yawSpeed": 24.0,
+    "turret__pitchSpeed": 15.0,
+    "turret__aimNodeName": "bone_turret",
+    "turret__limit": [-180.0,180.0,-12.0,20.0],
+    "turret__limitsTable:list<p4>": {
+      "lim1": [-180.0,155.0,-12.0,20.0],
+      "lim2": [155.0,180.0,-6.0,12.0]
+    },
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 114
+      },
+      {
+        "ammo": 114
+      },
+      {
+        "ammo": 114
+      },
+      {
+        "ammo": 114
+      }
+    ]
+  },
+  "ab_41_turret_02_8mm_breda_mod38": {
+    "_extends": "tankgun_8mm_breda_mod38",
+    "gun__shootNodeName": "bone_mg_gun_twin",
+    "gun__shellsAmmo:array": {
+      "ammo": 1992
+    }
+  },
+  "ab_41_ammo_stowages": {
+    "_tags": "server",
+    "_extends": "vehicle_ammo_stowages",
+    "ammo_stowage__stowageTemplates:shared:list<t>": {
+      "stowage": "ab_41_ammo_stowage_1"
+    }
+  },
+  "ab_41_ammo_stowage_1": {
+    "_extends": "ammo_stowage",
+    "ammo_stowage__clusterTemplates:shared:list<t>": {
+      "cluster": "ab_41_ammo_cluster_1_1"
+    },
+    "ammo_stowage__turretNames:shared:list<t>": {
+      "gun": "turret_01"
+    }
+  },
+  "ab_41_ammo_cluster_1_1": {
+    "_extends": "ammo_cluster",
+    "ammo_cluster__isShell": true,
+    "ammo_cluster__slotNames:shared:list<t>": [
+      {
+        "part": "ammo_body_l_01"
+      },
+      {
+        "part": "ammo_body_l_02"
+      },
+      {
+        "part": "ammo_body_l_03"
+      },
+      {
+        "part": "ammo_body_l_04"
+      },
+      {
+        "part": "ammo_body_l_05"
+      },
+      {
+        "part": "ammo_body_l_06"
+      },
+      {
+        "part": "ammo_body_l_07"
+      },
+      {
+        "part": "ammo_body_l_08"
+      },
+      {
+        "part": "ammo_body_r_01"
+      },
+      {
+        "part": "ammo_body_r_02"
+      },
+      {
+        "part": "ammo_body_r_03"
+      },
+      {
+        "part": "ammo_body_r_04"
+      },
+      {
+        "part": "ammo_body_r_05"
+      },
+      {
+        "part": "ammo_body_r_06"
+      },
+      {
+        "part": "ammo_body_r_07"
+      },
+      {
+        "part": "ammo_turret"
+      }
+    ],
+    "ammo_cluster__slotsMaxAmmo:list<i>": [
+      {
+        "count": 32
+      },
+      {
+        "count": 32
+      },
+      {
+        "count": 32
+      },
+      {
+        "count": 32
+      },
+      {
+        "count": 32
+      },
+      {
+        "count": 32
+      },
+      {
+        "count": 32
+      },
+      {
+        "count": 32
+      },
+      {
+        "count": 32
+      },
+      {
+        "count": 32
+      },
+      {
+        "count": 32
+      },
+      {
+        "count": 32
+      },
+      {
+        "count": 24
+      },
+      {
+        "count": 24
+      },
+      {
+        "count": 16
+      },
+      {
+        "count": 8
+      }
+    ]
+  },
+  "ab_41_skins": {
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "ab_41_it_camo_graygreen",
+          "objTexReplace:object": {
+            "it_camo_olive_green*": "it_camo_graygreen*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ab_41_it_camo_three_color_blots",
+          "objTexReplace:object": {
+            "it_camo_olive_green*": "it_camo_three_color_blots*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ab_41_it_camo_two_color_small_spots",
+          "objTexReplace:object": {
+            "it_camo_olive_green*": "it_camo_two_color_small_spots*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ab_41_it_camo_three_color_spots",
+          "objTexReplace:object": {
+            "it_camo_olive_green*": "it_camo_three_color_spots*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ab_41_it_camo_two_color_spots",
+          "objTexReplace:object": {
+            "it_camo_olive_green*": "it_camo_two_color_spots*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ab_41_it_camo_winter_olive_green",
+          "objTexReplace:object": {
+            "it_camo_olive_green*": "it_camo_winter_olive_green*"
+          }
+        }
+      }
+    ]
+  }
+}

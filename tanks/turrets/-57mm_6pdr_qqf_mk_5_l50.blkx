@@ -1,0 +1,60 @@
+var _57mm_6pdr_qqf_mk_5_l50 = 
+{
+  "base_57mm_6pdr_qqf_mk_5_l50": {
+    "item__name": "guns/57mm_6pdr_qqf_mk_5_l50",
+    "gun__blk": "content/tanks/gamedata/gen/weapons/57mm_6pdr_qqf_mk_5_l50.blk",
+    "gun__shotFreq": 0.25,
+    "gun__locName": "57mm_6pdr_qqf_mk_5_l50",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "content/tanks/gamedata/gen/weapons/shells/57mm_6pdr_qqf_mk_5_l50_defaultset.blk",
+          "name": "57mm_shot_mk8t",
+          "type": "apc_solid_medium_caliber_tank"
+        }
+      },
+      "57mm_britain_6pdr_HE:array": {
+        "shell:object": {
+          "blk": "content/tanks/gamedata/gen/weapons/shells/57mm_6pdr_qqf_mk_5_l50_57mm_britain_6pdr_he.blk",
+          "name": "57mm_shell_mk10t",
+          "type": "he_frag_tank"
+        }
+      },
+      "57mm_britain_6pdr_APC:array": {
+        "shell:object": {
+          "blk": "content/tanks/gamedata/gen/weapons/shells/57mm_6pdr_qqf_mk_5_l50_57mm_britain_6pdr_apc.blk",
+          "name": "57mm_shot_mk5t_hv",
+          "type": "ap_tank"
+        }
+      },
+      "57mm_britain_6pdr_APCBC:array": {
+        "shell:object": {
+          "blk": "content/tanks/gamedata/gen/weapons/shells/57mm_6pdr_qqf_mk_5_l50_57mm_britain_6pdr_apcbc.blk",
+          "name": "57mm_shot_mk9t",
+          "type": "apcbc_solid_medium_caliber_tank"
+        }
+      },
+      "57mm_britain_6pdr_APDS:array": {
+        "shell:object": {
+          "blk": "content/tanks/gamedata/gen/weapons/shells/57mm_6pdr_qqf_mk_5_l50_57mm_britain_6pdr_apds.blk",
+          "name": "57mm_shot_mk1bt",
+          "type": "apds_tank"
+        }
+      }
+    }
+  },
+  "tankgun_57mm_6pdr_qqf_mk_5_l50": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_57mm_6pdr_qqf_mk_5_l50"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

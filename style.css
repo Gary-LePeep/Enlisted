@@ -210,6 +210,12 @@ nav ul ul ul {
     /* Make it appear at the same level as it's parent */
 }
 
+/* pushes to the left instead */
+.rightnav ul ul ul {
+    right: 100%;
+    left: -100%;
+}
+
 /* Make the dropdown menu (first level) at least as wide as it's parent */
 nav>ul>li>ul>li {
     min-width: 100%;

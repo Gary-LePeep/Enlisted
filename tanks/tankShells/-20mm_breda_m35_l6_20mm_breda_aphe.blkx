@@ -1,51 +1,42 @@
-var _8mm_breda_mod38_defaultset_bullet_3 = 
+var _20mm_breda_m35_l6_20mm_breda_aphe = 
 {
-  "mass": 0.0127,
-  "caliber": 0.0077,
-  "speed": 790.0,
-  "Cx": 0.15,
-  "maxDistance": 2000.0,
-  "normalizationPreset": "default",
-  "bulletType": "i_t_ball",
-  "effectiveDistance": 400.0,
-  "explodeTreshold": 3.0,
-  "explodeHitPower": 5.5,
-  "explodeArmorPower": 2.5,
-  "explodeRadius": [0.03,0.035],
-  "groundCollisionEffect": "hit_8_11mm_dirt_ap",
-  "ricochetEffect": "hit_8_11mm_metal_ap",
-  "waterCollisionEffect": "hit_8_11mm_water",
-  "secondaryShattersPreset": "ap",
+  "bulletCount": 10,
+  "mass": 0.14,
+  "explosiveType": "petn",
+  "explosiveMass": 0.001,
+  "caliber": 0.02,
+  "speed": 832.0,
+  "maxDistance": 5000.0,
+  "normalizationPreset": "ap",
+  "secondaryShattersPreset": "ap_small_arms",
+  "stucking": 0.7,
+  "stuckingAngle": 45.0,
+  "bulletType": "ap_i_t",
+  "fresnel": [0.23,0.1,2.0],
+  "shellAnimation": "video/shells_animations/aphe.ivf",
+  "bulletName": "20mm_perforante_m35",
+  "fuseDelayDist": 1.2,
+  "explodeTreshold": 9.0,
+  "selfDestructionFx": "explosion_air_selfexplosion_small",
+  "explosionEffect": "hit_19_27mm_metal_ap",
+  "groundCollisionEffect": "hit_19_27mm_dirt_ap",
+  "ricochetEffect": "hit_19_27mm_metal_ap",
+  "waterCollisionEffect": "hit_19_27mm_water",
   "hitpower": {
-    "HitPower10m": [1.45,10.0],
-    "HitPower100m": [1.43,100.0],
-    "HitPower200m": [1.37,300.0],
-    "HitPower400m": [1.2,400.0],
-    "HitPower600m": [1.1,600.0],
-    "HitPower1000m": [0.2,1000.0],
-    "HitPower1500m": [0.01,1500.0]
-  },
-  "armorpower": {
-    "ArmorPower0m": [3.5,5.0],
-    "ArmorPower100m": [3.3,100.0],
-    "ArmorPower500m": [3.2,500.0],
-    "ArmorPower1000m": [3.0,1000.0],
-    "ArmorPower1450m": [0.1,1450.0],
-    "ArmorPower1500m": [0.0,1500.0]
-  },
-  "visual": {
-    "range_percent_of_ammo": [100.0,0.0],
-    "traceFreq": 1,
-    "tracer": "noColor",
-    "trail": "noTrail"
+    "HitPower0m": [1.0,0.0],
+    "HitPower1000m": [0.9,0.0],
+    "HitPower10000m": [0.8,10000.0]
   },
   "damage": {
     "kinetic": {
-      "damage": 0.1,
-      "onHitChanceMultFire": 5.0,
+      "damageType": "generic",
+      "demarrePenetrationK": 0.9,
+      "demarreSpeedPow": 1.43,
+      "demarreMassPow": 0.71,
+      "demarreCaliberPow": 1.07,
+      "onHitChanceMultFire": 3.5,
       "correctionPenetrationByRelativeVelocity": [200.0,1000.0],
       "correctionDamageByRelativeVelocity": [300.0,1000.0],
-      "damageType": "generic",
       "energyToDamage": {
         "p0": [3000.0,5.0],
         "p1": [15000.0,10.0],
@@ -68,55 +59,20 @@ var _8mm_breda_mod38_defaultset_bullet_3 =
         "p18": [12000000.0,900.0]
       }
     },
-    "splash": {
-      "radius": [0.03,0.035],
-      "penetration": 2.5,
-      "damage": 5.5,
-      "damageType": "explosion"
-    },
     "explosive": {
-      "fuseArmorTreshold": 3.0
-    },
-    "secondaryShatter": {
-      "residualArmorPenetrationToShatterCountMult": [20.0,100.0,0.5,1.0],
-      "residualArmorPenetrationToShatterPenetrationMult": [20.0,100.0,0.5,1.0],
-      "residualArmorPenetrationToShatterDamageMult": [20.0,100.0,0.4,1.0],
-      "caliberToArmorToShatterCountMult": [0.5,1.0,0.5,1.0],
-      "damageType": "secondaryShatter",
-      "section0": {
-        "angles": [0.0,10.0],
-        "shatter": {
-          "distance": 5.0,
-          "size": 0.05,
-          "count": 8,
-          "penetration": [11.0,8.0],
-          "damage": [20.0,15.0],
-          "onHitChanceMultFire": 1.3
-        }
-      },
-      "section1": {
-        "angles": [0.0,25.0],
-        "shatter": {
-          "distance": 2.5,
-          "size": 0.025,
-          "count": 20,
-          "penetration": [7.0,5.0],
-          "damage": [15.0,12.0],
-          "onHitChanceMultFire": 1.0
-        }
-      },
-      "section2": {
-        "angles": [0.0,40.0],
-        "shatter": {
-          "size": 0.01,
-          "distance": 1.5,
-          "count": 40,
-          "penetration": [4.0,3.0],
-          "damage": [8.0,6.0],
-          "onHitChanceMultFire": 1.0
-        }
-      }
+      "type": "petn",
+      "mass": 0.001,
+      "fuseDelayDist": 1.2,
+      "fuseArmorTreshold": 9.0,
+      "strengthEquivalent": 1.7,
+      "brisanceEquivalent": 1.3
     }
+  },
+  "visual": {
+    "range_percent_of_ammo": [100.0,0.0],
+    "traceFreq": 1,
+    "tracer": "20mmGreen",
+    "trail": "smallTrail"
   },
   "ballistics": {
     "slopeEffect": {
@@ -263,53 +219,114 @@ var _8mm_breda_mod38_defaultset_bullet_3 =
         "ricochetProbability40deg": [40.0,0.35],
         "ricochetProbability41deg": [41.0,0.005],
         "ricochetProbability43deg": [43.0,0.0],
-        "ricochetProbability90deg": [90.0,0.0]
+        "ricochetProbability90deg": [90.0,0.0],
+        "t1": {
+          "caliberToArmor": 1.0,
+          "ricochetProbability0deg": [0.0,1.0],
+          "ricochetProbability25deg": [25.0,1.0],
+          "ricochetProbability30deg": [30.0,0.5],
+          "ricochetProbability40deg": [40.0,0.3],
+          "ricochetProbability41deg": [41.0,0.005],
+          "ricochetProbability43deg": [43.0,0.0],
+          "ricochetProbability90deg": [90.0,0.0]
+        },
+        "t2": {
+          "caliberToArmor": 1.3,
+          "ricochetProbability0deg": [0.0,1.0],
+          "ricochetProbability24deg": [24.0,1.0],
+          "ricochetProbability30deg": [30.0,0.4],
+          "ricochetProbability40deg": [40.0,0.2],
+          "ricochetProbability41deg": [41.0,0.002],
+          "ricochetProbability42deg": [42.0,0.0],
+          "ricochetProbability90deg": [90.0,0.0]
+        },
+        "t3": {
+          "caliberToArmor": 1.5,
+          "ricochetProbability0deg": [0.0,1.0],
+          "ricochetProbability22deg": [22.0,1.0],
+          "ricochetProbability23deg": [23.0,0.5],
+          "ricochetProbability30deg": [30.0,0.3],
+          "ricochetProbability40deg": [40.0,0.1],
+          "ricochetProbability41deg": [41.0,0.001],
+          "ricochetProbability42deg": [42.0,0.0],
+          "ricochetProbability90deg": [90.0,0.0]
+        },
+        "t4": {
+          "caliberToArmor": 1.65,
+          "ricochetProbability0deg": [0.0,1.0],
+          "ricochetProbability10deg": [15.0,1.0],
+          "ricochetProbability19deg": [17.0,0.9],
+          "ricochetProbability22deg": [22.0,0.5],
+          "ricochetProbability30deg": [23.0,0.1],
+          "ricochetProbability40deg": [24.0,0.0],
+          "ricochetProbability90deg": [90.0,0.0]
+        },
+        "t5": {
+          "caliberToArmor": 3.0,
+          "ricochetProbability0deg": [0.0,1.0],
+          "ricochetProbability10deg": [10.0,1.0],
+          "ricochetProbability19deg": [15.0,0.9],
+          "ricochetProbability22deg": [17.0,0.5],
+          "ricochetProbability30deg": [20.0,0.1],
+          "ricochetProbability40deg": [21.0,0.0],
+          "ricochetProbability90deg": [90.0,0.0]
+        },
+        "t6": {
+          "caliberToArmor": 6.0,
+          "ricochetProbability0deg": [0.0,1.0],
+          "ricochetProbability10deg": [8.0,1.0],
+          "ricochetProbability19deg": [12.0,0.9],
+          "ricochetProbability22deg": [15.0,0.5],
+          "ricochetProbability30deg": [18.0,0.1],
+          "ricochetProbability40deg": [21.0,0.0],
+          "ricochetProbability90deg": [90.0,0.0]
+        }
       }
     },
     "stability": {
-      "stabilityThreshold": 0.0,
+      "stabilityThreshold": 0.05,
       "stabilityCaliberToArmorThreshold": 5.0,
-      "stabilityReductionAfterRicochet": 0.01,
-      "stabilityReductionAfterPenetration": 0.01,
+      "stabilityReductionAfterRicochet": 0.3,
+      "stabilityReductionAfterPenetration": 0.0,
       "stabilityRicochetModifier": [
         {
-          "mod1": [0.0,0.05]
+          "mod1": [0.0,0.2]
         },
         {
-          "mod2": [20.0,0.1]
+          "mod2": [20.0,0.4]
         },
         {
-          "mod3": [30.0,0.2]
+          "mod3": [30.0,0.6]
         },
         {
-          "mod3": [45.0,0.3]
+          "mod3": [45.0,0.9]
         }
       ]
     }
   },
   "hitFx": {
     "fxScale": [1.0,1.0],
-    "defaultFx": "hit_8_11mm_dirt_ap",
-    "jetFx": "hit_8_11mm_dirt_ap",
+    "defaultFx": "hit_19_27mm_dirt_ap",
+    "jetFx": "hit_19_27mm_dirt_ap",
     "steel": {
-      "fx": "hit_8_11mm_metal_ap",
+      "fx": "hit_19_27mm_metal_ap",
       "fxScale": [1.0,1.0]
     },
     "wood": {
-      "fx": "hit_8_11mm_wood_ap",
+      "fx": "hit_19_27mm_wood_ap",
       "fxScale": [1.0,1.0]
     },
     "glass": {
-      "fx": "hit_8_11mm_metal_ap",
+      "fx": "hit_19_27mm_metal_ap",
       "fxScale": [1.0,1.0]
     },
     "stone": {
-      "fx": "hit_8_11mm_stone_ap",
+      "fx": "hit_19_27mm_stone_ap",
       "fxScale": [1.0,1.0]
     }
   },
   "tracer": {
-    "headColor": "#00000000",
-    "smokeColor": "#00000000"
+    "headColor": "#66ff66dc",
+    "smokeColor": "#e4e4e4e4"
   }
 }

@@ -11,9 +11,6 @@
 <script src="../updates/updates.js"></script>
 
 <script src="../weapon-data.js"></script>
-
-<script src="../dist/chart.min.js"></script>
-<script src="../dist/chartjs-plugin-annotation.min.js"></script>
 <script>
   initCSS();
 </script>
@@ -25,19 +22,6 @@
   </script>
 
   <script>
-    function reloadDisplayedData() {
-      const buttons = document.getElementsByClassName('topbtn');
-      for (let i = 0; i < buttons.length; i++) {
-        const text = buttons[i].childNodes[0].textContent;
-        const wepbtns = buttons[i].getElementsByTagName('LI');
-        for (let j = 0; j < wepbtns.length; j++) {
-          if (wepbtns[j].textContent === text) {
-            wepbtns[j].onclick();
-          }
-        }
-      }
-    }
-
     // Color Dropdown
     const headerbox = document.createElement('header');
     headerbox.id = 'header-box';
@@ -386,8 +370,8 @@
               } else if (effects[l] === 'reload') {
                 reloadStar *= STARUPGRADES[wepType][k][effects[l]];
               } else {
-                console.log(effects[l]);
-                console.log(STARUPGRADES[wepType][k][effects[l]]);
+                // eslint-disable-next-line no-alert
+                alert(`${effects[l]} , ${STARUPGRADES[wepType][k][effects[l]]}`);
               }
             }
           }

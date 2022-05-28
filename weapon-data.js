@@ -1405,8 +1405,3 @@ function getDataProperty(gun, property) {
   }
   return getDataPropertyWithOverrides(gun, property);
 }
-
-function toPlace(number, place) {
-  const ret = Math.round(number * (10 ** place));
-  return (ret / (10 ** place));
-}

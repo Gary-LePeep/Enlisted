@@ -10,7 +10,7 @@ var _8mm_breda_mod38_defaultset_bullet_2 =
   "effectiveDistance": 400.0,
   "groundCollisionEffect": "hit_8_11mm_dirt_ap",
   "ricochetEffect": "hit_8_11mm_metal_ap",
-  "waterCollisionEffect": "hit_12_18mm_water",
+  "waterCollisionEffect": "hit_8_11mm_water",
   "secondaryShattersPreset": "ap",
   "hitpower": {
     "HitPower10m": [1.45,10.0],

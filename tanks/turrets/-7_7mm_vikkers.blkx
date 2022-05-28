@@ -1,0 +1,55 @@
+var _7_7mm_vikkers = 
+{
+  "base_7_7mm_vikkers": {
+    "item__name": "guns/7_7mm_vikkers",
+    "gun__blk": "content/tanks/gamedata/gen/weapons/7_7mm_vikkers.blk",
+    "gun__shotFreq": 6.5,
+    "gun__reloadTime": 8.0,
+    "gun__maxAmmo": 250,
+    "gun__locName": "7_7mm_vikkers",
+    "gun__firingModes:array": {
+      "mode:object": {
+        "modeType": "automatic"
+      }
+    },
+    "gun__firingModeNames:array": {
+      "mode": "automatic"
+    },
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": [
+        {
+          "shell:object": {
+            "blk": "content/tanks/gamedata/gen/weapons/shells/7_7mm_vikkers_defaultset_bullet_1.blk",
+            "type": "i_t_ball"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "content/tanks/gamedata/gen/weapons/shells/7_7mm_vikkers_defaultset_bullet_2.blk",
+            "type": "ap_ball"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "content/tanks/gamedata/gen/weapons/shells/7_7mm_vikkers_defaultset_bullet_3.blk",
+            "type": "ap_ball"
+          }
+        }
+      ]
+    }
+  },
+  "tankgun_7_7mm_vikkers": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_machinegun"
+    },
+    {
+      "_extends": "base_7_7mm_vikkers"
+    },
+    {
+      "turret__triggerGroup": 2
+    }
+  ]
+}
