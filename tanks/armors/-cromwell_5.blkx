@@ -1,4 +1,4 @@
-var _cromwell_5 = 
+var armor_cromwell_5 = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

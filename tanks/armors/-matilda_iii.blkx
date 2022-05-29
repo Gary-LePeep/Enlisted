@@ -1,4 +1,4 @@
-var _matilda_iii = 
+var armor_matilda_iii = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

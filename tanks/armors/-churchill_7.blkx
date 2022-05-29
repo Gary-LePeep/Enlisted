@@ -1,4 +1,4 @@
-var _churchill_7 = 
+var armor_churchill_7 = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

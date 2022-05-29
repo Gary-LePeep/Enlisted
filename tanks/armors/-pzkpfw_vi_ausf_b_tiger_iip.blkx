@@ -1,4 +1,4 @@
-var _pzkpfw_vi_ausf_b_tiger_iip = 
+var armor_pzkpfw_vi_ausf_b_tiger_iip = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

@@ -1,4 +1,4 @@
-var _sherman_ic_firefly = 
+var armor_sherman_ic_firefly = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

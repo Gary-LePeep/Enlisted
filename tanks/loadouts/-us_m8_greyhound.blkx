@@ -1,0 +1,159 @@
+var _us_m8_greyhound = 
+{
+  "us_m8_greyhound": {
+    "_extends": "base_m8_greyhound",
+    "_group": {
+      "_tags": "render",
+      "bullet_holes__ignoreCollisionNodes:array": [],
+      "bullet_holes__movingCollisionNodes:array": []
+    },
+    "vehicle_seats__seats:shared:array": [
+      {
+        "seats:object": {
+          "name": "main_gunner",
+          "locName": "vehicle_seats/gunner",
+          "attachNode": "gunner",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isGunner",
+          "nextSeat": "driver",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "gunner",
+          "cameraNodeName": "bone_camera_gunner",
+          "turretNames:array": [
+            {
+              "turretNames": "turret_01"
+            },
+            {
+              "turretNames": "turret_02"
+            }
+          ]
+        }
+      },
+      {
+        "seats:object": {
+          "name": "driver",
+          "locName": "vehicle_seats/driver",
+          "seatOwnsEntityControl": true,
+          "attachNode": "driver",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.25,0.0]
+          ],
+          "seatComponent": "isDriver",
+          "nextSeat": "main_gunner",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "driver",
+          "cameraNodeName": "bone_camera_driver"
+        }
+      },
+      {
+        "seats:object": [
+          {
+            "name": "loader"
+          },
+          {
+            "locName": "vehicle_seats/commander"
+          },
+          {
+            "locName": "vehicle_seats/commander"
+          },
+          {
+            "attachNode": "commander"
+          },
+          {
+            "shouldHideOwner": true
+          },
+          {
+            "ignoreAttachNodeRotation": true
+          },
+          {
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.5,-0.35,-0.05]
+            ]
+          },
+          {
+            "seatComponent": "isDriver"
+          },
+          {
+            "receiveDamageFromDMPart": "commander"
+          },
+          {
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          },
+          {
+            "hatchNodes:array": {
+              "node": "hatch_01"
+            }
+          },
+          {
+            "hatchTurretNames:array": {
+              "turret": "turret_03"
+            }
+          }
+        ]
+      },
+      {
+        "seats:object": {
+          "attachNode": "machine_gunner",
+          "locName": "vehicle_seats/radioman",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isPassenger",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "machine_gunner",
+          "cameraNodeName": "bone_camera_driver"
+        }
+      }
+    ],
+    "dm_phys_parts__enginePartIds:list<i>": [],
+    "dm_phys_parts__transmissionPartIds:list<i>": [],
+    "dm_phys_parts__tracksPartIds:list<i>": [],
+    "dm_phys_parts__wheelsPartIds:list<i>": [],
+    "dm_phys_parts__engine:array": {
+      "engine": "engine"
+    },
+    "dm_phys_parts__transmission:array": {
+      "transmission": "transmission"
+    },
+    "dm_phys_parts__tracks:array": [],
+    "dm_phys_parts__wheels:array": [
+      {
+        "wheel": "wheel_r_01"
+      },
+      {
+        "wheel": "wheel_r_02"
+      },
+      {
+        "wheel": "wheel_r_03"
+      },
+      {
+        "wheel": "wheel_l_01"
+      },
+      {
+        "wheel": "wheel_l_02"
+      },
+      {
+        "wheel": "wheel_l_03"
+      }
+    ]
+  }
+}

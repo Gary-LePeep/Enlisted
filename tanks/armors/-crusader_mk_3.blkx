@@ -1,4 +1,4 @@
-var _crusader_mk_3 = 
+var armor_crusader_mk_3 = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

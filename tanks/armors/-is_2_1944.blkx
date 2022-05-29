@@ -1,4 +1,4 @@
-var _is_2_1944 = 
+var armor_is_2_1944 = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

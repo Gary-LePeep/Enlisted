@@ -1,4 +1,4 @@
-var _sherman_ii = 
+var armor_sherman_ii = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

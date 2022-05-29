@@ -1,4 +1,4 @@
-var _m24_chaffee = 
+var armor_m24_chaffee = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

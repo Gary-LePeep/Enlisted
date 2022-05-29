@@ -1,4 +1,4 @@
-var _tgdgb_m40_lv = 
+var armor_tgdgb_m40_lv = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

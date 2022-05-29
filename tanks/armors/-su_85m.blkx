@@ -1,4 +1,4 @@
-var _su_85m = 
+var armor_su_85m = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

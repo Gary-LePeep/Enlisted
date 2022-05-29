@@ -1,0 +1,313 @@
+var _germ_pzkpfw_vi_ausf_e_tiger = 
+{
+  "germ_pzkpfw_VI_ausf_E_tiger": {
+    "_extends": "germ_pzkpfw_VI_ausf_E_tiger_common",
+    "animchar__objTexReplace:object": {
+      "ger_camo_dunkelgelb*": "ger_camo_dunkelgelb_green_braun_blots*"
+    }
+  },
+  "germ_pzkpfw_VI_ausf_E_tiger_normandy": {
+    "_extends": "germ_pzkpfw_VI_ausf_E_tiger_common"
+  },
+  "germ_pzkpfw_VI_ausf_E_tiger_common": [
+    {
+      "_extends": "base_pzkpfw_vi_ausf_e_tiger"
+    },
+    {
+      "_extends": "vehicle_effects_tracked"
+    },
+    {
+      "item__iconOffset": [0.0,0.1]
+    },
+    {
+      "bullet_holes__ignoreCollisionNodes:array": {
+        "_tags": "render"
+      }
+    },
+    {
+      "bullet_holes__movingCollisionNodes:array": [
+        {
+          "_tags": "render"
+        },
+        {
+          "movingCollisionNodes": "cls_turret_01"
+        },
+        {
+          "movingCollisionNodes": "turret_front"
+        },
+        {
+          "movingCollisionNodes": "turret_side"
+        },
+        {
+          "movingCollisionNodes": "gun_mask"
+        }
+      ]
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "germ_pzkpfw_VI_ausf_E_tiger_gunner_cockpit",
+            "turretNames:array": [
+              {
+                "turretNames": "turret_01"
+              },
+              {
+                "turretNames": "turret_02"
+              }
+            ]
+          }
+        },
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cameraOffset": [0.15,-0.0,-0.0],
+            "cockpitTemplate": "germ_pzkpfw_VI_ausf_E_tiger_driver_cockpit"
+          }
+        },
+        {
+          "seats:object": [
+            {
+              "name": "commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "attachNode": "commander"
+            },
+            {
+              "shouldHideOwner": true
+            },
+            {
+              "ignoreAttachNodeRotation": true
+            },
+            {
+              "hatchRotationAxis": [0.0,1.7,0.0]
+            },
+            {
+              "attachTm": [
+                [1.0,0.0,0.0],
+                [0.0,1.0,0.0],
+                [0.0,0.0,1.0],
+                [-0.1,-0.27,0.0]
+              ]
+            },
+            {
+              "seatComponent": "isDriver"
+            },
+            {
+              "receiveDamageFromDMPart": "commander"
+            },
+            {
+              "cameraNodeName": "bone_turret"
+            },
+            {
+              "cockpitTemplate": "germ_pzkpfw_VI_ausf_E_tiger_commander_cockpit"
+            },
+            {
+              "hatchNodes:array": {
+                "node": "hatch_02"
+              }
+            },
+            {
+              "hatchTurretNames:array": {
+                "turret": "turret_03"
+              }
+            }
+          ]
+        },
+        {
+          "seats:object": {
+            "attachNode": "loader",
+            "locName": "vehicle_seats/loader",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "bone_camera_driver",
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "attachNode": "machine_gunner",
+            "locName": "vehicle_seats/radioman",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "machine_gunner",
+            "cameraNodeName": "bone_camera_driver"
+          }
+        }
+      ]
+    }
+  ],
+  "germ_pzkpfw_VI_ausf_E_tiger_driver_cockpit": {
+    "_extends": "base_driver_cockpit",
+    "animchar__res": "pzkpfw_iii_e_driver_char",
+    "cockpit__offset": [-0.3205,-0.162109,-0.0644206],
+    "cockpit__visibleVehicleNodeNames:list<t>": []
+  },
+  "germ_pzkpfw_VI_ausf_E_tiger_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "pzkpfw_iii_e_gunner_char",
+    "cockpit__offset": [-0.747372,0.0154568,-0.0192679],
+    "cockpit__minZoom": -0.4,
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "@root"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "gun_barrel"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.27
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "germ_pzkpfw_VI_ausf_E_tiger_commander_cockpit": {
+    "_extends": "base_commander_tower_cockit_no_slits",
+    "animchar__res": "pzkpfw_iii_e_commander_char",
+    "cockpit__offset": [-0.299474,0.672601,0.551267],
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      }
+    ],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": -0.03
+      },
+      {
+        "slit": -0.01
+      },
+      {
+        "slit": -0.01
+      },
+      {
+        "slit": -0.01
+      },
+      {
+        "slit": -0.01
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_front_left"
+      },
+      {
+        "slit": "cam_rear_left"
+      },
+      {
+        "slit": "cam_rear_right"
+      },
+      {
+        "slit": "cam_front_right"
+      }
+    ]
+  }
+}

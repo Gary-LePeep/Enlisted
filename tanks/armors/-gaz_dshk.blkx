@@ -1,4 +1,4 @@
-var _gaz_dshk = 
+var armor_gaz_dshk = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

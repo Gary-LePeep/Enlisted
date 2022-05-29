@@ -1,0 +1,254 @@
+var _us_m10_wolverine = 
+{
+  "us_m10_wolverine": {
+    "_extends": "us_m10_wolverine_common"
+  },
+  "us_m10_wolverine_common": [
+    {
+      "_extends": "base_m10_wolverine"
+    },
+    {
+      "_extends": "vehicle_effects_tracked"
+    },
+    {
+      "item__iconOffset": [0.0,0.1]
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "us_m10_wolverine_gunner_cockpit",
+            "turretNames:array": {
+              "turretNames": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cockpitTemplate": "us_m10_wolverine_driver_cockpit"
+          }
+        },
+        {
+          "seats:object": [
+            {
+              "name": "commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "attachNode": "commander"
+            },
+            {
+              "shouldHideOwner": false
+            },
+            {
+              "ignoreAttachNodeRotation": true
+            },
+            {
+              "attachTm": [
+                [1.0,0.0,0.0],
+                [0.0,1.0,0.0],
+                [0.0,0.0,1.0],
+                [-0.35,0.15,0.15]
+              ]
+            },
+            {
+              "seatComponent": "isDriver"
+            },
+            {
+              "receiveDamageFromDMPart": "commander"
+            },
+            {
+              "turretNames:array": {
+                "turret": "turret_02"
+              }
+            }
+          ]
+        },
+        {
+          "seats:object": {
+            "attachNode": "loader",
+            "locName": "vehicle_seats/loader",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "bone_camera_driver",
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "attachNode": "machine_gunner",
+            "locName": "vehicle_seats/radioman",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "machine_gunner",
+            "cameraNodeName": "bone_camera_driver"
+          }
+        }
+      ]
+    },
+    {
+      "disableDMParts:list<t>": [
+        {
+          "part": "ex_armor_body_r_01"
+        },
+        {
+          "part": "ex_armor_body_r_02"
+        },
+        {
+          "part": "ex_armor_body_r_03"
+        },
+        {
+          "part": "ex_armor_body_r_04"
+        },
+        {
+          "part": "ex_armor_body_r_05"
+        },
+        {
+          "part": "ex_armor_body_l_01"
+        },
+        {
+          "part": "ex_armor_body_l_02"
+        },
+        {
+          "part": "ex_armor_body_l_03"
+        },
+        {
+          "part": "ex_armor_body_l_04"
+        },
+        {
+          "part": "ex_armor_body_l_05"
+        },
+        {
+          "part": "ex_armor_body_l_06"
+        },
+        {
+          "part": "ex_armor_turret_l_01"
+        },
+        {
+          "part": "ex_armor_turret_r_01"
+        }
+      ]
+    }
+  ],
+  "us_m10_wolverine_driver_cockpit": {
+    "_extends": "base_driver_cockpit",
+    "animchar__res": "ba_11_driver_char",
+    "cockpit__offset": [-0.4,-0.25,0.18],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.1
+    },
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    }
+  },
+  "us_m10_wolverine_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "ba_11_gunner_char",
+    "cockpit__offset": [-0.65,-0.06,0.23],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "@root"
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.18
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__cockpit__attachNodeIndices:list<i>": []
+  },
+  "us_m10_wolverine_tutorial": {
+    "_extends": "us_m10_wolverine",
+    "turrets__initAmmoDistribution:array": [
+      {
+        "ammo:object": {
+          "slot": 1,
+          "fill": true
+        }
+      },
+      {
+        "ammo:object": {
+          "slot": 2,
+          "fill": true
+        }
+      }
+    ]
+  },
+  "us_m10_wolverine_702td_battlepass_premium": {
+    "_extends": "us_m10_wolverine_common",
+    "animchar__objTexSet:object": {
+      "m10_wolverine_body_c*:object": {
+        "m10_wolverine_normandy_702td_body_c*": "camo_skin_tex"
+      },
+      "m10_wolverine_turret_c*:object": {
+        "m10_wolverine_normandy_702td_turret_c*": "camo_skin_tex"
+      },
+      "mg_browning_m2hb_mount_c*:object": {
+        "mg_browning_m2hb_normandy_702td_mount_c*": "camo_skin_tex"
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-var _m8_scott = 
+var armor_m8_scott = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

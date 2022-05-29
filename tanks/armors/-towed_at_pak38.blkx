@@ -1,4 +1,4 @@
-var _towed_at_pak38 = 
+var armor_towed_at_pak38 = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

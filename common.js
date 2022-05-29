@@ -1,4 +1,5 @@
 const BODY = document.getElementsByTagName('BODY')[0];
+const FULLWIDE = 1880;
 
 function recalibrateSize() {
   BODY.style.transform = `scale(${window.innerWidth / 1920},${window.innerWidth / 1920})`;
@@ -135,4 +136,17 @@ function titleBar(active) {
 function toPlace(number, place) {
   const ret = Math.round(number * (10 ** place));
   return (ret / (10 ** place));
+}
+
+function getProperty(file, property) {
+  if (Array.isArray(file)) {
+    for (let i = 0; i < file.length; i++) {
+      if (Object.keys(file[i])[0] === property) {
+        return file[i][property];
+      }
+    }
+  } else {
+    return file[property];
+  }
+  return null;
 }

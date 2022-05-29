@@ -1,4 +1,4 @@
-var _flak_36_sdkfz_6_2 = 
+var armor_flak_36_sdkfz_6_2 = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

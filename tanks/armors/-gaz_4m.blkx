@@ -1,4 +1,4 @@
-var _gaz_4m = 
+var armor_gaz_4m = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

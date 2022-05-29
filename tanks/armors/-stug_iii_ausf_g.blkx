@@ -1,4 +1,4 @@
-var _stug_iii_ausf_g = 
+var armor_stug_iii_ausf_g = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

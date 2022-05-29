@@ -1,0 +1,318 @@
+var _ussr_t_28e = 
+{
+  "ussr_t_28e": {
+    "_extends": "ussr_t_28e_common",
+    "animchar__objTexReplace:object": {
+      "ussr_camo_green*": "ussr_camo_winter_lines*"
+    }
+  },
+  "ussr_t_28e_common": [
+    {
+      "_extends": "base_t_28e"
+    },
+    {
+      "_extends": "vehicle_effects_tracked"
+    },
+    {
+      "bullet_holes__movingCollisionNodes:array": {
+        "_tags": "render"
+      }
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cockpitTemplate": "ussr_t_28e_driver_cockpit"
+          }
+        },
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "ussr_t_28e_gunner_cockpit",
+            "turretNames:array": [
+              {
+                "turret": "turret_01"
+              },
+              {
+                "turret": "turret_02"
+              },
+              {
+                "turret": "turret_03"
+              },
+              {
+                "turret": "turret_04"
+              }
+            ]
+          }
+        },
+        {
+          "seats:object": {
+            "name": "commander",
+            "locName": "vehicle_seats/commander",
+            "attachNode": "commander",
+            "shouldHideOwner": true,
+            "maxPosWithOpenHatch": 0.7,
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.535557,-0.172008,0.0815636]
+            ],
+            "hatchRotationAxis": [1.85,0.0,0.0],
+            "seatComponent": "isDriver",
+            "receiveDamageFromDMPart": "commander",
+            "cameraNodeName": "bone_turret_01",
+            "cockpitTemplate": "ussr_t_28e_commander_cockpit",
+            "hatchNodes:array": {
+              "node": "hatch_02"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "locName": "vehicle_seats/loader",
+            "attachNode": "loader",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "bone_camera_driver",
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "locName": "vehicle_seats/radioman",
+            "attachNode": "machine_gunner_01",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "machine_gunner_01"
+          }
+        },
+        {
+          "seats:object": {
+            "locName": "vehicle_seats/radioman",
+            "attachNode": "machine_gunner_02",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "machine_gunner_02"
+          }
+        }
+      ]
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 2,
+            "fill": true
+          }
+        }
+      ]
+    }
+  ],
+  "ussr_t_28e_driver_cockpit": {
+    "_extends": "base_driver_cockpit_no_slits",
+    "animchar__res": "bt_7_driver_char",
+    "cockpit__offset": [0.0913986,-0.399865,-0.0999798],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "gun_barrel"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.07
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": false
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "ussr_t_28e_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "t_26_1940_gunner_char",
+    "cockpit__minZoom": -0.27,
+    "cockpit__offset": [-0.23,-0.01,0.22],
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.8,1.0,0.3]
+      },
+      {
+        "slit": [0.5,0.5,0.4]
+      }
+    ],
+    "cockpit__attachNodeNames:list<t>": [
+      {
+        "node": "bone_camera_gunner"
+      },
+      {
+        "node": "bone_turret_01"
+      },
+      {
+        "node": "bone_turret_01"
+      }
+    ],
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "@root"
+      },
+      {
+        "node": "gun_barrel"
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front_right"
+      },
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_left"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": 0.2
+      },
+      {
+        "slit": 0.2
+      },
+      {
+        "slit": 0.0
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      }
+    ]
+  },
+  "ussr_t_28e_commander_cockpit": {
+    "_extends": "base_commander_cockpit_no_slits",
+    "animchar__res": "t_26_1940_commander_char",
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "slit": [-0.04,0.93,-0.425]
+      },
+      {
+        "slit": [0.06,0.479,-0.6]
+      }
+    ],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun_01"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": 0.15
+      },
+      {
+        "slit": 0.0
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_right"
+      }
+    ]
+  }
+}

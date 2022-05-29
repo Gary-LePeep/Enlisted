@@ -1,0 +1,304 @@
+var _germ_pzkpfw_ii_flamm = 
+{
+  "germ_pzkpfw_ii_flamm": {
+    "_extends": "germ_pzkpfw_ii_flamm_common",
+    "item__name": "items/germ_pzkpfw_ii_flamm"
+  },
+  "germ_pzkpfw_ii_flamm_common": [
+    {
+      "_extends": "base_pzkpfw_ii_flamm"
+    },
+    {
+      "_extends": "vehicle_effects_tracked"
+    },
+    {
+      "item__iconOffset": [0.0,0.2]
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cameraOffset": [0.15,-0.0,-0.0],
+            "cockpitTemplate": "germ_pzkpfw_ii_flamm_driver_cockpit"
+          }
+        },
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "germ_pzkpfw_ii_flamm_gunner_cockpit",
+            "turretNames:array": [
+              {
+                "turret": "turret_01"
+              },
+              {
+                "turret": "turret_02"
+              },
+              {
+                "turret": "turret_03"
+              }
+            ]
+          }
+        },
+        {
+          "seats:object": {
+            "name": "commander",
+            "attachNode": "loader",
+            "shouldHideOwner": true,
+            "locName": "vehicle_seats/commander",
+            "ignoreAttachNodeRotation": true,
+            "hatchRotationAxis": [1.6,0.0,0.0],
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.65,-0.15,0.2]
+            ],
+            "seatComponent": "isDriver",
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "bone_turret",
+            "cockpitTemplate": "germ_pzkpfw_ii_flamm_commander_cockpit",
+            "hatchNodes:array": {
+              "node": "hatch_09"
+            },
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "germ_pzkpfw_ii_flamm_driver_cockpit": {
+    "_extends": "base_driver_cockpit_no_slits",
+    "animchar__res": "pz_2c_driver_char",
+    "cockpit__offset": [-1.00014,-0.343,-0.200236],
+    "cockpit__visibleVehicleNodeNames:list<t>": [],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.08
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": false
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "germ_pzkpfw_ii_flamm_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "pz_2c_commander_char",
+    "cockpit__offset": [-0.0,-0.0,-0.0],
+    "cockpit__attachNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_turret"
+      },
+      {
+        "node": "bone_turret"
+      }
+    ],
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "slit": [-0.6,0.1,-0.05]
+      },
+      {
+        "slit": [0.0,0.3,0.0]
+      },
+      {
+        "slit": [0.0,0.3,0.0]
+      }
+    ],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "@root"
+      },
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "gun_barrel_01"
+      },
+      {
+        "node": "gun_barrel_02"
+      },
+      {
+        "node": "gun_mask_02"
+      },
+      {
+        "node": "gun_mask_03"
+      },
+      {
+        "node": "hatch_10"
+      },
+      {
+        "node": "hatch_11"
+      },
+      {
+        "node": "ex_decor_08"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": 0.27
+      },
+      {
+        "slit": 0.0
+      },
+      {
+        "slit": 0.0
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_right"
+      },
+      {
+        "slit": "cam_back"
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      }
+    ]
+  },
+  "germ_pzkpfw_ii_flamm_commander_cockpit": {
+    "_extends": "base_commander_cockpit_no_slits",
+    "animchar__res": "pz_2c_commander_char",
+    "cockpit__offset": [0.0,0.35,-0.0],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": 0.32
+      },
+      {
+        "slit": -0.05
+      },
+      {
+        "slit": -0.05
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_right"
+      },
+      {
+        "slit": "cam_back"
+      }
+    ]
+  },
+  "germ_pzkpfw_ii_flamm_311_premium": {
+    "_extends": "germ_pzkpfw_ii_flamm",
+    "animchar__objTexSet:object": {
+      "pzkpfw_2_flamm_ausf_a_body_c*:object": {
+        "pzkpfw_2_flamm_ausf_a_311_body_c*": "camo_skin_tex"
+      },
+      "pzkpfw_2_flamm_ausf_a_turret_c*:object": {
+        "pzkpfw_2_flamm_ausf_a_311_turret_c*": "camo_skin_tex"
+      }
+    },
+    "animchar__objTexReplace:object": {
+      "ger_camo_grey*": "ger_camo_dark_grey*"
+    }
+  },
+  "pzkpfw_ii_flamm_skins": {
+    "_override": true,
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "pzkpfw_ii_flamm_winter",
+          "objTexReplace:object": {
+            "ger_camo_grey*": "ger_camo_winter_grey*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "pzkpfw_ii_flamm_ger_camo_dunkelgelb_africa",
+          "objTexReplace:object": {
+            "ger_camo_grey*": "ger_camo_dunkelgelb_africa*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "pzkpfw_ii_flamm_ger_camo_winter_lines",
+          "objTexReplace:object": {
+            "ger_camo_grey*": "ger_camo_winter_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "pzkpfw_ii_flamm_311_premium",
+          "locId": "skin/pzkpfw_ii_flamm_311_premium",
+          "objTexReplace:object": {
+            "ger_camo_grey*": "ger_camo_dark_grey*"
+          },
+          "animchar__objTexSet:object": {
+            "pzkpfw_2_flamm_ausf_a_body_c*:object": {
+              "pzkpfw_2_flamm_ausf_a_311_body_c*": "camo_skin_tex"
+            },
+            "pzkpfw_2_flamm_ausf_a_turret_c*:object": {
+              "pzkpfw_2_flamm_ausf_a_311_turret_c*": "camo_skin_tex"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

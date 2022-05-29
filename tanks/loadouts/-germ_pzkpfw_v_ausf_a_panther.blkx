@@ -1,0 +1,362 @@
+var _germ_pzkpfw_v_ausf_a_panther = 
+{
+  "germ_pzkpfw_V_ausf_a_panther_no_camo": [
+    {
+      "_extends": "base_pzkpfw_v_ausf_a_panther"
+    },
+    {
+      "_extends": "vehicle_effects_tracked"
+    },
+    {
+      "item__iconOffset": [0.0,0.1]
+    },
+    {
+      "item__iconScale": 1.1
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cockpitTemplate": "germ_pzkpfw_V_ausf_a_panther_driver_cockpit"
+          }
+        },
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "germ_pzkpfw_V_ausf_a_panther_gunner_cockpit",
+            "turretNames:array": [
+              {
+                "turret": "turret_01"
+              },
+              {
+                "turret": "turret_02"
+              }
+            ]
+          }
+        },
+        {
+          "seats:object": {
+            "name": "commander",
+            "locName": "vehicle_seats/commander",
+            "attachNode": "commander",
+            "shouldHideOwner": true,
+            "maxPosWithOpenHatch": 0.7,
+            "hatchRotationAxis": [1.7,0.0,0.0],
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [0.1,-0.3,-0.04]
+            ],
+            "seatComponent": "isDriver",
+            "receiveDamageFromDMPart": "commander",
+            "cockpitTemplate": "germ_pzkpfw_V_ausf_a_panther_commander_cockpit",
+            "cameraNodeName": "bone_turret",
+            "hatchNodes:array": {
+              "node": "hatch_01"
+            },
+            "hatchTurretNames:array": {
+              "turret": "turret_03"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "loader",
+            "locName": "vehicle_seats/loader",
+            "attachNode": "loader",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "bone_camera_driver",
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "locName": "vehicle_seats/radioman",
+            "attachNode": "machine_gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "machine_gunner"
+          }
+        }
+      ]
+    },
+    {
+      "disableDMParts:list<t>": [
+        {
+          "part": "ex_armor_turret_l_01"
+        },
+        {
+          "part": "ex_armor_turret_l_02"
+        },
+        {
+          "part": "ex_armor_turret_l_03"
+        },
+        {
+          "part": "ex_armor_turret_l_04"
+        },
+        {
+          "part": "ex_armor_turret_l_05"
+        },
+        {
+          "part": "ex_armor_turret_r_01"
+        },
+        {
+          "part": "ex_armor_turret_r_02"
+        },
+        {
+          "part": "ex_armor_turret_r_03"
+        },
+        {
+          "part": "ex_armor_turret_r_04"
+        },
+        {
+          "part": "ex_armor_turret_r_05"
+        }
+      ]
+    }
+  ],
+  "germ_pzkpfw_V_ausf_a_panther_premium": {
+    "_extends": "germ_pzkpfw_V_ausf_a_panther_no_camo",
+    "animchar__objTexReplace:object": {
+      "ger_camo_dunkelgelb*": "ger_camo_dunkelgelb_green_braun_blots_small*"
+    }
+  },
+  "germ_pzkpfw_V_ausf_a_panther_driver_cockpit": {
+    "_extends": "base_driver_cockpit",
+    "animchar__res": "kv_1_driver_char",
+    "cockpit__offset": [-0.2,-0.0,-0.0],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "track_r"
+      }
+    ]
+  },
+  "germ_pzkpfw_V_ausf_a_panther_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "t_26_1940_gunner_char",
+    "cockpit__minZoom": -0.27,
+    "cockpit__offset": [-0.0,-0.0,-0.0],
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "slit": [-0.45,-0.061,0.193]
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.18
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    }
+  },
+  "germ_pzkpfw_V_ausf_a_panther_commander_cockpit": {
+    "_extends": "base_commander_tower_cockit_no_slits",
+    "animchar__res": "pzkpfw_iii_b_commander_char",
+    "cockpit__offset": [-0.3,0.83,0.36],
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": -0.06
+      },
+      {
+        "slit": -0.06
+      },
+      {
+        "slit": -0.06
+      },
+      {
+        "slit": -0.065
+      },
+      {
+        "slit": -0.06
+      },
+      {
+        "slit": -0.06
+      },
+      {
+        "slit": -0.06
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_front_left"
+      },
+      {
+        "slit": "cam_left"
+      },
+      {
+        "slit": "cam_rear"
+      },
+      {
+        "slit": "cam_rear_right"
+      },
+      {
+        "slit": "cam_right"
+      },
+      {
+        "slit": "cam_front_right"
+      }
+    ],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun"
+      }
+    ]
+  },
+  "germ_pzkpfw_V_ausf_a_panther": {
+    "_extends": "germ_pzkpfw_V_ausf_a_panther_no_camo",
+    "animchar__objTexReplace:object": {
+      "ger_camo_dunkelgelb*": "ger_camo_dunkelgelb_green_braun_blots*"
+    }
+  },
+  "germ_pzkpfw_V_ausf_a_panther_tutorial": {
+    "_extends": "germ_pzkpfw_V_ausf_a_panther_no_camo",
+    "animchar__objTexReplace:object": {
+      "ger_camo_dunkelgelb*": "camo_hangar_red_lead*"
+    },
+    "dm_phys_parts__tracks:array": [
+      {
+        "track": "wheel_r_\\w+"
+      },
+      {
+        "track": "wheel_r_\\w+"
+      },
+      {
+        "track": "wheel_l_\\w+"
+      },
+      {
+        "track": "wheel_l_\\w+"
+      },
+      {
+        "track": "track_l(_\\w+)?"
+      },
+      {
+        "track": "track_r(_\\w+)?"
+      }
+    ]
+  },
+  "germ_pzkpfw_V_ausf_a_panther_r02_battlepass_premium": {
+    "_extends": "germ_pzkpfw_V_ausf_a_panther_no_camo",
+    "animchar__objTexReplace:object": {
+      "pzkpfw_V_ausf_a_panther_body_n*": "pzkpfw_V_ausf_a_panther_r02_body_n*",
+      "pzkpfw_V_ausf_a_panther_turret_n*": "pzkpfw_V_ausf_a_panther_r02_turret_n*",
+      "pzkpfw_V_ausf_a_panther_body_ao*": "pzkpfw_V_ausf_a_panther_r02_body_ao*",
+      "pzkpfw_V_ausf_a_panther_turret_ao*": "pzkpfw_V_ausf_a_panther_r02_turret_ao*",
+      "pzkpfw_V_ausf_a_panther_body_c*": "pzkpfw_V_ausf_a_panther_r02_body_c*",
+      "pzkpfw_V_ausf_a_panther_turret_c*": "pzkpfw_V_ausf_a_panther_r02_turret_c*",
+      "pzkpfw_V_ausf_a_panther_gun_c*": "pzkpfw_V_ausf_a_panther_r02_gun_c*",
+      "fliegerbeschussgerat_41_c*": "fliegerbeschussgerat_r02_41_c*"
+    }
+  }
+}

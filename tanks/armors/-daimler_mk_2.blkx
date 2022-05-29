@@ -1,4 +1,4 @@
-var _daimler_mk_2 = 
+var armor_daimler_mk_2 = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

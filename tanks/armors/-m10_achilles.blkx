@@ -1,4 +1,4 @@
-var _m10_achilles = 
+var armor_m10_achilles = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

@@ -1,0 +1,534 @@
+var _germ_pzkpfw_iii_ausf_n = 
+{
+  "germ_pzkpfw_III_ausf_N": {
+    "_extends": "germ_pzkpfw_III_ausf_N_common",
+    "animchar__objTexReplace:object": {
+      "ger_camo_dunkelgelb*": "ger_camo_dunkelgelb_green_braun_blots*"
+    }
+  },
+  "germ_pzkpfw_III_ausf_N_tunis_premium": {
+    "_extends": "germ_pzkpfw_III_ausf_N_common",
+    "disableDMParts:list<t>": [
+      {
+        "part": "track_r_01"
+      },
+      {
+        "part": "track_l_01"
+      }
+    ],
+    "animchar__objTexReplace:object": {
+      "ger_camo_dunkelgelb*": "ger_camo_dunkelgelb_green_braun_big_blots*"
+    }
+  },
+  "germ_pzkpfw_III_ausf_N_stalingrad": {
+    "_extends": "germ_pzkpfw_III_ausf_N_common",
+    "disableDMParts:list<t>": [
+      {
+        "part": "track_r_01"
+      },
+      {
+        "part": "track_l_01"
+      },
+      {
+        "part": "ex_armor_body_l_01"
+      },
+      {
+        "part": "ex_armor_body_l_02"
+      },
+      {
+        "part": "ex_armor_body_l_03"
+      },
+      {
+        "part": "ex_armor_body_l_04"
+      },
+      {
+        "part": "ex_armor_body_l_05"
+      },
+      {
+        "part": "ex_armor_body_l_06"
+      },
+      {
+        "part": "ex_armor_body_r_01"
+      },
+      {
+        "part": "ex_armor_body_r_02"
+      },
+      {
+        "part": "ex_armor_body_r_03"
+      },
+      {
+        "part": "ex_armor_body_r_04"
+      },
+      {
+        "part": "ex_armor_body_r_05"
+      },
+      {
+        "part": "ex_armor_body_r_06"
+      },
+      {
+        "part": "ex_decor_01"
+      }
+    ],
+    "animchar__objTexReplace:object": {
+      "ger_camo_dunkelgelb*": "ger_camo_grey*"
+    },
+    "turrets__initAmmoDistribution:array": [
+      {
+        "ammo:object": {
+          "slot": 0,
+          "fill": true
+        }
+      },
+      {
+        "ammo:object": {
+          "slot": 1,
+          "fill": true
+        }
+      }
+    ],
+    "turret_control__turretInfo:shared:array": [
+      {
+        "turretInfo:object": {
+          "turretName": "turret_01",
+          "gun": "pzkpfw_iii_ausf_n_stalingrad_turret_01_75mm_kwk37+turret_with_several_types_of_shells+main_turret",
+          "barrelDm": "gun_barrel",
+          "breechDm": "cannon_breech",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      },
+      {
+        "turretInfo:object": {
+          "turretName": "turret_02",
+          "gun": "pzkpfw_iii_ausf_n_turret_02_7_92mm_mg34",
+          "barrelDm": "gun_barrel_01",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      },
+      {
+        "turretInfo:object": {
+          "turretName": "turret_03",
+          "gun": "pzkpfw_iii_ausf_n_turret_03_7_92mm_mg34",
+          "barrelDm": "gun_barrel_02",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      }
+    ]
+  },
+  "germ_pzkpfw_III_ausf_N_common": [
+    {
+      "_extends": "base_pzkpfw_iii_ausf_n"
+    },
+    {
+      "_extends": "vehicle_effects_tracked"
+    },
+    {
+      "item__iconOffset": [0.0,0.2]
+    },
+    {
+      "item__iconScale": 1.1
+    },
+    {
+      "disableDMParts:list<t>": [
+        {
+          "part": "track_r_01"
+        },
+        {
+          "part": "track_l_01"
+        }
+      ]
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cockpitTemplate": "germ_pzkpfw_III_ausf_N_driver_cockpit"
+          }
+        },
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "germ_pzkpfw_III_ausf_N_gunner_cockpit",
+            "turretNames:array": [
+              {
+                "turret": "turret_01"
+              },
+              {
+                "turret": "turret_02"
+              }
+            ]
+          }
+        },
+        {
+          "seats:object": {
+            "name": "commander",
+            "locName": "vehicle_seats/commander",
+            "attachNode": "commander",
+            "shouldHideOwner": true,
+            "hatchRotationAxis": [1.7,0.0,0.0],
+            "maxPosWithOpenHatch": 0.7,
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.2,-0.3,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "receiveDamageFromDMPart": "commander",
+            "cockpitTemplate": "germ_pzkpfw_III_ausf_N_commander_cockpit",
+            "cameraNodeName": "bone_turret",
+            "hatchNodes:array": [
+              {
+                "node": "hatch_01"
+              },
+              {
+                "node": "hatch_02"
+              }
+            ],
+            "hatchTurretNames:array": {
+              "turret": "turret_03"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "locName": "vehicle_seats/loader",
+            "attachNode": "loader",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "bone_camera_driver",
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "locName": "vehicle_seats/radioman",
+            "attachNode": "machine_gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "machine_gunner"
+          }
+        }
+      ]
+    }
+  ],
+  "germ_pzkpfw_III_ausf_N_driver_cockpit": {
+    "_extends": "base_driver_cockpit_no_slits",
+    "animchar__res": "pzkpfw_iii_e_driver_char",
+    "cockpit__offset": [-0.35,-0.2,0.01],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "ex_decor_l_01"
+      },
+      {
+        "node": "ex_decor_r_01"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.07
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": false
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "germ_pzkpfw_III_ausf_N_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "t_26_1940_gunner_char",
+    "cockpit__offset": [-0.9,0.03,0.12],
+    "cockpit__minZoom": -0.4,
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "@root"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "ex_decor_l_01"
+      },
+      {
+        "node": "ex_decor_r_01"
+      },
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "ex_armor_body_r_01"
+      },
+      {
+        "node": "ex_armor_body_r_02"
+      },
+      {
+        "node": "ex_armor_body_r_03"
+      },
+      {
+        "node": "ex_armor_body_r_04"
+      },
+      {
+        "node": "ex_armor_body_r_05"
+      },
+      {
+        "node": "ex_armor_body_r_06"
+      },
+      {
+        "node": "ex_armor_body_l_01"
+      },
+      {
+        "node": "ex_armor_body_l_02"
+      },
+      {
+        "node": "ex_armor_body_l_03"
+      },
+      {
+        "node": "ex_armor_body_l_04"
+      },
+      {
+        "node": "ex_armor_body_l_05"
+      },
+      {
+        "node": "ex_armor_body_l_06"
+      },
+      {
+        "node": "ex_lantern_r_01"
+      },
+      {
+        "node": "ex_lantern_l_01"
+      },
+      {
+        "node": "hatch_08"
+      },
+      {
+        "node": "hatch_09"
+      },
+      {
+        "node": "hatch_10"
+      },
+      {
+        "node": "hatch_11"
+      },
+      {
+        "node": "ex_decor_01"
+      },
+      {
+        "node": "ex_decor_r_02"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.13
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "germ_pzkpfw_III_ausf_N_commander_cockpit": {
+    "_extends": "base_commander_tower_cockit_no_slits",
+    "animchar__res": "pzkpfw_iii_e_commander_char",
+    "cockpit__offset": [-0.47,0.5,-0.0],
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      },
+      {
+        "slit": [0.0,0.0,0.0]
+      }
+    ],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun"
+      },
+      {
+        "node": "ex_armor_turret_l_01"
+      },
+      {
+        "node": "ex_armor_turret_l_02"
+      },
+      {
+        "node": "ex_armor_turret_l_03"
+      },
+      {
+        "node": "ex_armor_turret_r_01"
+      },
+      {
+        "node": "ex_armor_turret_r_02"
+      },
+      {
+        "node": "ex_armor_turret_r_03"
+      },
+      {
+        "node": "ex_decor_04"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": -0.03
+      },
+      {
+        "slit": -0.01
+      },
+      {
+        "slit": -0.01
+      },
+      {
+        "slit": -0.01
+      },
+      {
+        "slit": -0.01
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_front_left"
+      },
+      {
+        "slit": "cam_rear_left"
+      },
+      {
+        "slit": "cam_rear_right"
+      },
+      {
+        "slit": "cam_front_right"
+      }
+    ]
+  },
+  "pzkpfw_iii_ausf_n_stalingrad_turret_01_75mm_kwk37": {
+    "_extends": "pzkpfw_iii_ausf_n_turret_01_75mm_kwk37",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_kwk37_defaultset.blk",
+          "name": "75mm_pzgr_rot",
+          "type": "apcbc_tank"
+        }
+      },
+      "75mm_ger_kwk37_Hl_C_HEAT:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_kwk37_75mm_ger_kwk37_hl_c_heat.blk",
+          "name": "75mm_grhl_38_c",
+          "type": "heat_tank"
+        }
+      },
+      "75mm_ger_kwk40_37_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/75mm_kwk37_75mm_ger_kwk40_37_he.blk",
+          "name": "75mm_sprgr_34",
+          "type": "he_frag_tank"
+        }
+      }
+    },
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 25
+      },
+      {
+        "ammo": 14
+      },
+      {
+        "ammo": 25
+      }
+    ]
+  }
+}

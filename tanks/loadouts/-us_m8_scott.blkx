@@ -1,0 +1,200 @@
+var _us_m8_scott = 
+{
+  "us_m8_scott": [
+    {
+      "_extends": "base_m8_scott"
+    },
+    {
+      "_extends": "vehicle_effects_tracked"
+    },
+    {
+      "item__iconScale": 0.8
+    },
+    {
+      "bullet_holes__ignoreCollisionNodes:array": {
+        "_tags": "render"
+      }
+    },
+    {
+      "bullet_holes__movingCollisionNodes:array": [
+        {
+          "_tags": "render"
+        },
+        {
+          "movingCollisionNodes": "cls_turret_01"
+        },
+        {
+          "movingCollisionNodes": "turret_front"
+        },
+        {
+          "movingCollisionNodes": "turret_side"
+        },
+        {
+          "movingCollisionNodes": "gun_mask"
+        }
+      ]
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": false,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "us_m8_scott_gunner_cockpit",
+            "turretNames:array": {
+              "turretNames": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cockpitTemplate": "us_m8_scott_driver_cockpit"
+          }
+        },
+        {
+          "seats:object": [
+            {
+              "name": "commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "attachNode": "commander"
+            },
+            {
+              "shouldHideOwner": false
+            },
+            {
+              "ignoreAttachNodeRotation": true
+            },
+            {
+              "attachTm": [
+                [1.0,0.0,0.0],
+                [0.0,1.0,0.0],
+                [0.0,0.0,1.0],
+                [-0.35,0.4,-0.05]
+              ]
+            },
+            {
+              "seatComponent": "isDriver"
+            },
+            {
+              "receiveDamageFromDMPart": "commander"
+            },
+            {
+              "turretNames:array": {
+                "turret": "turret_02"
+              }
+            }
+          ]
+        },
+        {
+          "seats:object": {
+            "attachNode": "loader",
+            "locName": "vehicle_seats/loader",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": false,
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "bone_camera_driver",
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 3,
+            "fill": true
+          }
+        }
+      ]
+    }
+  ],
+  "us_m8_scott_driver_cockpit": {
+    "_extends": "base_driver_cockpit",
+    "animchar__res": "ba_11_driver_char",
+    "cockpit__offset": [-0.4,-0.25,0.18],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.1
+    }
+  },
+  "us_m8_scott_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "ba_11_gunner_char",
+    "cockpit__offset": [-0.35,-0.01,0.22],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.2
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__cockpit__attachNodeIndices:list<i>": []
+  },
+  "us_m8_scott_laxative_premium_skin": {
+    "_extends": "us_m8_scott",
+    "animchar__objTexSet:object": {
+      "m8a1_body_c*:object": {
+        "m8a1_skin_body_c*": "camo_skin_tex"
+      }
+    }
+  }
+}

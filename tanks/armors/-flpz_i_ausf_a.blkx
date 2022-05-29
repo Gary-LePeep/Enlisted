@@ -1,4 +1,4 @@
-var _flpz_i_ausf_a = 
+var armor_flpz_i_ausf_a = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

@@ -1,4 +1,4 @@
-var _ht_130 = 
+var armor_ht_130 = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

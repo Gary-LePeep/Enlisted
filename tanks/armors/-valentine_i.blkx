@@ -1,4 +1,4 @@
-var _valentine_i = 
+var armor_valentine_i = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

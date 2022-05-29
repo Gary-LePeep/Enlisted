@@ -1,4 +1,4 @@
-var _m3a1_stuart = 
+var armor_m3a1_stuart = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

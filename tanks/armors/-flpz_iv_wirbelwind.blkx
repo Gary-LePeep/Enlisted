@@ -1,4 +1,4 @@
-var _flpz_iv_wirbelwind = 
+var armor_flpz_iv_wirbelwind = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

@@ -1,0 +1,274 @@
+var _germ_sdkfz_251_10 = 
+{
+  "germ_sdkfz_251_10": [
+    {
+      "_extends": "base_sdkfz_251_10"
+    },
+    {
+      "_extends": "vehicle_effects_tracked"
+    },
+    {
+      "vehicle_seats_switch_time__totalSwitchTime": 2.0
+    },
+    {
+      "vehicle_seats__enterTime": 2.0
+    },
+    {
+      "vehicle_seats__exitTime": 2.0
+    },
+    {
+      "bullet_holes__ignoreCollisionNodes:array": {
+        "_tags": "render"
+      }
+    },
+    {
+      "bullet_holes__movingCollisionNodes:array": [
+        {
+          "_tags": "render"
+        },
+        {
+          "movingCollisionNodes": "cls_turret_01"
+        },
+        {
+          "movingCollisionNodes": "turret_front"
+        },
+        {
+          "movingCollisionNodes": "turret_side"
+        },
+        {
+          "movingCollisionNodes": "gun_mask"
+        }
+      ]
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": [
+            {
+              "name": "main_gunner"
+            },
+            {
+              "locName": "vehicle_seats/gunner"
+            },
+            {
+              "shouldHideOwner": false
+            },
+            {
+              "shouldHideOwner": false
+            },
+            {
+              "attachNode": "gunner"
+            },
+            {
+              "ignoreAttachNodeRotation": true
+            },
+            {
+              "attachTm": [
+                [1.0,0.0,0.0],
+                [0.0,1.0,0.0],
+                [0.0,0.0,1.0],
+                [-0.25,-0.5,0.0]
+              ]
+            },
+            {
+              "seatComponent": "isGunner"
+            },
+            {
+              "nextSeat": "driver"
+            },
+            {
+              "receiveDamageFromDMPart": "gunner"
+            },
+            {
+              "cameraNodeName": "bone_camera_gunner"
+            },
+            {
+              "cockpitTemplate": "germ_sdkfz_251_10_gunner_cockpit"
+            },
+            {
+              "turretNames:array": [
+                {
+                  "turretNames": "turret_01"
+                },
+                {
+                  "turretNames": "turret_02"
+                },
+                {
+                  "turretNames": "turret_03"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seats:object": [
+            {
+              "name": "driver"
+            },
+            {
+              "locName": "vehicle_seats/driver"
+            },
+            {
+              "seatOwnsEntityControl": true
+            },
+            {
+              "attachNode": "driver"
+            },
+            {
+              "ignoreAttachNodeRotation": true
+            },
+            {
+              "shouldHideOwner": false
+            },
+            {
+              "shouldHideOwner": false
+            },
+            {
+              "attachTm": [
+                [1.0,0.0,0.0],
+                [0.0,1.0,0.0],
+                [0.0,0.0,1.0],
+                [-0.25,-0.25,0.0]
+              ]
+            },
+            {
+              "seatComponent": "isDriver"
+            },
+            {
+              "nextSeat": "main_gunner"
+            },
+            {
+              "receiveDamageFromDMPart": "driver"
+            },
+            {
+              "cameraNodeName": "bone_camera_driver"
+            },
+            {
+              "cockpitTemplate": "germ_sdkfz_251_10_driver_cockpit"
+            }
+          ]
+        },
+        {
+          "seats:object": [
+            {
+              "name": "commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "attachNode": "commander"
+            },
+            {
+              "shouldHideOwner": false
+            },
+            {
+              "ignoreAttachNodeRotation": true
+            },
+            {
+              "attachTm": [
+                [1.0,0.0,0.0],
+                [0.0,1.0,0.0],
+                [0.0,0.0,1.0],
+                [-0.35,0.285,0.2]
+              ]
+            },
+            {
+              "cameraType": "commander"
+            },
+            {
+              "seatComponent": "isDriver"
+            },
+            {
+              "receiveDamageFromDMPart": "commander"
+            }
+          ]
+        },
+        {
+          "seats:object": {
+            "attachNode": "loader",
+            "locName": "vehicle_seats/loader",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": false,
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "bone_camera_driver",
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "locName": "vehicle_seats/radioman",
+            "attachNode": "machine_gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": false,
+            "receiveDamageFromDMPart": "machine_gunner"
+          }
+        }
+      ]
+    }
+  ],
+  "germ_sdkfz_251_10_driver_cockpit": {
+    "_extends": "base_driver_cockpit_no_slits",
+    "animchar__res": "pz_2c_driver_char",
+    "cockpit__offset": [-0.9,-0.3,-0.2],
+    "cockpit__visibleVehicleNodeNames:list<t>": [],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.08
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": false
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "germ_sdkfz_251_10_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "pz_2c_commander_char",
+    "cockpit__offset": [-0.0,-0.0,-0.0],
+    "cockpit__minZoom": -0.27,
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "slit": [-0.7,0.0,0.0]
+    },
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "bone_gun"
+      },
+      {
+        "node": "gun_barrel"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.34
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    }
+  }
+}

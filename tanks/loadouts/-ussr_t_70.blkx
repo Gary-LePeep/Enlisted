@@ -1,0 +1,217 @@
+var _ussr_t_70 = 
+{
+  "ussr_t_70": {
+    "_extends": "ussr_t_70_common",
+    "animchar__objTexReplace:object": []
+  },
+  "ussr_t_70_common": [
+    {
+      "_extends": "base_t_70"
+    },
+    {
+      "_extends": "vehicle_effects_tracked"
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "commander",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.19,-0.4,0.09]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "commander",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "ussr_t_70_gunner_cockpit",
+            "hatchRotationAxis": [0.8,0.0,0.0],
+            "seatAnimUpper": "drive_driver",
+            "seatAnimLower": "drive_driver",
+            "turretNames:array": [
+              {
+                "turretNames": "turret_01"
+              },
+              {
+                "turretNames": "turret_02"
+              }
+            ],
+            "hatchNodes:array": {
+              "node": "hatch_01"
+            },
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cameraOffset": [0.15,-0.0,-0.0],
+            "cockpitTemplate": "ussr_t_70_driver_cockpit"
+          }
+        }
+      ]
+    }
+  ],
+  "ussr_t_70_driver_cockpit": {
+    "_extends": "base_driver_cockpit",
+    "animchar__res": "bt_7_driver_char",
+    "cockpit__offset": [-0.0,-0.37,0.01],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "ex_decor_l_01"
+      },
+      {
+        "node": "ex_decor_r_01"
+      },
+      {
+        "node": "@root"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.08
+    }
+  },
+  "ussr_t_70_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "t_26_1940_gunner_char",
+    "cockpit__minZoom": -0.27,
+    "cockpit__offset": [-0.35,-0.01,0.22],
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "slit": [0.0,0.0,0.0]
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "ex_decor_l_01"
+      },
+      {
+        "node": "ex_decor_r_01"
+      },
+      {
+        "node": "@root"
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.2
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    }
+  },
+  "t_70_skins": {
+    "_override": true,
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "t_70_winter",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_70_forest",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_forest_01*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_70_ussr_camo_brown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_brown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_70_ussr_camo_green_ltbrown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_70_ussr_camo_desert_yellow_brown",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_desert_yellow_brown*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_70_ussr_camo_winter_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_70_defender_twitch_drop_premium",
+          "locId": "skin/t_70_for_defenders",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_green*"
+          },
+          "animchar__objTexSet:object": {
+            "t_70_body_c*:object": {
+              "t_70_defender_body_c*": "camo_skin_tex"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "ussr_t_70_defender_twitch_drop_premium": {
+    "_extends": "ussr_t_70_common",
+    "animchar__objTexSet:object": {
+      "t_70_body_c*:object": {
+        "t_70_defender_body_c*": "camo_skin_tex"
+      }
+    }
+  }
+}

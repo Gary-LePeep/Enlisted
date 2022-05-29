@@ -1,0 +1,226 @@
+var _germ_jgdpz_38t = 
+{
+  "germ_jgdpz_38t": {
+    "_extends": "germ_jgdpz_38t_common"
+  },
+  "germ_jgdpz_38t_common": [
+    {
+      "_extends": "base_panzerjager_hetzer"
+    },
+    {
+      "_extends": "vehicle_effects_tracked"
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cockpitTemplate": "germ_jgdpz_38t_driver_cockpit"
+          }
+        },
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "germ_jgdpz_38t_gunner_cockpit",
+            "turretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "commander",
+            "locName": "vehicle_seats/commander",
+            "attachNode": "commander",
+            "shouldHideOwner": true,
+            "maxPosWithOpenHatch": 0.7,
+            "hatchRotationAxis": [1.7,0.0,0.0],
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.36,-0.3,-0.11]
+            ],
+            "seatComponent": "isDriver",
+            "receiveDamageFromDMPart": "commander",
+            "cameraNodeName": "bone_turret",
+            "cockpitTemplate": "germ_jgdpz_38t_commander_cockpit",
+            "hatchNodes:array": [
+              {
+                "node": "hatch_04"
+              },
+              {
+                "node": "hatch_05"
+              }
+            ],
+            "hatchTurretNames:array": {
+              "turret": "turret_02"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "locName": "vehicle_seats/loader",
+            "attachNode": "loader",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "bone_camera_driver",
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "germ_jgdpz_38t_driver_cockpit": {
+    "_extends": "base_driver_cockpit_no_slits",
+    "animchar__res": "pzkpfw_iii_e_driver_char",
+    "cockpit__offset": [-0.0,-0.0,0.0],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "ex_decor_l_01"
+      },
+      {
+        "node": "ex_decor_r_01"
+      },
+      {
+        "node": "@root"
+      },
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.07
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": false
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "germ_jgdpz_38t_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "pzkpfw_iii_e_gunner_char",
+    "cockpit__offset": [0.0,0.0,0.0],
+    "cockpit__minZoom": -0.4,
+    "cockpit__attachNodeNames:list<t>": [
+      {
+        "node": "bone_camera_gunner"
+      },
+      {
+        "node": "bone_turret"
+      },
+      {
+        "node": "bone_turret"
+      }
+    ],
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "@root"
+      },
+      {
+        "node": "gun_barrel"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.27
+    },
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "slit": [-0.0,0.0,0.0]
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "germ_jgdpz_38t_commander_cockpit": {
+    "_extends": "base_commander_cockpit_no_slits",
+    "animchar__res": "t_26_1940_commander_char",
+    "cockpit__offset": [-0.0,0.0,0.0],
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "slit": [-2.7,0.95,0.1]
+    },
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "@root"
+      },
+      {
+        "node": "bone_gun"
+      },
+      {
+        "node": "bone_turret"
+      }
+    ],
+    "cockpit__cockpit__attachNodeNames:list<t>": {
+      "node": "bone_turret"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.15
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "germ_jgdpz_38t_normanydy_premium": {
+    "_extends": "germ_jgdpz_38t_common"
+  }
+}

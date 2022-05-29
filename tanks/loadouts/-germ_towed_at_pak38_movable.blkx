@@ -1,0 +1,234 @@
+var _germ_towed_at_pak38_movable = 
+{
+  "germ_towed_at_pak38_movable": {
+    "_extends": "germ_towed_at_pak38_movable_common"
+  },
+  "germ_towed_at_pak38_grey_movable": {
+    "_extends": "germ_towed_at_pak38_movable_common",
+    "animchar__objTexReplace:object": {
+      "ger_camo_bronzegruen*": "ger_camo_winter_grey*"
+    }
+  },
+  "germ_towed_at_pak38_desert_movable": {
+    "_extends": "germ_towed_at_pak38_movable_common",
+    "animchar__objTexReplace:object": {
+      "ger_camo_bronzegruen*": "ger_camo_dunkelgelb*"
+    }
+  },
+  "germ_towed_at_pak38_movable_common": [
+    {
+      "_extends": "base_towed_at_pak38"
+    },
+    {
+      "_extends": "movable_cannon_vehicle_sound_override"
+    },
+    {
+      "_extends": "disable_vehicle_engine_sound"
+    },
+    {
+      "_extends": "vehicle_seats_effectors"
+    },
+    {
+      "vehicle_seats_camera_nodes__defaultNode": "bone_camera_gunner"
+    },
+    {
+      "vehicle_seats__enterTime": 1.0
+    },
+    {
+      "vehicle_seats__exitTime": 1.0
+    },
+    {
+      "vehicle_net_phys__blk": "content/tanks/gamedata/gen/units/tanks/towed_at_pak38.blk:VehiclePhys"
+    },
+    {
+      "damage_model__blk": "content/tanks/gamedata/gen/units/tanks/towed_at_pak38.blk"
+    },
+    {
+      "disableDMParts:list<t>": [
+        {
+          "part": "gunner"
+        },
+        {
+          "part": "loader"
+        }
+      ]
+    },
+    {
+      "dm_phys_parts__wheels:array": [
+        {
+          "wheel": "wheel_l_01"
+        },
+        {
+          "wheel": "wheel_l_01"
+        },
+        {
+          "wheel": "wheel_r_01"
+        },
+        {
+          "wheel": "wheel_r_01"
+        }
+      ]
+    },
+    {
+      "dm_phys_parts__engine:array": []
+    },
+    {
+      "dm_phys_parts__transmission:array": []
+    },
+    {
+      "dm_phys_parts__tracks:array": []
+    },
+    {
+      "dm_phys_parts__ammo:array": []
+    },
+    {
+      "_group": {
+        "_tags": "render",
+        "animchar_camera_target__node_name": "bone_camera_gunner",
+        "animchar_camera_target__node_offset": [0.0,0.5,0.0],
+        "animchar_camera_target__nodeIndex": -1
+      }
+    },
+    {
+      "_group": {
+        "_tags": "sound",
+        "vehicle_sound__enableEngine": false
+      }
+    },
+    {
+      "setCameraDirByHero:tag": []
+    },
+    {
+      "vehicle_seats__seatsProvideOrder:tag": []
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "adjacentSeat": "driver",
+            "locName": "at_position/combat",
+            "attachNode": "root",
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-1.4,0.0,0.5]
+            ],
+            "seatComponent": "isGunner",
+            "ignoreAttachNodeRotation": true,
+            "cameraType": "machinegunner_cockpit",
+            "cameraNodeName": "bone_camera_gunner",
+            "cameraOffset": [-0.0,0.0,0.0],
+            "directTurretControl": true,
+            "lockSeats:list<t>": {
+              "locked": "loader_marching"
+            },
+            "turretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "driver",
+            "adjacentSeat": "main_gunner",
+            "locName": "at_position/march",
+            "seatOwnsEntityControl": true,
+            "attachNode": "root",
+            "ignoreAttachNodeRotation": true,
+            "shouldHideOwner": false,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-1.3,0.0,0.7]
+            ],
+            "cameraOffset": [0.3,0.0,0.0],
+            "cameraType": "commander",
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "root",
+            "lockSeats:list<t>": {
+              "locked": "loader"
+            },
+            "effectors:object": {
+              "l.hand": "ik_hand_left_gunner",
+              "r.hand": "ik_hand_right_gunner"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "loader",
+            "adjacentSeat": "loader_marching",
+            "locName": "at_position/combat",
+            "entranceNode": "root",
+            "cameraOffset": [0.8,0.5,0.0],
+            "attachNode": "root",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-1.3,0.0,-0.3]
+            ],
+            "seatComponent": "isPassenger",
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "root",
+            "nextSeat": "main_gunner",
+            "vehicleReloadMult": 0.7,
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "loader_marching",
+            "adjacentSeat": "loader",
+            "locName": "at_position/march",
+            "entranceNode": "root",
+            "cameraOffset": [0.8,0.5,0.0],
+            "attachNode": "root",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-1.3,0.0,-0.4]
+            ],
+            "seatComponent": "isPassenger",
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "root",
+            "nextSeat": "main_gunner",
+            "vehicleReloadMult": 0.7,
+            "canPlaceManually": false,
+            "effectors:object": {
+              "l.hand": "ik_hand_left_loader",
+              "r.hand": "ik_hand_right_loader"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "turret_control__turretInfo:shared:array": {
+        "turretInfo:object": {
+          "turretName": "turret_01",
+          "gun": "enlist_tankgun_towed_at_pak38_movable+turret_with_several_types_of_shells+main_turret",
+          "barrelDm": "gun_barrel",
+          "breechDm": "cannon_breech",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      }
+    }
+  ],
+  "enlist_tankgun_towed_at_pak38_movable": {
+    "_extends": "enlist_tankgun_towed_at_pak38_50mm_pak38",
+    "turret__limit": [-20.0,20.0,-2.0,20.0]
+  }
+}

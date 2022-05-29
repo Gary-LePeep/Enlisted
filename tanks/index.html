@@ -35,6 +35,95 @@
       }
     }
 
+    function setDataTable(div, string, which, grade = false) {
+      const tableBody = div.childNodes[1];
+      const tableRow = tableBody.childNodes[0];
+      const newWidth = Math.max(string.toString().length, tableRow.childNodes[Math.abs(which - 1)].textContent.length, 5);
+      tableBody.style = `position: absolute; top: 19px; left: ${(FULLWIDE / 4) - (12 * newWidth) - 14}px; border-collapse:separate; border:0px; padding: 0px`;
+      tableRow.childNodes[which].textContent = string;
+      tableRow.childNodes[0].style = `width: ${12 * newWidth}px`;
+      tableRow.childNodes[1].style = `width: ${12 * newWidth}px`;
+      if (grade) {
+        const val0 = parseInt(tableRow.childNodes[0].textContent);
+        const val1 = parseInt(tableRow.childNodes[1].textContent);
+        const max = 4 * (val0 + val1) / 6;
+        const red0 = val0 < (3 * max / 4) ? 100 : (1 - (val0 - (3 * max / 4)) / (max / 4)) * 100;
+        const green0 = val0 > (3 * max / 4) ? 100 : (((val0 - (max / 4)) / (max / 4)) - 1) * 100;
+        tableRow.childNodes[0].style.backgroundColor = `rgb(${red0}, ${green0}, 0)`;
+        const red1 = val1 < (3 * max / 4) ? 100 : (1 - (val1 - (3 * max / 4)) / (max / 4)) * 100;
+        const green1 = val1 > (3 * max / 4) ? 100 : (((val1 - (max / 4)) / (max / 4)) - 1) * 100;
+        tableRow.childNodes[1].style.backgroundColor = `rgb(${red1}, ${green1}, 0)`;
+        if (val0 > val1) {
+          tableRow.childNodes[0].style.borderColor = '#00BB00';
+          // tableRow.childNodes[1].style.borderColor = '#BB0000';
+        }
+        if (val0 < val1) {
+          tableRow.childNodes[1].style.borderColor = '#00BB00';
+          // tableRow.childNodes[0].style.borderColor = '#BB0000';
+        }
+      }
+    }
+
+    // add data placeholders
+    const nameDiv = document.createElement('div');
+    const IGNDiv = document.createElement('div');
+    const crewDiv = document.createElement('div');
+    const massDiv = document.createElement('div');
+    const horsepowerDiv = document.createElement('div');
+    const rpmDiv = document.createElement('div');
+    const brakeDiv = document.createElement('div');
+    const topSpeedDiv = document.createElement('div');
+    const accelDiv = document.createElement('div');
+
+    const dataDivs = [nameDiv, IGNDiv, crewDiv, massDiv, horsepowerDiv, rpmDiv, brakeDiv, topSpeedDiv, accelDiv];
+    const dataDivsNames = ['gunName', 'gunIGN', 'crew', 'mass', 'horsepower', 'engineRPM', 'brake', 'topSpeed', 'accel'];
+
+    BODY.appendChild(translate('tanksGeneral', 'b', `position:absolute; top:78px; left:${FULLWIDE / 4}px; width:${FULLWIDE / 2}px; text-align:center; font-size:20px`));
+
+    // add general data
+    for (let i = 0; i < dataDivs.length; i++) {
+      dataDivs[i].appendChild(translate(dataDivsNames[i], 'b'));
+      dataDivs[i].style = `position: absolute; top: ${100 + (50 * i)}px; left: ${FULLWIDE / 4}px; width: ${FULLWIDE / 2}px; text-align: center`;
+      BODY.appendChild(dataDivs[i]);
+
+      const dataTable = document.createElement('table');
+      dataTable.style = `position: absolute; top: 19px; left: ${(FULLWIDE / 4) - 70}px; width: 138px; border-collapse:separate; border:0px; padding: 0px`;
+      dataDivs[i].appendChild(dataTable);
+      const dataTableBody = document.createElement('tbody');
+      dataTableBody.style = 'border: 0px';
+      dataTable.appendChild(dataTableBody);
+      dataTableBody.appendChild(translate('-', 'td'));
+      dataTableBody.appendChild(translate('-', 'td'));
+    }
+
+    // add turret placeholders
+    const turretNameDiv = document.createElement('div');
+    const yawSpeedDiv = document.createElement('div');
+    const pitchSpeedDiv = document.createElement('div');
+
+    const turretDataDivs = [turretNameDiv, yawSpeedDiv, pitchSpeedDiv];
+    const turretDataDivsNames = ['gunName', 'yawSpeed', 'pitchSpeed'];
+
+    BODY.appendChild(translate('tanksGeneral', 'b', ''
+    + `position:absolute; top:${110 + (dataDivs.length * 50)}px; left:${FULLWIDE / 4}px; width:${FULLWIDE / 2}px; text-align:center; font-size:20px`));
+
+    // add turret data
+    for (let i = 0; i < turretDataDivs.length; i++) {
+      turretDataDivs[i].appendChild(translate(turretDataDivsNames[i], 'b'));
+      turretDataDivs[i].style = `position: absolute; top: ${132 + (dataDivs.length * 50) + (50 * i)}px; left: ${FULLWIDE / 4}px; width: ${FULLWIDE / 2}px;`
+      + 'text-align: center';
+      BODY.appendChild(turretDataDivs[i]);
+
+      const dataTable = document.createElement('table');
+      dataTable.style = `position: absolute; top: 19px; left: ${(FULLWIDE / 4) - 70}px; width: 138px; border-collapse:separate; border:0px; padding: 0px`;
+      turretDataDivs[i].appendChild(dataTable);
+      const dataTableBody = document.createElement('tbody');
+      dataTableBody.style = 'border: 0px';
+      dataTable.appendChild(dataTableBody);
+      dataTableBody.appendChild(translate('-', 'td'));
+      dataTableBody.appendChild(translate('-', 'td'));
+    }
+
     // Color Dropdown
     const btncolors = ['greenbtn', 'redbtn', 'bluebtn', 'magbtn'];
     window.refreshStars = [true, true];
@@ -59,7 +148,7 @@
     // create right nav
     const rightNav = document.createElement('nav');
     rightNav.className = 'rightnav';
-    rightNav.style = 'position: absolute; left: 1630px';
+    rightNav.style = `position: absolute; left: ${FULLWIDE - 250}px`;
     header.append(rightNav);
     const rightNavList = document.createElement('ul');
     rightNav.append(rightNavList);
@@ -97,6 +186,11 @@
 
             // remove stored name data
             window.dataNames[h] = '';
+
+            // remove table data
+            for (let j = 0; j < dataDivs.length; j++) {
+              setDataTable(dataDivs[j], '-', h);
+            }
           };
           // don't access negative indices, just continue from the start
           // eslint-disable-next-line no-continue
@@ -127,6 +221,37 @@
 
               // get data name
               window.dataNames[h] = TANKS_JSON[i].Campaign[j].Side[k]['Name Game'];
+
+              // set data tables
+              const tanksDataFile = window[`_${TANKS_JSON[i].Campaign[j].Side[k]['Name Game'].replace(/\./g, '_')}`];
+              const armorsDataFile = window[`armor_${window.dataNames[h]}`];
+              setDataTable(nameDiv, colorButtonText.text, h);
+              setDataTable(IGNDiv, window.dataNames[h], h);
+              setDataTable(crewDiv, '-', h, true);
+              const mass = armorsDataFile.VehiclePhys.Mass.TakeOff;
+              setDataTable(massDiv, mass, h, true);
+              const horsepower = armorsDataFile.VehiclePhys.engine.horsePowers * 0.85;
+              setDataTable(horsepowerDiv, horsepower, h, true);
+              setDataTable(rpmDiv, armorsDataFile.VehiclePhys.engine.maxRPM, h, true);
+              setDataTable(brakeDiv, armorsDataFile.VehiclePhys.mechanics.maxBrakeForce, h, true);
+              const powerFactor = horsepower / (mass / 1000);
+              let topSpeed = powerFactor * 1.97;
+              if (horsepower < 250) {
+                topSpeed = powerFactor * ((-0.004604 * horsepower) + 3.304373);
+              }
+              setDataTable(topSpeedDiv, toPlace(topSpeed, 0), h, true);
+              setDataTable(accelDiv, toPlace(powerFactor, 1), h, true);
+              for (let l = 0; l < Object.keys(tanksDataFile).length; l++) {
+                const key = Object.keys(tanksDataFile)[l];
+                if (key.includes('turret_01')) {
+                  const turret = tanksDataFile[key]._extends.replace('tankgun_', '');
+                  setDataTable(turretNameDiv, turret.replace('_', ' '), h);
+                  setDataTable(yawSpeedDiv, tanksDataFile[key].turret__yawSpeed, h, true);
+                  setDataTable(pitchSpeedDiv, tanksDataFile[key].turret__pitchSpeed, h, true);
+                  const turretDataFile = window[`_${turret}`];
+                  console.log(turretDataFile);
+                }
+              }
             };
           }
         }

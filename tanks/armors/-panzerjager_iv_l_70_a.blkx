@@ -1,4 +1,4 @@
-var _panzerjager_iv_l_70_a = 
+var armor_panzerjager_iv_l_70_a = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

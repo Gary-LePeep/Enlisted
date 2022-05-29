@@ -1,0 +1,240 @@
+var _it_m14_41 = 
+{
+  "it_m14_41": {
+    "_extends": "it_m14_41_common",
+    "animchar__objTexReplace:object": {
+      "it_camo_olive_green*": "it_camo_desert_yellow*"
+    }
+  },
+  "it_m14_41_common": [
+    {
+      "_extends": "base_m14_41"
+    },
+    {
+      "_extends": "vehicle_effects_tracked"
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cockpitTemplate": "it_m14_41_driver_cockpit"
+          }
+        },
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "it_m14_41_gunner_cockpit",
+            "turretNames:array": [
+              {
+                "turret": "turret_01"
+              },
+              {
+                "turret": "turret_02"
+              }
+            ]
+          }
+        },
+        {
+          "seats:object": [
+            {
+              "name": "commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "attachNode": "commander"
+            },
+            {
+              "shouldHideOwner": true
+            },
+            {
+              "hatchRotationAxis": [1.8,0.0,0.0]
+            },
+            {
+              "ignoreAttachNodeRotation": true
+            },
+            {
+              "attachTm": [
+                [1.0,0.0,0.0],
+                [0.0,1.0,0.0],
+                [0.0,0.0,1.0],
+                [-0.342041,-0.970816,0.43912]
+              ]
+            },
+            {
+              "seatComponent": "isDriver"
+            },
+            {
+              "receiveDamageFromDMPart": "commander"
+            },
+            {
+              "cameraNodeName": "bone_turret_01"
+            },
+            {
+              "cockpitTemplate": "it_m14_41_commander_cockpit"
+            },
+            {
+              "hatchNodes:array": [
+                {
+                  "node": "hatch_01"
+                },
+                {
+                  "node": "hatch_02"
+                }
+              ]
+            },
+            {
+              "hatchTurretNames:array": {
+                "turret": "turret_03"
+              }
+            }
+          ]
+        },
+        {
+          "seats:object": {
+            "locName": "vehicle_seats/radioman",
+            "attachNode": "machine_gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "machine_gunner"
+          }
+        }
+      ]
+    }
+  ],
+  "it_m14_41_driver_cockpit": {
+    "_extends": "base_driver_cockpit",
+    "animchar__res": "kv_1_driver_char",
+    "cockpit__offset": [-0.1,-0.25,-0.03],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "ex_decor_l_01"
+      },
+      {
+        "node": "ex_decor_r_01"
+      }
+    ]
+  },
+  "it_m14_41_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "t_26_1940_gunner_char",
+    "cockpit__minZoom": -0.27,
+    "cockpit__offset": [-0.0,-0.0,-0.0],
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "slit": [-0.5,-0.05,0.2]
+      },
+      {
+        "slit": [-0.33,0.64,0.405]
+      }
+    ],
+    "cockpit__attachNodeNames:list<t>": [
+      {
+        "node": "bone_camera_gunner"
+      },
+      {
+        "node": "bone_turret_01"
+      }
+    ],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front_right"
+      },
+      {
+        "slit": "cam_front"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": 0.18
+      },
+      {
+        "slit": 0.2
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      }
+    ]
+  },
+  "it_m14_41_commander_cockpit": {
+    "_extends": "base_commander_cockpit_no_slits",
+    "animchar__res": "t_26_1940_commander_char",
+    "cockpit__minZoom": -0.05,
+    "cockpit__offset": [-0.0,0.0,-0.0],
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "slit": [-0.5,0.66,-0.45]
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.16
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    },
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun_01"
+      }
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-var _m18_hellcat = 
+var armor_m18_hellcat = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

@@ -1,4 +1,4 @@
-var _towed_at_17pdr = 
+var armor_towed_at_17pdr = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

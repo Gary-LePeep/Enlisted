@@ -1,4 +1,4 @@
-var _pzkpfw_iii_ausf_j_l42 = 
+var armor_pzkpfw_iii_ausf_j_l42 = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

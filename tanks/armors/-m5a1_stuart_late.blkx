@@ -1,4 +1,4 @@
-var _m5a1_stuart_late = 
+var armor_m5a1_stuart_late = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

@@ -1,4 +1,4 @@
-var _kv_1_l_11 = 
+var armor_kv_1_l_11 = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

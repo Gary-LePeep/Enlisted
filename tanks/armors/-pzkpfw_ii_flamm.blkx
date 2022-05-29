@@ -1,4 +1,4 @@
-var _pzkpfw_ii_flamm = 
+var armor_pzkpfw_ii_flamm = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

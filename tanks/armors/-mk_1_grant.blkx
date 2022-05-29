@@ -1,4 +1,4 @@
-var _mk_1_grant = 
+var armor_mk_1_grant = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

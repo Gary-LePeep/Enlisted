@@ -1,0 +1,197 @@
+var _uk_crusader_mk_3 = 
+{
+  "uk_crusader_mk_3": {
+    "_extends": "uk_crusader_mk_3_common",
+    "animchar__objTexReplace:object": {
+      "uk_camo_very_dark_drab*": "uk_camo_earth_yellow*"
+    }
+  },
+  "uk_crusader_mk_3_common": {
+    "_extends": "base_crusader_mk_3",
+    "vehicle_seats__seats:shared:array": [
+      {
+        "seats:object": {
+          "name": "driver",
+          "locName": "vehicle_seats/driver",
+          "seatOwnsEntityControl": true,
+          "attachNode": "driver",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.25,0.0]
+          ],
+          "seatComponent": "isDriver",
+          "nextSeat": "main_gunner",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "driver",
+          "cameraNodeName": "bone_camera_driver",
+          "cockpitTemplate": "uk_crusader_mk_3_driver_cockpit"
+        }
+      },
+      {
+        "seats:object": {
+          "name": "main_gunner",
+          "locName": "vehicle_seats/gunner",
+          "attachNode": "gunner",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isGunner",
+          "nextSeat": "driver",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "gunner",
+          "cameraNodeName": "bone_camera_gunner",
+          "cockpitTemplate": "uk_crusader_mk_3_gunner_cockpit",
+          "turretNames:array": [
+            {
+              "turret": "turret_01"
+            },
+            {
+              "turret": "turret_02"
+            }
+          ]
+        }
+      },
+      {
+        "seats:object": [
+          {
+            "name": "commander"
+          },
+          {
+            "attachNode": "commander"
+          },
+          {
+            "shouldHideOwner": true
+          },
+          {
+            "hatchRotationAxis": [1.5,0.0,0.0]
+          },
+          {
+            "hatchRotationAxis": [1.8,0.0,0.0]
+          },
+          {
+            "locName": "vehicle_seats/commander"
+          },
+          {
+            "ignoreAttachNodeRotation": true
+          },
+          {
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.65,-0.6,0.1]
+            ]
+          },
+          {
+            "seatComponent": "isDriver"
+          },
+          {
+            "receiveDamageFromDMPart": "commander"
+          },
+          {
+            "cameraNodeName": "bone_turret"
+          },
+          {
+            "cockpitTemplate": "uk_crusader_mk_3_commander_cockpit"
+          },
+          {
+            "hatchNodes:array": {
+              "node": "hatch_01"
+            }
+          },
+          {
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "uk_crusader_mk_3_driver_cockpit": {
+    "_extends": "base_driver_cockpit",
+    "animchar__res": "ba_11_driver_char",
+    "cockpit__offset": [-0.3,-0.3,0.2],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "ex_decor_l_01"
+      },
+      {
+        "node": "ex_decor_r_01"
+      }
+    ]
+  },
+  "uk_crusader_mk_3_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "ba_11_gunner_char",
+    "cockpit__offset": [-0.8,-0.06,0.23],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "root"
+      },
+      {
+        "node": "gun_barrel"
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.18
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__cockpit__attachNodeIndices:list<i>": []
+  },
+  "uk_crusader_mk_3_commander_cockpit": {
+    "_extends": "base_commander_cockpit_no_slits",
+    "animchar__res": "t_26_1940_commander_char",
+    "cockpit__offset": [-0.02,0.57,0.344],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.16
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "uk_crusader_mk_3_19_40_bovinton_twitch_drop_premium": {
+    "_extends": "uk_crusader_mk_3_common",
+    "animchar__objTexSet:object": {
+      "crusader_mk_2_body_c*:object": {
+        "crusader_mk_2_bovinton_19_40_body_c*": "camo_skin_tex"
+      },
+      "crusader_mk_3_gun_c*:object": {
+        "crusader_mk_3_bovinton_19_40_gun_c*": "camo_skin_tex"
+      },
+      "crusader_mk_3_turret_c*:object": {
+        "crusader_mk_3_bovinton_19_40_turret_c*": "camo_skin_tex"
+      }
+    }
+  }
+}

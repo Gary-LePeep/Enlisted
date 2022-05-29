@@ -1,4 +1,4 @@
-var _m4a2_sherman_1944 = 
+var armor_m4a2_sherman_1944 = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

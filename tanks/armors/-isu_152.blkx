@@ -1,4 +1,4 @@
-var _isu_152 = 
+var armor_isu_152 = 
 {
   "VehiclePhys": {
     "skipUpdateOnSleep": true,

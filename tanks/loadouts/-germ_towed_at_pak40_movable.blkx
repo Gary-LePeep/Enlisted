@@ -1,0 +1,170 @@
+var _germ_towed_at_pak40_movable = 
+{
+  "germ_towed_at_pak40_movable": {
+    "_extends": "germ_towed_at_pak40_movable_common"
+  },
+  "ussr_towed_at_pak40_trophy_movable": {
+    "_extends": "germ_towed_at_pak40_movable_common",
+    "animchar__objTexReplace:object": {
+      "ger_camo_bronzegruen*": "ussr_camo_green*"
+    }
+  },
+  "germ_towed_at_pak40_movable_common": [
+    {
+      "_extends": "base_towed_at_pak40"
+    },
+    {
+      "_extends": "movable_cannon_vehicle_sound_override"
+    },
+    {
+      "_extends": "disable_vehicle_engine_sound"
+    },
+    {
+      "vehicle_seats_camera_nodes__defaultNode": "bone_camera_gunner"
+    },
+    {
+      "vehicle_seats__enterTime": 1.0
+    },
+    {
+      "vehicle_seats__exitTime": 1.0
+    },
+    {
+      "vehicle_net_phys__blk": "content/tanks/gamedata/gen/units/tanks/towed_at_pak40.blk:VehiclePhys"
+    },
+    {
+      "damage_model__blk": "content/tanks/gamedata/gen/units/tanks/towed_at_pak40.blk"
+    },
+    {
+      "disableDMParts:list<t>": [
+        {
+          "part": "gunner"
+        },
+        {
+          "part": "loader"
+        }
+      ]
+    },
+    {
+      "dm_phys_parts__wheels:array": [
+        {
+          "wheel": "wheel_l_01"
+        },
+        {
+          "wheel": "wheel_l_01"
+        },
+        {
+          "wheel": "wheel_r_01"
+        },
+        {
+          "wheel": "wheel_r_01"
+        }
+      ]
+    },
+    {
+      "dm_phys_parts__engine:array": []
+    },
+    {
+      "dm_phys_parts__transmission:array": []
+    },
+    {
+      "dm_phys_parts__tracks:array": []
+    },
+    {
+      "dm_phys_parts__ammo:array": []
+    },
+    {
+      "_group": {
+        "_tags": "render",
+        "animchar_camera_target__node_name": "bone_camera_gunner",
+        "animchar_camera_target__node_offset": [0.0,0.5,0.0],
+        "animchar_camera_target__nodeIndex": -1
+      }
+    },
+    {
+      "_group": {
+        "_tags": "sound",
+        "vehicle_sound__enableEngine": false
+      }
+    },
+    {
+      "setCameraDirByHero:tag": []
+    },
+    {
+      "vehicle_seats__seatsProvideOrder:tag": []
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "adjacentSeat": "driver",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "root",
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-1.1,0.2,0.1]
+            ],
+            "seatComponent": "isGunner",
+            "ignoreAttachNodeRotation": true,
+            "cameraType": "machinegunner_cockpit",
+            "cameraNodeName": "bone_camera_gunner",
+            "cameraOffset": [-0.0,0.0,0.0],
+            "directTurretControl": true,
+            "turretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "driver",
+            "adjacentSeat": "main_gunner",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "Bip01 Head_1",
+            "ignoreAttachNodeRotation": true,
+            "shouldHideOwner": false,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.05,-1.0,0.0]
+            ],
+            "cameraOffset": [0.3,0.0,0.0],
+            "cameraType": "commander",
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "Bip01 Head_1"
+          }
+        },
+        {
+          "seats:object": {
+            "name": "loader",
+            "entranceNode": "root",
+            "cameraOffset": [0.8,0.5,0.0],
+            "locName": "vehicle_seats/loader",
+            "attachNode": "root",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-1.1,0.1,-0.5]
+            ],
+            "seatComponent": "isPassenger",
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "Bip01 Head_2",
+            "nextSeat": "main_gunner",
+            "vehicleReloadMult": 0.7,
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
