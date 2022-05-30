@@ -22,6 +22,6 @@
 		"no-param-reassign": "off",
 		"no-underscore-dangle": ["error", { "allow": ["_extends"] }],
 		"no-loop-func": "off",
-		"max-len": ["error", { "code": 120, "ignoreComments": true }]
+		"max-len": ["error", { "code": 520, "ignoreComments": true }]
     }
 }
