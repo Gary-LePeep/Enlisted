@@ -102,8 +102,102 @@
 
     BODY.appendChild(translate('tanksTurrets', 'b', `position:absolute; top:${120 + (dataDivs.length * 50)}px; left:${FULLWIDE / 4}px; width:${FULLWIDE / 2}px; text-align:center; font-size:20px`));
 
-    function setTurretTable(turretArray, side) {
+    function colorTurretTable() {
+      // dont color unless both sides have something
+      if (turretDiv.childNodes.length < 4) {
+        if (turretDiv.childNodes.length === 2) {
+          for (let i = 0; i < turretDiv.childNodes[0].childNodes.length; i++) {
+            for (let j = 0; j < turretDiv.childNodes[0].childNodes[i].childNodes.length; j++) {
+              if (turretDiv.childNodes[0].childNodes[i].childNodes[j] != null) {
+                turretDiv.childNodes[0].childNodes[i].childNodes[j].style.backgroundColor = '#333333';
+                turretDiv.childNodes[0].childNodes[i].childNodes[j].style.borderColor = '#777777';
+              }
+            }
+          }
+        }
+        return;
+      }
+      const table0 = turretDiv.childNodes[0];
+      const table1 = turretDiv.childNodes[2];
+      const mainGuns0 = [];
+      const mainGuns1 = [];
+      // collect just the indices of the main gun(s)
+      for (let i = 0; i < table0.childNodes[7].childNodes.length; i++) {
+        if (!(table0.childNodes[7].childNodes[i].textContent === translate('N_A'))) {
+          mainGuns0.push(i);
+        }
+      }
+      for (let i = 0; i < table1.childNodes[7].childNodes.length; i++) {
+        if (!(table1.childNodes[7].childNodes[i].textContent === translate('N_A'))) {
+          mainGuns1.push(i);
+        }
+      }
 
+      // do the coloring on the main guns, excluding certain lines
+      const skipLines = [0, 1, 6, 7, 8, 11, 12, 13];
+      const lowerBetter = [5];
+      for (let i = 0; i < table1.childNodes.length; i++) {
+        if (skipLines.includes(i)) {
+          continue;
+        }
+        const values = [];
+        let largest = lowerBetter.includes(i) ? 9007199254740991 : -1;
+        for (let j = 0; j < mainGuns0.length; j++) {
+          if (table0.childNodes[i].childNodes[mainGuns0[j]] != null) {
+            table0.childNodes[i].childNodes[mainGuns0[j]].style.backgroundColor = 'rgb(100, 100, 0)';
+            const val = toPlace(parseFloat(table0.childNodes[i].childNodes[mainGuns0[j]].textContent), 2);
+            values.push(val);
+            // if only 2 turrets, don't highlight ties
+            if (mainGuns0.length + mainGuns1.length === 2 && val === largest) {
+              largest = lowerBetter.includes(i) ? -1 : 9007199254740991;
+            }
+            // save largest value
+            if (lowerBetter.includes(i) ? val < largest : val > largest) {
+              largest = val;
+            }
+          }
+        }
+        for (let j = 0; j < mainGuns1.length; j++) {
+          if (table1.childNodes[i].childNodes[mainGuns1[j]] != null) {
+            table1.childNodes[i].childNodes[mainGuns1[j]].style.backgroundColor = 'rgb(100, 100, 0)';
+            const val = toPlace(parseFloat(table1.childNodes[i].childNodes[mainGuns1[j]].textContent), 2);
+            values.push(val);
+            // if only 2 turrets, don't highlight ties
+            if (mainGuns0.length + mainGuns1.length === 2 && val === largest) {
+              largest = lowerBetter.includes(i) ? -1 : 9007199254740991;
+            }
+            // save largest value
+            if (lowerBetter.includes(i) ? val < largest : val > largest) {
+              largest = val;
+            }
+          }
+        }
+        const avg = (values.reduce((a, b) => a + b, 0) / values.length) || 0;
+        const max = (4 * avg) / 3;
+
+        for (let j = 0; j < mainGuns0.length; j++) {
+          if (table0.childNodes[i].childNodes[mainGuns0[j]] != null) {
+            const val = toPlace(parseFloat(table0.childNodes[i].childNodes[mainGuns0[j]].textContent), 2);
+            const red = val < (3 * max / 4) ? 100 : (1 - (val - (3 * max / 4)) / (max / 4)) * 100;
+            const green = val > (3 * max / 4) ? 100 : (((val - (max / 4)) / (max / 4)) - 1) * 100;
+            table0.childNodes[i].childNodes[mainGuns0[j]].style.backgroundColor = lowerBetter.includes(i) ? `rgb(${green}, ${red}, 0)` : `rgb(${red}, ${green}, 0)`;
+            if (val === largest) {
+              table0.childNodes[i].childNodes[mainGuns0[j]].style.borderColor = '#00BB00';
+            }
+          }
+        }
+        for (let j = 0; j < mainGuns1.length; j++) {
+          if (table1.childNodes[i].childNodes[mainGuns1[j]] != null) {
+            const val = toPlace(parseFloat(table1.childNodes[i].childNodes[mainGuns1[j]].textContent), 2);
+            const red = val < (3 * max / 4) ? 100 : (1 - (val - (3 * max / 4)) / (max / 4)) * 100;
+            const green = val > (3 * max / 4) ? 100 : (((val - (max / 4)) / (max / 4)) - 1) * 100;
+            table1.childNodes[i].childNodes[mainGuns1[j]].style.backgroundColor = lowerBetter.includes(i) ? `rgb(${green}, ${red}, 0)` : `rgb(${red}, ${green}, 0)`;
+            if (val === largest) {
+              table1.childNodes[i].childNodes[mainGuns1[j]].style.borderColor = '#00BB00';
+            }
+          }
+        }
+      }
     }
 
     // Color Dropdown
@@ -183,6 +277,7 @@
             if (turretLabelsToRemove != null) {
               turretDiv.removeChild(turretLabelsToRemove);
             }
+            colorTurretTable();
           };
           // don't access negative indices, just continue from the start
           // eslint-disable-next-line no-continue
@@ -334,6 +429,19 @@
                       pitchTableRow.appendChild(translate(turret[m].turret__pitchSpeed, 'th'));
                     }
                   }
+                  rpmTableRow.appendChild(translate(270, 'th'));
+                  reloadTableRow.appendChild(translate(1, 'th'));
+
+                  APTableRow.appendChild(translate('N_A', 'th'));
+                  APTypeTableRow.appendChild(translate('　', 'th'));
+                  APSpeedTableRow.appendChild(translate('　', 'th'));
+                  APArmorPowerTableRow.appendChild(translate('　', 'th'));
+
+                  HETableRow.appendChild(translate('N_A', 'th'));
+                  HETypeTableRow.appendChild(translate('　', 'th'));
+                  HESpeedTableRow.appendChild(translate('　', 'th'));
+                  HEExplosiveMassTableRow.appendChild(translate('　', 'th'));
+                  HEExplosiveRadiusTableRow.appendChild(translate('　', 'th'));
                 } else {
                   const turretName = turret._extends.replace('tankgun_', '');
                   turretTableHeaderRow.appendChild(translate(turretName
@@ -356,11 +464,17 @@
                       HEshell = temp;
                     }
                   }
+                  // for autocannons, first slot contains both AP and HE
+                  if (['20mm_tnsh', '20mm_kwk30', '20mm_breda_m35_l6'].includes(turretName)) {
+                    HEshell = APshell[1];
+                    APshell = APshell[0];
+                  }
 
                   // AP shell data
                   if (APshell != null && APshell['shell:object'] != null) {
-                    APTableRow.appendChild(translate(APshell == null || APshell['shell:object'] == null ? 'N_A' : APshell['shell:object'].name.split('_').join(' '), 'th'));
-                    APTypeTableRow.appendChild(translate(APshell == null || APshell['shell:object'] == null ? 'N_A' : APshell['shell:object'].type.replace('_tank', '').split('_').join(' '), 'th'));
+                    const shellName = APshell['shell:object'].name == null ? APshell['shell:object'].blk.split('/').pop().split('.blk')[0] : APshell['shell:object'].name;
+                    APTableRow.appendChild(translate(shellName.split('_').join(' '), 'th'));
+                    APTypeTableRow.appendChild(translate(APshell['shell:object'].type.replace('_tank', '').split('_').join(' '), 'th'));
                     const shellDataFile = window[`_${APshell['shell:object'].blk.split('/').pop().split('.blk')[0]}`];
                     APSpeedTableRow.appendChild(translate(shellDataFile.speed, 'th'));
                     if (shellDataFile.cumulativeDamage != null) {
@@ -379,27 +493,29 @@
                     }
                   } else {
                     APTableRow.appendChild(translate('N_A', 'th'));
-                    APTypeTableRow.appendChild(translate('EMPTY', 'th'));
-                    APSpeedTableRow.appendChild(translate('EMPTY', 'th'));
-                    APArmorPowerTableRow.appendChild(translate('EMPTY', 'th'));
+                    APTypeTableRow.appendChild(translate('　', 'th'));
+                    APSpeedTableRow.appendChild(translate('　', 'th'));
+                    APArmorPowerTableRow.appendChild(translate('　', 'th'));
                   }
                   // HE shell data
                   if (HEshell != null && HEshell['shell:object'] != null) {
-                    HETableRow.appendChild(translate(HEshell == null || HEshell['shell:object'] == null ? 'N_A' : HEshell['shell:object'].name.split('_').join(' '), 'th'));
-                    HETypeTableRow.appendChild(translate(HEshell == null || HEshell['shell:object'] == null ? 'N_A' : HEshell['shell:object'].type.replace('_tank', '').split('_').join(' '), 'th'));
+                    const shellName = HEshell['shell:object'].name == null ? HEshell['shell:object'].blk.split('/').pop().split('.blk')[0] : HEshell['shell:object'].name;
+                    HETableRow.appendChild(translate(shellName.split('_').join(' '), 'th'));
+                    HETypeTableRow.appendChild(translate(HEshell['shell:object'].type.replace('_tank', '').split('_').join(' '), 'th'));
                     const shellDataFile = window[`_${HEshell['shell:object'].blk.split('/').pop().split('.blk')[0]}`];
                     HESpeedTableRow.appendChild(translate(shellDataFile.speed, 'th'));
                     HEExplosiveMassTableRow.appendChild(translate(shellDataFile.explosiveMass, 'th'));
-                    HEExplosiveRadiusTableRow.appendChild(translate(shellDataFile.explosionPatchRadius, 'th'));
+                    HEExplosiveRadiusTableRow.appendChild(translate(shellDataFile.explosionPatchRadius == null ? 'contactObject' : shellDataFile.explosionPatchRadius, 'th'));
                   } else {
                     HETableRow.appendChild(translate('N_A', 'th'));
-                    HETypeTableRow.appendChild(translate('EMPTY', 'th'));
-                    HESpeedTableRow.appendChild(translate('EMPTY', 'th'));
-                    HEExplosiveMassTableRow.appendChild(translate('EMPTY', 'th'));
-                    HEExplosiveRadiusTableRow.appendChild(translate('EMPTY', 'th'));
+                    HETypeTableRow.appendChild(translate('　', 'th'));
+                    HESpeedTableRow.appendChild(translate('　', 'th'));
+                    HEExplosiveMassTableRow.appendChild(translate('　', 'th'));
+                    HEExplosiveRadiusTableRow.appendChild(translate('　', 'th'));
                   }
                 }
               }
+              colorTurretTable();
             };
           }
         }
