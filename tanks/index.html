@@ -121,6 +121,7 @@
       const table1 = turretDiv.childNodes[2];
       const mainGuns0 = [];
       const mainGuns1 = [];
+
       // collect just the indices of the main gun(s)
       for (let i = 0; i < table0.childNodes[7].childNodes.length; i++) {
         if (!(table0.childNodes[7].childNodes[i].textContent === translate('N_A'))) {
@@ -131,6 +132,11 @@
         if (!(table1.childNodes[7].childNodes[i].textContent === translate('N_A'))) {
           mainGuns1.push(i);
         }
+      }
+
+      // at least one of these tanks doesn't have a main gun at all. Skip coloring
+      if (mainGuns0.length === 0 || mainGuns1.length === 0) {
+        return;
       }
 
       // do the coloring on the main guns, excluding certain lines
@@ -417,10 +423,20 @@
 
               for (let l = 0; l < turretArray.length; l++) {
                 turret = turretArray[h === 1 ? l : turretArray.length - l - 1];
+                let flammenwerfer = false;
+                // for now just german flamethrowers extend other turrets of interest
+                if (!(Array.isArray(turret)) && (turret._extends.includes('ato_41') || turret._extends.includes('flammenwerfer_anlagen'))) {
+                  turret = window._ht_130.ht_130_turret_01_ato_41;
+                  flammenwerfer = true;
+                }
                 if (Array.isArray(turret)) {
                   for (let m = 0; m < turret.length; m++) {
                     if (Object.keys(turret[m]).includes('gun__locName')) {
-                      turretTableHeaderRow.appendChild(translate(turret[m].gun__locName.split('_').join(' '), 'th'));
+                      if (flammenwerfer) {
+                        turretTableHeaderRow.appendChild(translate('flammenwerfer anlagen', 'th'));
+                      } else {
+                        turretTableHeaderRow.appendChild(translate(turret[m].gun__locName.split('_').join(' '), 'th'));
+                      }
                     }
                     if (Object.keys(turret[m]).includes('turret__yawSpeed')) {
                       yawTableRow.appendChild(translate(turret[m].turret__yawSpeed, 'th'));
