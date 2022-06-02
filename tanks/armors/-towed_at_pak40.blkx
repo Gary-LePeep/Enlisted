@@ -7,7 +7,7 @@ var armor_towed_at_pak40 =
       "Fuel": 200.0,
       "TakeOff": 5000.0,
       "momentOfInertia": [6.0,1.0,6.0],
-      "CenterOfGravity": [-1.6,0.5,0.0],
+      "CenterOfGravity": [-1.0,0.2,0.0],
       "AdvancedMass": false,
       "CenterOfGravityClampY": [0.0,0.7],
       "cls_body": 1.0
@@ -23,7 +23,7 @@ var armor_towed_at_pak40 =
       "cls_body": "convex_hull"
     },
     "engine": {
-      "horsePowers": 2.0,
+      "horsePowers": 10.0,
       "maxRPM": 4000.0,
       "minRPM": 900.0,
       "rpmTau": 0.1,
@@ -37,20 +37,20 @@ var armor_towed_at_pak40 =
       "tracked": false,
       "gearRatios": [
         {
-          "ratio": -35.6
+          "ratio": -65.0
         },
         {
           "ratio": 0.0
         },
         {
-          "ratio": 35.6
+          "ratio": 26.0
         }
       ]
     },
     "suspension": {
       "suspensionOffsets": [-0.03,-0.02,0.02],
       "defaultGearRadius": 0.372,
-      "defaultDampeningForce": [20000.0,20000.0],
+      "defaultDampeningForce": [6000.0,6000.0],
       "hasSuspensionOnDriveGear": true,
       "dampeningRelaxationRatio": 0.4,
       "dampeningCompressionRatio": 0.15,
@@ -61,8 +61,8 @@ var armor_towed_at_pak40 =
       "wheel_r_02": 0.56,
       "recalcWtms": true,
       "steeringDeflection": {
-        "wheel_l_02": -45.0,
-        "wheel_r_02": -45.0
+        "wheel_l_02": -75.0,
+        "wheel_r_02": -75.0
       },
       "driven": {
         "wheel_l_01": true,

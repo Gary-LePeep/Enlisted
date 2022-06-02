@@ -304,10 +304,6 @@ var _t_28e =
   "t_28e_turret_04_7_62mm_dt": {
     "_extends": "tankgun_7_62mm_dt",
     "gun__shootNodeName": "bone_mg_turret_01",
-    "turret__yawSpeed": 25.0,
-    "turret__pitchSpeed": 15.0,
-    "turret__aimNodeName": "bone_mg_turret_01_mask_sphere",
-    "turret__limit": [-15.0,15.0,-15.0,15.0],
     "gun__shellsAmmo:array": [
       {
         "ammo": 1323

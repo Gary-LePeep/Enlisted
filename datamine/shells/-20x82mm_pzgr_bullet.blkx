@@ -21,7 +21,7 @@ var _20x82mm_pzgr_bullet =
   "shellAnimation": "video/shells_animations/aphe.ivf",
   "relativeVelArmorShift": [200.0,1000.0],
   "fuseDelayDist": 1.5,
-  "explodeTreshold": 0.9,
+  "explodeTreshold": 3.0,
   "explodeHitPower": 4.5,
   "explodeArmorPower": 6.0,
   "explodeRadius": [0.03,0.15],
@@ -30,6 +30,7 @@ var _20x82mm_pzgr_bullet =
   "shutterAmount": 10,
   "shutterArmorPower": 6.0,
   "shutterHit": 3.0,
+  "selfDestructionFx": "explosion_air_selfexplosion_small",
   "explosionEffect": "hit_19_27mm_metal_he",
   "groundCollisionEffect": "hit_19_27mm_dirt_he",
   "ricochetEffect": "hit_19_27mm_metal_ap",
@@ -54,12 +55,14 @@ var _20x82mm_pzgr_bullet =
     "HitPower1500m": [0.5,1500.0],
     "HitPower2000m": [0.1,2000.0]
   },
-  "armorpower": {
-    "ArmorPower0m": [19.0,10.0],
-    "ArmorPower100m": [17.0,100.0],
-    "ArmorPower500m": [13.0,500.0],
-    "ArmorPower1000m": [5.0,1000.0],
-    "ArmorPower1500m": [1.0,1500.0]
+  "damage": {
+    "kinetic": {
+      "damageType": "generic",
+      "demarrePenetrationK": 0.9,
+      "demarreSpeedPow": 1.43,
+      "demarreMassPow": 0.71,
+      "demarreCaliberPow": 1.07
+    }
   },
   "visual": {
     "range_percent_of_ammo": [100.0,0.0],

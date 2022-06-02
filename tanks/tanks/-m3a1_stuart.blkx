@@ -203,13 +203,10 @@ var _m3a1_stuart =
     },
     "gun__shellsAmmo:array": [
       {
-        "ammo": 35
+        "ammo": 52
       },
       {
-        "ammo": 34
-      },
-      {
-        "ammo": 34
+        "ammo": 51
       }
     ]
   },
@@ -252,9 +249,6 @@ var _m3a1_stuart =
     "ammo_cluster__isShell": true,
     "ammo_cluster__slotNames:shared:list<t>": [
       {
-        "part": "ammo_body"
-      },
-      {
         "part": "ammo_body_l_01"
       },
       {
@@ -263,13 +257,10 @@ var _m3a1_stuart =
     ],
     "ammo_cluster__slotsMaxAmmo:list<i>": [
       {
-        "count": 20
+        "count": 52
       },
       {
-        "count": 43
-      },
-      {
-        "count": 40
+        "count": 51
       }
     ]
   },

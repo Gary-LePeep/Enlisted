@@ -1,0 +1,60 @@
+var _impact_grenade = 
+{
+  "mass": 1.0,
+  "momentOfInertia": [0.04,0.008,0.04],
+  "caliber": 0.04,
+  "speed": 18.5,
+  "speedPitch": 5.0,
+  "maxDistance": 5.0,
+  "physMat": "grenadeRay",
+  "useFutureContacts": true,
+  "logCCD": false,
+  "frictionGround": 2.0,
+  "entityTemplate": "impact_grenade",
+  "entityPhysTemplate": "impact_grenade_phys",
+  "explosiveType": "tnt",
+  "explosiveMass": 0.18,
+  "collisionResource": {
+    "props": {
+      "volumeBox": "box"
+    }
+  },
+  "ccdSpheres": [
+    {
+      "ccd": [0.0,0.05,0.0,0.015]
+    },
+    {
+      "ccd": [0.0,0.2,0.0,0.015]
+    },
+    {
+      "ccd": [0.0,-0.05,0.0,0.015]
+    }
+  ],
+  "solver": {
+    "energyConservation": 0.85
+  },
+  "splashDamage": {
+    "radius": [1.0,8.0],
+    "penetration": [15.0,2.0],
+    "damage": 25.0,
+    "dmgOffset": [0.0,0.25,0.0]
+  },
+  "explFx": {
+    "fxScale": [0.8,0.9],
+    "effectTemplName": "explosion_effect_small+disable_effect_sfx"
+  },
+  "explSound": {
+    "explSoundPath": "impact/grenade",
+    "shattersWizPath": "impact/wiz_fragment",
+    "shattersHitPath": "impact/fragment",
+    "shattersSampleRangeAroundListener": 20.0,
+    "shattersMinMaxRayLenMul": [0.5,4.0],
+    "shattersMinMaxCount": [0,4]
+  },
+  "damage": {
+    "explosive": {
+      "strengthEquivalent": 1.0,
+      "brisanceEquivalent": 1.0
+    }
+  }
+}

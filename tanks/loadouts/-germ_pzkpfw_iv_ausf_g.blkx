@@ -6,6 +6,270 @@ var _germ_pzkpfw_iv_ausf_g =
       "ger_camo_dunkelgelb*": "ger_camo_grey*"
     }
   },
+  "germ_pzkpfw_iv_ausf_g_tunisia_premium": {
+    "_extends": "germ_pzkpfw_iv_ausf_g_common",
+    "disableDMParts:list<t>": [
+      {
+        "part": "track_r_01"
+      },
+      {
+        "part": "track_l_01"
+      },
+      {
+        "part": "ex_decor_r_01"
+      },
+      {
+        "part": "ex_decor_l_01"
+      },
+      {
+        "part": "ex_armor_body_r_05"
+      },
+      {
+        "part": "ex_armor_body_r_04"
+      },
+      {
+        "part": "ex_armor_body_l_03"
+      },
+      {
+        "part": "ex_armor_body_02"
+      }
+    ],
+    "attach_decorators__templates:array": [
+      {
+        "templates:object": {
+          "relativeTm": [
+            [1.0,-0.0,0.0],
+            [0.0,-0.0,-1.0],
+            [0.0,1.0,-0.0],
+            [-0.00111389,-1.58914,0.0607093]
+          ],
+          "template": "german_balkenkreuz_flag_turret_decor",
+          "nodeName": "bone_turret"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [-0.512852,-0.134843,0.0173004],
+            [0.0185687,0.0107487,0.425279],
+            [-0.172711,0.403321,-0.00555024],
+            [-1.8637,1.59063,0.128827]
+          ],
+          "template": "wooden_plank_c_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [0.138733,-0.316268,0.00723607],
+            [-0.00681405,0.00385147,0.423076],
+            [-0.387393,-0.169417,-0.00468451],
+            [-2.09416,1.68562,0.183689]
+          ],
+          "template": "wooden_plank_c_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [-0.944119,-0.331946,-0.02775],
+            [0.331158,-0.943665,0.0343079],
+            [-0.037562,0.0231833,0.999231],
+            [-1.91422,1.83852,-0.669171]
+          ],
+          "template": "us_jerrycan_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [-0.94404,-0.332052,-0.0277488],
+            [0.331252,-0.944058,0.034319],
+            [-0.0375587,0.0231905,0.999231],
+            [-1.89411,1.8293,-0.496844]
+          ],
+          "template": "us_jerrycan_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [-0.94414,-0.332048,-0.0277488],
+            [0.331199,-0.943893,0.0343089],
+            [-0.0375583,0.0231901,0.999231],
+            [-1.90179,1.81215,-0.341888]
+          ],
+          "template": "us_jerrycan_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [-0.943902,-0.332168,-0.0277415],
+            [0.331238,-0.944033,0.0343112],
+            [-0.0375678,0.0231968,0.999283],
+            [-1.9248,1.81987,-0.0419476]
+          ],
+          "template": "us_jerrycan_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [-0.943982,-0.332188,-0.0277502],
+            [0.331346,-0.944228,0.0343095],
+            [-0.037562,0.023197,0.999258],
+            [-1.90085,1.80403,-0.194694]
+          ],
+          "template": "us_jerrycan_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [-0.944076,-0.331861,-0.0277498],
+            [0.331191,-0.943874,0.0343142],
+            [-0.0375649,0.0231836,0.99923],
+            [-1.92524,1.83466,-0.829012]
+          ],
+          "template": "us_jerrycan_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [-0.973873,-0.231058,-0.0280207],
+            [0.230366,-0.973602,0.03441],
+            [-0.0352122,0.0270348,0.99927],
+            [-1.90848,1.83643,-0.969736]
+          ],
+          "template": "us_jerrycan_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [-0.0239066,0.0240686,-0.999653],
+            [-0.961602,-0.275832,0.016342],
+            [-0.275411,0.960987,0.029722],
+            [-1.96644,1.73867,0.652437]
+          ],
+          "template": "tank_decor_box_01_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [0.0573383,0.0264853,-0.998432],
+            [0.0605408,-0.998245,-0.0231259],
+            [-0.996807,-0.0591332,-0.0588271],
+            [-2.26868,1.5734,-0.658843]
+          ],
+          "template": "tank_decor_box_01_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [-0.993606,-0.0274622,0.112424],
+            [-0.0286348,0.999768,-0.00889505],
+            [-0.112099,-0.0120482,-0.992995],
+            [-1.45163,1.62458,-0.553002]
+          ],
+          "template": "usa_big_bag_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [0.997569,-0.0382479,0.0552406],
+            [0.0397324,0.999334,-0.0262695],
+            [-0.0542102,0.0283883,0.997538],
+            [-1.58237,1.62549,0.590296]
+          ],
+          "template": "usa_big_bag_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [0.998811,0.000441975,0.0528166],
+            [0.0521837,-0.170447,-0.984089],
+            [0.00851768,0.985717,-0.170135],
+            [-1.70621,1.74565,-0.906209]
+          ],
+          "template": "usa_bag_large_decor",
+          "nodeName": "root"
+        }
+      },
+      {
+        "templates:object": {
+          "relativeTm": [
+            [-0.995275,-0.0884973,0.0225965],
+            [-0.00247256,0.273188,0.961724],
+            [-0.0913384,0.958558,-0.272286],
+            [-1.8819,1.70796,0.962864]
+          ],
+          "template": "usa_bag_large_decor",
+          "nodeName": "root"
+        }
+      }
+    ],
+    "turret_control__turretInfo:shared:array": [
+      {
+        "turretInfo:object": {
+          "turretName": "turret_01",
+          "gun": "pzkpfw_iv_ausf_g_turret_01_75mm_kwk40_l43_custom+turret_with_several_types_of_shells+main_turret",
+          "barrelDm": "gun_barrel",
+          "breechDm": "cannon_breech",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      },
+      {
+        "turretInfo:object": {
+          "turretName": "turret_02",
+          "gun": "pzkpfw_iv_ausf_g_turret_02_7_92mm_mg34",
+          "barrelDm": "gun_barrel_01",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      }
+    ]
+  },
+  "pzkpfw_iv_ausf_g_turret_01_75mm_kwk40_l43_custom": {
+    "_extends": "pzkpfw_iv_ausf_g_turret_01_75mm_kwk40_l43",
+    "turret__limit": [-180.0,180.0,-10.0,20.0],
+    "turret__limitsTable:list<p4>": [
+      {
+        "lim1": [-180.0,-160.0,5.0,20.0]
+      },
+      {
+        "lim1": [-160.0,-140.0,0.0,20.0]
+      },
+      {
+        "lim2": [-140.0,150.0,-10.0,20.0]
+      },
+      {
+        "lim3": [150.0,180.0,5.0,20.0]
+      }
+    ]
+  },
   "germ_pzkpfw_iv_ausf_g_common": [
     {
       "_extends": "base_pzkpfw_iv_ausf_g"
@@ -186,6 +450,7 @@ var _germ_pzkpfw_iv_ausf_g =
     ]
   },
   "germ_pzkpfw_iv_ausf_g_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pzkpfw_iii_e_gunner_char",
     "cockpit__offset": [0.0,0.0,0.0],
@@ -315,7 +580,7 @@ var _germ_pzkpfw_iv_ausf_g =
   "germ_pzkpfw_iv_ausf_g_commander_cockpit": {
     "_extends": "base_commander_tower_cockit_no_slits",
     "animchar__res": "pzkpfw_iii_e_commander_char",
-    "cockpit__offset": [-0.4,0.5,-0.0],
+    "cockpit__offset": [-0.4,0.6,-0.0],
     "cockpit__cockpitOffsetBySlit:list<p3>": [
       {
         "slit": [0.0,0.0,0.0]

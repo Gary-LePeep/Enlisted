@@ -64,6 +64,9 @@ var _germ_panzerjager_iv_l_70 =
       "gunnerFpsCamMaxAngle": [5.0,3.0]
     },
     {
+      "item__iconOffset": [0.0,0.3]
+    },
+    {
       "vehicle_seats__seats:shared:array": [
         {
           "seats:object": {
@@ -197,6 +200,7 @@ var _germ_panzerjager_iv_l_70 =
     }
   },
   "germ_panzerjager_IV_L_70_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_sfl_zf_1a.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,

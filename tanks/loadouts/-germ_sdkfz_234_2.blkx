@@ -1,14 +1,17 @@
 var _germ_sdkfz_234_2 = 
 {
-  "germ_sdkfz_234_2": [
+  "germ_sdkfz_234_2": {
+    "_extends": "germ_sdkfz_234_2_common"
+  },
+  "germ_sdkfz_234_2_common": [
     {
       "_extends": "base_sdkfz_234_2"
     },
     {
-      "_extends": "tank_with_wheels_vehicle_sound_override"
+      "_extends": "vehicle_steering_assist"
     },
     {
-      "_extends": "tank_vehicle_seat_sound"
+      "_extends": "tank_with_wheels_vehicle_tracks_sound"
     },
     {
       "item__iconOffset": [0.0,0.3]
@@ -177,7 +180,7 @@ var _germ_sdkfz_234_2 =
     }
   ],
   "germ_sdkfz_234_2_red_eighteen_skin_td": {
-    "_extends": "germ_sdkfz_234_2",
+    "_extends": "germ_sdkfz_234_2_common",
     "item__name": "items/germ_sdkfz_234_2_red_eighteen_td",
     "animchar__objTexReplace:object": {
       "ger_camo_dunkelgelb*": "ger_camo_dunkelgelb_green_braun_lines*"
@@ -265,6 +268,7 @@ var _germ_sdkfz_234_2 =
     }
   },
   "germ_sdkfz_234_2_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pz_2c_commander_char",
     "cockpit__offset": [-0.0,-0.0,-0.0],

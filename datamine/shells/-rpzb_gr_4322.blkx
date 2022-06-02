@@ -4,7 +4,7 @@ var _rpzb_gr_4322 =
   "cartridgeMass": 3.3,
   "momentOfInertia": [0.04,0.008,0.04],
   "caliber": 0.088,
-  "speed": 100.0,
+  "speed": 110.0,
   "physMat": "bulletRay",
   "useFutureContacts": true,
   "logCCD": false,
@@ -57,61 +57,6 @@ var _rpzb_gr_4322 =
     "distance": 3.0,
     "damage": 150.0,
     "onHitChanceMultFire": 15.0
-  },
-  "damage": {
-    "cumulative": {
-      "penetration": 200.0,
-      "damage": 150.0,
-      "distance": 1.5,
-      "onHitChanceMultFire": 15.0,
-      "damageType": "cumulative"
-    },
-    "splash": {
-      "radius": [1.0,7.0],
-      "penetration": [10.0,10.0],
-      "damage": 180.0,
-      "damageType": "explosion"
-    },
-    "secondaryShatter": {
-      "residualArmorPenetrationToShatterCountMult": [20.0,100.0,0.5,1.0],
-      "residualArmorPenetrationToShatterPenetrationMult": [20.0,100.0,0.5,1.0],
-      "residualArmorPenetrationToShatterDamageMult": [20.0,100.0,0.4,1.0],
-      "caliberToArmorToShatterCountMult": [0.5,1.0,0.5,1.0],
-      "damageType": "secondaryShatter",
-      "section0": {
-        "angles": [0.0,10.0],
-        "shatter": {
-          "distance": 5.0,
-          "size": 0.05,
-          "count": 8,
-          "penetration": [11.0,8.0],
-          "damage": [20.0,15.0],
-          "onHitChanceMultFire": 1.3
-        }
-      },
-      "section1": {
-        "angles": [0.0,25.0],
-        "shatter": {
-          "distance": 2.5,
-          "size": 0.025,
-          "count": 20,
-          "penetration": [7.0,5.0],
-          "damage": [15.0,12.0],
-          "onHitChanceMultFire": 1.0
-        }
-      },
-      "section2": {
-        "angles": [0.0,40.0],
-        "shatter": {
-          "size": 0.01,
-          "distance": 1.5,
-          "count": 40,
-          "penetration": [4.0,3.0],
-          "damage": [8.0,6.0],
-          "onHitChanceMultFire": 1.0
-        }
-      }
-    }
   },
   "stabilityRicochetModifier": {
     "mod1": [0.0,0.5],

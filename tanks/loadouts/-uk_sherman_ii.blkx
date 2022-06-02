@@ -217,6 +217,7 @@ var _uk_sherman_ii =
     ]
   },
   "uk_sherman_ii_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/uk_no_33_mkii_s.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "ba_11_gunner_char",
     "cockpit__offset": [-1.41495,0.362964,-0.473913],

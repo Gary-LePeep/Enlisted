@@ -35,7 +35,7 @@ var _towed_at_m1 =
       "cockpit__zoomInFov": 5.3955
     },
     {
-      "drowningHeight": 1.44
+      "drowningHeight": 0.5
     },
     {
       "damage_model__blk": "gamedata/gen/units/tanks/towed_at_m1.blk"
@@ -96,7 +96,7 @@ var _towed_at_m1 =
           "barrelDm": "gun_barrel",
           "breechDm": "cannon_breech",
           "verDriveDm": "drive_turret_v",
-          "horDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
           "salt": 1
         }
       }

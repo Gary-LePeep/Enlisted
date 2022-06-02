@@ -11,6 +11,9 @@ var _us_m3_lee =
       "_extends": "vehicle_effects_tracked"
     },
     {
+      "gunner_cam_limit__useCockpitDir": true
+    },
+    {
       "vehicle_seats__seatsProvideOrder:tag": []
     },
     {
@@ -31,8 +34,11 @@ var _us_m3_lee =
             ],
             "seatComponent": "isDriver",
             "receiveDamageFromDMPart": "commander",
-            "cameraNodeName": "bone_turret_01",
-            "cockpitTemplate": "us_m3_lee_commander_cockpit"
+            "cameraNodeName": "bone_camera_gunner_03",
+            "cockpitTemplate": "us_m3_lee_commander_cockpit",
+            "turretNames:array": {
+              "turret": "turret_04"
+            }
           }
         },
         {
@@ -59,9 +65,6 @@ var _us_m3_lee =
               },
               {
                 "turret": "turret_03"
-              },
-              {
-                "turret": "turret_04"
               }
             ]
           }
@@ -184,9 +187,13 @@ var _us_m3_lee =
       {
         "node": "ex_decor_r_01"
       }
-    ]
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.09
+    }
   },
   "us_m3_lee_gunner_75mm_hull_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/us_m70f.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,
@@ -209,6 +216,7 @@ var _us_m3_lee =
     }
   },
   "us_m3_lee_gunner_37mm_turret_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/uk_no_33_mkii_s.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,
@@ -220,9 +228,35 @@ var _us_m3_lee =
       "node": "bone_camera_gunner"
     },
     "cockpit__attachNodeIndices:list<i>": [],
-    "cockpit__visibleVehicleNodeNames:list<t>": {
-      "node": "gun_barrel_01"
-    },
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel_01"
+      },
+      {
+        "node": "@root"
+      },
+      {
+        "node": "ex_decor_01"
+      },
+      {
+        "node": "ex_decor_l_01"
+      },
+      {
+        "node": "ex_decor_r_02"
+      },
+      {
+        "node": "gun_barrel_02"
+      },
+      {
+        "node": "bone_gun_02"
+      },
+      {
+        "node": "bone_turret_02"
+      },
+      {
+        "node": "antenna"
+      }
+    ],
     "cockpit__slitNodeNames:list<t>": {
       "slit": "cam_front_right"
     },
@@ -235,13 +269,15 @@ var _us_m3_lee =
   },
   "us_m3_lee_commander_cockpit": {
     "_extends": "base_commander_cockpit_no_slits",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/uk_no_33_mkii_s.blk",
     "animchar__res": "t_26_1940_commander_char",
-    "cockpit__offset": [-0.0,0.0,0.0],
+    "cockpit__offset": [-0.6,0.1,0.21],
     "cockpit__cockpitOffsetBySlit:list<p3>": {
-      "slit": [-0.8,0.88,0.37]
+      "slit": [-0.0,0.0,0.0]
     },
+    "cockpit__attachNodeIndices:list<i>": [],
     "cockpit__attachNodeNames:list<t>": {
-      "node": "bone_camera_gunner"
+      "node": "bone_mg_turret_01"
     },
     "cockpit__visibleVehicleNodeNames:list<t>": [
       {
@@ -249,10 +285,43 @@ var _us_m3_lee =
       },
       {
         "node": "gun_barrel_01"
+      },
+      {
+        "node": "bone_gun_01"
+      },
+      {
+        "node": "bone_gun_02"
+      },
+      {
+        "node": "bone_turret_01"
+      },
+      {
+        "node": "bone_turret_02"
+      },
+      {
+        "node": "bone_mg_turret_01"
+      },
+      {
+        "node": "@root"
+      },
+      {
+        "node": "ex_decor_01"
+      },
+      {
+        "node": "ex_decor_l_01"
+      },
+      {
+        "node": "ex_decor_r_02"
+      },
+      {
+        "node": "antenna"
+      },
+      {
+        "node": "hatch_03"
       }
     ],
     "cockpit__slitForwardOffset:list<r>": {
-      "slit": 0.15
+      "slit": 0.17
     },
     "cockpit__slitIsGun:list<b>": {
       "slit": true
@@ -264,6 +333,7 @@ var _us_m3_lee =
   "ussr_m3_lee_premium": {
     "_extends": "us_m3_lee_common",
     "item__name": "items/ussr_m3_lee_premium",
+    "item__iconOffset": [0.0,0.2],
     "animchar__objTexReplace:object": {
       "us_camo_olive*": "ussr_camo_green*"
     },

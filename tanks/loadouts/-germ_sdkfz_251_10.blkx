@@ -242,6 +242,7 @@ var _germ_sdkfz_251_10 =
     }
   },
   "germ_sdkfz_251_10_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pz_2c_commander_char",
     "cockpit__offset": [-0.0,-0.0,-0.0],

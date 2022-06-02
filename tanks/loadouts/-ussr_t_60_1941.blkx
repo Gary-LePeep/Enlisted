@@ -108,6 +108,7 @@ var _ussr_t_60_1941 =
   },
   "ussr_t_60_1941_gunner_cockpit": {
     "_extends": "base_gunner_cockpit",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/ussr_pt_1.blk",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,
     "cockpit__offset": [-0.35,-0.01,0.22],

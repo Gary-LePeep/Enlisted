@@ -1,0 +1,25 @@
+var _82mm_m8_rocket_launcher = 
+{
+  "base_82mm_m8_rocket_launcher": {
+    "item__name": "guns/82mm_m8_rocket_launcher",
+    "gun__blk": "gamedata/gen/weapons/82mm_m8_rocket_launcher.blk",
+    "gun__shotFreq": 3.0,
+    "gun__reloadTime": 8.0,
+    "gun__locName": "82mm_m8_rocket_launcher",
+    "gun__ammoSetsInfo:shared:array": []
+  },
+  "tankgun_82mm_m8_rocket_launcher": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_82mm_m8_rocket_launcher"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

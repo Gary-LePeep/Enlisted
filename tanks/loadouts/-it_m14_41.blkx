@@ -163,6 +163,7 @@ var _it_m14_41 =
     ]
   },
   "it_m14_41_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/it_se_75_18.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,

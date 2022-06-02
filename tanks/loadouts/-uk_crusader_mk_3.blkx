@@ -138,6 +138,7 @@ var _uk_crusader_mk_3 =
     ]
   },
   "uk_crusader_mk_3_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/uk_no_33_mkii_s.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "ba_11_gunner_char",
     "cockpit__offset": [-0.8,-0.06,0.23],

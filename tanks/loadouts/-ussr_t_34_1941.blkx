@@ -1,6 +1,9 @@
 var _ussr_t_34_1941 = 
 {
-  "ussr_t_34_1941": [
+  "ussr_t_34_1941_stalingrad": {
+    "_extends": "ussr_t_34_1941_common"
+  },
+  "ussr_t_34_1941_common": [
     {
       "_extends": "base_t_34_1941"
     },
@@ -8,33 +11,10 @@ var _ussr_t_34_1941 =
       "_extends": "vehicle_effects_tracked"
     },
     {
-      "animchar__objTexReplace:object": {
-        "ussr_camo_green*": "ussr_camo_winter_white_full*"
-      }
+      "vehicle_seats__seatsProvideOrder:tag": []
     },
     {
       "vehicle_seats__seats:shared:array": [
-        {
-          "seats:object": {
-            "name": "driver",
-            "locName": "vehicle_seats/driver",
-            "seatOwnsEntityControl": true,
-            "attachNode": "driver",
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.25,-0.25,0.0]
-            ],
-            "seatComponent": "isDriver",
-            "nextSeat": "main_gunner",
-            "shouldHideOwner": true,
-            "receiveDamageFromDMPart": "driver",
-            "cameraNodeName": "bone_camera_driver",
-            "cockpitTemplate": "ussr_t_34_1941_driver_cockpit"
-          }
-        },
         {
           "seats:object": {
             "name": "main_gunner",
@@ -65,6 +45,27 @@ var _ussr_t_34_1941 =
         },
         {
           "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cockpitTemplate": "ussr_t_34_1941_driver_cockpit"
+          }
+        },
+        {
+          "seats:object": {
             "name": "commander",
             "attachNode": "loader",
             "shouldHideOwner": true,
@@ -75,11 +76,12 @@ var _ussr_t_34_1941 =
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.15,-0.35,0.15]
+              [-0.15,-0.5,0.15]
             ],
             "seatComponent": "isDriver",
             "receiveDamageFromDMPart": "loader",
             "cockpitTemplate": "ussr_t_34_1941_commander_cockpit",
+            "hatchRotationAxis": [1.4,0.0,0.0],
             "hatchNodes:array": {
               "node": "hatch_01"
             },
@@ -126,29 +128,12 @@ var _ussr_t_34_1941 =
   "ussr_t_34_1941_driver_cockpit": {
     "_extends": "base_driver_cockpit_no_slits",
     "animchar__res": "bt_7_driver_char",
-    "cockpit__offset": [-0.1,0.0,-0.1],
-    "cockpit__visibleVehicleNodeNames:list<t>": [
-      {
-        "node": "track_l"
-      },
-      {
-        "node": "track_r"
-      },
-      {
-        "node": "ex_decor_l_01"
-      },
-      {
-        "node": "ex_decor_r_01"
-      },
-      {
-        "node": "ex_decor_l_03"
-      },
-      {
-        "node": "ex_decor_r_03"
-      }
-    ],
+    "cockpit__offset": [0.100554,-0.523061,0.0305198],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
     "cockpit__slitForwardOffset:list<r>": {
-      "slit": 0.0
+      "slit": 0.1
     },
     "cockpit__slitIsGun:list<b>": {
       "slit": false
@@ -158,19 +143,20 @@ var _ussr_t_34_1941 =
     }
   },
   "ussr_t_34_1941_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/ussr_pt_1.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,
-    "cockpit__offset": [-0.35,-0.01,0.22],
+    "cockpit__offset": [0.0,0.0,0.0],
     "cockpit__cockpitOffsetBySlit:list<p3>": [
       {
-        "slit": [0.0,0.0,0.0]
+        "item": [-0.417777,-0.0444036,0.166531]
       },
       {
-        "slit": [0.0,0.4,0.0]
+        "item": [-0.104102,0.81389,0.366385]
       },
       {
-        "slit": [0.0,0.0,0.0]
+        "item": [-0.103336,0.410332,0.454511]
       }
     ],
     "cockpit__attachNodeNames:list<t>": [
@@ -185,26 +171,9 @@ var _ussr_t_34_1941 =
       }
     ],
     "cockpit__attachNodeIndices:list<i>": [],
-    "cockpit__visibleVehicleNodeNames:list<t>": [
-      {
-        "node": "track_l"
-      },
-      {
-        "node": "track_r"
-      },
-      {
-        "node": "@root"
-      },
-      {
-        "node": "ex_decor_l_01"
-      },
-      {
-        "node": "ex_decor_r_01"
-      },
-      {
-        "node": "gun_barrel"
-      }
-    ],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
     "cockpit__slitNodeNames:list<t>": [
       {
         "slit": "cam_front_right"
@@ -218,7 +187,7 @@ var _ussr_t_34_1941 =
     ],
     "cockpit__slitForwardOffset:list<r>": [
       {
-        "slit": 0.23
+        "slit": 0.16
       },
       {
         "slit": 0.2
@@ -242,41 +211,16 @@ var _ussr_t_34_1941 =
   "ussr_t_34_1941_commander_cockpit": {
     "_extends": "base_commander_cockpit_no_slits",
     "animchar__res": "t_26_1940_commander_char",
-    "cockpit__offset": [-0.1,0.4,-0.3],
-    "cockpit__cockpitOffsetBySlit:list<p3>": [
-      {
-        "slit": [0.0,0.4,0.0]
-      },
-      {
-        "slit": [0.0,0.0,0.0]
-      }
-    ],
-    "cockpit__visibleVehicleNodeNames:list<t>": {
-      "node": "gun_barrel"
+    "cockpit__offset": [-1.38936,0.523072,-0.679424],
+    "cockpit__visibleVehicleNodeNames:list<t>": [],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.06
     },
-    "cockpit__slitForwardOffset:list<r>": [
-      {
-        "slit": 0.15
-      },
-      {
-        "slit": 0.0
-      }
-    ],
-    "cockpit__slitIsGun:list<b>": [
-      {
-        "slit": false
-      },
-      {
-        "slit": false
-      }
-    ],
-    "cockpit__slitNodeNames:list<t>": [
-      {
-        "slit": "cam_front"
-      },
-      {
-        "slit": "cam_right"
-      }
-    ]
+    "cockpit__slitIsGun:list<b>": {
+      "slit": false
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_right"
+    }
   }
 }

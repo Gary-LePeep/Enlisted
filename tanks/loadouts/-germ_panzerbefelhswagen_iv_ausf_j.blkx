@@ -247,6 +247,7 @@ var _germ_panzerbefelhswagen_iv_ausf_j =
     ]
   },
   "germ_panzerbefelhswagen_IV_ausf_J_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pzkpfw_iii_e_gunner_char",
     "cockpit__offset": [-0.9,0.03,0.12],
@@ -306,7 +307,7 @@ var _germ_panzerbefelhswagen_iv_ausf_j =
   "germ_panzerbefelhswagen_iv_ausf_j_premium": {
     "_extends": "germ_panzerbefelhswagen_IV_ausf_J_common",
     "item__name": "items/germ_pzkpfw_iv_ausf_j_armored",
-    "item__iconOffset": [0.0,0.2],
+    "item__iconOffset": [0.0,0.3],
     "animchar__objTexReplace:object": {
       "ger_camo_dunkelgelb*": "ger_camo_dunkelgelb_green_braun_blots*"
     },

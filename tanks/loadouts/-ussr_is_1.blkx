@@ -136,6 +136,7 @@ var _ussr_is_1 =
     }
   },
   "ussr_is_1_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/ussr_pt_1.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,

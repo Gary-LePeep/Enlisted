@@ -37,7 +37,7 @@ var _40mm_vickerss_apt_shot_bullet =
     "stabilityReductionAfterRicochet": 0.5
   },
   {
-    "stabilityReductionAfterPenetration": 0.15
+    "bulletType": "ap_t"
   },
   {
     "slopeEffectPreset": "ap"
@@ -46,7 +46,13 @@ var _40mm_vickerss_apt_shot_bullet =
     "fresnel": [0.23,0.1,2.0]
   },
   {
+    "shellAnimation": "video/shells_animations/ap.ivf"
+  },
+  {
     "relativeVelArmorShift": [200.0,1000.0]
+  },
+  {
+    "selfDestructionFx": "explosion_air_selfexplosion_small"
   },
   {
     "explosionEffect": "hit_28_38mm_metal_ap"
@@ -87,15 +93,14 @@ var _40mm_vickerss_apt_shot_bullet =
     }
   },
   {
-    "armorpower": {
-      "ArmorPower0m": [70.0,10.0],
-      "ArmorPower100m": [65.0,100.0],
-      "ArmorPower500m": [57.0,500.0],
-      "ArmorPower1000m": [50.0,1000.0],
-      "ArmorPower1500m": [42.0,1500.0],
-      "ArmorPower2000m": [30.0,2000.0],
-      "ArmorPower2100m": [15.0,2100.0],
-      "ArmorPower2200m": [0.0,2200.0]
+    "damage": {
+      "kinetic": {
+        "damageType": "generic",
+        "demarrePenetrationK": 0.9,
+        "demarreSpeedPow": 1.43,
+        "demarreMassPow": 0.71,
+        "demarreCaliberPow": 1.07
+      }
     }
   },
   {

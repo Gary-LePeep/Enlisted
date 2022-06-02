@@ -1,0 +1,214 @@
+var _germ_panzerwerfer_42 = 
+{
+  "germ_panzerwerfer_42_normandy_premium": {
+    "_extends": "germ_panzerwerfer_42_common"
+  },
+  "germ_panzerwerfer_42_common": [
+    {
+      "item__iconOffset": [0.0,0.2]
+    },
+    {
+      "_extends": "base_panzerwerfer_42"
+    },
+    {
+      "_extends": "vehicle_steering_assist"
+    },
+    {
+      "_extends": "vehicle_effects_tracked"
+    },
+    {
+      "bullet_holes__ignoreCollisionNodes:array": {
+        "_tags": "render"
+      }
+    },
+    {
+      "bullet_holes__movingCollisionNodes:array": [
+        {
+          "_tags": "render"
+        },
+        {
+          "movingCollisionNodes": "cls_turret_01"
+        },
+        {
+          "movingCollisionNodes": "turret_front"
+        },
+        {
+          "movingCollisionNodes": "turret_side"
+        },
+        {
+          "movingCollisionNodes": "gun_mask"
+        }
+      ]
+    },
+    {
+      "vehicle_seats__seatsProvideOrder:tag": []
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": [
+            {
+              "name": "commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "attachNode": "commander"
+            },
+            {
+              "shouldHideOwner": true
+            },
+            {
+              "ignoreAttachNodeRotation": true
+            },
+            {
+              "attachTm": [
+                [1.0,0.0,0.0],
+                [0.0,1.0,0.0],
+                [0.0,0.0,1.0],
+                [-0.35,0.285,0.2]
+              ]
+            },
+            {
+              "cockpitTemplate": "germ_panzerwerfer_42_commander_cockpit"
+            },
+            {
+              "cameraType": "commander"
+            },
+            {
+              "seatComponent": "isDriver"
+            },
+            {
+              "receiveDamageFromDMPart": "commander"
+            },
+            {
+              "turretNames:array": [
+                {
+                  "turretNames": "turret_02"
+                },
+                {
+                  "turretNames": "turret_01"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "shouldHideOwner": true,
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "germ_panzerwerfer_42_gunner_cockpit",
+            "turretNames:array": {
+              "turretNames": "turret_02"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "shouldHideOwner": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cockpitTemplate": "germ_panzerwerfer_42_driver_cockpit"
+          }
+        }
+      ]
+    }
+  ],
+  "germ_panzerwerfer_42_driver_cockpit": {
+    "_extends": "base_driver_cockpit_no_slits",
+    "animchar__res": "pz_2c_driver_char",
+    "cockpit__offset": [-0.847332,-0.285891,-0.128131],
+    "cockpit__visibleVehicleNodeNames:list<t>": [],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.08
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": false
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "germ_panzerwerfer_42_commander_cockpit": {
+    "_extends": "base_driver_cockpit_no_slits",
+    "animchar__res": "pz_2c_driver_char",
+    "cockpit__offset": [-0.782414,-0.263732,-0.813535],
+    "cockpit__visibleVehicleNodeNames:list<t>": [],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.08
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "germ_panzerwerfer_42_gunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_panzerwerfer.blk",
+    "animchar__res": "pz_2c_commander_char",
+    "cockpit__offset": [0.0,0.0,0.0],
+    "cockpit__minZoom": -0.27,
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "item": [-0.704079,-0.731116,0.093979]
+    },
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "@root"
+      },
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "hatch_03"
+      },
+      {
+        "node": "hatch_04"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.3
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    }
+  }
+}

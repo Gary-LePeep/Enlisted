@@ -11,7 +11,7 @@ var _uk_mk_1_grant =
       "_extends": "vehicle_effects_tracked"
     },
     {
-      "item__iconOffset": [0.0,0.2]
+      "item__iconOffset": [0.0,0.3]
     },
     {
       "vehicle_seats__seatsProvideOrder:tag": []
@@ -187,6 +187,7 @@ var _uk_mk_1_grant =
     ]
   },
   "uk_mk_1_grant_gunner_75mm_hull_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/us_m70f.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,
@@ -212,6 +213,7 @@ var _uk_mk_1_grant =
     }
   },
   "uk_mk_1_grant_gunner_37mm_turret_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/uk_no_33_mkii_s.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,

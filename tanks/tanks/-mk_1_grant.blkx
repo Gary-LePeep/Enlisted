@@ -361,17 +361,57 @@ var _mk_1_grant =
     "skin__objTexReplace:array": [
       {
         "skin:object": {
-          "id": "mk_1_grant_fire_range",
+          "id": "mk_1_grant_uk_camo_earth_yellow",
           "objTexReplace:object": {
-            "uk_camo_earth_yellow*": "camo_hangar_red_lead*"
+            "uk_camo_earth_yellow*": "uk_camo_earth_yellow*"
           }
         }
       },
       {
         "skin:object": {
-          "id": "mk_1_grant_uk_mk1_grant",
+          "id": "mk_1_grant_uk_camo_light_mud_blue_black",
+          "objTexReplace:object": {
+            "uk_camo_earth_yellow*": "uk_camo_light_mud_blue_black*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "mk_1_grant_uk_camo_light_mud_slate_grey",
           "objTexReplace:object": {
             "uk_camo_earth_yellow*": "uk_camo_light_mud_slate_grey*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "mk_1_grant_uk_camo_light_stone_dark_green",
+          "objTexReplace:object": {
+            "uk_camo_earth_yellow*": "uk_camo_light_stone_dark_green*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "mk_1_grant_uk_camo_light_stone_light_grey_slate_grey",
+          "objTexReplace:object": {
+            "uk_camo_earth_yellow*": "uk_camo_light_stone_light_grey_slate_grey*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "mk_1_grant_uk_camo_light_stone_slate_grey",
+          "objTexReplace:object": {
+            "uk_camo_earth_yellow*": "uk_camo_light_stone_slate_grey*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "mk_1_grant_uk_camo_middle_deep_bronze_greens",
+          "objTexReplace:object": {
+            "uk_camo_earth_yellow*": "uk_camo_middle_deep_bronze_greens*"
           }
         }
       },

@@ -20,10 +20,10 @@ var _germ_towed_at_pak38_movable =
       "_extends": "base_towed_at_pak38"
     },
     {
-      "_extends": "movable_cannon_vehicle_sound_override"
+      "_extends": "tank_vehicle_suspension_sound"
     },
     {
-      "_extends": "disable_vehicle_engine_sound"
+      "_extends": "movable_cannon_vehicle_tracks_sound"
     },
     {
       "_extends": "vehicle_seats_effectors"
@@ -90,12 +90,6 @@ var _germ_towed_at_pak38_movable =
       }
     },
     {
-      "_group": {
-        "_tags": "sound",
-        "vehicle_sound__enableEngine": false
-      }
-    },
-    {
       "setCameraDirByHero:tag": []
     },
     {
@@ -113,14 +107,14 @@ var _germ_towed_at_pak38_movable =
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-1.4,0.0,0.5]
+              [-1.4,-0.15,0.5]
             ],
             "seatComponent": "isGunner",
             "ignoreAttachNodeRotation": true,
-            "cameraType": "machinegunner_cockpit",
             "cameraNodeName": "bone_camera_gunner",
             "cameraOffset": [-0.0,0.0,0.0],
             "directTurretControl": true,
+            "cockpitTemplate": "germ_towed_at_pak38_gunner_cockpit",
             "lockSeats:list<t>": {
               "locked": "loader_marching"
             },
@@ -172,7 +166,7 @@ var _germ_towed_at_pak38_movable =
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-1.3,0.0,-0.3]
+              [-1.3,-0.2,-0.3]
             ],
             "seatComponent": "isPassenger",
             "receiveDamageFromDMPart": "loader",
@@ -229,6 +223,35 @@ var _germ_towed_at_pak38_movable =
   ],
   "enlist_tankgun_towed_at_pak38_movable": {
     "_extends": "enlist_tankgun_towed_at_pak38_50mm_pak38",
-    "turret__limit": [-20.0,20.0,-2.0,20.0]
+    "turret__limit": [-20.0,20.0,-2.0,20.0],
+    "gun__recoilAmount": 0.08
+  },
+  "germ_towed_at_pak38_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "t_26_1940_gunner_char",
+    "cockpit__zoomTimeMul": 1.3,
+    "cockpit__cameraTimeMul": 1.5,
+    "cockpit__minZoom": -0.0,
+    "cockpit__offset": [0.0,0.0,0.0],
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "item": [-1.04062,0.00889541,0.563183]
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_gun_barrel"
+    },
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "bone_gun_barrel"
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.19
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    }
   }
 }

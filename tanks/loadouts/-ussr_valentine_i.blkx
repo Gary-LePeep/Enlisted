@@ -122,6 +122,7 @@ var _ussr_valentine_i =
     }
   },
   "ussr_valentine_I_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/uk_no_33_mkii_s.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,

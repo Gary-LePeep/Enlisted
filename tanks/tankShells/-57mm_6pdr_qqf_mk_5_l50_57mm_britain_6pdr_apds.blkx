@@ -14,6 +14,7 @@ var _57mm_6pdr_qqf_mk_5_l50_57mm_britain_6pdr_apds =
   "shellAnimation": "video/shells_animations/apds.ivf",
   "bulletName": "57mm_shot_mk1bt",
   "Cx": 0.001,
+  "selfDestructionFx": "explosion_air_selfexplosion_med",
   "explosionEffect": "hit_59_80mm_metal_ap",
   "groundCollisionEffect": "hit_59_80mm_dirt_ap",
   "ricochetEffect": "hit_59_80mm_metal_ap",
@@ -205,7 +206,7 @@ var _57mm_6pdr_qqf_mk_5_l50_57mm_britain_6pdr_apds =
       "stabilityThreshold": 0.05,
       "stabilityCaliberToArmorThreshold": 5.0,
       "stabilityReductionAfterRicochet": 0.5,
-      "stabilityReductionAfterPenetration": 0.15,
+      "stabilityReductionAfterPenetration": 0.0,
       "stabilityRicochetModifier": {
         "mod1": [0.0,0.2],
         "mod2": [20.0,0.45],

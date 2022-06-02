@@ -4,6 +4,7 @@ var ALLSHELLS = [
 "-gross_panzergranate_61.blkx", 
 "-m49a2.blkx", 
 "-m6a1_bazooka.blkx", 
+"-m6a3_bazooka.blkx", 
 "-mine_o822_mp.blkx", 
 "-mortar_shell.blkx", 
 "-neiman_mine.blkx", 

@@ -35,7 +35,7 @@ var _7_62x39 =
     "smokeColor": "#ffe6b3cc",
     "smokeTime": 0.01,
     "smokeRadius": 0.01,
-    "headColor": "#aaff55ff",
+    "headColor": "#ffaa55ff",
     "luminosity": 10.0,
     "burnTime": 1.8
   }

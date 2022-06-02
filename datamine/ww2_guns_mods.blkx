@@ -485,12 +485,12 @@ var COMMONGUNSMODSDATA =
   "scope_zf4_stg_44": {
     "_extends": "scope_gunmod",
     "animchar__res": "scope_zf_4_gewehr_43_char",
-    "item__template": "scope_zf4_stg_44_item",
+    "item__template": "scope_zf4_item",
     "item__proto": "content/e_ww2_common/gamedata/items/scope_zf4.blk",
     "gunAttachable__slot": -1,
     "gunAttachable__slotName": "scope",
     "gunAttachable__gunSlotName": "scope",
-    "gunAttachable__slotTag": "scope_zf4_stg_44",
+    "gunAttachable__slotTag": "scope_zf4",
     "gunmod__zoomFactor": 4.0,
     "item__weight": 0.3,
     "item__volume": 0.5,
@@ -724,6 +724,23 @@ var COMMONGUNSMODSDATA =
     "item__name": "items/unertl_8x_sight",
     "gunAttachable:tag": []
   },
+  "scope_zf_41_gewehr_41": {
+    "_extends": "scope_gunmod",
+    "animchar__res": "g_41_w_zf_41_scope_char",
+    "item__template": "scope_zf_41_item",
+    "item__proto": "content/e_ww2_common/gamedata/items/scope_zf_41.blk",
+    "gunAttachable__slot": -1,
+    "gunAttachable__slotName": "scope",
+    "gunAttachable__gunSlotName": "scope",
+    "gunAttachable__slotTag": "scope_zf_41",
+    "gunmod__deviationMult": 0.3,
+    "gunmod__zoomFactor": 4.0,
+    "item__weight": 0.3,
+    "item__volume": 0.5,
+    "item__name": "items/scope_zf_41",
+    "item__iconYaw": 80.0,
+    "gunAttachable:tag": []
+  },
   "steel_helm_phys": [
     {
       "_extends": "phys_sleepable"
@@ -744,6 +761,9 @@ var COMMONGUNSMODSDATA =
       "phys_obj_net_phys__blk": "content/e_ww2_common/gamedata/items/steel_helmet.blk"
     },
     {
+      "pair_collision__tag": "collidableToPhysObj"
+    },
+    {
       "collres": []
     },
     {
@@ -751,6 +771,22 @@ var COMMONGUNSMODSDATA =
     },
     {
       "phys_obj_net_phys": []
+    },
+    {
+      "pair_collision__gridHolders": []
+    },
+    {
+      "pair_collision__gridNames:list<t>": [
+        {
+          "h": "humans"
+        },
+        {
+          "h": "vehicles"
+        }
+      ]
+    },
+    {
+      "collidableToPhysObj:tag": []
     }
   ],
   "diakov_grenade_launcher": {
@@ -798,6 +834,61 @@ var COMMONGUNSMODSDATA =
     },
     "gun__shells:array": {
       "shells": "content/e_ww2_common/gamedata/weapons/grenades/diakov_rifle_grenade.blk"
+    },
+    "gun__firingModes:array": {
+      "mode:object": {
+        "modeType": "manual"
+      }
+    },
+    "gun__firingModeNames:array": {
+      "mode": "bolt_action"
+    }
+  },
+  "vpgs_grenade_launcher": {
+    "_extends": "ramrod_grenade_launcher_gunmod",
+    "animchar__res": "mosin_m91_30_vpgs_ammo_char",
+    "item__template": "vpgs_grenade_launcher_item",
+    "item__proto": "content/e_ww2_common/gamedata/weapons/vpgs_grenade_launcher.blk",
+    "item__weight": 0.3,
+    "item__volume": 0.5,
+    "item__name": "items/vpgs_41",
+    "item__iconYaw": 90.0,
+    "gunAttachable__slot": -1,
+    "gunAttachable__slotName": "grenade_launcher",
+    "gunAttachable__gunSlotName": "grenade_launcher",
+    "gunAttachable__slotTag": "vpgs_grenade_launcher",
+    "gun__blk": "content/e_ww2_common/gamedata/weapons/vpgs_grenade_launcher.blk",
+    "gun__shootNodeName": "bullet",
+    "gun__magnification": 3.0,
+    "gun__locName": "VPGS-41 grenade launcher",
+    "gun__statName": "launcher",
+    "gun__shotFreq": 0.8,
+    "gun__shotFreqRndK": 0.1,
+    "gun__automaticReload": false,
+    "gun_spread__maxDeltaAngle": 0.05,
+    "gun_deviation__omegaRange": [30.0,90.0],
+    "gun_deviation__omegaDevInc": [0.1,0.5],
+    "gun_deviation__movementRange": [2.1,4.0],
+    "gun_deviation__movementDevInc": [0.0,15.0],
+    "gun_deviation__onShotDeviationChange": 0.0,
+    "gun_deviation__shotTau": 0.1,
+    "gun_deviation__extraDeviationTau": 0.15,
+    "gun_deviation__maxDeviation": 15.0,
+    "gun__length": 0.4,
+    "gun__reloadTime": 2.5,
+    "gun_shell_ejection__timeMult": 0.35,
+    "gun__recoilAmount": 0.2,
+    "gun__recoilDirAmount": 0.9,
+    "gun__recoilDir": 0.0,
+    "gun__visualRecoilMult": 1.0,
+    "weapon_mod__activateTime": 2.0,
+    "weapon_mod__deactivateTime": 2.0,
+    "gunAttachable:tag": [],
+    "gun__ammoHolders:array": {
+      "ammoHolders": "content/e_ww2_common/gamedata/weapons/grenades/vpgs_41_rifle_grenade.blk"
+    },
+    "gun__shells:array": {
+      "shells": "content/e_ww2_common/gamedata/weapons/grenades/vpgs_41_rifle_grenade.blk"
     },
     "gun__firingModes:array": {
       "mode:object": {

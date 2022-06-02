@@ -1,0 +1,245 @@
+var _su_76m = 
+{
+  "base_su_76m": [
+    {
+      "_extends": "base_tank"
+    },
+    {
+      "_extends": "su_76m_ammo_stowages"
+    },
+    {
+      "killLogName": "ussr_su_76m_1943"
+    },
+    {
+      "animchar__res": "su_76m_char"
+    },
+    {
+      "collres__res": "su_76m_collision"
+    },
+    {
+      "vehicle_net_phys__blk": "gamedata/gen/units/tanks/su_76m.blk:VehiclePhys"
+    },
+    {
+      "particle_phys__blk": "gamedata/suspension/empty.blk"
+    },
+    {
+      "dmg_animchar__res": "su_76m_dmg_char"
+    },
+    {
+      "xray_resource__modelName": "su_76m"
+    },
+    {
+      "cockpit__zoomOutFov": 2.7475
+    },
+    {
+      "cockpit__zoomInFov": 5.3955
+    },
+    {
+      "cockpit__sightName": "sight_model/default_tank_spg"
+    },
+    {
+      "cockpit__sightFov": 20.0
+    },
+    {
+      "drowningHeight": 1.76
+    },
+    {
+      "damage_model__blk": "gamedata/gen/units/tanks/su_76m.blk"
+    },
+    {
+      "item__name": "items/ussr_su_76m_1943"
+    },
+    {
+      "skin__template": "su_76m_skins"
+    },
+    {
+      "turret_gun_flash_fx__flashNodes:shared:array": {
+        "node": "emtr_gun_flame"
+      }
+    },
+    {
+      "turret_gun_flash_fx__flashFx:shared:array": {
+        "fx": "muzzle_ground_80mm_brake"
+      }
+    },
+    {
+      "turret_gun_flash_fx__flashFxScale:shared:array": {
+        "scale": 1.0
+      }
+    },
+    {
+      "turret_control__emitterNodes:shared:array": {
+        "node": "bone_gun_barrel"
+      }
+    },
+    {
+      "turret_control__animVars:shared:array": {
+        "vars:object": {
+          "curYawParamName": "turret_01_yaw",
+          "curPitchParamName": "gun_01_pitch",
+          "aimActiveParamName": "aim_01_active",
+          "paramYawSpeed": "turret_01_yaw_speed",
+          "paramYawSpeedMul": "turret_01_yaw_mul",
+          "paramYawAccel": "turret_01_yaw_accel",
+          "paramMinYawAngle": "turret_01_min_yaw_angle",
+          "paramMaxYawAngle": "turret_01_max_yaw_angle",
+          "paramMinPitchAngle": "turret_01_min_pitch_angle",
+          "paramMaxPitchAngle": "turret_01_max_pitch_angle",
+          "paramPitchSpeed": "gun_01_pitch_speed",
+          "paramPitchSpeedMul": "gun_01_pitch_mul",
+          "paramPitchAccel": "gun_01_pitch_accel",
+          "wishYawParamName": "gun_01_aim:targetYaw",
+          "wishPitchParamName": "gun_01_aim:targetPitch",
+          "gunRecoilParamName": "gun_01_recoil"
+        }
+      }
+    },
+    {
+      "turret_control__turretInfo:shared:array": {
+        "turretInfo:object": {
+          "turretName": "turret_01",
+          "gun": "su_76m_turret_01_76mm_zis3+turret_with_several_types_of_shells+main_turret",
+          "barrelDm": "gun_barrel",
+          "breechDm": "cannon_breech",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      }
+    }
+  ],
+  "su_76m_turret_01_76mm_zis3": {
+    "_extends": "tankgun_76mm_zis3",
+    "gun__shootNodeName": "bone_gun_barrel",
+    "turret__yawSpeed": 7.0,
+    "turret__pitchSpeed": 4.0,
+    "turret__aimNodeName": "bone_turret",
+    "turret__limit": [-15.0,15.0,-5.0,15.0],
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 11
+      },
+      {
+        "ammo": 7
+      },
+      {
+        "ammo": 7
+      },
+      {
+        "ammo": 7
+      },
+      {
+        "ammo": 7
+      },
+      {
+        "ammo": 7
+      },
+      {
+        "ammo": 7
+      },
+      {
+        "ammo": 7
+      }
+    ]
+  },
+  "su_76m_ammo_stowages": {
+    "_tags": "server",
+    "_extends": "vehicle_ammo_stowages",
+    "ammo_stowage__stowageTemplates:shared:list<t>": {
+      "stowage": "su_76m_primary_ammo_stowage"
+    }
+  },
+  "su_76m_primary_ammo_stowage": {
+    "_extends": "ammo_stowage",
+    "ammo_stowage__clusterTemplates:shared:list<t>": {
+      "cluster": "su_76m_primary_shells_ammo_cluster"
+    },
+    "ammo_stowage__turretNames:shared:list<t>": {
+      "gun": "turret_01"
+    }
+  },
+  "su_76m_primary_shells_ammo_cluster": {
+    "_extends": "ammo_cluster",
+    "ammo_cluster__isShell": true,
+    "ammo_cluster__slotNames:shared:list<t>": [
+      {
+        "part": "ammo_body_02"
+      },
+      {
+        "part": "ammo_body_04"
+      },
+      {
+        "part": "ammo_body_03"
+      },
+      {
+        "part": "ammo_body_01"
+      }
+    ],
+    "ammo_cluster__slotsMaxAmmo:list<i>": [
+      {
+        "count": 17
+      },
+      {
+        "count": 7
+      },
+      {
+        "count": 7
+      },
+      {
+        "count": 29
+      }
+    ]
+  },
+  "su_76m_skins": {
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "su_76m_winter",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "su_76m_forest",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_forest_01*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "su_76m_ussr_camo_brown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_brown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "su_76m_ussr_camo_green_ltbrown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "su_76m_ussr_camo_desert_yellow_brown",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_desert_yellow_brown*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "su_76m_ussr_camo_winter_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter_lines*"
+          }
+        }
+      }
+    ]
+  }
+}

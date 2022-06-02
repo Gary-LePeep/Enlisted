@@ -103,6 +103,11 @@ var _germ_pzkpfw_ii_ausf_c =
           }
         }
       ]
+    },
+    {
+      "disableDMParts:list<t>": {
+        "part": "ex_armor_01"
+      }
     }
   ],
   "germ_pzkpfw_II_ausf_C_driver_cockpit": {
@@ -154,6 +159,7 @@ var _germ_pzkpfw_ii_ausf_c =
     ]
   },
   "germ_pzkpfw_II_ausf_C_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pz_2c_commander_char",
     "cockpit__offset": [-0.0,-0.0,-0.0],

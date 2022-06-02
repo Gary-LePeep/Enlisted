@@ -178,6 +178,7 @@ var _germ_pzkpfw_v_ausf_g_panther =
     ]
   },
   "germ_pzkpfw_V_ausf_g_panther_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,

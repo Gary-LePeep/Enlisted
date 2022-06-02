@@ -15,6 +15,7 @@ var _20x110mm_ball_mk1_bullet =
   "effectiveDistance": 700.0,
   "slopeEffectPreset": "ap",
   "relativeVelArmorShift": [200.0,1000.0],
+  "selfDestructionFx": "explosion_air_selfexplosion_small",
   "explosionEffect": "hit_19_27mm_metal_ap",
   "groundCollisionEffect": "hit_19_27mm_dirt_ap",
   "ricochetEffect": "hit_19_27mm_metal_ap",

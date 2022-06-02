@@ -35,7 +35,7 @@ var _towed_at_53k =
       "cockpit__zoomInFov": 5.3955
     },
     {
-      "drowningHeight": 1.44
+      "drowningHeight": 0.5
     },
     {
       "damage_model__blk": "gamedata/gen/units/tanks/towed_at_53k.blk"

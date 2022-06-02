@@ -236,6 +236,7 @@ var _us_m4a2_76w_sherman =
     }
   },
   "us_m4a2_76w_sherman_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/us_m71d.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "ba_11_gunner_char",
     "cockpit__offset": [-0.75,-0.064,0.236],

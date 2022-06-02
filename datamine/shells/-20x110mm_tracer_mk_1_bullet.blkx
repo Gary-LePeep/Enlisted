@@ -19,6 +19,7 @@ var _20x110mm_tracer_mk_1_bullet =
   "slopeEffectPreset": "ap",
   "relativeVelHitShift": [300.0,1000.0],
   "relativeVelArmorShift": [200.0,1000.0],
+  "selfDestructionFx": "explosion_air_selfexplosion_small",
   "explosionEffect": "hit_19_27mm_metal_ap",
   "groundCollisionEffect": "hit_19_27mm_dirt_ap",
   "ricochetEffect": "hit_19_27mm_metal_ap",

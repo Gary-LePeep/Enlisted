@@ -139,6 +139,7 @@ var _ussr_su_85m =
     }
   },
   "ussr_su_85m_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/ussr_pt_1.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "kv_1_gunner_char",
     "cockpit__offset": [-0.43,0.02,0.03],

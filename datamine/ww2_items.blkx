@@ -3351,6 +3351,30 @@ var COMMONITEMSDATA =
     "item__name": "items/fedorov_avtomat_magazine",
     "collres__res": "stg_44_ammo_collision"
   },
+  "as_44_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "as_44"
+    },
+    {
+      "collres__res": "as_44_collision"
+    }
+  ],
+  "as_44_magazine": {
+    "_extends": "item_magazine",
+    "animchar__res": "stg_44_ammo_char",
+    "item__template": "as_44_magazine",
+    "item__proto": "as_44_magazine",
+    "item__locDetails": "",
+    "ammo_holder__templateName": "as_44_magazine",
+    "ammo_holder__ammoCount": 30,
+    "item__weight": 1.0,
+    "item__volume": 0.3,
+    "item__name": "items/as_44_magazine",
+    "collres__res": "stg_44_ammo_collision"
+  },
   "avs_36_gun_item": [
     {
       "_extends": "item_gun"
@@ -3639,6 +3663,47 @@ var COMMONITEMSDATA =
     },
     {
       "ammo_holder__templateName": "m6a1_bazooka_item"
+    },
+    {
+      "ammo_holder__ammoCount": 1
+    }
+  ],
+  "m6a3_bazooka_item": [
+    {
+      "_extends": "item_grenade"
+    },
+    {
+      "_extends": "m6a3_bazooka_shell"
+    },
+    {
+      "item__template": "m6a3_bazooka_item"
+    },
+    {
+      "item__proto": "content/e_ww2_common/gamedata/weapons/shells/m6a3_bazooka.blk"
+    },
+    {
+      "item__locDetails": ""
+    },
+    {
+      "item__shell": "content/e_ww2_common/gamedata/weapons/shells/m6a3_bazooka.blk"
+    },
+    {
+      "item__weight": 1.5
+    },
+    {
+      "item__volume": 0.5
+    },
+    {
+      "item__name": "items/m6a3_bazooka"
+    },
+    {
+      "item__grenadeType": "shell"
+    },
+    {
+      "ammo_holder__id": -1
+    },
+    {
+      "ammo_holder__templateName": "m6a3_bazooka_item"
     },
     {
       "ammo_holder__ammoCount": 1
@@ -4547,6 +4612,17 @@ var COMMONITEMSDATA =
     },
     {
       "item__userstats__pickupName": "pickup_gewehr_41_gun"
+    },
+    {
+      "collres__res": "gewehr_41_collision"
+    }
+  ],
+  "sniper_gewehr_41_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "sniper_gewehr_41"
     },
     {
       "collres__res": "gewehr_41_collision"
@@ -5962,6 +6038,17 @@ var COMMONITEMSDATA =
     "item__name": "items/erma_emp_magazine",
     "collres__res": "m1928a1_thompson_ammo_collision"
   },
+  "erma_emp_36_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "erma_emp_36"
+    },
+    {
+      "collres__res": "erma_emp_36_collision"
+    }
+  ],
   "m1911_colt_gun_item": [
     {
       "_extends": "item_gun"
@@ -6363,6 +6450,9 @@ var COMMONITEMSDATA =
     },
     {
       "item__targetUseVisEntityTemplateName": "germ_syringe_in_use"
+    },
+    {
+      "item__ignoreAimInterrupt:tag": []
     }
   ],
   "medkit_item": {
@@ -6444,15 +6534,6 @@ var COMMONITEMSDATA =
     },
     {
       "offenderDesc:object": []
-    },
-    {
-      "collidableToVehicle:tag": []
-    },
-    {
-      "collidableToPhysObj:tag": []
-    },
-    {
-      "collidableToHuman:tag": []
     },
     {
       "animchar__noUpdateOnDedicated:tag": []
@@ -6656,8 +6737,8 @@ var COMMONITEMSDATA =
   },
   "m24_smoke_grenade_item": {
     "_extends": "item_grenade",
-    "animchar__res": "grenade_m24_char",
-    "collres__res": "grenade_m24_collision",
+    "animchar__res": "grenade_nb_39_char",
+    "collres__res": "grenade_nb_39_collision",
     "item__template": "m24_smoke_grenade_item",
     "item__proto": "content/e_ww2_common/gamedata/weapons/grenades/m24_smoke.blk",
     "item__locDetails": "",
@@ -6674,18 +6755,6 @@ var COMMONITEMSDATA =
     "item__proto": "content/e_ww2_common/gamedata/weapons/grenades/m24_smoke_short_time.blk",
     "item__locDetails": "",
     "item__shell": "content/e_ww2_common/gamedata/weapons/grenades/m24_smoke_short_time.blk"
-  },
-  "srcm_mod_35_grenade_item": {
-    "_extends": "item_grenade",
-    "animchar__res": "srcm_mod_35_char",
-    "collres__res": "srcm_mod_35_collision",
-    "item__template": "srcm_mod_35_grenade_item",
-    "item__proto": "content/e_ww2_common/gamedata/weapons/grenades/srcm_mod_35.blk",
-    "item__locDetails": "",
-    "item__shell": "content/e_ww2_common/gamedata/weapons/grenades/srcm_mod_35.blk",
-    "item__name": "items/srcm_mod_35",
-    "item__weight": 0.595,
-    "item__volume": 0.5
   },
   "srcm_mod_35fl_grenade_item": {
     "_extends": "item_grenade",
@@ -6741,10 +6810,22 @@ var COMMONITEMSDATA =
     "item__name": "items/usa_mk2",
     "item__userstats__pickupName": "pickup_mk2_grenade"
   },
+  "uk_mills_grenade_item": {
+    "_extends": "item_grenade",
+    "animchar__res": "uk_mills_grenade_char",
+    "collres__res": "uk_mills_grenade_collision",
+    "item__template": "mk2_grenade_item",
+    "item__proto": "content/e_ww2_common/gamedata/weapons/grenades/uk_mills_grenade.blk",
+    "item__locDetails": "",
+    "item__shell": "content/e_ww2_common/gamedata/weapons/grenades/uk_mills_grenade.blk",
+    "item__weight": 0.595,
+    "item__volume": 0.5,
+    "item__name": "items/uk_mills_grenade"
+  },
   "rdg1_smoke_grenade_item": {
     "_extends": "item_grenade",
-    "animchar__res": "grenade_f1_char",
-    "collres__res": "grenade_f1_collision",
+    "animchar__res": "grenade_rdg_char",
+    "collres__res": "grenade_rdg_collision",
     "item__template": "rdg1_smoke_grenade_item",
     "item__proto": "content/e_ww2_common/gamedata/weapons/grenades/rdg1_smoke.blk",
     "item__locDetails": "",
@@ -7104,15 +7185,171 @@ var COMMONITEMSDATA =
       "_tags": "gameClient"
     }
   },
-  "flask_item": {
-    "_extends": "item",
-    "animchar__res": "flask_char",
-    "collres__res": "medkit_collision",
-    "item__template": "flask_item",
-    "item__proto": "content/e_ww2_common/gamedata/items/flask.blk",
-    "item__locDetails": "Stamina drain -40%",
-    "item__name": "items/flask"
+  "flask_base_item": [
+    {
+      "_extends": "item"
+    },
+    {
+      "_extends": "heal_anim_item"
+    },
+    {
+      "animchar__res": "flask_usa_char"
+    },
+    {
+      "collres__res": "flask_usa_collision"
+    },
+    {
+      "item__name": "items/flask"
+    },
+    {
+      "item__lootSoundType": "flask"
+    },
+    {
+      "item__weight": 0.18
+    },
+    {
+      "item__useTime": 3.0
+    },
+    {
+      "item__useCount": 1
+    },
+    {
+      "item__staminaRestoreAmount": 0.0
+    },
+    {
+      "item__limitLookAnglesInUse": [-15.0,87.0]
+    },
+    {
+      "flask__affectTemplate": "flask_affect"
+    },
+    {
+      "item__selfUseVisEntityTemplateName": "flask_base_in_use"
+    },
+    {
+      "item__healAnimEnumName": "flask_usa"
+    },
+    {
+      "item__ignoreAimInterrupt:tag": []
+    },
+    {
+      "item__stopUseWhileBurning:tag": []
+    },
+    {
+      "flask:tag": []
+    }
+  ],
+  "flask_base_in_use": {
+    "_extends": "item_in_use",
+    "slot_attach__slotName": "weapon"
   },
+  "flask_usa_vis": {
+    "animchar__res": "flask_usa_char",
+    "collres__res": "flask_usa_collision"
+  },
+  "flask_usa_item": {
+    "_extends": "flask_base_item",
+    "item__selfUseVisEntityTemplateName": "flask_usa_in_use"
+  },
+  "flask_usa_in_use": [
+    {
+      "_extends": "flask_base_in_use"
+    },
+    {
+      "_extends": "flask_usa_vis"
+    }
+  ],
+  "flask_ussr_vis": {
+    "animchar__res": "flask_ussr_char",
+    "collres__res": "flask_ussr_collision"
+  },
+  "flask_ussr_item": [
+    {
+      "_extends": "flask_base_item"
+    },
+    {
+      "_extends": "flask_ussr_vis"
+    },
+    {
+      "item__selfUseVisEntityTemplateName": "flask_ussr_in_use"
+    }
+  ],
+  "flask_ussr_in_use": [
+    {
+      "_extends": "flask_base_in_use"
+    },
+    {
+      "_extends": "flask_ussr_vis"
+    }
+  ],
+  "flask_uk_vis": {
+    "animchar__res": "flask_uk_char",
+    "collres__res": "flask_uk_collision"
+  },
+  "flask_uk_item": [
+    {
+      "_extends": "flask_base_item"
+    },
+    {
+      "_extends": "flask_uk_vis"
+    },
+    {
+      "item__selfUseVisEntityTemplateName": "flask_uk_in_use"
+    }
+  ],
+  "flask_uk_in_use": [
+    {
+      "_extends": "flask_base_in_use"
+    },
+    {
+      "_extends": "flask_uk_vis"
+    }
+  ],
+  "flask_ger_vis": {
+    "animchar__res": "flask_german_char",
+    "collres__res": "flask_german_collision"
+  },
+  "flask_ger_item": [
+    {
+      "_extends": "flask_base_item"
+    },
+    {
+      "_extends": "flask_ger_vis"
+    },
+    {
+      "item__selfUseVisEntityTemplateName": "flask_ger_in_use"
+    }
+  ],
+  "flask_ger_in_use": [
+    {
+      "_extends": "flask_base_in_use"
+    },
+    {
+      "_extends": "flask_ger_vis"
+    }
+  ],
+  "flask_it_vis": {
+    "animchar__res": "flask_ita_char",
+    "collres__res": "flask_ita_collision"
+  },
+  "flask_it_item": [
+    {
+      "_extends": "flask_base_item"
+    },
+    {
+      "_extends": "flask_it_vis"
+    },
+    {
+      "item__selfUseVisEntityTemplateName": "flask_it_in_use"
+    }
+  ],
+  "flask_it_in_use": [
+    {
+      "_extends": "flask_base_in_use"
+    },
+    {
+      "_extends": "flask_it_vis"
+    }
+  ],
   "armor_sp_42_vis": {
     "_extends": "base_vis_item",
     "animchar__res": "armor_sp_42_char"
@@ -7377,6 +7614,22 @@ var COMMONITEMSDATA =
     "gunAttachable__slotTag": "unertl_8x_sight",
     "gunAttachable:tag": []
   },
+  "scope_zf_41_item": {
+    "_extends": "item_scope",
+    "animchar__res": "scope_zf_41_char",
+    "collres__res": "scope_zf_41_collision",
+    "item__template": "scope_zf_41_item",
+    "item__proto": "content/e_ww2_common/gamedata/items/scope_zf_41.blk",
+    "item__locDetails": "",
+    "item__weight": 0.6,
+    "item__volume": 0.5,
+    "item__name": "items/scope_zf_41",
+    "gunAttachable__slotName": "scope",
+    "gunAttachable__gunSlotName": "scope",
+    "gunAttachable__slotTag": "scope_zf_41",
+    "item__iconYaw": 80.0,
+    "gunAttachable:tag": []
+  },
   "scope_4x_item": {
     "_extends": "item_scope",
     "animchar__res": "scope_pso_char",
@@ -7451,21 +7704,6 @@ var COMMONITEMSDATA =
     "gunAttachable__slotName": "scope",
     "gunAttachable__gunSlotName": "scope",
     "gunAttachable__slotTag": "scope_zf_4_fg_42",
-    "gunAttachable:tag": []
-  },
-  "scope_zf4_stg_44_item": {
-    "_extends": "item_scope",
-    "animchar__res": "scope_zf_4_fg_42_char",
-    "collres__res": "scope_zf_4_fg_42_collision",
-    "item__template": "scope_zf4_stg_44_item",
-    "item__proto": "content/e_ww2_common/gamedata/items/scope_zf4.blk",
-    "item__locDetails": "",
-    "item__weight": 0.7,
-    "item__volume": 0.5,
-    "item__name": "items/scope_zf4",
-    "gunAttachable__slotName": "scope",
-    "gunAttachable__gunSlotName": "scope",
-    "gunAttachable__slotTag": "scope_zf4_stg_44",
     "gunAttachable:tag": []
   },
   "scope_pu_m1891_1930_item": {
@@ -8445,6 +8683,76 @@ var COMMONITEMSDATA =
     },
     {
       "ammo_holder__templateName": "diakov_rifle_grenade_item"
+    },
+    {
+      "ammo_holder__ammoCount": 1
+    }
+  ],
+  "mosin_m91_30_vpgs_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "mosin_m91_30_vpgs"
+    },
+    {
+      "collres__res": "mosin_1928_grenade_launcher_collision"
+    }
+  ],
+  "vpgs_grenade_launcher_item": {
+    "_extends": "item_scope",
+    "animchar__res": "mosin_m91_30_vpgs_ammo_char",
+    "collres__res": "mosin_m91_30_vpgs_ammo_collision",
+    "item__template": "vpgs_grenade_launcher_item",
+    "item__proto": "content/e_ww2_common/gamedata/weapons/vpgs_grenade_launcher.blk",
+    "item__locDetails": "",
+    "item__weight": 0.7,
+    "item__volume": 0.5,
+    "item__name": "items/vpgs_41",
+    "gunAttachable__slotName": "grenade_launcher",
+    "gunAttachable__gunSlotName": "grenade_launcher",
+    "gunAttachable__slotTag": "vpgs_grenade_launcher",
+    "gunAttachable:tag": []
+  },
+  "vpgs_41_grenade_item": [
+    {
+      "_extends": "item_grenade"
+    },
+    {
+      "_extends": "vpgs_41_grenade_shell"
+    },
+    {
+      "item__template": "vpgs_41_grenade_item"
+    },
+    {
+      "item__proto": "content/e_ww2_common/gamedata/weapons/grenades/vpgs_41_rifle_grenade.blk"
+    },
+    {
+      "item__locDetails": ""
+    },
+    {
+      "item__shell": "content/e_ww2_common/gamedata/weapons/grenades/vpgs_41_rifle_grenade.blk"
+    },
+    {
+      "item__ammoPropsId": -1
+    },
+    {
+      "item__weight": 3.3
+    },
+    {
+      "item__volume": 0.6
+    },
+    {
+      "item__name": "items/vpgs_grenade_launcher"
+    },
+    {
+      "item__grenadeType": "shell"
+    },
+    {
+      "ammo_holder__id": -1
+    },
+    {
+      "ammo_holder__templateName": "vpgs_41_grenade_item"
     },
     {
       "ammo_holder__ammoCount": 1
@@ -10367,6 +10675,9 @@ var COMMONITEMSDATA =
       "_extends": "rifle_muzzle_preset"
     },
     {
+      "_extends": "riffle_gun_aim_sound"
+    },
+    {
       "gun_shell_ejection__timeMult": 0.35
     },
     {
@@ -10419,22 +10730,31 @@ var COMMONITEMSDATA =
       }
     },
     {
-      "sound_paths:shared:object": {
+      "gun_sound__shotPath:shared:object": {
         "_tags": "sound",
-        "reload:object": {
-          "hero": "player/weapon/rifle/mauser98k",
-          "enemy": "enemy/weapon/rifle/mauser98k"
+        "path": "/weapon/rifle/mauser98k"
+      }
+    },
+    {
+      "sound_irqs:shared:object": {
+        "_tags": "sound",
+        "reload1:object": {
+          "path": "/weapon/rifle/mauser98k/reload1/change_ammo"
+        },
+        "reload2:object": {
+          "path": "/weapon/rifle/mauser98k/reload2/change_ammo"
+        },
+        "reload3:object": {
+          "path": "/weapon/rifle/mauser98k/reload3/change_ammo"
+        },
+        "reload4:object": {
+          "path": "/weapon/rifle/mauser98k/reload4/change_ammo"
+        },
+        "reload5:object": {
+          "path": "/weapon/rifle/mauser98k/reload5/change_ammo"
         },
         "boltAction:object": {
-          "hero": "player/weapon/rifle/mosin",
-          "enemy": "enemy/weapon/rifle/mosin"
-        },
-        "aim:object": {
-          "hero": "player/walker/ww2_soldier/foley_mov/common/riffle"
-        },
-        "shot:object": {
-          "hero": "player/weapon/rifle/mauser98k",
-          "enemy": "enemy/weapon/rifle/mauser98k"
+          "path": "/weapon/rifle/mosin/bolt_action"
         }
       }
     }
@@ -10476,6 +10796,30 @@ var COMMONITEMSDATA =
     },
     {
       "_extends": "stl_kar98k_with_schiessbecher_grenade_launcher"
+    },
+    {
+      "gun__recoilAmount": 0.15
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.1
+    }
+  ],
+  "stl_kar98k_with_gg_p_40_grenade_launcher": {
+    "_extends": "kar98k_with_gg_p_40_grenade_launcher",
+    "item__weapTemplate": "stl_kar98k_with_gg_p_40_grenade_launcher_gun",
+    "item__template": "stl_kar98k_with_gg_p_40_grenade_launcher_gun_item",
+    "gun__shotFreq": 0.93,
+    "gun__kineticDamageMult": 1.5
+  },
+  "stl_kar98k_with_gg_p_40_grenade_launcher_gun": [
+    {
+      "_extends": "kar98k_with_gg_p_40_grenade_launcher_gun"
+    },
+    {
+      "_extends": "stl_kar98k_with_gg_p_40_grenade_launcher"
     },
     {
       "gun__recoilAmount": 0.15
@@ -10633,6 +10977,9 @@ var COMMONITEMSDATA =
       "_extends": "rifle_muzzle_preset"
     },
     {
+      "_extends": "riffle_gun_aim_sound"
+    },
+    {
       "gun_shell_ejection__timeMult": 0.35
     },
     {
@@ -10679,22 +11026,25 @@ var COMMONITEMSDATA =
       }
     },
     {
-      "sound_paths:shared:object": {
+      "gun_sound__shotPath:shared:object": {
         "_tags": "sound",
-        "reload:object": {
-          "hero": "player/weapon/rifle/carcano_m41",
-          "enemy": "enemy/weapon/rifle/carcano_m41"
+        "path": "/weapon/rifle/mannlicher_m93_roman"
+      }
+    },
+    {
+      "sound_irqs:shared:object": {
+        "_tags": "sound",
+        "reload1:object": {
+          "path": "/weapon/rifle/carcano_m41/reload1/change_ammo"
+        },
+        "reload2:object": {
+          "path": "/weapon/rifle/carcano_m41/reload2/change_ammo"
+        },
+        "reload3:object": {
+          "path": "/weapon/rifle/carcano_m41/reload3/change_ammo"
         },
         "boltAction:object": {
-          "hero": "player/weapon/rifle/carcano_m41",
-          "enemy": "enemy/weapon/rifle/carcano_m41"
-        },
-        "aim:object": {
-          "hero": "player/walker/ww2_soldier/foley_mov/common/riffle"
-        },
-        "shot:object": {
-          "hero": "player/weapon/rifle/mannlicher_m93_roman",
-          "enemy": "enemy/weapon/rifle/mannlicher_m93_roman"
+          "path": "/weapon/rifle/carcano_m41/bolt_action"
         }
       }
     }
@@ -10790,7 +11140,7 @@ var COMMONITEMSDATA =
   ],
   "stl_mosin_m91": {
     "_extends": "mosin_m91",
-    "animchar__res": "mosin_m91_char",
+    "animchar__res": "stl_mosin_m91_char",
     "item__weapTemplate": "stl_mosin_m91_gun",
     "item__template": "stl_mosin_m91_gun_item",
     "gun__shotFreq": 0.85,
@@ -10827,6 +11177,30 @@ var COMMONITEMSDATA =
     },
     {
       "_extends": "stl_mosin_m91_30"
+    },
+    {
+      "gun__recoilAmount": 0.13
+    },
+    {
+      "gun__recoilDirAmount": 0.8
+    },
+    {
+      "gun__recoilDir": 0.1
+    }
+  ],
+  "stl_mosin_m91_30_vpgs": {
+    "_extends": "mosin_m91_30_vpgs",
+    "item__weapTemplate": "stl_mosin_m91_30_vpgs_gun",
+    "item__template": "stl_mosin_m91_30_vpgs_gun_item",
+    "gun__shotFreq": 0.82,
+    "gun__kineticDamageMult": 1.58
+  },
+  "stl_mosin_m91_30_vpgs_gun": [
+    {
+      "_extends": "mosin_m91_30_vpgs_gun"
+    },
+    {
+      "_extends": "stl_mosin_m91_30_vpgs"
     },
     {
       "gun__recoilAmount": 0.13
@@ -11016,7 +11390,7 @@ var COMMONITEMSDATA =
       "gun__recoilAmount": 0.14
     },
     {
-      "gun__recoilDirAmount": 0.63
+      "gun__recoilDirAmount": 0.73
     },
     {
       "gun__recoilDir": 0.2
@@ -11025,7 +11399,7 @@ var COMMONITEMSDATA =
       "gun__visualRecoilMult": 1.3
     },
     {
-      "gun__recoilControlMult": 0.6
+      "gun__recoilControlMult": 0.25
     },
     {
       "gun__recoilOffsMult": 0.3
@@ -11181,6 +11555,9 @@ var COMMONITEMSDATA =
       "_extends": "gun_switch_firing_mode_sound"
     },
     {
+      "_extends": "mgun_gun_aim_sound"
+    },
+    {
       "gun__standOffset": [0.2,0.05,0.15]
     },
     {
@@ -11211,19 +11588,22 @@ var COMMONITEMSDATA =
       }
     },
     {
-      "sound_paths:shared:object": {
+      "gun_sound__shotPath:shared:object": {
         "_tags": "sound",
-        "reload:object": {
-          "hero": "player/weapon/mgun/mp40",
-          "enemy": "enemy/weapon/mgun/mp40"
+        "path": "/weapon/mgun/mp40"
+      }
+    },
+    {
+      "sound_irqs:shared:object": {
+        "_tags": "sound",
+        "reload1:object": {
+          "path": "/weapon/mgun/mp40/reload1/change_ammo"
         },
-        "boltAction:object": [],
-        "aim:object": {
-          "hero": "player/walker/ww2_soldier/foley_mov/common/mgun"
+        "reload2:object": {
+          "path": "/weapon/mgun/mp40/reload2/change_ammo"
         },
-        "shot:object": {
-          "hero": "player/weapon/mgun/mp40",
-          "enemy": "enemy/weapon/mgun/mp40"
+        "reload3:object": {
+          "path": "/weapon/mgun/mp40/reload3/change_ammo"
         }
       }
     }
@@ -11437,6 +11817,44 @@ var COMMONITEMSDATA =
       "_extends": "stl_mp_717r"
     }
   ],
+  "stl_suomi_kp_31": {
+    "_extends": "suomi_kp_31",
+    "item__weapTemplate": "stl_suomi_kp_31_gun",
+    "item__template": "stl_suomi_kp_31_gun_item",
+    "gun__kineticDamageMult": 0.965
+  },
+  "stl_suomi_kp_31_gun": [
+    {
+      "_extends": "suomi_kp_31_gun"
+    },
+    {
+      "_extends": "stl_suomi_kp_31"
+    },
+    {
+      "gun__recoilAmount": 0.04
+    },
+    {
+      "gun__recoilDirAmount": 0.7
+    },
+    {
+      "gun__recoilDir": 0.42
+    },
+    {
+      "gun__crawlRecoilMult": 0.8
+    },
+    {
+      "gun__visualRecoilMult": 1.5
+    },
+    {
+      "gun__recoilControlMult": 0.3
+    },
+    {
+      "gun__recoilOffsMult": 0.3
+    },
+    {
+      "gun__rotationSpringMult": [0.75,0.9,0.9]
+    }
+  ],
   "stl_silenced_erma_emp": {
     "_extends": "silenced_erma_emp",
     "item__weapTemplate": "stl_silenced_erma_emp_gun",
@@ -11648,6 +12066,9 @@ var COMMONITEMSDATA =
       "_extends": "gun_switch_firing_mode_sound"
     },
     {
+      "_extends": "mgun_gun_aim_sound"
+    },
+    {
       "gun__standOffset": [0.2,0.05,0.15]
     },
     {
@@ -11678,19 +12099,22 @@ var COMMONITEMSDATA =
       }
     },
     {
-      "sound_paths:shared:object": {
+      "gun_sound__shotPath:shared:object": {
         "_tags": "sound",
-        "reload:object": {
-          "hero": "player/weapon/mgun/pps_42",
-          "enemy": "enemy/weapon/mgun/pps_42"
+        "path": "/weapon/mgun/pps_42"
+      }
+    },
+    {
+      "sound_irqs:shared:object": {
+        "_tags": "sound",
+        "reload1:object": {
+          "path": "/weapon/mgun/pps_42/reload1/change_ammo"
         },
-        "boltAction:object": [],
-        "aim:object": {
-          "hero": "player/walker/ww2_soldier/foley_mov/common/mgun"
+        "reload2:object": {
+          "path": "/weapon/mgun/pps_42/reload2/change_ammo"
         },
-        "shot:object": {
-          "hero": "player/weapon/mgun/pps_42",
-          "enemy": "enemy/weapon/mgun/pps_42"
+        "reload3:object": {
+          "path": "/weapon/mgun/pps_42/reload3/change_ammo"
         }
       }
     }
@@ -11932,6 +12356,9 @@ var COMMONITEMSDATA =
       "_extends": "gun_switch_firing_mode_sound"
     },
     {
+      "_extends": "mgun_gun_aim_sound"
+    },
+    {
       "gun__standOffset": [0.2,0.05,0.15]
     },
     {
@@ -11977,21 +12404,39 @@ var COMMONITEMSDATA =
       }
     },
     {
-      "sound_paths:shared:object": {
+      "gun_sound__shotPath:shared:object": {
         "_tags": "sound",
-        "reload:object": {
-          "hero": "player/weapon/mgun/ppsh",
-          "enemy": "enemy/weapon/mgun/ppsh"
+        "path": "/weapon/mgun/ppsh"
+      }
+    },
+    {
+      "sound_irqs:shared:object": {
+        "_tags": "sound",
+        "reload1:object": {
+          "path": "/weapon/mgun/ppsh/reload1/change_ammo"
         },
-        "boltAction:object": [],
-        "aim:object": {
-          "hero": "player/walker/ww2_soldier/foley_mov/common/mgun"
+        "reload2:object": {
+          "path": "/weapon/mgun/ppsh/reload2/change_ammo"
         },
-        "shot:object": {
-          "hero": "player/weapon/mgun/ppsh",
-          "enemy": "enemy/weapon/mgun/ppsh"
+        "reload3:object": {
+          "path": "/weapon/mgun/ppsh/reload3/change_ammo"
         }
       }
+    }
+  ],
+  "stl_ppsh_41_phosphated": {
+    "_extends": "stl_ppsh_41",
+    "animchar__res": "ppsh_41_phosphatated_char",
+    "item__weapTemplate": "stl_ppsh_41_phosphated_gun",
+    "item__template": "stl_ppsh_41_phosphated_gun_item",
+    "item__name": "items/ppsh_41_phosphated"
+  },
+  "stl_ppsh_41_phosphated_gun": [
+    {
+      "_extends": "stl_ppsh_41_gun"
+    },
+    {
+      "_extends": "stl_ppsh_41_phosphated"
     }
   ],
   "stl_ppd_3438_box": {
@@ -12239,7 +12684,7 @@ var COMMONITEMSDATA =
       "gun__recoilDir": 0.8
     },
     {
-      "gun__drainStaminaOnAim": 9.0
+      "gun__drainStaminaOnAim": 5.0
     },
     {
       "gun__staminaToStartAim": 0.0
@@ -12273,7 +12718,7 @@ var COMMONITEMSDATA =
       "gun__recoilDir": 0.75
     },
     {
-      "gun__drainStaminaOnAim": 9.0
+      "gun__drainStaminaOnAim": 5.0
     },
     {
       "gun__staminaToStartAim": 0.0
@@ -12306,7 +12751,7 @@ var COMMONITEMSDATA =
       "gun__recoilDir": 1.7
     },
     {
-      "gun__drainStaminaOnAim": 8.5
+      "gun__drainStaminaOnAim": 3.9
     },
     {
       "gun__staminaToStartAim": 0.0
@@ -12345,7 +12790,7 @@ var COMMONITEMSDATA =
       "gun__recoilDir": 1.8
     },
     {
-      "gun__drainStaminaOnAim": 8.0
+      "gun__drainStaminaOnAim": 3.7
     },
     {
       "gun__staminaToStartAim": 0.0
@@ -12387,7 +12832,7 @@ var COMMONITEMSDATA =
       "gun__recoilDir": 1.8
     },
     {
-      "gun__drainStaminaOnAim": 7.8
+      "gun__drainStaminaOnAim": 3.8
     },
     {
       "gun__staminaToStartAim": 0.0
@@ -12445,7 +12890,7 @@ var COMMONITEMSDATA =
       "gun__crawlRecoilMult": 0.8
     },
     {
-      "gun__drainStaminaOnAim": 8.0
+      "gun__drainStaminaOnAim": 3.9
     },
     {
       "gun__staminaToStartAim": 0.0
@@ -12475,7 +12920,7 @@ var COMMONITEMSDATA =
       "gun__recoilDir": 0.4
     },
     {
-      "gun__drainStaminaOnAim": 7.4
+      "gun__drainStaminaOnAim": 3.6
     },
     {
       "gun__staminaToStartAim": 0.0
@@ -12514,7 +12959,7 @@ var COMMONITEMSDATA =
       "gun__recoilDir": 0.3
     },
     {
-      "gun__drainStaminaOnAim": 8.0
+      "gun__drainStaminaOnAim": 3.9
     },
     {
       "gun__staminaToStartAim": 0.0
@@ -12580,12 +13025,9 @@ var COMMONITEMSDATA =
     "gun__shells:array": {
       "shells": "content/e_stalingrad/gamedata/weapons/shells/ampula_shell.blk"
     },
-    "sound_paths:shared:object": {
+    "gun_sound__shotPath:shared:object": {
       "_tags": "sound",
-      "shot:object": {
-        "hero": "player/weapon/pistol/sturmpistole",
-        "enemy": "enemy/weapon/pistol/sturmpistole"
-      }
+      "path": "/weapon/pistol/sturmpistole"
     },
     "_group": {
       "_tags": "sound",
@@ -12685,12 +13127,6 @@ var COMMONITEMSDATA =
       "molotov_fire__minDistanceBetween": 1.0
     },
     {
-      "gridcoll__enabled": true
-    },
-    {
-      "gridcoll__type": "shells"
-    },
-    {
       "ai_target_node__node": "weaponRoot"
     },
     {
@@ -12703,10 +13139,8 @@ var COMMONITEMSDATA =
       "shell__explodeOnContact:tag": []
     },
     {
-      "gridcoll": []
-    },
-    {
-      "ai_target_node": {
+      "ai_target_node__nodeId:i": {
+        "value": -1,
         "_tags": "server"
       }
     },
@@ -12904,29 +13338,49 @@ var COMMONITEMSDATA =
       }
     }
   },
-  "sandbags_wall_ampulomet": {
-    "_extends": "base_ri_building",
-    "ri_extra__name": "sandbags_wall_medium_rounded_a_mission_object",
-    "additiveBuildNeedRepair": false,
-    "fortification_repair__costPercent": 0.5,
-    "fortification_repair__text": "hud/repair_sandbags_wall_ampulomet",
-    "team": -1,
-    "building_destroy__maxTimeToDestroy": 15.0,
-    "building_menu__text": "building_tool/sandbags_wall_ampulomet",
-    "building_menu__image": "building_ampulomet",
-    "additiveBuildings:array": {
-      "item:object": {
-        "template": "builded_stationary_ampulomet_with_autodetach",
-        "tm": [
-          [0.0,0.0,1.0],
-          [0.0,1.0,0.0],
-          [-1.0,0.0,0.0],
-          [0.15,1.07,-0.2]
-        ],
-        "additiveUp": [0.0,1.0,0.0]
+  "sandbags_wall_ampulomet": [
+    {
+      "_extends": "base_ri_building"
+    },
+    {
+      "_extends": "additive_building_can_repair"
+    },
+    {
+      "ri_extra__name": "sandbags_wall_medium_rounded_a_mission_object"
+    },
+    {
+      "fortification_repair__costPercent": 0.5
+    },
+    {
+      "fortification_repair__text": "hud/repair_sandbags_wall_ampulomet"
+    },
+    {
+      "team": -1
+    },
+    {
+      "building_destroy__maxTimeToDestroy": 15.0
+    },
+    {
+      "building_menu__text": "building_tool/sandbags_wall_ampulomet"
+    },
+    {
+      "building_menu__image": "building_ampulomet"
+    },
+    {
+      "additiveBuildings:array": {
+        "item:object": {
+          "template": "builded_stationary_ampulomet_with_autodetach",
+          "tm": [
+            [0.0,0.0,1.0],
+            [0.0,1.0,0.0],
+            [-1.0,0.0,0.0],
+            [0.15,1.07,-0.2]
+          ],
+          "additiveUp": [0.0,1.0,0.0]
+        }
       }
     }
-  },
+  ],
   "builded_stationary_ampulomet_with_autodetach": [
     {
       "_extends": "stationary_ampulomet_with_autodetach"
@@ -13032,29 +13486,49 @@ var COMMONITEMSDATA =
       }
     }
   },
-  "sandbags_wall_maxim": {
-    "_extends": "base_ri_building",
-    "ri_extra__name": "sandbags_wall_medium_rounded_a_mission_object",
-    "additiveBuildNeedRepair": false,
-    "fortification_repair__costPercent": 0.5,
-    "fortification_repair__text": "hud/repair_sandbags_wall_mg",
-    "team": -1,
-    "building_destroy__maxTimeToDestroy": 20.0,
-    "building_menu__text": "building_tool/sandbags_with_mg42",
-    "building_menu__image": "building_mg_nest",
-    "additiveBuildings:array": {
-      "item:object": {
-        "template": "builded_stationary_maxim_with_autodetach",
-        "tm": [
-          [0.0,0.0,1.0],
-          [0.0,1.0,0.0],
-          [-1.0,0.0,0.0],
-          [0.25,1.07,-0.24]
-        ],
-        "additiveUp": [0.0,1.0,0.0]
+  "sandbags_wall_maxim": [
+    {
+      "_extends": "base_ri_building"
+    },
+    {
+      "_extends": "additive_building_can_repair"
+    },
+    {
+      "ri_extra__name": "sandbags_wall_medium_rounded_a_mission_object"
+    },
+    {
+      "fortification_repair__costPercent": 0.5
+    },
+    {
+      "fortification_repair__text": "hud/repair_sandbags_wall_mg"
+    },
+    {
+      "team": -1
+    },
+    {
+      "building_destroy__maxTimeToDestroy": 20.0
+    },
+    {
+      "building_menu__text": "building_tool/sandbags_with_mg42"
+    },
+    {
+      "building_menu__image": "building_mg_nest"
+    },
+    {
+      "additiveBuildings:array": {
+        "item:object": {
+          "template": "builded_stationary_maxim_with_autodetach",
+          "tm": [
+            [0.0,0.0,1.0],
+            [0.0,1.0,0.0],
+            [-1.0,0.0,0.0],
+            [0.25,1.07,-0.24]
+          ],
+          "additiveUp": [0.0,1.0,0.0]
+        }
       }
     }
-  },
+  ],
   "builded_stationary_maxim_with_autodetach": [
     {
       "_extends": "stationary_maxim_with_autodetach"
@@ -13178,7 +13652,7 @@ var COMMONITEMSDATA =
         "template": "sandbags_wall_2_preview"
       },
       {
-        "template": "sandbags_wall_mg_preview"
+        "template": "sandbags_wall_mg_34_preview"
       },
       {
         "template": "sandbags_wall_ampulomet_preview"

@@ -189,6 +189,7 @@ var _us_m24_chaffee =
     }
   },
   "us_m24_chaffee_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/us_m83f.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "ba_11_gunner_char",
     "cockpit__offset": [-0.75,-0.04,0.227],

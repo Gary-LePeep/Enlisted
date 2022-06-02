@@ -121,6 +121,7 @@ var _us_m3a1_stuart =
     }
   },
   "us_m3a1_stuart_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/us_m70f.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "ba_11_gunner_char",
     "cockpit__offset": [-0.35,-0.01,0.22],

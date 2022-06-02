@@ -2902,7 +2902,7 @@ var OVERRIDEGUNSDATA =
         "template": "sandbags_wall_2_preview"
       },
       {
-        "template": "sandbags_wall_mg_preview"
+        "template": "sandbags_wall_maxim_no_shield_preview"
       },
       {
         "template": "cannon_germ_20mm_flak38_flakvierling_preview"
@@ -2959,7 +2959,7 @@ var OVERRIDEGUNSDATA =
         "template": "sandbags_wall_2_preview"
       },
       {
-        "template": "sandbags_wall_mg_preview"
+        "template": "sandbags_wall_browning_m1919a4_preview"
       },
       {
         "template": "cannon_germ_20mm_flak38_flakvierling_green_preview"
@@ -3007,6 +3007,35 @@ var OVERRIDEGUNSDATA =
       }
     ]
   },
+  "uk_building_tool_gun": {
+    "_extends": "usa_building_tool_gun",
+    "previewTemplate:list<t>": [
+      {
+        "template": "sandbags_wall_2_preview"
+      },
+      {
+        "template": "sandbags_wall_browning_m1919a4_preview"
+      },
+      {
+        "template": "cannon_germ_20mm_flak38_flakvierling_green_preview"
+      },
+      {
+        "template": "cannon_uk_towed_at_6pdr_preview"
+      },
+      {
+        "template": "czech_hedgehog_a_preview"
+      },
+      {
+        "template": "usa_rallypoint_preview"
+      },
+      {
+        "template": "barbedwire_engineer_a_preview"
+      },
+      {
+        "template": "ammunition_box_a_preview"
+      }
+    ]
+  },
   "ger_normandy_building_tool_gun": {
     "_extends": "ger_building_tool_gun",
     "previewTemplate:list<t>": [
@@ -3014,7 +3043,7 @@ var OVERRIDEGUNSDATA =
         "template": "sandbags_wall_2_preview"
       },
       {
-        "template": "sandbags_wall_mg_preview"
+        "template": "sandbags_wall_mg_34_preview"
       },
       {
         "template": "cannon_germ_20mm_flak38_flakvierling_green_preview"
@@ -3045,7 +3074,7 @@ var OVERRIDEGUNSDATA =
         "template": "sandbags_wall_2_preview"
       },
       {
-        "template": "sandbags_wall_mg_preview"
+        "template": "sandbags_wall_mg_34_preview"
       },
       {
         "template": "cannon_germ_20mm_flak38_flakvierling_desert_preview"
@@ -3102,7 +3131,7 @@ var OVERRIDEGUNSDATA =
         "template": "sandbags_wall_2_preview"
       },
       {
-        "template": "sandbags_wall_mg_preview"
+        "template": "sandbags_wall_mg_34_preview"
       },
       {
         "template": "cannon_germ_20mm_flak38_flakvierling_preview"
@@ -3159,7 +3188,7 @@ var OVERRIDEGUNSDATA =
         "template": "sandbags_wall_2_preview"
       },
       {
-        "template": "sandbags_wall_mg_preview"
+        "template": "sandbags_wall_mg_34_preview"
       },
       {
         "template": "cannon_germ_20mm_flak38_flakvierling_preview"
@@ -3216,7 +3245,7 @@ var OVERRIDEGUNSDATA =
         "template": "sandbags_wall_2_preview"
       },
       {
-        "template": "sandbags_wall_mg_preview"
+        "template": "sandbags_wall_maxim_no_shield_preview"
       },
       {
         "template": "cannon_germ_20mm_flak38_flakvierling_preview"
@@ -3294,6 +3323,39 @@ var OVERRIDEGUNSDATA =
       },
       {
         "limit": 3
+      }
+    ]
+  },
+  "developer_building_tool_gun": {
+    "_extends": "building_tool_gun",
+    "item__weapTemplate": "developer_building_tool_gun",
+    "item__template": "modern_event_building_tool_item",
+    "previewTemplate:list<t>": [
+      {
+        "template": "sandbags_wall_mg_preview_dev"
+      },
+      {
+        "template": "sandbags_wall_mg_34_preview_dev"
+      },
+      {
+        "template": "sandbags_wall_maxim_no_shield_preview_dev"
+      },
+      {
+        "template": "sandbags_wall_browning_m1919a4_preview_dev"
+      }
+    ],
+    "buildingLimits:list<i>": [
+      {
+        "limit": 2
+      },
+      {
+        "limit": 2
+      },
+      {
+        "limit": 2
+      },
+      {
+        "limit": 2
       }
     ]
   },
@@ -3640,9 +3702,6 @@ var OVERRIDEGUNSDATA =
       "human_gun_attached": false
     },
     {
-      "gun__prevAnimVarsGen": 0
-    },
-    {
       "gun__animVarsGen": 0
     },
     {
@@ -3779,9 +3838,6 @@ var OVERRIDEGUNSDATA =
     },
     {
       "human_gun_attached": false
-    },
-    {
-      "gun__prevAnimVarsGen": 0
     },
     {
       "gun__animVarsGen": 0
@@ -3922,7 +3978,142 @@ var OVERRIDEGUNSDATA =
       "human_gun_attached": false
     },
     {
-      "gun__prevAnimVarsGen": 0
+      "gun__animVarsGen": 0
+    },
+    {
+      "gun_anim__reloadProgress": -1.0
+    },
+    {
+      "gun_anim__singleReloadProgress": -1.0
+    },
+    {
+      "gun_anim__singleReloadState": 0
+    },
+    {
+      "gun_attach__slot": "weapon"
+    },
+    {
+      "gun_attach__mainSlotId": -1
+    },
+    {
+      "gun_attach__alternativeSlot": "weapon"
+    },
+    {
+      "gun_attach__altSlotId": -1
+    },
+    {
+      "gun__owner:eid": []
+    },
+    {
+      "animchar__actOnDemand:tag": []
+    },
+    {
+      "phys_vars": []
+    },
+    {
+      "anim_phys": []
+    },
+    {
+      "gun_anim": {
+        "_tags": "render"
+      }
+    },
+    {
+      "net__notInInitialScope:tag": []
+    },
+    {
+      "gun_attach__holsterSlots:array": [
+        {
+          "holsterSlots": "slot_weapon_1"
+        },
+        {
+          "holsterSlots": "body_armor_back"
+        }
+      ]
+    },
+    {
+      "gun_attach__holsterSlotsIds:list<i>": []
+    }
+  ],
+  "ita_rf1_radio": {
+    "_extends": "artillery_radio_base",
+    "gun__locName": "SCR-300 radio communication station",
+    "animchar__res": "ita_rf1_radio_char",
+    "item__iconYaw": 145.0,
+    "item__iconScale": 2.7,
+    "item__iconOffset": [0.0,0.66],
+    "item__template": "ita_rf1_radio_gun_item",
+    "item__weapTemplate": "ita_rf1_radio_gun",
+    "gun__blk": "content/enlisted/gamedata/weapons_enlisted/radio/ita_rf1_radio.blk",
+    "item__proto": "content/enlisted/gamedata/weapons_enlisted/radio/ita_rf1_radio.blk",
+    "item__name": "items/scr_300_communication_station"
+  },
+  "ita_rf1_radio_gun": [
+    {
+      "weap__sprintLerpFactor": 0.0
+    },
+    {
+      "_extends": "ita_rf1_radio"
+    },
+    {
+      "_extends": "animchar"
+    },
+    {
+      "_extends": "disable_update"
+    },
+    {
+      "_extends": "replicating"
+    },
+    {
+      "gun__propsId": -1
+    },
+    {
+      "_replicated": "gun__propsId"
+    },
+    {
+      "_replicated": "gun__owner"
+    },
+    {
+      "_replicated": "gun__holsterGen"
+    },
+    {
+      "_replicated": "gun__animVarsGen"
+    },
+    {
+      "_replicated": "slot_attach__visible"
+    },
+    {
+      "_replicated": "human_gun_attached"
+    },
+    {
+      "_replicated": "gun__visible"
+    },
+    {
+      "_tracked": "gun__owner"
+    },
+    {
+      "_tracked": "gun__visible"
+    },
+    {
+      "gun__prevHolsterGen": 0
+    },
+    {
+      "gun__holsterGen": 0
+    },
+    {
+      "animchar__updatable": false
+    },
+    {
+      "slot_attach__visible": false
+    },
+    {
+      "gun__visible": true
+    },
+    {
+      "animchar_render__enabled": false
+    },
+    {
+      "human_gun_attached": false
     },
     {
       "gun__animVarsGen": 0
@@ -3980,6 +4171,17 @@ var OVERRIDEGUNSDATA =
     },
     {
       "gun_attach__holsterSlotsIds:list<i>": []
+    }
+  ],
+  "ita_rf1_radio_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "ita_rf1_radio"
+    },
+    {
+      "collres__res": "ita_rf1_radio_collision"
     }
   ],
   "feldfu_b_radio_gun_item": [
@@ -4088,7 +4290,7 @@ var OVERRIDEGUNSDATA =
       "gun__reloadable": false
     },
     {
-      "melee_weapon__attackTime": 1.51
+      "melee_weapon__attackTime": 1.2
     },
     {
       "weap__sprintLerpFactor": 1.0
@@ -4106,6 +4308,48 @@ var OVERRIDEGUNSDATA =
     },
     {
       "actionSfxSound": "impact/shovel"
+    }
+  ],
+  "usa_shovel": {
+    "_extends": "shovel",
+    "animchar__res": "usa_m1943_shovel_char",
+    "item__weapTemplate": "usa_shovel_weapon",
+    "item__template": "usa_shovel_item"
+  },
+  "usa_shovel_weapon": [
+    {
+      "_extends": "shovel_weapon"
+    },
+    {
+      "_extends": "usa_shovel"
+    }
+  ],
+  "uk_shovel": {
+    "_extends": "shovel",
+    "animchar__res": "uk_army_spade_char",
+    "item__weapTemplate": "uk_shovel_weapon",
+    "item__template": "uk_shovel_item"
+  },
+  "uk_shovel_weapon": [
+    {
+      "_extends": "shovel_weapon"
+    },
+    {
+      "_extends": "uk_shovel"
+    }
+  ],
+  "ussr_shovel": {
+    "_extends": "shovel",
+    "animchar__res": "ussr_m41_shovel_char",
+    "item__weapTemplate": "ussr_shovel_weapon",
+    "item__template": "ussr_shovel_item"
+  },
+  "ussr_shovel_weapon": [
+    {
+      "_extends": "shovel_weapon"
+    },
+    {
+      "_extends": "ussr_shovel"
     }
   ],
   "akm_47": {

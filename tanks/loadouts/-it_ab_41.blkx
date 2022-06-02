@@ -60,13 +60,10 @@ var _it_ab_41 =
       "_extends": "base_ab_41"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "vehicle_steering_assist"
     },
     {
-      "_extends": "tank_with_wheels_vehicle_sound_override"
-    },
-    {
-      "_extends": "tank_vehicle_seat_sound"
+      "_extends": "tank_with_wheels_vehicle_tracks_sound"
     },
     {
       "vehicle_seats__seats:shared:array": [
@@ -225,6 +222,7 @@ var _it_ab_41 =
     }
   },
   "it_ab_41_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/it_se_75_18.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "bt_7_gunner_char",
     "cockpit__minZoom": -0.27,

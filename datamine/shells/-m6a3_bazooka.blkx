@@ -1,0 +1,66 @@
+var _m6a3_bazooka = 
+{
+  "mass": 1.58,
+  "cartridgeMass": 1.58,
+  "momentOfInertia": [0.04,0.008,0.04],
+  "caliber": 0.03,
+  "speed": 120.0,
+  "physMat": "bulletRay",
+  "useFutureContacts": true,
+  "logCCD": false,
+  "explodeRadius": [1.0,1.3],
+  "explodeHitPower": 18.0,
+  "entityTemplate": "m6a3_bazooka_phys",
+  "entityPhysTemplate": "m6a3_bazooka_phys",
+  "bullets": 1,
+  "normalizationPreset": "heat",
+  "ricochetPreset": "he",
+  "slopeEffectPreset": "ap",
+  "secondaryShattersPreset": "ap",
+  "cumulativeSecondaryShattersPreset": "heat_fs",
+  "fresnel": [0.23,0.1,2.0],
+  "stabilityThreshold": 0.4,
+  "stabilityCaliberToArmorThreshold": 10.0,
+  "stabilityReductionAfterRicochet": 0.45,
+  "stabilityReductionAfterPenetration": 1.0,
+  "explodeOnRendinst": true,
+  "collisionResource": {
+    "props": {
+      "volumeBox_1": true
+    }
+  },
+  "ccdSpheres": {
+    "ccd": [0.0,0.0,0.0,0.015]
+  },
+  "visual": {
+    "template": "m6a1_bazooka_item+item_in_world"
+  },
+  "splashDamage": {
+    "radius": [1.0,4.5],
+    "penetration": [10.0,10.0],
+    "damage": 10.0,
+    "dmgOffset": [0.0,0.25,0.0]
+  },
+  "cumulativeDamage": {
+    "armorPower": 102.0,
+    "distance": 3.0,
+    "damage": 120.0,
+    "onHitChanceMultFire": 15.0
+  },
+  "explFx": {
+    "fxScale": [1.8,1.9],
+    "effectTemplName": "explosion_effect_medium+disable_effect_sfx"
+  },
+  "explSound": {
+    "explSoundPath": "impact/grenade"
+  },
+  "armorpower": {
+    "ArmorPower0m": [2.0,10.0],
+    "ArmorPower7000m": [1.0,7000.0]
+  },
+  "stabilityRicochetModifier": {
+    "mod1": [0.0,0.5],
+    "mod2": [20.0,0.6],
+    "mod3": [30.0,1.0]
+  }
+}

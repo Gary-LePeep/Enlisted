@@ -1,0 +1,81 @@
+var _76mm_zis3 = 
+{
+  "base_76mm_zis3": {
+    "item__name": "guns/76mm_zis3",
+    "gun__blk": "gamedata/gen/weapons/76mm_zis3.blk",
+    "gun__shotFreq": 0.145,
+    "gun__locName": "76mm_zis3",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_zis3_defaultset.blk",
+          "name": "76mm_br_350a",
+          "type": "aphebc_tank"
+        }
+      },
+      "76mm_ussr_HE:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_zis3_76mm_ussr_he.blk",
+          "name": "76mm_of_350m",
+          "type": "he_frag_tank"
+        }
+      },
+      "76mm_ussr_Shrapnel:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_zis3_76mm_ussr_shrapnel.blk",
+          "name": "76mm_sh_354t",
+          "type": "shrapnel_tank"
+        }
+      },
+      "76mm_ussr_AP_1942:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_zis3_76mm_ussr_ap_1942.blk",
+          "name": "76mm_br_350sp",
+          "type": "apbc_tank"
+        }
+      },
+      "76mm_ussr_APCR_1943:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_zis3_76mm_ussr_apcr_1943.blk",
+          "name": "76mm_br_354p",
+          "type": "apcr_tank"
+        }
+      },
+      "76mm_ussr_HEAT_1944:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_zis3_76mm_ussr_heat_1944.blk",
+          "name": "76mm_bp_350a",
+          "type": "heat_tank"
+        }
+      },
+      "76mm_ussr_AP_1941:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_zis3_76mm_ussr_ap_1941.blk",
+          "name": "76mm_br_350b",
+          "type": "aphebc_tank"
+        }
+      },
+      "76mm_ussr_Smoke:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_zis3_76mm_ussr_smoke.blk",
+          "name": "76mm_d350a",
+          "type": "smoke_tank"
+        }
+      }
+    }
+  },
+  "tankgun_76mm_zis3": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_76mm_zis3"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

@@ -7,12 +7,12 @@ var _12_7x81mm_breda_ap_bullet =
   "traceColor": [0.0,0.0,0.0],
   "normalizationPreset": "default",
   "modelName": "tank_bullet_ball",
-  "stabilityThreshold": 0.05,
-  "effectiveDistance": 500.0,
   "stabilityCaliberToArmorThreshold": 5.0,
+  "effectiveDistance": 500.0,
+  "stabilityReductionAfterRicochet": 0.5,
   "relativeVelHitShift": [300.0,1000.0],
   "bulletType": "ap_ball",
-  "slopeEffectPreset": "ap",
+  "relativeVelArmorShift": [200.0,1000.0],
   "groundCollisionEffect": "hit_12_18mm_dirt_ap",
   "ricochetEffect": "hit_12_18mm_metal_ap",
   "waterCollisionEffect": "hit_12_18mm_water",
@@ -30,6 +30,15 @@ var _12_7x81mm_breda_ap_bullet =
       "mod3": [45.0,0.3]
     }
   ],
+  "damage": {
+    "kinetic": {
+      "damageType": "generic",
+      "demarrePenetrationK": 0.9,
+      "demarreSpeedPow": 1.43,
+      "demarreMassPow": 0.71,
+      "demarreCaliberPow": 1.07
+    }
+  },
   "hitpower": {
     "HitPower10m": [1.0,10.0],
     "HitPower100m": [0.95,100.0],

@@ -197,6 +197,7 @@ var _germ_pzkpfw_vi_ausf_e_tiger =
     "cockpit__visibleVehicleNodeNames:list<t>": []
   },
   "germ_pzkpfw_VI_ausf_E_tiger_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf_9b.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pzkpfw_iii_e_gunner_char",
     "cockpit__offset": [-0.747372,0.0154568,-0.0192679],
@@ -220,7 +221,7 @@ var _germ_pzkpfw_vi_ausf_e_tiger =
       }
     ],
     "cockpit__slitForwardOffset:list<r>": {
-      "slit": 0.27
+      "slit": 0.23
     },
     "cockpit__slitIsGun:list<b>": {
       "slit": true

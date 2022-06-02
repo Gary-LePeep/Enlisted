@@ -5,7 +5,7 @@ var _20mm_kwk30 =
     "gun__blk": "gamedata/gen/weapons/20mm_kwk30.blk",
     "gun__shotFreq": 4.66,
     "gun__reloadTime": 6.0,
-    "gun__maxAmmo": 10,
+    "gun__maxAmmo": 20,
     "gun__locName": "20mm_kwk30",
     "gun__firingModes:array": {
       "mode:object": {

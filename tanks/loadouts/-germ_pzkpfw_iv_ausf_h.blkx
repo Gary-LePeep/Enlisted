@@ -263,6 +263,7 @@ var _germ_pzkpfw_iv_ausf_h =
     ]
   },
   "germ_pzkpfw_IV_ausf_H_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pzkpfw_iii_e_gunner_char",
     "cockpit__offset": [-0.9,0.03,0.12],
@@ -371,24 +372,12 @@ var _germ_pzkpfw_iv_ausf_h =
       "pzkpfw_IV_ausf_H_gun_ao*": "pzkpfw_IV_ausf_H_skin_without_zimmerite_gun_ao*",
       "pzkpfw_IV_ausf_H_gun_n*": "pzkpfw_IV_ausf_H_skin_without_zimmerite_gun_n*",
       "pzkpfw_IV_ausf_H_turret_ao*": "pzkpfw_IV_ausf_H_skin_without_zimmerite_turret_ao*",
-      "pzkpfw_IV_ausf_H_turret_n*": "pzkpfw_IV_ausf_H_skin_without_zimmerite_turret_n*"
-    },
-    "animchar__objTexSet:object": {
-      "fliegerbeschussgerat_41_c*:object": {
-        "fliegerbeschussgerat_41_skin_pz_4h_c*": "camo_skin_tex"
-      },
-      "pzkpfw_IV_ausf_H_addarmor_c*:object": {
-        "pzkpfw_IV_ausf_H_skin_without_zimmerite_addarmor_c*": "camo_skin_tex"
-      },
-      "pzkpfw_IV_ausf_H_body_c*:object": {
-        "pzkpfw_IV_ausf_H_skin_without_zimmerite_body_c*": "camo_skin_tex"
-      },
-      "pzkpfw_IV_ausf_H_gun_c*:object": {
-        "pzkpfw_IV_ausf_H_skin_without_zimmerite_gun_c*": "camo_skin_tex"
-      },
-      "pzkpfw_IV_ausf_H_turret_c*:object": {
-        "pzkpfw_IV_ausf_H_skin_without_zimmerite_turret_c*": "camo_skin_tex"
-      }
+      "pzkpfw_IV_ausf_H_turret_n*": "pzkpfw_IV_ausf_H_skin_without_zimmerite_turret_n*",
+      "fliegerbeschussgerat_41_c*": "fliegerbeschussgerat_41_skin_pz_4h_c*",
+      "pzkpfw_IV_ausf_H_addarmor_c*": "pzkpfw_IV_ausf_H_skin_without_zimmerite_addarmor_c*",
+      "pzkpfw_IV_ausf_H_body_c*": "pzkpfw_IV_ausf_H_skin_without_zimmerite_body_c*",
+      "pzkpfw_IV_ausf_H_gun_c*": "pzkpfw_IV_ausf_H_skin_without_zimmerite_gun_c*",
+      "pzkpfw_IV_ausf_H_turret_c*": "pzkpfw_IV_ausf_H_skin_without_zimmerite_turret_c*"
     }
   },
   "germ_pzkpfw_IV_ausf_H_16_pzrgt_with_zimmerite_premium_skin": {

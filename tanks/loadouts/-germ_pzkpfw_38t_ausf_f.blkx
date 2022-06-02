@@ -144,6 +144,7 @@ var _germ_pzkpfw_38t_ausf_f =
     }
   },
   "germ_pzkpfw_38t_ausf_F_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf_38t.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pzkpfw_iii_b_gunner_char",
     "cockpit__offset": [-0.9,0.03,0.12],

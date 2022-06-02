@@ -239,6 +239,7 @@ var _us_m4a3e2_sherman_jumbo =
     }
   },
   "us_m4a3e2_sherman_jumbo_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/us_m71g.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "ba_11_gunner_char",
     "cockpit__offset": [-0.65,-0.065,0.233],

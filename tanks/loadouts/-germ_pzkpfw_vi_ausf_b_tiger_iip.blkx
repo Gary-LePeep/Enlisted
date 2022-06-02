@@ -1,16 +1,14 @@
 var _germ_pzkpfw_vi_ausf_b_tiger_iip = 
 {
-  "germ_pzkpfw_VI_ausf_B_tiger_IIP": [
+  "germ_pzkpfw_vi_ausf_b_tiger_iip_berlin": {
+    "_extends": "germ_pzkpfw_VI_ausf_B_tiger_IIP_common"
+  },
+  "germ_pzkpfw_VI_ausf_B_tiger_IIP_common": [
     {
       "_extends": "base_pzkpfw_vi_ausf_b_tiger_iip"
     },
     {
       "_extends": "vehicle_effects_tracked"
-    },
-    {
-      "animchar__objTexReplace:object": {
-        "ger_camo_dunkelgelb*": "ger_camo_dunkelgelb_green_braun_blots*"
-      }
     },
     {
       "vehicle_seats__seats:shared:array": [
@@ -31,7 +29,9 @@ var _germ_pzkpfw_vi_ausf_b_tiger_iip =
             "nextSeat": "main_gunner",
             "shouldHideOwner": true,
             "receiveDamageFromDMPart": "driver",
-            "cameraNodeName": "bone_camera_driver"
+            "cameraNodeName": "bone_camera_driver",
+            "cameraOffset": [0.15,-0.0,-0.0],
+            "cockpitTemplate": "germ_pzkpfw_vi_ausf_b_tiger_iip_driver_cockpit"
           }
         },
         {
@@ -51,6 +51,7 @@ var _germ_pzkpfw_vi_ausf_b_tiger_iip =
             "shouldHideOwner": true,
             "receiveDamageFromDMPart": "gunner",
             "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "germ_pzkpfw_vi_ausf_b_tiger_iip_gunner_cockpit",
             "turretNames:array": [
               {
                 "turret": "turret_01"
@@ -74,12 +75,17 @@ var _germ_pzkpfw_vi_ausf_b_tiger_iip =
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [0.25,-0.1,-0.0]
+              [0.2,-0.1,-0.0]
             ],
             "seatComponent": "isDriver",
             "receiveDamageFromDMPart": "commander",
+            "cameraNodeName": "bone_turret",
+            "cockpitTemplate": "germ_pzkpfw_vi_ausf_b_tiger_iip_commander_cockpit",
             "hatchNodes:array": {
               "node": "hatch_01"
+            },
+            "hatchTurretNames:array": {
+              "turret": "turret_03"
             }
           }
         },
@@ -121,5 +127,153 @@ var _germ_pzkpfw_vi_ausf_b_tiger_iip =
         }
       ]
     }
-  ]
+  ],
+  "germ_pzkpfw_vi_ausf_b_tiger_iip_driver_cockpit": {
+    "_extends": "base_driver_cockpit",
+    "animchar__res": "kv_1_driver_char",
+    "cockpit__offset": [2.40925,1.92322,0.521928],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun"
+      }
+    ],
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "root"
+    },
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.11
+    }
+  },
+  "germ_pzkpfw_vi_ausf_b_tiger_iip_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf_9b.blk",
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "t_26_1940_gunner_char",
+    "cockpit__minZoom": -0.27,
+    "cockpit__offset": [-0.445124,-0.0420603,0.183064],
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.2
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    }
+  },
+  "germ_pzkpfw_vi_ausf_b_tiger_iip_commander_cockpit": {
+    "_extends": "base_commander_tower_cockit_no_slits",
+    "animchar__res": "pzkpfw_iii_b_commander_char",
+    "cockpit__offset": [-0.0702947,0.663905,0.473595],
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": -0.06
+      },
+      {
+        "slit": -0.06
+      },
+      {
+        "slit": -0.06
+      },
+      {
+        "slit": -0.05
+      },
+      {
+        "slit": -0.06
+      },
+      {
+        "slit": -0.06
+      },
+      {
+        "slit": -0.06
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_front_left"
+      },
+      {
+        "slit": "cam_left"
+      },
+      {
+        "slit": "cam_rear_left"
+      },
+      {
+        "slit": "cam_rear_right"
+      },
+      {
+        "slit": "cam_right"
+      },
+      {
+        "slit": "cam_front_right"
+      }
+    ],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun"
+      }
+    ]
+  }
 }

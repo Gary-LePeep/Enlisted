@@ -1,0 +1,227 @@
+var _dickermax = 
+{
+  "base_dickermax": [
+    {
+      "_extends": "base_tank"
+    },
+    {
+      "_extends": "dickermax_ammo_stowages"
+    },
+    {
+      "killLogName": "germ_pzsfl_iva_dickermax"
+    },
+    {
+      "animchar__res": "pzsfl_IVa_dickermax_char"
+    },
+    {
+      "collres__res": "pzsfl_IVa_dickermax_collision"
+    },
+    {
+      "vehicle_net_phys__blk": "gamedata/gen/units/tanks/dickermax.blk:VehiclePhys"
+    },
+    {
+      "particle_phys__blk": "gamedata/suspension/empty.blk"
+    },
+    {
+      "dmg_animchar__res": "pzsfl_IVa_dickermax_dmg_char"
+    },
+    {
+      "xray_resource__modelName": "pzsfl_IVa_dickermax"
+    },
+    {
+      "cockpit__zoomOutFov": 7.7525
+    },
+    {
+      "cockpit__zoomInFov": 14.3007
+    },
+    {
+      "cockpit__sightName": "sight_model/zfl_zf_1a"
+    },
+    {
+      "cockpit__sightFov": 9.5
+    },
+    {
+      "drowningHeight": 2.024
+    },
+    {
+      "damage_model__blk": "gamedata/gen/units/tanks/dickermax.blk"
+    },
+    {
+      "item__name": "items/germ_pzsfl_iva_dickermax"
+    },
+    {
+      "skin__template": "dickermax_skins"
+    },
+    {
+      "turret_gun_flash_fx__flashNodes:shared:array": {
+        "node": "emtr_gun_flame"
+      }
+    },
+    {
+      "turret_gun_flash_fx__flashFx:shared:array": {
+        "fx": "muzzle_ground_100mm_brake"
+      }
+    },
+    {
+      "turret_gun_flash_fx__flashFxScale:shared:array": {
+        "scale": 1.0
+      }
+    },
+    {
+      "turret_control__emitterNodes:shared:array": {
+        "node": "bone_gun_barrel"
+      }
+    },
+    {
+      "turret_control__animVars:shared:array": {
+        "vars:object": {
+          "curYawParamName": "turret_01_yaw",
+          "curPitchParamName": "gun_01_pitch",
+          "aimActiveParamName": "aim_01_active",
+          "paramYawSpeed": "turret_01_yaw_speed",
+          "paramYawSpeedMul": "turret_01_yaw_mul",
+          "paramYawAccel": "turret_01_yaw_accel",
+          "paramMinYawAngle": "turret_01_min_yaw_angle",
+          "paramMaxYawAngle": "turret_01_max_yaw_angle",
+          "paramMinPitchAngle": "turret_01_min_pitch_angle",
+          "paramMaxPitchAngle": "turret_01_max_pitch_angle",
+          "paramPitchSpeed": "gun_01_pitch_speed",
+          "paramPitchSpeedMul": "gun_01_pitch_mul",
+          "paramPitchAccel": "gun_01_pitch_accel",
+          "wishYawParamName": "gun_01_aim:targetYaw",
+          "wishPitchParamName": "gun_01_aim:targetPitch",
+          "gunRecoilParamName": "gun_01_recoil"
+        }
+      }
+    },
+    {
+      "turret_control__turretInfo:shared:array": {
+        "turretInfo:object": {
+          "turretName": "turret_01",
+          "gun": "dickermax_turret_01_105mm_k18+turret_with_several_types_of_shells+main_turret",
+          "barrelDm": "gun_barrel",
+          "breechDm": "cannon_breech",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      }
+    }
+  ],
+  "dickermax_turret_01_105mm_k18": {
+    "_extends": "tankgun_105mm_k18",
+    "gun__shootNodeName": "bone_gun_barrel",
+    "turret__yawSpeed": 12.0,
+    "turret__pitchSpeed": 4.0,
+    "turret__aimNodeName": "bone_turret",
+    "turret__limit": [-8.0,8.0,-15.0,10.0],
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 10
+      },
+      {
+        "ammo": 8
+      },
+      {
+        "ammo": 8
+      }
+    ]
+  },
+  "dickermax_ammo_stowages": {
+    "_tags": "server",
+    "_extends": "vehicle_ammo_stowages",
+    "ammo_stowage__stowageTemplates:shared:list<t>": {
+      "stowage": "dickermax_primary_ammo_stowage"
+    }
+  },
+  "dickermax_primary_ammo_stowage": {
+    "_extends": "ammo_stowage",
+    "ammo_stowage__clusterTemplates:shared:list<t>": [
+      {
+        "cluster": "dickermax_primary_shells_ammo_cluster"
+      },
+      {
+        "cluster": "dickermax_primary_charges_ammo_cluster"
+      }
+    ],
+    "ammo_stowage__turretNames:shared:list<t>": {
+      "gun": "turret_01"
+    }
+  },
+  "dickermax_primary_shells_ammo_cluster": {
+    "_extends": "ammo_cluster",
+    "ammo_cluster__isShell": true,
+    "ammo_cluster__slotNames:shared:list<t>": [
+      {
+        "part": "ammo_body_r_02"
+      },
+      {
+        "part": "ammo_body_l_02"
+      }
+    ],
+    "ammo_cluster__slotsMaxAmmo:list<i>": [
+      {
+        "count": 13
+      },
+      {
+        "count": 13
+      }
+    ]
+  },
+  "dickermax_primary_charges_ammo_cluster": {
+    "_extends": "ammo_cluster",
+    "ammo_cluster__isShell": false,
+    "ammo_cluster__slotNames:shared:list<t>": [
+      {
+        "part": "ammo_body_r_01"
+      },
+      {
+        "part": "ammo_body_l_01"
+      }
+    ],
+    "ammo_cluster__slotsMaxAmmo:list<i>": [
+      {
+        "count": 13
+      },
+      {
+        "count": 13
+      }
+    ]
+  },
+  "dickermax_skins": {
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "dickermax_tiger",
+          "objTexReplace:object": {
+            "ger_camo_dunkelgelb*": "ger_camo_tiger*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "dickermax_blots",
+          "objTexReplace:object": {
+            "ger_camo_dunkelgelb*": "ger_camo_dunkelgelb_green_braun_blots*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "dickermax_winter",
+          "objTexReplace:object": {
+            "ger_camo_dunkelgelb*": "ger_camo_winter_dunkelgelb*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "dickermax_ger_camo_winter_waves",
+          "objTexReplace:object": {
+            "ger_camo_dunkelgelb*": "ger_camo_winter_waves_bicolor*"
+          }
+        }
+      }
+    ]
+  }
+}
