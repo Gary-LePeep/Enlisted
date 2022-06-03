@@ -4,6 +4,11 @@ const WEAPONS = [
     'Category RU': 'Штурмовые Оружие Союзников',
     Weapons: [
       {
+        'Name EN': 'AS-44 model 4',
+        'Name RU': 'AS-44 model 4',
+        'Name Game': 'as_44_gun',
+      },
+      {
         'Name EN': 'BSA Model 1929 Thompson',
         'Name RU': 'BSA Model 1929 Thompson',
         'Name Game': 'thompson_bsa_1929_gun',
@@ -37,6 +42,11 @@ const WEAPONS = [
         'Name EN': 'M1903 Springfield (Pedersen device)',
         'Name RU': 'M1903 Springfield (устройство Педерсена)',
         'Name Game': 'm1903_springfield_pedersen_device_gun',
+      },
+      {
+        'Name EN': 'M1928A1 Thompson with drum magazine',
+        'Name RU': 'M1928A1 Thompson with drum magazine',
+        'Name Game': 'thompson_m1928a1_50_drum_gun',
       },
       {
         'Name EN': 'M1A1 Thompson',
@@ -325,6 +335,11 @@ const WEAPONS = [
         'Name Game': 'suomi_kp_26_gun',
       },
       {
+        'Name EN': 'Suomi KP/-31',
+        'Name RU': 'Suomi KP/-31',
+        'Name Game': 'suomi_kp_26_gun',
+      },
+      {
         'Name EN': 'VG 1-5',
         'Name RU': 'VG 1-5',
         'Name Game': 'vstg_1_5_gun',
@@ -424,6 +439,11 @@ const WEAPONS = [
         'Name EN': 'Mosin M91/30 supressed',
         'Name RU': 'Винтовка Мосина с глушителем',
         'Name Game': 'mosin_m91_bramit_gun',
+      },
+      {
+        'Name EN': 'Mosin M91/30 VPGS',
+        'Name RU': 'Винтовка Мосина VPGS',
+        'Name Game': 'mosin_m91_30_vpgs_gun',
       },
       {
         'Name EN': "Mosina M91 'Infantry'",
@@ -739,6 +759,11 @@ const WEAPONS = [
         'Name Game': 'mkb_42_h_with_scope_gun',
       },
       {
+        'Name EN': 'Sniper StG 44',
+        'Name RU': 'Снайперский StG 44',
+        'Name Game': 'stg_44_gun',
+      },
+      {
         'Name EN': 'ZH-29',
         'Name RU': 'ZH-29',
         'Name Game': 'zh_29_gun',
@@ -894,7 +919,7 @@ const WEAPONS = [
       {
         'Name EN': 'M1 Bazooka',
         'Name RU': 'М1 базука',
-        'Name Game': 'm1_bazooka_gun',
+        'Name Game': 'm9_bazooka_gun',
       },
       {
         'Name EN': 'M1 Flamethrower',
@@ -905,6 +930,11 @@ const WEAPONS = [
         'Name EN': 'M2 Flamethrower',
         'Name RU': 'Огнемёт М2',
         'Name Game': 'm2_flamethrower_gun',
+      },
+      {
+        'Name EN': 'M9 Bazooka',
+        'Name RU': 'М9 базука',
+        'Name Game': 'm1_bazooka_gun',
       },
       {
         'Name EN': 'Panzerfaust 60',
@@ -1006,6 +1036,11 @@ const WEAPONS = [
         'Name EN': 'PzB-39',
         'Name RU': 'PzB-39',
         'Name Game': 'pzb_39_gun',
+      },
+      {
+        'Name EN': 'RPzB. 43 Ofenrohr',
+        'Name RU': 'RPzB. 43 Ofenrohr',
+        'Name Game': 'rpzb_43_ofenrohr_gun',
       },
       {
         'Name EN': 'Sturmpistole',

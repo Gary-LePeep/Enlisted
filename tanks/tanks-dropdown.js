@@ -13,6 +13,11 @@ const TANKS_JSON = [
             'Name Game': 'ussr_ba_11',
           },
           {
+            'Name EN': 'BM-8-24',
+            'Name RU': 'БM-8-24',
+            'Name Game': 'ussr_bm_8_24',
+          },
+          {
             'Name EN': 'BT-7',
             'Name RU': 'БT-7',
             'Name Game': 'ussr_bt_7_1937',
@@ -116,6 +121,11 @@ const TANKS_JSON = [
         'Category RU': 'Союзники',
         Side: [
           {
+            'Name EN': 'Calliope',
+            'Name RU': 'Calliope',
+            'Name Game': 'us_m4_calliope',
+          },
+          {
             'Name EN': 'Churchill III',
             'Name RU': 'Churchill III',
             'Name Game': 'churchill_3',
@@ -166,6 +176,11 @@ const TANKS_JSON = [
         'Category EN': 'Axis',
         'Category RU': 'Ось',
         Side: [
+          {
+            'Name EN': '15 cm Pz. W.42',
+            'Name RU': '15 cm Pz. W.42',
+            'Name Game': 'germ_panzerwerfer_42',
+          },
           {
             'Name EN': 'Panther A',
             'Name RU': 'Panther A',
@@ -224,6 +239,11 @@ const TANKS_JSON = [
             'Name Game': 'ussr_is_1',
           },
           {
+            'Name EN': 'IS-2',
+            'Name RU': 'ИС-2',
+            'Name Game': 'ussr_is_2_1943',
+          },
+          {
             'Name EN': 'M4A2 (76) W',
             'Name RU': 'M4A2 (76) W',
             'Name Game': 'us_m4a2_76w_sherman',
@@ -278,6 +298,11 @@ const TANKS_JSON = [
             'Name EN': 'Tiger E',
             'Name RU': 'Tiger E',
             'Name Game': 'germ_pzkpfw_vi_ausf_e_tiger',
+          },
+          {
+            'Name EN': 'Tiger II (P)',
+            'Name RU': 'Tiger II (P)',
+            'Name Game': 'germ_pzkpfw_vi_ausf_b_tiger_iip',
           },
         ],
       },
@@ -395,6 +420,11 @@ const TANKS_JSON = [
             'Name Game': 'ussr_t_34_1940_l_11',
           },
           {
+            'Name EN': 'T-34 (1941)',
+            'Name RU': 'T-34 (1941)',
+            'Name Game': 'ussr_t_34_1941',
+          },
+          {
             'Name EN': 'T-34E "STZ"',
             'Name RU': 'Т-34Э "СТЗ"',
             'Name Game': 'ussr_t_34e_stz',
@@ -434,6 +464,11 @@ const TANKS_JSON = [
             'Name EN': 'Pz.IV G',
             'Name RU': 'Pz.IV G',
             'Name Game': 'germ_pzkpfw_iv_ausf_g',
+          },
+          {
+            'Name EN': 'StuG III F',
+            'Name RU': 'StuG III F',
+            'Name Game': 'germ_stug_iii_ausf_f',
           },
         ],
       },
