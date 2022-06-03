@@ -143,7 +143,7 @@ var _ussr_t_34_85_e =
     ]
   },
   "ussr_t_34_85_e_gunner_cockpit": {
-    "vehicle_sight__blk": "content/tanks/gamedata/sight/ussr_tsh_15.blk",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/ussr_tsh_16.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,

@@ -23580,10 +23580,10 @@ var COMMONGUNSDATA =
       "gun_deviation__maxDeviation": 20.0
     },
     {
-      "gun__reloadTime": 2.35
+      "gun__reloadTime": 3.2
     },
     {
-      "gun__altReloadTime": 1.95
+      "gun__altReloadTime": 2.8
     },
     {
       "gun__ammoHolders:array": {
@@ -39147,7 +39147,7 @@ var COMMONGUNSDATA =
       "gun__sightsDistance": 0.15
     },
     {
-      "gun__shotFreq": 14.0
+      "gun__shotFreq": 14.33
     },
     {
       "gun__shotFreqRndK": 0.1
@@ -41577,7 +41577,7 @@ var COMMONGUNSDATA =
       "gun__sightsDistance": 0.3
     },
     {
-      "gun__shotFreq": 8.3
+      "gun__shotFreq": 10.83
     },
     {
       "gun__shotFreqRndK": 0.1
@@ -41773,7 +41773,7 @@ var COMMONGUNSDATA =
       "gun__sightsDistance": 0.3
     },
     {
-      "gun__shotFreq": 8.1
+      "gun__shotFreq": 10.83
     },
     {
       "gun__shotFreqRndK": 0.1

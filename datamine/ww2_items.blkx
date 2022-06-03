@@ -1879,7 +1879,7 @@ var COMMONITEMSDATA =
     "item__proto": "suomi_kp_31_magazine",
     "item__locDetails": "",
     "ammo_holder__templateName": "suomi_kp_31_magazine",
-    "ammo_holder__ammoCount": 70,
+    "ammo_holder__ammoCount": 71,
     "item__weight": 1.9,
     "item__volume": 0.3,
     "item__name": "items/suomi_kp_31_magazine",

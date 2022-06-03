@@ -322,7 +322,9 @@
                 .replace('it_', '')
                 .replace('uk_', '')
                 .replace('us_', '')
-                .replace('ussr_', '');
+                .replace('ussr_', '')
+                // fixing for some weird tanks
+                .replace('is_2_1943', 'is_2');
 
               // set data tables
               const tanksDataFile = window[`_${strippedDataName}`];
