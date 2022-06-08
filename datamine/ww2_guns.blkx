@@ -49335,9 +49335,13 @@ var COMMONGUNSDATA =
     "gun__shells:array": {
       "shells": "content/e_ww2_common/gamedata/weapons/bullets/30_06_springfield_tracer.blk"
     },
+    "_group": {
+      "_tags": "sound",
+      "gun_sound__forceOneshot": true
+    },
     "gun_sound__shotPath:shared:object": {
       "_tags": "sound",
-      "path": "/weapon/mgun_mounted/7_62mm_m1919a4"
+      "path": "/weapon/mgun/m1919a6"
     }
   },
   "stationary_browning_m1919a4": [

@@ -17,11 +17,6 @@ var _explosion_pack =
   "explodeHitPower": 250.0,
   "explodeArmorPower": 35.0,
   "explodeRadius": [1.0,2.5],
-  "shutterDamage": true,
-  "shutterDamageRadius": 15.0,
-  "shutterAmount": 200,
-  "shutterArmorPower": 10.0,
-  "shutterHit": 25.0,
   "collisionResource": {
     "props": {
       "volumeBox": "box"
@@ -51,6 +46,12 @@ var _explosion_pack =
   },
   "explSound": {
     "explSoundPath": "impact/grenade"
+  },
+  "splashDamage": {
+    "radius": [1.0,10.0],
+    "penetration": [15.0,2.0],
+    "damage": 60.0,
+    "dmgOffset": [0.0,0.25,0.0]
   },
   "solver": {
     "energyConservation": 0.85

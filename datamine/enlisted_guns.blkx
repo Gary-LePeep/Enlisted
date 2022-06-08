@@ -1136,9 +1136,16 @@ var OVERRIDEGUNSDATA =
   },
   "mkb_42_h": {
     "_override": true,
+    "gun_spread__maxDeltaAngle": 0.75,
     "gun__shells:array": {
       "shells": "content/enlisted/gamedata/weapons_enlisted/bullets/7.92x33_kurz.blk"
     }
+  },
+  "mkb_42_h_gun": {
+    "_override": true,
+    "gun__recoilAmount": 0.03,
+    "gun__crawlRecoilMult": 0.85,
+    "gun__visualRecoilMult": 1.6
   },
   "mkb_42_h_with_scope": {
     "_override": true,
