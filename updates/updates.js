@@ -16,6 +16,11 @@ const UPDATES = {
     '1000lb anm 65a bomb damage increased from 440 to 500',
     'AT rifles have armor penetration go from hardcoded to demarre calculation',
   ],
+  1654744227223: [
+    'mkb 42 (h) dispersion increased from 0.15 to 0.75',
+    'Explosive pack shatter fragments removed, replaced with concussion',
+    'Explosive pack now has 60 damage at up to 10m',
+  ],
 };
 
 function numToDate(num) {
