@@ -36,7 +36,13 @@
         // add all updates from updates.js to column
         for (let i = 0; i < Object.keys(UPDATES).length; i++) {
           column1.appendChild(translate(numToDate(Object.keys(UPDATES)[i]), 'b'));
-          let updateText = UPDATES[Object.keys(UPDATES)[i]];
+          const linkText = UPDATES[Object.keys(UPDATES)[i]].link;
+          if (linkText) {
+            const linkElement = translate(`\r\n${linkText}`, 'a');
+            linkElement.href = linkText;
+            column1.appendChild(linkElement);
+          }
+          let updateText = UPDATES[Object.keys(UPDATES)[i]].text;
           if (Array.isArray(updateText)) {
             updateText = updateText.join('\r\n');
           }
