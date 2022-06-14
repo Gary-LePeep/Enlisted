@@ -22,6 +22,19 @@
   </script>
 
   <script>
+    function reloadDisplayedData() {
+      const buttons = document.getElementsByClassName('topbtn');
+      for (let i = 0; i < buttons.length; i++) {
+        const text = buttons[i].childNodes[0].textContent;
+        const wepbtns = buttons[i].getElementsByTagName('LI');
+        for (let j = 0; j < wepbtns.length; j++) {
+          if (wepbtns[j].textContent === text) {
+            wepbtns[j].onclick();
+          }
+        }
+      }
+    }
+
     // Color Dropdown
     const headerbox = document.createElement('header');
     headerbox.id = 'header-box';
