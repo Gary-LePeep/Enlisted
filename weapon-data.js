@@ -29,6 +29,11 @@ const WEAPONS = [
         'Name Game': 'hyde_model_35_gun',
       },
       {
+        'Name EN': 'KB-P 135',
+        'Name RU': 'KB-P 135',
+        'Name Game': 'kb_p_135_gun',
+      },
+      {
         'Name EN': 'Lanchester',
         'Name RU': 'Lanchester',
         'Name Game': 'lanchester_32_gun',
@@ -1143,6 +1148,11 @@ const WEAPONS = [
         'Name EN': 'P08 Luger',
         'Name RU': 'P08 Luger',
         'Name Game': 'p08_luger_gun',
+      },
+      {
+        'Name EN': 'P08 Luger Artillery',
+        'Name RU': 'P08 Luger Artillery',
+        'Name Game': 'p08_luger_artillery_gun',
       },
       {
         'Name EN': 'Walther P38',

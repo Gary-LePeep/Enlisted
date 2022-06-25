@@ -179,21 +179,6 @@ var _germ_sdkfz_234_2 =
       ]
     }
   ],
-  "germ_sdkfz_234_2_red_eighteen_skin_td": {
-    "_extends": "germ_sdkfz_234_2_common",
-    "item__name": "items/germ_sdkfz_234_2_red_eighteen_td",
-    "animchar__objTexReplace:object": {
-      "ger_camo_dunkelgelb*": "ger_camo_dunkelgelb_green_braun_lines*"
-    },
-    "animchar__objTexSet:object": {
-      "sdkfz_234_2_body_c*:object": {
-        "sdkfz_234_2_skin_body_c*": "camo_skin_tex"
-      },
-      "sdkfz_234_2_turret_c*:object": {
-        "sdkfz_234_2_skin_turret_c*": "camo_skin_tex"
-      }
-    }
-  },
   "germ_sdkfz_234_2_driver_cockpit": {
     "_extends": "base_driver_cockpit_no_slits",
     "animchar__res": "pz_2c_driver_char",
@@ -429,6 +414,32 @@ var _germ_sdkfz_234_2 =
     },
     "cockpit__slitNodeNames:list<t>": {
       "slit": "cam_front"
+    }
+  },
+  "germ_sdkfz_234_2_red_eighteen_skin_td": {
+    "_extends": "germ_sdkfz_234_2_common",
+    "item__name": "items/germ_sdkfz_234_2_red_eighteen_td",
+    "animchar__objTexReplace:object": {
+      "ger_camo_dunkelgelb*": "ger_camo_dunkelgelb_green_braun_lines*"
+    },
+    "animchar__objTexSet:object": {
+      "sdkfz_234_2_body_c*:object": {
+        "sdkfz_234_2_skin_body_c*": "camo_skin_tex"
+      },
+      "sdkfz_234_2_turret_c*:object": {
+        "sdkfz_234_2_skin_turret_c*": "camo_skin_tex"
+      }
+    }
+  },
+  "germ_sdkfz_234_2_415th_battlepass_premium": {
+    "_extends": "germ_sdkfz_234_2_common",
+    "animchar__objTexSet:object": {
+      "sdkfz_234_2_body_c*:object": {
+        "sdkfz_234_2_415th_body_c*": "camo_skin_tex"
+      },
+      "sdkfz_234_2_turret_c*:object": {
+        "sdkfz_234_2_415th_turret_c*": "camo_skin_tex"
+      }
     }
   }
 }

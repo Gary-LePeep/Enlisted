@@ -5645,6 +5645,17 @@ var COMMONITEMSDATA =
     "item__name": "items/p08_luger_magazine",
     "collres__res": "p08_luger_ammo_collision"
   },
+  "p08_luger_artillery_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "p08_luger_artillery"
+    },
+    {
+      "collres__res": "p08_artillery_luger_collision"
+    }
+  ],
   "ppt_27_gun_item": [
     {
       "_extends": "item_gun"
@@ -5693,6 +5704,17 @@ var COMMONITEMSDATA =
     "item__name": "items/ppd_1929_magazine",
     "collres__res": "ppd_1929_ammo_collision"
   },
+  "kb_p_135_gun_item": [
+    {
+      "_extends": "item_gun"
+    },
+    {
+      "_extends": "kb_p_135"
+    },
+    {
+      "collres__res": "kb_p_135_collision"
+    }
+  ],
   "ppd_3438_gun_item": [
     {
       "_extends": "item_gun"

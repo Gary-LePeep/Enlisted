@@ -27,6 +27,13 @@ const UPDATES = {
       'Explosive pack now has 60 damage at up to 10m',
     ],
   },
+  1656122255233: {
+    link: 'https://enlisted.net/en/news/show/339-new-battle-pass-season-even-more-rewards-en/#!/',
+    text: [
+      'Hidden changes:',
+      'Luger 9x19 parabellum rounds have damage reduction from 5.9 to 5.7',
+    ],
+  },
 };
 
 function numToDate(num) {

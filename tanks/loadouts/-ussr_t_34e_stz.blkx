@@ -1,6 +1,9 @@
 var _ussr_t_34e_stz = 
 {
-  "ussr_t_34e_stz": [
+  "ussr_t_34e_stz": {
+    "_extends": "ussr_t_34e_stz_common"
+  },
+  "ussr_t_34e_stz_common": [
     {
       "_extends": "base_t_34e_stz"
     },
@@ -271,5 +274,16 @@ var _ussr_t_34e_stz =
         "slit": "cam_right"
       }
     ]
+  },
+  "ussr_t_34e_stz_artem_battlepass_premium": {
+    "_extends": "ussr_t_34e_stz_common",
+    "animchar__objTexSet:object": {
+      "t_34_e_stz_1942_turret_c*:object": {
+        "t_34_e_stz_1942_artem_turret_c*": "camo_skin_tex"
+      }
+    },
+    "animchar__objTexReplace:object": {
+      "ussr_camo_green*": "ussr_camo_dark_swamp*"
+    }
   }
 }

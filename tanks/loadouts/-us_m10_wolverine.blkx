@@ -1,7 +1,48 @@
 var _us_m10_wolverine = 
 {
   "us_m10_wolverine": {
-    "_extends": "us_m10_wolverine_common"
+    "_extends": "us_m10_wolverine_common",
+    "disableDMParts:list<t>": [
+      {
+        "part": "ex_armor_body_r_01"
+      },
+      {
+        "part": "ex_armor_body_r_02"
+      },
+      {
+        "part": "ex_armor_body_r_03"
+      },
+      {
+        "part": "ex_armor_body_r_04"
+      },
+      {
+        "part": "ex_armor_body_r_05"
+      },
+      {
+        "part": "ex_armor_body_l_01"
+      },
+      {
+        "part": "ex_armor_body_l_02"
+      },
+      {
+        "part": "ex_armor_body_l_03"
+      },
+      {
+        "part": "ex_armor_body_l_04"
+      },
+      {
+        "part": "ex_armor_body_l_05"
+      },
+      {
+        "part": "ex_armor_body_l_06"
+      },
+      {
+        "part": "ex_armor_turret_l_01"
+      },
+      {
+        "part": "ex_armor_turret_r_01"
+      }
+    ]
   },
   "us_m10_wolverine_common": [
     {
@@ -138,49 +179,6 @@ var _us_m10_wolverine =
           }
         }
       ]
-    },
-    {
-      "disableDMParts:list<t>": [
-        {
-          "part": "ex_armor_body_r_01"
-        },
-        {
-          "part": "ex_armor_body_r_02"
-        },
-        {
-          "part": "ex_armor_body_r_03"
-        },
-        {
-          "part": "ex_armor_body_r_04"
-        },
-        {
-          "part": "ex_armor_body_r_05"
-        },
-        {
-          "part": "ex_armor_body_l_01"
-        },
-        {
-          "part": "ex_armor_body_l_02"
-        },
-        {
-          "part": "ex_armor_body_l_03"
-        },
-        {
-          "part": "ex_armor_body_l_04"
-        },
-        {
-          "part": "ex_armor_body_l_05"
-        },
-        {
-          "part": "ex_armor_body_l_06"
-        },
-        {
-          "part": "ex_armor_turret_l_01"
-        },
-        {
-          "part": "ex_armor_turret_r_01"
-        }
-      ]
     }
   ],
   "us_m10_wolverine_driver_cockpit": {
@@ -239,7 +237,7 @@ var _us_m10_wolverine =
     ]
   },
   "us_m10_wolverine_702td_battlepass_premium": {
-    "_extends": "us_m10_wolverine_common",
+    "_extends": "us_m10_wolverine",
     "animchar__objTexSet:object": {
       "m10_wolverine_body_c*:object": {
         "m10_wolverine_normandy_702td_body_c*": "camo_skin_tex"
@@ -251,5 +249,69 @@ var _us_m10_wolverine =
         "mg_browning_m2hb_normandy_702td_mount_c*": "camo_skin_tex"
       }
     }
+  },
+  "us_m10_wolverine_2d_ad_epervier_battlepass_premium": {
+    "_extends": "us_m10_wolverine_common",
+    "animchar__objTexSet:object": {
+      "m10_wolverine_body_c*:object": {
+        "m10_wolverine_2d_ad_epervier_body_c*": "camo_skin_tex"
+      }
+    },
+    "disableDMParts:list<t>": [
+      {
+        "part": "ex_armor_body_r_01"
+      },
+      {
+        "part": "ex_armor_body_r_02"
+      },
+      {
+        "part": "ex_armor_body_r_03"
+      },
+      {
+        "part": "ex_armor_body_r_04"
+      },
+      {
+        "part": "ex_armor_body_r_05"
+      },
+      {
+        "part": "ex_armor_body_l_01"
+      },
+      {
+        "part": "ex_armor_body_l_04"
+      },
+      {
+        "part": "ex_armor_body_l_05"
+      },
+      {
+        "part": "ex_armor_body_l_06"
+      },
+      {
+        "part": "ex_armor_04"
+      },
+      {
+        "part": "ex_armor_01"
+      },
+      {
+        "part": "ex_decor_r_05"
+      },
+      {
+        "part": "ex_decor_l_07"
+      },
+      {
+        "part": "ex_decor_r_01"
+      },
+      {
+        "part": "ex_decor_r_02"
+      },
+      {
+        "part": "ex_decor_l_02"
+      },
+      {
+        "part": "ex_decor_l_04"
+      },
+      {
+        "part": "ex_decor_02"
+      }
+    ]
   }
 }

@@ -9,7 +9,10 @@ var _germ_pzkpfw_iii_ausf_e =
       {
         "part": "track_l_01"
       }
-    ]
+    ],
+    "animchar__objTexReplace:object": {
+      "ger_camo_grey*": "ger_camo_winter_grey*"
+    }
   },
   "germ_pzkpfw_III_ausf_E_common": [
     {
@@ -26,11 +29,6 @@ var _germ_pzkpfw_iii_ausf_e =
     },
     {
       "item__iconOffset": [0.0,0.3]
-    },
-    {
-      "animchar__objTexReplace:object": {
-        "ger_camo_grey*": "ger_camo_winter_grey*"
-      }
     },
     {
       "vehicle_seats__seats:shared:array": [
@@ -385,5 +383,27 @@ var _germ_pzkpfw_iii_ausf_e =
         "slit": "cam_front_right"
       }
     ]
+  },
+  "germ_pzkpfw_iii_ausf_e_600th_battlepass_premium": {
+    "_extends": "germ_pzkpfw_III_ausf_E_common",
+    "disableDMParts:list<t>": [
+      {
+        "part": "track_r_01"
+      },
+      {
+        "part": "track_l_01"
+      }
+    ],
+    "animchar__objTexSet:object": {
+      "pzkpfw_iii_ausf_e_body_c*:object": {
+        "pzkpfw_iii_ausf_e_600th_body_c*": "camo_skin_tex"
+      },
+      "pzkpfw_iii_ausf_e_turret_c*:object": {
+        "pzkpfw_iii_ausf_e_600th_turret_c*": "camo_skin_tex"
+      }
+    },
+    "animchar__objTexReplace:object": {
+      "ger_camo_grey*": "ger_camo_dark_grey*"
+    }
   }
 }

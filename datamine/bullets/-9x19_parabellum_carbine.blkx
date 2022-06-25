@@ -6,7 +6,7 @@ var _9x19_parabellum_carbine =
   "speed": 435.0,
   "maxDistance": 500.0,
   "bulletType": "ball",
-  "hitPowerMult": 5.9,
+  "hitPowerMult": 5.7,
   "effectiveDistance": 150.0,
   "relativeVelHitShift": [300.0,1000.0],
   "relativeVelArmorShift": [200.0,1000.0],

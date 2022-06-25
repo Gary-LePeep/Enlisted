@@ -1,6 +1,12 @@
 var _ussr_bt_7_1937 = 
 {
-  "ussr_bt_7_1937": [
+  "ussr_bt_7_1937": {
+    "_extends": "ussr_bt_7_1937_common",
+    "animchar__objTexReplace:object": {
+      "ussr_camo_green*": "ussr_camo_winter_white_full*"
+    }
+  },
+  "ussr_bt_7_1937_common": [
     {
       "_extends": "base_bt_7_1937"
     },
@@ -12,11 +18,6 @@ var _ussr_bt_7_1937 =
     },
     {
       "damage_model__blk": "content/tanks/gamedata/units/tanks/bt_7_1937.blk"
-    },
-    {
-      "animchar__objTexReplace:object": {
-        "ussr_camo_green*": "ussr_camo_winter_white_full*"
-      }
     },
     {
       "vehicle_seats__seatsProvideOrder:tag": []
@@ -101,22 +102,6 @@ var _ussr_bt_7_1937 =
       ]
     }
   ],
-  "ussr_bt_7_1937_td_purple": {
-    "_extends": "ussr_bt_7_1937",
-    "item__name": "items/ussr_bt_7_1937_td_purple",
-    "animchar__objTexReplace:object": {
-      "bt_7_body_c*": "bt_7_skin_body_c*",
-      "bt_7_gun_c*": "bt_7_skin_gun_c*",
-      "bt_7_turret_c*": "bt_7_skin_turret_c*"
-    }
-  },
-  "ussr_bt_7_1937_td_winter": {
-    "_extends": "ussr_bt_7_1937",
-    "item__name": "items/ussr_bt_7_1937_td_winter",
-    "animchar__objTexReplace:object": {
-      "ussr_camo_green*": "ussr_camo_winter_net*"
-    }
-  },
   "ussr_bt_7_1937_driver_cockpit": {
     "_extends": "base_driver_cockpit",
     "animchar__res": "bt_7_driver_char",
@@ -299,6 +284,33 @@ var _ussr_bt_7_1937 =
     },
     "cockpit__slitNodeNames:list<t>": {
       "slit": "cam_left"
+    }
+  },
+  "ussr_bt_7_1937_td_purple": {
+    "_extends": "ussr_bt_7_1937_common",
+    "item__name": "items/ussr_bt_7_1937_td_purple",
+    "animchar__objTexReplace:object": {
+      "bt_7_body_c*": "bt_7_skin_body_c*",
+      "bt_7_gun_c*": "bt_7_skin_gun_c*",
+      "bt_7_turret_c*": "bt_7_skin_turret_c*"
+    }
+  },
+  "ussr_bt_7_1937_td_winter": {
+    "_extends": "ussr_bt_7_1937_common",
+    "item__name": "items/ussr_bt_7_1937_td_winter",
+    "animchar__objTexReplace:object": {
+      "ussr_camo_green*": "ussr_camo_winter_net*"
+    }
+  },
+  "ussr_bt_7_1937_13th_battlepass_premium": {
+    "_extends": "ussr_bt_7_1937_common",
+    "animchar__objTexSet:object": {
+      "bt_7_body_c*:object": {
+        "bt_7_13th_body_c*": "camo_skin_tex"
+      },
+      "bt_7_turret_c*:object": {
+        "bt_7_13th_turret_c*": "camo_skin_tex"
+      }
     }
   }
 }

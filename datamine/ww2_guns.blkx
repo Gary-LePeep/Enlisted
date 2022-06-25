@@ -10253,6 +10253,197 @@ var COMMONGUNSDATA =
       }
     }
   ],
+  "kb_p_135": [
+    {
+      "_extends": "main_weap_slots"
+    },
+    {
+      "_extends": "ironsights_open_smg"
+    },
+    {
+      "animchar__res": "kb_p_135_char"
+    },
+    {
+      "gun__blk": "content/e_ww2_common/gamedata/weapons/kb_p_135.blk"
+    },
+    {
+      "item__template": "kb_p_135_gun_item"
+    },
+    {
+      "item__proto": "content/e_ww2_common/gamedata/weapons/kb_p_135.blk"
+    },
+    {
+      "item__locDetails": "RoF: 800; 7.62x25mm;"
+    },
+    {
+      "item__id": 0
+    },
+    {
+      "item__weapTemplate": "kb_p_135_gun"
+    },
+    {
+      "item__name": "items/kb_p_135"
+    },
+    {
+      "item__weapType": "submachine_gun"
+    },
+    {
+      "item__weight": 2.8
+    },
+    {
+      "gun__locName": "Degtyaryov carbine"
+    },
+    {
+      "gun__statName": "submachine_gun"
+    },
+    {
+      "gun__sightsDistance": 0.15
+    },
+    {
+      "gun__shotFreq": 7.0
+    },
+    {
+      "gun__shotFreqRndK": 0.1
+    },
+    {
+      "gun_spread__maxDeltaAngle": 0.58
+    },
+    {
+      "gun_deviation__omegaRange": [30.0,90.0]
+    },
+    {
+      "gun_deviation__omegaDevInc": [0.07,0.5]
+    },
+    {
+      "gun_deviation__movementRange": [2.1,4.0]
+    },
+    {
+      "gun_deviation__movementDevInc": [0.0,8.0]
+    },
+    {
+      "gun_deviation__onShotDeviationChange": 0.0
+    },
+    {
+      "gun_deviation__shotTau": 0.1
+    },
+    {
+      "gun_deviation__extraDeviationTau": 0.2
+    },
+    {
+      "gun_deviation__maxDeviation": 20.0
+    },
+    {
+      "gun__reloadTime": 2.7
+    },
+    {
+      "gun__altReloadTime": 2.3
+    },
+    {
+      "gun__kineticDamageMult": 1.05
+    },
+    {
+      "gun__ammoHolders:array": {
+        "ammoHolders": "ppd_3438_box_magazine"
+      }
+    },
+    {
+      "gun__shells:array": {
+        "shells": "content/enlisted/gamedata/weapons_enlisted/bullets/7.62x25_tokarev_smg.blk"
+      }
+    },
+    {
+      "gun__firingModes:array": {
+        "mode:object": {
+          "modeType": "burst",
+          "burstSize": 1
+        }
+      }
+    },
+    {
+      "gun__firingModeNames:array": {
+        "mode": "semi_auto"
+      }
+    }
+  ],
+  "kb_p_135_gun": [
+    {
+      "_extends": "base_equipable_gun"
+    },
+    {
+      "_extends": "mp_ww2_preset"
+    },
+    {
+      "_extends": "kb_p_135"
+    },
+    {
+      "_extends": "smg_muzzle_preset"
+    },
+    {
+      "_extends": "gun_switch_firing_mode_sound"
+    },
+    {
+      "_extends": "mgun_gun_aim_sound"
+    },
+    {
+      "gun__standOffset": [0.2,0.05,0.15]
+    },
+    {
+      "gun__crouchOffset": [0.2,-0.07,0.25]
+    },
+    {
+      "gun__length": 0.4
+    },
+    {
+      "gun__recoilAmount": 0.031
+    },
+    {
+      "gun__recoilDirAmount": 0.7
+    },
+    {
+      "gun__recoilControlMult": 0.6
+    },
+    {
+      "gun__recoilDir": 0.0
+    },
+    {
+      "gun__adsSpeedMult": 0.85
+    },
+    {
+      "gun__visualRecoilMult": 1.6
+    },
+    {
+      "meleeSoundType": "mgun"
+    },
+    {
+      "_group": {
+        "_tags": "sound",
+        "gun_sound__startLoopWithNOneshots": 3
+      }
+    },
+    {
+      "gun_sound__shotPath:shared:object": {
+        "_tags": "sound",
+        "path": "/weapon/mgun/ppd3438"
+      }
+    },
+    {
+      "sound_irqs:shared:object": {
+        "_tags": "sound",
+        "reload1:object": {
+          "path": "/weapon/mgun/pp_dolganov/reload1/change_ammo"
+        },
+        "reload2:object": {
+          "path": "/weapon/mgun/pp_dolganov/reload2/change_ammo"
+        },
+        "reload3:object": {
+          "path": "/weapon/mgun/pp_dolganov/reload3/change_ammo"
+        },
+        "reload4:object": {
+          "path": "/weapon/mgun/pp_dolganov/reload4/change_ammo"
+        }
+      }
+    }
+  ],
   "ppd_3438": [
     {
       "_extends": "main_weap_slots"
@@ -30138,6 +30329,173 @@ var COMMONGUNSDATA =
       "_extends": "p08_luger_platinum"
     }
   ],
+  "p08_luger_artillery": [
+    {
+      "_extends": "main_weap_slots"
+    },
+    {
+      "_extends": "ironsights_open_pistol"
+    },
+    {
+      "animchar__res": "p08_artillery_luger_char"
+    },
+    {
+      "gun__blk": "content/e_ww2_common/gamedata/weapons/p08_luger_artillery.blk"
+    },
+    {
+      "item__template": "p08_luger_artillery_gun_item"
+    },
+    {
+      "item__proto": "content/e_ww2_common/gamedata/weapons/p08_luger_artillery.blk"
+    },
+    {
+      "item__locDetails": "9x19mm;"
+    },
+    {
+      "item__id": 0
+    },
+    {
+      "item__weapTemplate": "p08_luger_artillery_gun"
+    },
+    {
+      "item__name": "items/p08_luger_artillery"
+    },
+    {
+      "item__weapType": "submachine_gun"
+    },
+    {
+      "item__weight": 1.5
+    },
+    {
+      "gun__locName": "P08 Luger"
+    },
+    {
+      "gun__statName": "submachine_gun"
+    },
+    {
+      "gun__shotFreq": 6.0
+    },
+    {
+      "gun__shotFreqRndK": 0.1
+    },
+    {
+      "gun__automaticReload": false
+    },
+    {
+      "gun_spread__maxDeltaAngle": 0.65
+    },
+    {
+      "gun_deviation__omegaRange": [30.0,90.0]
+    },
+    {
+      "gun_deviation__omegaDevInc": [0.1,0.4]
+    },
+    {
+      "gun_deviation__movementRange": [2.1,4.0]
+    },
+    {
+      "gun_deviation__movementDevInc": [0.0,5.0]
+    },
+    {
+      "gun_deviation__onShotDeviationChange": 0.0
+    },
+    {
+      "gun_deviation__shotTau": 0.1
+    },
+    {
+      "gun_deviation__extraDeviationTau": 0.15
+    },
+    {
+      "gun_deviation__maxDeviation": 15.0
+    },
+    {
+      "gun__reloadTime": 2.8
+    },
+    {
+      "gun__altReloadTime": 2.4
+    },
+    {
+      "gun__ammoHolders:array": {
+        "ammoHolders": "mp_18_magazine"
+      }
+    },
+    {
+      "gun__shells:array": {
+        "shells": "content/enlisted/gamedata/weapons_enlisted/bullets/9x19_parabellum_smg.blk"
+      }
+    },
+    {
+      "gun__firingModes:array": {
+        "mode:object": {
+          "modeType": "burst",
+          "burstSize": 1
+        }
+      }
+    },
+    {
+      "gun__firingModeNames:array": {
+        "mode": "semi_auto"
+      }
+    }
+  ],
+  "p08_luger_artillery_gun": [
+    {
+      "_extends": "base_equipable_gun"
+    },
+    {
+      "_extends": "pistol_ww2_preset"
+    },
+    {
+      "_extends": "p08_luger_artillery"
+    },
+    {
+      "_extends": "pistol_muzzle_preset"
+    },
+    {
+      "gun__recoilAmount": 0.051
+    },
+    {
+      "gun__recoilDirAmount": 0.64
+    },
+    {
+      "gun__recoilControlMult": 0.6
+    },
+    {
+      "gun__recoilDir": 0.0
+    },
+    {
+      "gun__visualRecoilMult": 0.5
+    },
+    {
+      "gun__rotationSpringMult": [0.9,0.8,0.8]
+    },
+    {
+      "meleeSoundType": "pistol"
+    },
+    {
+      "gun_attach__holsterSlots:array": []
+    },
+    {
+      "gun_sound__shotPath:shared:object": {
+        "_tags": "sound",
+        "path": "/weapon/pistol/p08"
+      }
+    },
+    {
+      "sound_irqs:shared:object": {
+        "_tags": "sound",
+        "reload1:object": {
+          "path": "/weapon/pistol/p08/reload1/change_ammo"
+        },
+        "reload2:object": {
+          "path": "/weapon/pistol/p08/reload2/change_ammo"
+        },
+        "reload3:object": {
+          "path": "/weapon/pistol/p08/reload3/change_ammo"
+        }
+      }
+    }
+  ],
   "dreyse_m1907": [
     {
       "_extends": "pistol_weap_slots"
@@ -49998,7 +50356,7 @@ var COMMONGUNSDATA =
     "ownerEid:eid": []
   },
   "m24_smoke_grenade_short_time": {
-    "_extends": "m24_grenade"
+    "_extends": "m24_smoke_grenade"
   },
   "m24_smoke_grenade_short_time_phys": {
     "_extends": "m24_smoke_grenade_phys",
@@ -52438,7 +52796,7 @@ var COMMONGUNSDATA =
       "gun__statName": "submachine_gun"
     },
     {
-      "gun__shotFreq": 5.333
+      "gun__shotFreq": 7.0
     },
     {
       "gun__boltFreq": 7.0
@@ -52459,7 +52817,7 @@ var COMMONGUNSDATA =
       "gun_deviation__movementRange": [2.1,4.0]
     },
     {
-      "gun_deviation__movementDevInc": [0.0,15.0]
+      "gun_deviation__movementDevInc": [0.0,7.0]
     },
     {
       "gun_deviation__onShotDeviationChange": 0.0
@@ -52490,6 +52848,9 @@ var COMMONGUNSDATA =
     },
     {
       "melee_weapon__attackAt": 0.375
+    },
+    {
+      "gun__kineticDamageMult": 1.05
     },
     {
       "gun__ammoHolders:array": {
@@ -52550,10 +52911,13 @@ var COMMONGUNSDATA =
       "gun__recoilDirAmount": 0.52
     },
     {
+      "gun__recoilControlMult": 0.6
+    },
+    {
       "gun__recoilDir": 0.0
     },
     {
-      "gun__visualRecoilMult": 1.0
+      "gun__visualRecoilMult": 1.3
     },
     {
       "gun__adsSpeedMult": 0.76
@@ -52623,7 +52987,7 @@ var COMMONGUNSDATA =
       "item__weapType": "submachine_gun"
     },
     {
-      "item__weight": 4.5
+      "item__weight": 4.1
     },
     {
       "gun__locName": "S&W Light Rifle Mk I"
@@ -52635,7 +52999,7 @@ var COMMONGUNSDATA =
       "gun__sightsDistance": 0.25
     },
     {
-      "gun__shotFreq": 5.333
+      "gun__shotFreq": 7.0
     },
     {
       "gun__boltFreq": 7.0
@@ -52805,7 +53169,7 @@ var COMMONGUNSDATA =
       "item__weapType": "submachine_gun"
     },
     {
-      "item__weight": 4.5
+      "item__weight": 3.1
     },
     {
       "gun__locName": "S&W Light Rifle Mk II"
@@ -52817,7 +53181,7 @@ var COMMONGUNSDATA =
       "gun__sightsDistance": 0.25
     },
     {
-      "gun__shotFreq": 5.333
+      "gun__shotFreq": 7.0
     },
     {
       "gun__boltFreq": 7.0
@@ -52857,6 +53221,9 @@ var COMMONGUNSDATA =
     },
     {
       "gun__altReloadTime": 3.3
+    },
+    {
+      "gun__kineticDamageMult": 1.05
     },
     {
       "gun__ammoHolders:array": {
@@ -52908,10 +53275,13 @@ var COMMONGUNSDATA =
       "gun__length": 0.4
     },
     {
-      "gun__recoilAmount": 0.03
+      "gun__recoilAmount": 0.034
     },
     {
       "gun__recoilDirAmount": 0.71
+    },
+    {
+      "gun__recoilControlMult": 0.6
     },
     {
       "gun__recoilDir": 0.0
