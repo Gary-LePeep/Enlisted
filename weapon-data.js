@@ -924,7 +924,7 @@ const WEAPONS = [
       {
         'Name EN': 'M1 Bazooka',
         'Name RU': 'М1 базука',
-        'Name Game': 'm9_bazooka_gun',
+        'Name Game': 'm1_bazooka_gun',
       },
       {
         'Name EN': 'M1 Flamethrower',
@@ -939,7 +939,7 @@ const WEAPONS = [
       {
         'Name EN': 'M9 Bazooka',
         'Name RU': 'М9 базука',
-        'Name Game': 'm1_bazooka_gun',
+        'Name Game': 'm9_bazooka_gun',
       },
       {
         'Name EN': 'Panzerfaust 60',
