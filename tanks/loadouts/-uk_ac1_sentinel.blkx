@@ -1,0 +1,219 @@
+var _uk_ac1_sentinel = 
+{
+  "uk_ac1_sentinel_pacific_premium": {
+    "_extends": "uk_ac1_sentinel_common"
+  },
+  "uk_ac1_sentinel_common": {
+    "_extends": "base_ac1_sentinel",
+    "item__iconOffset": [0.0,0.0],
+    "vehicle_seats__seats:shared:array": [
+      {
+        "seats:object": {
+          "name": "main_gunner",
+          "locName": "vehicle_seats/gunner",
+          "attachNode": "gunner",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isGunner",
+          "nextSeat": "driver",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "gunner",
+          "cameraNodeName": "bone_camera_gunner",
+          "cockpitTemplate": "uk_ac1_sentinel_gunner_cockpit",
+          "turretNames:array": [
+            {
+              "turretNames": "turret_01"
+            },
+            {
+              "turretNames": "turret_02"
+            }
+          ]
+        }
+      },
+      {
+        "seats:object": {
+          "name": "driver",
+          "locName": "vehicle_seats/driver",
+          "seatOwnsEntityControl": true,
+          "attachNode": "driver",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.25,0.0]
+          ],
+          "seatComponent": "isDriver",
+          "nextSeat": "main_gunner",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "driver",
+          "cameraNodeName": "bone_camera_driver",
+          "cameraOffset": [0.15,-0.0,-0.0],
+          "cockpitTemplate": "uk_ac1_sentinel_driver_cockpit"
+        }
+      },
+      {
+        "seats:object": {
+          "name": "commander",
+          "locName": "vehicle_seats/commander",
+          "attachNode": "commander",
+          "shouldHideOwner": true,
+          "maxPosWithOpenHatch": 0.8,
+          "hatchRotationAxis": [1.8,0.0,0.0],
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.05,-0.5,0.28]
+          ],
+          "seatComponent": "isDriver",
+          "receiveDamageFromDMPart": "commander",
+          "cameraNodeName": "bone_turret",
+          "cockpitTemplate": "uk_ac1_sentinel_commander_cockpit",
+          "hatchNodes:array": [
+            {
+              "node": "hatch_07"
+            },
+            {
+              "node": "hatch_08"
+            }
+          ]
+        }
+      },
+      {
+        "seats:object": {
+          "name": "main_gunner",
+          "locName": "vehicle_seats/additional_gunner",
+          "attachNode": "gunner",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isGunner",
+          "nextSeat": "driver",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "gunner",
+          "cameraNodeName": "root",
+          "cockpitTemplate": "uk_ac1_sentinel_machinegunner_cockpit",
+          "turretNames:array": {
+            "turret": "turret_03"
+          }
+        }
+      },
+      {
+        "seats:object": {
+          "locName": "vehicle_seats/loader",
+          "attachNode": "loader",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isPassenger",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "loader",
+          "cameraNodeName": "bone_camera_driver",
+          "loaderTurretNames:array": {
+            "turret": "turret_01"
+          }
+        }
+      }
+    ]
+  },
+  "uk_ac1_sentinel_driver_cockpit": {
+    "_extends": "base_driver_cockpit_no_slits",
+    "animchar__res": "bt_7_driver_char",
+    "cockpit__offset": [0.0727883,-0.352521,0.00298698],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.07
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": false
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "uk_ac1_sentinel_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/default.blk",
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "ba_11_gunner_char",
+    "cockpit__offset": [-0.590791,-0.0570703,0.23677],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.19
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__attachNodeIndices:list<i>": []
+  },
+  "uk_ac1_sentinel_machinegunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "ba_11_machinegunner_char",
+    "cockpit__offset": [-0.18876,-0.259953,-0.198009],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_mg"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.05
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_mg_v"
+    },
+    "cockpit__attachNodeIndices:list<i>": []
+  },
+  "uk_ac1_sentinel_commander_cockpit": {
+    "_extends": "base_commander_cockpit_no_slits",
+    "animchar__res": "ba_11_gunner_char",
+    "cockpit__offset": [-0.0,0.0,-0.0],
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "item": [-0.762087,0.898934,0.700869]
+    },
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.22
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    }
+  }
+}

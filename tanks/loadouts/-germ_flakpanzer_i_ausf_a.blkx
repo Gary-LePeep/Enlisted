@@ -5,7 +5,10 @@ var _germ_flakpanzer_i_ausf_a =
       "_extends": "base_flpz_i_ausf_a"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
+    },
+    {
+      "_extends": "tank_light_vehicle_tracks_sound"
     },
     {
       "bullet_holes__movingCollisionNodes:array": {

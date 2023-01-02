@@ -1,0 +1,902 @@
+var armor_aa_gun_flak38 = 
+{
+  "VehiclePhys": {
+    "skipUpdateOnSleep": true,
+    "Mass": {
+      "Empty": 9500.0,
+      "Fuel": 200.0,
+      "TakeOff": 9700.0,
+      "momentOfInertia": [2.5,2.5,6.0],
+      "CenterOfGravity": [0.2,0.5,0.0],
+      "AdvancedMass": false,
+      "CenterOfGravityClampY": [0.0,0.7],
+      "cls_body": 1.0
+    },
+    "collisionProps": {
+      "cls_body": "convex_hull"
+    },
+    "engine": {
+      "horsePowers": 0.1,
+      "maxRPM": 2200.0,
+      "minRPM": 700.0
+    },
+    "mechanics": {
+      "maxBrakeForce": 1.0,
+      "driveGearRadius": 0.3165,
+      "mainGearRatio": 1.084,
+      "sideGearRatio": 4.3,
+      "gearRatios": [
+        {
+          "ratio": -9.25
+        },
+        {
+          "ratio": 0.0
+        },
+        {
+          "ratio": 13.95
+        },
+        {
+          "ratio": 6.5
+        },
+        {
+          "ratio": 3.3
+        },
+        {
+          "ratio": 1.8
+        },
+        {
+          "ratio": 1.34
+        }
+      ]
+    },
+    "suspension": {
+      "suspensionOffsets": [-0.07,-0.06,0.06],
+      "defaultGearRadius": 0.372,
+      "defaultDampeningForce": [17000.0,17000.0],
+      "hasSuspensionOnDriveGear": true,
+      "dampeningRelaxationRatio": 0.4,
+      "dampeningCompressionRatio": 0.15,
+      "brokenWheelSteeringDeflection": -15.0,
+      "wheel_l_01": 0.372,
+      "wheel_r_01": 0.372,
+      "wheel_l_02": 0.372,
+      "wheel_r_02": 0.372,
+      "recalcWtms": true
+    }
+  },
+  "DamageParts": {
+    "formatVersion": 2,
+    "body_front": {
+      "hitTestType": "armor",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": -1.0,
+      "externalArmor": true,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": true,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 0.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 0.0,
+      "armorClass": "RHA_tank",
+      "hp": 1000.0,
+      "armorThickness": 25.0
+    },
+    "turret_front": {
+      "hitTestType": "armor",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": -1.0,
+      "externalArmor": true,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": true,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 0.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 0.0,
+      "armorClass": "RHA_tank",
+      "hp": 1000.0,
+      "armorThickness": 15.0
+    },
+    "turret_side": {
+      "hitTestType": "armor",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": -1.0,
+      "externalArmor": true,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": true,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 0.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 0.0,
+      "armorClass": "RHA_tank",
+      "hp": 1000.0,
+      "armorThickness": 15.0
+    },
+    "turret_top": {
+      "hitTestType": "armor",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": -1.0,
+      "externalArmor": true,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": true,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 0.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 0.0,
+      "armorClass": "RHA_tank",
+      "hp": 1000.0,
+      "armorThickness": 25.0
+    },
+    "turret_01_front": {
+      "hitTestType": "armor",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": -1.0,
+      "externalArmor": true,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": true,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 0.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 0.0,
+      "armorClass": "RHA_tank",
+      "hp": 1000.0,
+      "armorThickness": 15.0
+    },
+    "turret_back": {
+      "hitTestType": "armor",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": -1.0,
+      "externalArmor": true,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": true,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 0.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 0.0,
+      "armorClass": "RHA_tank",
+      "hp": 1000.0,
+      "armorThickness": 15.0
+    },
+    "optic_gun": {
+      "hitTestType": "armor",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": -1.0,
+      "externalArmor": false,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": false,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 0.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 0.0,
+      "armorClass": "optics_tank",
+      "hp": 50.0,
+      "armorThickness": 10.0
+    },
+    "gun_barrel": {
+      "hitTestType": "armor",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": -1.0,
+      "externalArmor": false,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": true,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 0.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 0.0,
+      "vital": true,
+      "armorClass": "tank_barrel",
+      "hp": 100.0,
+      "armorThickness": 10.0
+    },
+    "gunner": {
+      "hitTestType": "inner",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": -1.0,
+      "externalArmor": false,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": true,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 1.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 1.0,
+      "ldmInner": true,
+      "vital": true,
+      "armorClass": "steel_tankman",
+      "hp": 40.0,
+      "genericDamageMult": 3.0,
+      "ignoreSolidDimension": true
+    },
+    "drive_turret_v": {
+      "hitTestType": "inner",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": 5.0,
+      "externalArmor": false,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": true,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 0.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 0.0,
+      "vital": true,
+      "ldmInner": true,
+      "armorClass": "tank_structural_steel",
+      "hp": 150.0,
+      "armorThrough": 15.0,
+      "hidableInViewer": false
+    },
+    "drive_turret_h": {
+      "hitTestType": "inner",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": 5.0,
+      "externalArmor": false,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": true,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 0.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 0.0,
+      "vital": true,
+      "ldmInner": true,
+      "armorClass": "tank_structural_steel",
+      "hp": 150.0,
+      "armorThrough": 15.0,
+      "hidableInViewer": false
+    },
+    "cannon_breech": {
+      "hitTestType": "inner",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": 5.0,
+      "externalArmor": false,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": true,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 0.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 0.0,
+      "vital": true,
+      "ldmInner": true,
+      "armorClass": "tank_structural_steel",
+      "hp": 150.0,
+      "armorThickness": 150.0,
+      "hidableInViewer": false,
+      "restrainDamage": 0.5,
+      "armorThrough": 150.0
+    },
+    "ammo_turret": {
+      "hitTestType": "inner",
+      "malfunctionDamage": 0.7,
+      "stopChanceOnDeadPart": 1.0,
+      "castOnKillAfterTankPartDead": false,
+      "fireProtectionHp": 20.0,
+      "externalArmor": false,
+      "minRelHpSelfRepair": 0.5,
+      "maxRelHpSelfRepair": 0.5,
+      "selfRepairDelay": 0.0,
+      "selfRepairTime": -1.0,
+      "ignoreDeadWithSplash": false,
+      "useForSeriousHit": true,
+      "splashPenetrationToArmorThreshold": 0.33,
+      "pressureDamageMult": 0.0,
+      "napalmDamageMult": 0.0,
+      "sonicDamageMult": 0.0,
+      "vital": true,
+      "ldmInner": true,
+      "armorClass": "tank_structural_steel",
+      "hp": 300.0,
+      "armorThickness": 2.0,
+      "armorThrough": 10.0,
+      "createSecondaryShatters": false
+    }
+  },
+  "DamageEffects": [
+    {
+      "part": [
+        {
+          "name": "ammo_turret"
+        },
+        {
+          "onHit": {
+            "damageType": "cumulative",
+            "expl": 0.4,
+            "fire": 0.5,
+            "damage": 75.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "cumulative",
+            "expl": 0.6,
+            "fire": 0.4,
+            "damage": 200.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "explosion",
+            "expl": 0.1,
+            "fire": 0.1,
+            "damage": 20.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "explosion",
+            "expl": 0.15,
+            "fire": 0.15,
+            "damage": 50.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "explosion",
+            "expl": 0.2,
+            "fire": 0.15,
+            "damage": 200.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "explosion",
+            "expl": 0.4,
+            "fire": 0.2,
+            "damage": 400.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "expl": 0.075,
+            "fire": 0.075,
+            "damage": 70.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "expl": 0.15,
+            "fire": 0.15,
+            "damage": 200.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "expl": 0.25,
+            "fire": 0.25,
+            "damage": 300.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "secondaryShatter",
+            "fire": 0.05,
+            "damage": 50.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "secondaryShatter",
+            "fire": 0.15,
+            "damage": 150.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "secondaryShatter",
+            "fire": 0.4,
+            "damage": 200.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "fire",
+            "fire": 0.01,
+            "full_expl": 0.01,
+            "expl": 0.01
+          }
+        },
+        {
+          "onKill": {
+            "damageType": "cumulative",
+            "expl": 0.4,
+            "full_expl": 0.1,
+            "fire": 0.5
+          }
+        },
+        {
+          "onKill": {
+            "damageType": "explosion",
+            "expl": 0.4,
+            "full_expl": 0.1,
+            "fire": 0.5
+          }
+        },
+        {
+          "onKill": {
+            "damageType": "secondaryShatter",
+            "expl": 0.4,
+            "full_expl": 0.1,
+            "fire": 0.5
+          }
+        },
+        {
+          "onKill": {
+            "damageType": "generic",
+            "expl": 0.5,
+            "full_expl": 0.1,
+            "fire": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "part": [
+        {
+          "onHit": {
+            "damageType": "cumulative",
+            "expl": 0.1,
+            "fire": 0.2,
+            "damage": 100.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "cumulative",
+            "expl": 0.2,
+            "fire": 0.3,
+            "damage": 250.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "explosion",
+            "expl": 0.125,
+            "fire": 0.225,
+            "damage": 25.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "explosion",
+            "expl": 0.25,
+            "fire": 0.35,
+            "damage": 50.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.1,
+            "damage": 20.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.25,
+            "damage": 70.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.4,
+            "damage": 200.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.7,
+            "expl": 0.1,
+            "damage": 300.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.5,
+            "expl": 0.5,
+            "damage": 400.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.2,
+            "expl": 0.8,
+            "damage": 600.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "fire",
+            "fire": 0.2
+          }
+        },
+        {
+          "onKill": {
+            "fire": 0.5,
+            "expl": 0.3,
+            "nothing": 0.2,
+            "fHitCritical": true
+          }
+        }
+      ]
+    },
+    {
+      "part": [
+        {
+          "onHit": {
+            "damageType": "cumulative",
+            "fire": 0.2,
+            "damage": 75.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "explosion",
+            "fire": 0.3,
+            "damage": 30.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.2,
+            "damage": 70.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.55,
+            "damage": 300.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.35,
+            "damage": 200.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.1,
+            "damage": 20.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "fire",
+            "fire": 0.1
+          }
+        },
+        {
+          "onKill": {
+            "fire": 0.5,
+            "nothing": 0.5,
+            "fHitCritical": true
+          }
+        }
+      ]
+    },
+    {
+      "part": [
+        {
+          "onHit": {
+            "damageType": "cumulative",
+            "fire": 0.15,
+            "damage": 75.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "explosion",
+            "fire": 0.1,
+            "damage": 30.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.05,
+            "damage": 70.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.1,
+            "damage": 200.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "fire",
+            "fire": 0.02
+          }
+        }
+      ]
+    },
+    {
+      "part": {
+        "onKill": {
+          "track_r": 1.0
+        }
+      }
+    },
+    {
+      "part": {
+        "onKill": {
+          "track_r": 1.0
+        }
+      }
+    },
+    {
+      "part": {
+        "onKill": {
+          "track_r": 1.0
+        }
+      }
+    },
+    {
+      "part": {
+        "onKill": {
+          "track_l": 1.0
+        }
+      }
+    },
+    {
+      "part": {
+        "onKill": {
+          "track_l": 1.0
+        }
+      }
+    },
+    {
+      "part": {
+        "onKill": {
+          "track_l": 1.0
+        }
+      }
+    },
+    {
+      "part": [
+        {
+          "name": "body_front"
+        },
+        {
+          "name": "turret_front"
+        },
+        {
+          "name": "turret_side"
+        },
+        {
+          "name": "turret_back"
+        },
+        {
+          "name": "turret_top"
+        },
+        {
+          "name": "turret_01_front"
+        },
+        {
+          "onHit": {
+            "damageType": "explosion",
+            "damage": 0.0,
+            "action": {
+              "type": "fxEvent",
+              "probability": 0.05,
+              "fxEventName": "fire_after_hit_tiny"
+            }
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "damage": 0.0,
+            "action": {
+              "type": "fxEvent",
+              "probability": 0.05,
+              "fxEventName": "fire_after_hit_tiny"
+            }
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "explosion",
+            "damage": 18.0,
+            "action": {
+              "type": "fxEvent",
+              "probability": 0.2,
+              "fxEventName": "fire_after_hit_small"
+            }
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "damage": 30.0,
+            "action": {
+              "type": "fxEvent",
+              "probability": 0.2,
+              "fxEventName": "fire_after_hit_small"
+            }
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "explosion",
+            "damage": 30.0,
+            "action": {
+              "type": "fxEvent",
+              "probability": 0.4,
+              "fxEventName": "fire_after_hit_med"
+            }
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "damage": 50.0,
+            "action": {
+              "type": "fxEvent",
+              "probability": 0.4,
+              "fxEventName": "fire_after_hit_med"
+            }
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "cumulative",
+            "damage": 80.0,
+            "action": {
+              "type": "fxEvent",
+              "probability": 0.4,
+              "fxEventName": "fire_after_hit_med"
+            }
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "explosion",
+            "damage": 200.0,
+            "action": {
+              "type": "fxEvent",
+              "probability": 0.7,
+              "fxEventName": "fire_after_hit_big"
+            }
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "damage": 120.0,
+            "action": {
+              "type": "fxEvent",
+              "probability": 0.7,
+              "fxEventName": "fire_after_hit_big"
+            }
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "cumulative",
+            "damage": 200.0,
+            "action": {
+              "type": "fxEvent",
+              "probability": 0.7,
+              "fxEventName": "fire_after_hit_big"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

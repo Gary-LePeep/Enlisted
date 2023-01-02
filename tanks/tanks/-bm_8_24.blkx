@@ -110,7 +110,7 @@ var _bm_8_24 =
       }
     }
   ],
-  "bm_8_24_projectile": {
+  "base_bm_8_24_projectile": {
     "_extends": "rocket_projectile",
     "animchar__res": "m_8_rocket_char",
     "shell__concussionMaxRadius:r": {

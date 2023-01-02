@@ -152,8 +152,6 @@ var _m10_achilles =
           "turretInfo:object": {
             "turretName": "turret_02",
             "gun": "m10_achilles_turret_02_12_7mm_m2_hb",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }
@@ -202,19 +200,19 @@ var _m10_achilles =
     "turret__limit": [-60.0,60.0,-10.0,70.0],
     "gun__shellsAmmo:array": [
       {
-        "ammo": 60
+        "ammo": 80
       },
       {
-        "ammo": 60
+        "ammo": 80
       },
       {
-        "ammo": 60
+        "ammo": 80
       },
       {
-        "ammo": 60
+        "ammo": 80
       },
       {
-        "ammo": 60
+        "ammo": 80
       }
     ]
   },

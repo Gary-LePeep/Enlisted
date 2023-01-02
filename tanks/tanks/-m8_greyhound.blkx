@@ -50,6 +50,9 @@ var _m8_greyhound =
       "item__name": "items/us_m8_greyhound"
     },
     {
+      "destroyIfNoCrewLeft": false
+    },
+    {
       "skin__template": "m8_greyhound_skins"
     },
     {
@@ -171,8 +174,6 @@ var _m8_greyhound =
             "turretName": "turret_02",
             "gun": "m8_greyhound_turret_02_7_62mm_m1919a4",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         },
@@ -181,8 +182,6 @@ var _m8_greyhound =
             "turretName": "turret_03",
             "gun": "m8_greyhound_turret_03_12_7mm_m2_hb",
             "barrelDm": "gun_barrel_02",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }

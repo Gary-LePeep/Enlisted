@@ -2,24 +2,24 @@ var _12_7mm_m2_hb_defaultset_bullet_2 =
 {
   "mass": 0.041,
   "caliber": 0.0127,
-  "speed": 944.0,
+  "speed": 850.0,
+  "Cx": 0.15,
   "maxDistance": 2000.0,
   "normalizationPreset": "default",
-  "bulletType": "i_ball_M1",
+  "bulletType": "he_i_ball",
   "bulletName": "i_ball_M1",
   "nearHitPower": [1.0,50.0],
   "midHitPower": [0.9,300.0],
   "farHitPower": [0.1,700.0],
   "endHitPower": [0.008,1500.0],
-  "explodeTreshold": 0.3,
-  "explodeHitPower": 8.0,
-  "explodeArmorPower": 2.0,
-  "explodeRadius": [0.12,0.2],
-  "fuseDelayDist": 0.02,
+  "explodeTreshold": 0.1,
+  "explodeHitPower": 12.0,
+  "explodeArmorPower": 3.0,
+  "explodeRadius": [0.03,0.1],
   "shutterDamage": true,
-  "shutterAmount": 5,
+  "shutterAmount": 10,
   "shutterArmorPower": 3.0,
-  "shutterHit": 2.5,
+  "shutterHit": 3.5,
   "groundCollisionEffect": "hit_12_18mm_dirt_he",
   "ricochetEffect": "hit_12_18mm_metal_ap",
   "waterCollisionEffect": "hit_12_18mm_water",
@@ -66,21 +66,20 @@ var _12_7mm_m2_hb_defaultset_bullet_2 =
       }
     },
     "splash": {
-      "radius": [0.12,0.2],
-      "penetration": 2.0,
-      "damage": 8.0,
+      "radius": [0.03,0.1],
+      "penetration": 3.0,
+      "damage": 12.0,
       "damageType": "explosion"
     },
     "shatter": {
-      "radius": 0.3,
-      "count": 5,
+      "radius": 0.2,
+      "count": 10,
       "penetration": 3.0,
-      "damage": 2.5,
+      "damage": 3.5,
       "damageType": "shatter"
     },
     "explosive": {
-      "fuseDelayDist": 0.02,
-      "fuseArmorTreshold": 0.3
+      "fuseArmorTreshold": 0.1
     },
     "secondaryShatter": {
       "residualArmorPenetrationToShatterCountMult": [20.0,100.0,0.5,1.0],
@@ -272,10 +271,10 @@ var _12_7mm_m2_hb_defaultset_bullet_2 =
       }
     },
     "stability": {
-      "stabilityThreshold": 0.0,
+      "stabilityThreshold": 0.05,
       "stabilityCaliberToArmorThreshold": 5.0,
-      "stabilityReductionAfterRicochet": 0.01,
-      "stabilityReductionAfterPenetration": 0.01,
+      "stabilityReductionAfterRicochet": 0.5,
+      "stabilityReductionAfterPenetration": 0.3,
       "stabilityRicochetModifier": [
         {
           "mod1": [0.0,0.05]

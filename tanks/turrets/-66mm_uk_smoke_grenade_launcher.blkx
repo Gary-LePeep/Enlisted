@@ -1,0 +1,35 @@
+var _66mm_uk_smoke_grenade_launcher = 
+{
+  "base_66mm_uk_smoke_grenade_launcher": {
+    "item__name": "guns/66mm_uk_smoke_grenade_launcher",
+    "gun__blk": "gamedata/gen/weapons/66mm_uk_smoke_grenade_launcher.blk",
+    "gun__shotFreq": 40.0,
+    "gun__locName": "66mm_uk_smoke_grenade_launcher",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/66mm_uk_smoke_grenade_launcher_defaultset.blk",
+          "name": "76mm_smoke_grenade",
+          "type": "smoke_grenade_tank"
+        }
+      }
+    }
+  },
+  "tankgun_66mm_uk_smoke_grenade_launcher": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_smoke_grenade_launcher"
+    },
+    {
+      "_extends": "base_66mm_uk_smoke_grenade_launcher"
+    },
+    {
+      "_extends": "gunsound_66mm_uk_smoke_grenade_launcher"
+    },
+    {
+      "turret__triggerGroup": 3
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+var _105mm_m4 = 
+{
+  "base_105mm_m4": {
+    "item__name": "guns/105mm_m4",
+    "gun__blk": "gamedata/gen/weapons/105mm_m4.blk",
+    "gun__shotFreq": 0.1,
+    "gun__locName": "105mm_m4",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/105mm_m4_defaultset.blk",
+          "name": "105mm_m1",
+          "type": "he_frag_tank"
+        }
+      },
+      "105mm_usa_HEAT:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/105mm_m4_105mm_usa_heat.blk",
+          "name": "105mm_m67",
+          "type": "heat_tank"
+        }
+      },
+      "105mm_us_M84_Smoke:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/105mm_m4_105mm_us_m84_smoke.blk",
+          "name": "105mm_m84",
+          "type": "smoke_tank"
+        }
+      }
+    }
+  },
+  "tankgun_105mm_m4": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_cannon"
+    },
+    {
+      "_extends": "base_105mm_m4"
+    },
+    {
+      "_extends": "gunsound_105mm_m4"
+    },
+    {
+      "turret__triggerGroup": 0
+    }
+  ]
+}

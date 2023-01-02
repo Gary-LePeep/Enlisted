@@ -1,5 +1,16 @@
 var _germ_panzerjager_iv_l_70 = 
 {
+  "germ_panzerjager_iv_l_70_normandy": {
+    "_extends": "germ_panzerjager_IV_L_70_common",
+    "disableDMParts:list<t>": [
+      {
+        "part": "track_r_01"
+      },
+      {
+        "part": "track_l_01"
+      }
+    ]
+  },
   "germ_panzerjager_IV_L_70": {
     "_extends": "germ_panzerjager_IV_L_70_common",
     "disableDMParts:list<t>": [
@@ -58,7 +69,7 @@ var _germ_panzerjager_iv_l_70 =
       "_extends": "base_panzerjager_iv_l_70"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
     },
     {
       "gunnerFpsCamMaxAngle": [5.0,3.0]

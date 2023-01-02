@@ -5,7 +5,10 @@ var _germ_pzkpfw_v_ausf_g_panther =
       "_extends": "base_pzkpfw_v_ausf_g_panther"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
+    },
+    {
+      "_extends": "tank_heavy_vehicle_tracks_sound"
     },
     {
       "animchar__objTexReplace:object": {
@@ -178,7 +181,7 @@ var _germ_pzkpfw_v_ausf_g_panther =
     ]
   },
   "germ_pzkpfw_V_ausf_g_panther_gunner_cockpit": {
-    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf12a.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,
@@ -327,6 +330,7 @@ var _germ_pzkpfw_v_ausf_g_panther =
         "fliegerbeschussgerat_41_skin_line_c*": "camo_skin_tex"
       }
     },
+    "attach_decorators__entities:list<eid>": [],
     "attach_decorators__templates:array": [
       {
         "templates:object": {
@@ -336,7 +340,7 @@ var _germ_pzkpfw_v_ausf_g_panther =
             [0.115098,0.911633,0.393507],
             [0.81778,0.78175,0.705411]
           ],
-          "template": "gazmask_decor",
+          "template": "gazmask",
           "nodeName": "bone_turret"
         }
       },
@@ -348,7 +352,7 @@ var _germ_pzkpfw_v_ausf_g_panther =
             [0.0721752,0.296917,-0.951097],
             [-0.255386,0.673753,-0.869678]
           ],
-          "template": "ger_ammunition_wwii_decor",
+          "template": "ger_ammunition_wwii",
           "nodeName": "bone_turret"
         }
       },
@@ -360,7 +364,7 @@ var _germ_pzkpfw_v_ausf_g_panther =
             [0.000291949,0.357036,0.933767],
             [0.666145,0.757857,0.765371]
           ],
-          "template": "german_tank_helmet_decor",
+          "template": "german_tank_helmet",
           "nodeName": "bone_turret"
         }
       },
@@ -384,7 +388,7 @@ var _germ_pzkpfw_v_ausf_g_panther =
             [-0.0738254,0.989301,0.12243],
             [0.75209,0.824808,-0.621518]
           ],
-          "template": "german_tank_helmet_decor",
+          "template": "german_tank_helmet",
           "nodeName": "bone_turret"
         }
       },
@@ -396,7 +400,7 @@ var _germ_pzkpfw_v_ausf_g_panther =
             [0.0622412,0.441827,0.894581],
             [-0.0230408,0.760777,0.835961]
           ],
-          "template": "grenades_decor",
+          "template": "grenades",
           "nodeName": "bone_turret"
         }
       },
@@ -408,7 +412,7 @@ var _germ_pzkpfw_v_ausf_g_panther =
             [0.0718246,0.99674,-0.0228732],
             [-2.80041,1.82706,-0.894369]
           ],
-          "template": "ger_mp_40_decor",
+          "template": "decor_ger_mp_40",
           "nodeName": "root"
         }
       },
@@ -420,7 +424,7 @@ var _germ_pzkpfw_v_ausf_g_panther =
             [-0.0309234,0.420617,0.906374],
             [-2.73032,1.6629,1.50478]
           ],
-          "template": "ger_ammunition_wwii_decor",
+          "template": "ger_ammunition_wwii",
           "nodeName": "root"
         }
       },
@@ -432,7 +436,7 @@ var _germ_pzkpfw_v_ausf_g_panther =
             [0.00686178,0.389885,0.919917],
             [-1.70264,1.67954,1.51946]
           ],
-          "template": "ger_ammunition_wwii_decor",
+          "template": "ger_ammunition_wwii",
           "nodeName": "root"
         }
       },
@@ -444,7 +448,7 @@ var _germ_pzkpfw_v_ausf_g_panther =
             [-0.0123426,0.422647,-0.905909],
             [-2.10139,1.65913,-1.53233]
           ],
-          "template": "ger_ammunition_wwii_decor",
+          "template": "ger_ammunition_wwii",
           "nodeName": "root"
         }
       },

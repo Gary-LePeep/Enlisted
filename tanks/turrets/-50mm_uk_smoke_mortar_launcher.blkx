@@ -1,0 +1,35 @@
+var _50mm_uk_smoke_mortar_launcher = 
+{
+  "base_50mm_uk_smoke_mortar_launcher": {
+    "item__name": "guns/50mm_uk_smoke_mortar_launcher",
+    "gun__blk": "gamedata/gen/weapons/50mm_uk_smoke_mortar_launcher.blk",
+    "gun__shotFreq": 0.2,
+    "gun__locName": "50mm_uk_smoke_mortar_launcher",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/50mm_uk_smoke_mortar_launcher_defaultset.blk",
+          "name": "76mm_smoke_grenade",
+          "type": "smoke_grenade_tank"
+        }
+      }
+    }
+  },
+  "tankgun_50mm_uk_smoke_mortar_launcher": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_smoke_grenade_launcher"
+    },
+    {
+      "_extends": "base_50mm_uk_smoke_mortar_launcher"
+    },
+    {
+      "_extends": "gunsound_50mm_uk_smoke_mortar_launcher"
+    },
+    {
+      "turret__triggerGroup": 3
+    }
+  ]
+}

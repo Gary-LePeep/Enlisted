@@ -153,8 +153,6 @@ var _panzerjager_hetzer =
             "turretName": "turret_02",
             "gun": "panzerjager_hetzer_turret_02_7_92mm_mg34",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }
@@ -198,10 +196,10 @@ var _panzerjager_hetzer =
     "turret__limit": [-90.0,120.0,-10.0,10.0],
     "gun__shellsAmmo:array": [
       {
-        "ammo": 1000
+        "ammo": 1050
       },
       {
-        "ammo": 1000
+        "ammo": 1050
       }
     ]
   },

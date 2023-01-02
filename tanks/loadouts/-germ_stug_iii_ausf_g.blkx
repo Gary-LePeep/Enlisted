@@ -8,13 +8,35 @@ var _germ_stug_iii_ausf_g =
       "_extends": "base_stug_iii_ausf_g"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
     },
     {
       "item__iconOffset": [0.0,0.3]
     },
     {
       "gunnerFpsCamMaxAngle": [5.0,5.0]
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 5,
+            "count": 7
+          }
+        }
+      ]
     },
     {
       "bullet_holes__ignoreCollisionNodes:array": {

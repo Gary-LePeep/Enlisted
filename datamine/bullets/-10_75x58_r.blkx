@@ -21,7 +21,7 @@ var _10_75x58_r =
     "HitPower1500m": [0.03,1500.0]
   },
   "armorpower": {
-    "ArmorPower0m": [1.0,300.0],
+    "ArmorPower0m": [1.0,10.0],
     "ArmorPower1500m": [0.1,1500.0]
   },
   "visual": {

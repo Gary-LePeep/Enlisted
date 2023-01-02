@@ -171,8 +171,6 @@ var _m5a1_stuart_late =
             "turretName": "turret_02",
             "gun": "m5a1_stuart_late_turret_02_7_62mm_m1919a4",
             "barrelDm": "gun_barrel_05",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         },
@@ -181,8 +179,6 @@ var _m5a1_stuart_late =
             "turretName": "turret_03",
             "gun": "m5a1_stuart_late_turret_03_7_62mm_m1919a4",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }
@@ -228,7 +224,7 @@ var _m5a1_stuart_late =
     "_extends": "tankgun_7_62mm_m1919a4",
     "gun__shootNodeName": "bone_mg_gun_twin",
     "gun__shellsAmmo:array": {
-      "ammo": 3000
+      "ammo": 3500
     }
   },
   "m5a1_stuart_late_ammo_stowages": {

@@ -5,10 +5,32 @@ var _us_m24_chaffee =
       "_extends": "base_m24_chaffee"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_light_vehicle_tracks_sound"
     },
     {
       "item__iconOffset": [0.0,0.1]
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 4,
+            "count": 7
+          }
+        }
+      ]
     },
     {
       "bullet_holes__ignoreCollisionNodes:array": {

@@ -161,6 +161,7 @@ var _us_towed_at_m1_movable =
             "nextSeat": "main_gunner",
             "receiveDamageFromDMPart": "driver",
             "cameraNodeName": "root",
+            "copySkeletonNodesPostfix": "_gunner",
             "lockSeats:list<t>": {
               "locked": "loader"
             },
@@ -169,7 +170,15 @@ var _us_towed_at_m1_movable =
               "r.hand": "ik_hand_right001",
               "l.forearm": "ik_forearm_left001",
               "r.forearm": "ik_forearm_right001"
-            }
+            },
+            "copySkeletonNodesRecursive:array": [
+              {
+                "node": "Bip01 L Hand"
+              },
+              {
+                "node": "Bip01 R Hand"
+              }
+            ]
           }
         },
         {
@@ -218,12 +227,21 @@ var _us_towed_at_m1_movable =
             "nextSeat": "main_gunner",
             "vehicleReloadMult": 0.7,
             "canPlaceManually": false,
+            "copySkeletonNodesPostfix": "_loader",
             "effectors:object": {
               "l.hand": "ik_hand_left",
               "r.hand": "ik_hand_right",
               "l.forearm": "ik_forearm_left",
               "r.forearm": "ik_forearm_right"
-            }
+            },
+            "copySkeletonNodesRecursive:array": [
+              {
+                "node": "Bip01 L Hand"
+              },
+              {
+                "node": "Bip01 R Hand"
+              }
+            ]
           }
         }
       ]

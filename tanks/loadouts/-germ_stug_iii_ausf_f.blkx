@@ -1,28 +1,36 @@
 var _germ_stug_iii_ausf_f = 
 {
   "germ_stug_iii_ausf_f_stalingrad": {
-    "_extends": "germ_stug_iii_ausf_f",
-    "turrets__initAmmoDistribution:array": [
-      {
-        "ammo:object": {
-          "slot": 0,
-          "fill": true
-        }
-      },
-      {
-        "ammo:object": {
-          "slot": 1,
-          "fill": true
-        }
-      }
-    ]
+    "_extends": "germ_stug_iii_ausf_f"
   },
   "germ_stug_iii_ausf_f": [
     {
       "_extends": "base_stug_iii_ausf_f"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 5,
+            "count": 7
+          }
+        }
+      ]
     },
     {
       "bullet_holes__movingCollisionNodes:array": {

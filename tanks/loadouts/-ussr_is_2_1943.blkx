@@ -8,7 +8,10 @@ var _ussr_is_2_1943 =
       "_extends": "base_is_2"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_t34_engine_sound"
+    },
+    {
+      "_extends": "tank_heavy_vehicle_tracks_sound"
     },
     {
       "vehicle_seats__seats:shared:array": [
@@ -74,7 +77,7 @@ var _ussr_is_2_1943 =
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.1,-0.3,0.22]
+              [-0.05,-0.3,0.22]
             ],
             "seatComponent": "isDriver",
             "receiveDamageFromDMPart": "commander",
@@ -82,7 +85,7 @@ var _ussr_is_2_1943 =
             "cameraNodeName": "bone_turret",
             "hatchNodes:array": [
               {
-                "node": "hatch_02"
+                "node": "hatch_04"
               },
               {
                 "node": "hatch_03"
@@ -116,7 +119,10 @@ var _ussr_is_2_1943 =
   "ussr_is_2_1943_driver_cockpit": {
     "_extends": "base_driver_cockpit",
     "animchar__res": "kv_1_driver_char",
-    "cockpit__offset": [2.21907,1.38369,5.74996e-05],
+    "cockpit__offset": [0.0,0.0,0.0],
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "item": [-0.392758,-0.0146919,-0.026567]
+    },
     "cockpit__visibleVehicleNodeNames:list<t>": [
       {
         "node": "track_l"
@@ -133,10 +139,6 @@ var _ussr_is_2_1943 =
     ],
     "cockpit__slitForwardOffset:list<r>": {
       "slit": 0.07
-    },
-    "cockpit__attachNodeIndices:list<i>": [],
-    "cockpit__attachNodeNames:list<t>": {
-      "node": "root"
     }
   },
   "ussr_is_2_1943_gunner_cockpit": {
@@ -147,10 +149,10 @@ var _ussr_is_2_1943 =
     "cockpit__offset": [-0.0,-0.0,-0.0],
     "cockpit__cockpitOffsetBySlit:list<p3>": [
       {
-        "slit": [-0.5,-0.05,0.197]
+        "item": [-0.206209,-0.0500418,0.210777]
       },
       {
-        "slit": [0.194,1.032,0.535]
+        "item": [0.194,1.032,0.535]
       }
     ],
     "cockpit__attachNodeNames:list<t>": [
@@ -191,31 +193,152 @@ var _ussr_is_2_1943 =
     ]
   },
   "ussr_is_2_1943_commander_cockpit": {
-    "_extends": "base_commander_cockpit_no_slits",
-    "animchar__res": "t_26_1940_commander_char",
-    "cockpit__offset": [-1.15383,1.23049,0.420828],
+    "_extends": "base_commander_tower_cockit_no_slits",
+    "animchar__res": "pzkpfw_iii_b_commander_char",
+    "cockpit__offset": [-0.471756,0.972649,0.500888],
     "cockpit__visibleVehicleNodeNames:list<t>": [
       {
+        "node": "turret"
+      },
+      {
+        "node": "gun_mask"
+      },
+      {
         "node": "gun_barrel"
-      },
-      {
-        "node": "bone_gun"
-      },
-      {
-        "node": "bone_turret"
-      },
-      {
-        "node": "ex_decor_04"
       }
     ],
-    "cockpit__slitForwardOffset:list<r>": {
-      "slit": 0.15
-    },
-    "cockpit__slitIsGun:list<b>": {
-      "slit": true
-    },
-    "cockpit__slitNodeNames:list<t>": {
-      "slit": "cam_front"
-    }
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_front_left"
+      },
+      {
+        "slit": "cam_rear_left"
+      },
+      {
+        "slit": "cam_rear"
+      },
+      {
+        "slit": "cam_rear_right"
+      },
+      {
+        "slit": "cam_front_right"
+      }
+    ]
+  },
+  "is_2_skins": {
+    "_override": true,
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "is_2_winter",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "is_2_forest",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_forest_01*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "is_2_ussr_camo_brown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_brown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "is_2_ussr_camo_green_ltbrown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "is_2_ussr_camo_desert_yellow_brown",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_desert_yellow_brown*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "is_2_ussr_camo_winter_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter_lines*"
+          }
+        }
+      }
+    ]
   }
 }

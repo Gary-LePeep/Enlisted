@@ -153,8 +153,6 @@ var _isu_152 =
             "turretName": "turret_02",
             "gun": "isu_152_turret_02_12_7mm_dshk",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }
@@ -491,17 +489,17 @@ var _isu_152 =
       },
       {
         "skin:object": {
-          "id": "isu_152_ussr_camo_brown_lines",
+          "id": "isu_152_ussr_camo_czechoslovak_yellow_green",
           "objTexReplace:object": {
-            "ussr_camo_green*": "ussr_camo_brown_lines*"
+            "ussr_camo_green*": "ussr_camo_czechoslovak_yellow_green*"
           }
         }
       },
       {
         "skin:object": {
-          "id": "isu_152_ussr_camo_green_ltbrown_lines",
+          "id": "isu_152_ussr_camo_desert_syrian_green_brown_yellow",
           "objTexReplace:object": {
-            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+            "ussr_camo_green*": "ussr_camo_desert_syrian_green_brown_yellow*"
           }
         }
       },

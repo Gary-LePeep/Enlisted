@@ -8,7 +8,10 @@ var _germ_jgdpz_38t =
       "_extends": "base_panzerjager_hetzer"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
+    },
+    {
+      "_extends": "tank_light_vehicle_tracks_sound"
     },
     {
       "vehicle_seats__seats:shared:array": [

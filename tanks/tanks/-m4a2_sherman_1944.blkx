@@ -50,6 +50,9 @@ var _m4a2_sherman_1944 =
       "item__name": "items/us_m4a2_sherman"
     },
     {
+      "turret_control__grenadeLauncherSalvoSize": 1
+    },
+    {
       "skin__template": "m4a2_sherman_1944_skins"
     },
     {
@@ -62,6 +65,9 @@ var _m4a2_sherman_1944 =
         },
         {
           "node": "emtr_mg_aa_flame_01"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
         }
       ]
     },
@@ -75,11 +81,17 @@ var _m4a2_sherman_1944 =
         },
         {
           "fx": "muzzle_ground_15mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
         }
       ]
     },
     {
       "turret_gun_flash_fx__flashFxScale:shared:array": [
+        {
+          "scale": 1.0
+        },
         {
           "scale": 1.0
         },
@@ -101,6 +113,9 @@ var _m4a2_sherman_1944 =
         },
         {
           "node": "bone_mg_aa_v_01"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
         }
       ]
     },
@@ -150,6 +165,12 @@ var _m4a2_sherman_1944 =
             "wishYawParamName": "gun_03_aim:targetYaw",
             "wishPitchParamName": "gun_03_aim:targetPitch"
           }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_04_yaw",
+            "curPitchParamName": "gun_04_pitch"
+          }
         }
       ]
     },
@@ -171,8 +192,6 @@ var _m4a2_sherman_1944 =
             "turretName": "turret_02",
             "gun": "m4a2_sherman_1944_turret_02_7_62mm_m1919a4",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         },
@@ -181,8 +200,15 @@ var _m4a2_sherman_1944 =
             "turretName": "turret_03",
             "gun": "m4a2_sherman_1944_turret_03_12_7mm_m2_hb",
             "barrelDm": "gun_barrel_02",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_04",
+            "needsAssignedGunner": false,
+            "turretGroup": "smoke",
+            "gun": "m4a2_sherman_1944_turret_04_50mm_uk_smoke_mortar_launcher",
             "salt": 1
           }
         }
@@ -239,21 +265,28 @@ var _m4a2_sherman_1944 =
     "turret__limit": [-60.0,60.0,-10.0,25.0],
     "gun__shellsAmmo:array": [
       {
-        "ammo": 60
+        "ammo": 80
       },
       {
-        "ammo": 60
+        "ammo": 80
       },
       {
-        "ammo": 60
+        "ammo": 80
       },
       {
-        "ammo": 60
+        "ammo": 80
       },
       {
-        "ammo": 60
+        "ammo": 80
       }
     ]
+  },
+  "m4a2_sherman_1944_turret_04_50mm_uk_smoke_mortar_launcher": {
+    "_extends": "tankgun_50mm_uk_smoke_mortar_launcher",
+    "gun__shootNodeName": "emtr_mortar_flame_01",
+    "gun__shellsAmmo:array": {
+      "ammo": 12
+    }
   },
   "m4a2_sherman_1944_ammo_stowages": {
     "_tags": "server",

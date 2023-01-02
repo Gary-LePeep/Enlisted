@@ -6,6 +6,8 @@ var _20mm_tnsh_defaultset_bullet_1 =
   "maxDistance": 3000.0,
   "normalizationPreset": "default",
   "bulletType": "ap_i",
+  "shellAnimation": "video/shells_animations/ap_belt.ivf",
+  "Cx": 0.53,
   "selfDestructionFx": "explosion_air_selfexplosion_small",
   "explosionEffect": "hit_19_27mm_metal_ap",
   "groundCollisionEffect": "hit_19_27mm_dirt_ap",

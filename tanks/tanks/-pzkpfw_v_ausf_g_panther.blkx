@@ -38,7 +38,7 @@ var _pzkpfw_v_ausf_g_panther =
       "cockpit__sightName": "sight_model/tzf_12a"
     },
     {
-      "cockpit__sightFov": 18.0
+      "cockpit__sightFov": 14.85
     },
     {
       "drowningHeight": 2.4
@@ -48,6 +48,9 @@ var _pzkpfw_v_ausf_g_panther =
     },
     {
       "item__name": "items/germ_pzkpfw_v_ausf_g_panther"
+    },
+    {
+      "turret_control__grenadeLauncherSalvoSize": 1
     },
     {
       "skin__template": "pzkpfw_v_ausf_g_panther_skins"
@@ -62,6 +65,9 @@ var _pzkpfw_v_ausf_g_panther =
         },
         {
           "node": "emtr_mg_flame_03"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
         }
       ]
     },
@@ -75,11 +81,17 @@ var _pzkpfw_v_ausf_g_panther =
         },
         {
           "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
         }
       ]
     },
     {
       "turret_gun_flash_fx__flashFxScale:shared:array": [
+        {
+          "scale": 1.0
+        },
         {
           "scale": 1.0
         },
@@ -101,6 +113,9 @@ var _pzkpfw_v_ausf_g_panther =
         },
         {
           "node": "bone_mg_aa_barrel"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
         }
       ]
     },
@@ -150,6 +165,12 @@ var _pzkpfw_v_ausf_g_panther =
             "wishYawParamName": "gun_03_aim:targetYaw",
             "wishPitchParamName": "gun_03_aim:targetPitch"
           }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_04_yaw",
+            "curPitchParamName": "gun_04_pitch"
+          }
         }
       ]
     },
@@ -171,8 +192,6 @@ var _pzkpfw_v_ausf_g_panther =
             "turretName": "turret_02",
             "gun": "pzkpfw_v_ausf_g_panther_turret_02_7_92mm_mg34",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         },
@@ -181,8 +200,15 @@ var _pzkpfw_v_ausf_g_panther =
             "turretName": "turret_03",
             "gun": "pzkpfw_v_ausf_g_panther_turret_03_7_92mm_mg34",
             "barrelDm": "gun_barrel_02",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_04",
+            "needsAssignedGunner": false,
+            "turretGroup": "smoke",
+            "gun": "pzkpfw_v_ausf_g_panther_turret_04_91mm_germ_smoke_mortar_launcher",
             "salt": 1
           }
         }
@@ -234,12 +260,19 @@ var _pzkpfw_v_ausf_g_panther =
     "turret__limit": [-62.0,158.0,-10.0,25.0],
     "gun__shellsAmmo:array": [
       {
-        "ammo": 1000
+        "ammo": 975
       },
       {
-        "ammo": 1000
+        "ammo": 975
       }
     ]
+  },
+  "pzkpfw_v_ausf_g_panther_turret_04_91mm_germ_smoke_mortar_launcher": {
+    "_extends": "tankgun_91mm_germ_smoke_mortar_launcher",
+    "gun__shootNodeName": "emtr_mortar_flame_01",
+    "gun__shellsAmmo:array": {
+      "ammo": 12
+    }
   },
   "pzkpfw_v_ausf_g_panther_ammo_stowages": {
     "_tags": "server",

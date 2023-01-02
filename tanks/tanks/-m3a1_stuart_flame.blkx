@@ -1,0 +1,579 @@
+var _m3a1_stuart_flame = 
+{
+  "base_m3a1_stuart_flame": [
+    {
+      "_extends": "base_tank"
+    },
+    {
+      "_extends": "m3a1_stuart_flame_ammo_stowages"
+    },
+    {
+      "killLogName": "us_m3a1_stuart_flame"
+    },
+    {
+      "animchar__res": "m3a1_stuart_flame_char"
+    },
+    {
+      "collres__res": "m3a1_stuart_flame_collision"
+    },
+    {
+      "vehicle_net_phys__blk": "gamedata/gen/units/tanks/m3a1_stuart_flame.blk:VehiclePhys"
+    },
+    {
+      "particle_phys__blk": "gamedata/suspension/empty.blk"
+    },
+    {
+      "dmg_animchar__res": "m3a1_stuart_flame_dmg_char"
+    },
+    {
+      "xray_resource__modelName": "m3a1_stuart_flame"
+    },
+    {
+      "cockpit__zoomOutFov": 2.7475
+    },
+    {
+      "cockpit__zoomInFov": 5.3955
+    },
+    {
+      "cockpit__sightName": "sight_model/default_tank_spg"
+    },
+    {
+      "cockpit__sightFov": 20.0
+    },
+    {
+      "drowningHeight": 2.008
+    },
+    {
+      "damage_model__blk": "gamedata/gen/units/tanks/m3a1_stuart_flame.blk"
+    },
+    {
+      "item__name": "items/us_m3a1_stuart_flame"
+    },
+    {
+      "skin__template": "m3a1_stuart_flame_skins"
+    },
+    {
+      "turret_gun_flash_fx__flashNodes:shared:array": [
+        {
+          "node": "emtr_gun_flame"
+        },
+        {
+          "node": "emtr_mg_aa_flame_01"
+        },
+        {
+          "node": "emtr_mg_flame_01"
+        },
+        {
+          "node": "emtr_mg_flame_02"
+        }
+      ]
+    },
+    {
+      "turret_gun_flash_fx__flashFx:shared:array": [
+        {
+          "fx": "muzzle_ground_40mm_slow"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": ""
+        }
+      ]
+    },
+    {
+      "turret_gun_flash_fx__flashFxScale:shared:array": [
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "turret_control__emitterNodes:shared:array": [
+        {
+          "node": "bone_gun_barrel"
+        },
+        {
+          "node": "bone_mg_aa_v_01"
+        },
+        {
+          "node": "bone_mg_gun_twin"
+        },
+        {
+          "node": "bone_mg_v_01"
+        }
+      ]
+    },
+    {
+      "turret_control__animVars:shared:array": [
+        {
+          "vars:object": {
+            "curYawParamName": "turret_01_yaw",
+            "curPitchParamName": "gun_01_pitch",
+            "aimActiveParamName": "aim_01_active",
+            "paramYawSpeed": "turret_01_yaw_speed",
+            "paramYawSpeedMul": "turret_01_yaw_mul",
+            "paramYawAccel": "turret_01_yaw_accel",
+            "paramMinYawAngle": "turret_01_min_yaw_angle",
+            "paramMaxYawAngle": "turret_01_max_yaw_angle",
+            "paramMinPitchAngle": "turret_01_min_pitch_angle",
+            "paramMaxPitchAngle": "turret_01_max_pitch_angle",
+            "paramPitchSpeed": "gun_01_pitch_speed",
+            "paramPitchSpeedMul": "gun_01_pitch_mul",
+            "paramPitchAccel": "gun_01_pitch_accel",
+            "wishYawParamName": "gun_01_aim:targetYaw",
+            "wishPitchParamName": "gun_01_aim:targetPitch",
+            "gunRecoilParamName": "gun_01_recoil"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_02_yaw",
+            "curPitchParamName": "gun_02_pitch",
+            "aimActiveParamName": "aim_02_active",
+            "paramYawSpeed": "turret_02_yaw_speed",
+            "paramYawSpeedMul": "turret_02_yaw_mul",
+            "paramYawAccel": "turret_02_yaw_accel",
+            "paramMinYawAngle": "turret_02_min_yaw_angle",
+            "paramMaxYawAngle": "turret_02_max_yaw_angle",
+            "paramMinPitchAngle": "turret_02_min_pitch_angle",
+            "paramMaxPitchAngle": "turret_02_max_pitch_angle",
+            "paramPitchSpeed": "gun_02_pitch_speed",
+            "paramPitchSpeedMul": "gun_02_pitch_mul",
+            "paramPitchAccel": "gun_02_pitch_accel",
+            "wishYawParamName": "gun_02_aim:targetYaw",
+            "wishPitchParamName": "gun_02_aim:targetPitch"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_03_yaw",
+            "curPitchParamName": "gun_03_pitch"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_04_yaw",
+            "curPitchParamName": "gun_04_pitch",
+            "aimActiveParamName": "aim_04_active",
+            "paramYawSpeed": "turret_04_yaw_speed",
+            "paramYawSpeedMul": "turret_04_yaw_mul",
+            "paramYawAccel": "turret_04_yaw_accel",
+            "paramMinYawAngle": "turret_04_min_yaw_angle",
+            "paramMaxYawAngle": "turret_04_max_yaw_angle",
+            "paramMinPitchAngle": "turret_04_min_pitch_angle",
+            "paramMaxPitchAngle": "turret_04_max_pitch_angle",
+            "paramPitchSpeed": "gun_04_pitch_speed",
+            "paramPitchSpeedMul": "gun_04_pitch_mul",
+            "paramPitchAccel": "gun_04_pitch_accel",
+            "wishYawParamName": "gun_04_aim:targetYaw",
+            "wishPitchParamName": "gun_04_aim:targetPitch"
+          }
+        }
+      ]
+    },
+    {
+      "turret_control__turretInfo:shared:array": [
+        {
+          "turretInfo:object": {
+            "turretName": "turret_01",
+            "gun": "m3a1_stuart_flame_turret_01_37mm_m6+turret_with_several_types_of_shells+main_turret",
+            "barrelDm": "gun_barrel",
+            "breechDm": "cannon_breech",
+            "verDriveDm": "drive_turret_v",
+            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_02",
+            "gun": "m3a1_stuart_flame_turret_02_7_62mm_m1919a4",
+            "barrelDm": "gun_barrel_05",
+            "verDriveDm": "drive_turret_v",
+            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_03",
+            "gun": "m3a1_stuart_flame_turret_03_7_62mm_m1919a4",
+            "barrelDm": "gun_barrel_01",
+            "verDriveDm": "drive_turret_v",
+            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_04",
+            "gun": "m1_flamethrower_shorted",
+            "barrelDm": "gun_barrel_02",
+            "verDriveDm": "drive_turret_v",
+            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        }
+      ]
+    }
+  ],
+  "m3a1_stuart_flame_turret_01_37mm_m6": {
+    "_extends": "tankgun_37mm_m6",
+    "gun__shootNodeName": "bone_gun_barrel",
+    "turret__yawSpeed": 20.0,
+    "turret__pitchSpeed": 4.0,
+    "turret__aimNodeName": "bone_turret",
+    "turret__limit": [-180.0,180.0,-10.0,20.0],
+    "turret__limitsTable:list<p4>": {
+      "lim1": [-180.0,-160.0,-2.0,20.0],
+      "lim2": [-160.0,160.0,-10.0,20.0],
+      "lim3": [160.0,180.0,-2.0,20.0]
+    },
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 36
+      },
+      {
+        "ammo": 35
+      },
+      {
+        "ammo": 35
+      }
+    ]
+  },
+  "m3a1_stuart_flame_turret_02_7_62mm_m1919a4": {
+    "_extends": "tankgun_7_62mm_m1919a4",
+    "gun__shootNodeName": "bone_mg_aa_v_01",
+    "turret__yawSpeed": 90.0,
+    "turret__pitchSpeed": 90.0,
+    "turret__aimNodeName": "bone_mg_aa_h_01",
+    "turret__limit": [-60.0,60.0,-5.0,70.0],
+    "gun__shellsAmmo:array": {
+      "ammo": 3000
+    }
+  },
+  "m3a1_stuart_flame_turret_03_7_62mm_m1919a4": {
+    "_extends": "tankgun_7_62mm_m1919a4",
+    "gun__shootNodeName": "bone_mg_gun_twin",
+    "gun__shellsAmmo:array": {
+      "ammo": 3200
+    }
+  },
+  "m3a1_stuart_flame_ammo_stowages": {
+    "_tags": "server",
+    "_extends": "vehicle_ammo_stowages",
+    "ammo_stowage__stowageTemplates:shared:list<t>": {
+      "stowage": "m3a1_stuart_flame_ammo_stowage"
+    }
+  },
+  "m3a1_stuart_flame_ammo_stowage": {
+    "_extends": "ammo_stowage",
+    "ammo_stowage__clusterTemplates:shared:list<t>": {
+      "cluster": "m3a1_stuart_flame_ammo_cluster"
+    },
+    "ammo_stowage__turretNames:shared:list<t>": {
+      "gun": "turret_01"
+    }
+  },
+  "m3a1_stuart_flame_ammo_cluster": {
+    "_extends": "ammo_cluster",
+    "ammo_cluster__isShell": true,
+    "ammo_cluster__slotNames:shared:list<t>": [
+      {
+        "part": "ammo_turret"
+      },
+      {
+        "part": "ammo_body_l_01"
+      },
+      {
+        "part": "ammo_body_r_01"
+      }
+    ],
+    "ammo_cluster__slotsMaxAmmo:list<i>": [
+      {
+        "count": 36
+      },
+      {
+        "count": 35
+      },
+      {
+        "count": 35
+      }
+    ]
+  },
+  "m3a1_stuart_flame_skins": {
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "m3a1_stuart_flame_camo_desert_pink_olive",
+          "objTexReplace:object": {
+            "us_camo_olive*": "us_camo_desert_pink_olive*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "m3a1_stuart_flame_desert_pink_dark_khaki",
+          "objTexReplace:object": {
+            "us_camo_olive*": "us_camo_desert_pink_dark_khaki*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "m3a1_stuart_flame_camo_olive_drab_olive",
+          "objTexReplace:object": {
+            "us_camo_olive*": "us_camo_olive_drab_olive*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "m3a1_stuart_flame_us_camo_winter_olive",
+          "objTexReplace:object": {
+            "us_camo_olive*": "us_camo_winter_olive*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "m3a1_stuart_flame_us_camo_winter_grid",
+          "objTexReplace:object": {
+            "us_camo_olive*": "us_camo_winter_grid*"
+          }
+        }
+      }
+    ]
+  },
+  "m1_flamethrower_shorted": [
+    {
+      "_extends": "turret_base"
+    },
+    {
+      "_extends": "tank_gun_shell_change"
+    },
+    {
+      "_extends": "flamethrower_base"
+    },
+    {
+      "_extends": "flamethrower_gun_shot_dry_sound"
+    },
+    {
+      "_extends": "base_tankgun_machinegun_nooverheat"
+    },
+    {
+      "_extends": "gunsound_flamethrower"
+    },
+    {
+      "gun__overheatReduce": 0.0
+    },
+    {
+      "gun__overheatReduceOnOverheat": 1.0
+    },
+    {
+      "gun__overheatPerShot": 0.12
+    },
+    {
+      "turret__triggerGroup": 0
+    },
+    {
+      "item__name": "guns/ato_41_flamethrower"
+    },
+    {
+      "gun__blk": "content/tanks/gamedata/gen/weapons/20mm_tnsh.blk"
+    },
+    {
+      "gun__shotFreq": 5.0
+    },
+    {
+      "gun__reloadTime": -1.0
+    },
+    {
+      "gun__maxAmmo": 360
+    },
+    {
+      "gun__locName": "ato_41_flamethrower"
+    },
+    {
+      "gun__shootNodeName": "bone_gun_barrel"
+    },
+    {
+      "turret__yawSpeed": 45.0
+    },
+    {
+      "turret__pitchSpeed": 45.0
+    },
+    {
+      "turret__aimNodeName": "bone_turret"
+    },
+    {
+      "turret__limit": [-11.0,11.0,-11.0,11.0]
+    },
+    {
+      "combatFiringRange": [0.0,10.0]
+    },
+    {
+      "combatShootTime": [0.7,0.9]
+    },
+    {
+      "combatCooldownTime": [0.5,0.9]
+    },
+    {
+      "smoke_occluder__sphere": [0.0,0.0,0.0,1.0]
+    },
+    {
+      "_replicated": "flamethrower__active"
+    },
+    {
+      "_replicated": "flamethrower__flameCurrentLength"
+    },
+    {
+      "_tracked": "flamethrower__active"
+    },
+    {
+      "_tracked": "flamethrower__flameCurrentLength"
+    },
+    {
+      "flamethrower__streamEffectLocalTm": [
+        [0.0,-1.0,0.0],
+        [1.0,0.0,0.0],
+        [0.0,0.0,1.0],
+        [0.0,0.0,0.0]
+      ]
+    },
+    {
+      "flamethrower__fireTemplate": "flamethrower_fire"
+    },
+    {
+      "flamethrower__streamEffectTemplate": "flamethrower_flame_stream_effect"
+    },
+    {
+      "flamethrower__streamEffectNodeName": "gunFx_main"
+    },
+    {
+      "flamethrower__maxFlameLength": 18.0
+    },
+    {
+      "flamethrower__flameStreamRadius": 0.03
+    },
+    {
+      "flamethrower__flameCloudRadius": 0.8
+    },
+    {
+      "flamethrower__streamDamagePerSecond": 40.0
+    },
+    {
+      "flamethrower__cloudDamagePerSecond": 5.0
+    },
+    {
+      "flamethrower__friendlyStreamDamagePerSecond": 1.0
+    },
+    {
+      "flamethrower__friendlyCloudDamagePerSecond": 1.0
+    },
+    {
+      "flamethrower__minBetweenFireDist": 1.02
+    },
+    {
+      "flamethrower__maxFlameLengthTime": 0.5
+    },
+    {
+      "flamethrower__flameStartOffset": 0.0
+    },
+    {
+      "flamethrower__cloudStartOffset": 1.0
+    },
+    {
+      "flamethrower__shouldSetFriendlyOnFire": false
+    },
+    {
+      "flamethrower__dropletLength": 3.0
+    },
+    {
+      "flamethrower__dropletSpreadYaw": 0.3
+    },
+    {
+      "flamethrower__dropletSpreadPitchMin": -0.1
+    },
+    {
+      "flamethrower__dropletSpreadPitchMax": -2.0
+    },
+    {
+      "flamethrower__dropletNormalOffset": 0.3
+    },
+    {
+      "flamethrower__addFullForceTimePerSec": 2.0
+    },
+    {
+      "flamethrower__maxFiresToReignite": 3
+    },
+    {
+      "flamethrower__backpackTemplate": "flamethrower_backpack_roks_3_gasbag"
+    },
+    {
+      "flamethrower__streamEffectNodeIdx": -1
+    },
+    {
+      "flamethrower__active": false
+    },
+    {
+      "flamethrower__flameSpeed": 0.0
+    },
+    {
+      "flamethrower__flameCurrentLength": 0.0
+    },
+    {
+      "flamethrower__underwater": false
+    },
+    {
+      "flamethrower__underwaterCheckTimer": 10.0
+    },
+    {
+      "flamethrower__underwaterCheckTime": -1.0
+    },
+    {
+      "gun__shellsAmmo:array": {
+        "ammo": 360
+      }
+    },
+    {
+      "gun__firingModes:array": {
+        "mode:object": {
+          "modeType": "automatic"
+        }
+      }
+    },
+    {
+      "gun__firingModeNames:array": {
+        "mode": "automatic"
+      }
+    },
+    {
+      "gun__ammoSetsInfo:shared:array": {
+        "defaultSet:array": {
+          "shell:object": {
+            "blk": "content/e_ww2_common/gamedata/weapons/bullets/flamethrower_dummy.blk",
+            "type": "flamethrower",
+            "name": "flamethrower"
+          }
+        }
+      }
+    },
+    {
+      "flamethrower__streamEffectEid:eid": []
+    }
+  ]
+}

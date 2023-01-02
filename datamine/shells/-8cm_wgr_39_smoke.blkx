@@ -1,0 +1,59 @@
+var _8cm_wgr_39_smoke = 
+[
+  {
+    "mass": 3.51
+  },
+  {
+    "caliber": 0.08
+  },
+  {
+    "bullets": 1
+  },
+  {
+    "bullets": 1
+  },
+  {
+    "speed": 60.0
+  },
+  {
+    "speedDispersion": 0.0
+  },
+  {
+    "momentOfInertia": [0.04,0.008,0.04]
+  },
+  {
+    "physMat": "walkRay"
+  },
+  {
+    "useFutureContacts": true
+  },
+  {
+    "logCCD": false
+  },
+  {
+    "explosiveType": "smoke_composition"
+  },
+  {
+    "explosiveMass": 0.0
+  },
+  {
+    "entityTemplate": "8cm_wgr_39_smoke_phys"
+  },
+  {
+    "collisionResource": {
+      "props": {
+        "volumeBox_1": true
+      }
+    }
+  },
+  {
+    "ccdSpheres": {
+      "ccd": [0.0,0.0,0.0,0.015]
+    }
+  },
+  {
+    "visual": {
+      "template": "8cm_wgr_39_smoke_item+item_in_world"
+    }
+  }
+]

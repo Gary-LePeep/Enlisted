@@ -38,7 +38,7 @@ var _churchill_7 =
       "cockpit__sightName": "sight_model/no50x3_ml_mk2"
     },
     {
-      "cockpit__sightFov": 16.0
+      "cockpit__sightFov": 12.37
     },
     {
       "drowningHeight": 1.984
@@ -50,6 +50,9 @@ var _churchill_7 =
       "item__name": "items/uk_a_22f_mk_7_churchill_1944"
     },
     {
+      "turret_control__grenadeLauncherSalvoSize": 1
+    },
+    {
       "skin__template": "churchill_7_skins"
     },
     {
@@ -59,6 +62,9 @@ var _churchill_7 =
         },
         {
           "node": "emtr_mg_flame_01"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
         }
       ]
     },
@@ -69,11 +75,17 @@ var _churchill_7 =
         },
         {
           "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
         }
       ]
     },
     {
       "turret_gun_flash_fx__flashFxScale:shared:array": [
+        {
+          "scale": 1.0
+        },
         {
           "scale": 1.0
         },
@@ -89,6 +101,9 @@ var _churchill_7 =
         },
         {
           "node": "bone_mg_gun_twin"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
         }
       ]
     },
@@ -119,6 +134,12 @@ var _churchill_7 =
             "curYawParamName": "turret_02_yaw",
             "curPitchParamName": "gun_02_pitch"
           }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_03_yaw",
+            "curPitchParamName": "gun_03_pitch"
+          }
         }
       ]
     },
@@ -140,8 +161,15 @@ var _churchill_7 =
             "turretName": "turret_02",
             "gun": "churchill_7_turret_02_7_92mm_besa",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_03",
+            "needsAssignedGunner": false,
+            "turretGroup": "smoke",
+            "gun": "churchill_7_turret_03_50mm_uk_smoke_mortar_launcher",
             "salt": 1
           }
         }
@@ -184,12 +212,19 @@ var _churchill_7 =
     "gun__shootNodeName": "bone_mg_gun_twin",
     "gun__shellsAmmo:array": [
       {
-        "ammo": 4675
+        "ammo": 4725
       },
       {
-        "ammo": 4675
+        "ammo": 4725
       }
     ]
+  },
+  "churchill_7_turret_03_50mm_uk_smoke_mortar_launcher": {
+    "_extends": "tankgun_50mm_uk_smoke_mortar_launcher",
+    "gun__shootNodeName": "emtr_mortar_flame_01",
+    "gun__shellsAmmo:array": {
+      "ammo": 20
+    }
   },
   "churchill_7_ammo_stowages": {
     "_tags": "server",

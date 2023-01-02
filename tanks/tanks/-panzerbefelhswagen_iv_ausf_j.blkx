@@ -171,8 +171,6 @@ var _panzerbefelhswagen_iv_ausf_j =
             "turretName": "turret_02",
             "gun": "panzerbefelhswagen_iv_ausf_j_turret_02_7_92mm_mg34",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         },
@@ -181,8 +179,6 @@ var _panzerbefelhswagen_iv_ausf_j =
             "turretName": "turret_03",
             "gun": "panzerbefelhswagen_iv_ausf_j_turret_03_7_92mm_mg34",
             "barrelDm": "gun_barrel_02",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }
@@ -192,7 +188,7 @@ var _panzerbefelhswagen_iv_ausf_j =
   "panzerbefelhswagen_iv_ausf_j_turret_01_75mm_kwk40_l48": {
     "_extends": "tankgun_75mm_kwk40_l48",
     "gun__shootNodeName": "bone_gun_barrel",
-    "turret__yawSpeed": 6.0,
+    "turret__yawSpeed": 10.0,
     "turret__pitchSpeed": 4.0,
     "turret__aimNodeName": "bone_turret",
     "turret__limit": [-180.0,180.0,-10.0,20.0],
@@ -238,10 +234,10 @@ var _panzerbefelhswagen_iv_ausf_j =
     "turret__limit": [-180.0,180.0,-10.0,20.0],
     "gun__shellsAmmo:array": [
       {
-        "ammo": 1000
+        "ammo": 1050
       },
       {
-        "ammo": 1000
+        "ammo": 1050
       }
     ]
   },

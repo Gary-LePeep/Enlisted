@@ -1,14 +1,14 @@
 var _7_62mm_dt_defaultset_bullet_1 = 
 {
   "mass": 0.0099,
-  "recoilMultiplier": 0.2,
   "caliber": 0.0076,
-  "speed": 815.0,
-  "Cx": 0.15,
+  "speed": 817.5,
+  "Cx": 0.3526,
   "maxDistance": 2000.0,
+  "modelName": "tank_bullet_ball",
+  "recoilMultiplier": 0.2,
   "normalizationPreset": "default",
   "bulletType": "ap_i_ball",
-  "modelName": "tank_bullet_ball",
   "effectiveDistance": 400.0,
   "groundCollisionEffect": "hit_8_11mm_dirt_ap",
   "ricochetEffect": "hit_8_11mm_metal_ap",
@@ -24,12 +24,13 @@ var _7_62mm_dt_defaultset_bullet_1 =
     "HitPower1500m": [0.01,1500.0]
   },
   "armorpower": {
-    "ArmorPower0m": [10.0,10.0],
-    "ArmorPower100m": [9.0,100.0],
-    "ArmorPower500m": [7.0,500.0],
-    "ArmorPower1000m": [4.0,1000.0],
-    "ArmorPower1450m": [1.0,1450.0],
-    "ArmorPower1500m": [0.0,1500.0]
+    "ArmorPower0m": [13.0,10.0],
+    "ArmorPower100m": [12.0,100.0],
+    "ArmorPower300m": [9.0,300.0],
+    "ArmorPower500m": [6.0,600.0],
+    "ArmorPower1000m": [3.0,1000.0],
+    "ArmorPower150m": [1.5,1500.0],
+    "ArmorPower1600m": [0.0,1600.0]
   },
   "visual": {
     "range_percent_of_ammo": [100.0,0.0],

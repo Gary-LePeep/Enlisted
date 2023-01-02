@@ -14,7 +14,10 @@ var _germ_pzkpfw_vi_ausf_e_tiger =
       "_extends": "base_pzkpfw_vi_ausf_e_tiger"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
+    },
+    {
+      "_extends": "tank_tiger_vehicle_tracks_sound"
     },
     {
       "item__iconOffset": [0.0,0.1]

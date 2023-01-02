@@ -1,11 +1,12 @@
 var _76mm_f34_76mm_ussr_heat_1944 = 
 {
   "bulletCount": 25,
-  "mass": 5.3,
+  "mass": 3.94,
   "explosiveType": "a_ix_1",
-  "explosiveMass": 0.623,
+  "explosiveMass": 0.48,
   "caliber": 0.0762,
   "speed": 355.0,
+  "Cx": 0.3604,
   "maxDistance": 7000.0,
   "normalizationPreset": "heat",
   "bulletType": "heat_tank",
@@ -17,8 +18,8 @@ var _76mm_f34_76mm_ussr_heat_1944 =
   "hitPower": 260.0,
   "fuseDelayDist": 0.05,
   "explodeTreshold": 0.1,
-  "selfDestructionFx": "explosion_air_selfexplosion_med",
-  "explosionEffect": "hit_59_80mm_metal_he",
+  "selfDestructionFx": "hit_81_132mm_heat",
+  "explosionEffect": "hit_81_132mm_heat",
   "groundCollisionEffect": "hit_59_80mm_dirt_he",
   "ricochetEffect": "hit_59_80mm_metal_ap",
   "waterCollisionEffect": "hit_59_80mm_water",
@@ -64,7 +65,7 @@ var _76mm_f34_76mm_ussr_heat_1944 =
       "radius": 0.15,
       "offset": 0.2,
       "type": "a_ix_1",
-      "mass": 0.623,
+      "mass": 0.48,
       "fuseDelayDist": 0.05,
       "fuseArmorTreshold": 0.1,
       "strengthEquivalent": 1.7,
@@ -364,7 +365,8 @@ var _76mm_f34_76mm_ussr_heat_1944 =
       "fxScale": [1.0,1.0]
     },
     "wood": {
-      "fx": "hit_59_80mm_wood_he",
+      "fx": "hit_81_132mm_heat",
+      "copyBulletTm": true,
       "fxScale": [1.0,1.0]
     },
     "glass": {

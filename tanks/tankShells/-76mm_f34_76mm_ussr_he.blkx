@@ -6,6 +6,7 @@ var _76mm_f34_76mm_ussr_he =
   "explosiveMass": 0.621,
   "caliber": 0.0762,
   "speed": 680.0,
+  "Cx": 0.4336,
   "maxDistance": 10000.0,
   "normalizationPreset": "heat",
   "bulletType": "he_frag_tank",
@@ -30,6 +31,9 @@ var _76mm_f34_76mm_ussr_he =
   "visualShattersGroundOffset": 1.2,
   "modelName": "tank_bullet_he",
   "secondaryShattersPreset": "ap",
+  "pressureDamage": {
+    "damageType": "pressure"
+  },
   "DamageParts": {
     "body": {
       "hp": 5.0,
@@ -47,9 +51,6 @@ var _76mm_f34_76mm_ussr_he =
         "destruction": 1.0
       }
     }
-  },
-  "pressureDamage": {
-    "damageType": "pressure"
   },
   "visual": {
     "tracer": "noColor"

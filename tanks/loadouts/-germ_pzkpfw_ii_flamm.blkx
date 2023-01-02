@@ -9,7 +9,7 @@ var _germ_pzkpfw_ii_flamm =
       "_extends": "base_pzkpfw_ii_flamm"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
     },
     {
       "item__iconOffset": [0.0,0.2]
@@ -96,6 +96,23 @@ var _germ_pzkpfw_ii_flamm =
           }
         }
       ]
+    },
+    {
+      "_group": {
+        "_tags": "sound",
+        "vehicle_engine_sound__path:shared:object": {
+          "hero": "player/vehicle/tank/panzer3/engine",
+          "enemy": "enemy/vehicle/tank/panzer3/engine"
+        },
+        "vehicle_engine_sound__startPath:shared:object": {
+          "hero": "player/vehicle/tank/panzer3/engine_start",
+          "enemy": "enemy/vehicle/tank/panzer3/engine_start"
+        },
+        "vehicle_engine_sound__stopPath:shared:object": {
+          "hero": "player/vehicle/tank/panzer3/engine_stop",
+          "enemy": "enemy/vehicle/tank/panzer3/engine_stop"
+        }
+      }
     }
   ],
   "germ_pzkpfw_ii_flamm_driver_cockpit": {

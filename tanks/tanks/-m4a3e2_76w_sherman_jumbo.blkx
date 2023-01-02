@@ -38,7 +38,7 @@ var _m4a3e2_76w_sherman_jumbo =
       "cockpit__sightName": "sight_model/telescope_m71d"
     },
     {
-      "cockpit__sightFov": 10.0
+      "cockpit__sightFov": 8.5
     },
     {
       "drowningHeight": 2.376
@@ -171,8 +171,6 @@ var _m4a3e2_76w_sherman_jumbo =
             "turretName": "turret_02",
             "gun": "m4a3e2_76w_sherman_jumbo_turret_02_7_62mm_m1919a4",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         },
@@ -181,8 +179,6 @@ var _m4a3e2_76w_sherman_jumbo =
             "turretName": "turret_03",
             "gun": "m4a3e2_76w_sherman_jumbo_turret_03_12_7mm_m2_hb",
             "barrelDm": "gun_barrel_02",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }

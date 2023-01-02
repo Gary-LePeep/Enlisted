@@ -1,10 +1,10 @@
 var _76mm_f34_76mm_ussr_ap_1942 = 
 {
   "bulletCount": 25,
-  "mass": 6.78,
+  "mass": 6.5,
   "caliber": 0.0762,
   "speed": 655.0,
-  "Cx": 0.4,
+  "Cx": 0.4437,
   "maxDistance": 10000.0,
   "normalizationPreset": "apbc",
   "stucking": 0.7,

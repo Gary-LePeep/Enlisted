@@ -38,7 +38,7 @@ var _dickermax =
       "cockpit__sightName": "sight_model/zfl_zf_1a"
     },
     {
-      "cockpit__sightFov": 9.5
+      "cockpit__sightFov": 7.35
     },
     {
       "drowningHeight": 2.024

@@ -8,7 +8,43 @@ var _ussr_su_76m =
       "_extends": "base_su_76m"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_t34_engine_sound"
+    },
+    {
+      "_extends": "tank_su76_vehicle_tracks_sound"
+    },
+    {
+      "vehicle_commander_cam__attachToVehicle": true
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 7,
+            "count": 7
+          }
+        }
+      ]
+    },
+    {
+      "_group": {
+        "_tags": "render",
+        "animchar_camera_target__node_name": "bone_camera_gunner",
+        "animchar_camera_target__node_offset": [0.0,0.5,0.0],
+        "animchar_camera_target__nodeIndex": -1
+      }
     },
     {
       "bullet_holes__movingCollisionNodes:array": {
@@ -59,32 +95,79 @@ var _ussr_su_76m =
             "cockpitTemplate": "ussr_su_76m_gunner_cockpit",
             "seatAnimUpper": "gunner_upper_hands",
             "seatAnimLower": "lower_stand",
+            "cameraOffset": [-0.3,0.2,0.0],
             "turretNames:array": {
               "turret": "turret_01"
             }
           }
         },
         {
-          "seats:object": {
-            "name": "commander",
-            "locName": "vehicle_seats/commander",
-            "attachNode": "commander",
-            "shouldHideOwner": false,
-            "maxPosWithOpenHatch": 0.4,
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.2,-0.7,0.1]
-            ],
-            "cameraType": "commander",
-            "seatComponent": "isDriver",
-            "receiveDamageFromDMPart": "commander",
-            "cockpitTemplate": "ussr_su_76m_commander_cockpit",
-            "seatAnimUpper": "gunner_upper_hands",
-            "seatAnimLower": "lower_stand"
-          }
+          "seats:object": [
+            {
+              "name": "commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "attachNode": "commander"
+            },
+            {
+              "shouldHideOwner": false
+            },
+            {
+              "maxPosWithOpenHatch": 0.4
+            },
+            {
+              "maxPosWithOpenHatch": 0.0
+            },
+            {
+              "ignoreAttachNodeRotation": true
+            },
+            {
+              "attachTm": [
+                [1.0,0.0,0.0],
+                [0.0,1.0,0.0],
+                [0.0,0.0,1.0],
+                [-0.2,-0.7,0.1]
+              ]
+            },
+            {
+              "cameraType": "commander"
+            },
+            {
+              "seatComponent": "isDriver"
+            },
+            {
+              "receiveDamageFromDMPart": "commander"
+            },
+            {
+              "cockpitTemplate": "ussr_su_76m_commander_cockpit"
+            },
+            {
+              "seatAnimUpper": "gunner_upper_hands"
+            },
+            {
+              "seatAnimLower": "lower_stand"
+            },
+            {
+              "cameraOffset": [-2.9,0.3,0.2]
+            },
+            {
+              "hatchRotationAxis": [0.0,0.0,0.0]
+            },
+            {
+              "isHatchControlInversed": true
+            },
+            {
+              "isHoldGunModeAllowed": false
+            },
+            {
+              "hatchNodes:array": {
+                "node": "bone_camera_gunner"
+              }
+            }
+          ]
         },
         {
           "seats:object": {
@@ -95,14 +178,15 @@ var _ussr_su_76m =
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.15,-0.8,0.0]
+              [-0.0,-0.0,-0.1]
             ],
             "seatComponent": "isPassenger",
             "shouldHideOwner": false,
             "receiveDamageFromDMPart": "loader",
             "cameraNodeName": "bone_camera_driver",
-            "seatAnimUpper": "gunner_upper_hands",
-            "seatAnimLower": "lower_stand",
+            "seatAnimUpper": "drive_driver",
+            "seatAnimLower": "drive_driver",
+            "isHoldGunModeAllowed": false,
             "loaderTurretNames:array": {
               "turret": "turret_01"
             }
@@ -131,7 +215,7 @@ var _ussr_su_76m =
     "_extends": "base_gunner_cockpit",
     "animchar__res": "t_26_1940_gunner_char",
     "cockpit__minZoom": -0.27,
-    "cockpit__offset": [-0.55491,0.755667,0.489699],
+    "cockpit__offset": [-0.55491,0.7,0.489699],
     "cockpit__attachNodeNames:list<t>": {
       "node": "bone_gun"
     },
@@ -163,7 +247,7 @@ var _ussr_su_76m =
   "ussr_su_76m_commander_cockpit": {
     "_extends": "base_commander_cockpit_no_slits",
     "animchar__res": "t_26_1940_commander_char",
-    "cockpit__offset": [-1.32645,2.23761,-0.383717],
+    "cockpit__offset": [-1.32645,2.13761,-0.383717],
     "cockpit__visibleVehicleNodeNames:list<t>": [
       {
         "node": "gun_barrel"
@@ -191,5 +275,58 @@ var _ussr_su_76m =
     "cockpit__attachNodeNames:list<t>": {
       "node": "root"
     }
+  },
+  "su_76m_skins": {
+    "_override": true,
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "su_76m_winter",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "su_76m_forest",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_forest_01*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "su_76m_ussr_camo_brown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_brown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "su_76m_ussr_camo_green_ltbrown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "su_76m_ussr_camo_desert_yellow_brown",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_desert_yellow_brown*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "su_76m_ussr_camo_winter_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter_lines*"
+          }
+        }
+      }
+    ]
   }
 }

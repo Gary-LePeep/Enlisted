@@ -13,7 +13,7 @@ var _8cm_wgr_39 =
     "bullets": 1
   },
   {
-    "speed": 64.0
+    "speed": 60.0
   },
   {
     "speedDispersion": 0.0
@@ -31,13 +31,16 @@ var _8cm_wgr_39 =
     "logCCD": false
   },
   {
-    "explosiveType": "tnt"
+    "explodeHitPower": 250.0
   },
   {
-    "explosiveMass": 0.45
+    "explodeArmorPower": 55.0
   },
   {
-    "entityTemplate": "wrg_36_phys"
+    "explodeRadius": [1.0,2.5]
+  },
+  {
+    "entityTemplate": "8cm_wgr_39_phys"
   },
   {
     "reloadTime": 3.6
@@ -56,9 +59,9 @@ var _8cm_wgr_39 =
   },
   {
     "splashDamage": {
-      "radius": [1.0,16.0],
+      "radius": [1.0,18.0],
       "penetration": [15.0,2.0],
-      "damage": 11.0,
+      "damage": 14.0,
       "dmgOffset": [0.0,0.25,0.0]
     }
   },
@@ -70,7 +73,7 @@ var _8cm_wgr_39 =
   },
   {
     "explSound": {
-      "explSoundPath": "impact/grenade"
+      "explSoundPath": "impact/mine"
     }
   },
   {

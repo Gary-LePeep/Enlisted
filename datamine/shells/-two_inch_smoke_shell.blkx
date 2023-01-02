@@ -1,0 +1,59 @@
+var _two_inch_smoke_shell = 
+[
+  {
+    "mass": 0.95
+  },
+  {
+    "caliber": 0.05
+  },
+  {
+    "bullets": 1
+  },
+  {
+    "bullets": 1
+  },
+  {
+    "speed": 50.0
+  },
+  {
+    "speedDispersion": 0.0
+  },
+  {
+    "momentOfInertia": [0.04,0.008,0.04]
+  },
+  {
+    "physMat": "walkRay"
+  },
+  {
+    "useFutureContacts": true
+  },
+  {
+    "logCCD": false
+  },
+  {
+    "explosiveType": "smoke_composition"
+  },
+  {
+    "explosiveMass": 0.0
+  },
+  {
+    "entityTemplate": "two_inch_smoke_shell_phys"
+  },
+  {
+    "collisionResource": {
+      "props": {
+        "volumeBox_1": true
+      }
+    }
+  },
+  {
+    "ccdSpheres": {
+      "ccd": [0.0,0.0,0.0,0.015]
+    }
+  },
+  {
+    "visual": {
+      "template": "two_inch_smoke_shell_item+item_in_world"
+    }
+  }
+]

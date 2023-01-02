@@ -1,0 +1,270 @@
+var _us_halftrack_m13 = 
+{
+  "us_halftrack_m13_pacific": {
+    "_extends": "us_halftrack_m13_common"
+  },
+  "us_halftrack_m13_common": [
+    {
+      "_extends": "base_halftrack_m13"
+    },
+    {
+      "_extends": "tank_light_vehicle_tracks_sound"
+    },
+    {
+      "_extends": "forestall"
+    },
+    {
+      "item__iconScale": 0.8
+    },
+    {
+      "vehicle_seats__exitTime": 1.0
+    },
+    {
+      "cockpit__zoomOutFov": 1.5
+    },
+    {
+      "cockpit__zoomInFov": 2.0
+    },
+    {
+      "vehicle_commander_cam__attachToVehicle": true
+    },
+    {
+      "_group": {
+        "_tags": "render",
+        "animchar_camera_target__node_name": "bone_camera_gunner",
+        "animchar_camera_target__node_offset": [0.0,0.5,0.0],
+        "animchar_camera_target__nodeIndex": -1
+      }
+    },
+    {
+      "vehicle_seats__seatsProvideOrder:tag": []
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [0.848,0.53,0.0],
+              [-0.53,0.848,0.0],
+              [0.0,0.0,1.0],
+              [-0.15,-0.3,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": false,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "us_halftrack_m13_gunner_cockpit",
+            "directTurretControl": true,
+            "cameraOffset": [-0.35,0.2,0.0],
+            "maxPosWithOpenHatch": 0.0,
+            "hatchRotationAxis": [0.0,0.0,0.0],
+            "canLoadInHatch": true,
+            "isHoldGunModeAllowed": false,
+            "seatAnimUpper": "drive_driver",
+            "seatAnimLower": "drive_driver",
+            "turretNames:array": [
+              {
+                "turretNames": "turret_01"
+              },
+              {
+                "turretNames": "turret_02"
+              }
+            ],
+            "hatchTurretNames:array": [
+              {
+                "turret": "turret_01"
+              },
+              {
+                "turret": "turret_02"
+              }
+            ],
+            "hatchNodes:array": {
+              "node": "hatch_01"
+            },
+            "loaderTurretNames:array": [
+              {
+                "turret": "turret_01"
+              },
+              {
+                "turret": "turret_02"
+              }
+            ]
+          }
+        },
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.0,0.2,-0.13]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": false,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cockpitTemplate": "us_halftrack_m13_driver_cockpit",
+            "seatAnimUpper": "drive_passenger",
+            "seatAnimLower": "drive_passenger"
+          }
+        },
+        {
+          "seats:object": {
+            "name": "machine_gunner",
+            "locName": "vehicle_seats/commander",
+            "attachNode": "commander",
+            "shouldHideOwner": false,
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.0,0.2,0.11]
+            ],
+            "seatComponent": "isPassenger",
+            "isHoldGunModeAllowed": false,
+            "receiveDamageFromDMPart": "commander",
+            "seatAnimUpper": "drive_passenger",
+            "seatAnimLower": "drive_passenger"
+          }
+        }
+      ]
+    }
+  ],
+  "us_halftrack_m13_driver_cockpit": {
+    "_extends": "base_driver_cockpit",
+    "animchar__res": "ba_11_driver_char",
+    "cockpit__offset": [0.374725,1.47007,0.59778],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.1
+    },
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "root"
+      },
+      {
+        "node": "bone_turret"
+      },
+      {
+        "node": "bone_gun"
+      },
+      {
+        "node": "gun_barrel_01"
+      },
+      {
+        "node": "gun_barrel_02"
+      }
+    ],
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "root"
+    },
+    "cockpit__attachNodeIndices:list<i>": []
+  },
+  "us_halftrack_m13_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/default.blk",
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "t_26_1940_gunner_char",
+    "cockpit__minZoom": -0.27,
+    "cockpit__offset": [-0.0,0.0,0.0],
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "item": [-0.668972,0.119969,-0.29122]
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_gun_barrel_01"
+    },
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "root"
+      },
+      {
+        "node": "bone_turret"
+      },
+      {
+        "node": "gun_barrel_01"
+      },
+      {
+        "node": "gun_barrel_02"
+      },
+      {
+        "node": "ex_decor_03"
+      },
+      {
+        "node": "hatch_01"
+      },
+      {
+        "node": "hatch_02"
+      },
+      {
+        "node": "ex_decor_r_07"
+      },
+      {
+        "node": "ex_decor_l_06"
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.22
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    }
+  },
+  "halftrack_m13_turret_01_12_7mm_m2_hb": {
+    "_override": true,
+    "turret__triggerGroup": 0,
+    "_extends": "12_7mm_m2_hb_custom_ammosetinfo"
+  },
+  "halftrack_m13_turret_02_12_7mm_m2_hb": {
+    "_override": true,
+    "turret__triggerGroup": 0,
+    "_extends": "12_7mm_m2_hb_custom_ammosetinfo"
+  },
+  "12_7mm_m2_hb_custom_ammosetinfo": {
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": [
+        {
+          "shell:object": {
+            "blk": "gameBase/content/tanks/gamedata/weapons/shells/12_7mm_m2_hb_custom_ap_bullet_1.blk",
+            "name": "ap_i_t_ball_M20",
+            "type": "ap_i_t_ball_M20"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/12_7mm_m2_hb_defaultset_bullet_2.blk",
+            "name": "i_ball_M1",
+            "type": "i_ball_M1"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/12_7mm_m2_hb_defaultset_bullet_2.blk",
+            "name": "i_ball_M1",
+            "type": "i_ball_M1"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/12_7mm_m2_hb_defaultset_bullet_2.blk",
+            "name": "i_ball_M1",
+            "type": "i_ball_M1"
+          }
+        }
+      ]
+    }
+  }
+}

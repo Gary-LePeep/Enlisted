@@ -6,7 +6,8 @@ var _122mm_d25t_122mm_ussr_he =
   "explosiveMass": 3.6,
   "rendinstDamageRadius": 5.0,
   "caliber": 0.122,
-  "speed": 800.0,
+  "speed": 795.0,
+  "Cx": 0.3069,
   "maxDistance": 10000.0,
   "normalizationPreset": "heat",
   "bulletType": "he_frag_tank",
@@ -26,6 +27,9 @@ var _122mm_d25t_122mm_ussr_he =
   "visualShattersGroundOffset": 1.2,
   "modelName": "tank_bullet_he",
   "secondaryShattersPreset": "ap",
+  "pressureDamage": {
+    "damageType": "pressure"
+  },
   "DamageParts": {
     "body": {
       "hp": 5.0,
@@ -43,9 +47,6 @@ var _122mm_d25t_122mm_ussr_he =
         "destruction": 1.0
       }
     }
-  },
-  "pressureDamage": {
-    "damageType": "pressure"
   },
   "hitpower": {
     "HitPower0m": [1.0,500.0],

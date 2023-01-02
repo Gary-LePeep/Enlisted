@@ -11,10 +11,32 @@ var _germ_pzkpfw_iv_ausf_e =
       "_extends": "base_pzkpfw_iv_ausf_e"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
     },
     {
       "item__iconOffset": [0.0,0.3]
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 4,
+            "count": 7
+          }
+        }
+      ]
     },
     {
       "vehicle_seats__seats:shared:array": [
@@ -68,33 +90,62 @@ var _germ_pzkpfw_iv_ausf_e =
           }
         },
         {
-          "seats:object": {
-            "name": "commander",
-            "locName": "vehicle_seats/commander",
-            "attachNode": "commander",
-            "shouldHideOwner": true,
-            "maxPosWithOpenHatch": 0.6,
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.05,-0.3,0.05]
-            ],
-            "seatComponent": "isDriver",
-            "receiveDamageFromDMPart": "commander",
-            "cockpitTemplate": "germ_pzkpfw_IV_ausf_E_commander_cockpit",
-            "cameraNodeName": "bone_turret",
-            "hatchRotationAxis": [1.7,0.0,0.0],
-            "hatchNodes:array": [
-              {
-                "node": "hatch_01"
-              },
-              {
-                "node": "hatch_02"
-              }
-            ]
-          }
+          "seats:object": [
+            {
+              "name": "commander"
+            },
+            {
+              "locName": "vehicle_seats/commander"
+            },
+            {
+              "attachNode": "commander"
+            },
+            {
+              "shouldHideOwner": true
+            },
+            {
+              "maxPosWithOpenHatch": 0.6
+            },
+            {
+              "ignoreAttachNodeRotation": true
+            },
+            {
+              "hatchRotationAxis": [1.9,0.0,0.0]
+            },
+            {
+              "hatchRotationAxis": [1.7,0.0,0.0]
+            },
+            {
+              "attachTm": [
+                [1.0,0.0,0.0],
+                [0.0,1.0,0.0],
+                [0.0,0.0,1.0],
+                [-0.1,-0.05,0.06]
+              ]
+            },
+            {
+              "seatComponent": "isDriver"
+            },
+            {
+              "receiveDamageFromDMPart": "commander"
+            },
+            {
+              "cockpitTemplate": "germ_pzkpfw_IV_ausf_E_commander_cockpit"
+            },
+            {
+              "cameraNodeName": "bone_turret"
+            },
+            {
+              "hatchNodes:array": [
+                {
+                  "node": "hatch_01"
+                },
+                {
+                  "node": "hatch_02"
+                }
+              ]
+            }
+          ]
         },
         {
           "seats:object": {
@@ -189,7 +240,7 @@ var _germ_pzkpfw_iv_ausf_e =
     ]
   },
   "germ_pzkpfw_IV_ausf_E_gunner_cockpit": {
-    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf5b.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pzkpfw_iii_e_gunner_char",
     "cockpit__offset": [-0.8,0.0,0.0],
@@ -381,8 +432,15 @@ var _germ_pzkpfw_iv_ausf_e =
           "slot": 2,
           "fill": true
         }
+      },
+      {
+        "ammo:object": {
+          "slot": 4,
+          "count": 7
+        }
       }
     ],
+    "attach_decorators__entities:list<eid>": [],
     "attach_decorators__templates:array": [
       {
         "templates:object": {
@@ -520,6 +578,7 @@ var _germ_pzkpfw_iv_ausf_e =
   },
   "germ_pzkpfw_IV_ausf_E_carrier_flag_premium": {
     "_extends": "germ_pzkpfw_IV_ausf_E",
+    "attach_decorators__entities:list<eid>": [],
     "attach_decorators__templates:array": {
       "templates:object": {
         "relativeTm": [

@@ -9,6 +9,7 @@ var _25mm_72k_25mm_ussr_72k_he =
   "selfDestructionInAir": true,
   "normalizationPreset": "default",
   "bulletType": "frag_i_t",
+  "shellAnimation": "video/shells_animations/he_belt.ivf",
   "bulletName": "25mm_ozr_132",
   "explodeTreshold": 0.1,
   "fuseDelayDist": 0.0,
@@ -49,53 +50,18 @@ var _25mm_72k_25mm_ussr_72k_he =
         "p18": [12000000.0,900.0]
       }
     },
-    "shatter": [
-      {
-        "useRealShatters": true
-      },
-      {
-        "countPortion": 0.2
-      },
-      {
-        "damageType": "shatter"
-      },
-      {
-        "segment": {
-          "radiusScale": 1.0,
-          "penetrationScale": 1.0,
-          "damageScale": 1.0,
-          "angles": [0.0,90.0],
-          "countPortion": 0.4
-        }
-      },
-      {
-        "segment": {
-          "radiusScale": 1.0,
-          "penetrationScale": 1.0,
-          "damageScale": 1.0,
-          "angles": [91.0,180.0],
-          "countPortion": 0.1
-        }
-      },
-      {
-        "segment": {
-          "radiusScale": 1.0,
-          "penetrationScale": 1.0,
-          "damageScale": 1.0,
-          "angles": [181.0,269.0],
-          "countPortion": 0.1
-        }
-      },
-      {
-        "segment": {
-          "radiusScale": 1.0,
-          "penetrationScale": 1.0,
-          "damageScale": 1.0,
-          "angles": [270.0,359.0],
-          "countPortion": 0.4
-        }
+    "shatter": {
+      "useRealShatters": true,
+      "countPortion": 0.2,
+      "damageType": "shatter",
+      "segment": {
+        "radiusScale": 1.0,
+        "penetrationScale": 1.0,
+        "damageScale": 1.0,
+        "angles": [0.0,180.0],
+        "countPortion": 1.0
       }
-    ],
+    },
     "secondaryShatter": {
       "residualArmorPenetrationToShatterCountMult": [20.0,100.0,0.5,1.0],
       "residualArmorPenetrationToShatterPenetrationMult": [20.0,100.0,0.5,1.0],

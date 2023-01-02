@@ -20,7 +20,7 @@ var _8x56_r_tracer =
     "HitPower1500m": [0.01,1500.0]
   },
   "armorpower": {
-    "ArmorPower0m": [1.0,300.0],
+    "ArmorPower0m": [1.0,10.0],
     "ArmorPower1500m": [0.1,1500.0]
   },
   "visual": {

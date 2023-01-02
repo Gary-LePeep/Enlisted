@@ -58,10 +58,10 @@ var _sherman_ii =
           "node": "emtr_gun_flame"
         },
         {
-          "node": "emtr_mg_aa_flame_01"
+          "node": "emtr_mg_flame_01"
         },
         {
-          "node": "emtr_mg_flame_01"
+          "node": "emtr_mg_aa_flame_01"
         }
       ]
     },
@@ -71,10 +71,10 @@ var _sherman_ii =
           "fx": "muzzle_ground_60mm"
         },
         {
-          "fx": "muzzle_ground_15mm"
+          "fx": "muzzle_ground_8mm"
         },
         {
-          "fx": "muzzle_ground_8mm"
+          "fx": "muzzle_ground_15mm"
         }
       ]
     },
@@ -97,10 +97,10 @@ var _sherman_ii =
           "node": "bone_gun_barrel"
         },
         {
-          "node": "bone_mg_aa_v_01"
+          "node": "bone_mg_gun_twin"
         },
         {
-          "node": "bone_mg_gun_twin"
+          "node": "bone_mg_aa_v_01"
         }
       ]
     },
@@ -128,6 +128,12 @@ var _sherman_ii =
         },
         {
           "vars:object": {
+            "curYawParamName": "turret_03_yaw",
+            "curPitchParamName": "gun_03_pitch"
+          }
+        },
+        {
+          "vars:object": {
             "curYawParamName": "turret_02_yaw",
             "curPitchParamName": "gun_02_pitch",
             "aimActiveParamName": "aim_02_active",
@@ -143,12 +149,6 @@ var _sherman_ii =
             "paramPitchAccel": "gun_02_pitch_accel",
             "wishYawParamName": "gun_02_aim:targetYaw",
             "wishPitchParamName": "gun_02_aim:targetPitch"
-          }
-        },
-        {
-          "vars:object": {
-            "curYawParamName": "turret_03_yaw",
-            "curPitchParamName": "gun_03_pitch"
           }
         }
       ]
@@ -169,20 +169,16 @@ var _sherman_ii =
         {
           "turretInfo:object": {
             "turretName": "turret_02",
-            "gun": "sherman_ii_turret_02_12_7mm_m2_hb",
-            "barrelDm": "gun_barrel_02",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
+            "gun": "sherman_ii_turret_03_7_62mm_m1919a4",
+            "barrelDm": "gun_barrel_01",
             "salt": 1
           }
         },
         {
           "turretInfo:object": {
             "turretName": "turret_03",
-            "gun": "sherman_ii_turret_03_7_62mm_m1919a4",
-            "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
+            "gun": "sherman_ii_turret_02_12_7mm_m2_hb",
+            "barrelDm": "gun_barrel_02",
             "salt": 1
           }
         }

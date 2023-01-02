@@ -43,10 +43,32 @@ var _us_m4a3e2_sherman_jumbo =
       "_extends": "base_m4a3e2_sherman_jumbo"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_heavy_vehicle_tracks_sound"
     },
     {
       "item__iconOffset": [0.0,0.2]
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 4,
+            "count": 7
+          }
+        }
+      ]
     },
     {
       "bullet_holes__ignoreCollisionNodes:array": {
@@ -284,8 +306,15 @@ var _us_m4a3e2_sherman_jumbo =
           "slot": 3,
           "fill": true
         }
+      },
+      {
+        "ammo:object": {
+          "slot": 4,
+          "count": 7
+        }
       }
     ],
+    "attach_decorators__entities:list<eid>": [],
     "attach_decorators__templates:array": [
       {
         "templates:object": {
@@ -499,7 +528,7 @@ var _us_m4a3e2_sherman_jumbo =
             [-0.000855406,0.000654602,0.999961],
             [-0.67659,1.46536,-1.48223]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -511,7 +540,7 @@ var _us_m4a3e2_sherman_jumbo =
             [-0.000884696,0.000849742,1.0],
             [-0.188766,1.55225,-1.49093]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -523,7 +552,7 @@ var _us_m4a3e2_sherman_jumbo =
             [0.00216835,-0.00134415,-0.999973],
             [-1.18185,1.43432,-1.33959]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       }

@@ -5,33 +5,45 @@ var _ussr_t_34_85_zis_53 =
       "_extends": "base_t_34_85_zis_53"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_t34_engine_sound"
+    },
+    {
+      "_extends": "tank_t34_vehicle_tracks_sound"
     },
     {
       "item__iconOffset": [0.0,0.2]
     },
     {
+      "vehicle_seats__seatsProvideOrder:tag": []
+    },
+    {
       "vehicle_seats__seats:shared:array": [
         {
           "seats:object": {
-            "name": "driver",
-            "locName": "vehicle_seats/driver",
-            "seatOwnsEntityControl": true,
-            "attachNode": "driver",
+            "name": "commander",
+            "locName": "vehicle_seats/commander",
+            "attachNode": "commander",
+            "shouldHideOwner": true,
+            "maxPosWithOpenHatch": 0.7,
             "ignoreAttachNodeRotation": true,
             "attachTm": [
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.25,-0.25,0.0]
+              [0.15,-0.35,0.05]
             ],
             "seatComponent": "isDriver",
-            "nextSeat": "main_gunner",
-            "shouldHideOwner": true,
-            "receiveDamageFromDMPart": "driver",
-            "cameraNodeName": "bone_camera_driver",
-            "cameraOffset": [0.15,-0.0,-0.0],
-            "cockpitTemplate": "ussr_t_34_85_zis_53_driver_cockpit"
+            "receiveDamageFromDMPart": "commander",
+            "cameraNodeName": "bone_turret",
+            "cockpitTemplate": "ussr_t_34_85_zis_53_commander_cockpit",
+            "hatchNodes:array": [
+              {
+                "node": "hatch_01"
+              },
+              {
+                "node": "hatch_02"
+              }
+            ]
           }
         },
         {
@@ -64,30 +76,24 @@ var _ussr_t_34_85_zis_53 =
         },
         {
           "seats:object": {
-            "name": "commander",
-            "locName": "vehicle_seats/commander",
-            "attachNode": "commander",
-            "shouldHideOwner": true,
-            "maxPosWithOpenHatch": 0.7,
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
             "ignoreAttachNodeRotation": true,
             "attachTm": [
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [0.15,-0.35,0.05]
+              [-0.25,-0.25,0.0]
             ],
             "seatComponent": "isDriver",
-            "receiveDamageFromDMPart": "commander",
-            "cameraNodeName": "bone_turret",
-            "cockpitTemplate": "ussr_t_34_85_zis_53_commander_cockpit",
-            "hatchNodes:array": [
-              {
-                "node": "hatch_01"
-              },
-              {
-                "node": "hatch_02"
-              }
-            ]
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cameraOffset": [0.15,-0.0,-0.0],
+            "cockpitTemplate": "ussr_t_34_85_zis_53_driver_cockpit"
           }
         },
         {
@@ -268,5 +274,76 @@ var _ussr_t_34_85_zis_53 =
         "t_34_85_zis_53_skin_gun_c*": "camo_skin_tex"
       }
     }
+  },
+  "ussr_t_34_85_zis_53_tutorial": {
+    "_extends": "ussr_t_34_85_zis_53",
+    "turrets__initAmmoDistribution:array": [
+      {
+        "ammo:object": {
+          "slot": 1,
+          "fill": true
+        }
+      },
+      {
+        "ammo:object": {
+          "slot": 2,
+          "fill": true
+        }
+      }
+    ],
+    "heroTutorialVehicle:tag": []
+  },
+  "t_34_85_zis_53_skins": {
+    "_override": true,
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "t_34_85_zis_53_winter",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_34_85_zis_53_forest",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_forest_01*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_34_85_zis_53_ussr_camo_brown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_brown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_34_85_zis_53_ussr_camo_green_ltbrown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_34_85_zis_53_ussr_camo_desert_yellow_brown",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_desert_yellow_brown*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_34_85_zis_53_ussr_camo_winter_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter_lines*"
+          }
+        }
+      }
+    ]
   }
 }

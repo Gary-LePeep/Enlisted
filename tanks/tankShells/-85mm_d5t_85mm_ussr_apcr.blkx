@@ -7,7 +7,7 @@ var _85mm_d5t_85mm_ussr_apcr =
   "damageMass": 0.648,
   "ballisticCaliber": 0.085,
   "damageCaliber": 0.028,
-  "Cx": 0.49,
+  "Cx": 0.4779,
   "maxDistance": 10000.0,
   "normalizationPreset": "apcr",
   "stucking": 0.7,

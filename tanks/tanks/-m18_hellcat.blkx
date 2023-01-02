@@ -153,8 +153,6 @@ var _m18_hellcat =
             "turretName": "turret_02",
             "gun": "m18_hellcat_turret_02_12_7mm_m2_hb",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }

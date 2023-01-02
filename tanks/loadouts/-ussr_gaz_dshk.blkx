@@ -98,5 +98,34 @@ var _ussr_gaz_dshk =
         "wheel": "wheel_l_drive"
       }
     ]
+  },
+  "gaz_dshk_skins": {
+    "_override": true,
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "gaz_dshk_winter",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "gaz_dshk_forest",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_forest_01*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "gaz_dshk_ussr_camo_green_ltbrown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+          }
+        }
+      }
+    ]
   }
 }

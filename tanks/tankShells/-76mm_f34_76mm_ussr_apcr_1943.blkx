@@ -7,7 +7,7 @@ var _76mm_f34_76mm_ussr_apcr_1943 =
   "damageMass": 0.48,
   "ballisticCaliber": 0.0762,
   "damageCaliber": 0.028,
-  "Cx": 0.47,
+  "Cx": 0.5627,
   "maxDistance": 10000.0,
   "normalizationPreset": "apcr",
   "stucking": 0.7,

@@ -5,7 +5,10 @@ var _germ_pzkpfw_ii_ausf_c =
       "_extends": "base_pzkpfw_ii_ausf_c"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
+    },
+    {
+      "_extends": "tank_light_vehicle_tracks_sound"
     },
     {
       "vehicle_net_phys__blk": "content/tanks/gamedata/units/tanks/pzkpfw_ii_ausf_c.blk:VehiclePhys"
@@ -36,7 +39,7 @@ var _germ_pzkpfw_ii_ausf_c =
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.25,-0.5,0.0]
+              [-0.13,-0.5,0.115]
             ],
             "seatComponent": "isGunner",
             "nextSeat": "driver",
@@ -44,6 +47,9 @@ var _germ_pzkpfw_ii_ausf_c =
             "receiveDamageFromDMPart": "commander",
             "cameraNodeName": "bone_camera_gunner",
             "cockpitTemplate": "germ_pzkpfw_II_ausf_C_gunner_cockpit",
+            "hatchRotationAxis": [1.7,0.0,0.0],
+            "seatAnimUpper": "drive_driver",
+            "seatAnimLower": "drive_driver",
             "turretNames:array": [
               {
                 "turret": "turret_01"
@@ -51,7 +57,10 @@ var _germ_pzkpfw_ii_ausf_c =
               {
                 "turret": "turret_02"
               }
-            ]
+            ],
+            "hatchNodes:array": {
+              "node": "hatch_01"
+            }
           }
         },
         {
@@ -78,10 +87,10 @@ var _germ_pzkpfw_ii_ausf_c =
         },
         {
           "seats:object": {
-            "name": "commander",
+            "name": "loader",
             "attachNode": "bone_turret",
             "shouldHideOwner": true,
-            "locName": "vehicle_seats/commander",
+            "locName": "vehicle_seats/loader",
             "ignoreAttachNodeRotation": true,
             "hatchRotationAxis": [1.7,0.0,0.0],
             "attachTm": [
@@ -93,10 +102,6 @@ var _germ_pzkpfw_ii_ausf_c =
             "seatComponent": "isDriver",
             "receiveDamageFromDMPart": "loader",
             "cameraNodeName": "bone_turret",
-            "cockpitTemplate": "germ_pzkpfw_II_ausf_C_commander_cockpit",
-            "hatchNodes:array": {
-              "node": "hatch_01"
-            },
             "loaderTurretNames:array": {
               "turret": "turret_01"
             }

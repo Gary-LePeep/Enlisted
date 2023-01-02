@@ -1,0 +1,313 @@
+var _jp_type_1_chi_he = 
+{
+  "jp_type_1_chi_he_pacific_premium": {
+    "_extends": "jp_type_1_chi_he_common"
+  },
+  "jp_type_1_chi_he_common": [
+    {
+      "_extends": "base_type_1_chi_he"
+    },
+    {
+      "_extends": "tank_m10_engine_sound"
+    },
+    {
+      "item__iconOffset": [0.0,0.0]
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "jp_type_1_chi_he_gunner_cockpit",
+            "turretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cameraOffset": [0.15,-0.0,-0.0],
+            "cockpitTemplate": "jp_type_1_chi_he_driver_cockpit"
+          }
+        },
+        {
+          "seats:object": {
+            "name": "commander",
+            "locName": "vehicle_seats/commander",
+            "attachNode": "commander",
+            "shouldHideOwner": true,
+            "maxPosWithOpenHatch": 1.2,
+            "hatchRotationAxis": [1.9,0.0,0.0],
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.04,-0.6,0.08]
+            ],
+            "seatComponent": "isDriver",
+            "receiveDamageFromDMPart": "commander",
+            "cameraNodeName": "bone_turret",
+            "cockpitTemplate": "jp_type_1_chi_he_commander_cockpit",
+            "hatchNodes:array": [
+              {
+                "node": "hatch_06"
+              },
+              {
+                "node": "hatch_07"
+              }
+            ],
+            "hatchTurretNames:array": {
+              "turret": "turret_03"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/additional_gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "root",
+            "cockpitTemplate": "jp_type_1_chi_he_machinegunner_cockpit",
+            "turretNames:array": {
+              "turret": "turret_02"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "attachNode": "loader",
+            "locName": "vehicle_seats/loader",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "bone_camera_driver",
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 2,
+            "fill": true
+          }
+        }
+      ]
+    }
+  ],
+  "jp_type_1_chi_he_driver_cockpit": {
+    "_extends": "base_driver_cockpit_no_slits",
+    "animchar__res": "bt_7_driver_char",
+    "cockpit__offset": [0.0646394,-0.374342,0.00730274],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.1
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": false
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "jp_type_1_chi_he_gunner_cockpit": {
+    "vehicle_sight__blk": "gamedata/sight/jp_47mm_1_1.blk",
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "ba_11_gunner_char",
+    "cockpit__offset": [-0.578069,-0.0561157,0.244711],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.11
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__attachNodeIndices:list<i>": []
+  },
+  "jp_type_1_chi_he_commander_cockpit": {
+    "_extends": "base_commander_tower_cockit_no_slits",
+    "animchar__res": "pzkpfw_iii_b_commander_char",
+    "cockpit__offset": [-0.0629028,0.368184,-0.281922],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun"
+      },
+      {
+        "node": "bone_gun_01"
+      }
+    ],
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_front_left"
+      },
+      {
+        "slit": "cam_rear_left"
+      },
+      {
+        "slit": "cam_rear"
+      },
+      {
+        "slit": "cam_rear_right"
+      },
+      {
+        "slit": "cam_front_right"
+      }
+    ]
+  },
+  "jp_type_1_chi_he_machinegunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "ba_11_machinegunner_char",
+    "cockpit__offset": [-0.269704,-0.242768,-0.192939],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_mg"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.13
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_mg_v_01"
+    },
+    "cockpit__attachNodeIndices:list<i>": []
+  }
+}

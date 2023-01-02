@@ -5,7 +5,10 @@ var _germ_sdkfz_251_10 =
       "_extends": "base_sdkfz_251_10"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
+    },
+    {
+      "_extends": "tank_light_vehicle_tracks_sound"
     },
     {
       "vehicle_seats_switch_time__totalSwitchTime": 2.0

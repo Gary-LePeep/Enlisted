@@ -21,7 +21,7 @@ var _7_92x57_mauser_carbine_short =
     "HitPower1500m": [0.04,1500.0]
   },
   "armorpower": {
-    "ArmorPower0m": [1.0,300.0],
+    "ArmorPower0m": [1.0,10.0],
     "ArmorPower1500m": [0.1,1500.0]
   },
   "visual": {

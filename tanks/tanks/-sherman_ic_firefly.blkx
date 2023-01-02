@@ -38,7 +38,7 @@ var _sherman_ic_firefly =
       "cockpit__sightName": "sight_model/no43x3_ml_mk3"
     },
     {
-      "cockpit__sightFov": 16.0
+      "cockpit__sightFov": 12.35
     },
     {
       "drowningHeight": 2.248
@@ -48,6 +48,9 @@ var _sherman_ic_firefly =
     },
     {
       "item__name": "items/uk_sherman_ic_firefly"
+    },
+    {
+      "turret_control__grenadeLauncherSalvoSize": 1
     },
     {
       "skin__template": "sherman_ic_firefly_skins"
@@ -62,6 +65,9 @@ var _sherman_ic_firefly =
         },
         {
           "node": "emtr_mg_aa_flame_01"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
         }
       ]
     },
@@ -75,11 +81,17 @@ var _sherman_ic_firefly =
         },
         {
           "fx": "muzzle_ground_15mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
         }
       ]
     },
     {
       "turret_gun_flash_fx__flashFxScale:shared:array": [
+        {
+          "scale": 1.0
+        },
         {
           "scale": 1.0
         },
@@ -101,6 +113,9 @@ var _sherman_ic_firefly =
         },
         {
           "node": "bone_mg_aa_v_01"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
         }
       ]
     },
@@ -150,6 +165,12 @@ var _sherman_ic_firefly =
             "wishYawParamName": "gun_03_aim:targetYaw",
             "wishPitchParamName": "gun_03_aim:targetPitch"
           }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_04_yaw",
+            "curPitchParamName": "gun_04_pitch"
+          }
         }
       ]
     },
@@ -171,8 +192,6 @@ var _sherman_ic_firefly =
             "turretName": "turret_02",
             "gun": "sherman_ic_firefly_turret_02_7_62mm_l3a1",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         },
@@ -180,8 +199,15 @@ var _sherman_ic_firefly =
           "turretInfo:object": {
             "turretName": "turret_03",
             "gun": "sherman_ic_firefly_turret_03_12_7mm_m2_hb",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_04",
+            "needsAssignedGunner": false,
+            "turretGroup": "smoke",
+            "gun": "sherman_ic_firefly_turret_04_50mm_uk_smoke_mortar_launcher",
             "salt": 1
           }
         }
@@ -232,21 +258,28 @@ var _sherman_ic_firefly =
     "turret__limit": [-180.0,180.0,-10.0,15.0],
     "gun__shellsAmmo:array": [
       {
-        "ammo": 150
+        "ammo": 160
       },
       {
-        "ammo": 150
+        "ammo": 160
       },
       {
-        "ammo": 150
+        "ammo": 160
       },
       {
-        "ammo": 150
+        "ammo": 160
       },
       {
-        "ammo": 150
+        "ammo": 160
       }
     ]
+  },
+  "sherman_ic_firefly_turret_04_50mm_uk_smoke_mortar_launcher": {
+    "_extends": "tankgun_50mm_uk_smoke_mortar_launcher",
+    "gun__shootNodeName": "emtr_mortar_flame_01",
+    "gun__shellsAmmo:array": {
+      "ammo": 6
+    }
   },
   "sherman_ic_firefly_ammo_stowages": {
     "_tags": "server",

@@ -50,6 +50,9 @@ var _valentine_i =
       "item__name": "items/uk_valentine_mk_1"
     },
     {
+      "turret_control__grenadeLauncherSalvoSize": 1
+    },
+    {
       "skin__template": "valentine_i_skins"
     },
     {
@@ -59,6 +62,9 @@ var _valentine_i =
         },
         {
           "node": "emtr_mg_flame_01"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
         }
       ]
     },
@@ -69,11 +75,17 @@ var _valentine_i =
         },
         {
           "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
         }
       ]
     },
     {
       "turret_gun_flash_fx__flashFxScale:shared:array": [
+        {
+          "scale": 1.0
+        },
         {
           "scale": 1.0
         },
@@ -89,6 +101,9 @@ var _valentine_i =
         },
         {
           "node": "bone_mg_gun_twin"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
         }
       ]
     },
@@ -119,6 +134,12 @@ var _valentine_i =
             "curYawParamName": "turret_02_yaw",
             "curPitchParamName": "gun_02_pitch"
           }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_03_yaw",
+            "curPitchParamName": "gun_03_pitch"
+          }
         }
       ]
     },
@@ -140,8 +161,15 @@ var _valentine_i =
             "turretName": "turret_02",
             "gun": "valentine_i_turret_02_7_92mm_besa",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_03",
+            "needsAssignedGunner": false,
+            "turretGroup": "smoke",
+            "gun": "valentine_i_turret_03_50mm_uk_smoke_mortar_launcher",
             "salt": 1
           }
         }
@@ -183,12 +211,19 @@ var _valentine_i =
     "gun__shootNodeName": "bone_mg_gun_twin",
     "gun__shellsAmmo:array": [
       {
-        "ammo": 1750
+        "ammo": 1800
       },
       {
-        "ammo": 1750
+        "ammo": 1800
       }
     ]
+  },
+  "valentine_i_turret_03_50mm_uk_smoke_mortar_launcher": {
+    "_extends": "tankgun_50mm_uk_smoke_mortar_launcher",
+    "gun__shootNodeName": "emtr_mortar_flame_01",
+    "gun__shellsAmmo:array": {
+      "ammo": 16
+    }
   },
   "valentine_i_ammo_stowages": {
     "_tags": "server",

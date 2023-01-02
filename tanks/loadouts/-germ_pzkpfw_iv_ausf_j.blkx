@@ -43,10 +43,32 @@ var _germ_pzkpfw_iv_ausf_j =
       "_extends": "base_pzkpfw_iv_ausf_j"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
     },
     {
       "item__iconOffset": [0.0,0.2]
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 5,
+            "count": 7
+          }
+        }
+      ]
     },
     {
       "bullet_holes__ignoreCollisionNodes:array": {
@@ -139,7 +161,7 @@ var _germ_pzkpfw_iv_ausf_j =
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.05,-0.35,0.07]
+              [-0.1,-0.0,0.07]
             ],
             "seatComponent": "isDriver",
             "receiveDamageFromDMPart": "commander",
@@ -289,7 +311,7 @@ var _germ_pzkpfw_iv_ausf_j =
     ]
   },
   "germ_pzkpfw_IV_ausf_J_gunner_cockpit": {
-    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf5f_2.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pzkpfw_iii_e_gunner_char",
     "cockpit__offset": [-0.9,0.03,0.12],
@@ -337,7 +359,7 @@ var _germ_pzkpfw_iv_ausf_j =
       }
     ],
     "cockpit__slitForwardOffset:list<r>": {
-      "slit": 0.27
+      "slit": 0.245
     },
     "cockpit__slitIsGun:list<b>": {
       "slit": true

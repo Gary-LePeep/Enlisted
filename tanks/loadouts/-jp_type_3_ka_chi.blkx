@@ -1,0 +1,449 @@
+var _jp_type_3_ka_chi = 
+{
+  "jp_type_3_ka_chi_pacific_premium": {
+    "_extends": "jp_type_3_ka_chi_common",
+    "skin__template": "type_3_ka_chi_pacific_premium_skins"
+  },
+  "jp_type_3_ka_chi_without_swiming_parts": {
+    "_extends": "jp_type_3_ka_chi_common",
+    "disableDMParts:list<t>": [
+      {
+        "part": "ex_decor_01"
+      },
+      {
+        "part": "ex_decor_02"
+      },
+      {
+        "part": "ex_decor_03"
+      },
+      {
+        "part": "ex_decor_04"
+      }
+    ]
+  },
+  "jp_type_3_ka_chi_common": [
+    {
+      "_extends": "base_type_3_ka_chi"
+    },
+    {
+      "_extends": "tank_m10_engine_sound"
+    },
+    {
+      "_extends": "tank_light_vehicle_tracks_sound"
+    },
+    {
+      "_extends": "floatable_vehicle"
+    },
+    {
+      "item__iconOffset": [0.0,0.0]
+    },
+    {
+      "floatable_vehicle__floatingVolumesOffset": [0.0,-0.2,0.0]
+    },
+    {
+      "vehicle_seats__seats:shared:array": [
+        {
+          "seats:object": {
+            "name": "main_gunner",
+            "locName": "vehicle_seats/gunner",
+            "attachNode": "gunner",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isGunner",
+            "nextSeat": "driver",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "gunner",
+            "cameraNodeName": "bone_camera_gunner",
+            "cockpitTemplate": "jp_type_3_ka_chi_gunner_cockpit",
+            "turretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "name": "driver",
+            "locName": "vehicle_seats/driver",
+            "seatOwnsEntityControl": true,
+            "attachNode": "driver",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.25,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "nextSeat": "main_gunner",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "driver",
+            "cameraNodeName": "bone_camera_driver",
+            "cameraOffset": [0.15,-0.0,-0.0],
+            "cockpitTemplate": "jp_type_3_ka_chi_driver_cockpit"
+          }
+        },
+        {
+          "seats:object": {
+            "name": "commander",
+            "locName": "vehicle_seats/commander",
+            "attachNode": "commander",
+            "shouldHideOwner": true,
+            "maxPosWithOpenHatch": 1.2,
+            "hatchRotationAxis": [1.8,0.0,0.0],
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.1,-0.75,0.0]
+            ],
+            "seatComponent": "isDriver",
+            "receiveDamageFromDMPart": "commander",
+            "cameraNodeName": "bone_turret",
+            "cockpitTemplate": "jp_type_3_ka_chi_commander_cockpit"
+          }
+        },
+        {
+          "seats:object": {
+            "attachNode": "loader",
+            "locName": "vehicle_seats/loader",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "loader",
+            "cameraNodeName": "bone_camera_driver",
+            "loaderTurretNames:array": {
+              "turret": "turret_01"
+            }
+          }
+        },
+        {
+          "seats:object": {
+            "attachNode": "machine_gunner",
+            "locName": "vehicle_seats/radioman",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "machine_gunner",
+            "cameraNodeName": "bone_camera_driver"
+          }
+        },
+        {
+          "seats:object": {
+            "attachNode": "machine_gunner",
+            "locName": "vehicle_seats/crew",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "machine_gunner_01",
+            "cameraNodeName": "bone_camera_driver"
+          }
+        },
+        {
+          "seats:object": {
+            "attachNode": "machine_gunner",
+            "locName": "vehicle_seats/crew",
+            "ignoreAttachNodeRotation": true,
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.25,-0.5,0.0]
+            ],
+            "seatComponent": "isPassenger",
+            "shouldHideOwner": true,
+            "receiveDamageFromDMPart": "machine_gunner_02",
+            "cameraNodeName": "bone_camera_driver"
+          }
+        }
+      ]
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 2,
+            "fill": true
+          }
+        }
+      ]
+    }
+  ],
+  "jp_type_3_ka_chi_driver_cockpit": {
+    "_extends": "base_driver_cockpit_no_slits",
+    "animchar__res": "bt_7_driver_char",
+    "cockpit__offset": [0.0946133,-0.360127,0.0155563],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "bone_gun"
+      },
+      {
+        "node": "gun_barrel"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.1
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": false
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  },
+  "jp_type_3_ka_chi_gunner_cockpit": {
+    "vehicle_sight__blk": "gamedata/sight/jp_47mm_1_1.blk",
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "ba_11_gunner_char",
+    "cockpit__offset": [-0.645543,-0.0759905,0.217313],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "bone_gun"
+      },
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "@root"
+      },
+      {
+        "node": "ex_decor_01"
+      },
+      {
+        "node": "ex_decor_03"
+      },
+      {
+        "node": "ex_decor_04"
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.17
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__attachNodeIndices:list<i>": []
+  },
+  "jp_type_3_ka_chi_commander_cockpit": {
+    "_extends": "base_commander_tower_cockit_no_slits",
+    "animchar__res": "pzkpfw_iii_b_commander_char",
+    "cockpit__offset": [-0.0502109,0.803083,-0.0690147],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "bone_gun"
+      },
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "@root"
+      },
+      {
+        "node": "ex_decor_01"
+      },
+      {
+        "node": "ex_decor_03"
+      },
+      {
+        "node": "ex_decor_04"
+      }
+    ],
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      },
+      {
+        "item": [0.0,0.0,0.0]
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      },
+      {
+        "slit": -0.09
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_front_left"
+      },
+      {
+        "slit": "cam_left"
+      },
+      {
+        "slit": "cam_rear"
+      },
+      {
+        "slit": "cam_right"
+      },
+      {
+        "slit": "cam_front_right"
+      }
+    ]
+  },
+  "jp_type_3_ka_chi_machinegunner_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "ba_11_machinegunner_char",
+    "cockpit__offset": [-0.297881,-0.277016,-0.204487],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "ex_decor_01"
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_mg"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.05
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_mg_v_01"
+    },
+    "cockpit__attachNodeIndices:list<i>": []
+  },
+  "type_3_ka_chi_pacific_premium_skins": {
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "type_3_ka_chi_pacific_premium_brown",
+          "objTexReplace:object": {
+            "jp_camo_warship_grey*": "jp_camo_brown*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "type_3_ka_chi_pacific_premium_green",
+          "objTexReplace:object": {
+            "jp_camo_warship_grey*": "jp_camo_willow_green*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "type_3_ka_chi_pacific_premium_early_era_brown_yellow_lines",
+          "objTexReplace:object": {
+            "jp_camo_warship_grey*": "jp_camo_early_brown_yellow_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "type_3_ka_chi_pacific_premium_post_era_winter",
+          "objTexReplace:object": {
+            "jp_camo_warship_grey*": "jp_camo_post_winter*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "type_3_ka_chi_pacific_premium_jp_camo_winter_early",
+          "objTexReplace:object": {
+            "jp_camo_warship_grey*": "jp_camo_winter_early*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "type_3_ka_chi_pacific_premium_jp_camo_pre_order",
+          "locId": "skin/type_3_ka_chi_pacific_premium_jp_camo_pre_order",
+          "objTexReplace:object": {
+            "jp_camo_warship_grey*": "jp_camo_early_three_color*"
+          },
+          "animchar__objTexSet:object": {
+            "type_3_ka_chi_body_c*:object": {
+              "type_3_ka_chi_body_sakura_c*": "camo_skin_tex"
+            },
+            "type_3_ka_chi_turret_c*:object": {
+              "type_3_ka_chi_sakura_turret_c*": "camo_skin_tex"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

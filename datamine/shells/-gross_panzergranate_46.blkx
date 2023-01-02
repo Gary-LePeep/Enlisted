@@ -62,7 +62,7 @@ var _gross_panzergranate_46 =
   "damage": {
     "cumulative": {
       "penetration": 90.0,
-      "damage": 60.0,
+      "damage": 150.0,
       "distance": 0.7,
       "onHitChanceMultFire": 15.0,
       "damageType": "cumulative"

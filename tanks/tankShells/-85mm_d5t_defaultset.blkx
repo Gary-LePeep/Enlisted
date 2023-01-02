@@ -6,7 +6,7 @@ var _85mm_d5t_defaultset =
   "explosiveMass": 0.048,
   "caliber": 0.085,
   "speed": 792.0,
-  "Cx": 0.61,
+  "Cx": 0.6106,
   "maxDistance": 10000.0,
   "normalizationPreset": "ap",
   "stucking": 0.7,

@@ -50,6 +50,9 @@ var _pzkpfw_iii_ausf_n =
       "item__name": "items/germ_pzkpfw_iii_ausf_n"
     },
     {
+      "turret_control__grenadeLauncherSalvoSize": 2
+    },
+    {
       "skin__template": "pzkpfw_iii_ausf_n_skins"
     },
     {
@@ -62,6 +65,24 @@ var _pzkpfw_iii_ausf_n =
         },
         {
           "node": "emtr_mg_flame_03"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
+        },
+        {
+          "node": "emtr_mortar_flame_02"
+        },
+        {
+          "node": "emtr_mortar_flame_03"
+        },
+        {
+          "node": "emtr_mortar_flame_04"
+        },
+        {
+          "node": "emtr_mortar_flame_05"
+        },
+        {
+          "node": "emtr_mortar_flame_06"
         }
       ]
     },
@@ -75,11 +96,47 @@ var _pzkpfw_iii_ausf_n =
         },
         {
           "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
         }
       ]
     },
     {
       "turret_gun_flash_fx__flashFxScale:shared:array": [
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        },
         {
           "scale": 1.0
         },
@@ -101,6 +158,24 @@ var _pzkpfw_iii_ausf_n =
         },
         {
           "node": "bone_mg_aa_barrel"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
+        },
+        {
+          "node": "emtr_mortar_flame_02"
+        },
+        {
+          "node": "emtr_mortar_flame_03"
+        },
+        {
+          "node": "emtr_mortar_flame_04"
+        },
+        {
+          "node": "emtr_mortar_flame_05"
+        },
+        {
+          "node": "emtr_mortar_flame_06"
         }
       ]
     },
@@ -150,6 +225,42 @@ var _pzkpfw_iii_ausf_n =
             "wishYawParamName": "gun_03_aim:targetYaw",
             "wishPitchParamName": "gun_03_aim:targetPitch"
           }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_04_yaw",
+            "curPitchParamName": "gun_04_pitch"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_05_yaw",
+            "curPitchParamName": "gun_05_pitch"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_06_yaw",
+            "curPitchParamName": "gun_06_pitch"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_07_yaw",
+            "curPitchParamName": "gun_07_pitch"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_08_yaw",
+            "curPitchParamName": "gun_08_pitch"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_09_yaw",
+            "curPitchParamName": "gun_09_pitch"
+          }
         }
       ]
     },
@@ -171,8 +282,6 @@ var _pzkpfw_iii_ausf_n =
             "turretName": "turret_02",
             "gun": "pzkpfw_iii_ausf_n_turret_02_7_92mm_mg34",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         },
@@ -181,8 +290,60 @@ var _pzkpfw_iii_ausf_n =
             "turretName": "turret_03",
             "gun": "pzkpfw_iii_ausf_n_turret_03_7_92mm_mg34",
             "barrelDm": "gun_barrel_02",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_04",
+            "needsAssignedGunner": false,
+            "turretGroup": "smoke",
+            "gun": "pzkpfw_iii_ausf_n_turret_04_91mm_germ_smoke_grenade_launcher",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_05",
+            "needsAssignedGunner": false,
+            "turretGroup": "smoke",
+            "gun": "pzkpfw_iii_ausf_n_turret_05_91mm_germ_smoke_grenade_launcher",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_06",
+            "needsAssignedGunner": false,
+            "turretGroup": "smoke",
+            "gun": "pzkpfw_iii_ausf_n_turret_06_91mm_germ_smoke_grenade_launcher",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_07",
+            "needsAssignedGunner": false,
+            "turretGroup": "smoke",
+            "gun": "pzkpfw_iii_ausf_n_turret_07_91mm_germ_smoke_grenade_launcher",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_08",
+            "needsAssignedGunner": false,
+            "turretGroup": "smoke",
+            "gun": "pzkpfw_iii_ausf_n_turret_08_91mm_germ_smoke_grenade_launcher",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_09",
+            "needsAssignedGunner": false,
+            "turretGroup": "smoke",
+            "gun": "pzkpfw_iii_ausf_n_turret_09_91mm_germ_smoke_grenade_launcher",
             "salt": 1
           }
         }
@@ -242,12 +403,54 @@ var _pzkpfw_iii_ausf_n =
     "turret__limit": [-180.0,180.0,-10.0,20.0],
     "gun__shellsAmmo:array": [
       {
-        "ammo": 1000
+        "ammo": 1050
       },
       {
-        "ammo": 1000
+        "ammo": 1050
       }
     ]
+  },
+  "pzkpfw_iii_ausf_n_turret_04_91mm_germ_smoke_grenade_launcher": {
+    "_extends": "tankgun_91mm_germ_smoke_grenade_launcher",
+    "gun__shootNodeName": "emtr_mortar_flame_01",
+    "gun__shellsAmmo:array": {
+      "ammo": 1
+    }
+  },
+  "pzkpfw_iii_ausf_n_turret_05_91mm_germ_smoke_grenade_launcher": {
+    "_extends": "tankgun_91mm_germ_smoke_grenade_launcher",
+    "gun__shootNodeName": "emtr_mortar_flame_02",
+    "gun__shellsAmmo:array": {
+      "ammo": 1
+    }
+  },
+  "pzkpfw_iii_ausf_n_turret_06_91mm_germ_smoke_grenade_launcher": {
+    "_extends": "tankgun_91mm_germ_smoke_grenade_launcher",
+    "gun__shootNodeName": "emtr_mortar_flame_03",
+    "gun__shellsAmmo:array": {
+      "ammo": 1
+    }
+  },
+  "pzkpfw_iii_ausf_n_turret_07_91mm_germ_smoke_grenade_launcher": {
+    "_extends": "tankgun_91mm_germ_smoke_grenade_launcher",
+    "gun__shootNodeName": "emtr_mortar_flame_04",
+    "gun__shellsAmmo:array": {
+      "ammo": 1
+    }
+  },
+  "pzkpfw_iii_ausf_n_turret_08_91mm_germ_smoke_grenade_launcher": {
+    "_extends": "tankgun_91mm_germ_smoke_grenade_launcher",
+    "gun__shootNodeName": "emtr_mortar_flame_05",
+    "gun__shellsAmmo:array": {
+      "ammo": 1
+    }
+  },
+  "pzkpfw_iii_ausf_n_turret_09_91mm_germ_smoke_grenade_launcher": {
+    "_extends": "tankgun_91mm_germ_smoke_grenade_launcher",
+    "gun__shootNodeName": "emtr_mortar_flame_06",
+    "gun__shellsAmmo:array": {
+      "ammo": 1
+    }
   },
   "pzkpfw_iii_ausf_n_ammo_stowages": {
     "_tags": "server",

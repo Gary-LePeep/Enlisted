@@ -1,11 +1,36 @@
 var _us_m4a3e2_76w_sherman_jumbo = 
 {
-  "us_m4a3e2_76w_sherman_jumbo": [
+  "us_m4a3e2_76w_sherman_jumbo": {
+    "_extends": "us_m4a3e2_76w_sherman_jumbo_common"
+  },
+  "us_m4a3e2_76w_sherman_jumbo_common": [
     {
       "_extends": "base_m4a3e2_76w_sherman_jumbo"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_heavy_vehicle_tracks_sound"
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 4,
+            "count": 7
+          }
+        }
+      ]
     },
     {
       "bullet_holes__ignoreCollisionNodes:array": {

@@ -1,0 +1,36 @@
+var _76mm_nato_smoke_grenade_launcher_single = 
+{
+  "base_76mm_nato_smoke_grenade_launcher_single": {
+    "item__name": "guns/76mm_nato_smoke_grenade_launcher_single",
+    "gun__blk": "gamedata/gen/weapons/76mm_nato_smoke_grenade_launcher_single.blk",
+    "gun__shotFreq": 2.0,
+    "gun__reloadTime": 8.0,
+    "gun__locName": "76mm_nato_smoke_grenade_launcher_single",
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": {
+        "shell:object": {
+          "blk": "gamedata/gen/weapons/shells/76mm_nato_smoke_grenade_launcher_single_defaultset.blk",
+          "name": "76mm_smoke_grenade",
+          "type": "smoke_grenade_tank"
+        }
+      }
+    }
+  },
+  "tankgun_76mm_nato_smoke_grenade_launcher_single": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_smoke_grenade_launcher"
+    },
+    {
+      "_extends": "base_76mm_nato_smoke_grenade_launcher_single"
+    },
+    {
+      "_extends": "gunsound_76mm_nato_smoke_grenade_launcher_single"
+    },
+    {
+      "turret__triggerGroup": 3
+    }
+  ]
+}

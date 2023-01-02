@@ -217,8 +217,8 @@ var _t_28 =
             "turretName": "turret_02",
             "gun": "t_28_turret_02_7_62mm_dt",
             "barrelDm": "gun_barrel_02",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
+            "verDriveDm": "gun_barrel_02",
+            "horDriveDm": "drive_turret_h_02",
             "salt": 1
           }
         },
@@ -227,8 +227,8 @@ var _t_28 =
             "turretName": "turret_03",
             "gun": "t_28_turret_03_7_62mm_dt",
             "barrelDm": "gun_barrel_03",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
+            "verDriveDm": "gun_barrel_03",
+            "horDriveDm": "drive_turret_h_03",
             "salt": 1
           }
         },
@@ -237,8 +237,6 @@ var _t_28 =
             "turretName": "turret_04",
             "gun": "t_28_turret_04_7_62mm_dt",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }
@@ -775,17 +773,17 @@ var _t_28 =
       },
       {
         "skin:object": {
-          "id": "t_28_ussr_camo_brown_lines",
+          "id": "t_28_ussr_camo_czechoslovak_yellow_green",
           "objTexReplace:object": {
-            "ussr_camo_green*": "ussr_camo_brown_lines*"
+            "ussr_camo_green*": "ussr_camo_czechoslovak_yellow_green*"
           }
         }
       },
       {
         "skin:object": {
-          "id": "t_28_ussr_camo_green_ltbrown_lines",
+          "id": "t_28_ussr_camo_desert_syrian_green_brown_yellow",
           "objTexReplace:object": {
-            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+            "ussr_camo_green*": "ussr_camo_desert_syrian_green_brown_yellow*"
           }
         }
       },

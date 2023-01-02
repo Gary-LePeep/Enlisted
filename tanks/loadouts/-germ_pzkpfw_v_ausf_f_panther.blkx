@@ -1,128 +1,129 @@
 var _germ_pzkpfw_v_ausf_f_panther = 
 {
-  "germ_pzkpfw_V_ausf_f_panther": {
-    "_extends": "germ_pzkpfw_V_ausf_g_panther"
-  },
-  "germ_pzkpfw_V_ausf_f_panther_premium": [
+  "germ_pzkpfw_V_ausf_f_panther": [
     {
-      "_extends": "base_pzkpfw_v_ausf_f_panther"
+      "_extends": "germ_pzkpfw_V_ausf_g_panther"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
     },
     {
-      "vehicle_seats__seats:shared:array": [
-        {
-          "seats:object": {
-            "name": "driver",
-            "locName": "vehicle_seats/driver",
-            "seatOwnsEntityControl": true,
-            "attachNode": "driver",
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.25,-0.25,0.0]
-            ],
-            "seatComponent": "isDriver",
-            "nextSeat": "main_gunner",
-            "shouldHideOwner": true,
-            "receiveDamageFromDMPart": "driver",
-            "cameraNodeName": "bone_camera_driver",
-            "cockpitTemplate": "germ_pzkpfw_V_ausf_g_panther_driver_cockpit"
-          }
-        },
-        {
-          "seats:object": {
-            "name": "main_gunner",
-            "locName": "vehicle_seats/gunner",
-            "attachNode": "gunner",
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.25,-0.5,0.0]
-            ],
-            "seatComponent": "isGunner",
-            "nextSeat": "driver",
-            "shouldHideOwner": true,
-            "receiveDamageFromDMPart": "gunner",
-            "cameraNodeName": "bone_camera_gunner",
-            "cockpitTemplate": "germ_pzkpfw_V_ausf_f_panther_gunner_cockpit",
-            "turretNames:array": [
-              {
-                "turret": "turret_01"
-              },
-              {
-                "turret": "turret_02"
-              }
-            ]
-          }
-        },
-        {
-          "seats:object": {
-            "name": "commander",
-            "locName": "vehicle_seats/commander",
-            "attachNode": "commander",
-            "shouldHideOwner": true,
-            "maxPosWithOpenHatch": 0.7,
-            "hatchRotationAxis": [1.7,0.0,0.0],
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [0.05,-0.3,-0.04]
-            ],
-            "seatComponent": "isDriver",
-            "receiveDamageFromDMPart": "commander",
-            "cockpitTemplate": "germ_pzkpfw_V_ausf_f_panther_commander_cockpit",
-            "hatchNodes:array": {
-              "node": "hatch_01"
-            }
-          }
-        },
-        {
-          "seats:object": {
-            "locName": "vehicle_seats/loader",
-            "attachNode": "loader",
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.25,-0.5,0.0]
-            ],
-            "seatComponent": "isPassenger",
-            "shouldHideOwner": true,
-            "receiveDamageFromDMPart": "loader",
-            "cameraNodeName": "bone_camera_driver",
-            "loaderTurretNames:array": {
-              "turret": "turret_01"
-            }
-          }
-        },
-        {
-          "seats:object": {
-            "locName": "vehicle_seats/radioman",
-            "attachNode": "machine_gunner",
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.25,-0.5,0.0]
-            ],
-            "seatComponent": "isPassenger",
-            "shouldHideOwner": true,
-            "receiveDamageFromDMPart": "machine_gunner"
-          }
-        }
-      ]
+      "_extends": "tank_heavy_vehicle_tracks_sound"
     }
   ],
+  "germ_pzkpfw_V_ausf_f_panther_premium": {
+    "_extends": "base_pzkpfw_v_ausf_f_panther",
+    "vehicle_seats__seats:shared:array": [
+      {
+        "seats:object": {
+          "name": "driver",
+          "locName": "vehicle_seats/driver",
+          "seatOwnsEntityControl": true,
+          "attachNode": "driver",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.25,0.0]
+          ],
+          "seatComponent": "isDriver",
+          "nextSeat": "main_gunner",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "driver",
+          "cameraNodeName": "bone_camera_driver",
+          "cockpitTemplate": "germ_pzkpfw_V_ausf_g_panther_driver_cockpit"
+        }
+      },
+      {
+        "seats:object": {
+          "name": "main_gunner",
+          "locName": "vehicle_seats/gunner",
+          "attachNode": "gunner",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isGunner",
+          "nextSeat": "driver",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "gunner",
+          "cameraNodeName": "bone_camera_gunner",
+          "cockpitTemplate": "germ_pzkpfw_V_ausf_f_panther_gunner_cockpit",
+          "turretNames:array": [
+            {
+              "turret": "turret_01"
+            },
+            {
+              "turret": "turret_02"
+            }
+          ]
+        }
+      },
+      {
+        "seats:object": {
+          "name": "commander",
+          "locName": "vehicle_seats/commander",
+          "attachNode": "commander",
+          "shouldHideOwner": true,
+          "maxPosWithOpenHatch": 0.7,
+          "hatchRotationAxis": [1.7,0.0,0.0],
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [0.05,-0.3,-0.04]
+          ],
+          "seatComponent": "isDriver",
+          "receiveDamageFromDMPart": "commander",
+          "cockpitTemplate": "germ_pzkpfw_V_ausf_f_panther_commander_cockpit",
+          "hatchNodes:array": {
+            "node": "hatch_01"
+          }
+        }
+      },
+      {
+        "seats:object": {
+          "locName": "vehicle_seats/loader",
+          "attachNode": "loader",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isPassenger",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "loader",
+          "cameraNodeName": "bone_camera_driver",
+          "loaderTurretNames:array": {
+            "turret": "turret_01"
+          }
+        }
+      },
+      {
+        "seats:object": {
+          "locName": "vehicle_seats/radioman",
+          "attachNode": "machine_gunner",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isPassenger",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "machine_gunner"
+        }
+      }
+    ]
+  },
   "germ_pzkpfw_V_ausf_f_panther_driver_cockpit": {
     "_extends": "base_driver_cockpit",
     "animchar__res": "kv_1_driver_char",

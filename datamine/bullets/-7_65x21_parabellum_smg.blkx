@@ -6,7 +6,7 @@ var _7_65x21_parabellum_smg =
   "speed": 370.0,
   "maxDistance": 500.0,
   "bulletType": "ball",
-  "hitPowerMult": 5.3,
+  "hitPowerMult": 5.5,
   "effectiveDistance": 100.0,
   "relativeVelHitShift": [300.0,1000.0],
   "relativeVelArmorShift": [200.0,1000.0],
@@ -20,7 +20,7 @@ var _7_65x21_parabellum_smg =
     "HitPower500m": [0.4,500.0]
   },
   "armorpower": {
-    "ArmorPower0m": [1.0,300.0],
+    "ArmorPower0m": [1.0,10.0],
     "ArmorPower1500m": [0.1,1500.0]
   },
   "visual": {

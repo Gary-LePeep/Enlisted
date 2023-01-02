@@ -5,7 +5,7 @@ var armor_towed_at_53k =
     "Mass": {
       "Empty": 560.0,
       "Fuel": 200.0,
-      "TakeOff": 5000.0,
+      "TakeOff": 650.0,
       "momentOfInertia": [6.0,1.0,6.0],
       "CenterOfGravity": [-0.8,0.2,0.0],
       "AdvancedMass": false,
@@ -13,6 +13,7 @@ var armor_towed_at_53k =
       "cls_body": 1.0
     },
     "tracks": {
+      "slippingHorizontalSpeedThreshold": 0.25,
       "animationMultiplier": 0.5,
       "height": 0.0,
       "width": 0.1,
@@ -20,7 +21,9 @@ var armor_towed_at_53k =
       "fricFrontal": [10.0,10.0]
     },
     "collisionProps": {
-      "cls_body": "convex_hull"
+      "body_side": "convex_hull",
+      "gun": "convex_hull",
+      "body_front": "convex_hull"
     },
     "engine": {
       "horsePowers": 5.0,
@@ -48,21 +51,21 @@ var armor_towed_at_53k =
       ]
     },
     "suspension": {
-      "suspensionOffsets": [-0.03,-0.02,0.02],
+      "suspensionOffsets": [-0.15,-0.12,0.12],
       "defaultGearRadius": 0.372,
-      "defaultDampeningForce": [6000.0,6000.0],
+      "defaultDampeningForce": [1750.0,1750.0],
       "hasSuspensionOnDriveGear": true,
       "dampeningRelaxationRatio": 0.4,
       "dampeningCompressionRatio": 0.15,
       "brokenWheelSteeringDeflection": -15.0,
       "wheel_l_01": 0.39,
       "wheel_r_01": 0.39,
-      "wheel_l_02": 0.372,
-      "wheel_r_02": 0.372,
+      "wheel_l_02": 0.47,
+      "wheel_r_02": 0.47,
       "recalcWtms": true,
       "steeringDeflection": {
-        "wheel_l_02": -85.0,
-        "wheel_r_02": -85.0
+        "wheel_l_02": -65.0,
+        "wheel_r_02": -65.0
       },
       "driven": {
         "wheel_l_01": true,

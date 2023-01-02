@@ -33,16 +33,16 @@ var _12_7mm_m2_hb =
         },
         {
           "shell:object": {
-            "blk": "gamedata/gen/weapons/shells/12_7mm_m2_hb_defaultset_bullet_3.blk",
-            "name": "ap_ball_M2",
-            "type": "ap_ball_M2"
+            "blk": "gamedata/gen/weapons/shells/12_7mm_m2_hb_defaultset_bullet_2.blk",
+            "name": "i_ball_M1",
+            "type": "i_ball_M1"
           }
         },
         {
           "shell:object": {
-            "blk": "gamedata/gen/weapons/shells/12_7mm_m2_hb_defaultset_bullet_4.blk",
-            "name": "ap_i_t_ball_M20",
-            "type": "ap_i_t_ball_M20"
+            "blk": "gamedata/gen/weapons/shells/12_7mm_m2_hb_defaultset_bullet_2.blk",
+            "name": "i_ball_M1",
+            "type": "i_ball_M1"
           }
         }
       ],

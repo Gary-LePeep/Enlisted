@@ -5,7 +5,10 @@ var _germ_pzkpfw_vi_ausf_b_tiger_iih =
       "_extends": "base_pzkpfw_vi_ausf_b_tiger_iih"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
+    },
+    {
+      "_extends": "tank_tiger_vehicle_tracks_sound"
     },
     {
       "vehicle_seats__seats:shared:array": [

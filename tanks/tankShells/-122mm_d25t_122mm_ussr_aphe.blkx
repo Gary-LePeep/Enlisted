@@ -6,7 +6,7 @@ var _122mm_d25t_122mm_ussr_aphe =
   "explosiveMass": 0.16,
   "caliber": 0.122,
   "speed": 795.0,
-  "Cx": 0.35,
+  "Cx": 0.3496,
   "maxDistance": 10000.0,
   "normalizationPreset": "apbc",
   "stucking": 0.7,

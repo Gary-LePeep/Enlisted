@@ -3,15 +3,40 @@ var _germ_panzerjager_iv_l_48 =
   "germ_panzerjager_IV_L_48": {
     "_extends": "germ_panzerjager_IV_L_48_common"
   },
+  "germ_panzerjager_iv_l_48_normandy": {
+    "_extends": "germ_panzerjager_IV_L_48_common"
+  },
   "germ_panzerjager_IV_L_48_common": [
     {
       "_extends": "base_panzerjager_iv_l_48"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
     },
     {
       "gunnerFpsCamMaxAngle": [8.0,5.0]
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 5,
+            "count": 7
+          }
+        }
+      ]
     },
     {
       "vehicle_seats__seats:shared:array": [
@@ -224,6 +249,7 @@ var _germ_panzerjager_iv_l_48 =
         "part": "track_r_01"
       }
     ],
+    "attach_decorators__entities:list<eid>": [],
     "attach_decorators__templates:array": [
       {
         "templates:object": {
@@ -497,7 +523,7 @@ var _germ_panzerjager_iv_l_48 =
             [0.949459,-0.313453,-0.0236991],
             [-2.29207,1.49034,0.0509888]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -509,7 +535,7 @@ var _germ_panzerjager_iv_l_48 =
             [-0.0606672,-0.468212,0.881684],
             [-0.986649,1.56343,-1.37089]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       }

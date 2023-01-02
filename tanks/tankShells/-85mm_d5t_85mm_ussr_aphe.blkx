@@ -6,7 +6,7 @@ var _85mm_d5t_85mm_ussr_aphe =
   "explosiveMass": 0.164,
   "caliber": 0.085,
   "speed": 792.0,
-  "Cx": 0.31,
+  "Cx": 0.3309,
   "maxDistance": 10000.0,
   "normalizationPreset": "apbc",
   "stucking": 0.7,

@@ -1,0 +1,58 @@
+var _7_7mm_type_97 = 
+{
+  "base_7_7mm_type_97": {
+    "item__name": "guns/7_7mm_type_97",
+    "gun__blk": "gamedata/gen/weapons/7_7mm_type_97.blk",
+    "gun__shotFreq": 8.3,
+    "gun__reloadTime": 3.0,
+    "gun__maxAmmo": 20,
+    "gun__locName": "7_7mm_type_97",
+    "gun__firingModes:array": {
+      "mode:object": {
+        "modeType": "automatic"
+      }
+    },
+    "gun__firingModeNames:array": {
+      "mode": "automatic"
+    },
+    "gun__ammoSetsInfo:shared:array": {
+      "defaultSet:array": [
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/7_7mm_type_97_defaultset_bullet_1.blk",
+            "type": "ap_ball"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/7_7mm_type_97_defaultset_bullet_2.blk",
+            "type": "ap_ball"
+          }
+        },
+        {
+          "shell:object": {
+            "blk": "gamedata/gen/weapons/shells/7_7mm_type_97_defaultset_bullet_3.blk",
+            "type": "t_ball"
+          }
+        }
+      ]
+    }
+  },
+  "tankgun_7_7mm_type_97": [
+    {
+      "_extends": "tankgun"
+    },
+    {
+      "_extends": "base_tankgun_machinegun"
+    },
+    {
+      "_extends": "base_7_7mm_type_97"
+    },
+    {
+      "_extends": "gunsound_7_7mm_type_97"
+    },
+    {
+      "turret__triggerGroup": 2
+    }
+  ]
+}

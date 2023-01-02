@@ -38,7 +38,7 @@ var _t_34_85_d_5t =
       "cockpit__sightName": "sight_model/tsh_15"
     },
     {
-      "cockpit__sightFov": 15.0
+      "cockpit__sightFov": 9.75
     },
     {
       "drowningHeight": 2.16
@@ -140,8 +140,6 @@ var _t_34_85_d_5t =
             "turretName": "turret_02",
             "gun": "t_34_85_d_5t_turret_02_7_62mm_dt",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }
@@ -157,25 +155,25 @@ var _t_34_85_d_5t =
     "turret__limit": [-180.0,180.0,-5.0,28.0],
     "gun__shellsAmmo:array": [
       {
-        "ammo": 13
+        "ammo": 8
       },
       {
-        "ammo": 7
+        "ammo": 8
       },
       {
-        "ammo": 7
+        "ammo": 8
       },
       {
-        "ammo": 7
+        "ammo": 8
       },
       {
-        "ammo": 7
+        "ammo": 8
       },
       {
-        "ammo": 7
+        "ammo": 8
       },
       {
-        "ammo": 7
+        "ammo": 8
       }
     ]
   },
@@ -200,14 +198,99 @@ var _t_34_85_d_5t =
   },
   "t_34_85_d_5t_ammo_stowage_1": {
     "_extends": "ammo_stowage",
-    "ammo_stowage__clusterTemplates:shared:list<t>": {
-      "cluster": "t_34_85_d_5t_ammo_cluster_1_1"
-    },
+    "ammo_stowage__clusterTemplates:shared:list<t>": [
+      {
+        "cluster": "t_34_85_d_5t_ammo_cluster_1_1"
+      },
+      {
+        "cluster": "t_34_85_d_5t_ammo_cluster_1_2"
+      }
+    ],
     "ammo_stowage__turretNames:shared:list<t>": {
       "gun": "turret_01"
     }
   },
   "t_34_85_d_5t_ammo_cluster_1_1": {
+    "_extends": "ammo_cluster",
+    "ammo_cluster__isShell": true,
+    "ammo_cluster__slotNames:shared:list<t>": [
+      {
+        "part": "ammo_turret_06"
+      },
+      {
+        "part": "ammo_turret_07"
+      },
+      {
+        "part": "ammo_turret_08"
+      },
+      {
+        "part": "ammo_turret_09"
+      },
+      {
+        "part": "ammo_turret_10"
+      },
+      {
+        "part": "ammo_turret_11"
+      },
+      {
+        "part": "ammo_turret_12"
+      },
+      {
+        "part": "ammo_turret_13"
+      },
+      {
+        "part": "ammo_turret_14"
+      },
+      {
+        "part": "ammo_turret_15"
+      },
+      {
+        "part": "ammo_turret_16"
+      },
+      {
+        "part": "ammo_turret_17"
+      }
+    ],
+    "ammo_cluster__slotsMaxAmmo:list<i>": [
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      }
+    ]
+  },
+  "t_34_85_d_5t_ammo_cluster_1_2": {
     "_extends": "ammo_cluster",
     "ammo_cluster__isShell": true,
     "ammo_cluster__slotNames:shared:list<t>": [
@@ -225,15 +308,6 @@ var _t_34_85_d_5t =
       },
       {
         "part": "ammo_turret_05"
-      },
-      {
-        "part": "ammo_turret_06"
-      },
-      {
-        "part": "ammo_turret_07"
-      },
-      {
-        "part": "ammo_turret_08"
       },
       {
         "part": "ammo_body_01"
@@ -294,92 +368,197 @@ var _t_34_85_d_5t =
       },
       {
         "part": "ammo_body_20"
+      },
+      {
+        "part": "ammo_body_21"
+      },
+      {
+        "part": "ammo_body_22"
+      },
+      {
+        "part": "ammo_body_23"
+      },
+      {
+        "part": "ammo_body_24"
+      },
+      {
+        "part": "ammo_body_25"
+      },
+      {
+        "part": "ammo_body_26"
+      },
+      {
+        "part": "ammo_body_27"
+      },
+      {
+        "part": "ammo_body_28"
+      },
+      {
+        "part": "ammo_body_29"
+      },
+      {
+        "part": "ammo_body_30"
+      },
+      {
+        "part": "ammo_body_31"
+      },
+      {
+        "part": "ammo_body_32"
+      },
+      {
+        "part": "ammo_body_33"
+      },
+      {
+        "part": "ammo_body_34"
+      },
+      {
+        "part": "ammo_body_35"
+      },
+      {
+        "part": "ammo_body_36"
+      },
+      {
+        "part": "ammo_body_37"
+      },
+      {
+        "part": "ammo_body_38"
+      },
+      {
+        "part": "ammo_body_39"
       }
     ],
     "ammo_cluster__slotsMaxAmmo:list<i>": [
       {
-        "count": 2
-      },
-      {
-        "count": 2
-      },
-      {
-        "count": 2
-      },
-      {
-        "count": 2
-      },
-      {
-        "count": 2
-      },
-      {
-        "count": 2
-      },
-      {
-        "count": 2
-      },
-      {
-        "count": 2
-      },
-      {
-        "count": 2
-      },
-      {
-        "count": 2
+        "count": 1
       },
       {
         "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
       },
       {
-        "count": 2
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
+      },
+      {
+        "count": 1
       }
     ]
   },
@@ -403,17 +582,17 @@ var _t_34_85_d_5t =
       },
       {
         "skin:object": {
-          "id": "t_34_85_d_5t_ussr_camo_brown_lines",
+          "id": "t_34_85_d_5t_ussr_camo_czechoslovak_yellow_green",
           "objTexReplace:object": {
-            "ussr_camo_green*": "ussr_camo_brown_lines*"
+            "ussr_camo_green*": "ussr_camo_czechoslovak_yellow_green*"
           }
         }
       },
       {
         "skin:object": {
-          "id": "t_34_85_d_5t_ussr_camo_green_ltbrown_lines",
+          "id": "t_34_85_d_5t_ussr_camo_desert_syrian_green_brown_yellow",
           "objTexReplace:object": {
-            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+            "ussr_camo_green*": "ussr_camo_desert_syrian_green_brown_yellow*"
           }
         }
       },

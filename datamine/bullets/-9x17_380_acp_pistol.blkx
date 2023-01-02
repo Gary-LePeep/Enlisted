@@ -17,7 +17,7 @@ var _9x17_380_acp_pistol =
     "HitPower200m": [0.35,200.0]
   },
   "armorpower": {
-    "ArmorPower0m": [1.0,300.0],
+    "ArmorPower0m": [1.0,10.0],
     "ArmorPower1500m": [0.1,1500.0]
   },
   "visual": {

@@ -1,98 +1,91 @@
 var _ussr_valentine_i = 
 {
-  "ussr_valentine_I": [
-    {
-      "_extends": "base_valentine_i"
-    },
-    {
-      "_extends": "vehicle_effects_tracked"
-    },
-    {
-      "vehicle_seats__seats:shared:array": [
-        {
-          "seats:object": {
-            "name": "driver",
-            "locName": "vehicle_seats/driver",
-            "seatOwnsEntityControl": true,
-            "attachNode": "driver",
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.25,-0.25,0.0]
-            ],
-            "seatComponent": "isDriver",
-            "nextSeat": "main_gunner",
-            "shouldHideOwner": true,
-            "receiveDamageFromDMPart": "driver",
-            "cameraNodeName": "bone_camera_driver",
-            "cameraOffset": [0.15,-0.0,-0.0],
-            "cockpitTemplate": "ussr_valentine_I_driver_cockpit"
-          }
-        },
-        {
-          "seats:object": {
-            "name": "main_gunner",
-            "locName": "vehicle_seats/gunner",
-            "attachNode": "gunner",
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.25,-0.5,0.0]
-            ],
-            "seatComponent": "isGunner",
-            "nextSeat": "driver",
-            "shouldHideOwner": true,
-            "receiveDamageFromDMPart": "gunner",
-            "cameraNodeName": "bone_camera_gunner",
-            "cockpitTemplate": "ussr_valentine_I_gunner_cockpit",
-            "turretNames:array": [
-              {
-                "turret": "turret_01"
-              },
-              {
-                "turret": "turret_02"
-              }
-            ]
-          }
-        },
-        {
-          "seats:object": {
-            "name": "commander",
-            "attachNode": "commander",
-            "shouldHideOwner": true,
-            "hatchRotationAxis": [1.8,0.0,0.0],
-            "locName": "vehicle_seats/commander",
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.25,-0.75,0.05]
-            ],
-            "seatComponent": "isDriver",
-            "receiveDamageFromDMPart": "commander",
-            "cameraNodeName": "bone_turret",
-            "cockpitTemplate": "ussr_valentine_I_commander_cockpit",
-            "hatchNodes:array": [
-              {
-                "node": "hatch_01"
-              },
-              {
-                "node": "hatch_02"
-              }
-            ],
-            "loaderTurretNames:array": {
+  "ussr_valentine_I": {
+    "_extends": "base_valentine_i",
+    "vehicle_seats__seats:shared:array": [
+      {
+        "seats:object": {
+          "name": "driver",
+          "locName": "vehicle_seats/driver",
+          "seatOwnsEntityControl": true,
+          "attachNode": "driver",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.25,0.0]
+          ],
+          "seatComponent": "isDriver",
+          "nextSeat": "main_gunner",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "driver",
+          "cameraNodeName": "bone_camera_driver",
+          "cameraOffset": [0.15,-0.0,-0.0],
+          "cockpitTemplate": "ussr_valentine_I_driver_cockpit"
+        }
+      },
+      {
+        "seats:object": {
+          "name": "main_gunner",
+          "locName": "vehicle_seats/gunner",
+          "attachNode": "gunner",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isGunner",
+          "nextSeat": "driver",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "gunner",
+          "cameraNodeName": "bone_camera_gunner",
+          "cockpitTemplate": "ussr_valentine_I_gunner_cockpit",
+          "turretNames:array": [
+            {
               "turret": "turret_01"
+            },
+            {
+              "turret": "turret_02"
             }
+          ]
+        }
+      },
+      {
+        "seats:object": {
+          "name": "commander",
+          "attachNode": "commander",
+          "shouldHideOwner": true,
+          "hatchRotationAxis": [1.8,0.0,0.0],
+          "locName": "vehicle_seats/commander",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.75,0.05]
+          ],
+          "seatComponent": "isDriver",
+          "receiveDamageFromDMPart": "commander",
+          "cameraNodeName": "bone_turret",
+          "cockpitTemplate": "ussr_valentine_I_commander_cockpit",
+          "hatchNodes:array": [
+            {
+              "node": "hatch_01"
+            },
+            {
+              "node": "hatch_02"
+            }
+          ],
+          "loaderTurretNames:array": {
+            "turret": "turret_01"
           }
         }
-      ]
-    }
-  ],
+      }
+    ]
+  },
   "ussr_valentine_I_driver_cockpit": {
     "_extends": "base_driver_cockpit_no_slits",
     "animchar__res": "t_26_1940_driver_char",

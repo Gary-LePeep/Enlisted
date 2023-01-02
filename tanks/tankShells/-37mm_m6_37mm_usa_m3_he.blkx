@@ -24,6 +24,24 @@ var _37mm_m6_37mm_usa_m3_he =
   "explosionPatchRadius": 1.0,
   "modelName": "tank_bullet_he",
   "secondaryShattersPreset": "ap",
+  "DamageParts": {
+    "body": {
+      "hp": 5.0,
+      "armorClass": "tank_structural_steel",
+      "armorThickness": 1.0
+    }
+  },
+  "DamageEffects": {
+    "part": {
+      "name": "body",
+      "onHit": {
+        "break_fuse": 1.0
+      },
+      "onKill": {
+        "destruction": 1.0
+      }
+    }
+  },
   "pressureDamage": {
     "damageType": "pressure"
   },
@@ -58,53 +76,18 @@ var _37mm_m6_37mm_usa_m3_he =
         "p18": [12000000.0,900.0]
       }
     },
-    "shatter": [
-      {
-        "useRealShatters": true
-      },
-      {
-        "countPortion": 0.125
-      },
-      {
-        "damageType": "shatter"
-      },
-      {
-        "segment": {
-          "radiusScale": 1.0,
-          "penetrationScale": 1.0,
-          "damageScale": 1.0,
-          "angles": [0.0,90.0],
-          "countPortion": 0.4
-        }
-      },
-      {
-        "segment": {
-          "radiusScale": 1.0,
-          "penetrationScale": 1.0,
-          "damageScale": 1.0,
-          "angles": [91.0,180.0],
-          "countPortion": 0.1
-        }
-      },
-      {
-        "segment": {
-          "radiusScale": 1.0,
-          "penetrationScale": 1.0,
-          "damageScale": 1.0,
-          "angles": [181.0,269.0],
-          "countPortion": 0.1
-        }
-      },
-      {
-        "segment": {
-          "radiusScale": 1.0,
-          "penetrationScale": 1.0,
-          "damageScale": 1.0,
-          "angles": [270.0,359.0],
-          "countPortion": 0.4
-        }
+    "shatter": {
+      "useRealShatters": true,
+      "countPortion": 0.125,
+      "damageType": "shatter",
+      "segment": {
+        "radiusScale": 3.0,
+        "penetrationScale": 1.0,
+        "damageScale": 1.0,
+        "angles": [0.0,180.0],
+        "countPortion": 1.0
       }
-    ],
+    },
     "secondaryShatter": {
       "residualArmorPenetrationToShatterCountMult": [20.0,100.0,0.5,1.0],
       "residualArmorPenetrationToShatterPenetrationMult": [20.0,100.0,0.5,1.0],

@@ -38,7 +38,7 @@ var _t_34_85_e =
       "cockpit__sightName": "sight_model/tsh_16"
     },
     {
-      "cockpit__sightFov": 15.0
+      "cockpit__sightFov": 9.75
     },
     {
       "drowningHeight": 2.16
@@ -140,8 +140,6 @@ var _t_34_85_e =
             "turretName": "turret_02",
             "gun": "t_34_85_e_turret_02_7_62mm_dt",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }
@@ -613,17 +611,17 @@ var _t_34_85_e =
       },
       {
         "skin:object": {
-          "id": "t_34_85_e_ussr_camo_brown_lines",
+          "id": "t_34_85_e_ussr_camo_czechoslovak_yellow_green",
           "objTexReplace:object": {
-            "ussr_camo_green*": "ussr_camo_brown_lines*"
+            "ussr_camo_green*": "ussr_camo_czechoslovak_yellow_green*"
           }
         }
       },
       {
         "skin:object": {
-          "id": "t_34_85_e_ussr_camo_green_ltbrown_lines",
+          "id": "t_34_85_e_ussr_camo_desert_syrian_green_brown_yellow",
           "objTexReplace:object": {
-            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+            "ussr_camo_green*": "ussr_camo_desert_syrian_green_brown_yellow*"
           }
         }
       },

@@ -237,17 +237,9 @@ var _ussr_ba_11 =
     "_extends": "base_gunner_cockpit",
     "animchar__res": "ba_11_gunner_char",
     "cockpit__offset": [0.0,0.0,0.0],
-    "cockpit__attachNodeNames:list<t>": [
-      {
-        "node": "bone_camera_gunner"
-      },
-      {
-        "node": "bone_turret"
-      },
-      {
-        "node": "bone_turret"
-      }
-    ],
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
     "cockpit__attachNodeIndices:list<i>": [],
     "cockpit__visibleVehicleNodeNames:list<t>": [
       {
@@ -275,50 +267,18 @@ var _ussr_ba_11 =
         "node": "gun_barrel"
       }
     ],
-    "cockpit__cockpitOffsetBySlit:list<p3>": [
-      {
-        "slit": [-0.45,-0.05,0.24]
-      },
-      {
-        "slit": [-0.2,0.63,0.366]
-      },
-      {
-        "slit": [-0.21,0.29,0.4]
-      }
-    ],
-    "cockpit__slitNodeNames:list<t>": [
-      {
-        "slit": "cam_front_right"
-      },
-      {
-        "slit": "cam_front"
-      },
-      {
-        "slit": "cam_left"
-      }
-    ],
-    "cockpit__slitForwardOffset:list<r>": [
-      {
-        "slit": 0.2
-      },
-      {
-        "slit": 0.15
-      },
-      {
-        "slit": 0.0
-      }
-    ],
-    "cockpit__slitIsGun:list<b>": [
-      {
-        "slit": true
-      },
-      {
-        "slit": false
-      },
-      {
-        "slit": false
-      }
-    ]
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "slit": [-0.45,-0.05,0.24]
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.2
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    }
   },
   "ussr_ba_11_commander_cockpit": {
     "_extends": "base_commander_cockpit_no_slits",
@@ -336,5 +296,66 @@ var _ussr_ba_11 =
     "cockpit__slitNodeNames:list<t>": {
       "slit": "cam_right"
     }
+  },
+  "ba_11_skins": {
+    "_override": true,
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "ba_11_winter",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ba_11_forest",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_forest_01*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ba_11_ussr_camo_brown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_brown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ba_11_ussr_camo_green_ltbrown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ba_11_ussr_camo_desert_yellow_brown",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_desert_yellow_brown*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ba_11_ussr_camo_winter_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "ba_11_green_ltbrown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+          }
+        }
+      }
+    ]
   }
 }

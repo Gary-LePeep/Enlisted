@@ -153,8 +153,6 @@ var _m10_wolverine =
             "turretName": "turret_02",
             "gun": "m10_wolverine_turret_02_12_7mm_m2_hb",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }
@@ -197,19 +195,19 @@ var _m10_wolverine =
     "turret__limit": [-60.0,60.0,-10.0,28.0],
     "gun__shellsAmmo:array": [
       {
-        "ammo": 60
+        "ammo": 80
       },
       {
-        "ammo": 60
+        "ammo": 80
       },
       {
-        "ammo": 60
+        "ammo": 80
       },
       {
-        "ammo": 60
+        "ammo": 80
       },
       {
-        "ammo": 60
+        "ammo": 80
       }
     ]
   },

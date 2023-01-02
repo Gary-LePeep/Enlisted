@@ -14,7 +14,7 @@ var _7_7mm_vikkers_defaultset_bullet_1 =
   "explodeRadius": [0.03,0.035],
   "groundCollisionEffect": "hit_8_11mm_dirt_he",
   "ricochetEffect": "hit_8_11mm_metal_he",
-  "waterCollisionEffect": "hit_12_18mm_water",
+  "waterCollisionEffect": "hit_8_11mm_water",
   "secondaryShattersPreset": "ap",
   "hitpower": {
     "HitPower10m": [1.45,10.0],

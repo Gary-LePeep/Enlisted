@@ -1,0 +1,313 @@
+var _us_m3a1_stuart_flame = 
+{
+  "us_m3a1_stuart_flame_pacific": {
+    "_extends": "us_m3a1_stuart_flame_common"
+  },
+  "us_m3a1_stuart_flame_common": {
+    "_extends": "base_m3a1_stuart_flame",
+    "item__iconOffset": [0.0,0.0],
+    "vehicle_seats__seats:shared:array": [
+      {
+        "seats:object": {
+          "name": "main_gunner",
+          "locName": "vehicle_seats/gunner",
+          "attachNode": "gunner",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isGunner",
+          "nextSeat": "driver",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "gunner",
+          "cameraNodeName": "bone_camera_gunner",
+          "cockpitTemplate": "us_m3a1_stuart_flame_gunner_cockpit",
+          "turretNames:array": [
+            {
+              "turret": "turret_01"
+            },
+            {
+              "turret": "turret_03"
+            }
+          ]
+        }
+      },
+      {
+        "seats:object": {
+          "name": "driver",
+          "locName": "vehicle_seats/driver",
+          "seatOwnsEntityControl": true,
+          "attachNode": "driver",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.25,0.0]
+          ],
+          "seatComponent": "isDriver",
+          "nextSeat": "main_gunner",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "driver",
+          "cameraNodeName": "bone_camera_driver",
+          "cameraOffset": [0.15,-0.0,-0.0],
+          "cockpitTemplate": "us_m3a1_stuart_flame_driver_cockpit"
+        }
+      },
+      {
+        "seats:object": {
+          "name": "commander",
+          "locName": "vehicle_seats/commander",
+          "attachNode": "loader",
+          "shouldHideOwner": true,
+          "maxPosWithOpenHatch": 1.2,
+          "hatchRotationAxis": [1.8,0.0,0.0],
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.15,-1.3,0.05]
+          ],
+          "seatComponent": "isDriver",
+          "receiveDamageFromDMPart": "loader",
+          "cameraNodeName": "bone_turret",
+          "cockpitTemplate": "us_m3a1_stuart_flame_commander_cockpit",
+          "isHoldGunModeAllowed": false,
+          "loaderTurretNames:array": {
+            "turret": "turret_01"
+          },
+          "hatchNodes:array": {
+            "node": "hatch_04"
+          },
+          "hatchTurretNames:array": {
+            "turret": "turret_02"
+          }
+        }
+      },
+      {
+        "seats:object": {
+          "name": "main_gunner",
+          "locName": "vehicle_seats/additional_gunner",
+          "attachNode": "gunner",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isGunner",
+          "nextSeat": "driver",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "gunner",
+          "cameraNodeName": "root",
+          "cockpitTemplate": "us_m3a1_stuart_flame_machinegunner_cockpit",
+          "turretNames:array": {
+            "turret": "turret_04"
+          }
+        }
+      }
+    ]
+  },
+  "us_m3a1_stuart_flame_driver_cockpit": {
+    "_extends": "base_driver_cockpit_no_slits",
+    "animchar__res": "bt_7_driver_char",
+    "cockpit__offset": [-0.976464,-0.230745,-0.476936],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "ex_decor_l_01"
+      },
+      {
+        "node": "ex_decor_r_01"
+      },
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun"
+      },
+      {
+        "node": "bone_turret"
+      },
+      {
+        "node": "@root"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.01
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": false
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "emtr_lantern_l_01"
+    },
+    "cockpit__attachNodeIndices:list<i>": []
+  },
+  "us_m3a1_stuart_flame_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/us_m70d.blk",
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "ba_11_gunner_char",
+    "cockpit__offset": [0.0,0.0,0.0],
+    "cockpit__attachNodeNames:list<t>": [
+      {
+        "node": "bone_camera_gunner"
+      },
+      {
+        "node": "bone_turret"
+      },
+      {
+        "node": "bone_turret"
+      }
+    ],
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "item": [-0.603247,-0.0439972,0.230291]
+      },
+      {
+        "item": [-0.413889,0.694356,0.394395]
+      },
+      {
+        "item": [-0.201835,0.511775,0.440301]
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front_right"
+      },
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_left"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": 0.2
+      },
+      {
+        "slit": 0.15
+      },
+      {
+        "slit": 0.0
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      },
+      {
+        "slit": false
+      }
+    ]
+  },
+  "us_m3a1_stuart_flame_commander_cockpit": {
+    "_extends": "base_commander_cockpit_no_slits",
+    "animchar__res": "t_26_1940_commander_char",
+    "cockpit__offset": [-0.0,0.0,-0.0],
+    "cockpit__cockpitOffsetBySlit:list<p3>": [
+      {
+        "item": [-0.282226,0.811918,-0.341195]
+      },
+      {
+        "item": [-0.0988984,0.463066,-0.367904]
+      }
+    ],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitForwardOffset:list<r>": [
+      {
+        "slit": 0.17
+      },
+      {
+        "slit": 0.0
+      }
+    ],
+    "cockpit__slitIsGun:list<b>": [
+      {
+        "slit": true
+      },
+      {
+        "slit": false
+      }
+    ],
+    "cockpit__slitNodeNames:list<t>": [
+      {
+        "slit": "cam_front"
+      },
+      {
+        "slit": "cam_right"
+      }
+    ]
+  },
+  "us_m3a1_stuart_flame_machinegunner_cockpit": {
+    "_extends": "base_driver_cockpit_no_slits",
+    "animchar__res": "bt_7_driver_char",
+    "cockpit__offset": [-0.98704,-0.235679,-1.18357],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "ex_decor_l_01"
+      },
+      {
+        "node": "ex_decor_r_01"
+      },
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun"
+      },
+      {
+        "node": "bone_turret"
+      },
+      {
+        "node": "@root"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": -0.04
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "emtr_lantern_l_01"
+    },
+    "cockpit__attachNodeIndices:list<i>": []
+  },
+  "m1_flamethrower_shorted": {
+    "_override": true,
+    "turret__triggerGroup": 1
+  }
+}

@@ -5,7 +5,7 @@ var _germ_pzkpfw_iii_ausf_f =
       "_extends": "base_pzkpfw_iii_ausf_f"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
     },
     {
       "vehicle_net_phys__blk": "content/tanks/gamedata/units/tanks/pzkpfw_iii_ausf_f.blk:VehiclePhys"
@@ -180,7 +180,7 @@ var _germ_pzkpfw_iii_ausf_f =
     ]
   },
   "germ_pzkpfw_III_ausf_F_gunner_cockpit": {
-    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf5d.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pzkpfw_iii_e_gunner_char",
     "cockpit__offset": [-0.9,0.03,0.12],

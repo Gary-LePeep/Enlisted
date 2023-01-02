@@ -6,7 +6,7 @@ var _7_62x54_r_semiauto_short =
   "speed": 775.0,
   "maxDistance": 2000.0,
   "bulletType": "ball",
-  "hitPowerMult": 11.0,
+  "hitPowerMult": 11.6,
   "effectiveDistance": 300.0,
   "relativeVelHitShift": [300.0,1000.0],
   "relativeVelArmorShift": [200.0,1000.0],
@@ -21,7 +21,7 @@ var _7_62x54_r_semiauto_short =
     "HitPower1500m": [0.04,1500.0]
   },
   "armorpower": {
-    "ArmorPower0m": [1.0,300.0],
+    "ArmorPower0m": [1.0,10.0],
     "ArmorPower1500m": [0.1,1500.0]
   },
   "visual": {

@@ -11,7 +11,7 @@ var _ussr_t_28 =
       "_extends": "base_t_28"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_t34_engine_sound"
     },
     {
       "bullet_holes__movingCollisionNodes:array": {
@@ -330,5 +330,66 @@ var _ussr_t_28 =
         "t_28_skin_turret_c*": "camo_skin_tex"
       }
     }
+  },
+  "t_28_skins": {
+    "_override": true,
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "t_28_winter",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_28_forest",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_forest_01*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_28_ussr_camo_brown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_brown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_28_ussr_camo_green_ltbrown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_28_ussr_camo_desert_yellow_brown",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_desert_yellow_brown*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_28_ussr_camo_winter_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter_lines*"
+          }
+        }
+      }
+    ]
+  },
+  "t_28_turret_02_7_62mm_dt": {
+    "_override": true,
+    "turret__limit": [-155.0,33.0,-5.0,28.0]
+  },
+  "t_28_turret_03_7_62mm_dt": {
+    "_override": true,
+    "turret__limit": [-5.0,145.0,-5.0,28.0]
   }
 }

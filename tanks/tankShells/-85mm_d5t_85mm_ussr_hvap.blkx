@@ -7,7 +7,7 @@ var _85mm_d5t_85mm_ussr_hvap =
   "damageMass": 1.1,
   "ballisticCaliber": 0.085,
   "damageCaliber": 0.03,
-  "Cx": 0.28,
+  "Cx": 0.3608,
   "maxDistance": 10000.0,
   "normalizationPreset": "apcr",
   "stucking": 0.7,

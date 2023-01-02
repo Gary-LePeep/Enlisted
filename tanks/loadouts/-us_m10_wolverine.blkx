@@ -49,7 +49,10 @@ var _us_m10_wolverine =
       "_extends": "base_m10_wolverine"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_m10_engine_sound"
+    },
+    {
+      "_extends": "tank_heavy_vehicle_tracks_sound"
     },
     {
       "item__iconOffset": [0.0,0.1]
@@ -66,16 +69,20 @@ var _us_m10_wolverine =
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.25,-0.5,0.0]
+              [-1.85,-0.15,0.35]
             ],
             "seatComponent": "isGunner",
             "nextSeat": "driver",
-            "shouldHideOwner": true,
+            "shouldHideOwner": false,
             "receiveDamageFromDMPart": "gunner",
             "cameraNodeName": "bone_camera_gunner",
             "cockpitTemplate": "us_m10_wolverine_gunner_cockpit",
+            "maxPosWithOpenHatch": 0.2,
             "turretNames:array": {
               "turretNames": "turret_01"
+            },
+            "hatchNodes:array": {
+              "node": "bone_camera_gunner"
             }
           }
         },
@@ -125,8 +132,11 @@ var _us_m10_wolverine =
                 [1.0,0.0,0.0],
                 [0.0,1.0,0.0],
                 [0.0,0.0,1.0],
-                [-0.35,0.15,0.15]
+                [-0.42,-0.1,0.03]
               ]
+            },
+            {
+              "maxPosWithOpenHatch": 0.3
             },
             {
               "seatComponent": "isDriver"
@@ -135,7 +145,27 @@ var _us_m10_wolverine =
               "receiveDamageFromDMPart": "commander"
             },
             {
-              "turretNames:array": {
+              "cockpitTemplate": "us_m10_wolverine_commander_cockpit"
+            },
+            {
+              "hatchRotationAxis": [0.0,0.0,0.0]
+            },
+            {
+              "seatAnimUpper": "drive_driver"
+            },
+            {
+              "seatAnimLower": "drive_driver"
+            },
+            {
+              "isHoldGunModeAllowed": false
+            },
+            {
+              "hatchNodes:array": {
+                "node": "bone_camera_gunner"
+              }
+            },
+            {
+              "hatchTurretNames:array": {
                 "turret": "turret_02"
               }
             }
@@ -150,12 +180,14 @@ var _us_m10_wolverine =
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.25,-0.5,0.0]
+              [-0.15,-0.05,-0.2]
             ],
             "seatComponent": "isPassenger",
-            "shouldHideOwner": true,
+            "shouldHideOwner": false,
             "receiveDamageFromDMPart": "loader",
             "cameraNodeName": "bone_camera_driver",
+            "seatAnimUpper": "drive_driver",
+            "seatAnimLower": "drive_driver",
             "loaderTurretNames:array": {
               "turret": "turret_01"
             }
@@ -193,7 +225,7 @@ var _us_m10_wolverine =
     }
   },
   "us_m10_wolverine_gunner_cockpit": {
-    "vehicle_sight__blk": "content/tanks/gamedata/sight/us_m70f.blk",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/us_m70g.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "ba_11_gunner_char",
     "cockpit__offset": [-0.65,-0.06,0.23],
@@ -313,5 +345,31 @@ var _us_m10_wolverine =
         "part": "ex_decor_02"
       }
     ]
+  },
+  "us_m10_wolverine_commander_cockpit": {
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "t_26_1940_gunner_char",
+    "cockpit__offset": [0.0,0.0,0.0],
+    "cockpit__zoomTimeMul": 3.0,
+    "cockpit__minZoom": 0.0,
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "item": [0.170111,0.870775,-0.339313]
+    },
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_turret"
+    },
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.23
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    }
   }
 }

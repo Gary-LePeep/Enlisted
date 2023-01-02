@@ -10758,27 +10758,46 @@ var COMMONITEMSDATA =
       }
     },
     {
-      "sound_irqs:shared:object": {
-        "_tags": "sound",
-        "reload1:object": {
-          "path": "/weapon/rifle/mauser98k/reload1/change_ammo"
+      "sound_irqs:shared:object": [
+        {
+          "_tags": "sound"
         },
-        "reload2:object": {
-          "path": "/weapon/rifle/mauser98k/reload2/change_ammo"
+        {
+          "reload1:object": {
+            "path": "/weapon/rifle/mauser98k/reload1/change_ammo"
+          }
         },
-        "reload3:object": {
-          "path": "/weapon/rifle/mauser98k/reload3/change_ammo"
+        {
+          "reload2:object": {
+            "path": "/weapon/rifle/mauser98k/reload2/change_ammo"
+          }
         },
-        "reload4:object": {
-          "path": "/weapon/rifle/mauser98k/reload4/change_ammo"
+        {
+          "reload3:object": {
+            "path": "/weapon/rifle/mauser98k/reload3/change_ammo"
+          }
         },
-        "reload5:object": {
-          "path": "/weapon/rifle/mauser98k/reload5/change_ammo"
+        {
+          "reload4:object": {
+            "path": "/weapon/rifle/mauser98k/reload4/change_ammo"
+          }
         },
-        "boltAction:object": {
-          "path": "/weapon/rifle/mosin/bolt_action"
+        {
+          "reload5:object": {
+            "path": "/weapon/rifle/mauser98k/reload5/change_ammo"
+          }
+        },
+        {
+          "reload5:object": {
+            "path": "/weapon/rifle/mauser98k/reload6/change_ammo"
+          }
+        },
+        {
+          "boltAction:object": {
+            "path": "/weapon/rifle/mosin/bolt_action"
+          }
         }
-      }
+      ]
     }
   ],
   "stl_kar98k_wartime_production": {

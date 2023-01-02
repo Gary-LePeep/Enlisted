@@ -1,0 +1,59 @@
+var _mine_o822_mp_smoke = 
+[
+  {
+    "mass": 0.85
+  },
+  {
+    "caliber": 0.05
+  },
+  {
+    "bullets": 1
+  },
+  {
+    "bullets": 1
+  },
+  {
+    "speed": 50.0
+  },
+  {
+    "speedDispersion": 0.0
+  },
+  {
+    "momentOfInertia": [0.04,0.008,0.04]
+  },
+  {
+    "physMat": "walkRay"
+  },
+  {
+    "useFutureContacts": true
+  },
+  {
+    "logCCD": false
+  },
+  {
+    "explosiveType": "smoke_composition"
+  },
+  {
+    "explosiveMass": 0.0
+  },
+  {
+    "entityTemplate": "mine_o822_mp_smoke_phys"
+  },
+  {
+    "collisionResource": {
+      "props": {
+        "volumeBox_1": true
+      }
+    }
+  },
+  {
+    "ccdSpheres": {
+      "ccd": [0.0,0.0,0.0,0.015]
+    }
+  },
+  {
+    "visual": {
+      "template": "mine_o822_mp_smoke_item+item_in_world"
+    }
+  }
+]

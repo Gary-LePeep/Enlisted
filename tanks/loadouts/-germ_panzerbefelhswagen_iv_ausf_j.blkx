@@ -34,7 +34,29 @@ var _germ_panzerbefelhswagen_iv_ausf_j =
       "_extends": "base_panzerbefelhswagen_iv_ausf_j"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 5,
+            "count": 7
+          }
+        }
+      ]
     },
     {
       "vehicle_seats__seats:shared:array": [

@@ -17,8 +17,8 @@ var _122mm_d25t_122mm_ussr_heat_zbk =
   "hitPower": 260.0,
   "fuseDelayDist": 0.05,
   "explodeTreshold": 0.1,
-  "selfDestructionFx": "explosion_air_selfexplosion_big",
-  "explosionEffect": "hit_106_132mm_metal_he",
+  "selfDestructionFx": "hit_81_132mm_heat",
+  "explosionEffect": "hit_81_132mm_heat",
   "groundCollisionEffect": "hit_106_132mm_dirt_he",
   "ricochetEffect": "hit_106_132mm_metal_ap",
   "waterCollisionEffect": "hit_106_132mm_water_he",
@@ -364,7 +364,8 @@ var _122mm_d25t_122mm_ussr_heat_zbk =
       "fxScale": [1.0,1.0]
     },
     "wood": {
-      "fx": "hit_106_132mm_wood_he",
+      "fx": "hit_81_132mm_heat",
+      "copyBulletTm": true,
       "fxScale": [1.0,1.0]
     },
     "glass": {

@@ -140,8 +140,6 @@ var _pzkpfw_iii_ausf_l =
             "turretName": "turret_02",
             "gun": "pzkpfw_iii_ausf_l_turret_02_7_92mm_mg34",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }

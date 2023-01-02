@@ -47,6 +47,9 @@ var _37mm_m5_user_cannon_for_m3_lee =
       "_extends": "base_37mm_m5_user_cannon_for_m3_lee"
     },
     {
+      "_extends": "gunsound_37mm_m5_user_cannon_for_m3_lee"
+    },
+    {
       "turret__triggerGroup": 0
     }
   ]

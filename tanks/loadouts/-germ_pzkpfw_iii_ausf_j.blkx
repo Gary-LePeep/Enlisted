@@ -44,7 +44,7 @@ var _germ_pzkpfw_iii_ausf_j =
       "_extends": "base_pzkpfw_iii_ausf_j_l42"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
     },
     {
       "item__iconOffset": [0.0,0.3]
@@ -107,13 +107,13 @@ var _germ_pzkpfw_iii_ausf_j =
             "attachNode": "commander",
             "shouldHideOwner": true,
             "maxPosWithOpenHatch": 0.7,
-            "hatchRotationAxis": [1.7,0.0,0.0],
+            "hatchRotationAxis": [1.9,0.0,0.0],
             "ignoreAttachNodeRotation": true,
             "attachTm": [
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.3,-0.1,0.05]
+              [-0.25,0.14,0.07]
             ],
             "seatComponent": "isDriver",
             "receiveDamageFromDMPart": "commander",
@@ -198,7 +198,7 @@ var _germ_pzkpfw_iii_ausf_j =
     ]
   },
   "germ_pzkpfw_III_ausf_J_gunner_cockpit": {
-    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf5d.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pzkpfw_iii_e_gunner_char",
     "cockpit__offset": [0.0,0.0,0.0],
@@ -282,7 +282,7 @@ var _germ_pzkpfw_iii_ausf_j =
     ],
     "cockpit__slitForwardOffset:list<r>": [
       {
-        "slit": 0.27
+        "slit": 0.24
       },
       {
         "slit": 0.0

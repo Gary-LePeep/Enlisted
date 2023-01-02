@@ -3,66 +3,59 @@ var _ussr_bm_8_24 =
   "ussr_bm_8_24_moscow_premium": {
     "_extends": "ussr_bm_8_24_common"
   },
-  "ussr_bm_8_24_common": [
-    {
-      "_extends": "base_bm_8_24"
-    },
-    {
-      "_extends": "vehicle_effects_tracked"
-    },
-    {
-      "vehicle_seats__seats:shared:array": [
-        {
-          "seats:object": {
-            "name": "main_gunner",
-            "locName": "vehicle_seats/gunner",
-            "attachNode": "commander",
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.4,-0.65,0.0]
-            ],
-            "seatComponent": "isGunner",
-            "nextSeat": "driver",
-            "shouldHideOwner": true,
-            "receiveDamageFromDMPart": "commander",
-            "cameraNodeName": "bone_camera_gunner",
-            "cockpitTemplate": "ussr_bm_8_24_gunner_cockpit",
-            "turretNames:array": {
-              "turretNames": "turret_01"
-            },
-            "loaderTurretNames:array": {
-              "turret": "turret_01"
-            }
-          }
-        },
-        {
-          "seats:object": {
-            "name": "driver",
-            "locName": "vehicle_seats/driver",
-            "seatOwnsEntityControl": true,
-            "attachNode": "driver",
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.25,-0.25,0.0]
-            ],
-            "seatComponent": "isDriver",
-            "nextSeat": "main_gunner",
-            "shouldHideOwner": true,
-            "receiveDamageFromDMPart": "driver",
-            "cameraNodeName": "bone_camera_driver",
-            "cameraOffset": [0.15,-0.0,-0.0],
-            "cockpitTemplate": "ussr_bm_8_24_driver_cockpit"
+  "ussr_bm_8_24_common": {
+    "_extends": "base_bm_8_24",
+    "vehicle_seats__seats:shared:array": [
+      {
+        "seats:object": {
+          "name": "main_gunner",
+          "locName": "vehicle_seats/gunner",
+          "attachNode": "commander",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.4,-0.65,0.0]
+          ],
+          "seatComponent": "isGunner",
+          "nextSeat": "driver",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "commander",
+          "cameraNodeName": "bone_camera_gunner",
+          "cockpitTemplate": "ussr_bm_8_24_gunner_cockpit",
+          "turretNames:array": {
+            "turretNames": "turret_01"
+          },
+          "loaderTurretNames:array": {
+            "turret": "turret_01"
           }
         }
-      ]
-    }
-  ],
+      },
+      {
+        "seats:object": {
+          "name": "driver",
+          "locName": "vehicle_seats/driver",
+          "seatOwnsEntityControl": true,
+          "attachNode": "driver",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.25,0.0]
+          ],
+          "seatComponent": "isDriver",
+          "nextSeat": "main_gunner",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "driver",
+          "cameraNodeName": "bone_camera_driver",
+          "cameraOffset": [0.15,-0.0,-0.0],
+          "cockpitTemplate": "ussr_bm_8_24_driver_cockpit"
+        }
+      }
+    ]
+  },
   "ussr_bm_8_24_driver_cockpit": {
     "_extends": "base_driver_cockpit",
     "animchar__res": "bt_7_driver_char",

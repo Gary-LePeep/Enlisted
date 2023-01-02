@@ -1,0 +1,221 @@
+var _halftrack_m3_75mm_gmc = 
+{
+  "base_halftrack_m3_75mm_gmc": [
+    {
+      "_extends": "base_tank"
+    },
+    {
+      "_extends": "halftrack_m3_75mm_gmc_ammo_stowages"
+    },
+    {
+      "killLogName": "us_halftrack_m3_75mm_gmc"
+    },
+    {
+      "animchar__res": "halftrack_m3_t48_char"
+    },
+    {
+      "collres__res": "halftrack_m3_t48_collision"
+    },
+    {
+      "vehicle_net_phys__blk": "gamedata/gen/units/tanks/halftrack_m3_75mm_gmc.blk:VehiclePhys"
+    },
+    {
+      "particle_phys__blk": "gamedata/suspension/empty.blk"
+    },
+    {
+      "dmg_animchar__res": "halftrack_m3_t48_dmg_char"
+    },
+    {
+      "xray_resource__modelName": "halftrack_m3_t48"
+    },
+    {
+      "cockpit__zoomOutFov": 2.7475
+    },
+    {
+      "cockpit__zoomInFov": 5.3955
+    },
+    {
+      "cockpit__sightName": "sight_model/default_tank_spg"
+    },
+    {
+      "cockpit__sightFov": 20.0
+    },
+    {
+      "drowningHeight": 2.0
+    },
+    {
+      "damage_model__blk": "gamedata/gen/units/tanks/halftrack_m3_75mm_gmc.blk"
+    },
+    {
+      "item__name": "items/us_halftrack_m3_75mm_gmc"
+    },
+    {
+      "skin__template": "halftrack_m3_75mm_gmc_skins"
+    },
+    {
+      "turret_gun_flash_fx__flashNodes:shared:array": {
+        "node": "emtr_gun_flame"
+      }
+    },
+    {
+      "turret_gun_flash_fx__flashFx:shared:array": {
+        "fx": "muzzle_ground_60mm"
+      }
+    },
+    {
+      "turret_gun_flash_fx__flashFxScale:shared:array": {
+        "scale": 1.0
+      }
+    },
+    {
+      "turret_control__emitterNodes:shared:array": {
+        "node": "bone_gun_barrel"
+      }
+    },
+    {
+      "turret_control__animVars:shared:array": {
+        "vars:object": {
+          "curYawParamName": "turret_01_yaw",
+          "curPitchParamName": "gun_01_pitch",
+          "aimActiveParamName": "aim_01_active",
+          "paramYawSpeed": "turret_01_yaw_speed",
+          "paramYawSpeedMul": "turret_01_yaw_mul",
+          "paramYawAccel": "turret_01_yaw_accel",
+          "paramMinYawAngle": "turret_01_min_yaw_angle",
+          "paramMaxYawAngle": "turret_01_max_yaw_angle",
+          "paramMinPitchAngle": "turret_01_min_pitch_angle",
+          "paramMaxPitchAngle": "turret_01_max_pitch_angle",
+          "paramPitchSpeed": "gun_01_pitch_speed",
+          "paramPitchSpeedMul": "gun_01_pitch_mul",
+          "paramPitchAccel": "gun_01_pitch_accel",
+          "wishYawParamName": "gun_01_aim:targetYaw",
+          "wishPitchParamName": "gun_01_aim:targetPitch",
+          "gunRecoilParamName": "gun_01_recoil"
+        }
+      }
+    },
+    {
+      "turret_control__turretInfo:shared:array": {
+        "turretInfo:object": {
+          "turretName": "turret_01",
+          "gun": "halftrack_m3_75mm_gmc_turret_01_75mm_m1897a4+turret_with_several_types_of_shells+main_turret",
+          "barrelDm": "gun_barrel",
+          "breechDm": "cannon_breech",
+          "verDriveDm": "drive_turret_v",
+          "horDriveDm": "drive_turret_h",
+          "salt": 1
+        }
+      }
+    }
+  ],
+  "halftrack_m3_75mm_gmc_turret_01_75mm_m1897a4": {
+    "_extends": "tankgun_75mm_m1897a4",
+    "gun__shootNodeName": "bone_gun_barrel",
+    "turret__yawSpeed": 6.0,
+    "turret__pitchSpeed": 4.0,
+    "turret__aimNodeName": "bone_turret",
+    "turret__limit": [-19.0,21.0,-10.0,29.0],
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 15
+      },
+      {
+        "ammo": 15
+      },
+      {
+        "ammo": 15
+      },
+      {
+        "ammo": 15
+      }
+    ]
+  },
+  "halftrack_m3_75mm_gmc_ammo_stowages": {
+    "_tags": "server",
+    "_extends": "vehicle_ammo_stowages",
+    "ammo_stowage__stowageTemplates:shared:list<t>": {
+      "stowage": "halftrack_m3_75mm_gmc_ammo_stowage"
+    }
+  },
+  "halftrack_m3_75mm_gmc_ammo_stowage": {
+    "_extends": "ammo_stowage",
+    "ammo_stowage__clusterTemplates:shared:list<t>": {
+      "cluster": "halftrack_m3_75mm_gmc_ammo_cluster"
+    },
+    "ammo_stowage__turretNames:shared:list<t>": {
+      "gun": "turret_01"
+    }
+  },
+  "halftrack_m3_75mm_gmc_ammo_cluster": {
+    "_extends": "ammo_cluster",
+    "ammo_cluster__isShell": true,
+    "ammo_cluster__slotNames:shared:list<t>": [
+      {
+        "part": "ammo_body_01"
+      },
+      {
+        "part": "ammo_body_02"
+      }
+    ],
+    "ammo_cluster__slotsMaxAmmo:list<i>": [
+      {
+        "count": 30
+      },
+      {
+        "count": 30
+      }
+    ]
+  },
+  "halftrack_m3_75mm_gmc_skins": {
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "halftrack_m3_75mm_gmc_camo_olive_drab_olive",
+          "objTexReplace:object": {
+            "us_camo_olive*": "us_camo_olive_drab_olive*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "halftrack_m3_75mm_gmc_camo_winter_olive",
+          "objTexReplace:object": {
+            "us_camo_olive*": "us_camo_winter_olive*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "halftrack_m3_75mm_gmc_camo_desert_pink_lines",
+          "objTexReplace:object": {
+            "us_camo_olive*": "us_camo_desert_pink_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "halftrack_m3_75mm_gmc_desert_pink_dark_khaki",
+          "objTexReplace:object": {
+            "us_camo_olive*": "us_camo_desert_pink_dark_khaki*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "halftrack_m3_75mm_gmc_camo_desert_pink_olive_drab_dark_earth",
+          "objTexReplace:object": {
+            "us_camo_olive*": "us_camo_desert_pink_olive_drab_dark_earth*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "halftrack_m3_75mm_gmc_us_camo_winter_grid",
+          "objTexReplace:object": {
+            "us_camo_olive*": "us_camo_winter_grid*"
+          }
+        }
+      }
+    ]
+  }
+}

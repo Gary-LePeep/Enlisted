@@ -177,7 +177,7 @@ var _m4_sherman_calliope =
       ]
     }
   ],
-  "m8_rocket_projectile": {
+  "base_m8_rocket_projectile": {
     "_extends": "rocket_projectile",
     "animchar__res": "m8_rocket_char",
     "shell__concussionMaxRadius:r": {

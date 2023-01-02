@@ -14,7 +14,7 @@ var _germ_panzerwerfer_42 =
       "_extends": "vehicle_steering_assist"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
     },
     {
       "bullet_holes__ignoreCollisionNodes:array": {
@@ -86,14 +86,9 @@ var _germ_panzerwerfer_42 =
               "receiveDamageFromDMPart": "commander"
             },
             {
-              "turretNames:array": [
-                {
-                  "turretNames": "turret_02"
-                },
-                {
-                  "turretNames": "turret_01"
-                }
-              ]
+              "turretNames:array": {
+                "turretNames": "turret_01"
+              }
             }
           ]
         },

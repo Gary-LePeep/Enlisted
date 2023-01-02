@@ -1,145 +1,154 @@
 var _uk_cromwel_5 = 
 {
-  "uk_cromwell_5": [
-    {
-      "_extends": "base_cromwell_5"
-    },
-    {
-      "_extends": "vehicle_effects_tracked"
-    },
-    {
-      "bullet_holes__ignoreCollisionNodes:array": {
-        "_tags": "render"
-      }
-    },
-    {
-      "bullet_holes__movingCollisionNodes:array": [
-        {
-          "_tags": "render"
-        },
-        {
-          "movingCollisionNodes": "cls_turret_01"
-        },
-        {
-          "movingCollisionNodes": "turret_front"
-        },
-        {
-          "movingCollisionNodes": "turret_side"
-        },
-        {
-          "movingCollisionNodes": "gun_mask"
+  "uk_cromwell_5": {
+    "_extends": "base_cromwell_5",
+    "turrets__initAmmoDistribution:array": [
+      {
+        "ammo:object": {
+          "slot": 0,
+          "fill": true
         }
-      ]
+      },
+      {
+        "ammo:object": {
+          "slot": 1,
+          "fill": true
+        }
+      },
+      {
+        "ammo:object": {
+          "slot": 2,
+          "count": 7
+        }
+      }
+    ],
+    "bullet_holes__ignoreCollisionNodes:array": {
+      "_tags": "render"
     },
-    {
-      "vehicle_seats__seats:shared:array": [
-        {
-          "seats:object": {
-            "name": "main_gunner",
-            "locName": "vehicle_seats/gunner",
-            "attachNode": "gunner",
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.25,-0.5,0.0]
-            ],
-            "seatComponent": "isGunner",
-            "nextSeat": "driver",
-            "shouldHideOwner": false,
-            "receiveDamageFromDMPart": "gunner",
-            "cameraNodeName": "bone_camera_gunner",
-            "turretNames:array": [
-              {
-                "turretNames": "turret_01"
-              },
-              {
-                "turretNames": "turret_02"
-              }
-            ]
-          }
-        },
-        {
-          "seats:object": {
-            "name": "driver",
-            "locName": "vehicle_seats/driver",
-            "seatOwnsEntityControl": true,
-            "attachNode": "driver",
-            "ignoreAttachNodeRotation": true,
-            "attachTm": [
-              [1.0,0.0,0.0],
-              [0.0,1.0,0.0],
-              [0.0,0.0,1.0],
-              [-0.25,-0.25,0.0]
-            ],
-            "seatComponent": "isDriver",
-            "nextSeat": "main_gunner",
-            "shouldHideOwner": true,
-            "receiveDamageFromDMPart": "driver",
-            "cameraNodeName": "bone_camera_driver"
-          }
-        },
-        {
-          "seats:object": [
+    "bullet_holes__movingCollisionNodes:array": [
+      {
+        "_tags": "render"
+      },
+      {
+        "movingCollisionNodes": "cls_turret_01"
+      },
+      {
+        "movingCollisionNodes": "turret_front"
+      },
+      {
+        "movingCollisionNodes": "turret_side"
+      },
+      {
+        "movingCollisionNodes": "gun_mask"
+      }
+    ],
+    "vehicle_seats__seats:shared:array": [
+      {
+        "seats:object": {
+          "name": "main_gunner",
+          "locName": "vehicle_seats/gunner",
+          "attachNode": "gunner",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isGunner",
+          "nextSeat": "driver",
+          "shouldHideOwner": false,
+          "receiveDamageFromDMPart": "gunner",
+          "cameraNodeName": "bone_camera_gunner",
+          "turretNames:array": [
             {
-              "name": "commander"
+              "turretNames": "turret_01"
             },
             {
-              "locName": "vehicle_seats/commander"
-            },
-            {
-              "locName": "vehicle_seats/commander"
-            },
-            {
-              "attachNode": "commander"
-            },
-            {
-              "shouldHideOwner": false
-            },
-            {
-              "ignoreAttachNodeRotation": true
-            },
-            {
-              "attachTm": [
-                [1.0,0.0,0.0],
-                [0.0,1.0,0.0],
-                [0.0,0.0,1.0],
-                [-0.35,0.3,-0.05]
-              ]
-            },
-            {
-              "cameraType": "commander"
-            },
-            {
-              "seatComponent": "isDriver"
-            },
-            {
-              "receiveDamageFromDMPart": "commander"
+              "turretNames": "turret_02"
             }
           ]
-        },
-        {
-          "seats:object": {
-            "attachNode": "loader",
-            "locName": "vehicle_seats/loader",
-            "ignoreAttachNodeRotation": true,
+        }
+      },
+      {
+        "seats:object": {
+          "name": "driver",
+          "locName": "vehicle_seats/driver",
+          "seatOwnsEntityControl": true,
+          "attachNode": "driver",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.25,0.0]
+          ],
+          "seatComponent": "isDriver",
+          "nextSeat": "main_gunner",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "driver",
+          "cameraNodeName": "bone_camera_driver"
+        }
+      },
+      {
+        "seats:object": [
+          {
+            "name": "commander"
+          },
+          {
+            "locName": "vehicle_seats/commander"
+          },
+          {
+            "locName": "vehicle_seats/commander"
+          },
+          {
+            "attachNode": "commander"
+          },
+          {
+            "shouldHideOwner": false
+          },
+          {
+            "ignoreAttachNodeRotation": true
+          },
+          {
             "attachTm": [
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.25,-0.5,0.0]
-            ],
-            "seatComponent": "isPassenger",
-            "shouldHideOwner": false,
-            "receiveDamageFromDMPart": "loader",
-            "cameraNodeName": "bone_camera_driver",
-            "loaderTurretNames:array": {
-              "turret": "turret_01"
-            }
+              [-0.35,0.3,-0.05]
+            ]
+          },
+          {
+            "cameraType": "commander"
+          },
+          {
+            "seatComponent": "isDriver"
+          },
+          {
+            "receiveDamageFromDMPart": "commander"
+          }
+        ]
+      },
+      {
+        "seats:object": {
+          "attachNode": "loader",
+          "locName": "vehicle_seats/loader",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isPassenger",
+          "shouldHideOwner": false,
+          "receiveDamageFromDMPart": "loader",
+          "cameraNodeName": "bone_camera_driver",
+          "loaderTurretNames:array": {
+            "turret": "turret_01"
           }
         }
-      ]
-    }
-  ]
+      }
+    ]
+  }
 }

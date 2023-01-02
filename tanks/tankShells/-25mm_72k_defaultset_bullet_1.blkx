@@ -7,6 +7,7 @@ var _25mm_72k_defaultset_bullet_1 =
   "normalizationPreset": "ap",
   "bulletType": "ap_t",
   "fresnel": [0.23,0.1,2.0],
+  "shellAnimation": "video/shells_animations/ap_belt.ivf",
   "bulletName": "25mm_br_132",
   "selfDestructionFx": "explosion_air_selfexplosion_small",
   "explosionEffect": "hit_19_27mm_metal_ap",

@@ -5,7 +5,7 @@ var _us_m5a1_stuart_late =
       "_extends": "base_m5a1_stuart_late"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_light_vehicle_tracks_sound"
     },
     {
       "item__iconOffset": [0.0,0.2]
@@ -158,7 +158,7 @@ var _us_m5a1_stuart_late =
     }
   },
   "us_m5a1_stuart_late_gunner_cockpit": {
-    "vehicle_sight__blk": "content/tanks/gamedata/sight/us_m70f.blk",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/us_m70d.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "ba_11_gunner_char",
     "cockpit__offset": [-0.35,-0.01,0.22],
@@ -245,6 +245,7 @@ var _us_m5a1_stuart_late =
     "animchar__objTexReplace:object": {
       "us_camo_olive*": "us_camo_olive_drab_olive*"
     },
+    "attach_decorators__entities:list<eid>": [],
     "attach_decorators__templates:array": [
       {
         "templates:object": {
@@ -302,7 +303,7 @@ var _us_m5a1_stuart_late =
             [0.305797,-0.0275586,-0.951357],
             [0.251968,0.351185,-0.665359]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "bone_turret"
         }
       },
@@ -314,7 +315,7 @@ var _us_m5a1_stuart_late =
             [-0.1221,0.0802378,-0.989112],
             [-0.229767,0.386086,-0.659877]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "bone_turret"
         }
       },
@@ -326,7 +327,7 @@ var _us_m5a1_stuart_late =
             [-0.180337,0.0105662,0.982994],
             [-0.220718,0.415194,0.808027]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "bone_turret"
         }
       },
@@ -362,7 +363,7 @@ var _us_m5a1_stuart_late =
             [-0.0127504,-0.998002,0.050621],
             [-0.530319,-1.13052,1.38022]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -374,7 +375,7 @@ var _us_m5a1_stuart_late =
             [-0.0529374,-0.997867,-0.0118925],
             [-1.13173,1.28331,1.515]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -386,7 +387,7 @@ var _us_m5a1_stuart_late =
             [0.0261573,0.998267,0.0404993],
             [-1.65085,1.11956,1.52541]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -398,7 +399,7 @@ var _us_m5a1_stuart_late =
             [0.655789,-0.0217987,0.753668],
             [1.44865,-0.0916288,1.28878]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -410,7 +411,7 @@ var _us_m5a1_stuart_late =
             [0.662798,-0.174853,0.72747],
             [1.4278,0.642531,1.32414]
           ],
-          "template": "us_helmet_m1_decor",
+          "template": "helmet_m1",
           "nodeName": "root"
         }
       },
@@ -422,7 +423,7 @@ var _us_m5a1_stuart_late =
             [0.577794,0.0232946,0.814945],
             [1.20572,0.803776,1.53902]
           ],
-          "template": "us_helmet_m1_decor",
+          "template": "helmet_m1",
           "nodeName": "root"
         }
       },
@@ -434,7 +435,7 @@ var _us_m5a1_stuart_late =
             [-0.704846,0.0212021,-0.707491],
             [1.43228,-0.470418,1.41043]
           ],
-          "template": "m1_carabine_decor",
+          "template": "decor_m1_carabine",
           "nodeName": "root"
         }
       },

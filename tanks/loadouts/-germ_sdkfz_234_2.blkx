@@ -11,6 +11,9 @@ var _germ_sdkfz_234_2 =
       "_extends": "vehicle_steering_assist"
     },
     {
+      "_extends": "tank_panzer3_engine_sound"
+    },
+    {
       "_extends": "tank_with_wheels_vehicle_tracks_sound"
     },
     {

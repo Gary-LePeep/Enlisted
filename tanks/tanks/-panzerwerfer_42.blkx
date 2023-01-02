@@ -155,7 +155,7 @@ var _panzerwerfer_42 =
       ]
     }
   ],
-  "panzerwerfer_42_projectile": {
+  "base_panzerwerfer_42_projectile": {
     "_extends": "rocket_projectile",
     "animchar__res": "nebelwerfer_42_rocket_char",
     "shell__concussionMaxRadius:r": {

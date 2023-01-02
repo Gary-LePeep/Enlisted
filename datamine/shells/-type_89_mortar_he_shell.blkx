@@ -1,0 +1,81 @@
+var _type_89_mortar_he_shell = 
+[
+  {
+    "mass": 0.95
+  },
+  {
+    "caliber": 0.05
+  },
+  {
+    "bullets": 1
+  },
+  {
+    "bullets": 1
+  },
+  {
+    "speed": 50.0
+  },
+  {
+    "speedDispersion": 0.0
+  },
+  {
+    "momentOfInertia": [0.04,0.008,0.04]
+  },
+  {
+    "physMat": "bulletRay"
+  },
+  {
+    "useFutureContacts": true
+  },
+  {
+    "logCCD": false
+  },
+  {
+    "explodeRadius": [3.0,4.5]
+  },
+  {
+    "explodeHitPower": 250.0
+  },
+  {
+    "entityTemplate": "type_89_mortar_he_shell_phys"
+  },
+  {
+    "reloadTime": 3.6
+  },
+  {
+    "collisionResource": {
+      "props": {
+        "volumeBox_1": true
+      }
+    }
+  },
+  {
+    "ccdSpheres": {
+      "ccd": [0.0,0.0,0.0,0.015]
+    }
+  },
+  {
+    "splashDamage": {
+      "radius": [1.0,10.0],
+      "penetration": [15.0,2.0],
+      "damage": 75.0,
+      "dmgOffset": [0.0,0.25,0.0]
+    }
+  },
+  {
+    "explFx": {
+      "fxScale": [1.8,1.9],
+      "effectTemplName": "mine_explosion_effect_medium+disable_effect_sfx"
+    }
+  },
+  {
+    "explSound": {
+      "explSoundPath": "impact/mine"
+    }
+  },
+  {
+    "visual": {
+      "template": "type_89_mortar_he_shell_item+item_in_world"
+    }
+  }
+]

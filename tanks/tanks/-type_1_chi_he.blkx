@@ -1,0 +1,400 @@
+var _type_1_chi_he = 
+{
+  "base_type_1_chi_he": [
+    {
+      "_extends": "base_tank"
+    },
+    {
+      "_extends": "type_1_chi_he_ammo_stowages"
+    },
+    {
+      "killLogName": "jp_type_1_chi_he"
+    },
+    {
+      "animchar__res": "type_1_chi_he_char"
+    },
+    {
+      "collres__res": "type_1_chi_he_collision"
+    },
+    {
+      "vehicle_net_phys__blk": "gamedata/gen/units/tanks/type_1_chi_he.blk:VehiclePhys"
+    },
+    {
+      "particle_phys__blk": "gamedata/suspension/empty.blk"
+    },
+    {
+      "dmg_animchar__res": "type_1_chi_he_dmg_char"
+    },
+    {
+      "xray_resource__modelName": "type_1_chi_he"
+    },
+    {
+      "cockpit__zoomOutFov": 5.8197
+    },
+    {
+      "cockpit__zoomInFov": 6.1402
+    },
+    {
+      "cockpit__sightName": "sight_model/chi_ha_sight"
+    },
+    {
+      "cockpit__sightFov": 9.0
+    },
+    {
+      "drowningHeight": 2.0
+    },
+    {
+      "damage_model__blk": "gamedata/gen/units/tanks/type_1_chi_he.blk"
+    },
+    {
+      "item__name": "items/jp_type_1_chi_he"
+    },
+    {
+      "skin__template": "type_1_chi_he_skins"
+    },
+    {
+      "turret_gun_flash_fx__flashNodes:shared:array": [
+        {
+          "node": "emtr_gun_flame"
+        },
+        {
+          "node": "emtr_mg_flame_01"
+        },
+        {
+          "node": "emtr_mg_aa_flame_01"
+        }
+      ]
+    },
+    {
+      "turret_gun_flash_fx__flashFx:shared:array": [
+        {
+          "fx": "muzzle_ground_60mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
+        }
+      ]
+    },
+    {
+      "turret_gun_flash_fx__flashFxScale:shared:array": [
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        },
+        {
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "turret_control__emitterNodes:shared:array": [
+        {
+          "node": "bone_gun_barrel"
+        },
+        {
+          "node": "bone_mg_v_01"
+        },
+        {
+          "node": "bone_mg_aa_v_01"
+        }
+      ]
+    },
+    {
+      "turret_control__animVars:shared:array": [
+        {
+          "vars:object": {
+            "curYawParamName": "turret_01_yaw",
+            "curPitchParamName": "gun_01_pitch",
+            "aimActiveParamName": "aim_01_active",
+            "paramYawSpeed": "turret_01_yaw_speed",
+            "paramYawSpeedMul": "turret_01_yaw_mul",
+            "paramYawAccel": "turret_01_yaw_accel",
+            "paramMinYawAngle": "turret_01_min_yaw_angle",
+            "paramMaxYawAngle": "turret_01_max_yaw_angle",
+            "paramMinPitchAngle": "turret_01_min_pitch_angle",
+            "paramMaxPitchAngle": "turret_01_max_pitch_angle",
+            "paramPitchSpeed": "gun_01_pitch_speed",
+            "paramPitchSpeedMul": "gun_01_pitch_mul",
+            "paramPitchAccel": "gun_01_pitch_accel",
+            "wishYawParamName": "gun_01_aim:targetYaw",
+            "wishPitchParamName": "gun_01_aim:targetPitch",
+            "gunRecoilParamName": "gun_01_recoil"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_02_yaw",
+            "curPitchParamName": "gun_02_pitch",
+            "aimActiveParamName": "aim_02_active",
+            "paramYawSpeed": "turret_02_yaw_speed",
+            "paramYawSpeedMul": "turret_02_yaw_mul",
+            "paramYawAccel": "turret_02_yaw_accel",
+            "paramMinYawAngle": "turret_02_min_yaw_angle",
+            "paramMaxYawAngle": "turret_02_max_yaw_angle",
+            "paramMinPitchAngle": "turret_02_min_pitch_angle",
+            "paramMaxPitchAngle": "turret_02_max_pitch_angle",
+            "paramPitchSpeed": "gun_02_pitch_speed",
+            "paramPitchSpeedMul": "gun_02_pitch_mul",
+            "paramPitchAccel": "gun_02_pitch_accel",
+            "wishYawParamName": "gun_02_aim:targetYaw",
+            "wishPitchParamName": "gun_02_aim:targetPitch"
+          }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_03_yaw",
+            "curPitchParamName": "gun_03_pitch",
+            "aimActiveParamName": "aim_03_active",
+            "paramYawSpeed": "turret_03_yaw_speed",
+            "paramYawSpeedMul": "turret_03_yaw_mul",
+            "paramYawAccel": "turret_03_yaw_accel",
+            "paramMinYawAngle": "turret_03_min_yaw_angle",
+            "paramMaxYawAngle": "turret_03_max_yaw_angle",
+            "paramMinPitchAngle": "turret_03_min_pitch_angle",
+            "paramMaxPitchAngle": "turret_03_max_pitch_angle",
+            "paramPitchSpeed": "gun_03_pitch_speed",
+            "paramPitchSpeedMul": "gun_03_pitch_mul",
+            "paramPitchAccel": "gun_03_pitch_accel",
+            "wishYawParamName": "gun_03_aim:targetYaw",
+            "wishPitchParamName": "gun_03_aim:targetPitch"
+          }
+        }
+      ]
+    },
+    {
+      "turret_control__turretInfo:shared:array": [
+        {
+          "turretInfo:object": {
+            "turretName": "turret_01",
+            "gun": "type_1_chi_he_turret_01_47mm_type1+turret_with_several_types_of_shells+main_turret",
+            "barrelDm": "gun_barrel",
+            "breechDm": "cannon_breech",
+            "verDriveDm": "drive_turret_v",
+            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_02",
+            "gun": "type_1_chi_he_turret_02_7_7mm_type_97",
+            "barrelDm": "gun_barrel_01",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_03",
+            "gun": "type_1_chi_he_turret_03_7_7mm_type_97",
+            "salt": 1
+          }
+        }
+      ]
+    }
+  ],
+  "type_1_chi_he_turret_01_47mm_type1": {
+    "_extends": "tankgun_47mm_type1",
+    "gun__shootNodeName": "bone_gun_barrel",
+    "turret__yawSpeed": 14.0,
+    "turret__pitchSpeed": 8.0,
+    "turret__aimNodeName": "bone_turret",
+    "turret__limit": [-180.0,180.0,-15.0,20.0],
+    "turret__limitsTable:list<p4>": {
+      "lim1": [-180.0,-132.0,-9.0,20.0],
+      "lim2": [-132.0,-33.0,-15.0,20.0],
+      "lim3": [-33.0,-22.0,-10.0,20.0],
+      "lim4": [-22.0,15.0,-15.0,20.0],
+      "lim5": [15.0,24.0,-10.0,20.0],
+      "lim6": [24.0,138.0,-15.0,20.0],
+      "lim7": [138.0,180.0,-9.0,20.0]
+    },
+    "gun__shellsAmmo:array": [
+      {
+        "ammo": 40
+      },
+      {
+        "ammo": 40
+      },
+      {
+        "ammo": 40
+      }
+    ]
+  },
+  "type_1_chi_he_turret_02_7_7mm_type_97": {
+    "_extends": "tankgun_7_7mm_type_97",
+    "gun__shootNodeName": "bone_mg_v_01",
+    "turret__yawSpeed": 35.0,
+    "turret__pitchSpeed": 35.0,
+    "turret__aimNodeName": "bone_mg_h_01",
+    "turret__limit": [-19.0,19.0,-16.0,10.0],
+    "gun__shellsAmmo:array": {
+      "ammo": 3000
+    }
+  },
+  "type_1_chi_he_turret_03_7_7mm_type_97": {
+    "_extends": "tankgun_7_7mm_type_97",
+    "gun__shootNodeName": "bone_mg_aa_v_01",
+    "turret__yawSpeed": 90.0,
+    "turret__pitchSpeed": 90.0,
+    "turret__aimNodeName": "bone_mg_aa_h_01",
+    "turret__limit": [-60.0,60.0,-10.0,70.0],
+    "gun__shellsAmmo:array": {
+      "ammo": 1000
+    }
+  },
+  "type_1_chi_he_ammo_stowages": {
+    "_tags": "server",
+    "_extends": "vehicle_ammo_stowages",
+    "ammo_stowage__stowageTemplates:shared:list<t>": {
+      "stowage": "type_1_chi_he_primary_ammo_stowage"
+    }
+  },
+  "type_1_chi_he_primary_ammo_stowage": {
+    "_extends": "ammo_stowage",
+    "ammo_stowage__clusterTemplates:shared:list<t>": {
+      "cluster": "type_1_chi_he_primary_shells_ammo_cluster"
+    },
+    "ammo_stowage__turretNames:shared:list<t>": {
+      "gun": "turret_01"
+    }
+  },
+  "type_1_chi_he_primary_shells_ammo_cluster": {
+    "_extends": "ammo_cluster",
+    "ammo_cluster__isShell": true,
+    "ammo_cluster__slotNames:shared:list<t>": [
+      {
+        "part": "ammo_turret_01"
+      },
+      {
+        "part": "ammo_turret"
+      },
+      {
+        "part": "ammo_turret_05"
+      },
+      {
+        "part": "ammo_body"
+      },
+      {
+        "part": "ammo_body_01"
+      },
+      {
+        "part": "ammo_body_02"
+      },
+      {
+        "part": "ammo_body_03"
+      },
+      {
+        "part": "ammo_body_04"
+      },
+      {
+        "part": "ammo_body_05"
+      },
+      {
+        "part": "ammo_body_06"
+      },
+      {
+        "part": "ammo_body_07"
+      }
+    ],
+    "ammo_cluster__slotsMaxAmmo:list<i>": [
+      {
+        "count": 30
+      },
+      {
+        "count": 15
+      },
+      {
+        "count": 3
+      },
+      {
+        "count": 11
+      },
+      {
+        "count": 11
+      },
+      {
+        "count": 11
+      },
+      {
+        "count": 11
+      },
+      {
+        "count": 8
+      },
+      {
+        "count": 6
+      },
+      {
+        "count": 6
+      },
+      {
+        "count": 8
+      }
+    ]
+  },
+  "type_1_chi_he_skins": {
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "type_1_chi_he_brown",
+          "objTexReplace:object": {
+            "jp_camo_olive_kusairo*": "jp_camo_brown*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "type_1_chi_he_grey",
+          "objTexReplace:object": {
+            "jp_camo_olive_kusairo*": "jp_camo_warship_grey*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "type_1_chi_he_green",
+          "objTexReplace:object": {
+            "jp_camo_olive_kusairo*": "jp_camo_willow_green*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "type_1_chi_he_late_era_brown_olive_yellow_lines",
+          "objTexReplace:object": {
+            "jp_camo_olive_kusairo*": "jp_camo_late_brown_olive_yellow_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "type_1_chi_he_late_era_green_brown_yellow_blots",
+          "objTexReplace:object": {
+            "jp_camo_olive_kusairo*": "jp_camo_late_green_brown_yellow_blots*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "type_1_chi_he_post_era_winter",
+          "objTexReplace:object": {
+            "jp_camo_olive_kusairo*": "jp_camo_post_winter*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "type_1_chi_he_jp_camo_winter_early",
+          "objTexReplace:object": {
+            "jp_camo_olive_kusairo*": "jp_camo_winter_early*"
+          }
+        }
+      }
+    ]
+  }
+}

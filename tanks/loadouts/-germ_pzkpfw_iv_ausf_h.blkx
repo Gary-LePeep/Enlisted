@@ -4,17 +4,85 @@ var _germ_pzkpfw_iv_ausf_h =
     "_extends": "germ_pzkpfw_IV_ausf_H_common",
     "animchar__objTexReplace:object": {
       "ger_camo_dunkelgelb*": "ger_camo_dunkelgelb_green_braun_blots*"
-    }
+    },
+    "disableDMParts:list<t>": [
+      {
+        "part": "ex_armor_01"
+      },
+      {
+        "part": "ex_armor_02"
+      },
+      {
+        "part": "ex_armor_03"
+      },
+      {
+        "part": "ex_armor_04"
+      },
+      {
+        "part": "ex_armor_05"
+      },
+      {
+        "part": "ex_armor_06"
+      },
+      {
+        "part": "ex_armor_07"
+      },
+      {
+        "part": "ex_armor_body_01"
+      },
+      {
+        "part": "ex_armor_body_02"
+      },
+      {
+        "part": "track_r_01"
+      },
+      {
+        "part": "track_l_01"
+      }
+    ]
+  },
+  "germ_pzkpfw_iv_ausf_h_tunisia": {
+    "_extends": "germ_pzkpfw_IV_ausf_H_common",
+    "disableDMParts:list<t>": [
+      {
+        "part": "track_r"
+      },
+      {
+        "part": "track_l"
+      }
+    ]
   },
   "germ_pzkpfw_IV_ausf_H_common": [
     {
       "_extends": "base_pzkpfw_iv_ausf_h"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
     },
     {
       "item__iconOffset": [0.0,0.2]
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 5,
+            "count": 7
+          }
+        }
+      ]
     },
     {
       "vehicle_seats__seats:shared:array": [
@@ -78,9 +146,9 @@ var _germ_pzkpfw_iv_ausf_h =
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.0641138,-0.479946,2.40916]
+              [-0.06,-0.2,2.4]
             ],
-            "hatchRotationAxis": [1.7,0.0,0.0],
+            "hatchRotationAxis": [1.8,0.0,0.0],
             "seatComponent": "isDriver",
             "receiveDamageFromDMPart": "commander",
             "cockpitTemplate": "germ_pzkpfw_IV_ausf_H_commander_cockpit",
@@ -128,43 +196,6 @@ var _germ_pzkpfw_iv_ausf_h =
             "shouldHideOwner": true,
             "receiveDamageFromDMPart": "machine_gunner"
           }
-        }
-      ]
-    },
-    {
-      "disableDMParts:list<t>": [
-        {
-          "part": "ex_armor_01"
-        },
-        {
-          "part": "ex_armor_02"
-        },
-        {
-          "part": "ex_armor_03"
-        },
-        {
-          "part": "ex_armor_04"
-        },
-        {
-          "part": "ex_armor_05"
-        },
-        {
-          "part": "ex_armor_06"
-        },
-        {
-          "part": "ex_armor_07"
-        },
-        {
-          "part": "ex_armor_body_01"
-        },
-        {
-          "part": "ex_armor_body_02"
-        },
-        {
-          "part": "track_r_01"
-        },
-        {
-          "part": "track_l_01"
         }
       ]
     }
@@ -263,7 +294,7 @@ var _germ_pzkpfw_iv_ausf_h =
     ]
   },
   "germ_pzkpfw_IV_ausf_H_gunner_cockpit": {
-    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf5f_2.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pzkpfw_iii_e_gunner_char",
     "cockpit__offset": [-0.9,0.03,0.12],
@@ -353,7 +384,7 @@ var _germ_pzkpfw_iv_ausf_h =
       }
     ],
     "cockpit__slitForwardOffset:list<r>": {
-      "slit": 0.27
+      "slit": 0.245
     },
     "cockpit__slitIsGun:list<b>": {
       "slit": true
@@ -378,26 +409,41 @@ var _germ_pzkpfw_iv_ausf_h =
       "pzkpfw_IV_ausf_H_body_c*": "pzkpfw_IV_ausf_H_skin_without_zimmerite_body_c*",
       "pzkpfw_IV_ausf_H_gun_c*": "pzkpfw_IV_ausf_H_skin_without_zimmerite_gun_c*",
       "pzkpfw_IV_ausf_H_turret_c*": "pzkpfw_IV_ausf_H_skin_without_zimmerite_turret_c*"
-    }
-  },
-  "germ_pzkpfw_IV_ausf_H_16_pzrgt_with_zimmerite_premium_skin": {
-    "_extends": "germ_pzkpfw_IV_ausf_H_common",
-    "animchar__objTexSet:object": {
-      "fliegerbeschussgerat_41_c*:object": {
-        "fliegerbeschussgerat_41_skin_pz_4h_c*": "camo_skin_tex"
+    },
+    "disableDMParts:list<t>": [
+      {
+        "part": "ex_armor_01"
       },
-      "pzkpfw_IV_ausf_H_turret_c*:object": {
-        "pzkpfw_IV_ausf_H_skin_turret_c*": "camo_skin_tex"
+      {
+        "part": "ex_armor_02"
       },
-      "pzkpfw_IV_ausf_H_gun_c*:object": {
-        "pzkpfw_IV_ausf_H_skin_gun_c*": "camo_skin_tex"
+      {
+        "part": "ex_armor_03"
       },
-      "pzkpfw_IV_ausf_H_body_c*:object": {
-        "pzkpfw_IV_ausf_H_skin_body_c*": "camo_skin_tex"
+      {
+        "part": "ex_armor_04"
       },
-      "pzkpfw_IV_ausf_H_addarmor_c*:object": {
-        "pzkpfw_IV_ausf_H_skin_addarmor_c*": "camo_skin_tex"
+      {
+        "part": "ex_armor_05"
+      },
+      {
+        "part": "ex_armor_06"
+      },
+      {
+        "part": "ex_armor_07"
+      },
+      {
+        "part": "ex_armor_body_01"
+      },
+      {
+        "part": "ex_armor_body_02"
+      },
+      {
+        "part": "track_r_01"
+      },
+      {
+        "part": "track_l_01"
       }
-    }
+    ]
   }
 }

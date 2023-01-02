@@ -1,0 +1,265 @@
+var _uk_churchill_3 = 
+{
+  "uk_churchill_3": {
+    "_extends": "uk_churchill_3_common"
+  },
+  "uk_churchill_3_tunisia": {
+    "_extends": "uk_churchill_3_common",
+    "turrets__initAmmoDistribution:array": [
+      {
+        "ammo:object": {
+          "slot": 1,
+          "fill": true
+        }
+      },
+      {
+        "ammo:object": {
+          "slot": 4,
+          "fill": true
+        }
+      }
+    ]
+  },
+  "uk_churchill_3_normandy_premium": {
+    "_extends": "uk_churchill_3_common",
+    "animchar__objTexReplace:object": {
+      "uk_camo_earth_yellow*": "uk_camo_middle_deep_bronze_greens*"
+    }
+  },
+  "uk_churchill_3_common": {
+    "_extends": "base_churchill_3",
+    "item__iconOffset": [0.0,0.4],
+    "turrets__initAmmoDistribution:array": [
+      {
+        "ammo:object": {
+          "slot": 0,
+          "fill": true
+        }
+      },
+      {
+        "ammo:object": {
+          "slot": 4,
+          "fill": true
+        }
+      }
+    ],
+    "vehicle_seats__seats:shared:array": [
+      {
+        "seats:object": {
+          "name": "driver",
+          "locName": "vehicle_seats/driver",
+          "seatOwnsEntityControl": true,
+          "attachNode": "driver",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.25,0.0]
+          ],
+          "seatComponent": "isDriver",
+          "nextSeat": "main_gunner",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "driver",
+          "cameraNodeName": "bone_camera_driver",
+          "cockpitTemplate": "uk_churchill_3_driver_cockpit"
+        }
+      },
+      {
+        "seats:object": {
+          "name": "main_gunner",
+          "locName": "vehicle_seats/gunner",
+          "attachNode": "gunner",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isGunner",
+          "nextSeat": "driver",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "gunner",
+          "cameraNodeName": "bone_camera_gunner",
+          "cockpitTemplate": "uk_churchill_3_gunner_cockpit",
+          "turretNames:array": [
+            {
+              "turret": "turret_01"
+            },
+            {
+              "turret": "turret_02"
+            }
+          ]
+        }
+      },
+      {
+        "seats:object": [
+          {
+            "name": "commander"
+          },
+          {
+            "locName": "vehicle_seats/commander"
+          },
+          {
+            "locName": "vehicle_seats/commander"
+          },
+          {
+            "attachNode": "commander"
+          },
+          {
+            "shouldHideOwner": true
+          },
+          {
+            "hatchRotationAxis": [1.8,0.0,0.0]
+          },
+          {
+            "ignoreAttachNodeRotation": true
+          },
+          {
+            "attachTm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-0.217627,-0.1258555,0.407329]
+            ]
+          },
+          {
+            "seatComponent": "isDriver"
+          },
+          {
+            "receiveDamageFromDMPart": "commander"
+          },
+          {
+            "cameraNodeName": "bone_turret"
+          },
+          {
+            "cockpitTemplate": "uk_churchill_3_commander_cockpit"
+          },
+          {
+            "hatchNodes:array": [
+              {
+                "node": "hatch_01"
+              },
+              {
+                "node": "hatch_02"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "seats:object": {
+          "locName": "vehicle_seats/loader",
+          "attachNode": "loader",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isPassenger",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "loader",
+          "cameraNodeName": "bone_camera_driver",
+          "loaderTurretNames:array": {
+            "turret": "turret_01"
+          }
+        }
+      },
+      {
+        "seats:object": {
+          "locName": "vehicle_seats/radioman",
+          "attachNode": "machine_gunner",
+          "ignoreAttachNodeRotation": true,
+          "attachTm": [
+            [1.0,0.0,0.0],
+            [0.0,1.0,0.0],
+            [0.0,0.0,1.0],
+            [-0.25,-0.5,0.0]
+          ],
+          "seatComponent": "isPassenger",
+          "shouldHideOwner": true,
+          "receiveDamageFromDMPart": "machine_gunner"
+        }
+      }
+    ]
+  },
+  "uk_churchill_3_driver_cockpit": {
+    "_extends": "base_driver_cockpit",
+    "animchar__res": "kv_1_driver_char",
+    "cockpit__offset": [-0.0247973,-0.294759,0.237072],
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "ex_decor_l_07"
+      },
+      {
+        "node": "ex_decor_r_07"
+      },
+      {
+        "node": "track_l"
+      },
+      {
+        "node": "track_r"
+      },
+      {
+        "node": "root"
+      },
+      {
+        "node": "ex_lantern_02"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.1
+    }
+  },
+  "uk_churchill_3_gunner_cockpit": {
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/uk_no_33_mkii_s.blk",
+    "_extends": "base_gunner_cockpit",
+    "animchar__res": "t_26_1940_gunner_char",
+    "cockpit__minZoom": -0.27,
+    "cockpit__offset": [-0.566273,-0.0507082,0.199528],
+    "cockpit__attachNodeNames:list<t>": {
+      "node": "bone_camera_gunner"
+    },
+    "cockpit__attachNodeIndices:list<i>": [],
+    "cockpit__visibleVehicleNodeNames:list<t>": {
+      "node": "gun_barrel"
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front_right"
+    },
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.18
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    }
+  },
+  "uk_churchill_3_commander_cockpit": {
+    "_extends": "base_commander_cockpit_no_slits",
+    "animchar__res": "t_26_1940_commander_char",
+    "cockpit__offset": [-0.475718,0.974832,0.450081],
+    "cockpit__cockpitOffsetBySlit:list<p3>": {
+      "slit": [-0.0,0.0,-0.0]
+    },
+    "cockpit__visibleVehicleNodeNames:list<t>": [
+      {
+        "node": "gun_barrel"
+      },
+      {
+        "node": "bone_gun"
+      }
+    ],
+    "cockpit__slitForwardOffset:list<r>": {
+      "slit": 0.16
+    },
+    "cockpit__slitIsGun:list<b>": {
+      "slit": true
+    },
+    "cockpit__slitNodeNames:list<t>": {
+      "slit": "cam_front"
+    }
+  }
+}

@@ -54,6 +54,9 @@ var _75mm_m2 =
       "_extends": "base_75mm_m2"
     },
     {
+      "_extends": "gunsound_75mm_m2"
+    },
+    {
       "turret__triggerGroup": 1
     }
   ]

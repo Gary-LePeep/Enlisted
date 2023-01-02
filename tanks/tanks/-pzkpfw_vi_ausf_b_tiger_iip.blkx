@@ -50,6 +50,9 @@ var _pzkpfw_vi_ausf_b_tiger_iip =
       "item__name": "items/germ_pzkpfw_vi_ausf_b_tiger_iip"
     },
     {
+      "turret_control__grenadeLauncherSalvoSize": 1
+    },
+    {
       "skin__template": "pzkpfw_vi_ausf_b_tiger_iip_skins"
     },
     {
@@ -62,6 +65,9 @@ var _pzkpfw_vi_ausf_b_tiger_iip =
         },
         {
           "node": "emtr_mg_flame_03"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
         }
       ]
     },
@@ -75,11 +81,17 @@ var _pzkpfw_vi_ausf_b_tiger_iip =
         },
         {
           "fx": "muzzle_ground_8mm"
+        },
+        {
+          "fx": "muzzle_ground_8mm"
         }
       ]
     },
     {
       "turret_gun_flash_fx__flashFxScale:shared:array": [
+        {
+          "scale": 1.0
+        },
         {
           "scale": 1.0
         },
@@ -101,6 +113,9 @@ var _pzkpfw_vi_ausf_b_tiger_iip =
         },
         {
           "node": "bone_mg_aa_barrel"
+        },
+        {
+          "node": "emtr_mortar_flame_01"
         }
       ]
     },
@@ -150,6 +165,12 @@ var _pzkpfw_vi_ausf_b_tiger_iip =
             "wishYawParamName": "gun_03_aim:targetYaw",
             "wishPitchParamName": "gun_03_aim:targetPitch"
           }
+        },
+        {
+          "vars:object": {
+            "curYawParamName": "turret_04_yaw",
+            "curPitchParamName": "gun_04_pitch"
+          }
         }
       ]
     },
@@ -171,8 +192,6 @@ var _pzkpfw_vi_ausf_b_tiger_iip =
             "turretName": "turret_02",
             "gun": "pzkpfw_vi_ausf_b_tiger_iip_turret_02_7_92mm_mg34",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         },
@@ -181,8 +200,15 @@ var _pzkpfw_vi_ausf_b_tiger_iip =
             "turretName": "turret_03",
             "gun": "pzkpfw_vi_ausf_b_tiger_iip_turret_03_7_92mm_mg34",
             "barrelDm": "gun_barrel_03",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
+            "salt": 1
+          }
+        },
+        {
+          "turretInfo:object": {
+            "turretName": "turret_04",
+            "needsAssignedGunner": false,
+            "turretGroup": "smoke",
+            "gun": "pzkpfw_vi_ausf_b_tiger_iip_turret_04_91mm_germ_smoke_mortar_launcher",
             "salt": 1
           }
         }
@@ -237,12 +263,19 @@ var _pzkpfw_vi_ausf_b_tiger_iip =
     "turret__limit": [-55.0,158.0,-10.0,25.0],
     "gun__shellsAmmo:array": [
       {
-        "ammo": 1000
+        "ammo": 1050
       },
       {
-        "ammo": 1000
+        "ammo": 1050
       }
     ]
+  },
+  "pzkpfw_vi_ausf_b_tiger_iip_turret_04_91mm_germ_smoke_mortar_launcher": {
+    "_extends": "tankgun_91mm_germ_smoke_mortar_launcher",
+    "gun__shootNodeName": "emtr_mortar_flame_01",
+    "gun__shellsAmmo:array": {
+      "ammo": 12
+    }
   },
   "pzkpfw_vi_ausf_b_tiger_iip_ammo_stowages": {
     "_tags": "server",

@@ -207,17 +207,17 @@ var _su_85m =
       },
       {
         "skin:object": {
-          "id": "su_85m_ussr_camo_brown_lines",
+          "id": "su_85m_ussr_camo_czechoslovak_yellow_green",
           "objTexReplace:object": {
-            "ussr_camo_green*": "ussr_camo_brown_lines*"
+            "ussr_camo_green*": "ussr_camo_czechoslovak_yellow_green*"
           }
         }
       },
       {
         "skin:object": {
-          "id": "su_85m_ussr_camo_green_ltbrown_lines",
+          "id": "su_85m_ussr_camo_desert_syrian_green_brown_yellow",
           "objTexReplace:object": {
-            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+            "ussr_camo_green*": "ussr_camo_desert_syrian_green_brown_yellow*"
           }
         }
       },

@@ -34,6 +34,7 @@ var _germ_pzkpfw_iv_ausf_g =
         "part": "ex_armor_body_02"
       }
     ],
+    "attach_decorators__entities:list<eid>": [],
     "attach_decorators__templates:array": [
       {
         "templates:object": {
@@ -79,7 +80,7 @@ var _germ_pzkpfw_iv_ausf_g =
             [-0.037562,0.0231833,0.999231],
             [-1.91422,1.83852,-0.669171]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -91,7 +92,7 @@ var _germ_pzkpfw_iv_ausf_g =
             [-0.0375587,0.0231905,0.999231],
             [-1.89411,1.8293,-0.496844]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -103,7 +104,7 @@ var _germ_pzkpfw_iv_ausf_g =
             [-0.0375583,0.0231901,0.999231],
             [-1.90179,1.81215,-0.341888]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -115,7 +116,7 @@ var _germ_pzkpfw_iv_ausf_g =
             [-0.0375678,0.0231968,0.999283],
             [-1.9248,1.81987,-0.0419476]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -127,7 +128,7 @@ var _germ_pzkpfw_iv_ausf_g =
             [-0.037562,0.023197,0.999258],
             [-1.90085,1.80403,-0.194694]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -139,7 +140,7 @@ var _germ_pzkpfw_iv_ausf_g =
             [-0.0375649,0.0231836,0.99923],
             [-1.92524,1.83466,-0.829012]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -151,7 +152,7 @@ var _germ_pzkpfw_iv_ausf_g =
             [-0.0352122,0.0270348,0.99927],
             [-1.90848,1.83643,-0.969736]
           ],
-          "template": "us_jerrycan_decor",
+          "template": "jerrycan",
           "nodeName": "root"
         }
       },
@@ -275,7 +276,29 @@ var _germ_pzkpfw_iv_ausf_g =
       "_extends": "base_pzkpfw_iv_ausf_g"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_panzer3_engine_sound"
+    },
+    {
+      "turrets__initAmmoDistribution:array": [
+        {
+          "ammo:object": {
+            "slot": 0,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 1,
+            "fill": true
+          }
+        },
+        {
+          "ammo:object": {
+            "slot": 5,
+            "count": 7
+          }
+        }
+      ]
     },
     {
       "vehicle_seats__seats:shared:array": [
@@ -334,14 +357,14 @@ var _germ_pzkpfw_iv_ausf_g =
             "locName": "vehicle_seats/commander",
             "attachNode": "commander",
             "shouldHideOwner": true,
-            "hatchRotationAxis": [1.8,0.0,0.0],
+            "hatchRotationAxis": [1.9,0.0,0.0],
             "maxPosWithOpenHatch": 0.6,
             "ignoreAttachNodeRotation": true,
             "attachTm": [
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.15,-0.23,2.35]
+              [-0.1,-0.05,2.35]
             ],
             "seatComponent": "isDriver",
             "receiveDamageFromDMPart": "commander",
@@ -450,7 +473,7 @@ var _germ_pzkpfw_iv_ausf_g =
     ]
   },
   "germ_pzkpfw_iv_ausf_g_gunner_cockpit": {
-    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf4.blk",
+    "vehicle_sight__blk": "content/tanks/gamedata/sight/germ_tzf5f.blk",
     "_extends": "base_gunner_cockpit",
     "animchar__res": "pzkpfw_iii_e_gunner_char",
     "cockpit__offset": [0.0,0.0,0.0],

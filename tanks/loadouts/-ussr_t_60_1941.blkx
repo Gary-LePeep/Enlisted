@@ -11,7 +11,10 @@ var _ussr_t_60_1941 =
       "_extends": "base_t_60_1941"
     },
     {
-      "_extends": "vehicle_effects_tracked"
+      "_extends": "tank_t34_engine_sound"
+    },
+    {
+      "_extends": "tank_su76_vehicle_tracks_sound"
     },
     {
       "vehicle_net_phys__blk": "content/tanks/gamedata/units/tanks/t_60_1941.blk:VehiclePhys"
@@ -31,7 +34,7 @@ var _ussr_t_60_1941 =
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [-0.4,-0.65,0.0]
+              [-0.3,-0.65,0.0]
             ],
             "seatComponent": "isGunner",
             "nextSeat": "driver",
@@ -40,6 +43,8 @@ var _ussr_t_60_1941 =
             "cameraNodeName": "bone_camera_gunner",
             "cockpitTemplate": "ussr_t_60_1941_gunner_cockpit",
             "hatchRotationAxis": [1.9,0.0,0.0],
+            "seatAnimUpper": "drive_driver",
+            "seatAnimLower": "drive_driver",
             "turretNames:array": [
               {
                 "turretNames": "turret_01"
@@ -49,7 +54,7 @@ var _ussr_t_60_1941 =
               }
             ],
             "hatchNodes:array": {
-              "node": "hatch_03"
+              "node": "hatch_04"
             },
             "loaderTurretNames:array": {
               "turret": "turret_01"
@@ -85,23 +90,7 @@ var _ussr_t_60_1941 =
     "_extends": "base_driver_cockpit",
     "animchar__res": "bt_7_driver_char",
     "cockpit__offset": [-0.0,-0.37,0.01],
-    "cockpit__visibleVehicleNodeNames:list<t>": [
-      {
-        "node": "track_l"
-      },
-      {
-        "node": "track_r"
-      },
-      {
-        "node": "ex_decor_l_01"
-      },
-      {
-        "node": "ex_decor_r_01"
-      },
-      {
-        "node": "@root"
-      }
-    ],
+    "cockpit__visibleVehicleNodeNames:list<t>": [],
     "cockpit__slitForwardOffset:list<r>": {
       "slit": 0.06
     }
@@ -114,10 +103,10 @@ var _ussr_t_60_1941 =
     "cockpit__offset": [-0.35,-0.01,0.22],
     "cockpit__cockpitOffsetBySlit:list<p3>": [
       {
-        "slit": [0.0,0.0,0.0]
+        "item": [-0.0414905,-0.0425681,-0.0218647]
       },
       {
-        "slit": [0.22,0.4,0.07]
+        "item": [0.268088,0.196266,-0.00192122]
       }
     ],
     "cockpit__attachNodeNames:list<t>": [
@@ -131,55 +120,7 @@ var _ussr_t_60_1941 =
     "cockpit__attachNodeIndices:list<i>": [],
     "cockpit__visibleVehicleNodeNames:list<t>": [
       {
-        "node": "track_l"
-      },
-      {
-        "node": "track_r"
-      },
-      {
-        "node": "ex_decor_l_01"
-      },
-      {
-        "node": "ex_decor_r_01"
-      },
-      {
-        "node": "@root"
-      },
-      {
         "node": "gun_barrel"
-      },
-      {
-        "node": "ex_armor_01"
-      },
-      {
-        "node": "ex_decor_l_02"
-      },
-      {
-        "node": "ex_decor_r_02"
-      },
-      {
-        "node": "ex_decor_l_03"
-      },
-      {
-        "node": "ex_decor_r_03"
-      },
-      {
-        "node": "ex_decor_l_04"
-      },
-      {
-        "node": "ex_decor_r_04"
-      },
-      {
-        "node": "ex_lantern_01"
-      },
-      {
-        "node": "ex_lantern_02"
-      },
-      {
-        "node": "ex_lantern_03"
-      },
-      {
-        "node": "ex_decor_l_06"
       },
       {
         "node": "bone_mg_gun_twin"
@@ -220,5 +161,58 @@ var _ussr_t_60_1941 =
         "t_60_228_turret_c*": "camo_skin_tex"
       }
     }
+  },
+  "t_60_1941_skins": {
+    "_override": true,
+    "skin__objTexReplace:array": [
+      {
+        "skin:object": {
+          "id": "t_60_1941_winter",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_60_1941_forest",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_forest_01*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_60_1941_ussr_camo_brown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_brown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_60_1941_ussr_camo_green_ltbrown_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_green_ltbrown_lines*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_60_1941_ussr_camo_desert_yellow_brown",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_desert_yellow_brown*"
+          }
+        }
+      },
+      {
+        "skin:object": {
+          "id": "t_60_1941_ussr_camo_winter_lines",
+          "objTexReplace:object": {
+            "ussr_camo_green*": "ussr_camo_winter_lines*"
+          }
+        }
+      }
+    ]
   }
 }

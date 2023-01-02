@@ -171,8 +171,6 @@ var _pzkpfw_iv_ausf_h =
             "turretName": "turret_02",
             "gun": "pzkpfw_iv_ausf_h_turret_02_7_92mm_mg34",
             "barrelDm": "gun_barrel_01",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         },
@@ -181,8 +179,6 @@ var _pzkpfw_iv_ausf_h =
             "turretName": "turret_03",
             "gun": "pzkpfw_iv_ausf_h_turret_03_7_92mm_mg34",
             "barrelDm": "gun_barrel_02",
-            "verDriveDm": "drive_turret_v",
-            "horDriveDm": "drive_turret_h",
             "salt": 1
           }
         }
@@ -238,10 +234,10 @@ var _pzkpfw_iv_ausf_h =
     "turret__limit": [-180.0,180.0,-10.0,20.0],
     "gun__shellsAmmo:array": [
       {
-        "ammo": 1000
+        "ammo": 1050
       },
       {
-        "ammo": 1000
+        "ammo": 1050
       }
     ]
   },

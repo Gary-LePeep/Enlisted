@@ -181,7 +181,13 @@ var _ht_130 =
       "_replicated": "flamethrower__active"
     },
     {
+      "_replicated": "flamethrower__flameCurrentLength"
+    },
+    {
       "_tracked": "flamethrower__active"
+    },
+    {
+      "_tracked": "flamethrower__flameCurrentLength"
     },
     {
       "flamethrower__fireTemplate": "flamethrower_fire"
