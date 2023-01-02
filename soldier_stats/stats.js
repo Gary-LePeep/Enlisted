@@ -44,6 +44,11 @@ const SOLDIER_STATS = [
       Stats: [8, 6, 7],
       Talent: '+100% health restored by medpack',
     },
+	{
+      Name: 'class_Assaulter#IV',
+      Stats: [9, 7, 8],
+      Talent: '+12% firearm reload speed',
+    },
   ],
   [
     {
@@ -144,6 +149,11 @@ const SOLDIER_STATS = [
       Name: 'class_FighterPilot#II',
       Stats: [5, 7, 6],
       Talent: '+5% flight stamina',
+    },
+    {
+      Name: 'class_FighterPilot#III',
+      Stats: [5, 9, 7],
+      Talent: '-10% power of control loss after the blackout',
     },
   ],
   [
