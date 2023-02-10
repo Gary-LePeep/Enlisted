@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<body style="background-color:rgb(107, 133, 133);"></body>
+
+<!-- All of the most important scripts that need to be loaded first -->
+<script src="./common.js"></script>
+<script src="./translations.js"></script>
+<script src="./updates/updates.js"></script>
+
+<script src="./weapon-data.js"></script>
+
+<script src="./dist/chart.min.js"></script>
+<script src="./dist/chartjs-plugin-annotation.min.js"></script>
+<script>
+    // Create new css link Element
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.type = 'text/css';
+    css.href = './style.css';
+    document.getElementsByTagName('HEAD')[0].appendChild(css);
+</script>
+</head>
+
+<body>
+    <script>
+        function titleBar(active) {
+          // add top color bar
+          const feldgrau = document.createElement('img');
+          feldgrau.src = './resources/feldgrau.png';
+          feldgrau.style = 'position: relative; top: 0px; left: 0px; width: 1880px; height: 53px';
+          BODY.append(feldgrau);
+
+          // declare language dropdown
+          const languageDropdown = document.createElement('select');
+
+          // create the function for when the language is changed
+          function changeLanguage() {
+            setCookie('language', languageDropdown.value);
+            window.location.reload();
+          }
+
+          // add attributes, such as languages supported
+          const englishOption = document.createElement('option');
+          englishOption.textContent = 'English';
+          if (getCookie('language') === 'English') {
+            englishOption.selected = 'selected';
+          }
+          const russionOption = document.createElement('option');
+          russionOption.textContent = 'Русский';
+          if (getCookie('language') === 'Русский') {
+            russionOption.selected = 'selected';
+          }
+          languageDropdown.append(englishOption);
+          languageDropdown.append(russionOption);
+          languageDropdown.id = 'language_dropdown';
+          languageDropdown.style = 'position:absolute; top:20px; left:1780px;';
+          languageDropdown.onchange = () => { changeLanguage(); };
+          BODY.appendChild(languageDropdown);
+
+          // add the language label and title bar's title
+          BODY.appendChild(translate(''
+                + 'language', 'b', 'position:absolute; top:20px; left:1700px;font-size:16px; text-align:center; color: white'));
+
+          const title = translate(active, 'div');
+          title.className = 'TITLE';
+          BODY.appendChild(title);
+
+          // add the title bar's navigation buttons, highlighting the active one
+          const topnav = document.createElement('div');
+          topnav.className = 'topnav';
+          topnav.style = 'position: absolute; top: 0px; left: 0px; width: 1700px; height: 53px';
+          BODY.appendChild(topnav);
+          const compareButton = document.createElement('button');
+          if (active === 'comparison') {
+            compareButton.className = 'active';
+          }
+          compareButton.textContent = translate('linkWeaponCompare');
+          compareButton.onclick = () => { window.location = 'https://gary-lepeep.github.io/Enlisted/comparison'; };
+          topnav.appendChild(compareButton);
+          const datamineButton = document.createElement('button');
+          if (active === 'datamine') {
+            datamineButton.className = 'active';
+          }
+          datamineButton.textContent = translate('linkDatamine');
+          datamineButton.onclick = () => { window.location = 'https://gary-lepeep.github.io/Enlisted/datamine'; };
+          topnav.appendChild(datamineButton);
+          const updateButton = document.createElement('button');
+          if (active === 'updates') {
+            updateButton.className = 'active';
+          }
+          updateButton.textContent = translate('linkUpdate');
+          updateButton.onclick = () => { window.location = 'https://gary-lepeep.github.io/Enlisted/updates'; };
+          topnav.appendChild(updateButton);
+          // warning if update was recent
+          if (wasRecent(parseInt(getCookie('updatesLastSeen')))) {
+            updateButton.className = 'blink-bg';
+            updateButton.textContent += '⚠️';
+          }
+          const statsButton = document.createElement('button');
+          if (active === 'statistics') {
+            statsButton.className = 'active';
+          }
+          statsButton.textContent = translate('linkStats');
+          statsButton.onclick = () => { window.location = 'https://gary-lepeep.github.io/Enlisted/soldier_stats'; };
+          topnav.appendChild(statsButton);
+          const tanksButton = document.createElement('button');
+          if (active === 'tanks') {
+            tanksButton.className = 'active';
+          }
+          tanksButton.textContent = translate('linkTanks');
+          tanksButton.onclick = () => { window.location = 'https://gary-lepeep.github.io/Enlisted/tanks'; };
+          topnav.appendChild(tanksButton);
+        }
+
+        titleBar('');
+
+        BODY.appendChild(translate('deprecated1', 'b', 'position: absolute; top: 300px; left: 200px; width: 1500px; text-align: center; font-size:36px'));
+        const deprecatedBody = document.createElement('div');
+        deprecatedBody.innerHTML = 'This site still exists, and the buttons at the top still function.\r\n\
+        However, some aspects of the site are broken, and they will not be fixed.\r\n\
+        Likewise, any guns added summer of 2022 and later will not be available.\r\n\
+        \r\n\
+        However, we have a new website! It loads much faster, and is kept up to date much more easily!\r\n\
+        Please visit <a href="https://enlisted.vercel.app/datamine">https://enlisted.vercel.app/datamine</a> for the latest weapons, tools, and simulations!';
+        deprecatedBody.style = 'position: absolute; top: 380px; left: 200px; width: 1500px; text-align: center; font-size:24px; white-space: pre-line';
+        BODY.appendChild(deprecatedBody);
+    </script>
+</body>
+
+</html>
